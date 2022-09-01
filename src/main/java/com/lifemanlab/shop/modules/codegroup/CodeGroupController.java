@@ -20,7 +20,8 @@ public class CodeGroupController {
 
 		List<CodeGroup> list = service.selectList();
 		model.addAttribute("list", list);
+		System.out.println("Hello World");
 		
-		return "infra/codegroup/xdmin/codeGroupList";
+		 return "infra/codegroup/xdmin/codeGroupList"; 
 	}
 }

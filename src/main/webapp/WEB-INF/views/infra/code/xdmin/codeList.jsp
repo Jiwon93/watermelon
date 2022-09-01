@@ -9,7 +9,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>codeGroupList</title>
+<title>codeList</title>
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sidebars/">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<!-- Fontawesome Stylesheet -->
@@ -24,7 +24,7 @@
 			margin-right: auto;
 		}
 		
-		td {
+		th, td {
 			border: 1px solid lightgray;
 			height: 35px;
 		}
@@ -33,12 +33,7 @@
 			width: 40px;
 			text-align: center;
 		}
-		
-		.tableHead {
-			background-color: black;
-			color: white;
-		}
-		
+
 		.listCheck {
 			text-align: center;
 			justify-content: center;
@@ -165,7 +160,7 @@
 					<div class="row">
 						<h4>코드그룹 관리</h4>
 						<div class="col border me-4">
-							<div class="row  mt-2 mb-2">
+							<div class="row mt-2 mb-2">
 								<div class="col-2 p-1">
 									<select class="form-select">
 										<option>N</option>
@@ -202,15 +197,12 @@
 					<div class="row mt-3">
 						<div class="row">
 							<div class="col-11 p-0">
-								<span>Total: 18</span>
+								<span>Total: 42</span>
 							</div>
 							<div class="col-1 p-0">
 								<div class="col-12">
 									<select class="form-select py-1" style="height: 30px; font-size: 12px;">
-										<option value="10" selected>10</option>
-										<option value="15">15</option>
-										<option value="20">20</option>
-										<option value="30">30</option>
+										<option>10</option>
 									</select>
 								</div>
 							</div>
@@ -218,26 +210,34 @@
 						<div class="row mt-1">
 							<table class="table table-striped table-hover border">
 								<tr class="table-dark">
-									<td class="tableHead1"><input class="listCheck" type="checkbox"></td>
-									<td class="tableHead1">#</td>
-									<td class="tableHead">코드그룹 코드</td>
-									<td class="tableHead">코드그룹 이름 (한글)</td>
-									<td class="tableHead">코드그룹 이름 (영문)</td>
-									<td class="tableHead">코드갯수</td>
-									<td class="tableHead">등록일</td>
-									<td class="tableHead">수정일</td>
+									<th class="tableHead1"><input class="listCheck" type="checkbox"></th>
+									<th class="tableHead1">#</th>
+									<th>코드그룹 코드</th>
+									<th>코드그룹 이름 (한글)</th>
+									<th>코드</th>
+									<th>대체 코드</th>
+									<th>코드 이름 (한글)</th>
+									<th>코드 이름 (영문)</th>
+									<th>사용</th>
+									<th>순서</th>
+									<th>등록일</th>
+									<th>수정일</th>
 								</tr>
 								<c:forEach items="${list}" var="list" varStatus="status">
-									<tr>
-										<td class="tableHead1"><input class="listCheck" type="checkbox"></td>
-										<td class="tableHead1"><c:out value="${list.ccgSeq }"/></td>
-										<td><c:out value="${list.ccgSeq }"/></td>
-										<td><c:out value="${list.ccgName }"/></td>
-										<td></td>
-										<td><c:out value="${list.ccCount }"/></td>
-										<td></td>
-										<td></td>
-									</tr>
+								<tr>
+									<td class="tableHead1"><input class="listCheck" type="checkbox"></td>
+									<td class="tableHead1"><c:out value="${list.ccSeq }"/></td>
+									<td><c:out value="${list.ccgSeq }"/></td>
+									<td><c:out value="${list.ccgName }"/></td>
+									<td></td>
+									<td></td>
+									<td><c:out value="${list.ccName }"/></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
 								</c:forEach>
 							</table>
 						</div>
@@ -272,12 +272,12 @@
 						</div>
 						<div class="row p-0">
 							<div class="col">
-								<button class="btn btn-danger" type="button" id="cglCancel"><i class="fa-duotone fa-x"></i></button>
-								<button class="btn btn-danger" type="button" id="cglDel"><i class="fa-regular fa-trash-can"></i></button>
+								<button class="btn btn-danger" type="button" id="clCancel"><i class="fa-duotone fa-x"></i></button>
+								<button class="btn btn-danger" type="button" id="clDel"><i class="fa-regular fa-trash-can"></i></button>
 							</div>
 							<div class="col" style="text-align: right;">
-								<button class="btn btn-success" type="button" id="cglExcel"><i class="fa-regular fa-file-excel"></i></button>
-								<button class="btn btn-primary" type="button" id="cglPlus"><i class="fa-regular fa-plus"></i></button>
+								<button class="btn btn-success" type="button" id="clExcel"><i class="fa-regular fa-file-excel"></i></button>
+								<button class="btn btn-primary" type="button" id="clPlus"><i class="fa-regular fa-plus"></i></button>
 							</div>
 						</div>
 					</div>

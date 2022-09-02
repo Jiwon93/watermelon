@@ -14,11 +14,13 @@ public class CodeGroupController {
 	@Autowired
 	CodeGroupServiceImpl service;
 	
-
 	@RequestMapping(value = "codeGroupList")
-	public String codeGroup(Model model) throws Exception {
+	public String codeGroup(Model model, CodeGroupVo vo) throws Exception {
 
-		List<CodeGroup> list = service.selectList();
+		System.out.println("vo.getShValue(): " + vo.getShValue());
+		System.out.println("vo.getShOption(): " + vo.getShOption());
+		
+		List<CodeGroup> list = service.selectList(vo);
 		model.addAttribute("list", list);
 		
 		return "infra/codegroup/xdmin/codeGroupList";

@@ -15,6 +15,7 @@ public class Member {
 	private String mmZip;
 	private String mmAddress1;
 	private String mmAddress2;
+	private Integer mmDelNy;
 ///////////////////////////////////////////////
 	public String getMmSeq() {
 		return mmSeq;
@@ -81,6 +82,12 @@ public class Member {
 	}
 	public void setMmAddress2(String mmAddress2) {
 		this.mmAddress2 = mmAddress2;
+	}
+	public Integer getMmDelNy() {
+		return mmDelNy;
+	}
+	public void setMmDelNy(Integer mmDelNy) {
+		this.mmDelNy = mmDelNy;
 	}
 	
 	

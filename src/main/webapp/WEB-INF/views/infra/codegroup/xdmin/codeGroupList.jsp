@@ -227,18 +227,27 @@
 									<td class="tableHead">등록일</td>
 									<td class="tableHead">수정일</td>
 								</tr>
-								<c:forEach items="${list}" var="list" varStatus="status">
-									<tr>
-										<td class="tableHead1"><input class="listCheck" type="checkbox"></td>
-										<td class="tableHead1"><c:out value="${list.ccgSeq }"/></td>
-										<td><c:out value="${list.ccgSeq }"/></td>
-										<td><c:out value="${list.ccgName }"/></td>
-										<td></td>
-										<td><c:out value="${list.ccCount }"/></td>
-										<td></td>
-										<td></td>
-									</tr>
-								</c:forEach>
+								<c:choose>
+									<c:when test="${fn:length(list) eq 0 }">
+										<tr>
+											<td class="text-center" colspan="8">There is no data!</td>
+										</tr>
+									</c:when>
+									<c:otherwise>
+										<c:forEach items="${list}" var="list" varStatus="status">
+											<tr>
+												<td class="tableHead1"><input class="listCheck" type="checkbox"></td>
+												<td class="tableHead1"><c:out value="${list.ccgSeq }"/></td>
+												<td><c:out value="${list.ccgSeq }"/></td>
+												<td><c:out value="${list.ccgName }"/></td>
+												<td></td>
+												<td><c:out value="${list.ccCount }"/></td>
+												<td></td>
+												<td></td>
+											</tr>
+										</c:forEach>
+									</c:otherwise>
+								</c:choose>
 							</table>
 						</div>
 						<div class="row mt-2 text-center">

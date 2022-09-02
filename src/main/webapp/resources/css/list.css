@@ -54,6 +54,11 @@ main {
   background-color: #d2f4ea;
 }
 
+.btn {
+	height: 38px;
+	width: 38px;
+}
+
 .scrollarea {
   overflow-y: auto;
 }

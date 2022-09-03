@@ -11,13 +11,11 @@
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT
 			a.*
-			,b.ccgName
-			,b.ccgSeq
 		FROM code a
 		JOIN codeGroup b on a.codeGroup_ccgSeq = b.ccgSeq
 		WHERE 1=1
 			AND ccDelNY = 0
-			Limit 0,10
+			AND ccName LIKE CONCAT('%',#{shValue},'%')
 	</select>
 
 </mapper>

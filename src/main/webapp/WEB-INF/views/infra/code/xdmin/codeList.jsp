@@ -43,7 +43,7 @@
 	<link href="/resources/css/list.css" rel="stylesheet">
 </head>
 <body>
-	<form action="">
+	<form action="/code/codeList" method="post">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<div class="col-1">
@@ -181,15 +181,20 @@
 							<div class="row mb-2">
 								<div class="col-2 p-1">
 									<select class="form-select">
-										<option>검색구분</option>
+										<option value="" <c:if test="${empty vo.shOption }">selected</c:if>>검색구분</option>
+										<option value="1" <c:if test="${vo.shOption eq 1 }">selected</c:if>>코드그룹 코드</option>
+										<option value="2" <c:if test="${vo.shOption eq 2 }">selected</c:if>>코드그룹 이름 (한글)</option>
+										<option value="3" <c:if test="${vo.shOption eq 3 }">selected</c:if>>코드</option>
+										<option value="4" <c:if test="${vo.shOption eq 4 }">selected</c:if>>대체 코드</option>
+										<option value="5" <c:if test="${vo.shOption eq 5 }">selected</c:if>>코드 이름 (한글)</option>
 									</select>
 								</div>
 								<div class="col-2 p-1">
-									<input class="form-control" type="text" placeholder="검색어">
+									<input id="shValue" name="shValue" value="<c:out value="${vo.shValue }"/>" class="form-control" type="search" placeholder="검색어">
 								</div>
 								<div class="col-1 p-1">
-									<a class="btn btn-warning" href="#" role="button"><i class="fa-solid fa-magnifying-glass"></i></a>
-									<a class="btn btn-danger" href="#" role="button"><i class="fa-solid fa-arrow-rotate-right"></i></a>
+									<button class="btn btn-warning" type="submit" role="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+									<button class="btn btn-danger" role="button"><i class="fa-solid fa-arrow-rotate-right"></i></button>
 								</div>
 							</div>
 						</div>

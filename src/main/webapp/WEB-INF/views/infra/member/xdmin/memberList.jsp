@@ -40,20 +40,20 @@
 		}
 	</style>
 	
-	<link href="../css/list.css" rel="stylesheet">
+	<link href="/resources/css/list.css" rel="stylesheet">
 </head>
 <body>
 	<form action="">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<div class="col-1">
-					<img src="../images/logo.png" alt="" style="width: 60px; height: 60px;">
+					<img src="/resources/images/logo.PNG" alt="" style="width: 60px; height: 60px;">
 				</div>
 				<div class="col-7 text-center">
 					<h4>인생만렙 Management System</h4>
 				</div>
 				<div class="col-1 text-center">
-					<img src="../images/men.png" class="border border-3 rounded-circle" style="height: 35%; width: 35%;" alt="">
+					<img src="/resources/images/men.png" class="border border-3 rounded-circle" style="height: 35%; width: 35%;" alt="">
 				</div>
 				<div class="col-2 text-start">
 					<span class="fs-5">Jiwon Shin</span>

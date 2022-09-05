@@ -5,8 +5,8 @@ public class CodeGroup {
 	private String ccgSeq;
 	private String ccgName;
 	private Integer ccgOrder;
-	private Integer ccgUseNY;
-	private Integer ccgDelNY;
+	private Integer ccgUseNy;
+	private Integer ccgDelNy;
 	private Integer ccCount;
 ////////////////////////////////////////
 	public String getCcgSeq() {
@@ -27,17 +27,17 @@ public class CodeGroup {
 	public void setCcgOrder(Integer ccgOrder) {
 		this.ccgOrder = ccgOrder;
 	}
-	public Integer getCcgUseNY() {
-		return ccgUseNY;
+	public Integer getCcgUseNy() {
+		return ccgUseNy;
 	}
-	public void setCcgUseNY(Integer ccgUseNY) {
-		this.ccgUseNY = ccgUseNY;
+	public void setCcgUseNy(Integer ccgUseNy) {
+		this.ccgUseNy = ccgUseNy;
 	}
-	public Integer getCcgDelNY() {
-		return ccgDelNY;
+	public Integer getCcgDelNy() {
+		return ccgDelNy;
 	}
-	public void setCcgDelNY(Integer ccgDelNY) {
-		this.ccgDelNY = ccgDelNY;
+	public void setCcgDelNy(Integer ccgDelNy) {
+		this.ccgDelNy = ccgDelNy;
 	}
 	public Integer getCcCount() {
 		return ccCount;

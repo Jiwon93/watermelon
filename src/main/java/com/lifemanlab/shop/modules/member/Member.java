@@ -16,6 +16,8 @@ public class Member {
 	private String mmAddress1;
 	private String mmAddress2;
 	private Integer mmDelNy;
+	private Integer mmRank;
+	private Integer mmJob;
 ///////////////////////////////////////////////
 	public String getMmSeq() {
 		return mmSeq;
@@ -88,6 +90,18 @@ public class Member {
 	}
 	public void setMmDelNy(Integer mmDelNy) {
 		this.mmDelNy = mmDelNy;
+	}
+	public Integer getMmRank() {
+		return mmRank;
+	}
+	public void setMmRank(Integer mmRank) {
+		this.mmRank = mmRank;
+	}
+	public Integer getMmJob() {
+		return mmJob;
+	}
+	public void setMmJob(Integer mmJob) {
+		this.mmJob = mmJob;
 	}
 	
 	

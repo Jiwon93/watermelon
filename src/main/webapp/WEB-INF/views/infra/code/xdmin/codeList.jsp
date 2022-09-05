@@ -162,8 +162,10 @@
 						<div class="col border me-4">
 							<div class="row mt-2 mb-2">
 								<div class="col-2 p-1">
-									<select class="form-select">
-										<option>N</option>
+									<select id="shDelNy" name="shDelNy" class="form-select">
+										<option value="" <c:if test="${empty vo.shDelNy }">selected</c:if>selected>삭제구분</option>
+										<option value="0" <c:if test="${vo.shDelNy eq 0 }">selected</c:if>>N</option>
+										<option value="1" <c:if test="${vo.shDelNy eq 1 }">selected</c:if>>Y</option>
 									</select>
 								</div>
 								<div class="col-2 p-1">

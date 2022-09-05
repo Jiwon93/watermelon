@@ -18,7 +18,8 @@ public class MemberDao {
 	private static String namespace = "com.lifemanlab.shop.modules.member.MemberMapper";
 	
 	public List<Member> selectList(MemberVo vo){ 
-		return sqlSession.selectList(namespace + ".selectList", vo); 
+		List<Member> list = sqlSession.selectList("com.lifemanlab.shop.modules.member.MemberMapper.selectList", vo);
+		return list; 
 	}
 
 }

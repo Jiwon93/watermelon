@@ -14,8 +14,16 @@
 		FROM code a
 		JOIN codeGroup b on a.codeGroup_ccgSeq = b.ccgSeq
 		WHERE 1=1
-			AND ccDelNY = 0
-			AND ccName LIKE CONCAT('%',#{shValue},'%')
+			<!-- AND ccDelNY = 0 -->
+			<!-- AND ccName LIKE CONCAT('%',#{shValue},'%') -->
+			<if test="shDelNy != null and !shDelNy.equals('')">AND ccDelNy = #{shDelNy}</if>
+			<choose>
+				<!-- <when test="shDelNy == 0">AND ccDelNy = 0</when> -->
+				<!-- <when test="shDelNy == 1">AND ccDelNy = 1</when> -->
+				<when test="shOption == 1">AND ccSeq = #{shValue}</when>
+				<when test="shOption == 2">AND ccName LIKE CONCAT('%',#{shValue},'%')</when>
+				<otherwise></otherwise>
+			</choose>
 	</select>
 
 </mapper>

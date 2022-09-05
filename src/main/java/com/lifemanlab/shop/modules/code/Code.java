@@ -6,8 +6,8 @@ public class Code {
 	private String ccName;
 	private String codeGroup_ccgSeq;
 	private Integer ccOrder;
-	private Integer ccUseNY;
-	private Integer ccDelNY;
+	private Integer ccUseNy;
+	private Integer ccDelNy;
 	private String ccgName;
 	private Integer ccgSeq;
 /////////////////////////////////////////////////
@@ -35,17 +35,17 @@ public class Code {
 	public void setCcOrder(Integer ccOrder) {
 		this.ccOrder = ccOrder;
 	}
-	public Integer getCcUseNY() {
-		return ccUseNY;
+	public Integer getCcUseNy() {
+		return ccUseNy;
 	}
-	public void setCcUseNY(Integer ccUseNY) {
-		this.ccUseNY = ccUseNY;
+	public void setCcUseNy(Integer ccUseNy) {
+		this.ccUseNy = ccUseNy;
 	}
-	public Integer getCcDelNY() {
-		return ccDelNY;
+	public Integer getCcDelNy() {
+		return ccDelNy;
 	}
-	public void setCcDelNY(Integer ccDelNY) {
-		this.ccDelNY = ccDelNY;
+	public void setCcDelNy(Integer ccDelNy) {
+		this.ccDelNy = ccDelNy;
 	}
 	public String getCcgName() {
 		return ccgName;

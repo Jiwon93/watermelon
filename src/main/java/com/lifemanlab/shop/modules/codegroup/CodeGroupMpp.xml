@@ -11,7 +11,7 @@
 	<sql id="selectCommon">
 		FROM codeGroup a
 		WHERE 1=1
-			<if test="shDelNy != null and !shDelNy.equals('')">AND ccgDelNY = #{shDelNy}</if>
+			<if test="shDelNy != null and !shDelNy.equals('')">AND ccgDelNy = #{shDelNy}</if>
 			<choose>
 				<when test="shOption == 1">AND ccgSeq = #{shValue}</when>
 				<when test="shOption == 2">AND ccgName LIKE CONCAT('%',#{shValue},'%')</when>
@@ -21,10 +21,10 @@
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT
 			a.*
-			,(SELECT COUNT(ccSEq) FROM code WHERE 1=1 AND ccgSeq = codeGroup_ccgSeq) AS ccCount
+			,(SELECT COUNT(ccSeq) FROM code WHERE 1=1 AND ccgSeq = codeGroup_ccgSeq) AS ccCount
 		FROM codeGroup a
 		WHERE 1=1
-			AND ccgDelNY = 0
+			AND ccgDelNy = 0
 			AND ccgName LIKE CONCAT('%',#{shValue},'%')
 	</select>
 

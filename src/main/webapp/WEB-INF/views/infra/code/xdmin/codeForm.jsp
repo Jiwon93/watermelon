@@ -167,9 +167,15 @@
 						<h4>코드 관리</h4>
 						<div class="container-fluid">
 							<div class="row m-4">
-								<div class="col-6">
+								<div class="col mx-auto">
 									<label class="form-label" for="codeGroup_ccgSeq">코드그룹</label>
 									<input type="text" class="form-control" id="codeGroup_ccgSeq" name="codeGroup_ccgSeq" <c:out value="${dto.codeGroup_ccgSeq }"/>>
+								</div>
+								<div class="col mx-auto">
+									<label class="form-label" for="">코드그룹 이름 (한글)</label>
+									<select class="form-select" id="" name="" value="">
+										<option>선택</option>
+									</select>
 								</div>
 							</div>
 							<div class="row m-4">
@@ -195,9 +201,10 @@
 							<div class="row m-4">
 								<div class="col mx-auto">
 									<label class="form-label" for="ccUseNy">사용여부</label>
-									<select class="form-select" id="">
-										<option>Y</option>
-										<option>N</option>
+									<select class="form-select" id="ccUseNy" name="ccUseNy">
+										<option value="" <c:if test="${empty dto.ccUseNy }">selected</c:if>>사용여부 선택</option>
+										<option value="1" <c:if test="${dto.ccUseNy eq 1 }">selected</c:if>>Y</option>
+										<option value="0" <c:if test="${dto.ccUseNy eq 0 }">selected</c:if>>N</option>
 									</select>
 								</div>
 								<div class="col mx-auto">

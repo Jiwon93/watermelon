@@ -240,8 +240,8 @@
 									<td></td>
 									<td><c:out value="${list.ccName }"/></td>
 									<td></td>
-									<td></td>
-									<td></td>
+									<td><c:out value="${list.ccUseNy }"/></td>
+									<td><c:out value="${list.ccOrder }"/></td>
 									<td></td>
 									<td></td>
 								</tr>

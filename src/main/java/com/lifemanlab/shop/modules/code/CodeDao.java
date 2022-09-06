@@ -23,4 +23,10 @@ public class CodeDao {
 		return list; 
 	}
 
+	public int insert(Code dto) {
+		int result = sqlSession.insert(namespace + ".insert", dto);
+		System.out.println("dao result: " + result);
+		return result;
+	}
+
 }

@@ -15,7 +15,7 @@ public class CodeGroupController {
 	CodeGroupServiceImpl service;
 	
 	@RequestMapping(value = "codeGroupList")
-	public String codeGroup(Model model, CodeGroupVo vo) throws Exception {
+	public String codeGroupList(Model model, CodeGroupVo vo) throws Exception {
 
 		System.out.println("vo.getShValue(): " + vo.getShValue());
 		System.out.println("vo.getShOption(): " + vo.getShOption());
@@ -26,5 +26,20 @@ public class CodeGroupController {
 		
 		return "infra/codegroup/xdmin/codeGroupList";
 	}
+	
+	@RequestMapping(value = "codeGroupForm")
+	public String codeGroupForm() throws Exception {
+		return "infra/codegroup/xdmin/codeGroupForm";
+	}
+	
+	@RequestMapping(value = "codeGroupInst")
+	public String codeGroupInst(CodeGroup dto) throws Exception {
+		
+		int result = service.insert(dto);
+		System.out.println("controller result: " + result);
+		
+		return "redirect:/codeGroup/codeGroupList";
+	}
+	
 
 }

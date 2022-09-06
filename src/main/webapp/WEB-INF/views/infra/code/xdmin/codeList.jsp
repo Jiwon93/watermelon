@@ -284,7 +284,7 @@
 							</div>
 							<div class="col" style="text-align: right;">
 								<button class="btn btn-success" type="button" id="clExcel"><i class="fa-regular fa-file-excel"></i></button>
-								<button class="btn btn-primary" type="button" id="clPlus"><i class="fa-regular fa-plus"></i></button>
+								<button class="btn btn-primary" type="button" id="clPlus" onclick="location.href='codeForm'"><i class="fa-regular fa-plus"></i></button>
 							</div>
 						</div>
 					</div>

@@ -1,5 +1,7 @@
 package com.lifemanlab.shop.modules.codegroup;
 
+import java.sql.Date;
+
 public class CodeGroup {
 	
 	private String ccgSeq;
@@ -8,6 +10,8 @@ public class CodeGroup {
 	private Integer ccgUseNy;
 	private Integer ccgDelNy;
 	private Integer ccCount;
+	private String ccgNameEng;
+	private Date ccgRegDatetime;
 ////////////////////////////////////////
 	public String getCcgSeq() {
 		return ccgSeq;
@@ -44,6 +48,18 @@ public class CodeGroup {
 	}
 	public void setCcCount(Integer ccCount) {
 		this.ccCount = ccCount;
+	}
+	public String getCcgNameEng() {
+		return ccgNameEng;
+	}
+	public void setCcgNameEng(String ccgNameEng) {
+		this.ccgNameEng = ccgNameEng;
+	}
+	public Date getCcgRegDatetime() {
+		return ccgRegDatetime;
+	}
+	public void setCcgRegDatetime(Date ccgRegDatetime) {
+		this.ccgRegDatetime = ccgRegDatetime;
 	}
 	
 	

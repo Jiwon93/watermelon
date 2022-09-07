@@ -28,18 +28,20 @@
 	
 	<insert id="insert">
 		INSERT INTO codeGroup (
-			ccgSeq
-			,ccgName
+			ccgName
+			,ccgNameEng
 			,ccgOrder
 			,ccgUseNy
 			,ccgDelNy
+			,ccgRegDatetime
 		)
 		VALUES (
-			#{ccgSeq}
-			,#{ccgName}
+			#{ccgName}
+			,#{ccgNameEng}
 			,#{ccgOrder}
 			,#{ccgUseNy}
-			,0
+			,#{ccgDelNy}
+			,#{ccgRegDatetime}
 		)
 			<selectKey resultType="String" keyProperty="ccgSeq" order="AFTER">
 				SELECT last_insert_id()

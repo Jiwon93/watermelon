@@ -167,14 +167,13 @@
 						<h4>코드 관리</h4>
 						<div class="container-fluid">
 							<div class="row m-4">
-								<div class="col mx-auto">
-									<label class="form-label" for="codeGroup_ccgSeq">코드그룹</label>
-									<input type="text" class="form-control" id="codeGroup_ccgSeq" name="codeGroup_ccgSeq" <c:out value="${dto.codeGroup_ccgSeq }"/>>
-								</div>
-								<div class="col mx-auto">
-									<label class="form-label" for="">코드그룹 이름 (한글)</label>
-									<select class="form-select" id="" name="" value="">
+								<div class="col-6">
+									<label class="form-label" for="ccgName">코드그룹</label>
+									<select class="form-select" id="ccgName">
 										<option>선택</option>
+										<c:forEach items="${ccgList}" var="ccgList" varStatus="status">
+										<option value="${ccgList.ccgSeq }" ><c:out value="${ccgList.ccgName }"/></option>
+										</c:forEach>
 									</select>
 								</div>
 							</div>
@@ -194,8 +193,8 @@
 									<input type="text" class="form-control" id="ccName" name="ccName" <c:out value="${dto.ccName }"/>>
 								</div>
 								<div class="col mx-auto">
-									<label class="form-label" for="cfCodeNameEng">코드 이름 (영문)</label>
-									<input type="text" class="form-control" id="cfCodeNameEng">
+									<label class="form-label" for="ccNameEng">코드 이름 (영문)</label>
+									<input type="text" class="form-control" id="ccNameEng" name="ccNameEng">
 								</div>
 							</div>
 							<div class="row m-4">
@@ -208,8 +207,8 @@
 									</select>
 								</div>
 								<div class="col mx-auto">
-									<label class="form-label" for="cfOrder">순서</label>
-									<input type="text" class="form-control" id="cfOrder">
+									<label class="form-label" for="ccOrder">순서</label>
+									<input type="text" class="form-control" id="ccOrder" name="ccOrder">
 								</div>
 							</div>
 							<div class="row m-4">
@@ -218,41 +217,11 @@
 									<textarea  class="form-control" id="cfExplain"></textarea>
 								</div>
 								<div class="col mx-auto">
-									<label class="form-label" for="cfDelNy">삭제여부</label>
-									<select class="form-select" id="cfDelNy">
+									<label class="form-label" for="ccDelNy">삭제여부</label>
+									<select class="form-select" id="ccDelNy" name="ccDelNy">
 										<option>Y</option>
 										<option>N</option>
 									</select>
-								</div>
-							</div>
-							<div class="row m-4">
-								<div class="col mx-auto">
-									<label class="form-label" for="cfSpareVar1">예비1 (varchar type)</label>
-									<input type="text" class="form-control" id="cfSpareVar1" placeholder="영문(대소문자),숫자">
-								</div>
-								<div class="col mx-auto">
-									<label class="form-label" for="cfSpareVar2">예비2 (varchar type)</label>
-									<input type="text" class="form-control" id="cfSpareVar" placeholder="영문(대소문자),숫자">
-								</div>
-							</div>
-							<div class="row m-4">
-								<div class="col mx-auto">
-									<label class="form-label" for="cfSpareVar3">예비3 (varchar type)</label>
-									<input type="text" class="form-control" id="cfSpareVar3" placeholder="영문(대소문자),숫자">
-								</div>
-								<div class="col mx-auto">
-									<label class="form-label" for="cfSpareVar4">예비4 (varchar type)</label>
-									<input type="text" class="form-control" id="cfSpareVar4" placeholder="영문(대소문자),숫자">
-								</div>
-							</div>
-							<div class="row m-4">
-								<div class="col mx-auto">
-									<label class="form-label" for="cfSpareInt1">예비1 (int type)</label>
-									<input type="text" class="form-control" id="cfSpareInt1" placeholder="숫자">
-								</div>
-								<div class="col mx-auto">
-									<label class="form-label" for="cfSpareInt2">예비2 (int type)</label>
-									<input type="text" class="form-control" id="cfSpareInt2" placeholder="숫자">
 								</div>
 							</div>
 							<div class="row m-4">

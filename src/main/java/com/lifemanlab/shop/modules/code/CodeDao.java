@@ -23,6 +23,11 @@ public class CodeDao {
 		return list; 
 	}
 
+	public List<Code> ccgNameList(){
+		List<Code> ccgList = sqlSession.selectList("com.lifemanlab.shop.modules.code.CodeMapper.ccgNameList", "");
+		return ccgList;
+	}
+	
 	public int insert(Code dto) {
 		int result = sqlSession.insert(namespace + ".insert", dto);
 		System.out.println("dao result: " + result);

@@ -40,7 +40,7 @@
 	<link href="/resources/css/list.css" rel="stylesheet">
 </head>
 <body>
-	<form action="codeGroupInst">
+	<form action="codeGroupInst" name="myForm" id="myForm">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<div class="col-1">
@@ -154,7 +154,7 @@
 							<div class="row m-4">
 								<div class="col-6">
 									<label class="form-label" for="ccgSeq">코드그룹 코드</label>
-									<input type="text" class="form-control" id="ccgSeq" name="ccgSeq" <c:out value="${dto.ccgSeq }"/> placeholder="영문(대소문자),숫자">
+									<input type="text" class="form-control" id="ccgSeq" placeholder="자동생성" readonly>
 								</div>
 								<div class="col-6">
 									<label class="form-label" for="cgfCodeGroupCodeAnother">코드그룹 코드 (Another)</label>
@@ -167,21 +167,22 @@
 									<input type="text" class="form-control" id="ccgName" name="ccgName" <c:out value="${dto.ccgName }"/> placeholder="한글,숫자">
 								</div>
 								<div class="col mx-auto">
-									<label class="form-label" for="cgfCodeGroupNameEng">코드그룹 이름 (영문)</label>
-									<input type="text" class="form-control" id="cgfCodeGroupNameEng" placeholder="영문(대소문자),숫자">
+									<label class="form-label" for="ccgNameEng">코드그룹 이름 (영문)</label>
+									<input type="text" class="form-control" id="ccgNameEng" name="ccgNameEng" <c:out value="${dto.ccgNameEng }"/> placeholder="영문(대소문자),숫자">
 								</div>
 							</div>
 							<div class="row m-4">
 								<div class="col mx-auto">
 									<label class="form-label" for="ccgUseNy">사용여부</label>
-									<select class="form-select" id="ccgUseNy">
-										<option>Y</option>
-										<option>N</option>
+									<select class="form-select" id="ccgUseNy" name="ccgUseNy">
+										<option value="" <c:if test="${empty dto.ccgUseNy }">selected</c:if>>사용여부 선택</option>
+										<option value="1" <c:if test="${dto.ccgUseNy eq 1 }">selected</c:if>>Y</option>
+										<option value="0" <c:if test="${dto.ccgUseNy eq 0 }">selected</c:if>>N</option>
 									</select>
 								</div>
 								<div class="col mx-auto">
-									<label class="form-label" for="cgfOrder">순서</label>
-									<input type="text" class="form-control" id="cgfOrder" placeholder="숫자">
+									<label class="form-label" for="ccgOrder">순서</label>
+									<input type="text" class="form-control" id="ccgOrder" name="ccgOrder" <c:out value="${dto.ccgOrder }"/> placeholder="숫자">
 								</div>
 							</div>
 							<div class="row m-4">
@@ -190,50 +191,29 @@
 									<textarea  class="form-control" id="cgfExplain"></textarea>
 								</div>
 								<div class="col mx-auto">
-									<label class="form-label" for="cgfDelNy">삭제여부</label>
-									<select class="form-select" id="cgfDelNy">
-										<option>Y</option>
-										<option>N</option>
-									</select>
+									<label class="form-label" for="ccgDelNy">삭제여부</label>
+									<%-- 
+									<select class="form-select" id="ccgDelNy" name="ccgDelNy">
+										<option value="" <c:if test="${empty dto.ccgDelNy }">selected</c:if>>삭제여부 선택</option>
+										<option value="1" <c:if test="${dto.ccgDelNy eq 1 }">selected</c:if>>Y</option>
+										<option value="0" <c:if test="${dto.ccgDelNy eq 0 }">selected</c:if>>N</option>
+									</select> 
+									--%>
+									<%-- 
+									<input type="radio" id="ccgDelNy1" name="ccgDelNy" value="1" <c:if test="${dto.ccgDelNy eq 1 }">selected</c:if>>Y
+									<input type="radio" id="ccgDelNy0" name="ccgDelNy" value="0" <c:if test="${dto.ccgDelNy eq 0 }">selected</c:if>>N
+									 --%>
+									<input type="radio" id="ccgDelNy1" name="ccgDelNy" value="1">Y
+									<input type="radio" id="ccgDelNy0" name="ccgDelNy" value="0">N
 								</div>
 							</div>
 							<div class="row m-4">
 								<div class="col mx-auto">
-									<label class="form-label" for="cgfSpareVar1">예비1 (varchar type)</label>
-									<input type="text" class="form-control" id="cgfSpareVar1" placeholder="영문(대소문자),숫자">
+									<label class="form-label" for="ccgRegDatetime">코드 등록 날짜</label>
+									<input type="text" class="form-control" id="ccgRegDatetime" name="ccgRegDatetime" <c:out value="${dto.ccgRegDatetime }"/> placeholder="2000-00-00">
 								</div>
 								<div class="col mx-auto">
-									<label class="form-label" for="cgfSpareVar2">예비2 (varchar type)</label>
-									<input type="text" class="form-control" id="cgfSpareVar2" placeholder="영문(대소문자),숫자">
-								</div>
-							</div>
-							<div class="row m-4">
-								<div class="col mx-auto">
-									<label class="form-label" for="cgfSpareVar3">예비3 (varchar type)</label>
-									<input type="text" class="form-control" id="cgfSpareVar3" placeholder="영문(대소문자),숫자">
-								</div>
-								<div class="col mx-auto">
-									<label class="form-label" for=""cgfSpareVar4"">예비4 (varchar type)</label>
-									<input type="text" class="form-control" id="cgfSpareVar4" placeholder="영문(대소문자),숫자">
-								</div>
-							</div>
-							<div class="row m-4">
-								<div class="col mx-auto">
-									<label class="form-label" for="cgfSpareInt1">예비1 (int type)</label>
-									<input type="text" class="form-control" id="cgfSpareInt1" placeholder="숫자">
-								</div>
-								<div class="col mx-auto">
-									<label class="form-label" for="cgfSpareInt2">예비2 (int type)</label>
-									<input type="text" class="form-control" id="cgfSpareInt2" placeholder="숫자">
-								</div>
-							</div>
-							<div class="row m-4">
-								<div class="col mx-auto">
-									<label class="form-label" for="cgfSpareInt3">예비3 (int type)</label>
-									<input type="text" class="form-control" id="cgfSpareInt3" placeholder="숫자">
-								</div>
-								<div class="col mx-auto">
-									<label class="form-label" for="cgfSpareInt4">예비4 (int type)</label>
+									<label class="form-label" for="cgfSpareInt4">코드 수정 날짜</label>
 									<input type="text" class="form-control" id="cgfSpareInt4" placeholder="숫자">
 								</div>
 							</div>
@@ -251,7 +231,7 @@
 								<button class="btn btn-danger" type="button" id="cgfDel">
 									<i class="fa-regular fa-trash-can"></i>
 								</button>
-								<button class="btn btn-success" type="submit" onclick="location.href='codeGroupList'" id="cgfReg">
+								<button class="btn btn-success" type="button" onclick="test();">
 									<i class="fa-regular fa-file-excel"></i>
 								</button>
 							</div>
@@ -282,5 +262,65 @@
 	<script src="/resources/js/list.js"></script>
 	<script src="/resources/js/sidebar.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		function test() {
+			
+		
+			alert(document.getElementById("ccgName").value);
+			alert(document.getElementById('ccgNameEng').value);
+			alert(document.getElementById('ccgUseNy').value);
+			alert(document.getElementById('ccgOrder').value);
+			alert(document.querySelector("input[name='ccgDelNy']:checked").value);
+			alert(document.getElementById('ccgRegDatetime').value);
+			
+			if(document.getElementById("ccgName").value == '' || document.getElementById("ccgName").value == null){
+				alert("이름을 입력해 주세요");
+				document.getElementById("ccgName").value= "";
+				document.getElementById("ccgName").focus();
+				return false;
+			}
+			
+			if(document.getElementById("ccgNameEng").value == '' || document.getElementById("ccgNameEng").value == null){
+				alert("이름(영문)을 입력해 주세요");
+				document.getElementById("ccgNameEng").value= "";
+				document.getElementById("ccgNameEng").focus();
+				return false;
+			}
+			
+			if(document.getElementById('ccgUseNy').value == '' || document.getElementById('ccgUseNy').value == null) {
+				alert("사용여부를 선택해 주세요");
+				document.getElementById('ccgUseNy').value= "";
+				document.getElementById('ccgUseNy').focus();
+				return false;
+			}
+			
+			if(document.getElementById("ccgOrder").value == '' || document.getElementById("ccgOrder").value == null) {
+				alert("순서를 입력해 주세요");
+				document.getElementById("ccgOrder").value= "";
+				document.getElementById("ccgOrder").focus();
+				return false;
+			}
+			
+			if(document.querySelector("input[name='ccgDelNy']:checked").value == '' || document.querySelector("input[name='ccgDelNy']:checked").value == null) {
+				alert("삭제여부를 선택해 주세요");
+				document.querySelector("input[name='ccgDelNy']:checked").value="";
+				document.querySelector("input[name='ccgDelNy']:checked").focus();
+				return false;
+			}
+			
+			if(document.getElementById("ccgRegDatetime").value == '' || document.getElementById("ccgRegDatetime").value == null) {
+				alert("등록일자를 입력해 주세요");
+				document.getElementById("ccgRegDatetime").value= "";
+				document.getElementById("ccgRegDatetime").focus();
+				return false;
+			}
+			
+			/* document.getElementById("myForm").submit(); */
+			return false;
+		}
+			
+			
+	
+	</script>
 </body>
 </html>

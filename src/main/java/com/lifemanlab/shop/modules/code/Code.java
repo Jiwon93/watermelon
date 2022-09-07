@@ -1,5 +1,7 @@
 package com.lifemanlab.shop.modules.code;
 
+import java.sql.Date;
+
 public class Code {
 	
 	private String ccSeq;
@@ -10,6 +12,8 @@ public class Code {
 	private Integer ccDelNy;
 	private String ccgName;
 	private Integer ccgSeq;
+	private String ccNameEng;
+	private Date ccRegDatetime;
 /////////////////////////////////////////////////
 	public String getCcSeq() {
 		return ccSeq;
@@ -59,6 +63,19 @@ public class Code {
 	public void setCcgSeq(Integer ccgSeq) {
 		this.ccgSeq = ccgSeq;
 	}
+	public String getCcNameEng() {
+		return ccNameEng;
+	}
+	public void setCcNameEng(String ccNameEng) {
+		this.ccNameEng = ccNameEng;
+	}
+	public Date getCcRegDatetime() {
+		return ccRegDatetime;
+	}
+	public void setCcRegDatetime(Date ccRegDatetime) {
+		this.ccRegDatetime = ccRegDatetime;
+	}
+	
 	
 
 }

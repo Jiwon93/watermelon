@@ -28,11 +28,12 @@ public class CodeController {
 	}
 	
 	@RequestMapping(value = "codeForm")
-	public String codeForm() throws Exception {
+	public String codeForm(Model model) throws Exception {
+		List<Code> ccgList = service.ccgNameList();
+		model.addAttribute("ccgList", ccgList);
 		return "infra/code/xdmin/codeForm";
 	}
-		
-		
+	
 	@RequestMapping(value = "codeInst")
 	public String codeInst(Code dto) throws Exception {
 		

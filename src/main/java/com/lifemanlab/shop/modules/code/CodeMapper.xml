@@ -31,24 +31,37 @@
 			</choose>
 	</select>
 	
+	<select id="ccgNameList" resultMap="resultMapObj">
+		SELECT
+			a.*
+		FROM codeGroup a
+		WHERE 1=1
+	</select>
+	
 	<insert id="insert">
 		INSERT INTO code (
 			ccName
+			,ccNameEng
 			,codeGroup_ccgSeq
 			,ccOrder
 			,ccUseNy
 			,ccDelNy
+			,ccRegDatetime
 		)
 		VALUES (
 			#{ccName}
+			,#{ccNameEng}
 			,#{codeGroup_ccgSeq}
 			,#{ccOrder}
 			,#{ccUseNy}
-			,0
+			,#{ccDelNy}
+			,#{ccRegDatetime}
 		)
 			<selectKey resultType="String" keyProperty="ccSeq" order="AFTER">
 				SELECT last_insert_id()
 			</selectKey>
 	</insert>
+	
+	
 
 </mapper>

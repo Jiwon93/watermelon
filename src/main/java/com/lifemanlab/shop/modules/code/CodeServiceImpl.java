@@ -17,6 +17,17 @@ public class CodeServiceImpl implements CodeService {
 		List<Code> list = dao.selectList(vo);
 		return list;
 	}
+	
+	
+
+	@Override
+	public List<Code> ccgNameList() throws Exception {
+		
+		List<Code> ccgList = dao.ccgNameList();
+		return ccgList;
+	}
+
+
 
 	@Override
 	public int insert(Code dto) throws Exception {

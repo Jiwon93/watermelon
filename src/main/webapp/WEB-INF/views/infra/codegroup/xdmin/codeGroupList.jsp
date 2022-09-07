@@ -229,13 +229,16 @@
 									<td class="tableHead">코드그룹 이름 (한글)</td>
 									<td class="tableHead">코드그룹 이름 (영문)</td>
 									<td class="tableHead">코드갯수</td>
+									<td class="tableHead">사용여부</td>
+									<td class="tableHead">순서</td>
+									<td class="tableHead">삭제여부</td>
 									<td class="tableHead">등록일</td>
 									<td class="tableHead">수정일</td>
 								</tr>
 								<c:choose>
 									<c:when test="${fn:length(list) eq 0 }">
 										<tr>
-											<td class="text-center" colspan="8">There is no data!</td>
+											<td class="text-center" colspan="11">There is no data!</td>
 										</tr>
 									</c:when>
 									<c:otherwise>
@@ -245,9 +248,12 @@
 												<td class="tableHead1"><c:out value="${list.ccgSeq }"/></td>
 												<td><c:out value="${list.ccgSeq }"/></td>
 												<td><c:out value="${list.ccgName }"/></td>
-												<td></td>
+												<td><c:out value="${list.ccgNameEng }"/></td>
 												<td><c:out value="${list.ccCount }"/></td>
-												<td></td>
+												<td><c:out value="${list.ccgUseNy }"/></td>
+												<td><c:out value="${list.ccgOrder }"/></td>
+												<td><c:out value="${list.ccgDelNy }"/></td>
+												<td><c:out value="${list.ccgRegDatetime }"/></td>
 												<td></td>
 											</tr>
 										</c:forEach>

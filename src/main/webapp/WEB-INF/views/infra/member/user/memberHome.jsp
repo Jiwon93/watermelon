@@ -155,7 +155,7 @@
                 <div class="col-md-6 col-lg-3 wow">
                     <div class="service-item">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="../images/laptop.jpg" alt="">
+                            <img class="img-fluid" src="/resources/images/laptop.jpg" alt="">
                         </div>
                         <div class="p-4 text-center border border-5 border-light border-top-0">
                             <h5 class="mb-3">개발/디자인</h5>

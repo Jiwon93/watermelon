@@ -25,6 +25,12 @@ public class CodeGroupDao {
 		return list; 
 	}
 	
+	public CodeGroup selectOne(CodeGroupVo vo) {
+		CodeGroup item = sqlSession.selectOne(namespace + ".selectOne", vo);
+		System.out.println("dao item: " + item);
+		return item;
+	}
+	
 	public int insert(CodeGroup dto) {
 		int result = sqlSession.insert(namespace + ".insert", dto);
 		System.out.println("dao result: " + result);

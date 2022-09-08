@@ -27,6 +27,16 @@ public class CodeGroupController {
 		return "infra/codegroup/xdmin/codeGroupList";
 	}
 	
+	@RequestMapping(value = "codeGroupView")
+	public String codeGroupView(Model model, CodeGroupVo vo) throws Exception {
+		CodeGroup item = service.selectOne(vo);
+		System.out.println("controller item: " + item);
+		model.addAttribute("item", item);
+		
+		return "infra/codegroup/xdmin/codeGroupView";
+	}
+		
+	
 	@RequestMapping(value = "codeGroupForm")
 	public String codeGroupForm() throws Exception {
 		return "infra/codegroup/xdmin/codeGroupForm";

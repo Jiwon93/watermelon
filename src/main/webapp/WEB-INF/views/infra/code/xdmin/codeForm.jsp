@@ -168,8 +168,8 @@
 						<div class="container-fluid">
 							<div class="row m-4">
 								<div class="col-6">
-									<label class="form-label" for="ccgName">코드그룹</label>
-									<select class="form-select" id="ccgName">
+									<label class="form-label" for="codeGroup_ccgSeq">코드그룹</label>
+									<select class="form-select" id="codeGroup_ccgSeq" name="codeGroup_ccgSeq">
 										<option>선택</option>
 										<c:forEach items="${ccgList}" var="ccgList" varStatus="status">
 										<option value="${ccgList.ccgSeq }" ><c:out value="${ccgList.ccgName }"/></option>
@@ -219,8 +219,9 @@
 								<div class="col mx-auto">
 									<label class="form-label" for="ccDelNy">삭제여부</label>
 									<select class="form-select" id="ccDelNy" name="ccDelNy">
-										<option>Y</option>
-										<option>N</option>
+										<option value="" <c:if test="${empty dto.ccDelNy }">selected</c:if>>삭제여부 선택</option>
+										<option value="1" <c:if test="${dto.ccDelNy eq 1 }">selected</c:if>>Y</option>
+										<option value="0" <c:if test="${dto.ccDelNy eq 0 }">selected</c:if>>N</option>
 									</select>
 								</div>
 							</div>

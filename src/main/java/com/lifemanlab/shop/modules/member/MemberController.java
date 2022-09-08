@@ -27,5 +27,18 @@ public class MemberController {
 		
 		return "infra/member/xdmin/memberList";
 	}
+	
+	@RequestMapping(value = "memberRegFormC")
+	public String memberRegFormC() throws Exception {
+		return "infra/member/user/memberRegFormC";
+	}
+	
+	@RequestMapping(value = "memberInst")
+	public String memberInst(Member dto) throws Exception {
+		int result = service.insert(dto);
+		System.out.println("controller result: " + result);
+		
+		return "redirect:/member/loginForm";
+	}
 
 }

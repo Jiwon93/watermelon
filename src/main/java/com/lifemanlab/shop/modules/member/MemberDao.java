@@ -21,5 +21,11 @@ public class MemberDao {
 		List<Member> list = sqlSession.selectList("com.lifemanlab.shop.modules.member.MemberMapper.selectList", vo);
 		return list; 
 	}
+	
+	public int insert(Member dto) {
+		int result = sqlSession.insert(namespace + ".insert", dto);
+		System.out.println("dao result: " + result);
+		return result;
+	}
 
 }

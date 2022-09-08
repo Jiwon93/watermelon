@@ -18,6 +18,20 @@ public class Member {
 	private Integer mmDelNy;
 	private Integer mmRank;
 	private Integer mmJob;
+	private Integer	mmInterest;
+	private Integer mmSpecial;
+	private Integer mmDetail;
+	private Integer mmTechnique;
+	private Integer mmCareer;
+	private Integer mmSchool;
+	private Integer mmSchoolMajor;
+	private Integer mmSchoolState;
+	private Integer mmCertificate;
+	private Integer mmWishPay;
+	private Integer mmWorkTime;
+	private String mmIntroduce;
+	private Integer mmCash;
+	
 ///////////////////////////////////////////////
 	public String getMmSeq() {
 		return mmSeq;
@@ -102,6 +116,84 @@ public class Member {
 	}
 	public void setMmJob(Integer mmJob) {
 		this.mmJob = mmJob;
+	}
+	public Integer getMmInterest() {
+		return mmInterest;
+	}
+	public void setMmInterest(Integer mmInterest) {
+		this.mmInterest = mmInterest;
+	}
+	public Integer getMmSpecial() {
+		return mmSpecial;
+	}
+	public void setMmSpecial(Integer mmSpecial) {
+		this.mmSpecial = mmSpecial;
+	}
+	public Integer getMmDetail() {
+		return mmDetail;
+	}
+	public void setMmDetail(Integer mmDetail) {
+		this.mmDetail = mmDetail;
+	}
+	public Integer getMmTechnique() {
+		return mmTechnique;
+	}
+	public void setMmTechnique(Integer mmTechnique) {
+		this.mmTechnique = mmTechnique;
+	}
+	public Integer getMmCareer() {
+		return mmCareer;
+	}
+	public void setMmCareer(Integer mmCareer) {
+		this.mmCareer = mmCareer;
+	}
+	public Integer getMmSchool() {
+		return mmSchool;
+	}
+	public void setMmSchool(Integer mmSchool) {
+		this.mmSchool = mmSchool;
+	}
+	public Integer getMmSchoolMajor() {
+		return mmSchoolMajor;
+	}
+	public void setMmSchoolMajor(Integer mmSchoolMajor) {
+		this.mmSchoolMajor = mmSchoolMajor;
+	}
+	public Integer getMmSchoolState() {
+		return mmSchoolState;
+	}
+	public void setMmSchoolState(Integer mmSchoolState) {
+		this.mmSchoolState = mmSchoolState;
+	}
+	public Integer getMmCertificate() {
+		return mmCertificate;
+	}
+	public void setMmCertificate(Integer mmCertificate) {
+		this.mmCertificate = mmCertificate;
+	}
+	public Integer getMmWishPay() {
+		return mmWishPay;
+	}
+	public void setMmWishPay(Integer mmWishPay) {
+		this.mmWishPay = mmWishPay;
+	}
+	public Integer getMmWorkTime() {
+		return mmWorkTime;
+	}
+	public void setMmWorkTime(Integer mmWorkTime) {
+		this.mmWorkTime = mmWorkTime;
+	}
+	public String getMmIntroduce() {
+		return mmIntroduce;
+	}
+	public void setMmIntroduce(String mmIntroduce) {
+		this.mmIntroduce = mmIntroduce;
+	}
+	public Integer getMmCash() {
+		return mmCash;
+	}
+	public void setMmCash(Integer mmCash) {
+		this.mmCash = mmCash;
 	}
 	
 	

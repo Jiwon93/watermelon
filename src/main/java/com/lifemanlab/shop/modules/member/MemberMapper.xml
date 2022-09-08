@@ -26,5 +26,75 @@
 				<when test="shOption == 7">AND mmGender LIKE CONCAT('%',#{shValue},'%')</when>
 			</choose>
 	</select>
+	
+	<select id="memberPhoneList" resultMap="resultMapObj">
+		SELECT
+			a.*
+		FROM member_phone
+		WHERE 1=1
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO member (
+			mmName
+			,mmNickname
+			,mmEmail
+			,mmEmailSelect
+			,mmPw
+			,mmBod
+			,mmGender
+			,mmZip
+			,mmAddress1
+			,mmAddress2
+			,mmDelNy
+			,mmRank
+			,mmJob
+			,mmInterest
+			,mmSpecial
+			,mmDetail
+			,mmTechnique
+			,mmCareer
+			,mmSchool
+			,mmSchoolMajor
+			,mmSchoolState
+			,mmCertificate
+			,mmWishPay
+			,mmWorkTime
+			,mmIntroduce
+			,mmCash
+		)
+		VALUES (
+			#{mmName}
+			,#{mmNickname}
+			,#{mmEmail}
+			,#{mmEmailSelect}
+			,#{mmPw}
+			,#{mmBod}
+			,#{mmGender}
+			,#{mmZip}
+			,#{mmAddress1}
+			,#{mmAddress2}
+			,#{mmDelNy}
+			,#{mmRank}
+			,#{mmJob}
+			,#{mmInterest}
+			,#{mmSpecial}
+			,#{mmDetail}
+			,#{mmTechnique}
+			,#{mmCareer}
+			,#{mmSchool}
+			,#{mmSchoolMajor}
+			,#{mmSchoolState}
+			,#{mmCertificate}
+			,#{mmWishPay}
+			,#{mmWorkTime}
+			,#{mmIntroduce}
+			,#{mmCash}
+		)
+			<selectKey resultType="String" keyProperty="mmSeq" order="AFTER">
+				SELECT last_insert_id()
+			</selectKey>
+	</insert>
+	
 
 </mapper>

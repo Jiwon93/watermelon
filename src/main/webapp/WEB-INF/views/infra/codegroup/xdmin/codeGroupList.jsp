@@ -243,7 +243,7 @@
 									</c:when>
 									<c:otherwise>
 										<c:forEach items="${list}" var="list" varStatus="status">
-											<tr>
+											<tr onclick="location.href='/codeGroup/codeGroupView?ccgSeq=<c:out value="${list.ccgSeq }"/>'" style="cursor: pointer;">
 												<td class="tableHead1"><input class="listCheck" type="checkbox"></td>
 												<td class="tableHead1"><c:out value="${list.ccgSeq }"/></td>
 												<td><c:out value="${list.ccgSeq }"/></td>

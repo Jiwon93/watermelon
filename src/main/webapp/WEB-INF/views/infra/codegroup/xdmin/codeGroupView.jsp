@@ -40,7 +40,7 @@
 	<link href="/resources/css/list.css" rel="stylesheet">
 </head>
 <body>
-	<form action="/codeGroup/codeGroupInst" name="myForm" id="myForm">
+	<form action="/codeGroup/codeGroupUpdt" name="form" id="form" autocomplete="off" enctype="multipart/form-data">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<div class="col-1">
@@ -225,13 +225,13 @@
 								</button>
 							</div>
 							<div class="col px-4" style="text-align: right;">
-								<button class="btn btn-danger" type="button" id="cgfCancel">
+								<button class="btn btn-danger" id="btnUelete">
 									<i class="fa-duotone fa-x"></i>
 								</button>
-								<button class="btn btn-danger" type="button" id="cgfDel">
+								<button class="btn btn-danger" id="btnDelete">
 									<i class="fa-regular fa-trash-can"></i>
 								</button>
-								<button class="btn btn-success" type="button">
+								<button class="btn btn-success" id="btnSave">
 									<i class="fa-regular fa-file-excel"></i>
 								</button>
 							</div>
@@ -262,8 +262,60 @@
 	<script src="/resources/js/list.js"></script>
 	<script src="/resources/js/sidebar.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-	<script type="text/javascript">
-			
+	<script>
+		var goUrlList = "/codeGroup/codeGroupList";
+		var goUrlInst = "/codeGroup/codeGroupInst";
+		var goUrlUpdt = "/codeGroup/codeGroupUpdt";
+		var goUrlUele = "/codeGroup/codeGroupUele";
+		var goUrlDele = "/codeGroup/codeGroupDele";
+		
+		var seq = $("input:hidden[name=ccgSeq]");
+		
+		var form = $("form[name=form]");
+		var formVo = $("form[name=formVo]");
+		
+		$("#btnSave").on("click",function(){
+			if(seq.val() == "0" || seq.val() == ""){
+				//insert
+				if(validationInst() == false) return false;
+				form.attr("action", goUrlInst).submit();
+			} else {
+				// update
+				if(validationUpdt() == false) return false;
+				form.attr("action", goUrlUpdt).submit();
+			}
+		});
+		
+		$("#btnUelete").on("click", function(){
+			$("input:hidden[name=ccgDelNy]").val(1);
+			$(".modal-title").text("확 인");
+			$(".modal-body").text("해당 데이터를 삭제하시겠습니까 ?");
+			$("#btnModalUelete").show();
+			$("#btnModalDelete").hide();
+			$("#modalConfirm").modal("show");
+		});
+		
+
+		$("#btnDelete").on("click", function(){
+			$("input:hidden[name=exDeleteType]").val(2);
+			$(".modal-title").text("확 인");
+			$(".modal-body").text("해당 데이터를 삭제하시겠습니까 ?");
+			$("#btnModalUelete").hide();
+			$("#btnModalDelete").show();
+			$("#modalConfirm").modal("show");
+		});
+		
+		
+		$("#btnModalUelete").on("click", function(){
+			$("#modalConfirm").modal("hide");
+			formVo.attr("action", goUrlUele).submit();
+		});
+		
+		
+		$("#btnModalDelete").on("click", function(){
+			$("#modalConfirm").modal("hide");
+			formVo.attr("action", goUrlDele).submit();
+		});
 	</script>
 </body>
 </html>

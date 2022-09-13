@@ -66,7 +66,6 @@
 			,ccgUseNy = #{ccgUseNy}
 			,ccgDelNy = #{ccgDelNy}
 			,ccgRegDatetime = #{ccgRegDatetime}
-			<include refid="Base.updateModColumnValue" />
 		WHERE
 			ccgSeq = #{ccgSeq}
 	</update>
@@ -75,7 +74,6 @@
 		UPDATE codeGroup
 		SET
 			ccgDelNy = 1
-			<include refid="Base.updateModColumnValue" />
 		WHERE ccgSeq = #{ccgSeq}
 	</update>
 	

@@ -325,5 +325,6 @@
 	</form>
 	<script src="/resources/js/list.js"></script>
 	<script src="/resources/js/sidebar.js"></script>
+	
 </body>
 </html>

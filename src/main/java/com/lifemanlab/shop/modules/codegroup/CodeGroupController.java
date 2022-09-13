@@ -56,23 +56,21 @@ public class CodeGroupController {
 	@RequestMapping(value = "codeGroupUpdt")
 	public String codeGroupUpdt(CodeGroupVo vo, CodeGroup dto, RedirectAttributes redirectAttributes) throws Exception {
 		
-			service.update(dto);
-			return "redirect:/codeGrouop/codeGroupList";
+		service.update(dto);
+		return "redirect:/codeGroup/codeGroupList";
 	}
 	
 	@RequestMapping(value = "codeGroupUele")
 	public String codeGroupUele(CodeGroupVo vo, CodeGroup dto, RedirectAttributes redirectAttributes) throws Exception {
 		
 		service.uelete(dto);
-		
 		return "redirect:/codeGroup/codeGroupList";
 	}
 	
 	@RequestMapping(value = "codeGroupDele")
 	public String codeGroupDele(CodeGroupVo vo, RedirectAttributes redirctAttributes) throws Exception {
 			
-			service.delete(vo);
-			
-			return "redirect:/codeGroup/codeGroupList";
+		service.delete(vo);
+		return "redirect:/codeGroup/codeGroupList";
 	}
 }

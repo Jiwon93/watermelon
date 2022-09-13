@@ -57,4 +57,31 @@
 			</selectKey>
 	</insert>
 	
+	<update id="update">
+		UPDATE codeGroup
+		SET
+			ccgName = #{ccgName}
+			,ccgNameEng = #{ccgNameEng}
+			,ccgOrder = #{ccgOrder}
+			,ccgUseNy = #{ccgUseNy}
+			,ccgDelNy = #{ccgDelNy}
+			,ccgRegDatetime = #{ccgRegDatetime}
+			<include refid="Base.updateModColumnValue" />
+		WHERE
+			ccgSeq = #{ccgSeq}
+	</update>
+	
+	<update id="uelete">
+		UPDATE codeGroup
+		SET
+			ccgDelNy = 1
+			<include refid="Base.updateModColumnValue" />
+		WHERE ccgSeq = #{ccgSeq}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM codeGroup WHERE ccgSeq = #{ccgSeq}
+	</delete>
+	
+	
 </mapper>

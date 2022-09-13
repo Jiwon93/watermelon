@@ -86,18 +86,30 @@ public class MemberController {
 	public String pwChangFormB() throws Exception {
 		return "infra/member/user/pwChangFormB";
 	}
+	
 	@RequestMapping(value = "/pwChangFormC", method = RequestMethod.GET)
 	public String pwChangFormC() throws Exception {
 		return "infra/member/user/pwChangFormC";
 	}
+	
 	@RequestMapping(value = "/saleReg", method = RequestMethod.GET)
 	public String saleReg() throws Exception {
 		return "infra/member/user/saleReg";
 	}
+	
 	@RequestMapping(value = "/saleRegForm", method = RequestMethod.GET)
 	public String saleRegForm() throws Exception {
 		return "infra/member/user/saleRegForm";
 	}
 	
+	@RequestMapping(value = "/purchaseHistory", method = RequestMethod.GET)
+	public String purchaseHistory() throws Exception {
+		return "infra/member/user/purchaseHistory";
+	}
+	
+	@RequestMapping(value = "/saleManage", method = RequestMethod.GET)
+	public String saleManage() throws Exception {
+		return "infra/member/user/saleManage";
+	}
 
 }

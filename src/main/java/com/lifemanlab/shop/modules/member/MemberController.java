@@ -1,7 +1,6 @@
 package com.lifemanlab.shop.modules.member;
 
 import java.util.List;
-import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

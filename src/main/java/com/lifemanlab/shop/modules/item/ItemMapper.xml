@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lifemanlab.shop.modules.item.ItemMapper">
+
+    <resultMap id="resultMapObj" type="com.lifemanlab.shop.modules.item.Item"></resultMap>
+	
+	<select id="selectList" resultMap="resultMapObj">
+		SELECT
+			a.*
+		FROM member a
+		WHERE 1=1
+			<!-- AND mmDelNy = 0 -->
+			<!-- AND mmName LIKE CONCAT('%',#{shValue},'%') -->
+			<if test="shDelNy != null and !shDelNy.equals('')">AND mmDelNy = #{shDelNy}</if>
+			<choose>
+				<when test="shOption == 1">AND mmName LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 2">AND mmRank LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 3">AND mmEmail LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 4">AND mmNickname LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 5">AND mmPw LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 6">AND mmJob LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 7">AND mmGender LIKE CONCAT('%',#{shValue},'%')</when>
+			</choose>
+	</select>
+	
+	<select id="memberPhoneList" resultMap="resultMapObj">
+		SELECT
+			a.*
+		FROM member_phone
+		WHERE 1=1
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO member (
+			mmName
+		)
+		VALUES (
+			#{mmName}
+		)
+			<selectKey resultType="String" keyProperty="mmSeq" order="AFTER">
+				SELECT last_insert_id()
+			</selectKey>
+	</insert>
+	
+
+</mapper>

@@ -231,7 +231,7 @@
 								<button class="btn btn-danger" type="button" id="cgfDel">
 									<i class="fa-regular fa-trash-can"></i>
 								</button>
-								<button class="btn btn-success" type="button" onclick="test();">
+								<button class="btn btn-success" type="submit" onclick="test();">
 									<i class="fa-regular fa-file-excel"></i>
 								</button>
 							</div>
@@ -263,45 +263,6 @@
 	<script src="/resources/js/sidebar.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 	<script type="text/javascript">
-	
-		var goUrlList = "/codeGroup/codeGroupList";
-		var goUrlInst = "/codeGroup/codeGroupInst";
-		var goUrlUpdt = "/codeGroup/codeGroupupdt";
-		var goUrlUele = "/codeGroup/codeGroupUele";
-		var goUrlDele = "/codeGroup/codeGroupDele";
-		
-		var seq = $("input:hidden[name=ccgSeq]");
-		
-		var form = $("form[name=form]");
-		var formVo = $("form[name=formVo]");
-		
-		$("#btnSave").on("click",function(){
-			if(seq.val() == "0" || seq.val() == ""){
-				//insert
-				if(validationInst() == false) return false;
-				form.attr("action", goUrlInst).submit();
-			} else {
-				// update
-				if(validationUpdt() == false) return false;
-				form.attr("action", goUrlUpdt).submit();
-			}
-		});
-		
-		setCheckboxValue = function(obj, targetObj) {
-			if(obj.is(":checked")){
-				targetObj.val("1");
-			} else {
-				targetObj.val("0")
-			}
-		}
-		
-		validationInst = function() {
-			if(validationUpdt() == false) return false;
-		}
-		
-		function validationUpdt() {
-			if(!checkOnlyKoreanEnglishNumber('ccgName', 2, 0, "코드그룹 이름은 한글, 영문대소문자, 숫자만 입력 가능합니다.")) return false;
-		}
 	
 		function test() {
 			

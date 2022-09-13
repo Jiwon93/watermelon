@@ -40,7 +40,7 @@
 	<link href="/resources/css/list.css" rel="stylesheet">
 </head>
 <body>
-	<form action="/codeGroup/codeGroupUpdt" name="form" id="form" autocomplete="off" enctype="multipart/form-data">
+	<form action="/codeGroup/codeGroupDele" name="form" id="form" autocomplete="off" enctype="multipart/form-data">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<div class="col-1">

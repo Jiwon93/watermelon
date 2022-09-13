@@ -15,7 +15,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="../images/logo.png" rel="icon">
+    <link href="/resources/images/logo.PNG" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,15 +27,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="../../template/woody/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="../../template/woody/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="../../template/woody/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="/resources/template/woody/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/resources/template/woody/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/resources/template/woody/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="../../template/woody/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/template/woody/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="../../template/woody/css/style.css" rel="stylesheet">
+    <link href="/resources/template/woody/css/style.css" rel="stylesheet">
     <style type="text/css">
     	.btn {
     		border-radius: 5px;
@@ -52,7 +52,7 @@
         <div class="row" id="">
 	        <div class="col" style="text-align: center; margin: 4rem 0;">
 	            <div class="navbar-nav ms-auto">
-	                <a href="../../index.html" class=""><img alt="" src="../images/logo.png" width="50px;" height="50px;"></a>
+	                <a href="#" class=""><img alt="" src="/resources/images/logo.PNG" width="50px;" height="50px;"></a>
 	            </div>
             </div>
         </div>
@@ -329,14 +329,14 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../../template/woody/lib/wow/wow.min.js"></script>
-    <script src="../../template/woody/lib/easing/easing.min.js"></script>
-    <script src="../../template/woody/lib/waypoints/waypoints.min.js"></script>
-    <script src="../../template/woody/lib/counterup/counterup.min.js"></script>
-    <script src="../../template/woody/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/resources/template/woody/lib/wow/wow.min.js"></script>
+    <script src="/resources/template/woody/lib/easing/easing.min.js"></script>
+    <script src="/resources/template/woody/lib/waypoints/waypoints.min.js"></script>
+    <script src="/resources/template/woody/lib/counterup/counterup.min.js"></script>
+    <script src="/resources/template/woody/lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="../../template/woody/js/main.js"></script>
+    <script src="/resources/template/woody/js/main.js"></script>
 </body>
 
 </html>

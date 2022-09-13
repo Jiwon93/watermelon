@@ -15,7 +15,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="../images/logo.png" rel="icon">
+    <link href="/resources/images/logo.PNG" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,15 +27,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="../../template/woody/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="../../template/woody/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="../../template/woody/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="/resources/template/woody/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/resources/template/woody/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/resources/template/woody/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="../../template/woody/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/template/woody/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="../../template/woody/css/style.css" rel="stylesheet">
+    <link href="/resources/template/woody/css/style.css" rel="stylesheet">
     
     <!-- Fontawesome Stylesheet -->
     <script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
@@ -79,7 +79,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
         <a href="../../index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <img src="../images/logo.png" alt="" style="width: 60px; height: 60px;">
+            <img src="/resources/images/logo.PNG" alt="" style="width: 60px; height: 60px;">
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -111,7 +111,7 @@
            <div class="row">
 	           <div class="col-sm-3 p-lg-5">
 	           		<div class="text-center pb-4">
-						<img src="../images/men.png" class="border border-3 rounded-circle" style="height: 40%; width: 40%;" alt="">
+						<img src="/resources/images/men.png" class="border border-3 rounded-circle" style="height: 40%; width: 40%;" alt="">
 					</div>
 					<div class="text-center pb-4">
 						<button class="btn btn-primary" style="height: 30px; width: 60px; font-size: small;">만렙</button>
@@ -445,16 +445,16 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../../template/woody/lib/wow/wow.min.js"></script>
-    <script src="../../template/woody/lib/easing/easing.min.js"></script>
-    <script src="../../template/woody/lib/waypoints/waypoints.min.js"></script>
-    <script src="../../template/woody/lib/counterup/counterup.min.js"></script>
-    <script src="../../template/woody/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="../../template/woody/lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="../../template/woody/lib/lightbox/js/lightbox.min.js"></script>
+    <script src="/resources/template/woody/lib/wow/wow.min.js"></script>
+    <script src="/resources/template/woody/lib/easing/easing.min.js"></script>
+    <script src="/resources/template/woody/lib/waypoints/waypoints.min.js"></script>
+    <script src="/resources/template/woody/lib/counterup/counterup.min.js"></script>
+    <script src="/resources/template/woody/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/resources/template/woody/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="/resources/template/woody/lib/lightbox/js/lightbox.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="../../template/woody/js/main.js"></script>
+    <script src="/resources/template/woody/js/main.js"></script>
 </body>
 
 </html>

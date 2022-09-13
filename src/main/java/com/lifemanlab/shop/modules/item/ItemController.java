@@ -16,12 +16,32 @@ public class ItemController {
 	
 
 	@RequestMapping(value = "itemMenu")
-	public String codeGroupList(Model model) throws Exception {
+	public String itemMenu(Model model) throws Exception {
 
 		List<Item> list = service.selectList();
 		model.addAttribute("list", list);
 		
 		return "infra/member/item/itemMenu";
 	}
-
+	
+	@RequestMapping(value = "itemMenuNotLogin")
+	public String itemMenuNotLogin() throws Exception {
+		return "infra/member/item/itemMenuNotLogin";
+	}
+	
+	@RequestMapping(value = "itemMenuView")
+	public String itemMenuView() throws Exception {
+		return "infra/member/item/itemMenuView";
+	}
+	
+	@RequestMapping(value = "itemMenuViewNotLogin")
+	public String itemMenuViewNotLogin() throws Exception {
+		return "infra/member/item/itemMenuViewNotLogin";
+	}
+	
+	@RequestMapping(value = "itemPayment")
+	public String itemPayment() throws Exception {
+		return "infra/member/item/itemPayment";
+	}
+	
 }

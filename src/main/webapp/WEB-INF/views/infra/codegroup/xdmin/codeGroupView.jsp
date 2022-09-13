@@ -9,7 +9,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>codeGroupForm</title>
+<title>codeGroupView</title>
 
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sidebars/">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -220,12 +220,12 @@
 						</div>
 						<div class="row">
 							<div class="col px-5">
-								<button class="btn btn-secondary" type="button">
+								<button class="btn btn-secondary" onclick="location.href='codeGroupList'">
 									<i class="fa-solid fa-bars"></i>
 								</button>
 							</div>
 							<div class="col px-4" style="text-align: right;">
-								<button class="btn btn-danger" id="btnUelete">
+								<button class="btn btn-danger" id="btnUelete" name="exDeleteType">
 									<i class="fa-duotone fa-x"></i>
 								</button>
 								<button class="btn btn-danger" id="btnDelete">
@@ -262,6 +262,7 @@
 	<script src="/resources/js/list.js"></script>
 	<script src="/resources/js/sidebar.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script>
 		var goUrlList = "/codeGroup/codeGroupList";
 		var goUrlInst = "/codeGroup/codeGroupInst";
@@ -273,8 +274,9 @@
 		
 		var form = $("form[name=form]");
 		var formVo = $("form[name=formVo]");
-		
+	
 		$("#btnSave").on("click",function(){
+			alert("야옹");
 			if(seq.val() == "0" || seq.val() == ""){
 				//insert
 				if(validationInst() == false) return false;
@@ -287,7 +289,8 @@
 		});
 		
 		$("#btnUelete").on("click", function(){
-			$("input:hidden[name=ccgDelNy]").val(1);
+			alert("멍멍");
+			$("input:hidden[name=exDeleteType]").val(1);
 			$(".modal-title").text("확 인");
 			$(".modal-body").text("해당 데이터를 삭제하시겠습니까 ?");
 			$("#btnModalUelete").show();
@@ -297,6 +300,7 @@
 		
 
 		$("#btnDelete").on("click", function(){
+			alert("어흥");
 			$("input:hidden[name=exDeleteType]").val(2);
 			$(".modal-title").text("확 인");
 			$(".modal-body").text("해당 데이터를 삭제하시겠습니까 ?");

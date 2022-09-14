@@ -13,7 +13,6 @@
 
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sidebars/">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-	
 	<!-- Fontawesome Stylesheet -->
     <script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
 	<style type="text/css">
@@ -38,6 +37,10 @@
 	</style>
 	
 	<link href="/resources/css/list.css" rel="stylesheet">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  	<link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </head>
 <body>
 	<form action="/codeGroup/codeGroupDele" name="form" id="form" autocomplete="off" enctype="multipart/form-data">
@@ -213,8 +216,8 @@
 									<input type="text" class="form-control" id="ccgRegDatetime" name="ccgRegDatetime" value="<c:out value="${item.ccgRegDatetime }"/>">
 								</div>
 								<div class="col mx-auto">
-									<label class="form-label" for="cgfSpareInt4">코드 수정 날짜</label>
-									<input type="text" class="form-control" id="cgfSpareInt4" placeholder="숫자">
+									<label class="form-label" for="datepicker">코드 수정 날짜</label>
+									<input type="text" class="form-control" id="datepicker" name="datepicker" placeholder="숫자">
 								</div>
 							</div>
 						</div>
@@ -320,6 +323,10 @@
 			$("#modalConfirm").modal("hide");
 			formVo.attr("action", goUrlDele).submit();
 		});
+		
+		$( function() {
+			  $( "#datepicker" ).datepicker();
+			} );
 	</script>
 </body>
 </html>

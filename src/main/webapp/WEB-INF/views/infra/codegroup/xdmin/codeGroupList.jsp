@@ -46,9 +46,22 @@
 	</style>
 	
 	<link href="/resources/css/list.css" rel="stylesheet">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  	<link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<script>
+		$( function() {
+		  $( "#shDateStart" ).datepicker({ dateFormat: 'yy-mm-dd'});
+		} );
+		
+		$( function() {
+			  $( "#shDateEnd" ).datepicker({ dateFormat: 'yy-mm-dd'});
+			} );
+	</script>
 </head>
 <body>
-	<form method="post" action="/codeGroup/codeGroupList">
+	<form method="post" name="formList" id="formList">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<div class="col-1">
@@ -179,10 +192,10 @@
 									</select>
 								</div>
 								<div class="col-2 p-1">
-									<input class="form-control" type="text" placeholder="시작일">
+									<input class="form-control" type="text" id="shDateStart" placeholder="시작일">
 								</div>
 								<div class="col-2 p-1">
-									<input class="form-control" type="text" placeholder="종료일">
+									<input class="form-control" type="text" id="shDateEnd" placeholder="종료일">
 								</div>
 							</div>
 							<div class="row mb-2">
@@ -198,8 +211,8 @@
 									<input id="shValue" name="shValue" value="<c:out value="${vo.shValue }"/>" class="form-control" type="search" placeholder="검색어">
 								</div>
 								<div class="col-1 p-1">
-									<button class="btn btn-warning" href="#" type="submit" role="button"><i class="fa-solid fa-magnifying-glass"></i></button>
-									<button class="btn btn-danger" href="#" role="button"><i class="fa-solid fa-arrow-rotate-right"></i></button>
+									<button class="btn btn-warning" id="btnSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
+									<button class="btn btn-danger" id="btnReset" type="button"><i class="fa-solid fa-arrow-rotate-right"></i></button>
 								</div>
 							</div>
 						</div>
@@ -325,6 +338,20 @@
 	</form>
 	<script src="/resources/js/list.js"></script>
 	<script src="/resources/js/sidebar.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script>
+		var goUrlList = "/codeGroup/codeGroupList";
+		
+		var form = $("form[name=formList]");
+		
+		$("#btnSearch").on("click", function(){
+			form.attr("action", goUrlList).submit();
+		});
+	
+		$("#btnReset").on("click", function(){
+			$(location).attr("href", goUrlList);
+		});
+	</script>
 	
 </body>
 </html>

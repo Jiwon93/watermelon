@@ -60,6 +60,11 @@ public class HomeController {
 			return "e";
 		}
 		
+		@RequestMapping(value = "/datepicker", method = RequestMethod.GET)
+		public String datepicker(Locale locale, Model model) {
+			return "datepicker";
+		}
+		
 		@RequestMapping(value = "/codeGroupList", method = RequestMethod.GET)
 		public String codeGroupList(Locale locale, Model model) {
 			return "codeGroupList";

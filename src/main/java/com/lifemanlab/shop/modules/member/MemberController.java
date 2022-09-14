@@ -42,6 +42,11 @@ public class MemberController {
 		return "infra/member/user/memberHome";
 	}
 	
+	@RequestMapping(value = "/loginForm", method = RequestMethod.GET)
+	public String loginForm() throws Exception {
+		return "infra/member/user/loginForm";
+	}
+	
 	@RequestMapping(value = "/idPwFindForm", method = RequestMethod.GET)
 	public String idPwFindForm() throws Exception {
 		return "infra/member/user/idPwFindForm";
@@ -70,6 +75,11 @@ public class MemberController {
 	@RequestMapping(value = "memberRegFormB")
 	public String memberRegFormB() throws Exception {
 		return "infra/member/user/memberRegFormB";
+	}
+	
+	@RequestMapping(value = "memberRegFormC")
+	public String memberRegFormC() throws Exception {
+		return "infra/member/user/memberRegFormC";
 	}
 	
 	@RequestMapping(value = "memberRegViewB")

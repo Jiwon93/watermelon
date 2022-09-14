@@ -43,7 +43,7 @@
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </head>
 <body>
-	<form action="/codeGroup/codeGroupDele" name="form" id="form" autocomplete="off" enctype="multipart/form-data">
+	<form name="form" id="form" autocomplete="off">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<div class="col-1">
@@ -228,13 +228,13 @@
 								</button>
 							</div>
 							<div class="col px-4" style="text-align: right;">
-								<button class="btn btn-danger" id="btnUelete" name="exDeleteType">
+								<button class="btn btn-danger" id="btnUelete" type="button">
 									<i class="fa-duotone fa-x"></i>
 								</button>
-								<button class="btn btn-danger" id="btnDelete">
+								<button class="btn btn-danger" id="btnDelete" type="button">
 									<i class="fa-regular fa-trash-can"></i>
 								</button>
-								<button class="btn btn-success" id="btnSave">
+								<button class="btn btn-success" id="btnSave" type="button">
 									<i class="fa-regular fa-file-excel"></i>
 								</button>
 							</div>
@@ -282,18 +282,16 @@
 			alert("야옹");
 			if(seq.val() == "0" || seq.val() == ""){
 				//insert
-				if(validationInst() == false) return false;
 				form.attr("action", goUrlInst).submit();
 			} else {
 				// update
-				if(validationUpdt() == false) return false;
 				form.attr("action", goUrlUpdt).submit();
 			}
 		});
 		
 		$("#btnUelete").on("click", function(){
 			alert("멍멍");
-			$("input:hidden[name=exDeleteType]").val(1);
+			$("input:hidden[name=ccgDelNy]").val(1);
 			$(".modal-title").text("확 인");
 			$(".modal-body").text("해당 데이터를 삭제하시겠습니까 ?");
 			$("#btnModalUelete").show();
@@ -304,7 +302,7 @@
 
 		$("#btnDelete").on("click", function(){
 			alert("어흥");
-			$("input:hidden[name=exDeleteType]").val(2);
+			$("input:hidden[name=ccgDelNy]").val(0);
 			$(".modal-title").text("확 인");
 			$(".modal-body").text("해당 데이터를 삭제하시겠습니까 ?");
 			$("#btnModalUelete").hide();

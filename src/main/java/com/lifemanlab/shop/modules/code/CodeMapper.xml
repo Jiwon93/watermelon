@@ -8,6 +8,17 @@
 
     <resultMap id="resultMapObj" type="com.lifemanlab.shop.modules.code.Code"></resultMap>
 	
+	<sql id ="selectCommon">
+		FROM codeGroup a
+		WHERE 1=1
+			<if test="shDelNy != null and !shDelNy.equals('')">AND ccgDelNy = #{shDelNy}</if>
+			<choose>
+				<when test="shOption == 1">AND ccgSeq = #{shValue}</when>
+				<when test="shOption == 2">AND ccgName LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 3">AND ccgNameEng LIKE CONCAT('%',#{shValue},'%')</when>
+			</choose>
+	</sql>
+	
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT
 			a.ccgSeq

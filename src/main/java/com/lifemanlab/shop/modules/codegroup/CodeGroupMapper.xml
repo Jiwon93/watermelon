@@ -8,24 +8,50 @@
 
     <resultMap id="resultMapObj" type="com.lifemanlab.shop.modules.codegroup.CodeGroup"></resultMap>
 	
-	<select id="selectList" resultMap="resultMapObj">
-		SELECT
-			a.*
-			,(SELECT COUNT(ccSeq) FROM code WHERE 1=1 AND ccgSeq = codeGroup_ccgSeq) AS ccCount
+	<sql id ="selectCommon">
 		FROM codeGroup a
 		WHERE 1=1
-			<!-- AND ccgDelNy = 0 -->
-			<!-- AND ccgName LIKE CONCAT('%',#{shValue},'%') -->
 			<if test="shDelNy != null and !shDelNy.equals('')">AND ccgDelNy = #{shDelNy}</if>
 			<choose>
-				<!-- <when test="shDelNy == 0">AND ccgDelNy = 0</when> -->
-				<!-- <when test="shDelNy == 1">AND ccgDelNy = 1</when> -->
+				<when test="shOption == 1">AND ccgSeq = #{shValue}</when>
+				<when test="shOption == 2">AND ccgName LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 3">AND ccgNameEng LIKE CONCAT('%',#{shValue},'%')</when>
+			</choose>
+	</sql>
+	
+	<select id="selectList" resultMap="resultMapObj">
+		<include refid="Base.selectListUpperForMysql" />
+			SELECT
+				a.ccgSeq
+				, a.ccgName
+				, a.ccgNameEng
+				,(select count(aa.ccSeq) from code aa where 1=1 and aa.ccDelNy = 0 and aa.codeGroup_ccgSeq = a.ccgSeq) as xifcdSeqCount
+				<!-- <include refid="Base.selectRegModWithAlies" /> -->
+			<include refid="selectCommon" />
+			ORDER BY a.ccgSeq DESC
+			<!-- <include refid="Base.orderByLimitForMysql" /> -->
+		<include refid="Base.selectListLowerForMysql" />
+			<!-- 
+			FROM codeGroup a
+			WHERE 1=1
+			AND ccgDelNy = 0
+			AND ccgName LIKE CONCAT('%',#{shValue},'%')
+			<if test="shDelNy != null and !shDelNy.equals('')">AND ccgDelNy = #{shDelNy}</if>
+			<choose>
+				<when test="shDelNy == 0">AND ccgDelNy = 0</when>
+				<when test="shDelNy == 1">AND ccgDelNy = 1</when>
 				<when test="shOption == 1">AND ccgSeq = #{shValue}</when>
 				<when test="shOption == 2">AND ccgName LIKE CONCAT('%',#{shValue},'%')</when>
 				<when test="shOptionDate == 1">AND ccgRegDatetime BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 				<when test="shOptionDate == 2">AND ccgModDatetime BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 				<otherwise></otherwise>
 			</choose>
+			 -->
+	</select>
+	
+	<select id="selectOneCount" resultType="Integer">
+		SELECT COUNT(*)
+		<include refid="selectCommon" />
 	</select>
 	
 	<select id="selectOne" resultMap="resultMapObj">

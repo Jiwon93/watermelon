@@ -18,12 +18,19 @@ public class CodeGroupServiceImpl implements CodeGroupService {
 	
 	@Override
 	public List<CodeGroup> selectList(CodeGroupVo vo) throws Exception {
-		
 		List<CodeGroup> list = dao.selectList(vo);
 		return list;
 	}
 	
 	
+
+	@Override
+	public int selectOneCount(CodeGroupVo vo) throws Exception {
+		int count = dao.selectOneCount(vo);
+		System.out.println("service count: " + count);
+		return count;
+	}
+
 
 	@Override
 	public CodeGroup selectOne(CodeGroupVo vo) throws Exception {

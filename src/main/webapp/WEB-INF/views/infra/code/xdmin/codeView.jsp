@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
+<!doctype html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>codeGroupList</title>
+<title>codeView</title>
+
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sidebars/">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<!-- Fontawesome Stylesheet -->
@@ -24,21 +25,11 @@
 			margin-right: auto;
 		}
 		
-		td {
+		th, td {
 			border: 1px solid lightgray;
 			height: 35px;
 		}
-		
-		.tableHead1 {
-			width: 40px;
-			text-align: center;
-		}
-		
-		.tableHead {
-			background-color: black;
-			color: white;
-		}
-		
+
 		.listCheck {
 			text-align: center;
 			justify-content: center;
@@ -50,23 +41,9 @@
   	<link rel="stylesheet" href="/resources/demos/style.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-		  $("input.shDate").datepicker();
-		} );
-		
-		$.datepicker.setDerfaults({
-			dateFormat: 'yy-mm-dd'
-		});
-	</script>
 </head>
 <body>
-	<form method="post" name="formList" id="formList">
-		<input type="hidden" name="mainKey">
-		<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
-		<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
-		<input type="hidden" name="checkboxSeqArray">
-		
+	<form name="form" id="form" autocomplete="off">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<div class="col-1">
@@ -79,7 +56,7 @@
 					<img src="/resources/images/men.png" class="border border-3 rounded-circle" style="height: 35%; width: 35%;" alt="">
 				</div>
 				<div class="col-2 text-start">
-					<span class="fs-5">Tony Chang</span>
+					<span class="fs-5">Jiwon Shion</span>
 					<br>
 					<span class="fs-6">Administrator</span>
 				</div>
@@ -98,22 +75,16 @@
 		        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 			        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 			          <li class="nav-item">
-			            <a class="nav-link active" aria-current="page" href="#">회원관리</a>
+			            <a class="nav-link" aria-current="page" href="#">코드그룹</a>
 			          </li>
 			          <li class="nav-item">
-			            <a class="nav-link" href="#">서비스관리</a>
+			            <a class="nav-link" href="#">코드그룹관리</a>
 			          </li>
 			          <li class="nav-item">
-			            <a class="nav-link" href="#">사이트관리</a>
+			            <a class="nav-link active" href="#">코드</a>
 			          </li>
 			          <li class="nav-item">
-			            <a class="nav-link" href="#">로그관리</a>
-			          </li>
-			          <li class="nav-item">
-			            <a class="nav-link" href="#">시스템관리</a>
-			          </li>
-			          <li class="nav-item">
-			            <a class="nav-link" href="#">시스템관리</a>
+			            <a class="nav-link" href="#">코드관리</a>
 			          </li>
 			        </ul>
 		        </div>
@@ -181,120 +152,99 @@
 				</div>
 				<div class="col-10">
 					<div class="row">
-						<h4>코드그룹 관리</h4>
-						<div class="col border me-4">
-							<div class="row  mt-2 mb-2">
-								<div class="col-2 p-1">
-									<select id="shDelNy" name="shDelNy" class="form-select">
-										<option value="" <c:if test="${empty vo.shDelNy }">selected</c:if>selected>삭제여부</option>
-										<option value="0" <c:if test="${vo.shDelNy eq 0 }">selected</c:if>>N</option>
-										<option value="1" <c:if test="${vo.shDelNy eq 1 }">selected</c:if>>Y</option>
-									</select>
+						<h4>코드 관리</h4>
+						<div class="container-fluid">
+							<div class="row m-4">
+								<div class="col-6">
+									<label class="form-label" for="ccgSeq">코드그룹 코드</label>
+									<input type="text" class="form-control" id="ccgSeq" name="ccgSeq" value="<c:out value="${item.ccgSeq }"/>">
 								</div>
-								<div class="col-2 p-1">
-									<select class="form-select" name="shOptionDate">
-										<option value="">날짜선택</option>
-										<option value="1">등록일</option>
-										<option value="2">수정일</option>
-									</select>
-								</div>
-								<div class="col-2 p-1">
-									<input class="form-control shDate" type="text" id="shDateStart" name="shDateStart" value="${vo.shDateStart }" placeholder="시작일">
-								</div>
-								<div class="col-2 p-1">
-									<input class="form-control shDate" type="text" id="shDateEnd" name="shDateEnd" value="${vo.shDateEnd }" placeholder="종료일">
+								<div class="col-6">
+									<label class="form-label" for="ccgName">코드그룹 이름 (한글)</label>
+									<input type="text" class="form-control" id="ccgName" value="<c:out value="${item.ccgName }"/>" placeholder="영문(대소문자),숫자">
 								</div>
 							</div>
-							<div class="row mb-2">
-								<div class="col-2 p-1">
-									<select id="shOption" name="shOption" class="form-select">
-										<option value="" <c:if test="${empty vo.shOption }">selected</c:if>>검색구분</option>
-										<option value="1" <c:if test="${vo.shOption eq 1 }">selected</c:if>>코드그룹 코드</option>
-										<option value="2" <c:if test="${vo.shOption eq 2 }">selected</c:if>>코드그룹 이름 (한글)</option>
-										<option>코드그룹 이름 (영문)</option>
+							<div class="row m-4">
+								<div class="col mx-auto">
+									<label class="form-label" for="ccgName">코드</label>
+									<input type="text" class="form-control" id="ccSeq" name="ccSeq" value="<c:out value="${item.ccSeq }"/>">
+								</div>
+								<div class="col mx-auto">
+									<label class="form-label" for="ccgNameEng">대체코드</label>
+									<input type="text" class="form-control">
+								</div>
+								<div class="col mx-auto">
+									<label class="form-label" for="ccgName">코드 이름 (한글)</label>
+									<input type="text" class="form-control" id="ccName" name="ccName" value="<c:out value="${item.ccName }"/>">
+								</div>
+								<div class="col mx-auto">
+									<label class="form-label" for="ccgName">코드 이름 (영문)</label>
+									<input type="text" class="form-control" id="ccNameEng" name="ccNameEng" value="<c:out value="${item.ccNameEng }"/>">
+								</div>
+							</div>
+							<div class="row m-4">
+								<div class="col mx-auto">
+									<label class="form-label" for="ccUseNy">사용여부</label>
+									<select class="form-select" id="ccUseNy" name="ccUseNy">
+										<option value="" <c:if test="${empty item.ccUseNy }">selected</c:if>>사용여부 선택</option>
+										<option value="1" <c:if test="${item.ccUseNy eq 1 }">selected</c:if>>Y</option>
+										<option value="0" <c:if test="${item.ccUseNy eq 0 }">selected</c:if>>N</option>
 									</select>
 								</div>
-								<div class="col-2 p-1">
-									<input id="shValue" name="shValue" value="<c:out value="${vo.shValue }"/>" class="form-control" type="search" placeholder="검색어">
+								<div class="col mx-auto">
+									<label class="form-label" for="ccgOrder">순서</label>
+									<input type="text" class="form-control" id="ccOrder" name="ccOrder" value="<c:out value="${item.ccOrder }"/>">
 								</div>
-								<div class="col-1 p-1">
-									<button class="btn btn-warning" id="btnSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
-									<button class="btn btn-danger" id="btnReset" type="button"><i class="fa-solid fa-arrow-rotate-right"></i></button>
+							</div>
+							<div class="row m-4">
+								<div class="col mx-auto">
+									<label class="form-label" for="cgfExplain">설명</label>
+									<textarea  class="form-control" id="cgfExplain"></textarea>
+								</div>
+								<div class="col mx-auto">
+									<label class="form-label" for="ccDelNy">삭제여부</label>
+									<select class="form-select" id="ccDelNy" name="ccDelNy">
+										<option value="" <c:if test="${empty item.ccDelNy }">selected</c:if>>삭제여부 선택</option>
+										<option value="1" <c:if test="${item.ccDelNy eq 1 }">selected</c:if>>Y</option>
+										<option value="0" <c:if test="${item.ccDelNy eq 0 }">selected</c:if>>N</option>
+									</select> 
+									<%-- 
+									<input type="radio" id="ccgDelNy1" name="ccgDelNy" value="1" <c:if test="${dto.ccgDelNy eq 1 }">selected</c:if>>Y
+									<input type="radio" id="ccgDelNy0" name="ccgDelNy" value="0" <c:if test="${dto.ccgDelNy eq 0 }">selected</c:if>>N
+									 --%>
+									<!--  
+									<input type="radio" id="ccgDelNy1" name="ccgDelNy" value="1">Y
+									<input type="radio" id="ccgDelNy0" name="ccgDelNy" value="0">N
+									 -->
+								</div>
+							</div>
+							<div class="row m-4">
+								<div class="col mx-auto">
+									<label class="form-label" for="ccgRegDatetime">코드 등록일</label>
+									<input type="text" class="form-control" id="ccRegDatetime" name="ccRegDatetime" value="<c:out value="${item.ccRegDatetime }"/>">
+								</div>
+								<div class="col mx-auto">
+									<label class="form-label" for="datepicker">코드 수정일</label>
+									<input type="text" class="form-control" id="ccModDatetime" name="ccModDatetime" placeholder="숫자" value="<c:out value="${item.ccModDatetime }"/>">
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="row mt-3">
 						<div class="row">
-							<div class="col-11 p-0">
-								<span>Total: </span><c:out value="${vo.totalRows }"/>
-								<sapn>Remain: </sapn><c:out value="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + status.index) }"/>
+							<div class="col px-5">
+								<button class="btn btn-secondary" onclick="location.href='codeList'">
+									<i class="fa-solid fa-bars"></i>
+								</button>
 							</div>
-							<div class="col-1 p-0">
-								<div class="col-12">
-									<select class="form-select py-1" style="height: 30px; font-size: 12px;">
-										<option value="10" selected>10</option>
-										<option value="15">15</option>
-										<option value="20">20</option>
-										<option value="30">30</option>
-									</select>
-								</div>
-							</div>
-						</div>
-						<div class="row mt-1">
-							<table class="table table-striped table-hover border">
-								<tr class="table-dark">
-									<td class="tableHead1"><input class="listCheck" type="checkbox"></td>
-									<td class="tableHead1">#</td>
-									<td class="tableHead">코드그룹 코드</td>
-									<td class="tableHead">코드그룹 이름 (한글)</td>
-									<td class="tableHead">코드그룹 이름 (영문)</td>
-									<td class="tableHead">코드갯수</td>
-									<td class="tableHead">사용여부</td>
-									<td class="tableHead">순서</td>
-									<td class="tableHead">삭제여부</td>
-									<td class="tableHead">등록일</td>
-									<td class="tableHead">수정일</td>
-								</tr>
-								<c:choose>
-									<c:when test="${fn:length(list) eq 0 }">
-										<tr>
-											<td class="text-center" colspan="11">There is no data!</td>
-										</tr>
-									</c:when>
-									<c:otherwise>
-										<c:forEach items="${list}" var="list" varStatus="status">
-											<tr onclick="location.href='/codeGroup/codeGroupView?ccgSeq=<c:out value="${list.ccgSeq }"/>'" style="cursor: pointer;">
-												<td class="tableHead1"><input class="listCheck" type="checkbox"></td>
-												<td class="tableHead1"><c:out value="${status.count }"/></td>
-												<td><c:out value="${list.ccgSeq }"/></td>
-												<td><c:out value="${list.ccgName }"/></td>
-												<td><c:out value="${list.ccgNameEng }"/></td>
-												<td><c:out value="${list.ccCount }"/></td>
-												<td><c:out value="${list.ccgUseNy }"/></td>
-												<td><c:out value="${list.ccgOrder }"/></td>
-												<td><c:out value="${list.ccgDelNy }"/></td>
-												<td><c:out value="${list.ccgRegDatetime }"/></td>
-												<td></td>
-											</tr>
-										</c:forEach>
-									</c:otherwise>
-								</c:choose>
-							</table>
-						</div>
-						
-						<!-- pagination s -->
-						<%@include file="../../common/xdmin/includeV1/pagination.jsp"%>
-						<!-- pagination e -->
-						
-						<div class="row p-0">
-							<div class="col">
-								<button class="btn btn-danger" type="button" id="cglCancel"><i class="fa-duotone fa-x"></i></button>
-								<button class="btn btn-danger" type="button" id="cglDel"><i class="fa-regular fa-trash-can"></i></button>
-							</div>
-							<div class="col" style="text-align: right;">
-								<button class="btn btn-success" type="button" id="cglExcel"><i class="fa-regular fa-file-excel"></i></button>
-								<button class="btn btn-primary" type="button" onclick="location.href='codeGroupForm'" id="cglPlus"><i class="fa-regular fa-plus"></i></button>
+							<div class="col px-4" style="text-align: right;">
+								<button class="btn btn-danger" id="btnUelete" type="button">
+									<i class="fa-duotone fa-x"></i>
+								</button>
+								<button class="btn btn-danger" id="btnDelete" type="button">
+									<i class="fa-regular fa-trash-can"></i>
+								</button>
+								<button class="btn btn-success" id="btnSave" type="button">
+									<i class="fa-regular fa-file-excel"></i>
+								</button>
 							</div>
 						</div>
 					</div>
@@ -322,31 +272,67 @@
 	</form>
 	<script src="/resources/js/list.js"></script>
 	<script src="/resources/js/sidebar.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script>
-		var goUrlList = "/codeGroup/codeGroupList";
-		var goUrlForm = "/codeGroup/codeGroupForm";
+		var goUrlList = "/code/codeList";
+		var goUrlInst = "/code/codeInst";
+		var goUrlUpdt = "/code/codeUpdt";
+		var goUrlUele = "/code/codeUele";
+		var goUrlDele = "/code/codeDele";
 		
-		var form = $("form[name=formList]");
+		var seq = $("input:hidden[name=ccSeq]");
 		
-		$("#btnSearch").on("click", function(){
-			form.attr("action", goUrlList).submit();
-		});
+		var form = $("form[name=form]");
+		var formVo = $("form[name=formVo]");
 	
-		$("#btnReset").on("click", function(){
-			$(location).attr("href", goUrlList);
+		$("#btnSave").on("click",function(){
+			alert("야옹");
+			if(seq.val() == "0" || seq.val() == ""){
+				//insert
+				form.attr("action", goUrlInst).submit();
+			} else {
+				// update
+				form.attr("action", goUrlUpdt).submit();
+			}
 		});
 		
-		goForm = function(keyValue) {
-			mainkey.val(keyValue);
-			form.attr("action", goUrlForm).submit();
-		}
+		$("#btnUelete").on("click", function(){
+			alert("멍멍");
+			$("input:hidden[name=ccDelNy]").val(1);
+			$(".modal-title").text("확 인");
+			$(".modal-body").text("해당 데이터를 삭제하시겠습니까 ?");
+			$("#btnModalUelete").show();
+			$("#btnModalDelete").hide();
+			$("#modalConfirm").modal("show");
+		});
 		
-		goList = function(thisPage) {
-			$("input:hidden[name=thisPage]").val(thisPage);
-			form.attr("action", goUrlList).submit();
-		}
+
+		$("#btnDelete").on("click", function(){
+			alert("어흥");
+			$("input:hidden[name=ccDelNy]").val(0);
+			$(".modal-title").text("확 인");
+			$(".modal-body").text("해당 데이터를 삭제하시겠습니까 ?");
+			$("#btnModalUelete").hide();
+			$("#btnModalDelete").show();
+			$("#modalConfirm").modal("show");
+		});
+		
+		
+		$("#btnModalUelete").on("click", function(){
+			$("#modalConfirm").modal("hide");
+			formVo.attr("action", goUrlUele).submit();
+		});
+		
+		
+		$("#btnModalDelete").on("click", function(){
+			$("#modalConfirm").modal("hide");
+			formVo.attr("action", goUrlDele).submit();
+		});
+		
+		$( function() {
+			  $( "#datepicker" ).datepicker();
+			} );
 	</script>
-	
 </body>
 </html>

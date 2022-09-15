@@ -18,8 +18,6 @@ public class CodeServiceImpl implements CodeService {
 		return list;
 	}
 	
-	
-
 	@Override
 	public List<Code> ccgNameList() throws Exception {
 		
@@ -27,14 +25,44 @@ public class CodeServiceImpl implements CodeService {
 		return ccgList;
 	}
 
-
-
 	@Override
 	public int insert(Code dto) throws Exception {
 		int result = dao.insert(dto);
 		System.out.println("service result: " + result);
 		return result;
 	}
+
+	@Override
+	public int selectOneCount(CodeVo vo) throws Exception {
+		int count = dao.selectOneCount(vo);
+		System.out.println("service count: " + count);
+		return count;
+	}
+
+	@Override
+	public Code selectOne(CodeVo vo) throws Exception {
+		Code item = dao.selectOne(vo);
+		System.out.println("service item: " + item);
+		return item;
+	}
+
+	@Override
+	public int update(Code dto) throws Exception {
+		return dao.update(dto);
+	}
+
+	@Override
+	public int uelete(Code dto) throws Exception {
+		return dao.uelete(dto);
+	}
+
+	@Override
+	public int delete(CodeVo vo) throws Exception {
+		return dao.delete(vo);
+	}
+
+
+
 
 	
 

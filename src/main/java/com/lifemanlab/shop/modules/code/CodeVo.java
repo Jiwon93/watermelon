@@ -1,10 +1,17 @@
 package com.lifemanlab.shop.modules.code;
 
-public class CodeVo {
+import com.lifemanlab.shop.common.base.BaseVo;
+
+public class CodeVo extends BaseVo {
 	
+	
+	// search
 	private Integer shOption;
 	private String shValue;
 	private Integer shDelNy;
+	private String shDateStart;
+	private String shDateEnd;
+	private Integer shOptionDate;
 /////////////////////////////////////////////////////
 	public Integer getShOption() {
 		return shOption;
@@ -23,6 +30,24 @@ public class CodeVo {
 	}
 	public void setShDelNy(Integer shDelNy) {
 		this.shDelNy = shDelNy;
+	}
+	public String getShDateStart() {
+		return shDateStart;
+	}
+	public void setShDateStart(String shDateStart) {
+		this.shDateStart = shDateStart;
+	}
+	public String getShDateEnd() {
+		return shDateEnd;
+	}
+	public void setShDateEnd(String shDateEnd) {
+		this.shDateEnd = shDateEnd;
+	}
+	public Integer getShOptionDate() {
+		return shOptionDate;
+	}
+	public void setShOptionDate(Integer shOptionDate) {
+		this.shOptionDate = shOptionDate;
 	}
 	
 

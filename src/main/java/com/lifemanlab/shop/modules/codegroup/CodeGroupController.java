@@ -9,15 +9,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.lifemanlab.shop.common.base.BaseController;
 import com.lifemanlab.shop.common.constants.Constants;
 import com.lifemanlab.shop.common.util.UtilDatetime;
 
 @Controller
 @RequestMapping(value = "/codeGroup/")
-public class CodeGroupController {
+public class CodeGroupController extends BaseController{
 	
 	@Autowired
 	CodeGroupServiceImpl service;
+	
 	
 	@RequestMapping(value = "codeGroupList")
 	public String codeGroupList(@ModelAttribute("vo") CodeGroupVo vo, Model model) throws Exception {
@@ -26,12 +28,15 @@ public class CodeGroupController {
 		System.out.println("vo.getShOption(): " + vo.getShOption());
 		System.out.println("vo.getShDelNy(): " + vo.getShDelNy());
 		
+		vo.setParamsPaging(service.selectOneCount(vo));
+		
 		List<CodeGroup> list = service.selectList(vo);
 		model.addAttribute("list", list);
 		
 		vo.setShOptionDate(vo.getShOptionDate() == null ? 1 : vo.getShOptionDate());
 		vo.setShDateStart(vo.getShDateStart() == null ? UtilDatetime.calculateDayString(UtilDatetime.nowLocalDateTime(), Constants.DATE_INERVAL) : vo.getShDateStart());
 		vo.setShDateEnd(vo.getShDateEnd() == null ? UtilDatetime.nowString() : vo.getShDateEnd());
+		
 		return "infra/codegroup/xdmin/codeGroupList";
 	}
 	

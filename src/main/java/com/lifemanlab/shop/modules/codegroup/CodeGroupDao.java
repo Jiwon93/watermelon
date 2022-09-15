@@ -25,6 +25,12 @@ public class CodeGroupDao {
 		return list; 
 	}
 	
+	public int selectOneCount(CodeGroupVo vo) {
+		int count = sqlSession.selectOne(namespace + ".selectOneCount", vo);
+		System.out.println("dao count: " + count);
+		return count;
+	}
+	
 	public CodeGroup selectOne(CodeGroupVo vo) {
 		CodeGroup item = sqlSession.selectOne(namespace + ".selectOne", vo);
 		System.out.println("dao item: " + item);

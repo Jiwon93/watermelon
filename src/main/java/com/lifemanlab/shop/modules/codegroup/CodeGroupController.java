@@ -48,7 +48,7 @@ public class CodeGroupController extends BaseController{
 		model.addAttribute("item", item);
 		
 		return "infra/codegroup/xdmin/codeGroupView";
-	}
+	} 
 		
 	
 	@RequestMapping(value = "codeGroupForm")

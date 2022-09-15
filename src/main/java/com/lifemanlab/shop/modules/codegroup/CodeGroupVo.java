@@ -8,6 +8,7 @@ public class CodeGroupVo {
 	private String ccgSeq;
 	private String shDateStart;
 	private String shDateEnd;
+	private Integer shOptionDate;
 ///////////////////////////////////////////////
 	public Integer getShOption() {
 		return shOption;
@@ -44,6 +45,12 @@ public class CodeGroupVo {
 	}
 	public void setShDateEnd(String shDateEnd) {
 		this.shDateEnd = shDateEnd;
+	}
+	public Integer getShOptionDate() {
+		return shOptionDate;
+	}
+	public void setShOptionDate(Integer shOptionDate) {
+		this.shOptionDate = shOptionDate;
 	}
 	
 }

@@ -49,6 +49,7 @@
 </head>
 
 <body>
+<form action="/">
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
         <a href="#" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
@@ -65,7 +66,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto">
-                <a href="#" class="nav-item nav-link">로그인</a>
+                <a href="/member/loginForm" class="nav-item nav-link">로그인</a>
                 <a href="#" class="nav-item nav-link">회원가입</a>
             </div>
             <div class="pe-3">
@@ -403,7 +404,7 @@
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
-
+</form>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -418,6 +419,9 @@
 
     <!-- Template Javascript -->
     <script src="/resources/template/woody/js/main.js"></script>
+    <script type="text/javascript">
+    	function
+    </script>
 </body>
 
 </html>

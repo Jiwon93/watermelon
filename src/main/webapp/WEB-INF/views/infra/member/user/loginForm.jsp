@@ -54,7 +54,7 @@
 </head>
 
 <body>
-
+<form>
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
         <a href="#l" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
@@ -83,65 +83,64 @@
                    <div class="section-title text-center">
                        <h1 class="display-6 mb-4">로그인</h1>
                    </div>
-                   <form>
-                       <div class="row g-3">
-                           <div class="col-8 offset-2">
-                               <div class="form-floating">
-                                   <input type="email" class="form-control" id="newEmail">
-                                   <label for="newEmail">이메일</label>
-                               </div>
-                           </div>
-                           <div class="col-8 offset-2">
-                               <div class="form-floating">
-                                   <input type="password" class="form-control" id="newPw">
-                                   <label for="newPw">비밀번호</label>
-                               </div>
-                           </div>
-                           <div class="col-8 offset-2">
-                               <button class="btn btn-primary w-100" type="button" onclick="location.href='memberHome.html'">로그인</button>
-                           </div>
-                           <div class="col-md-3 offset-2">
-                               <div class="form-check">
-                                   <input type="checkbox" class="form-check-input" id="loginSave">
-                                   <label class="form-check-label" for="loginSave">로그인 유지</label>
-                               </div>
-                           </div>
-                           <div class="col">
-                               <div class="form-floating">
-                               	   <a class="" href="idPwFindForm.html">아이디/비밀번호 찾기</a>
-                               </div>
+                   <div class="row g-3">
+                       <div class="col-8 offset-2">
+                           <div class="form-floating">
+                               <input type="email" class="form-control" id="newEmail">
+                               <label for="newEmail">이메일</label>
                            </div>
                        </div>
-                       <br>
-                       <div class="row g-3">
-	                       <div class="col-8 offset-2 text-center">
-		                       <h4 class="mb-4">간편 로그인</h4>
-		                   </div>
-	                   </div>
-	                   <div class="row g-3 justify-content-center">
-		                   <div class="easyLoginBox col-2">
-		                   	   <a href="#"><img src="../images/naver.png" alt="" class="easyLogin"></a>			
-		                   </div>
-		                   <div class="easyLoginBox col-2">
-		                   	   <a href="#"><img src="../images/kakao.png" alt="" class="easyLogin"></a>		
-		                   </div>
-		                   <div class="easyLoginBox col-2">
-		                   	   <a href="#"><img src="../images/facebook.png" alt="" class="easyLogin"></a>			
-		                   </div>
-		                   <div class="easyLoginBox col-2">
-		                   	   <a href="#"><img src="../images/google.png" alt="" class="easyLogin"></a>			
-		                   </div>
-                       </div>
-                       <br><br>
-                       <div class="row g-3">
-	                       <div class="text-center">
-		                       <span class="mb-4">아직 회원이 아니시라면?</span>
-		                   </div>
-		                   <div class="col-8 offset-2">
-                               <button class="btn btn-secondary w-100 py-2" type="button" onclick="location.href='memberRegFormC.html'">회원가입</button>
+                       <div class="col-8 offset-2">
+                           <div class="form-floating">
+                               <input type="password" class="form-control" id="newPw">
+                               <label for="newPw">비밀번호</label>
                            </div>
                        </div>
-                   </form>
+                       <div class="col-8 offset-2">
+                           <button class="btn btn-primary w-100" type="button" onclick="location.href='memberHome.html'">로그인</button>
+                       </div>
+                       <div class="col-md-3 offset-2">
+                           <div class="form-check">
+                               <input type="checkbox" class="form-check-input" id="loginSave">
+                               <label class="form-check-label" for="loginSave">로그인 유지</label>
+                           </div>
+                       </div>
+                       <div class="col">
+                           <div class="form-floating">
+                           	   <a class="" href="idPwFindForm.html">아이디/비밀번호 찾기</a>
+                           </div>
+                       </div>
+                   </div>
+                   <br>
+                   <div class="row g-3">
+                    <div class="col-8 offset-2 text-center">
+                     <h4 class="mb-4">간편 로그인</h4>
+                 </div>
+                </div>
+                <div class="row g-3 justify-content-center">
+                 <div class="easyLoginBox col-2">
+                 	   <a href="#"><img src="../images/naver.png" alt="" class="easyLogin"></a>			
+                 </div>
+                 <div class="easyLoginBox col-2">
+                 	   <a href="#"><img src="../images/kakao.png" alt="" class="easyLogin"></a>		
+                 </div>
+                 <div class="easyLoginBox col-2">
+                 	   <a href="#"><img src="../images/facebook.png" alt="" class="easyLogin"></a>			
+                 </div>
+                 <div class="easyLoginBox col-2">
+                 	   <a href="#"><img src="../images/google.png" alt="" class="easyLogin"></a>			
+                 </div>
+                   </div>
+                   <br><br>
+                   <div class="row g-3">
+                    <div class="text-center">
+                     <span class="mb-4">아직 회원이 아니시라면?</span>
+                 </div>
+                 <div class="col-8 offset-2">
+                           <button class="btn btn-secondary w-100 py-2" type="button" onclick="location.href='memberRegFormC.html'">회원가입</button>
+                       </div>
+                   </div>
+                   
                </div>
            </div>
         </div>
@@ -167,7 +166,7 @@
         </div>
     </div>
     <!-- Footer End -->
-
+</form>
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

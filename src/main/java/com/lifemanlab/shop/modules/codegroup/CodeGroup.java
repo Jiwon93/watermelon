@@ -12,6 +12,7 @@ public class CodeGroup {
 	private Integer ccCount;
 	private String ccgNameEng;
 	private Date ccgRegDatetime;
+	private Date ccgModDatetime;
 ////////////////////////////////////////
 	public String getCcgSeq() {
 		return ccgSeq;
@@ -60,6 +61,12 @@ public class CodeGroup {
 	}
 	public void setCcgRegDatetime(Date ccgRegDatetime) {
 		this.ccgRegDatetime = ccgRegDatetime;
+	}
+	public Date getCcgModDatetime() {
+		return ccgModDatetime;
+	}
+	public void setCcgModDatetime(Date ccgModDatetime) {
+		this.ccgModDatetime = ccgModDatetime;
 	}
 	
 	

@@ -50,14 +50,14 @@
   	<link rel="stylesheet" href="/resources/demos/style.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-	<script>
-		$( function() {
-		  $( "#shDateStart" ).datepicker({ dateFormat: 'yy-mm-dd'});
+	<script type="text/javascript">
+		$(document).ready(function(){
+		  $("input.shDate").datepicker();
 		} );
 		
-		$( function() {
-			  $( "#shDateEnd" ).datepicker({ dateFormat: 'yy-mm-dd'});
-			} );
+		$.datepicker.setDerfaults({
+			dateFormat: 'yy-mm-dd'
+		});
 	</script>
 </head>
 <body>
@@ -187,15 +187,17 @@
 									</select>
 								</div>
 								<div class="col-2 p-1">
-									<select class="form-select">
-										<option>수정일</option>
+									<select class="form-select" name="shOptionDate">
+										<option value="">날짜선택</option>
+										<option value="1">등록일</option>
+										<option value="2">수정일</option>
 									</select>
 								</div>
 								<div class="col-2 p-1">
-									<input class="form-control" type="text" id="shDateStart" placeholder="시작일">
+									<input class="form-control shDate" type="text" id="shDateStart" name="shDateStart" value="${vo.shDateStart }" placeholder="시작일">
 								</div>
 								<div class="col-2 p-1">
-									<input class="form-control" type="text" id="shDateEnd" placeholder="종료일">
+									<input class="form-control shDate" type="text" id="shDateEnd" name="shDateEnd" value="${vo.shDateEnd }" placeholder="종료일">
 								</div>
 							</div>
 							<div class="row mb-2">

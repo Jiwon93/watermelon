@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.lifemanlab.shop.common.constants.Constants;
+import com.lifemanlab.shop.common.util.UtilDatetime;
+
 @Controller
 @RequestMapping(value = "/codeGroup/")
 public class CodeGroupController {
@@ -26,8 +29,12 @@ public class CodeGroupController {
 		List<CodeGroup> list = service.selectList(vo);
 		model.addAttribute("list", list);
 		
+		vo.setShOptionDate(vo.getShOptionDate() == null ? 1 : vo.getShOptionDate());
+		vo.setShDateStart(vo.getShDateStart() == null ? UtilDatetime.calculateDayString(UtilDatetime.nowLocalDateTime(), Constants.DATE_INERVAL) : vo.getShDateStart());
+		vo.setShDateEnd(vo.getShDateEnd() == null ? UtilDatetime.nowString() : vo.getShDateEnd());
 		return "infra/codegroup/xdmin/codeGroupList";
 	}
+	
 	
 	@RequestMapping(value = "codeGroupView")
 	public String codeGroupView(Model model, CodeGroupVo vo) throws Exception {

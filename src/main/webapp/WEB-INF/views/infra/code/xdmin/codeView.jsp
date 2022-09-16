@@ -156,29 +156,32 @@
 						<div class="container-fluid">
 							<div class="row m-4">
 								<div class="col-6">
-									<label class="form-label" for="ccgSeq">코드그룹 코드</label>
-									<input type="text" class="form-control" id="ccgSeq" name="ccgSeq" value="<c:out value="${item.ccgSeq }"/>">
-								</div>
-								<div class="col-6">
-									<label class="form-label" for="ccgName">코드그룹 이름 (한글)</label>
-									<input type="text" class="form-control" id="ccgName" value="<c:out value="${item.ccgName }"/>" placeholder="영문(대소문자),숫자">
+									<label class="form-label" for="ccgSeq">코드그룹</label>
+									<select class="form-select" id="codeGroup_ccgSeq" name="codeGroup_ccgSeq">
+										<option>선택</option>
+										<c:forEach items="${ccgList}" var="ccgList" varStatus="status">
+										<option value="${ccgList.ccgSeq }" ><c:out value="${ccgList.ccgName }"/></option>
+										</c:forEach>
+									</select>
 								</div>
 							</div>
 							<div class="row m-4">
 								<div class="col mx-auto">
-									<label class="form-label" for="ccgName">코드</label>
+									<label class="form-label" for="ccName">코드</label>
 									<input type="text" class="form-control" id="ccSeq" name="ccSeq" value="<c:out value="${item.ccSeq }"/>">
 								</div>
 								<div class="col mx-auto">
 									<label class="form-label" for="ccgNameEng">대체코드</label>
 									<input type="text" class="form-control">
 								</div>
+							</div>
+							<div class="row m-4">
 								<div class="col mx-auto">
-									<label class="form-label" for="ccgName">코드 이름 (한글)</label>
+									<label class="form-label" for="ccName">코드 이름 (한글)</label>
 									<input type="text" class="form-control" id="ccName" name="ccName" value="<c:out value="${item.ccName }"/>">
 								</div>
 								<div class="col mx-auto">
-									<label class="form-label" for="ccgName">코드 이름 (영문)</label>
+									<label class="form-label" for="ccName">코드 이름 (영문)</label>
 									<input type="text" class="form-control" id="ccNameEng" name="ccNameEng" value="<c:out value="${item.ccNameEng }"/>">
 								</div>
 							</div>
@@ -220,11 +223,11 @@
 							</div>
 							<div class="row m-4">
 								<div class="col mx-auto">
-									<label class="form-label" for="ccgRegDatetime">코드 등록일</label>
+									<label class="form-label" for="ccRegDatetime">코드 등록일</label>
 									<input type="text" class="form-control" id="ccRegDatetime" name="ccRegDatetime" value="<c:out value="${item.ccRegDatetime }"/>">
 								</div>
 								<div class="col mx-auto">
-									<label class="form-label" for="datepicker">코드 수정일</label>
+									<label class="form-label" for="ccModDatetime">코드 수정일</label>
 									<input type="text" class="form-control" id="ccModDatetime" name="ccModDatetime" placeholder="숫자" value="<c:out value="${item.ccModDatetime }"/>">
 								</div>
 							</div>

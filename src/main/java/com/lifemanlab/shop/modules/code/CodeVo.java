@@ -12,6 +12,7 @@ public class CodeVo extends BaseVo {
 	private String shDateStart;
 	private String shDateEnd;
 	private Integer shOptionDate;
+	private String ccSeq;
 /////////////////////////////////////////////////////
 	public Integer getShOption() {
 		return shOption;
@@ -48,6 +49,12 @@ public class CodeVo extends BaseVo {
 	}
 	public void setShOptionDate(Integer shOptionDate) {
 		this.shOptionDate = shOptionDate;
+	}
+	public String getCcSeq() {
+		return ccSeq;
+	}
+	public void setCcSeq(String ccSeq) {
+		this.ccSeq = ccSeq;
 	}
 	
 

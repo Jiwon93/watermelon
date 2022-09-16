@@ -61,7 +61,7 @@
 	</script>
 </head>
 <body>
-	<form method="post" name="formList" id="formList">
+	<form method="post" name="ccgFormList" id="ccgFormList">
 		<input type="hidden" name="mainKey">
 		<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
 		<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
@@ -327,7 +327,7 @@
 		var goUrlList = "/codeGroup/codeGroupList";
 		var goUrlForm = "/codeGroup/codeGroupForm";
 		
-		var form = $("form[name=formList]");
+		var form = $("form[name=ccgFormList]");
 		
 		$("#btnSearch").on("click", function(){
 			form.attr("action", goUrlList).submit();

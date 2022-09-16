@@ -2,7 +2,9 @@ package com.lifemanlab.shop.modules.code;
 
 import java.sql.Date;
 
-public class Code {
+import com.lifemanlab.shop.common.base.Base;
+
+public class Code extends Base {
 	
 	private String ccSeq;
 	private String ccName;
@@ -11,9 +13,9 @@ public class Code {
 	private Integer ccUseNy;
 	private Integer ccDelNy;
 	private String ccgName;
-	private Integer ccgSeq;
 	private String ccNameEng;
 	private Date ccRegDatetime;
+	private Date ccModDatetime;
 /////////////////////////////////////////////////
 	public String getCcSeq() {
 		return ccSeq;
@@ -57,12 +59,6 @@ public class Code {
 	public void setCcgName(String ccgName) {
 		this.ccgName = ccgName;
 	}
-	public Integer getCcgSeq() {
-		return ccgSeq;
-	}
-	public void setCcgSeq(Integer ccgSeq) {
-		this.ccgSeq = ccgSeq;
-	}
 	public String getCcNameEng() {
 		return ccNameEng;
 	}
@@ -74,6 +70,12 @@ public class Code {
 	}
 	public void setCcRegDatetime(Date ccRegDatetime) {
 		this.ccRegDatetime = ccRegDatetime;
+	}
+	public Date getCcModDatetime() {
+		return ccModDatetime;
+	}
+	public void setCcModDatetime(Date ccModDatetime) {
+		this.ccModDatetime = ccModDatetime;
 	}
 	
 	

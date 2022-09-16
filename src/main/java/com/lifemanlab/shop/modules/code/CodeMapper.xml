@@ -10,36 +10,45 @@
 	
 	<sql id ="selectCommon">
 		FROM codeGroup a
+		join code b on b.codeGroup_ccgSeq = a.ccgSeq
 		WHERE 1=1
 			<if test="shDelNy != null and !shDelNy.equals('')">AND ccgDelNy = #{shDelNy}</if>
 			<choose>
 				<when test="shOption == 1">AND ccgSeq = #{shValue}</when>
 				<when test="shOption == 2">AND ccgName LIKE CONCAT('%',#{shValue},'%')</when>
-				<when test="shOption == 3">AND ccgNameEng LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 3">AND ccSeq LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 4">AND ccName LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 5">AND ccNameEng LIKE CONCAT('%',#{shValue},'%')</when>
 			</choose>
 	</sql>
 	
 	<select id="selectList" resultMap="resultMapObj">
+		<include refid="Base.selectListUpperForMysql" />
+			SELECT
+				a.ccgSeq
+			    ,a.ccgName
+			    ,b.ccSeq
+			    ,b.ccName
+			    ,b.ccUseNy
+			    ,b.ccOrder
+				<!-- <include refid="Base.selectRegModWithAlies" /> -->
+			<include refid="selectCommon" />
+			ORDER BY b.ccSeq DESC
+			<!-- <include refid="Base.orderByLimitForMysql" /> -->
+		<include refid="Base.selectListLowerForMysql" />
+	</select>
+	
+	<select id="selectOneCount" resultType="Integer">
+		SELECT COUNT(*)
+		<include refid="selectCommon" />
+	</select>
+	
+	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
-			a.ccgSeq
-		    ,a.ccgName
-		    ,b.ccSeq
-		    ,b.ccName
-		    ,b.ccUseNy
-		    ,b.ccOrder
-		FROM codeGroup a
-		join code b on b.codeGroup_ccgSeq = a.ccgSeq
+			a.*
+		FROM code a
 		WHERE 1=1
-			<!-- AND ccDelNY = 0 -->
-			<!-- AND ccName LIKE CONCAT('%',#{shValue},'%') -->
-			<if test="shDelNy != null and !shDelNy.equals('')">AND ccDelNy = #{shDelNy}</if>
-			<choose>
-				<!-- <when test="shDelNy == 0">AND ccDelNy = 0</when> -->
-				<!-- <when test="shDelNy == 1">AND ccDelNy = 1</when> -->
-				<when test="shOption == 1">AND ccSeq = #{shValue}</when>
-				<when test="shOption == 2">AND ccName LIKE CONCAT('%',#{shValue},'%')</when>
-				<otherwise></otherwise>
-			</choose>
+			AND ccSeq = #{ccSeq}
 	</select>
 	
 	<select id="ccgNameList" resultMap="resultMapObj">
@@ -72,6 +81,30 @@
 				SELECT last_insert_id()
 			</selectKey>
 	</insert>
+	
+	<update id="update">
+		UPDATE code
+		SET
+			ccName = #{ccName}
+			,ccNameEng = #{ccNameEng}
+			,ccOrder = #{ccOrder}
+			,ccUseNy = #{ccUseNy}
+			,ccDelNy = #{ccDelNy}
+			,ccRegDatetime = #{ccRegDatetime}
+		WHERE
+			ccSeq = #{ccSeq}
+	</update>
+	
+	<update id="uelete">
+		UPDATE code
+		SET
+			ccDelNy = 1
+		WHERE ccSeq = #{ccSeq}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM code WHERE ccSeq = #{ccSeq}
+	</delete>
 	
 	
 

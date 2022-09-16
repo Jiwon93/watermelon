@@ -52,7 +52,7 @@ public class CodeGroupController extends BaseController{
 	
 	
 	@RequestMapping(value = "codeGroupView")
-	public String codeGroupView(Model model, CodeGroupVo vo) throws Exception {
+	public String codeGroupView(@ModelAttribute("vo") CodeGroupVo vo, Model model) throws Exception {
 		CodeGroup item = service.selectOne(vo);
 		System.out.println("controller item: " + item);
 		model.addAttribute("item", item);
@@ -62,12 +62,7 @@ public class CodeGroupController extends BaseController{
 		
 	
 	@RequestMapping(value = "codeGroupForm")
-	public String codeGroupForm(@ModelAttribute("vo") CodeGroupVo vo, Model model) throws Exception {
-		/*
-		 * if(vo.getMainKey().equals("0") || vo.getMainKey().equals("")) { //insert }
-		 * else { CodeGroup item = service.selectOne(vo); model.addAttribute("item",
-		 * item); }
-		 */
+	public String codeGroupForm() throws Exception {
 		
 		return "infra/codegroup/xdmin/codeGroupForm";
 	}
@@ -75,10 +70,15 @@ public class CodeGroupController extends BaseController{
 	@RequestMapping(value = "codeGroupInst")
 	public String codeGroupInst(CodeGroupVo vo, CodeGroup dto, RedirectAttributes redirectAttributes) throws Exception {
 		
-		int result = service.insert(dto);
-		System.out.println("controller result: " + result);
-		
-		vo.setMainKey(dto.getCcgSeq());
+		service.insert(dto);
+		System.out.println(dto.getCcgName());
+		System.out.println(dto.getCcgNameEng());
+		System.out.println(dto.getCcgDelNy());
+		System.out.println(dto.getCcgOrder());
+		System.out.println(dto.getCcgRegDatetime());
+		System.out.println(dto.getCcgModDatetime());
+		System.out.println(dto.getCcgUseNy());
+		vo.setCcgSeq(dto.getCcgSeq());
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
 		

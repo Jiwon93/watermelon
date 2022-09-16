@@ -49,6 +49,10 @@ th, td {
 </head>
 <body>
 	<form method="post" name="cdFormList" id="cdFormList">
+		<input type="hidden" name="mainKey">
+		<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
+		<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
+		<input type="hidden" name="checkboxSeqArray">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<div class="col-1">

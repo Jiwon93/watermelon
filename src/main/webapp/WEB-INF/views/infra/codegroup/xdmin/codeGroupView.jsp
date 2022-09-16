@@ -43,7 +43,11 @@
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </head>
 <body>
-	<form name="form" id="form" autocomplete="off">
+	<!-- <form name="form" id="form" method="post" enctype="multipart/form-data"> -->
+	<form id="form" name="form" method="post" autocomplete="off" enctype="multipart/form-data">
+	<!-- *Vo.jsp s -->
+	<%@include file="../../common/xdmin/includeV1/codeGroupVo.jsp"%>		<!-- #-> -->
+	<!-- *Vo.jsp e -->
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<div class="col-1">
@@ -216,14 +220,14 @@
 									<input type="text" class="form-control" id="ccgRegDatetime" name="ccgRegDatetime" value="<c:out value="${item.ccgRegDatetime }"/>">
 								</div>
 								<div class="col mx-auto">
-									<label class="form-label" for="datepicker">코드 수정 날짜</label>
-									<input type="text" class="form-control" id="datepicker" name="datepicker" placeholder="숫자">
+									<label class="form-label" for="ccgModDatetime">코드 수정 날짜</label>
+									<input type="text" class="form-control" id="ccgModDatetime" name="ccgModDatetime" value="<c:out value="${item.ccgModDatetime }"/>" placeholder="숫자">
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col px-5">
-								<button class="btn btn-secondary" onclick="location.href='codeGroupList'">
+								<button class="btn btn-secondary" id="btnList" type="button">
 									<i class="fa-solid fa-bars"></i>
 								</button>
 							</div>
@@ -262,6 +266,11 @@
 	    </div>
 	    <!-- Footer End -->
 	</form>
+	<form name="formVo" id="formVo" method="post">
+	<!-- *Vo.jsp s -->
+	<%@include file="../../common/xdmin/includeV1/codeGroupVo.jsp"%>		<!-- #-> -->
+	<!-- *Vo.jsp e -->
+	</form>
 	<script src="/resources/js/list.js"></script>
 	<script src="/resources/js/sidebar.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
@@ -287,6 +296,10 @@
 				// update
 				form.attr("action", goUrlUpdt).submit();
 			}
+		});
+		
+		$("#btnList").on("click", function(){
+			formVo.attr("action", goUrlList).submit();
 		});
 		
 		$("#btnUelete").on("click", function(){

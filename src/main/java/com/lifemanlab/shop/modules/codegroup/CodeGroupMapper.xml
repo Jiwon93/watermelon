@@ -25,6 +25,11 @@
 				a.ccgSeq
 				, a.ccgName
 				, a.ccgNameEng
+				, a.ccgDelNy
+				, a.ccgOrder
+				, a.ccgUseNy
+				, a.ccgRegDatetime
+				, a.ccgModDatetime
 				,(select count(aa.ccSeq) from code aa where 1=1 and aa.ccDelNy = 0 and aa.codeGroup_ccgSeq = a.ccgSeq) as ccCount
 				<!-- <include refid="Base.selectRegModWithAlies" /> -->
 			<include refid="selectCommon" />
@@ -71,6 +76,7 @@
 			,ccgUseNy
 			,ccgDelNy
 			,ccgRegDatetime
+			,ccgModDatetime
 		)
 		VALUES (
 			#{ccgName}
@@ -79,6 +85,7 @@
 			,#{ccgUseNy}
 			,#{ccgDelNy}
 			,#{ccgRegDatetime}
+			,#{ccgModDatetime}
 		)
 			<selectKey resultType="String" keyProperty="ccgSeq" order="AFTER">
 				SELECT last_insert_id()
@@ -94,6 +101,7 @@
 			,ccgUseNy = #{ccgUseNy}
 			,ccgDelNy = #{ccgDelNy}
 			,ccgRegDatetime = #{ccgRegDatetime}
+			,ccgModDatetime = #{ccgModDatetime}
 		WHERE
 			ccgSeq = #{ccgSeq}
 	</update>

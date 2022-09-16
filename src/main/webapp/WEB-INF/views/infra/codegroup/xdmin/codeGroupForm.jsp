@@ -40,7 +40,11 @@
 	<link href="/resources/css/list.css" rel="stylesheet">
 </head>
 <body>
-	<form action="codeGroupInst" name="myForm" id="myForm">
+	<!-- <form name="form" id="form" method="post" enctype="multipart/form-data"> -->
+	<form id="form" name="form" method="post" autocomplete="off" enctype="multipart/form-data">
+	<!-- *Vo.jsp s -->
+	<%@include file="../../common/xdmin/includeV1/codeGroupVo.jsp"%>		<!-- #-> -->
+	<!-- *Vo.jsp e -->
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<div class="col-1">
@@ -213,25 +217,25 @@
 									<input type="text" class="form-control" id="ccgRegDatetime" name="ccgRegDatetime" <c:out value="${dto.ccgRegDatetime }"/> placeholder="2000-00-00">
 								</div>
 								<div class="col mx-auto">
-									<label class="form-label" for="cgfSpareInt4">코드 수정 날짜</label>
-									<input type="text" class="form-control" id="cgfSpareInt4" placeholder="숫자">
+									<label class="form-label" for="ccgModDatetime">코드 수정 날짜</label>
+									<input type="text" class="form-control" id="ccgModDatetime" name="ccgModDatetime" <c:out value="${dto.ccgModDatetime }"/> placeholder="숫자">
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col px-5">
-								<button class="btn btn-secondary" type="button">
+								<button class="btn btn-secondary" type="button" id="btnList">
 									<i class="fa-solid fa-bars"></i>
 								</button>
 							</div>
 							<div class="col px-4" style="text-align: right;">
-								<button class="btn btn-danger" type="button" id="cgfCancel">
+								<button class="btn btn-danger" type="button" id="btnUele">
 									<i class="fa-duotone fa-x"></i>
 								</button>
-								<button class="btn btn-danger" type="button" id="cgfDel">
+								<button class="btn btn-danger" type="button" id="btnDele">
 									<i class="fa-regular fa-trash-can"></i>
 								</button>
-								<button class="btn btn-success" type="submit" onclick="test();">
+								<button class="btn btn-success" type="button" id="btnSave">
 									<i class="fa-regular fa-file-excel"></i>
 								</button>
 							</div>
@@ -259,12 +263,38 @@
 	    </div>
 	    <!-- Footer End -->
 	</form>
+	<form name="formVo" id="formVo" method="post">
+	<!-- *Vo.jsp s -->
+	<%@include file="../../common/xdmin/includeV1/codeGroupVo.jsp"%>		<!-- #-> -->
+	<!-- *Vo.jsp e -->
+	</form>
 	<script src="/resources/js/list.js"></script>
 	<script src="/resources/js/sidebar.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script type="text/javascript">
 	
-		function test() {
+		var goUrlList = "/codeGroup/codeGroupList";
+		var goUrlInst = "/codeGroup/codeGroupInst";
+		var goUrlUpdt = "/codeGroup/codeGroupUpdt";
+		var goUrlUele = "/codeGroup/codeGroupUele";
+		var goUrlDele = "/codeGroup/codeGroupDele";
+	
+		var seq = $("input:hidden[name=ccgSeq]"); 
+	
+		var form = $("form[name=form]");
+		var formVo = $("form[name=formVo]");
+	
+		$("#btnSave").on("click", function(){
+		   		form.attr("action", goUrlInst).submit();
+		}); 
+	
+		$("#btnList").on("click", function(){
+			formVo.attr("action", goUrlList).submit();
+		});
+	
+		/* 
+			function test() {
 			
 			alert(document.getElementById("ccgName").value);
 			alert(document.getElementById('ccgNameEng').value);
@@ -315,10 +345,8 @@
 				return false;
 			}
 			
-			/* document.getElementById("myForm").submit(); */
-		}
-			
-			
+		} 
+		*/
 	
 	</script>
 </body>

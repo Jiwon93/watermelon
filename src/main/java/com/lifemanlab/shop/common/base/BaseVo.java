@@ -31,7 +31,7 @@ public class BaseVo {
 	
 	
 	//insert
-	private String MainKey;
+	private String mainKey;
 	
 //////////////////////////////////////////////////////////	
 
@@ -173,13 +173,12 @@ public class BaseVo {
 	
 	// insert
 	public String getMainKey() {
-		return MainKey;
+		return mainKey;
 	}
 
 	public void setMainKey(String mainKey) {
-		MainKey = mainKey;
+		this.mainKey = mainKey;
 	}
-
 	
 ////////////////////////////////////////////////////////////
 	public void setParamsPaging(int totalRows) {
@@ -231,6 +230,8 @@ public class BaseVo {
 //		System.out.println("getStartRnumForMysql(): " + getStartRnumForMysql());
 		
 	}
+
+	
 
 	
 

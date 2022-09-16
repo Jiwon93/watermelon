@@ -264,18 +264,18 @@
 									</c:when>
 									<c:otherwise>
 										<c:forEach items="${list}" var="list" varStatus="status">
-											<tr onclick="location.href='/codeGroup/codeGroupView?ccgSeq=<c:out value="${list.ccgSeq }"/>'" style="cursor: pointer;">
+											<tr style="cursor: pointer;">
 												<td class="tableHead1"><input class="listCheck" type="checkbox"></td>
 												<td class="tableHead1"><c:out value="${status.count }"/></td>
 												<td><c:out value="${list.ccgSeq }"/></td>
-												<td><c:out value="${list.ccgName }"/></td>
+												<td><a href="javascript:goView(<c:out value="${list.ccgSeq }"/>)" class="text-decoration-none"><c:out value="${list.ccgName }"/></a></td>
 												<td><c:out value="${list.ccgNameEng }"/></td>
 												<td><c:out value="${list.ccCount }"/></td>
 												<td><c:out value="${list.ccgUseNy }"/></td>
 												<td><c:out value="${list.ccgOrder }"/></td>
 												<td><c:out value="${list.ccgDelNy }"/></td>
 												<td><c:out value="${list.ccgRegDatetime }"/></td>
-												<td></td>
+												<td><c:out value="${list.ccgModDatetime }"/></td>
 											</tr>
 										</c:forEach>
 									</c:otherwise>
@@ -294,7 +294,7 @@
 							</div>
 							<div class="col" style="text-align: right;">
 								<button class="btn btn-success" type="button" id="cglExcel"><i class="fa-regular fa-file-excel"></i></button>
-								<button class="btn btn-primary" type="button" onclick="location.href='codeGroupForm'" id="cglPlus"><i class="fa-regular fa-plus"></i></button>
+								<button class="btn btn-primary" type="button" id="btnPlus"><i class="fa-regular fa-plus"></i></button>
 							</div>
 						</div>
 					</div>
@@ -326,6 +326,7 @@
 	<script>
 		var goUrlList = "/codeGroup/codeGroupList";
 		var goUrlForm = "/codeGroup/codeGroupForm";
+		var goUrlView = "/codeGroup/codeGroupView";
 		
 		var form = $("form[name=ccgFormList]");
 		
@@ -337,14 +338,36 @@
 			$(location).attr("href", goUrlList);
 		});
 		
-		goForm = function(keyValue) {
-			mainkey.val(keyValue);
-			form.attr("action", goUrlForm).submit();
-		}
+		$("#btnPlus").on("click", function(){
+			$(location).attr("href", goUrlForm);
+		});
 		
 		goList = function(thisPage) {
 			$("input:hidden[name=thisPage]").val(thisPage);
 			form.attr("action", goUrlList).submit();
+		}
+		
+		var seq = $("input:hidden[name=ccgSeq]");
+
+		$('#btnForm').on("click", function() {
+			goForm(0);                
+		});
+ 
+		goForm = function(keyValue) {
+	    	/* if(keyValue != 0) seq.val(btoa(keyValue)); */
+	    	seq.val(keyValue);
+			form.attr("action", goUrlForm).submit();
+		}
+	
+		goView = function(keyValue) {
+	    	/* if(keyValue != 0) seq.val(btoa(keyValue)); */
+	    	mainKey.val(keyValue);
+			form.attr("action", goUrlView).submit();
+		}
+		
+		goForm = function(keyValue) {
+			mainkey.val(keyValue);
+			form.attr("action", goUrlForm).submit();
 		}
 	</script>
 	

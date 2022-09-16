@@ -156,11 +156,11 @@
 						<div class="container-fluid">
 							<div class="row m-4">
 								<div class="col-6">
-									<label class="form-label" for="ccgSeq">코드그룹</label>
+									<label class="form-label" for="codeGroup_ccgSeq">코드그룹</label>
 									<select class="form-select" id="codeGroup_ccgSeq" name="codeGroup_ccgSeq">
 										<option>선택</option>
-										<c:forEach items="${ccgList}" var="ccgList" varStatus="status">
-										<option value="${ccgList.ccgSeq }" ><c:out value="${ccgList.ccgName }"/></option>
+										<c:forEach items="${ccgNameList}" var="ccgNameList" varStatus="status">
+										<option value="${ccgNameList.ccgSeq }" ><c:out value="${ccgNameList.ccgName }"/></option>
 										</c:forEach>
 									</select>
 								</div>

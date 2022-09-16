@@ -22,8 +22,6 @@ public class CodeGroupServiceImpl implements CodeGroupService {
 		return list;
 	}
 	
-	
-
 	@Override
 	public int selectOneCount(CodeGroupVo vo) throws Exception {
 		int count = dao.selectOneCount(vo);

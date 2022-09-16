@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.lifemanlab.shop.common.base.BaseController;
-import com.lifemanlab.shop.common.constants.Constants;
-import com.lifemanlab.shop.common.util.UtilDatetime;
 
 @Controller
 @RequestMapping(value = "/codeGroup/")
@@ -28,14 +26,26 @@ public class CodeGroupController extends BaseController{
 		System.out.println("vo.getShOption(): " + vo.getShOption());
 		System.out.println("vo.getShDelNy(): " + vo.getShDelNy());
 		
+		vo.setShOptionDate(vo.getShOptionDate() == null ? 2 : vo.getShOptionDate());
+		/*
+		 * vo.setShDateStart(vo.getShDateStart() == null || vo.getShDateStart() == "" ?
+		 * null : UtilDateTime.add00TimeString(vo.getShDateStart()));
+		 * vo.setShDateEnd(vo.getShDateEnd() == null || vo.getShDateEnd() == "" ? null :
+		 * UtilDateTime.add59TimeString(vo.getShDateEnd()));
+		 */
 		vo.setParamsPaging(service.selectOneCount(vo));
 		
 		List<CodeGroup> list = service.selectList(vo);
 		model.addAttribute("list", list);
 		
-		vo.setShOptionDate(vo.getShOptionDate() == null ? 1 : vo.getShOptionDate());
-		vo.setShDateStart(vo.getShDateStart() == null ? UtilDatetime.calculateDayString(UtilDatetime.nowLocalDateTime(), Constants.DATE_INERVAL) : vo.getShDateStart());
-		vo.setShDateEnd(vo.getShDateEnd() == null ? UtilDatetime.nowString() : vo.getShDateEnd());
+		/*
+		 * vo.setShOptionDate(vo.getShOptionDate() == null ? 1 : vo.getShOptionDate());
+		 * vo.setShDateStart(vo.getShDateStart() == null ?
+		 * UtilDatetime.calculateDayString(UtilDatetime.nowLocalDateTime(),
+		 * Constants.DATE_INERVAL) : vo.getShDateStart());
+		 * vo.setShDateEnd(vo.getShDateEnd() == null ? UtilDatetime.nowString() :
+		 * vo.getShDateEnd());
+		 */
 		
 		return "infra/codegroup/xdmin/codeGroupList";
 	}
@@ -52,37 +62,44 @@ public class CodeGroupController extends BaseController{
 		
 	
 	@RequestMapping(value = "codeGroupForm")
-	public String codeGroupForm() throws Exception {
+	public String codeGroupForm(@ModelAttribute("vo") CodeGroupVo vo, Model model) throws Exception {
+		/*
+		 * if(vo.getMainKey().equals("0") || vo.getMainKey().equals("")) { //insert }
+		 * else { CodeGroup item = service.selectOne(vo); model.addAttribute("item",
+		 * item); }
+		 */
+		
 		return "infra/codegroup/xdmin/codeGroupForm";
 	}
 	
 	@RequestMapping(value = "codeGroupInst")
-	public String codeGroupInst(CodeGroup dto) throws Exception {
+	public String codeGroupInst(CodeGroupVo vo, CodeGroup dto, RedirectAttributes redirectAttributes) throws Exception {
 		
 		int result = service.insert(dto);
 		System.out.println("controller result: " + result);
 		
-		return "redirect:/codeGroup/codeGroupList";
+		vo.setMainKey(dto.getCcgSeq());
+		
+		redirectAttributes.addFlashAttribute("vo", vo);
+		
+		return "redirect:/codeGroup/codeGroupView";
 	}
 	
 	@SuppressWarnings(value = {"all"})
 	@RequestMapping(value = "codeGroupUpdt")
 	public String codeGroupUpdt(CodeGroupVo vo, CodeGroup dto, RedirectAttributes redirectAttributes) throws Exception {
-		
 		service.update(dto);
 		return "redirect:/codeGroup/codeGroupList";
 	}
 	
 	@RequestMapping(value = "codeGroupUele")
 	public String codeGroupUele(CodeGroupVo vo, CodeGroup dto, RedirectAttributes redirectAttributes) throws Exception {
-		
 		service.uelete(dto);
 		return "redirect:/codeGroup/codeGroupList";
 	}
 	
 	@RequestMapping(value = "codeGroupDele")
 	public String codeGroupDele(CodeGroupVo vo, RedirectAttributes redirctAttributes) throws Exception {
-			
 		service.delete(vo);
 		return "redirect:/codeGroup/codeGroupList";
 	}

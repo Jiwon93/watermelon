@@ -25,7 +25,7 @@
 				a.ccgSeq
 				, a.ccgName
 				, a.ccgNameEng
-				,(select count(aa.ccSeq) from code aa where 1=1 and aa.ccDelNy = 0 and aa.codeGroup_ccgSeq = a.ccgSeq) as xifcdSeqCount
+				,(select count(aa.ccSeq) from code aa where 1=1 and aa.ccDelNy = 0 and aa.codeGroup_ccgSeq = a.ccgSeq) as ccCount
 				<!-- <include refid="Base.selectRegModWithAlies" /> -->
 			<include refid="selectCommon" />
 			ORDER BY a.ccgSeq DESC

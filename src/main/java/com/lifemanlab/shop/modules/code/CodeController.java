@@ -35,16 +35,20 @@ public class CodeController extends BaseController {
 	}
 	
 	@RequestMapping(value = "codeView")
-	public String codeView(Model model, CodeVo vo) throws Exception {
+	public String codeView(@ModelAttribute("vo") CodeVo vo, Model model) throws Exception {
+		
+		List<Code> ccgNameList = service.ccgNameList();
+		model.addAttribute("ccgNameList", ccgNameList);
 		Code item = service.selectOne(vo);
-		System.out.println("controller item: " + item);
 		model.addAttribute("item", item);
 		
 		return "infra/code/xdmin/codeView";
 	}
 	
 	@RequestMapping(value = "codeForm")
-	public String codeForm() throws Exception {
+	public String codeForm(Model model) throws Exception {
+		List<Code> ccgNameList = service.ccgNameList();
+		model.addAttribute("ccgNameList", ccgNameList);
 		return "infra/code/xdmin/codeForm";
 	}
 	

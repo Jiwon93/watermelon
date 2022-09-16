@@ -29,8 +29,13 @@ public class BaseVo {
 	private String shDateEnd;
 	private Integer shOptionDate;
 	
+	
+	//insert
+	private String MainKey;
+	
 //////////////////////////////////////////////////////////	
 
+	// paging
 	public int getThisPage() {
 		return thisPage;
 	}
@@ -120,6 +125,8 @@ public class BaseVo {
 	}
 
 ///////////////////////////////////////////////
+	
+	// search
 	public Integer getShOption() {
 	return shOption;
 	}
@@ -164,6 +171,17 @@ public class BaseVo {
 	}
 //////////////////////////////////////////////////////////////
 	
+	// insert
+	public String getMainKey() {
+		return MainKey;
+	}
+
+	public void setMainKey(String mainKey) {
+		MainKey = mainKey;
+	}
+
+	
+////////////////////////////////////////////////////////////
 	public void setParamsPaging(int totalRows) {
 			
 	//		setThisPage(3);
@@ -213,6 +231,8 @@ public class BaseVo {
 //		System.out.println("getStartRnumForMysql(): " + getStartRnumForMysql());
 		
 	}
+
+	
 
 	
 }

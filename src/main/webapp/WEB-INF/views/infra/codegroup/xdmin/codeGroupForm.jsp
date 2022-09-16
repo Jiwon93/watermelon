@@ -316,7 +316,6 @@
 			}
 			
 			/* document.getElementById("myForm").submit(); */
-			return false;
 		}
 			
 			

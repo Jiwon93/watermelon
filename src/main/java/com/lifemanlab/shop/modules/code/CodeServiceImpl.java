@@ -13,23 +13,15 @@ public class CodeServiceImpl implements CodeService {
 	
 	@Override
 	public List<Code> selectList(CodeVo vo) throws Exception {
-		
 		List<Code> list = dao.selectList(vo);
 		return list;
 	}
 	
 	@Override
 	public List<Code> ccgNameList() throws Exception {
-		
 		List<Code> ccgList = dao.ccgNameList();
+		System.out.println("service ccgList: " + ccgList);
 		return ccgList;
-	}
-
-	@Override
-	public int insert(Code dto) throws Exception {
-		int result = dao.insert(dto);
-		System.out.println("service result: " + result);
-		return result;
 	}
 
 	@Override
@@ -44,6 +36,13 @@ public class CodeServiceImpl implements CodeService {
 		Code item = dao.selectOne(vo);
 		System.out.println("service item: " + item);
 		return item;
+	}
+	
+	@Override
+	public int insert(Code dto) throws Exception {
+		int result = dao.insert(dto);
+		System.out.println("service result: " + result);
+		return result;
 	}
 
 	@Override

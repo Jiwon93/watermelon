@@ -62,7 +62,7 @@
 </head>
 <body>
 	<form method="post" name="ccgFormList" id="ccgFormList">
-		<input type="hidden" name="mainKey">
+		<input type="hidden" name="ccgSeq" value="${dto.ccgSeq }">
 		<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
 		<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
 		<input type="hidden" name="checkboxSeqArray">
@@ -327,6 +327,10 @@
 		var goUrlList = "/codeGroup/codeGroupList";
 		var goUrlForm = "/codeGroup/codeGroupForm";
 		var goUrlView = "/codeGroup/codeGroupView";
+		var goUrlInst = "/codeGroup/codeGroupInst";
+		var goUrlUpdt = "/codeGroup/codeGroupUpdt";
+		var goUrlUele = "/codeGroup/codeGroupUele";
+		var goUrlDele = "/codeGroup/codeGroupDele";
 		
 		var form = $("form[name=ccgFormList]");
 		
@@ -348,11 +352,11 @@
 		}
 		
 		var seq = $("input:hidden[name=ccgSeq]");
-
+		
 		$('#btnForm').on("click", function() {
 			goForm(0);                
 		});
- 
+
 		goForm = function(keyValue) {
 	    	/* if(keyValue != 0) seq.val(btoa(keyValue)); */
 	    	seq.val(keyValue);
@@ -361,7 +365,7 @@
 	
 		goView = function(keyValue) {
 	    	/* if(keyValue != 0) seq.val(btoa(keyValue)); */
-	    	mainKey.val(keyValue);
+	    	seq.val(keyValue);
 			form.attr("action", goUrlView).submit();
 		}
 		

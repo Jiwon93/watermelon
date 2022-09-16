@@ -289,13 +289,7 @@
 	
 		$("#btnSave").on("click",function(){
 			alert("야옹");
-			if(seq.val() == "0" || seq.val() == ""){
-				//insert
-				form.attr("action", goUrlInst).submit();
-			} else {
-				// update
-				form.attr("action", goUrlUpdt).submit();
-			}
+			form.attr("action", goUrlUpdt).submit();
 		});
 		
 		$("#btnList").on("click", function(){

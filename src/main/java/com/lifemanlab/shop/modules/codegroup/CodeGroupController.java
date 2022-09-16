@@ -71,13 +71,6 @@ public class CodeGroupController extends BaseController{
 	public String codeGroupInst(CodeGroupVo vo, CodeGroup dto, RedirectAttributes redirectAttributes) throws Exception {
 		
 		service.insert(dto);
-		System.out.println(dto.getCcgName());
-		System.out.println(dto.getCcgNameEng());
-		System.out.println(dto.getCcgDelNy());
-		System.out.println(dto.getCcgOrder());
-		System.out.println(dto.getCcgRegDatetime());
-		System.out.println(dto.getCcgModDatetime());
-		System.out.println(dto.getCcgUseNy());
 		vo.setCcgSeq(dto.getCcgSeq());
 		
 		redirectAttributes.addFlashAttribute("vo", vo);

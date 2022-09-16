@@ -42,9 +42,6 @@
 <body>
 	<!-- <form name="form" id="form" method="post" enctype="multipart/form-data"> -->
 	<form id="form" name="form" method="post" autocomplete="off" enctype="multipart/form-data">
-	<!-- *Vo.jsp s -->
-	<%@include file="../../common/xdmin/includeV1/codeGroupVo.jsp"%>		<!-- #-> -->
-	<!-- *Vo.jsp e -->
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<div class="col-1">
@@ -263,11 +260,6 @@
 	    </div>
 	    <!-- Footer End -->
 	</form>
-	<form name="formVo" id="formVo" method="post">
-	<!-- *Vo.jsp s -->
-	<%@include file="../../common/xdmin/includeV1/codeGroupVo.jsp"%>		<!-- #-> -->
-	<!-- *Vo.jsp e -->
-	</form>
 	<script src="/resources/js/list.js"></script>
 	<script src="/resources/js/sidebar.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
@@ -283,14 +275,13 @@
 		var seq = $("input:hidden[name=ccgSeq]"); 
 	
 		var form = $("form[name=form]");
-		var formVo = $("form[name=formVo]");
 	
 		$("#btnSave").on("click", function(){
-		   		form.attr("action", goUrlInst).submit();
+	   		form.attr("action", goUrlInst).submit();
 		}); 
 	
 		$("#btnList").on("click", function(){
-			formVo.attr("action", goUrlList).submit();
+			form.attr("action", goUrlList).submit();
 		});
 	
 		/* 

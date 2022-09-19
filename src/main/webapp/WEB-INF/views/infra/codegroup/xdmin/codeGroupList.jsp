@@ -369,10 +369,6 @@
 			form.attr("action", goUrlView).submit();
 		}
 		
-		goForm = function(keyValue) {
-			mainkey.val(keyValue);
-			form.attr("action", goUrlForm).submit();
-		}
 	</script>
 	
 </body>

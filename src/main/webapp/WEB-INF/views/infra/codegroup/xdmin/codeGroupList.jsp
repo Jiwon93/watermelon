@@ -335,6 +335,7 @@
 		var form = $("form[name=ccgFormList]");
 		
 		$("#btnSearch").on("click", function(){
+			if (validationList() == false) return false;
 			form.attr("action", goUrlList).submit();
 		});
 	

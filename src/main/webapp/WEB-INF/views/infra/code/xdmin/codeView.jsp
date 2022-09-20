@@ -237,7 +237,7 @@
 						</div>
 						<div class="row">
 							<div class="col px-5">
-								<button class="btn btn-secondary" onclick="location.href='codeList'">
+								<button class="btn btn-secondary" type="button" id="btnList">
 									<i class="fa-solid fa-bars"></i>
 								</button>
 							</div>

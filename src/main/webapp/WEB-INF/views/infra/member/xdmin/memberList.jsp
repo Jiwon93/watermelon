@@ -45,7 +45,11 @@
 	<link href="/resources/css/list.css" rel="stylesheet">
 </head>
 <body>
-	<form method="post" action="/member/memberList">
+	<form method="post" name="mmFormList" id="mmFormList" >
+		<input type="hidden" name="mmSeq" value="${dto.mmSeq }">
+		<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
+		<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
+		<input type="hidden" name="checkboxSeqArray">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<div class="col-1">
@@ -273,43 +277,25 @@
 								</c:choose>
 							</table>
 						</div>
-						<div class="row mt-2 text-center">
-						  <ul class="pagination" style="justify-content: center;">
-						  	<li class="page-item">
-						      <a class="page-link" href="#" aria-label="Previous">
-						        <span aria-hidden="true">&laquo;</span>
-						      </a>
-						    </li>
-						    <li class="page-item">
-						        <a class="page-link active" aria-current="page">1</a>
-						    </li>
-						    <li class="page-item">
-						    	<a class="page-link" href="#">2</a>
-					    	</li>
-						    <li class="page-item">
-						        <a class="page-link" href="#">3</a>
-						    </li>
-						    <li class="page-item">
-						    	<a class="page-link" href="#">4</a>
-					    	</li>
-						    <li class="page-item">
-						        <a class="page-link" href="#">5</a>
-						    </li>
-						    <li class="page-item">
-						      <a class="page-link" href="#" aria-label="Next">
-						        <span aria-hidden="true">&raquo;</span>
-						      </a>
-						    </li>
-						  </ul>
-						</div>
+						<!-- pagination s -->
+						<%@include file="../../common/xdmin/includeV1/pagination.jsp"%>
+						<!-- pagination e -->
 						<div class="row p-0">
 							<div class="col">
-								<button class="btn btn-danger" type="button" id="clCancel"><i class="fa-duotone fa-x"></i></button>
-								<button class="btn btn-danger" type="button" id="clDel"><i class="fa-regular fa-trash-can"></i></button>
+								<button class="btn btn-danger" type="button" id="btnUele">
+									<i class="fa-duotone fa-x"></i>
+								</button>
+								<button class="btn btn-danger" type="button" id="btnDel">
+									<i class="fa-regular fa-trash-can"></i>
+								</button>
 							</div>
 							<div class="col" style="text-align: right;">
-								<button class="btn btn-success" type="button" id="clExcel"><i class="fa-regular fa-file-excel"></i></button>
-								<button class="btn btn-primary" type="button" id="clPlus"><i class="fa-regular fa-plus"></i></button>
+								<button class="btn btn-success" type="button" id="btnExcel">
+									<i class="fa-regular fa-file-excel"></i>
+								</button>
+								<button class="btn btn-primary" type="button" id="btnPlus">
+									<i class="fa-regular fa-plus"></i>
+								</button>
 							</div>
 						</div>
 					</div>
@@ -337,5 +323,47 @@
 	</form>
 	<script src="/resources/js/list.js"></script>
 	<script src="/resources/js/sidebar.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script>
+		var goUrlList = "/member/memberList";
+		var goUrlForm = "/member/memberForm";
+		var goUrlView = "/member/memberView";
+		var goUrlInst = "/member/memberInst";
+		var goUrlUpdt = "/member/memberUpdt";
+		var goUrlUele = "/member/memberUele";
+		var goUrlDele = "/member/memberDele";
+
+		var form = $("form[name=mmFormList]");
+
+		$("#btnSearch").on("click", function() {
+			form.attr("action", goUrlList).submit();
+		});
+
+		$("#btnReset").on("click", function() {
+			$(location).attr("href", goUrlList);
+		});
+		
+		$("#btnPlus").on("click", function(){
+			$(location).attr("href", goUrlForm);
+		});
+
+		goList = function(thisPage) {
+			$("input:hidden[name=thisPage]").val(thisPage);
+			form.attr("action", goUrlList).submit();
+		}
+		
+		var seq = $("input:hidden[name=mmSeq]");
+		
+		goForm = function(keyValue) {
+			seq.val(keyValue);
+			form.attr("action", goUrlForm).submit();
+		}
+		
+		goView = function(keyValue) {
+	    	/* if(keyValue != 0) seq.val(btoa(keyValue)); */
+	    	seq.val(keyValue);
+			form.attr("action", goUrlView).submit();
+		}
+	</script>
 </body>
 </html>

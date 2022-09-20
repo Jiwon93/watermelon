@@ -8,13 +8,9 @@
 
     <resultMap id="resultMapObj" type="com.lifemanlab.shop.modules.member.Member"></resultMap>
 	
-	<select id="selectList" resultMap="resultMapObj">
-		SELECT
-			a.*
+	<sql id ="selectCommon">
 		FROM member a
 		WHERE 1=1
-			<!-- AND mmDelNy = 0 -->
-			<!-- AND mmName LIKE CONCAT('%',#{shValue},'%') -->
 			<if test="shDelNy != null and !shDelNy.equals('')">AND mmDelNy = #{shDelNy}</if>
 			<choose>
 				<when test="shOption == 1">AND mmName LIKE CONCAT('%',#{shValue},'%')</when>
@@ -25,6 +21,15 @@
 				<when test="shOption == 6">AND mmJob LIKE CONCAT('%',#{shValue},'%')</when>
 				<when test="shOption == 7">AND mmGender LIKE CONCAT('%',#{shValue},'%')</when>
 			</choose>
+	</sql>
+	
+	<select id="selectList" resultMap="resultMapObj">
+		<include refid="Base.selectListUpperForMysql" />
+			SELECT
+				a.*
+			<include refid="selectCommon" />
+			ORDER BY a.mmSeq DESC
+		<include refid="Base.selectListLowerForMysql" />
 	</select>
 	
 	<select id="memberPhoneList" resultMap="resultMapObj">

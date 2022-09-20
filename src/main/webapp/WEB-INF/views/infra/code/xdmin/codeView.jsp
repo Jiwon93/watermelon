@@ -301,6 +301,10 @@
 				form.attr("action", goUrlUpdt).submit();
 		});
 		
+		$("#btnList").on("click", function(){
+			formVo.attr("action", goUrlList).submit();
+		});
+		
 		$("#btnUelete").on("click", function(){
 			$("input:hidden[name=ccDelNy]").val(1);
 			$(".modal-title").text("확 인");

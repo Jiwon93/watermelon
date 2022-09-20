@@ -8,10 +8,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.lifemanlab.shop.common.base.BaseController;
+
 
 @Controller
 @RequestMapping(value = "/member/")
-public class MemberController {
+public class MemberController extends BaseController {
 	
 	@Autowired
 	MemberServiceImpl service;

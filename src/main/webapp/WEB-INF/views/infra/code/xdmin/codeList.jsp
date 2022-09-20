@@ -24,7 +24,7 @@ label {
 	font-size: large;
 }
 
-table {
+table {  
 	margin-left: auto;
 	margin-right: auto;
 }

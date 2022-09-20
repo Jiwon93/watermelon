@@ -288,7 +288,6 @@
 		var formVo = $("form[name=formVo]");
 	
 		$("#btnSave").on("click",function(){
-			alert("야옹");
 			form.attr("action", goUrlUpdt).submit();
 		});
 		
@@ -297,7 +296,6 @@
 		});
 		
 		$("#btnUelete").on("click", function(){
-			alert("멍멍");
 			$("input:hidden[name=ccgDelNy]").val(1);
 			$(".modal-title").text("확 인");
 			$(".modal-body").text("해당 데이터를 삭제하시겠습니까 ?");

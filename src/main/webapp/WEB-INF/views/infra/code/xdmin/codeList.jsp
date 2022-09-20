@@ -160,15 +160,10 @@ th, td {
 									aria-expanded="false">Account</button>
 								<div class="collapse" id="account-collapse">
 									<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-										<li><a href="#"
-											class="link-dark d-inline-flex text-decoration-none rounded">New...</a></li>
-										<li><a href="#"
-											class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
-										<li><a href="#"
-											class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
-										<li><a href="#"
-											class="link-dark d-inline-flex text-decoration-none rounded">Sign
-												out</a></li>
+										<li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New...</a></li>
+										<li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
+										<li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
+										<li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
 									</ul>
 								</div>
 							</li>

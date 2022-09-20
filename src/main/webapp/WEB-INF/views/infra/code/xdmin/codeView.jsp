@@ -44,6 +44,9 @@
 </head>
 <body>
 	<form name="form" id="form" autocomplete="off">
+	<!-- *Vo.jsp s -->
+	<%@include file="../../common/xdmin/includeV1/codeVo.jsp"%>		<!-- #-> -->
+	<!-- *Vo.jsp e -->
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<div class="col-1">
@@ -273,6 +276,11 @@
 	    </div>
 	    <!-- Footer End -->
 	</form>
+	<form name="formVo" id="formVo" method="post">
+	<!-- *Vo.jsp s -->
+	<%@include file="../../common/xdmin/includeV1/codeVo.jsp"%>		<!-- #-> -->
+	<!-- *Vo.jsp e -->
+	</form>
 	<script src="/resources/js/list.js"></script>
 	<script src="/resources/js/sidebar.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
@@ -290,18 +298,10 @@
 		var formVo = $("form[name=formVo]");
 	
 		$("#btnSave").on("click",function(){
-			alert("야옹");
-			if(seq.val() == "0" || seq.val() == ""){
-				//insert
-				form.attr("action", goUrlInst).submit();
-			} else {
-				// update
 				form.attr("action", goUrlUpdt).submit();
-			}
 		});
 		
 		$("#btnUelete").on("click", function(){
-			alert("멍멍");
 			$("input:hidden[name=ccDelNy]").val(1);
 			$(".modal-title").text("확 인");
 			$(".modal-body").text("해당 데이터를 삭제하시겠습니까 ?");

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
 @Controller
 @RequestMapping(value = "/member/")
 public class MemberController {
@@ -28,6 +29,8 @@ public class MemberController {
 		
 		return "infra/member/xdmin/memberList";
 	}
+	
+	
 	
 	@RequestMapping(value = "memberInst")
 	public String memberInst(Member dto) throws Exception {

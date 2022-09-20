@@ -5,6 +5,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
+<jsp:useBean id="CodeServiceImpl" class="com.lifemanlab.shop.modules.code.CodeServiceImpl"/>
+
 <html lang="ko">
 <head>
 <meta charset="utf-8">
@@ -226,6 +228,9 @@
 									<th>가입일</th>
 									<th>상세</th>
 								</tr>
+								<c:set var="listCodeGender" value="${CodeServiceImpl.selectListCachedCode('2')}"/>
+								<c:set var="listCodeJob" value="${CodeServiceImpl.selectListCachedCode('4')}"/>
+								<c:set var="listCodeRank" value="${CodeServiceImpl.selectListCachedCode('6')}"/>
 								<c:choose>
 									<c:when test="${fn:length(list) eq 0 }">
 										<tr>
@@ -238,12 +243,27 @@
 												<td class="tableHead1"><input class="listCheck" type="checkbox"></td>
 												<td class="tableHead1"><c:out value="${list.mmSeq }"/></td>
 												<td><c:out value="${list.mmName }"/></td>
-												<td><c:out value="${list.mmRank }"/></td>
+												<%-- <td><c:out value="${list.mmRank }"/></td> --%>
+												<td>
+													<c:forEach items="${listCodeRank}" var="listRank" varStatus="statusRank">
+														<c:if test="${list.mmRank eq listRank.ccSeq}"><c:out value="${listRank.ccName }"/></c:if>
+													</c:forEach>
+												</td>
 												<td><c:out value="${list.mmEmail }"/></td>
 												<td><c:out value="${list.mmNickname }"/></td>
 												<td><c:out value="${list.mmPw }"/></td>
-												<td><c:out value="${list.mmJob }"/></td>
-												<td><c:out value="${list.mmGender }"/></td>
+												<%-- <td><c:out value="${list.mmJob }"/></td> --%>
+												<td>
+													<c:forEach items="${listCodeJob}" var="listJob" varStatus="statusJob">
+														<c:if test="${list.mmJob eq listJob.ccSeq}"><c:out value="${listJob.ccName }"/></c:if>
+													</c:forEach>
+												</td>
+												<%-- <td><c:out value="${list.mmGender }"/></td> --%>
+												<td>
+													<c:forEach items="${listCodeGender}" var="listGender" varStatus="statusGender">
+														<c:if test="${list.mmGender eq listGender.ccSeq}"><c:out value="${listGender.ccName }"/></c:if>
+													</c:forEach>
+												</td>
 												<td></td>
 												<td></td>
 												<td></td>

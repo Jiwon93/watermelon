@@ -52,5 +52,4 @@ public class CodeDao {
 	
 	// for cache
 	public List<Code> selectListCachedCodeArrayList(){ return sqlSession.selectList(namespace + ".selectListCachedCodeArrayList", null); }
-
 }

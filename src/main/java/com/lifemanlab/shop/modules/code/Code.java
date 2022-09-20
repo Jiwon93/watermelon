@@ -18,6 +18,7 @@ public class Code extends Base {
 	private String ccNameEng;
 	private Date ccRegDatetime;
 	private Date ccModDatetime;
+	private String ccgSeq;
 /////////////////////////////////////////////////
 	
 //	for cache
@@ -82,6 +83,12 @@ public class Code extends Base {
 	}
 	public void setCcModDatetime(Date ccModDatetime) {
 		this.ccModDatetime = ccModDatetime;
+	}
+	public String getCcgSeq() {
+		return ccgSeq;
+	}
+	public void setCcgSeq(String ccgSeq) {
+		this.ccgSeq = ccgSeq;
 	}
 	
 	

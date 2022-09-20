@@ -2,7 +2,9 @@ package com.lifemanlab.shop.modules.member;
 
 import java.sql.Date;
 
-public class Member {
+import com.lifemanlab.shop.common.base.Base;
+
+public class Member extends Base{
 	
 	private String mmSeq;
 	private String mmName;

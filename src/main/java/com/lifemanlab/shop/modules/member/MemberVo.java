@@ -1,6 +1,8 @@
 package com.lifemanlab.shop.modules.member;
 
-public class MemberVo {
+import com.lifemanlab.shop.common.base.BaseVo;
+
+public class MemberVo extends BaseVo {
 	
 	private Integer shOption;
 	private String shValue;

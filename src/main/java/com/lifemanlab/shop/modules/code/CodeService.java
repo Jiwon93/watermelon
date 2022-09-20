@@ -16,5 +16,5 @@ public interface CodeService {
 	public int uelete(Code dto) throws Exception;
 	public int delete(CodeVo vo) throws Exception;
 
-	public void selectListCachedCodeArrayList() throws Exception;
+	//public void selectListCachedCodeArrayList() throws Exception;
 }

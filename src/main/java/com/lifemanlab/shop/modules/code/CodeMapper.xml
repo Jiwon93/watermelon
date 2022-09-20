@@ -116,10 +116,12 @@
 	
 	<select id="selectListCachedCodeArrayList" resultMap="resultMapObj">
 		SELECT 
-			ccSeq
-			,ccName
-			,codeGroup_ccgSeq 
-		FROM code
+			a.ccSeq
+			,a.ccName
+			,a.codeGroup_ccgSeq 
+			,b.ccgSeq
+		FROM code a
+		join codeGroup b on a.codeGroup_ccgSeq = b.ccgSeq
 		WHERE 1=1
 			AND ccDelNy = 0
 		    AND ccUseNy = 1

@@ -1,6 +1,8 @@
 package com.lifemanlab.shop.modules.code;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.lifemanlab.shop.common.base.Base;
 
@@ -17,6 +19,10 @@ public class Code extends Base {
 	private Date ccRegDatetime;
 	private Date ccModDatetime;
 /////////////////////////////////////////////////
+	
+//	for cache
+	public static List<Code> cachedCodeArrayList = new ArrayList<Code>();
+	
 	public String getCcSeq() {
 		return ccSeq;
 	}

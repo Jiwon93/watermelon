@@ -63,10 +63,10 @@ public class CodeGroupController extends BaseController{
 	
 	@RequestMapping(value = "codeGroupForm")
 	public String codeGroupForm() throws Exception {
-		
 		return "infra/codegroup/xdmin/codeGroupForm";
 	}
 	
+	@SuppressWarnings(value = {"all"})
 	@RequestMapping(value = "codeGroupInst")
 	public String codeGroupInst(CodeGroupVo vo, CodeGroup dto, RedirectAttributes redirectAttributes) throws Exception {
 		

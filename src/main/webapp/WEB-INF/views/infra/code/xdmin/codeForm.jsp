@@ -38,7 +38,7 @@
 	<link href="/resources/css/list.css" rel="stylesheet">
 </head>
 <body>
-	<form action="codeInst" method="get" id="codeForm">
+	<form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<div class="col-1">
@@ -180,7 +180,7 @@
 							<div class="row m-4">
 								<div class="col mx-auto">
 									<label class="form-label" for="ccSeq">코드</label>
-									<input type="text" class="form-control" id="ccSeq" placeholder="자동생성" readonly>
+									<input type="text" class="form-control" id="ccSeq" name="ccSeq" placeholder="자동생성" readonly>
 								</div>
 								<div class="col mx-auto">
 									<label class="form-label" for="cfCodeAnother">코드 (Another)</label>
@@ -190,11 +190,11 @@
 							<div class="row m-4">
 								<div class="col mx-auto">
 									<label class="form-label" for="ccName">코드 이름 (한글)</label>
-									<input type="text" class="form-control" id="ccName" name="ccName" <c:out value="${dto.ccName }"/>>
+									<input type="text" class="form-control" id="ccName" name="ccName" value="<c:out value="${dto.ccName }"/>">
 								</div>
 								<div class="col mx-auto">
 									<label class="form-label" for="ccNameEng">코드 이름 (영문)</label>
-									<input type="text" class="form-control" id="ccNameEng" name="ccNameEng">
+									<input type="text" class="form-control" id="ccNameEng" name="ccNameEng" value="<c:out value="${dto.ccNameEng }" />">
 								</div>
 							</div>
 							<div class="row m-4">
@@ -208,7 +208,7 @@
 								</div>
 								<div class="col mx-auto">
 									<label class="form-label" for="ccOrder">순서</label>
-									<input type="text" class="form-control" id="ccOrder" name="ccOrder">
+									<input type="text" class="form-control" id="ccOrder" name="ccOrder" value="<c:out value="${dto.ccOrder }"/>">
 								</div>
 							</div>
 							<div class="row m-4">
@@ -227,29 +227,29 @@
 							</div>
 							<div class="row m-4">
 								<div class="col mx-auto">
-									<label class="form-label" for="cfSpareInt3">예비3 (int type)</label>
-									<input type="text" class="form-control" id="cfSpareInt3" placeholder="숫자">
+									<label class="form-label" for="ccRegDatetime">코드 등록 날짜</label>
+									<input type="text" class="form-control" id="ccRegDatetime" name="ccRegDatetime" value="<c:out value="${dto.ccRegDatetime }"/>">
 								</div>
 								<div class="col mx-auto">
-									<label class="form-label" for="cfSpareInt4">예비4 (int type)</label>
-									<input type="text" class="form-control" id="cfSpareInt4" placeholder="숫자">
+									<label class="form-label" for="ccModDatetime">코드 수정 날짜</label>
+									<input type="text" class="form-control" id="ccModDatetime" name="ccModDatetime" value="<c:out value="${dto.ccModDatetime }"/>">
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col px-5">
-								<button class="btn btn-secondary" type="button">
+								<button class="btn btn-secondary" type="button" id="btnList">
 									<i class="fa-solid fa-bars"></i>
 								</button>
 							</div>
 							<div class="col px-4" style="text-align: right;">
-								<button class="btn btn-danger" type="button" id="cfCancel">
+								<button class="btn btn-danger" type="button" id="btnUele">
 									<i class="fa-duotone fa-x"></i>
 								</button>
-								<button class="btn btn-danger" type="button" id="cfDel">
+								<button class="btn btn-danger" type="button" id="btnDele">
 									<i class="fa-regular fa-trash-can"></i>
 								</button>
-								<button class="btn btn-success" type="submit" onclick="location.href='codeList'" id="cfExcel">
+								<button class="btn btn-success" type="button" id="btnSave">
 									<i class="fa-regular fa-file-excel"></i>
 								</button>
 							</div>
@@ -279,5 +279,26 @@
 	</form>
 	<script src="/resources/js/list.js"></script>
 	<script src="/resources/js/sidebar.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		var goUrlList = "/code/codeList";
+		var goUrlInst = "/code/codeInst";
+		var goUrlUpdt = "/code/codeUpdt";
+		var goUrlUele = "/code/codeUele";
+		var goUrlDele = "/code/codeDele";
+	
+		var form = $("form[name=form]");
+		
+		$("#btnSave").on("click", function(){
+	   		form.attr("action", goUrlInst).submit();
+		}); 
+	
+		$("#btnList").on("click", function(){
+			form.attr("action", goUrlList).submit();
+		});
+	
+	</script>
+
 </body>
 </html>

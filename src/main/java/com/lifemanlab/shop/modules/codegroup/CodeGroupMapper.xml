@@ -117,5 +117,4 @@
 		DELETE FROM codeGroup WHERE ccgSeq = #{ccgSeq}
 	</delete>
 	
-	
 </mapper>

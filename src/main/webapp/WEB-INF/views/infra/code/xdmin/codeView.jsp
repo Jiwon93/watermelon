@@ -228,7 +228,7 @@
 								</div>
 								<div class="col mx-auto">
 									<label class="form-label" for="ccModDatetime">코드 수정일</label>
-									<input type="text" class="form-control" id="ccModDatetime" name="ccModDatetime" placeholder="숫자" value="<c:out value="${item.ccModDatetime }"/>">
+									<input type="text" class="form-control" id="ccModDatetime" name="ccModDatetime" value="<c:out value="${item.ccModDatetime }"/>">
 								</div>
 							</div>
 						</div>

@@ -211,15 +211,19 @@
 										<option value="" <c:if test="${empty vo.shOption }">selected</c:if>>검색구분</option>
 										<option value="1" <c:if test="${vo.shOption eq 1 }">selected</c:if>>코드그룹 코드</option>
 										<option value="2" <c:if test="${vo.shOption eq 2 }">selected</c:if>>코드그룹 이름 (한글)</option>
-										<option>코드그룹 이름 (영문)</option>
+										<option value="3" <c:if test="${vo.shOption eq 2 }">selected</c:if>>코드그룹 이름 (영문)</option>
 									</select>
 								</div>
 								<div class="col-2 p-1">
 									<input id="shValue" name="shValue" value="<c:out value="${vo.shValue }"/>" class="form-control" type="search" placeholder="검색어">
 								</div>
 								<div class="col-1 p-1">
-									<button class="btn btn-warning" id="btnSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
-									<button class="btn btn-danger" id="btnReset" type="button"><i class="fa-solid fa-arrow-rotate-right"></i></button>
+									<button class="btn btn-warning" id="btnSearch">
+										<i class="fa-solid fa-magnifying-glass"></i>
+									</button>
+									<button class="btn btn-danger" id="btnReset" type="button">
+										<i class="fa-solid fa-arrow-rotate-right"></i>
+									</button>
 								</div>
 							</div>
 						</div>
@@ -289,12 +293,20 @@
 						
 						<div class="row p-0">
 							<div class="col">
-								<button class="btn btn-danger" type="button" id="cglCancel"><i class="fa-duotone fa-x"></i></button>
-								<button class="btn btn-danger" type="button" id="cglDel"><i class="fa-regular fa-trash-can"></i></button>
+								<button class="btn btn-danger" type="button" id="btnUele">
+									<i class="fa-duotone fa-x"></i>
+								</button>
+								<button class="btn btn-danger" type="button" id="btnDel">
+									<i class="fa-regular fa-trash-can"></i>
+								</button>
 							</div>
 							<div class="col" style="text-align: right;">
-								<button class="btn btn-success" type="button" id="cglExcel"><i class="fa-regular fa-file-excel"></i></button>
-								<button class="btn btn-primary" type="button" id="btnPlus"><i class="fa-regular fa-plus"></i></button>
+								<button class="btn btn-success" type="button" id="btnExcel">
+									<i class="fa-regular fa-file-excel"></i>
+								</button>
+								<button class="btn btn-primary" type="button" id="btnPlus">
+									<i class="fa-regular fa-plus"></i>
+								</button>
 							</div>
 						</div>
 					</div>

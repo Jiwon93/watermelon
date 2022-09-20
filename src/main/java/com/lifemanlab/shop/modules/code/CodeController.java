@@ -26,6 +26,8 @@ public class CodeController extends BaseController {
 		System.out.println("vo.getShOption(): " + vo.getShOption());
 		System.out.println("vo.getShDelNy(): " + vo.getShDelNy());
 
+		vo.setShOptionDate(vo.getShOptionDate() == null ? 2 : vo.getShOptionDate());
+		
 		vo.setParamsPaging(service.selectOneCount(vo));
 		
 		List<Code> list = service.selectList(vo);
@@ -53,7 +55,7 @@ public class CodeController extends BaseController {
 	}
 	
 	@RequestMapping(value = "codeInst")
-	public String codeInst(Code dto) throws Exception {
+	public String codeInst(CodeVo vo, Code dto, RedirectAttributes redirectAttributes) throws Exception {
 		
 		int result = service.insert(dto);
 		System.out.println("controller result: " + result);

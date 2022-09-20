@@ -49,7 +49,7 @@ th, td {
 </head>
 <body>
 	<form method="post" name="cdFormList" id="cdFormList">
-		<input type="hidden" name="mainKey">
+		<input type="hidden" name="ccSeq" value="${dto.ccSeq }">
 		<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
 		<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
 		<input type="hidden" name="checkboxSeqArray">
@@ -189,16 +189,16 @@ th, td {
 								</div>
 								<div class="col-2 p-1">
 									<select class="form-select" name="shOptionDate">
-										<option value="">날짜선택</option>
-										<option value="1">등록일</option>
-										<option value="2">수정일</option>
+										<option value="" <c:if test="${empty vo.shOptionDate }">selected</c:if>>날짜선택</option>
+										<option value="1" <c:if test="${vo.shOptionDate eq 1 }">selected</c:if>>등록일</option>
+										<option value="2" <c:if test="${vo.shOptionDate eq 2 }">selected</c:if>>수정일</option>
 									</select>
 								</div>
 								<div class="col-2 p-1">
-									<input class="form-control" type="text" placeholder="시작일">
+									<input class="form-control" type="text" id="shDateStart" name="shDateStart" value="${vo.shDateStart }" placeholder="시작일">
 								</div>
 								<div class="col-2 p-1">
-									<input class="form-control" type="text" placeholder="종료일">
+									<input class="form-control" type="text" id="shDateEnd" name="shDateEnd" value="${vo.shDateEnd }" placeholder="종료일">
 								</div>
 							</div>
 							<div class="row mb-2">
@@ -299,18 +299,18 @@ th, td {
 
 						<div class="row p-0">
 							<div class="col">
-								<button class="btn btn-danger" type="button" id="clCancel">
+								<button class="btn btn-danger" type="button" id="btnUele">
 									<i class="fa-duotone fa-x"></i>
 								</button>
-								<button class="btn btn-danger" type="button" id="clDel">
+								<button class="btn btn-danger" type="button" id="btnDel">
 									<i class="fa-regular fa-trash-can"></i>
 								</button>
 							</div>
 							<div class="col" style="text-align: right;">
-								<button class="btn btn-success" type="button" id="clExcel">
+								<button class="btn btn-success" type="button" id="btnExcel">
 									<i class="fa-regular fa-file-excel"></i>
 								</button>
-								<button class="btn btn-primary" type="button" id="clPlus"
+								<button class="btn btn-primary" type="button" id="btnPlus"
 									onclick="location.href='codeForm'">
 									<i class="fa-regular fa-plus"></i>
 								</button>
@@ -346,6 +346,11 @@ th, td {
 	<script>
 		var goUrlList = "/code/codeList";
 		var goUrlForm = "/code/codeForm";
+		var goUrlView = "/code/codeView";
+		var goUrlInst = "/code/codeInst";
+		var goUrlUpdt = "/code/codeUpdt";
+		var goUrlUele = "/code/codeUele";
+		var goUrlDele = "/code/codeDele";
 
 		var form = $("form[name=cdFormList]");
 
@@ -356,15 +361,27 @@ th, td {
 		$("#btnReset").on("click", function() {
 			$(location).attr("href", goUrlList);
 		});
-
-		goForm = function(keyValue) {
-			mainkey.val(keyValue);
-			form.attr("action", goUrlForm).submit();
-		}
+		
+		$("#btnPlus").on("click", function(){
+			$(location).attr("href", goUrlForm);
+		});
 
 		goList = function(thisPage) {
 			$("input:hidden[name=thisPage]").val(thisPage);
 			form.attr("action", goUrlList).submit();
+		}
+		
+		var seq = $("input:hidden[name=ccSeq]");
+		
+		goForm = function(keyValue) {
+			seq.val(keyValue);
+			form.attr("action", goUrlForm).submit();
+		}
+		
+		goView = function(keyValue) {
+	    	/* if(keyValue != 0) seq.val(btoa(keyValue)); */
+	    	seq.val(keyValue);
+			form.attr("action", goUrlView).submit();
 		}
 	</script>
 </body>

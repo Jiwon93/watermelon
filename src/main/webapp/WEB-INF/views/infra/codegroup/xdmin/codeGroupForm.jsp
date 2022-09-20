@@ -165,11 +165,11 @@
 							<div class="row m-4">
 								<div class="col mx-auto">
 									<label class="form-label" for="ccgName">코드그룹 이름 (한글)</label>
-									<input type="text" class="form-control" id="ccgName" name="ccgName" <c:out value="${dto.ccgName }"/> placeholder="한글,숫자">
+									<input type="text" class="form-control" id="ccgName" name="ccgName" value="<c:out value="${dto.ccgName }"/>" placeholder="한글,숫자">
 								</div>
 								<div class="col mx-auto">
 									<label class="form-label" for="ccgNameEng">코드그룹 이름 (영문)</label>
-									<input type="text" class="form-control" id="ccgNameEng" name="ccgNameEng" <c:out value="${dto.ccgNameEng }"/> placeholder="영문(대소문자),숫자">
+									<input type="text" class="form-control" id="ccgNameEng" name="ccgNameEng" value="<c:out value="${dto.ccgNameEng }"/>" placeholder="영문(대소문자),숫자">
 								</div>
 							</div>
 							<div class="row m-4">
@@ -183,7 +183,7 @@
 								</div>
 								<div class="col mx-auto">
 									<label class="form-label" for="ccgOrder">순서</label>
-									<input type="text" class="form-control" id="ccgOrder" name="ccgOrder" <c:out value="${dto.ccgOrder }"/> placeholder="숫자">
+									<input type="text" class="form-control" id="ccgOrder" name="ccgOrder" value="<c:out value="${dto.ccgOrder }"/>" placeholder="숫자">
 								</div>
 							</div>
 							<div class="row m-4">
@@ -193,29 +193,25 @@
 								</div>
 								<div class="col mx-auto">
 									<label class="form-label" for="ccgDelNy">삭제여부</label>
-									<%-- 
 									<select class="form-select" id="ccgDelNy" name="ccgDelNy">
 										<option value="" <c:if test="${empty dto.ccgDelNy }">selected</c:if>>삭제여부 선택</option>
 										<option value="1" <c:if test="${dto.ccgDelNy eq 1 }">selected</c:if>>Y</option>
 										<option value="0" <c:if test="${dto.ccgDelNy eq 0 }">selected</c:if>>N</option>
 									</select> 
-									--%>
 									<%-- 
 									<input type="radio" id="ccgDelNy1" name="ccgDelNy" value="1" <c:if test="${dto.ccgDelNy eq 1 }">selected</c:if>>Y
 									<input type="radio" id="ccgDelNy0" name="ccgDelNy" value="0" <c:if test="${dto.ccgDelNy eq 0 }">selected</c:if>>N
 									 --%>
-									<input type="radio" id="ccgDelNy1" name="ccgDelNy" value="1">Y
-									<input type="radio" id="ccgDelNy0" name="ccgDelNy" value="0">N
 								</div>
 							</div>
 							<div class="row m-4">
 								<div class="col mx-auto">
 									<label class="form-label" for="ccgRegDatetime">코드 등록 날짜</label>
-									<input type="text" class="form-control" id="ccgRegDatetime" name="ccgRegDatetime" <c:out value="${dto.ccgRegDatetime }"/> placeholder="2000-00-00">
+									<input type="text" class="form-control" id="ccgRegDatetime" name="ccgRegDatetime" value="<c:out value="${dto.ccgRegDatetime }"/>">
 								</div>
 								<div class="col mx-auto">
 									<label class="form-label" for="ccgModDatetime">코드 수정 날짜</label>
-									<input type="text" class="form-control" id="ccgModDatetime" name="ccgModDatetime" <c:out value="${dto.ccgModDatetime }"/> placeholder="숫자">
+									<input type="text" class="form-control" id="ccgModDatetime" name="ccgModDatetime" value="<c:out value="${dto.ccgModDatetime }"/>">
 								</div>
 							</div>
 						</div>
@@ -271,8 +267,6 @@
 		var goUrlUpdt = "/codeGroup/codeGroupUpdt";
 		var goUrlUele = "/codeGroup/codeGroupUele";
 		var goUrlDele = "/codeGroup/codeGroupDele";
-	
-		var seq = $("input:hidden[name=ccgSeq]"); 
 	
 		var form = $("form[name=form]");
 	

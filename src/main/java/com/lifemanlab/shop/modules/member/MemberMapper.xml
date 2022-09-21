@@ -114,5 +114,48 @@
 			</selectKey>
 	</insert>
 	
+	<update id="update">
+		UPDATE member
+		SET
+			mmName = #{mmName}
+			,mmNickname = #{mmNickname}
+			,mmEmail = #{mmEmail}
+			,mmEmailSelect = #{mmEmailSelect}
+			,mmPw = #{mmPw}
+			,mmBod = #{mmBod}
+			,mmGender = #{mmGender}
+			,mmZip = #{mmZip}
+			,mmAddress1 = #{mmAddress1}
+			,mmAddress2 = #{mmAddress2}
+			,mmDelNy = #{mmDelNy}
+			,mmRank = #{mmRank}
+			,mmJob = #{mmJob}
+			,mmInterest = #{mmInterest}
+			,mmSpecial = #{mmSpecial}
+			,mmDetail = #{mmDetail}
+			,mmTechnique = #{mmTechnique}
+			,mmCareer = #{mmCareer}
+			,mmSchool = #{mmSchool}
+			,mmSchoolMajor = #{mmSchoolMajor}
+			,mmSchoolState = #{mmSchoolState}
+			,mmCertificate = #{mmCertificate}
+			,mmWishPay = #{mmWishPay}
+			,mmWorkTime = #{mmWorkTime}
+			,mmIntroduce = #{mmIntroduce}
+			,mmCash = #{mmCash}
+		WHERE
+			mmSeq = #{mmSeq}
+	</update>
+	
+	<update id="uelete">
+		UPDATE member
+		SET
+			mmDelNy = 1
+		WHERE mmSeq = #{mmSeq}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM member WHERE mmSeq = #{mmSeq}
+	</delete>
 
 </mapper>

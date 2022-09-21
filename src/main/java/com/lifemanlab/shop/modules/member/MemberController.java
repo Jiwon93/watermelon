@@ -51,7 +51,7 @@ public class MemberController extends BaseController {
 		return "infra/member/xdmin/memberForm";
 	}
 	
-	
+	@SuppressWarnings(value = {"all"})
 	@RequestMapping(value = "memberInst")
 	public String memberInst(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
 		
@@ -60,6 +60,24 @@ public class MemberController extends BaseController {
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
 		return "redirect:/member/memberView";
+	}
+	
+	@RequestMapping(value = "memberUpdt")
+	public String memberUpdt(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
+		service.update(dto);
+		return "redirect:/member/memberList";
+	}
+	
+	@RequestMapping(value = "memberUele")
+	public String memberUele(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
+		service.uelete(dto);
+		return "redirect:/member/memberList";
+	}
+	
+	@RequestMapping(value = "memberDele")
+	public String memberDele(MemberVo vo, RedirectAttributes redirectAttributes) throws Exception {
+		service.delete(vo);
+		return "redirect:/member/memberList";
 	}
 	
 	@RequestMapping(value = "/memberHome", method = RequestMethod.GET)

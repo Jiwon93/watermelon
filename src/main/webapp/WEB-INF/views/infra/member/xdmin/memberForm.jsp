@@ -155,32 +155,53 @@
 						<div class="container-fluid">
 							<div class="row m-4">
 								<div class="col-6">
-									<label class="form-label" for="ccgSeq">아이디</label>
-									<input type="text" class="form-control" id="ccgSeq">
+									<label class="form-label" for="mmSeq">회원번호</label>
+									<input type="text" class="form-control" id="mmSeq">
 								</div>
 								<div class="col-6">
-									<label class="form-label" for="cgfCodeGroupCodeAnother">코드그룹 코드 (Another)</label>
-									<input type="text" class="form-control" id="cgfCodeGroupCodeAnother" placeholder="영문(대소문자),숫자">
+									<label class="form-label" for="mmRank">회원등급</label>
+									<input type="text" class="form-control" id="mmRank" name="mmRank" placeholder="영문(대소문자),숫자">
+								</div>
+							</div>
+							<div class="row m-4">
+								<div class="col-6">
+									<label class="form-label" for="mmId">아이디</label>
+									<input type="text" class="form-control" id="mmId">
+								</div>
+								<div class="col-6">
+									<label class="form-label" for="mmPw">비밀번호</label>
+									<input type="text" class="form-control" id="mmPw" placeholder="영문(대소문자),숫자">
+								</div>
+							</div>
+							<div class="row m-4">
+								<div class="col-6">
+									<label class="form-label" for="mmName">이름</label>
+									<input type="text" class="form-control" id="mmName">
+								</div>
+								<div class="col-6">
+									<label class="form-label" for="mmNickname">닉네임</label>
+									<input type="text" class="form-control" id="mmNickname" placeholder="영문(대소문자),숫자">
 								</div>
 							</div>
 							<div class="row m-4">
 								<div class="col mx-auto">
-									<label class="form-label" for="ccgName">성별</label>
-									<input type="text" class="form-control" id="ccgName" name="ccgName" value="<c:out value="${dto.ccgName }"/>" placeholder="한글,숫자">
+									<label class="form-label" for="mmGender">성별</label>
+									<input type="text" class="form-control" id="mmGender" name="mmGender" value="<c:out value="${dto.mmGender }"/>" placeholder="한글,숫자">
 								</div>
 								<div class="col mx-auto">
-									<label class="form-label" for="ccgNameEng">생일</label>
-									<input type="text" class="form-control" id="ccgNameEng" name="ccgNameEng" value="<c:out value="${dto.ccgNameEng }"/>" placeholder="영문(대소문자),숫자">
+									<label class="form-label" for="mmBod">생일</label>
+									<input type="text" class="form-control" id="mmBod" name="mmBod" value="<c:out value="${dto.mmBod }"/>" placeholder="영문(대소문자),숫자">
 								</div>
 							</div>
 							<div class="row m-4">
 								<div class="col mx-auto">
-									<label class="form-label" for="ccgName">Email</label>
-									<input type="text" class="form-control" id="ccgName" name="ccgName" value="<c:out value="${dto.ccgName }"/>" placeholder="한글,숫자">
+									<label class="form-label" for="mmEmail">Email</label>
+									<input type="text" class="form-control" id="mmEmail" name="mmEmail" value="<c:out value="${dto.mmEmail }"/>" placeholder="한글,숫자">
 								</div>
 								<div class="col mx-auto">
-									<label class="form-label" for="ccgNameEng">이메일 정보 마케팅 사용 동의</label>
-									<input type="text" class="form-control" id="ccgNameEng" name="ccgNameEng" value="<c:out value="${dto.ccgNameEng }"/>" placeholder="영문(대소문자),숫자">
+									<label class="form-label" for="ccgNameEng" style="display: block;">이메일 정보 마케팅 사용 동의</label>
+									<input type="checkbox" class="form-check-input" id="" name="" value="<c:out value="${dto.ccgNameEng }"/>">
+									<label class="form-check-label" for="">동의합니다.</label>
 								</div>
 							</div>
 							<div class="row m-4">
@@ -197,8 +218,9 @@
 									</div>
 								</div>
 								<div class="col mx-auto">
-									<label class="form-label" for="ccgOrder">핸드폰 정보 마케팅 사용 동의</label>
-									<input type="text" class="form-control" id="ccgOrder" name="ccgOrder" value="<c:out value="${dto.ccgOrder }"/>" placeholder="숫자">
+									<label class="form-label" for="ccgOrder" style="display: block;">핸드폰 정보 마케팅 사용 동의</label>
+									<input type="checkbox" class="form-check-input" id="" name="" value="<c:out value="${dto.ccgOrder }"/>">
+									<label class="form-check-label" for="">동의합니다.</label>
 								</div>
 							</div>
 							<div class="row m-4">

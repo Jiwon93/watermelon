@@ -5,8 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.lifemanlab.shop.common.base.BaseController;
 
@@ -26,10 +28,22 @@ public class MemberController extends BaseController {
 		System.out.println("vo.getShOption(): " + vo.getShOption());
 		System.out.println("vo.getShDelNy(): " + vo.getShDelNy());
 		
+		vo.setShOptionDate(vo.getShOptionDate() == null ? 2 : vo.getShOptionDate());
+		
+		vo.setParamsPaging(service.selectOneCount(vo));
+		
 		List<Member> list = service.selectList(vo);
 		model.addAttribute("list", list);
 		
 		return "infra/member/xdmin/memberList";
+	}
+	
+	@RequestMapping(value = "memberView")
+	public String memberView(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+		Member item = service.selectOne(vo);
+		model.addAttribute("item", item);
+		
+		return "infra/member/xdmin/memberView";
 	}
 	
 	@RequestMapping(value = "memberForm")
@@ -39,11 +53,13 @@ public class MemberController extends BaseController {
 	
 	
 	@RequestMapping(value = "memberInst")
-	public String memberInst(Member dto) throws Exception {
-		int result = service.insert(dto);
-		System.out.println("controller result: " + result);
+	public String memberInst(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
 		
-		return "redirect:/member/loginForm";
+		service.insert(dto);
+		vo.setMmSeq(dto.getMmSeq());
+		
+		redirectAttributes.addFlashAttribute("vo", vo);
+		return "redirect:/member/memberView";
 	}
 	
 	@RequestMapping(value = "/memberHome", method = RequestMethod.GET)

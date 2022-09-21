@@ -38,24 +38,19 @@ public class MemberServiceImpl implements MemberService {
 		return result;
 	}
 
-	
-
 	@Override
 	public int update(Member dto) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return dao.update(dto);
 	}
 
 	@Override
 	public int uelete(Member dto) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return dao.uelete(dto);
 	}
 
 	@Override
 	public int delete(MemberVo vo) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return dao.delete(vo);
 	}
 
 	

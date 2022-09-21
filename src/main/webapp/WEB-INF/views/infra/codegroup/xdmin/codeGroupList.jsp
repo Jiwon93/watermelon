@@ -347,7 +347,6 @@
 		var form = $("form[name=ccgFormList]");
 		
 		$("#btnSearch").on("click", function(){
-			if (validationList() == false) return false;
 			form.attr("action", goUrlList).submit();
 		});
 	
@@ -366,10 +365,6 @@
 		
 		var seq = $("input:hidden[name=ccgSeq]");
 		
-		$('#btnForm').on("click", function() {
-			goForm(0);                
-		});
-
 		goForm = function(keyValue) {
 	    	/* if(keyValue != 0) seq.val(btoa(keyValue)); */
 	    	seq.val(keyValue);
@@ -381,7 +376,6 @@
 	    	seq.val(keyValue);
 			form.attr("action", goUrlView).submit();
 		}
-		
 	</script>
 	
 </body>

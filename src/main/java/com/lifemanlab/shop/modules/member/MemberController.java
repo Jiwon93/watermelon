@@ -32,6 +32,10 @@ public class MemberController extends BaseController {
 		return "infra/member/xdmin/memberList";
 	}
 	
+	@RequestMapping(value = "memberForm")
+	public String memberForm() throws Exception {
+		return "infra/member/xdmin/memberForm";
+	}
 	
 	
 	@RequestMapping(value = "memberInst")

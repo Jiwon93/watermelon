@@ -32,6 +32,19 @@
 		<include refid="Base.selectListLowerForMysql" />
 	</select>
 	
+	<select id="selectOneCount" resultType="Integer">
+		SELECT COUNT(*)
+		<include refid="selectCommon" />
+	</select>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT
+			a.*
+		FROM member a
+		WHERE 1=1
+			AND mmSeq = #{mmSeq}
+	</select>
+	
 	<select id="memberPhoneList" resultMap="resultMapObj">
 		SELECT
 			a.*

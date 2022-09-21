@@ -34,6 +34,7 @@
 			text-align: center;
 			justify-content: center;
 		}
+		
 	</style>
 	
 	<link href="/resources/css/list.css" rel="stylesheet">
@@ -43,7 +44,7 @@
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </head>
 <body>
-	<form name="form" id="form" autocomplete="off">
+	<form id="form" name="form" autocomplete="off" enctype="multipart/form-data">
 	<!-- *Vo.jsp s -->
 	<%@include file="../../common/xdmin/includeV1/codeVo.jsp"%>		<!-- #-> -->
 	<!-- *Vo.jsp e -->
@@ -163,7 +164,9 @@
 									<select class="form-select" id="codeGroup_ccgSeq" name="codeGroup_ccgSeq">
 										<option>선택</option>
 										<c:forEach items="${ccgNameList}" var="ccgNameList" varStatus="status">
-										<option value="${ccgNameList.ccgSeq }" ><c:out value="${ccgNameList.ccgName }"/></option>
+										<option value="${ccgNameList.ccgSeq }" <c:if test="${item.codeGroup_ccgSeq eq ccgNameList.ccgSeq }">selected</c:if>>
+											<c:out value="${ccgNameList.ccgName }"/>
+										</option>
 										</c:forEach>
 									</select>
 								</div>
@@ -171,7 +174,7 @@
 							<div class="row m-4">
 								<div class="col mx-auto">
 									<label class="form-label" for="ccName">코드</label>
-									<input type="text" class="form-control" id="ccSeq" name="ccSeq" value="<c:out value="${item.ccSeq }"/>">
+									<input type="text" class="form-control" id="ccSeq" value="<c:out value="${item.ccSeq }"/>">
 								</div>
 								<div class="col mx-auto">
 									<label class="form-label" for="ccgNameEng">대체코드</label>
@@ -237,7 +240,7 @@
 						</div>
 						<div class="row">
 							<div class="col px-5">
-								<button class="btn btn-secondary" type="button" id="btnList">
+								<button class="btn btn-secondary" id="btnList" type="button">
 									<i class="fa-solid fa-bars"></i>
 								</button>
 							</div>
@@ -251,6 +254,46 @@
 								<button class="btn btn-success" id="btnSave" type="button">
 									<i class="fa-regular fa-file-excel"></i>
 								</button>
+								<div class="modal fade" id="memberDropCBtn" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									<div class="modal-dialog modal-dialog-centered">
+										<div class="modal-content ">
+											<div class="modal-title text-end me-3 mt-3">
+												<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+											</div>
+											<div class="modal-body text-center">
+												<h5 class="modal-title mt-2" id="exampleModalLabel">정말 삭제하시겠습니까?</h5>
+												<div class="row mt-5">
+													<div class="col-6 text-center">
+														<button class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">취소</button>
+													</div>
+													<div class="col-6 text-center">
+														<button class="btn btn-danger" id="btnModalUelete" type="button">확인</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="modal fade" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									<div class="modal-dialog modal-dialog-centered">
+										<div class="modal-content ">
+											<div class="modal-title text-end me-3 mt-3">
+												<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+											</div>
+											<div class="modal-body text-center">
+												<h5 class="modal-title mt-2" id="exampleModalLabel">정말 삭제하시겠습니까?</h5>
+												<div class="row mt-5">
+													<div class="col-6 text-center">
+														<button class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">취소</button>
+													</div>
+													<div class="col-6 text-center">
+														<button class="btn btn-danger" id="btnModalDelete" type="button">확인</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -298,13 +341,23 @@
 		var formVo = $("form[name=formVo]");
 	
 		$("#btnSave").on("click",function(){
-				form.attr("action", goUrlUpdt).submit();
+			form.attr("action", goUrlUpdt).submit();
 		});
 		
 		$("#btnList").on("click", function(){
 			formVo.attr("action", goUrlList).submit();
 		});
 		
+		$("#btnUelete").on("click", function(){
+			formVo.attr("action", goUrlUele).submit();
+		});
+		
+		
+		$("#btnDelete").on("click", function(){
+			formVo.attr("action", goUrlDele).submit();
+		});
+		
+		/* 
 		$("#btnUelete").on("click", function(){
 			$("input:hidden[name=ccDelNy]").val(1);
 			$(".modal-title").text("확 인");
@@ -316,7 +369,6 @@
 		
 
 		$("#btnDelete").on("click", function(){
-			alert("어흥");
 			$("input:hidden[name=ccDelNy]").val(0);
 			$(".modal-title").text("확 인");
 			$(".modal-body").text("해당 데이터를 삭제하시겠습니까 ?");
@@ -336,7 +388,8 @@
 			$("#modalConfirm").modal("hide");
 			formVo.attr("action", goUrlDele).submit();
 		});
-		
+		 */
+		 
 		$( function() {
 			  $( "#datepicker" ).datepicker();
 			} );

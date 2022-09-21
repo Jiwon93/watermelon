@@ -172,7 +172,7 @@ th, td {
 				</div>
 				<div class="col-10">
 					<div class="row">
-						<h4>코드그룹 관리</h4>
+						<h4>코드 관리</h4>
 						<div class="col border me-4">
 							<div class="row mt-2 mb-2">
 								<div class="col-2 p-1">
@@ -264,9 +264,7 @@ th, td {
 									</c:when>
 									<c:otherwise>
 										<c:forEach items="${list}" var="list" varStatus="status">
-											<tr
-												onclick="location.href='/code/codeView?ccSeq=<c:out value="${list.ccSeq }"/>'"
-												style="cursor: pointer;">
+											<tr style="cursor: pointer;">
 												<td class="tableHead1"><input class="listCheck"
 													type="checkbox"></td>
 												<td class="tableHead1"><c:out value="${status.count }" /></td>
@@ -274,7 +272,7 @@ th, td {
 												<td><c:out value="${list.ccgName }" /></td>
 												<td><c:out value="${list.ccSeq }" /></td>
 												<td></td>
-												<td><c:out value="${list.ccName }" /></td>
+												<td><a href="javascript:goView(<c:out value="${list.ccSeq }" />)" class="text-decoration-none"><c:out value="${list.ccName }" /></a></td>
 												<td><c:out value="${list.ccNameEng }" /></td>
 												<td><c:out value="${list.ccUseNy }" /></td>
 												<td><c:out value="${list.ccOrder }" /></td>
@@ -305,8 +303,7 @@ th, td {
 								<button class="btn btn-success" type="button" id="btnExcel">
 									<i class="fa-regular fa-file-excel"></i>
 								</button>
-								<button class="btn btn-primary" type="button" id="btnPlus"
-									onclick="location.href='codeForm'">
+								<button class="btn btn-primary" type="button" id="btnPlus">
 									<i class="fa-regular fa-plus"></i>
 								</button>
 							</div>

@@ -54,16 +54,17 @@ public class CodeController extends BaseController {
 		return "infra/code/xdmin/codeForm";
 	}
 	
+	@SuppressWarnings(value = {"all"})
 	@RequestMapping(value = "codeInst")
 	public String codeInst(CodeVo vo, Code dto, RedirectAttributes redirectAttributes) throws Exception {
 		
-		int result = service.insert(dto);
-		System.out.println("controller result: " + result);
+		service.insert(dto);
+		vo.setCcSeq(dto.getCcSeq());
 		
-		return "redirect:/code/codeList";
+		redirectAttributes.addFlashAttribute("vo", vo);
+		return "redirect:/code/codeView";
 	}
 	
-	@SuppressWarnings(value = {"all"})
 	@RequestMapping(value = "codeUpdt")
 	public String codeUpdt(CodeVo vo, Code dto, RedirectAttributes redirectAttributes) throws Exception {
 		service.update(dto);

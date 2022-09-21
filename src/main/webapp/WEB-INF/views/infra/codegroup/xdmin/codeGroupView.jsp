@@ -306,7 +306,6 @@
 		
 
 		$("#btnDelete").on("click", function(){
-			alert("어흥");
 			$("input:hidden[name=ccgDelNy]").val(0);
 			$(".modal-title").text("확 인");
 			$(".modal-body").text("해당 데이터를 삭제하시겠습니까 ?");

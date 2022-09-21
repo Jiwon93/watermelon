@@ -31,7 +31,6 @@ public class BaseVo {
 	
 	
 	//insert
-	private String mainKey;
 	
 //////////////////////////////////////////////////////////	
 
@@ -172,13 +171,6 @@ public class BaseVo {
 //////////////////////////////////////////////////////////////
 	
 	// insert
-	public String getMainKey() {
-		return mainKey;
-	}
-
-	public void setMainKey(String mainKey) {
-		this.mainKey = mainKey;
-	}
 	
 ////////////////////////////////////////////////////////////
 	public void setParamsPaging(int totalRows) {

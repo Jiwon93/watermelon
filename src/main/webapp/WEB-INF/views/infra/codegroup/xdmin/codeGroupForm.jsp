@@ -222,10 +222,10 @@
 								</button>
 							</div>
 							<div class="col px-4" style="text-align: right;">
-								<button class="btn btn-danger" type="button" id="btnUele">
+								<button class="btn btn-danger" type="button" id="btnUelete">
 									<i class="fa-duotone fa-x"></i>
 								</button>
-								<button class="btn btn-danger" type="button" id="btnDele">
+								<button class="btn btn-danger" type="button" id="btnDelete">
 									<i class="fa-regular fa-trash-can"></i>
 								</button>
 								<button class="btn btn-success" type="button" id="btnSave">
@@ -276,6 +276,37 @@
 	
 		$("#btnList").on("click", function(){
 			form.attr("action", goUrlList).submit();
+		});
+		
+		$("#btnUelete").on("click", function(){
+			$("input:hidden[name=ccgDelNy]").val(1);
+			$(".modal-title").text("확 인");
+			$(".modal-body").text("해당 데이터를 삭제하시겠습니까 ?");
+			$("#btnModalUelete").show();
+			$("#btnModalDelete").hide();
+			$("#modalConfirm").modal("show");
+		});
+		
+
+		$("#btnDelete").on("click", function(){
+			$("input:hidden[name=ccgDelNy]").val(0);
+			$(".modal-title").text("확 인");
+			$(".modal-body").text("해당 데이터를 삭제하시겠습니까 ?");
+			$("#btnModalUelete").hide();
+			$("#btnModalDelete").show();
+			$("#modalConfirm").modal("show");
+		});
+		
+		
+		$("#btnModalUelete").on("click", function(){
+			$("#modalConfirm").modal("hide");
+			formVo.attr("action", goUrlUele).submit();
+		});
+		
+		
+		$("#btnModalDelete").on("click", function(){
+			$("#modalConfirm").modal("hide");
+			formVo.attr("action", goUrlDele).submit();
 		});
 	
 		/* 

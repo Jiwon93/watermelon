@@ -333,7 +333,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	17e90af3c57fa367793d1f57799dd4c9"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=17e90af3c57fa367793d1f57799dd4c9"></script>
+	
 	<script type="text/javascript">
 	
 		var goUrlList = "/member/memberList";
@@ -438,23 +439,23 @@
 	                
 	                /* lat and lng from address s */
 	 				
-					// 주소-좌표 변환 객체를 생성
-					var geocoder = new daum.maps.services.Geocoder();
-					
-					// 주소로 좌표를 검색
-					geocoder.addressSearch(roadAddr, function(result, status) {
-					 
-						// 정상적으로 검색이 완료됐으면,
-						if (status == daum.maps.services.Status.OK) {
-							
-							document.getElementById("mmLat").value=result[0].y;
-							document.getElementById("mmLng").value=result[0].x;
-						}
-					});
-					/* lat and lng from address e */
+	                var geocoder = new daum.maps.services.Geocoder();
+	    			
+	    			// 주소로 좌표를 검색
+	    			geocoder.addressSearch(roadAddr, function(result, status) {
+	    			 
+	    				// 정상적으로 검색이 완료됐으면,
+	    				if (status == daum.maps.services.Status.OK) {
+	    					
+	    					document.getElementById("mmLat").value=result[0].y;
+	    					document.getElementById("mmLng").value=result[0].x;
+	    				}
+	    			});
+	    			/* lat and lng from address e */
 	                
 	            }
 	        }).open();
+ 
 	    }
 		
 	    
@@ -469,6 +470,31 @@
 		});
 		
 	</script>
+	
+	
+	
+	<!-- <script type="text/javascript">
+		
+		
+		function mmExecDaumPostcode() {
+	        new daum.Postcode({
+	            oncomplete: function(data) {
+			// 주소-좌표 변환 객체를 생성
+			var geocoder = new daum.maps.services.Geocoder();
+			
+			// 주소로 좌표를 검색
+			geocoder.addressSearch(roadAddr, function(result, status) {
+			 
+				// 정상적으로 검색이 완료됐으면,
+				if (status == daum.maps.services.Status.OK) {
+					
+					document.getElementById("mmLat").value=result[0].y;
+					document.getElementById("mmLng").value=result[0].x;
+				}
+			});
+			/* lat and lng from address e */
+	            }
+	</script> -->
 </body>
 </html>
 

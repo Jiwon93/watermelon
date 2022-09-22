@@ -20,15 +20,31 @@
 				<when test="shOption == 5">AND mmPw LIKE CONCAT('%',#{shValue},'%')</when>
 				<when test="shOption == 6">AND mmJob LIKE CONCAT('%',#{shValue},'%')</when>
 				<when test="shOption == 7">AND mmGender LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 8">AND mmInterest LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 9">AND mmBod LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 10">AND mmAddress1 LIKE CONCAT('%',#{shValue},'%')</when>
 			</choose>
 	</sql>
 	
 	<select id="selectList" resultMap="resultMapObj">
 		<include refid="Base.selectListUpperForMysql" />
 			SELECT
-				a.*
+				a.mmSeq
+				,a.mmName
+				,a.mmRank
+				,a.mmEmail
+				,a.mmNickname
+				,a.mmPw
+				,a.mmJob
+				,a.mmGender
+				,a.mmBod
+				,a.mmAddress1
+				,a.mmInterest
+				<!-- ,(select count(aa.ccSeq) from code aa where 1=1 and aa.ccDelNy = 0 and aa.codeGroup_ccgSeq = b.ccgSeq) as ccCount -->
+				<!-- <include refid="Base.selectRegModWithAlies" /> -->
 			<include refid="selectCommon" />
 			ORDER BY a.mmSeq DESC
+			<!-- <include refid="Base.orderByLimitForMysql" /> -->
 		<include refid="Base.selectListLowerForMysql" />
 	</select>
 	
@@ -47,7 +63,7 @@
 	
 	<select id="memberPhoneList" resultMap="resultMapObj">
 		SELECT
-			a.*
+			a.
 		FROM member_phone
 		WHERE 1=1
 	</select>

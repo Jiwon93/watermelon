@@ -41,7 +41,6 @@
 	<link href="/resources/css/list.css" rel="stylesheet">
 </head>
 <body>
-	<!-- <form name="form" id="form" method="post" enctype="multipart/form-data"> -->
 	<form id="form" name="form" method="post" autocomplete="off" enctype="multipart/form-data">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
@@ -274,10 +273,11 @@
 									</div>
 									<div class="row mt-2">
 										<div class="col mx-auto">
-											<input class="form-control" type="text" id="" placeholder="위도" readonly>
+											<input type="hidden" name="place">
+											<input class="form-control" type="text" id="mmLat" name="lat" placeholder="위도" readonly>
 										</div>
 										<div class="col mx-auto">
-											<input class="form-control" type="text" id="" placeholder="경도" readonly>
+											<input class="form-control" type="text" id="mmLng" name="lng" placeholder="경도" readonly>
 										</div>
 									</div>
 								</div>
@@ -333,8 +333,55 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	17e90af3c57fa367793d1f57799dd4c9"></script>
 	<script type="text/javascript">
 	
+		var goUrlList = "/member/memberList";
+		var goUrlInst = "/member/memberInst";
+		var goUrlUpdt = "/member/memberUpdt";
+		var goUrlUele = "/member/memberUele";
+		var goUrlDele = "/member/memberDele";
+	
+		var form = $("form[name=form]");
+		
+		$("#btnSave").on("click", function(){
+	   		form.attr("action", goUrlInst).submit();
+		}); 
+	
+		$("#btnList").on("click", function(){
+			form.attr("action", goUrlList).submit();
+		});
+		
+		$("#btnUelete").on("click", function(){
+			$("input:hidden[name=mmDelNy]").val(1);
+			$(".modal-title").text("확 인");
+			$(".modal-body").text("해당 데이터를 삭제하시겠습니까 ?");
+			$("#btnModalUelete").show();
+			$("#btnModalDelete").hide();
+			$("#modalConfirm").modal("show");
+		});
+		
+	
+		$("#btnDelete").on("click", function(){
+			$("input:hidden[name=mmDelNy]").val(0);
+			$(".modal-title").text("확 인");
+			$(".modal-body").text("해당 데이터를 삭제하시겠습니까 ?");
+			$("#btnModalUelete").hide();
+			$("#btnModalDelete").show();
+			$("#modalConfirm").modal("show");
+		});
+		
+		
+		$("#btnModalUelete").on("click", function(){
+			$("#modalConfirm").modal("hide");
+			formVo.attr("action", goUrlUele).submit();
+		});
+		
+		
+		$("#btnModalDelete").on("click", function(){
+			$("#modalConfirm").modal("hide");
+			formVo.attr("action", goUrlDele).submit();
+		});
 		//카카오 지도 API
 		//본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
 	    function mmExecDaumPostcode() {
@@ -388,16 +435,37 @@
 	                    guideTextBox.innerHTML = '';
 	                    guideTextBox.style.display = 'none';
 	                }
+	                
+	                /* lat and lng from address s */
+	 				
+					// 주소-좌표 변환 객체를 생성
+					var geocoder = new daum.maps.services.Geocoder();
+					
+					// 주소로 좌표를 검색
+					geocoder.addressSearch(roadAddr, function(result, status) {
+					 
+						// 정상적으로 검색이 완료됐으면,
+						if (status == daum.maps.services.Status.OK) {
+							
+							document.getElementById("mmLat").value=result[0].y;
+							document.getElementById("mmLng").value=result[0].x;
+						}
+					});
+					/* lat and lng from address e */
+	                
 	            }
 	        }).open();
 	    }
 		
+	    
 		$("#btnAddressClear").on("click", function(){
 			$("#mmPostcode").val('');
 			$("#mmRoadAddress").val('');
 			$("#mmJibunAddress").val('');
 			$("#mmDetailAddress").val('');
 			$("#mmExtraAddress").val('');
+			$("#mmLat").val('');
+			$("#mmLng").val('');
 		});
 		
 	</script>

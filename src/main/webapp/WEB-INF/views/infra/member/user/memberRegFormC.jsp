@@ -42,11 +42,9 @@
     		height: 45px;
     	}
     </style>
-
 </head>
-
 <body>
-
+<form method="post" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
     <!-- Navbar Start -->
     <nav class="container-fluid">
         <div class="row" id="">
@@ -325,7 +323,7 @@
         </div>
     </div>
     <!-- Footer End -->
-
+</form>
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -337,6 +335,8 @@
 
     <!-- Template Javascript -->
     <script src="/resources/template/woody/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>
 
 </html>

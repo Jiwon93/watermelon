@@ -7,7 +7,6 @@ public class CodeVo extends BaseVo {
 	
 	// search
 	private String ccSeq;
-	
 /////////////////////////////////////////////////////
 	public String getCcSeq() {
 		return ccSeq;

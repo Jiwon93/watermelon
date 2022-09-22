@@ -22,7 +22,7 @@ public class MemberController extends BaseController {
 	
 
 	@RequestMapping(value = "memberList")
-	public String memberList(Model model, MemberVo vo) throws Exception {
+	public String memberList(@ModelAttribute("vo")MemberVo vo, Model model) throws Exception {
 		
 		System.out.println("vo.getShValue(): " + vo.getShValue());
 		System.out.println("vo.getShOption(): " + vo.getShOption());

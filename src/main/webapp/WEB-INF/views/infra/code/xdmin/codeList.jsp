@@ -68,7 +68,7 @@ th, td {
 						style="height: 35%; width: 35%;" alt="">
 				</div>
 				<div class="col-2 text-start">
-					<span class="fs-5">Tony Chang</span> <br> <span class="fs-6">Administrator</span>
+					<span class="fs-5">Jiwon Shin</span> <br> <span class="fs-6">Administrator</span>
 				</div>
 				<div class="col-1">
 					<select class="form-select form-select-sm">
@@ -80,20 +80,25 @@ th, td {
 			</div>
 		</nav>
 		<nav class="navbar navbar-expand-lg" style="background-color: #E3F2FD">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#">Navbar</a>
-				<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="#">회원관리</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">서비스관리</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">사이트관리</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">로그관리</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">시스템관리</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">시스템관리</a></li>
-					</ul>
-				</div>
-			</div>
+		    <div class="container-fluid">
+		        <a class="navbar-brand" href="#">Navbar</a>
+		        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+			        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			          <li class="nav-item">
+			            <a class="nav-link active" aria-current="page" href="codeGroupList.html">코드그룹</a>
+			          </li>
+			          <li class="nav-item">
+			            <a class="nav-link" href="codeGroupForm.html">코드그룹관리</a>
+			          </li>
+			          <li class="nav-item">
+			            <a class="nav-link" href="codeList.html">코드</a>
+			          </li>
+			          <li class="nav-item">
+			            <a class="nav-link" href="codeForm.html">코드관리</a>
+			          </li>
+			        </ul>
+		        </div>
+		    </div>
 		</nav>
 		<div class="container-fluid">
 			<div class="row mt-4">

@@ -100,61 +100,76 @@
 			<div class="row mt-4">
 				<div class="col-2">
 					<div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-				    <ul class="list-unstyled ps-0">
-				      <li class="mb-1">
-				        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-				          Home
-				        </button>
-				        <div class="collapse show" id="home-collapse">
-				          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Updates</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Reports</a></li>
-				          </ul>
-				        </div>
-				      </li>
-				      <li class="mb-1">
-				        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-				          Dashboard
-				        </button>
-				        <div class="collapse" id="dashboard-collapse">
-				          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Weekly</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Monthly</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
-				          </ul>
-				        </div>
-				      </li>
-				      <li class="mb-1">
-				        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-				          Orders
-				        </button>
-				        <div class="collapse" id="orders-collapse">
-				          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Processed</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Shipped</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Returned</a></li>
-				          </ul>
-				        </div>
-				      </li>
-				      <li class="border-top my-3"></li>
-				      <li class="mb-1">
-				        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-				          Account
-				        </button>
-				        <div class="collapse" id="account-collapse">
-				          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New...</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
-				          </ul>
-				        </div>
-				      </li>
-				    </ul>
-				  </div>
+						<ul class="list-unstyled ps-0">
+							<li class="mb-1">
+								<button
+									class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+									data-bs-toggle="collapse" data-bs-target="#home-collapse"
+									aria-expanded="true">Home</button>
+								<div class="collapse show" id="home-collapse">
+									<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+										<li><a href="#"
+											class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
+										<li><a href="#"
+											class="link-dark d-inline-flex text-decoration-none rounded">Updates</a></li>
+										<li><a href="#"
+											class="link-dark d-inline-flex text-decoration-none rounded">Reports</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="mb-1">
+								<button
+									class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+									data-bs-toggle="collapse" data-bs-target="#dashboard-collapse"
+									aria-expanded="false">Dashboard</button>
+								<div class="collapse" id="dashboard-collapse">
+									<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+										<li><a href="#"
+											class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
+										<li><a href="#"
+											class="link-dark d-inline-flex text-decoration-none rounded">Weekly</a></li>
+										<li><a href="#"
+											class="link-dark d-inline-flex text-decoration-none rounded">Monthly</a></li>
+										<li><a href="#"
+											class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="mb-1">
+								<button
+									class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+									data-bs-toggle="collapse" data-bs-target="#orders-collapse"
+									aria-expanded="false">Orders</button>
+								<div class="collapse" id="orders-collapse">
+									<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+										<li><a href="#"
+											class="link-dark d-inline-flex text-decoration-none rounded">New</a></li>
+										<li><a href="#"
+											class="link-dark d-inline-flex text-decoration-none rounded">Processed</a></li>
+										<li><a href="#"
+											class="link-dark d-inline-flex text-decoration-none rounded">Shipped</a></li>
+										<li><a href="#"
+											class="link-dark d-inline-flex text-decoration-none rounded">Returned</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="border-top my-3"></li>
+							<li class="mb-1">
+								<button
+									class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+									data-bs-toggle="collapse" data-bs-target="#account-collapse"
+									aria-expanded="false">Account</button>
+								<div class="collapse" id="account-collapse">
+									<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+										<li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New...</a></li>
+										<li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
+										<li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
+										<li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
 				</div>
 				<div class="col-10">
 					<div class="row">
@@ -169,15 +184,17 @@
 									</select>
 								</div>
 								<div class="col-2 p-1">
-									<select class="form-select">
-										<option>수정일</option>
+									<select class="form-select" name="shOptionDate">
+										<option value="" <c:if test="${empty vo.shOptionDate }">selected</c:if>>날짜선택</option>
+										<option value="1" <c:if test="${vo.shOptionDate eq 1 }">selected</c:if>>등록일</option>
+										<option value="2" <c:if test="${vo.shOptionDate eq 2 }">selected</c:if>>수정일</option>
 									</select>
 								</div>
 								<div class="col-2 p-1">
-									<input class="form-control" type="text" placeholder="시작일">
+									<input class="form-control" type="text" id="shDateStart" name="shDateStart" value="${vo.shDateStart }" placeholder="시작일">
 								</div>
 								<div class="col-2 p-1">
-									<input class="form-control" type="text" placeholder="종료일">
+									<input class="form-control" type="text" id="shDateEnd" name="shDateEnd" value="${vo.shDateEnd }" placeholder="종료일">
 								</div>
 							</div>
 							<div class="row mb-2">
@@ -191,14 +208,21 @@
 										<option value="5" <c:if test="${vo.shOption eq 5 }">selected</c:if>>비밀번호</option>
 										<option value="6" <c:if test="${vo.shOption eq 6 }">selected</c:if>>직업</option>
 										<option value="7" <c:if test="${vo.shOption eq 7 }">selected</c:if>>성별</option>
+										<option value="8" <c:if test="${vo.shOption eq 8 }">selected</c:if>>관심분야</option>
+										<option value="9" <c:if test="${vo.shOption eq 9 }">selected</c:if>>생일</option>
+										<option value="10" <c:if test="${vo.shOption eq 10 }">selected</c:if>>주소</option>
 									</select>
 								</div>
 								<div class="col-2 p-1">
 									<input id="shValue" name="shValue" value="<c:out value="${vo.shValue }"/>" class="form-control" type="text" placeholder="검색어">
 								</div>
 								<div class="col-1 p-1">
-									<button class="btn btn-warning" href="#" type="submit" role="button"><i class="fa-solid fa-magnifying-glass"></i></button>
-									<button class="btn btn-danger" href="#" role="button"><i class="fa-solid fa-arrow-rotate-right"></i></button>
+									<button class="btn btn-warning" id="btnSearch">
+										<i class="fa-solid fa-magnifying-glass"></i>
+									</button>
+									<button class="btn btn-danger" id="btnReset" type="button">
+										<i class="fa-solid fa-arrow-rotate-right"></i>
+									</button>
 								</div>
 							</div>
 						</div>
@@ -206,12 +230,17 @@
 					<div class="row mt-3">
 						<div class="row">
 							<div class="col-11 p-0">
-								<span>Total: 42</span>
+								<span>Total: </span><c:out value="${vo.totalRows }" />
+								<sapn>Remain: </sapn><c:out value="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + status.index) }" />
 							</div>
 							<div class="col-1 p-0">
 								<div class="col-12">
-									<select class="form-select py-1" style="height: 30px; font-size: 12px;">
-										<option>10</option>
+									<select class="form-select py-1"
+										style="height: 30px; font-size: 12px;">
+										<option value="10" selected>10</option>
+										<option value="15">15</option>
+										<option value="20">20</option>
+										<option value="30">30</option>
 									</select>
 								</div>
 							</div>
@@ -228,13 +257,14 @@
 									<th>비밀번호</th>
 									<th>직업</th>
 									<th>성별</th>
-									<th>방문수</th>
-									<th>가입일</th>
-									<th>상세</th>
+									<th>생일</th>
+									<th>주소</th>
+									<th>관심사</th>
 								</tr>
 								<c:set var="listCodeGender" value="${CodeServiceImpl.selectListCachedCode('2')}"/>
 								<c:set var="listCodeJob" value="${CodeServiceImpl.selectListCachedCode('4')}"/>
 								<c:set var="listCodeRank" value="${CodeServiceImpl.selectListCachedCode('6')}"/>
+								<c:set var="listCodeInterest" value="${CodeServiceImpl.selectListCachedCode('8')}"/>
 								<c:choose>
 									<c:when test="${fn:length(list) eq 0 }">
 										<tr>
@@ -268,18 +298,24 @@
 														<c:if test="${list.mmGender eq listGender.ccSeq}"><c:out value="${listGender.ccName }"/></c:if>
 													</c:forEach>
 												</td>
-												<td></td>
-												<td></td>
-												<td></td>
+												<td><c:out value="${list.mmBod }"/></td>
+												<td><c:out value="${list.mmAddress1 }"/></td>
+												<td>
+													<c:forEach items="${listCodeInterest}" var="listInterest" varStatus="statusInterest">
+														<c:if test="${list.mmInterest eq listInterest.ccSeq}"><c:out value="${listInterest.ccName }"/></c:if>
+													</c:forEach>
+												</td>
 											</tr>
 										</c:forEach>
 									</c:otherwise>
 								</c:choose>
 							</table>
 						</div>
+						
 						<!-- pagination s -->
 						<%@include file="../../common/xdmin/includeV1/pagination.jsp"%>
 						<!-- pagination e -->
+						
 						<div class="row p-0">
 							<div class="col">
 								<button class="btn btn-danger" type="button" id="btnUele">

@@ -173,5 +173,35 @@
 	<delete id="delete">
 		DELETE FROM member WHERE mmSeq = #{mmSeq}
 	</delete>
+	
+	<insert id="memberRegC">
+		INSERT INTO member (
+			mmEmail
+			,mmPw
+			,mmBod
+			,(select mmpPhoneNumber member_phone aa WHERE 1=1 AND aa.member_mmSeq = a.mmSeq AND aa.mmpDefaultNy = 1) as mmPhoneNumber
+			,mmGender
+			,mmZip
+			,mmAddress1
+			,mmAddress2
+			,mmJob
+			,mmInterest
+		)
+		VALUES(
+			#{mmEmail}
+			#{mmPw}
+			#{mmBod}
+			#{mmEmail}
+			#{mmGender}
+			#{mmZip}
+			#{mmAddress1}
+			#{mmAddress2}
+			#{mmJob}
+			#{mmInterest}
+		)
+		<selectKey resultType="String" keyProperty="mmSeq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
 
 </mapper>

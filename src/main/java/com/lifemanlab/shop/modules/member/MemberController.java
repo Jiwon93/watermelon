@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.lifemanlab.shop.common.base.BaseController;
@@ -80,37 +79,37 @@ public class MemberController extends BaseController {
 		return "redirect:/member/memberList";
 	}
 	
-	@RequestMapping(value = "/memberHome", method = RequestMethod.GET)
+	@RequestMapping(value = "/memberHome")
 	public String memberHome() throws Exception {
 		return "infra/member/user/memberHome";
 	}
 	
-	@RequestMapping(value = "/loginForm", method = RequestMethod.GET)
+	@RequestMapping(value = "/loginForm")
 	public String loginForm() throws Exception {
 		return "infra/member/user/loginForm";
 	}
 	
-	@RequestMapping(value = "/idPwFindForm", method = RequestMethod.GET)
+	@RequestMapping(value = "/idPwFindForm")
 	public String idPwFindForm() throws Exception {
 		return "infra/member/user/idPwFindForm";
 	}
 	
-	@RequestMapping(value = "/memberDropFormB", method = RequestMethod.GET)
+	@RequestMapping(value = "/memberDropFormB")
 	public String memberDropFormB() throws Exception {
 		return "infra/member/user/memberDropFormB";
 	}
 	
-	@RequestMapping(value = "/memberDropFormC", method = RequestMethod.GET)
+	@RequestMapping(value = "/memberDropFormC")
 	public String memberDropFormC() throws Exception {
 		return "infra/member/user/memberDropFormC";
 	}
 	
-	@RequestMapping(value = "/memberModFormB", method = RequestMethod.GET)
+	@RequestMapping(value = "/memberModFormB")
 	public String memberModFormB() throws Exception {
 		return "infra/member/user/memberModFormB";
 	}
 	
-	@RequestMapping(value = "/memberModFormC", method = RequestMethod.GET)
+	@RequestMapping(value = "/memberModFormC")
 	public String memberModFormC() throws Exception {
 		return "infra/member/user/memberModFormC";
 	}
@@ -135,32 +134,32 @@ public class MemberController extends BaseController {
 		return "infra/member/user/memberRegViewC";
 	}
 	
-	@RequestMapping(value = "/pwChangFormB", method = RequestMethod.GET)
+	@RequestMapping(value = "/pwChangFormB")
 	public String pwChangFormB() throws Exception {
 		return "infra/member/user/pwChangFormB";
 	}
 	
-	@RequestMapping(value = "/pwChangFormC", method = RequestMethod.GET)
+	@RequestMapping(value = "/pwChangFormC")
 	public String pwChangFormC() throws Exception {
 		return "infra/member/user/pwChangFormC";
 	}
 	
-	@RequestMapping(value = "/saleReg", method = RequestMethod.GET)
+	@RequestMapping(value = "/saleReg")
 	public String saleReg() throws Exception {
 		return "infra/member/user/saleReg";
 	}
 	
-	@RequestMapping(value = "/saleRegForm", method = RequestMethod.GET)
+	@RequestMapping(value = "/saleRegForm")
 	public String saleRegForm() throws Exception {
 		return "infra/member/user/saleRegForm";
 	}
 	
-	@RequestMapping(value = "/purchaseHistory", method = RequestMethod.GET)
+	@RequestMapping(value = "/purchaseHistory")
 	public String purchaseHistory() throws Exception {
 		return "infra/member/user/purchaseHistory";
 	}
 	
-	@RequestMapping(value = "/saleManage", method = RequestMethod.GET)
+	@RequestMapping(value = "/saleManage")
 	public String saleManage() throws Exception {
 		return "infra/member/user/saleManage";
 	}

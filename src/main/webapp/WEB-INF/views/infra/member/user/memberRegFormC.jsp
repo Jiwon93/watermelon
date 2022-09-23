@@ -65,12 +65,13 @@
                    <div class="section-title text-center">
                        <h1 class="display-6 mb-4">회원가입</h1>
                    </div>
-                   <form action="memberInst" method="post">
                        <div class="row g-3">
                            <div class="col-8 offset-2">
                            	   <label class="form-label" for="mmEmail">이메일</label>	
                                <div class="input-group">
-                                   <input type="email" class="form-control" id="mmEmail" name="mmEmail" <c:out value="${dto.mmEmail }"/> placeholder="이메일을 입력해 주세요.">
+                               	   <input type="hidden" id="mmEmailAllowedNy" name="mmEmailAllowedNy" value="0">
+                                   <input type="type" class="form-control" id="mmEmail" name="mmEmail" <c:out value="${dto.mmEmail }"/> placeholder="이메일을 입력해 주세요.">
+                               	   <div class="invalid-feedback" id="mmEmailFeedback"></div>
                                </div>
                            </div>
                            <div class="col-8 offset-2">
@@ -85,7 +86,7 @@
                            <div class="col-8 offset-2">
                            	   <label class="form-label" for="mmBod">생년월일</label>	
                                <div class="input-group">
-                                   <input type="text" class="form-control" id="mmBod" name="mmBod" <c:out value="${dto.mmBod }"/> placeholder="8글자로 입력해 주세요.(ex. YYYYMMDD)" maxlength="8">
+                                   <input type="text" class="form-control" id="datepicker" name="mmBod" <c:out value="${dto.mmBod }"/> placeholder="8글자로 입력해 주세요.(ex. YYYYMMDD)">
                                </div>
                            </div>
                            <div class="col-8 offset-2">
@@ -98,25 +99,29 @@
                            	   <label class="form-label" for="genderReg">성별</label>	
                                <br>
                                <div class="form-check form-check-inline">
-                                   <input type="radio" class="form-check-input" name="gender" id="genderRegM">
+                                   <input type="radio" class="form-check-input" name="mmGnder" id="mmGnder0" value="0" <c:if test="${dto.mmGnder eq 0 }">selected</c:if>>
                                    <label class="form-check-label" for="genderRegM">남자</label>
                                </div>
                                <div class="form-check form-check-inline">
-                                   <input type="radio" class="form-check-input" name="gender" id="genderRegW">
+                                   <input type="radio" class="form-check-input" name="mmGender" id="mmGnder1" value="1" <c:if test="${dto.mmGnder eq 1 }">selected</c:if>>
                                    <label class="form-check-label" for="genderRegW">여자</label>
+                               </div>
+                               <div class="form-check form-check-inline">
+                                   <input type="radio" class="form-check-input" name="mmGender" id="mmGnder2" value="2" <c:if test="${dto.mmGnder eq 2 }">selected</c:if>>
+                                   <label class="form-check-label" for="genderRegW">기타</label>
                                </div>
                            </div>
                            <div class="col-8 offset-2">
                            	   <label class="form-label" for="addressReg">주소</label>
                            	   <div class="input-group mb-2">
                            	   	   <button class="btn btn-primary" type="button" style="height: 38px;">주소검색</button>
-                                   <input type="text" class="form-control" id="addressReg" placeholder="우편번호">
+                                   <input type="text" class="form-control" id="#" placeholder="우편번호">
                                </div>
                                <div class="input-group mb-2">
-                                   <input type="text" class="form-control" id="addressReg" placeholder="주소를 입력해 주세요.">
+                                   <input type="text" class="form-control" id="#" placeholder="주소를 입력해 주세요.">
                                </div>
                                <div class="input-group">
-                                   <input type="text" class="form-control" id="addressReg" placeholder="상세주소를 입력해 주세요.">
+                                   <input type="text" class="form-control" id="#" placeholder="상세주소를 입력해 주세요.">
                                </div>
                            </div>
                            <div class="col-8 offset-2">
@@ -296,10 +301,9 @@
 	   	   	   	   	   	   	   </div>
    	   	   	   	   	   	   </div>
                            <div class="col-8 offset-2">
-                               <button class="btn btn-primary w-100" type="button" onclick="location.href='loginForm.html'">가입완료!</button>
+                               <button class="btn btn-primary w-100" type="button">가입완료!</button>
                            </div>
                        </div>
-                   </form>
                </div>
            </div>
         </div>
@@ -337,6 +341,51 @@
     <script src="/resources/template/woody/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script type="text/javascript">
+		$("#mmEmail").on("keyup", function(key){
+			if(key.keyCode==13) {
+				/* if(!checkId('mmEmail', 2, 0, "영대소문자,숫자,특수문자(-_.),4~20자리만 입력 가능합니다")) {
+					return false;
+				} else { */
+					$.ajax({
+						async: true 
+						,cache: false
+						,type: "post"
+						/* ,dataType:"json" */
+						,url: "/member/checkId"
+						/* ,data : $("#formLogin").serialize() */
+						,data : { "mmEmail" : $("#mmEmail").val() }
+						,success: function(response) {
+							if(response.rt == "success") {
+								document.getElementById("mmEmail").classList.remove('is-invalid');
+								document.getElementById("mmEmail").classList.add('is-valid');
+			
+								document.getElementById("mmEmailFeedback").classList.remove('invalid-feedback');
+								document.getElementById("mmEmailFeedback").classList.add('valid-feedback');
+								document.getElementById("mmEmailFeedback").innerText = "사용 가능 합니다.";
+								
+								document.getElementById("mmEmailAllowedNy").value = 1;
+								
+							} else {
+								document.getElementById("mmEmail").classList.add('is-invalid');
+								document.getElementById("mmEmail").classList.remove('is-valid');
+								
+								document.getElementById("mmEmailFeedback").classList.remove('valid-feedback');
+								document.getElementById("mmEmailFeedback").classList.add('invalid-feedback');
+								document.getElementById("mmEmailFeedback").innerText = "사용 불가능 합니다";
+								
+								document.getElementById("mmEmailAllowedNy").value = 0;
+							}
+						}
+						,error : function(jqXHR, textStatus, errorThrown){
+							alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+						}
+					});
+				/* } */
+				}
+			});
+		
+	</script>
 </body>
 
 </html>

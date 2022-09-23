@@ -60,5 +60,10 @@ public class MemberServiceImpl implements MemberService {
 		return result;
 	}
 
+	@Override
+	public int selectOneIdCheck(Member dto) throws Exception {
+		return dao.selectOneIdCheck(dto);
+	}
+
 	
 }

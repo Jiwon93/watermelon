@@ -60,14 +60,14 @@
 		WHERE 1=1
 			AND mmSeq = #{mmSeq}
 	</select>
-	
+	<!-- 	
 	<select id="memberPhoneList" resultMap="resultMapObj">
 		SELECT
 			a.
 		FROM member_phone
 		WHERE 1=1
 	</select>
-	
+	 -->
 	<insert id="insert">
 		INSERT INTO member (
 			mmName
@@ -174,12 +174,13 @@
 		DELETE FROM member WHERE mmSeq = #{mmSeq}
 	</delete>
 	
+	
+	<!-- 회원가입 -->
 	<insert id="memberRegC">
 		INSERT INTO member (
 			mmEmail
 			,mmPw
 			,mmBod
-			,(select a.mmpPhoneNumber from member_phone a WHERE 1=1 AND a.member_mmSeq = mmSeq AND a.mmpDefaultNy = 1) as mmPhoneNumber
 			,mmGender
 			,mmZip
 			,mmAddress1
@@ -191,7 +192,6 @@
 			#{mmEmail}
 			#{mmPw}
 			#{mmBod}
-			#{mmPhoneNumber}
 			#{mmGender}
 			#{mmZip}
 			#{mmAddress1}
@@ -203,5 +203,11 @@
 			SELECT last_insert_id()
 		</selectKey>
 	</insert>
+	
+	<!-- Email 확인 -->
+	<select id="selectOneIdCheck" resultType="Integer">
+		SELECT COUNT(*)
+		FROM member WHERE 1=1 AND mmEmail = #{mmEmail}
+	</select>
 
 </mapper>

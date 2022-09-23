@@ -40,10 +40,16 @@ public class MemberDao {
 		return result;
 	}
 	
+	//회원가입
 	public int memberRegC(Member dto) {
 		int result = sqlSession.insert(namespace + ".insert", dto);
 		System.out.println("dao result: " + result);
 		return result;
+	}
+	
+	//Email 확인
+	public int selectOneIdCheck(Member dto) {
+		return sqlSession.selectOne(namespace + ".selectOneIdCheck", dto);
 	}
 	
 	public int update(Member dto) { return sqlSession.update(namespace + ".update", dto); }

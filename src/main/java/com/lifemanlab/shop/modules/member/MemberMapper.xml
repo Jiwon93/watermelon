@@ -179,7 +179,7 @@
 			mmEmail
 			,mmPw
 			,mmBod
-			,(select mmpPhoneNumber member_phone aa WHERE 1=1 AND aa.member_mmSeq = a.mmSeq AND aa.mmpDefaultNy = 1) as mmPhoneNumber
+			,(select a.mmpPhoneNumber from member_phone a WHERE 1=1 AND a.member_mmSeq = mmSeq AND a.mmpDefaultNy = 1) as mmPhoneNumber
 			,mmGender
 			,mmZip
 			,mmAddress1
@@ -191,7 +191,7 @@
 			#{mmEmail}
 			#{mmPw}
 			#{mmBod}
-			#{mmEmail}
+			#{mmPhoneNumber}
 			#{mmGender}
 			#{mmZip}
 			#{mmAddress1}

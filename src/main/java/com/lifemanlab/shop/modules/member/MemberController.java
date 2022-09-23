@@ -61,6 +61,17 @@ public class MemberController extends BaseController {
 		return "redirect:/member/memberView";
 	}
 	
+	//회원가입
+	@SuppressWarnings(value = {"all"})
+	@RequestMapping(value = "memberRegInst")
+	public String memberRegInst(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
+		service.memberRegC(dto);
+		vo.setMmSeq(dto.getMmSeq());
+		
+		redirectAttributes.addFlashAttribute("vo", vo);
+		return "redirect:/member/user/loginForm";
+	}
+	
 	@RequestMapping(value = "memberUpdt")
 	public String memberUpdt(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
 		service.update(dto);

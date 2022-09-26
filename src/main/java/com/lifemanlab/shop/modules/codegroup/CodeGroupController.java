@@ -66,15 +66,18 @@ public class CodeGroupController extends BaseController{
 		return "infra/codegroup/xdmin/codeGroupForm";
 	}
 	
-	@SuppressWarnings(value = {"all"})
 	@RequestMapping(value = "codeGroupInst")
 	public String codeGroupInst(CodeGroupVo vo, CodeGroup dto, RedirectAttributes redirectAttributes) throws Exception {
 		
-		service.insert(dto);
+		int result = service.insert(dto);
+		System.out.println("controller result :" +result);
 		vo.setCcgSeq(dto.getCcgSeq());
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
-		
+		System.out.println("getCcgName: " + dto.getCcgName());
+		System.out.println("getCcgNameEng " + dto.getCcgNameEng());
+		System.out.println("getCcgOrder " + dto.getCcgOrder());
+		System.out.println("getCcgUseNy " + dto.getCcgUseNy());
 		return "redirect:/codeGroup/codeGroupView";
 	}
 	

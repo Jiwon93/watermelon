@@ -1,0 +1,54 @@
+
+.agreeBox {
+	padding:16px;
+	border:1px solid #e4e5ed;
+	margin-bottom:20px;
+	background-color: white;
+}
+
+.agreeAll {
+	cursor: pointer;
+}
+
+.agreeAll:hover {
+	color: gray;
+}
+
+.agreeAll:focus {
+	color: #AB7442;
+}
+
+.agreeAll {
+	cursor: pointer;
+}
+
+.agreeAll {
+	cursor: pointer;
+}
+
+.agreeCertain {
+	font-size: 13px;
+	cursor: pointer;	
+}
+
+.certain {
+	color: orange;
+	cursor: pointer;
+}
+
+.agreeSelection {
+	font-size: 13px;
+	cursor: pointer;
+}
+
+.fa-circle-check {
+	color: lightgray;
+}
+
+.fa-circle-check:hover {
+	color: gray;
+}
+
+.fa-circle-check:focus {
+	color: #AB7442;
+}

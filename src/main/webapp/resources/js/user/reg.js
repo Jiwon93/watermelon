@@ -27,7 +27,7 @@ var regExpEm = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA
 					/* ,data : $("#formLogin").serialize() */
 					,data : { "mmEmail" : $("#mmEmail").val() }
 					,success: function(response) {
-						if(response.rt == "success" && regExpEm == $("#mmEmail").val()) {
+						if(response.rt == "success") {
 							document.getElementById("mmEmail").classList.remove('is-invalid');
 							document.getElementById("mmEmail").classList.add('is-valid');
 		

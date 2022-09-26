@@ -25,6 +25,7 @@
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
 
     <!-- Libraries Stylesheet -->
     <link href="/resources/template/woody/lib/animate/animate.min.css" rel="stylesheet">
@@ -36,6 +37,9 @@
 
     <!-- Template Stylesheet -->
     <link href="/resources/template/woody/css/style.css" rel="stylesheet">
+    
+    <!--  -->
+    <link href="/resources/css/user/agree.css" rel="stylesheet">
     <style type="text/css">
     	.btn {
     		border-radius: 5px;
@@ -112,16 +116,17 @@
                                </div>
                            </div>
                            <div class="col-8 offset-2">
-                           	   <label class="form-label" for="addressReg">주소</label>
+                           	   <label class="form-label" for="mmrfPostcode">주소</label>
                            	   <div class="input-group mb-2">
-                           	   	   <button class="btn btn-primary" type="button" style="height: 38px;">주소검색</button>
-                                   <input type="text" class="form-control" id="#" placeholder="우편번호">
+                           	   	   <button class="btn btn-primary" type="button" style="height: 38px;" onclick="mmrfPostcodeBtn()">주소검색</button>
+                                   <input type="text" class="form-control" placeholder="우편번호" id="mmrfPostcode">
                                </div>
                                <div class="input-group mb-2">
-                                   <input type="text" class="form-control" id="#" placeholder="주소를 입력해 주세요.">
+                                   <input type="text" class="form-control" placeholder="주소를 입력해 주세요." id="mmrfRoadAddress" readonly>
                                </div>
+                               <span id="guide" style="color:#999;display:none"></span>
                                <div class="input-group">
-                                   <input type="text" class="form-control" id="#" placeholder="상세주소를 입력해 주세요.">
+                                   <input type="text" class="form-control" placeholder="상세주소를 입력해 주세요." id="mmrfDetailAddress">
                                </div>
                            </div>
                            <div class="col-8 offset-2">
@@ -159,146 +164,36 @@
 							   </div>
 						   </div>
 						   <div class="col-8 offset-2">
-							   <style data-emotion="css z5u2sd">
-							   	   .css-z5u2sd {
-							   	   	   padding:16px;
-							   	   	   border:1px solid #e4e5ed;
-							   	   	   border-radius:4px;
-							   	   	   margin-bottom:20px;
-							   	   	   background-color: white;
-						   	   	   }
-						   	   </style>
-						   	   <div name="agreements" class="css-z5u2sd ebb1x3g0">
-						   	   	   <style data-emotion="css 19dxxop">
-						   	   	   	   .css-19dxxop {
-						   	   	   	   	   font-size:15px;
-						   	   	   	   	   padding-bottom:16px;
-						   	   	   	   	   border-bottom:1px solid #e4e5ed;
-						   	   	   	   	   cursor:pointer;
-					   	   	   	   	   }
-					   	   	   	   </style>
-					   	   	   	   <div class="css-19dxxop ebb1x3g1">
-					   	   	   	   	   <style data-emotion="css 1om2ydj">
-					   	   	   	   	   	   .css-1om2ydj {
-					   	   	   	   	   	   	   margin-right:8px;
-					   	   	   	   	   	   	   display:inline-block;
-					   	   	   	   	   	   	   background-color:#e4e5ed;
-					   	   	   	   	   	   	   border-radius:50%;
-					   	   	   	   	   	   	   padding:2px;
-					   	   	   	   	   	   	   line-height:1.15;
-				   	   	   	   	   	   	   }
-				   	   	   	   	   	   </style>
-				   	   	   	   	   	   <div class="css-1om2ydj ebb1x3g4">
-				   	   	   	   	   	   	   <style data-emotion="css 1qcqzrg">
-				   	   	   	   	   	   	   	   .css-1qcqzrg {
-				   	   	   	   	   	   	   	   	   display:inline-block;
-				   	   	   	   	   	   	   	   	   color:inherit;
-				   	   	   	   	   	   	   	   	   font-style:normal;
-				   	   	   	   	   	   	   	   	   line-height:0;
-				   	   	   	   	   	   	   	   	   text-align:center;
-				   	   	   	   	   	   	   	   	   text-transform:none;
-				   	   	   	   	   	   	   	   	   vertical-align:-0.125em;
-				   	   	   	   	   	   	   	   	   text-rendering:optimizeLegibility;
-				   	   	   	   	   	   	   	   	   -webkit-font-smoothing:antialiased;
-				   	   	   	   	   	   	   	   	   -moz-osx-font-smoothing:grayscale;
-				   	   	   	   	   	   	   	   	   color:#ffffff;
-			   	   	   	   	   	   	   	   	   }
-			   	   	   	   	   	   	   	   </style>
-			   	   	   	   	   	   	   	   <span role="img" color="#ffffff" rotate="0" class="css-1qcqzrg e181xm9y1">
-			   	   	   	   	   	   	   	   	   <style data-emotion="css 7kp13n">
-			   	   	   	   	   	   	   	   	   	   .css-7kp13n {
-			   	   	   	   	   	   	   	   	   	   	   display:inline-block;
-		   	   	   	   	   	   	   	   	   	   	   }
-		   	   	   	   	   	   	   	   	   	   </style>
-		   	   	   	   	   	   	   	   	   	   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet" class="css-7kp13n e181xm9y0">
-		   	   	   	   	   	   	   	   	   	   	   <path d="M0 0h24v24H0V0z" fill="none"></path>
-		   	   	   	   	   	   	   	   	   	   	   <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
-	   	   	   	   	   	   	   	   	   	   	   </svg>
-	   	   	   	   	   	   	   	   	   	   </span>
-	   	   	   	   	   	   	   	   	   </div>모두 동의합니다.
+						   	   <div class="agreeBox">
+						   	   	   <div class="agreeAll">
+			   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
+			   	   	   	   	   	   	   <span>모두 동의합니다.</span>
+		   	   	   	   	   	   	   </div>
+		   	   	   	   	   	   	   <hr>
+		   	   	   	   	   	   	   <div class="agreeCertain">
+		   	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
+		   	   	   	   	   	   	   	   <span>만 14세 이상입니다.</span>
+		   	   	   	   	   	   	   	   <span class="certain">(필수)</span>
 	   	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   	   <style data-emotion="css 1yuhvjn">
-	   	   	   	   	   	   	   	   	   .css-1yuhvjn {
-	   	   	   	   	   	   	   	   	   	   margin-top:16px;
-	   	   	   	   	   	   	   	   	   }
-	   	   	   	   	   	   	   	   </style>
-	   	   	   	   	   	   	   	   <div class="css-1yuhvjn ebb1x3g2">
-	   	   	   	   	   	   	   	   	   <style data-emotion="css zh2w40">
-	  	   	   	   	   	   	   	   	   	   .css-zh2w40 {
-	  	   	   	   	   	   	   	   	   	   	   font-size:12px;
-	  	   	   	   	   	   	   	   	   	   	   color:#727585;
-	  	   	   	   	   	   	   	   	   	   	   margin-bottom:4px;
-	  	   	   	   	   	   	   	   	   	   	   cursor:pointer;
-	   	   	   	   	   	   	   	   	   	   }
-	   	   	   	   	   	   	   	   	   </style>
-	   	   	   	   	   	   	   	   	   <div class="css-zh2w40 ebb1x3g3">
-	   	   	   	   	   	   	   	   	   	   <div class="css-1om2ydj ebb1x3g4">
-	   	   	   	   	   	   	   	   	   	   	   <span role="img" color="#ffffff" rotate="0" class="css-1qcqzrg e181xm9y1">
-	   	   	   	   	   	   	   	   	   	   	   	   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet" class="css-7kp13n e181xm9y0">
-	   	   	   	   	   	   	   	   	   	   	   	   	   <path d="M0 0h24v24H0V0z" fill="none"></path>
-	   	   	   	   	   	   	   	   	   	   	   	   	   <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
-	   	   	   	   	   	   	   	   	   	   	   	   </svg>
-	   	   	   	   	   	   	   	   	   	   	   </span>
-	   	   	   	   	   	   	   	   	   	   </div>만 14세 이상입니다.
-	   	   	   	   	   	   	   	   	   	   <!-- --> 
-	   	   	   	   	   	   	   	   	   	   <style data-emotion="css 1b63ro4">
-	   	   	   	   	   	   	   	   	   	   	   .css-1b63ro4 {
-	   	   	   	   	   	   	   	   	   	   	   	   color:#ff7262;
-	   	   	   	   	   	   	   	   	   	   	   }
-	   	   	   	   	   	   	   	   	   	   </style>
-	   	   	   	   	   	   	   	   	   	   <span class="css-1b63ro4 ebb1x3g5">(필수)</span>
-	   	   	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   	   	   <div class="css-zh2w40 ebb1x3g3">
-	   	   	   	   	   	   	   	   	   	   <div class="css-1om2ydj ebb1x3g4">
-	   	   	   	   	   	   	   	   	   	   	   <span role="img" color="#ffffff" rotate="0" class="css-1qcqzrg e181xm9y1">
-	   	   	   	   	   	   	   	   	   	   	   	   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet" class="css-7kp13n e181xm9y0">
-	   	   	   	   	   	   	   	   	   	   	   	   	   <path d="M0 0h24v24H0V0z" fill="none"></path>
-	   	   	   	   	   	   	   	   	   	   	   	   	   <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
-	   	   	   	   	   	   	   	   	   	   	   	   </svg>
-	   	   	   	   	   	   	   	   	   	   	   </span>
-	   	   	   	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   	   	   	   <style data-emotion="css 1ebg73i">
-	   	   	   	   	   	   	   	   	   	   	   .css-1ebg73i {
-	   	   	   	   	   	   	   	   	   	   	   	   color:#727585;
-	   	   	   	   	   	   	   	   	   	   	   }
-	   	   	   	   	   	   	   	   	   	   </style>
-	   	   	   	   	   	   	   	   	   	   <a target="_blank" href="https://support.kmong.com/hc/ko/articles/900005915466" class="css-1ebg73i e1jfpg0i0">서비스 이용약관</a>에 동의합니다.<!-- --> 
-	   	   	   	   	   	   	   	   	   	   <span class="css-1b63ro4 ebb1x3g5">(필수)</span>
-	   	   	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   	   	   <div class="css-zh2w40 ebb1x3g3">
-	   	   	   	   	   	   	   	   	   	   <div class="css-1om2ydj ebb1x3g4">
-	   	   	   	   	   	   	   	   	   	   	   <span role="img" color="#ffffff" rotate="0" class="css-1qcqzrg e181xm9y1">
-	   	   	   	   	   	   	   	   	   	   	   	   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet" class="css-7kp13n e181xm9y0">
-	   	   	   	   	   	   	   	   	   	   	   	   	   <path d="M0 0h24v24H0V0z" fill="none"></path>
-	   	   	   	   	   	   	   	   	   	   	   	   	   <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
-	   	   	   	   	   	   	   	   	   	   	   	   </svg>
-	   	   	   	   	   	   	   	   	   	   	   </span>
-	   	   	   	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   	   	   	   <a target="_blank" href="https://support.kmong.com/hc/ko/articles/4408694164377" class="css-1ebg73i e1jfpg0i0">개인정보 수집/이용</a>에 동의합니다.<!-- --> 
-	   	   	   	   	   	   	   	   	   	   <span class="css-1b63ro4 ebb1x3g5">(필수)</span>
-	   	   	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   	   	   <div class="css-zh2w40 ebb1x3g3">
-	   	   	   	   	   	   	   	   	   	   <div class="css-1om2ydj ebb1x3g4">
-	   	   	   	   	   	   	   	   	   	   	   <span role="img" color="#ffffff" rotate="0" class="css-1qcqzrg e181xm9y1">
-	   	   	   	   	   	   	   	   	   	   	   	   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet" class="css-7kp13n e181xm9y0">
-	   	   	   	   	   	   	   	   	   	   	   	   	   <path d="M0 0h24v24H0V0z" fill="none"></path>
-	   	   	   	   	   	   	   	   	   	   	   	   	   <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
-	   	   	   	   	   	   	   	   	   	   	   	   </svg>
-	   	   	   	   	   	   	   	   	   	   	   </span>
-	   	   	   	   	   	   	   	   	   	   </div>이벤트 할인 혜택 알림 수신에 동의합니다. (선택)
-	  	   	   	   	   	   	   	   	   </div>
-	  	   	   	   	   	   	   	   	   <div class="css-zh2w40 ebb1x3g3">
-	  	   	   	   	   	   	   	   	   	   <div class="css-1om2ydj ebb1x3g4">
-	  	   	   	   	   	   	   	   	   	   	   <span role="img" color="#ffffff" rotate="0" class="css-1qcqzrg e181xm9y1">
-	  	   	   	   	   	   	   	   	   	   	   	   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet" class="css-7kp13n e181xm9y0">
-	  	   	   	   	   	   	   	   	   	   	   	   	   <path d="M0 0h24v24H0V0z" fill="none"></path>
-	  	   	   	   	   	   	   	   	   	   	   	   	   <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
-	   	   	   	   	   	   	   	   	   	   	   	   </svg>
-	   	   	   	   	   	   	   	   	   	   	   </span>
-	  	   	   	   	   	   	   	   	   	   </div>장기 미접속 시 계정 활성 상태 유지합니다. (선택)
-	  	   	   	   	   	   	   	   	   </div>
+		   	   	   	   	   	   	   <div class="agreeCertain">
+		   	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
+			   	   	   	   	   	   	   <span>서비스 이용약관에 동의합니다.</span>
+			   	   	   	   	   	   	   <span class="certain">(필수)</span>
 	   	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   </div>
+	   	   	   	   	   	   	   	   <div class="agreeCertain">
+		   	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
+			   	   	   	   	   	   	   <span>개인정보 수집/이용에 동의합니다.</span>
+			   	   	   	   	   	   	   <span class="certain">(필수)</span>
+	   	   	   	   	   	   	   	   </div>
+	   	   	   	   	   	   	   	   <div class="agreeSelection">	   
+		   	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
+		   	   	   	   	   	   	   	   <span>이벤트 할인 혜택 알림 수신에 동의합니다. (선택)</span>
+	   	   	   	   	   	   	   	   </div>
+	   	   	   	   	   	   	   	   <div class="agreeSelection">	   
+		   	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
+		   	   	   	   	   	   	   	   <span>장기 미접속 시 계정 활성 상태 유지합니다. (선택)</span>
+   	   	   	   	   	   	   	   	   </div>
+   	   	   	   	   	   	   	   </div>
    	   	   	   	   	   	   </div>
                            <div class="col-8 offset-2">
                                <button class="btn btn-primary w-100" type="button">가입완료!</button>
@@ -345,9 +240,67 @@
 	
 	<!-- kakaoMap API -->
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=17e90af3c57fa367793d1f57799dd4c9&libraries=services,clusterer,drawing"></script>
 	
 	<!-- JavaScript & jQuery -->
 	<script src="/resources/js/user/reg.js"></script>
+	
+	<script type="text/javascript">
+		//카카오 지도 API
+		//본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
+	    function mmrfPostcodeBtn() {
+	        new daum.Postcode({
+	            oncomplete: function(data) {
+	                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+	
+	                // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+	                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+	                var roadAddr = data.roadAddress; // 도로명 주소 변수
+	                var extraRoadAddr = ''; // 참고 항목 변수
+	
+	                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+	                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+	                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+	                    extraRoadAddr += data.bname;
+	                }
+	                // 건물명이 있고, 공동주택일 경우 추가한다.
+	                if(data.buildingName !== '' && data.apartment === 'Y'){
+	                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+	                }
+	                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+	                if(extraRoadAddr !== ''){
+	                    extraRoadAddr = ' (' + extraRoadAddr + ')';
+	                }
+	
+	                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+	                document.getElementById('mmrfPostcode').value = data.zonecode;
+	                document.getElementById("mmrfRoadAddress").value = roadAddr;
+	                
+	                var guideTextBox = document.getElementById("guide");
+	                // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+	                if(data.autoRoadAddress) {
+	                    var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
+	                    guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
+	                    guideTextBox.style.display = 'block';
+	
+	                } else {
+	                    guideTextBox.innerHTML = '';
+	                    guideTextBox.style.display = 'none';
+	                }
+	            }
+	        }).open();
+	
+	    }
+		
+	    
+		$("#btnAddressClear").on("click", function(){
+			$("#mmrfPostcode").val('');
+			$("#mmrfRoadAddress").val('');
+			/* $("#mmJibunAddress").val(''); */
+			$("#mmrfDetailAddress").val('');
+			/* $("#mmExtraAddress").val(''); */
+		});
+	</script>
 	
 </body>
 

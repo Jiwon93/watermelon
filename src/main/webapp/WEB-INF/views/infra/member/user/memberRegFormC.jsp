@@ -40,12 +40,36 @@
     
     <!--  -->
     <link href="/resources/css/user/agree.css" rel="stylesheet">
-    <style type="text/css">
-    	.btn {
-    		border-radius: 5px;
-    		height: 45px;
-    	}
-    </style>
+    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script type="text/javascript">
+	    $('#datePicker').datepicker({
+			format: "yyyy-mm-dd",	//데이터 포맷 형식(yyyy : 년 mm : 월 dd : 일 )
+			startDate: '-10d',	//달력에서 선택 할 수 있는 가장 빠른 날짜. 이전으로는 선택 불가능 ( d : 일 m : 달 y : 년 w : 주)
+			... //생략
+	                language : "ko"	//달력의 언어 선택, 그에 맞는 js로 교체해줘야한다.
+			    
+			})//여기까지가 기본 사용 방법
+	            .on("changeDate", function(e) {
+	                 //이벤트의 종류
+	                 //show : datePicker가 보이는 순간 호출
+	                 //hide : datePicker가 숨겨지는 순간 호출
+	                 //clearDate: clear 버튼 누르면 호출
+	                 //changeDate : 사용자가 클릭해서 날짜가 변경되면 호출 (개인적으로 가장 많이 사용함)
+	                 //changeMonth : 월이 변경되면 호출
+	                 //changeYear : 년이 변경되는 호출
+	                 //changeCentury : 한 세기가 변경되면 호출 ex) 20세기에서 21세기가 되는 순간
+	                 
+	                 console.log(e);// 찍어보면 event 객체가 나온다.
+	                 //간혹 e 객체에서 date 를 추출해야 하는 경우가 있는데 
+	                 // e.date를 찍어보면 Thu Jun 27 2019 00:00:00 GMT+0900 (한국 표준시)
+	                 // 위와 같은 형태로 보인다. 
+	                 // 추후에 yyyy-mm-dd 형태로 변경하는 코드를 업로드 하겠습니다. 
+	            }
+    </script>
 </head>
 <body>
 <form method="post" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
@@ -90,7 +114,7 @@
                            <div class="col-8 offset-2">
                            	   <label class="form-label" for="mmBod">생년월일</label>	
                                <div class="input-group">
-                                   <input type="text" class="form-control" id="datepicker" name="mmBod" <c:out value="${dto.mmBod }"/> placeholder="8글자로 입력해 주세요.(ex. YYYYMMDD)">
+                                   <input type="text" class="form-control" id="datePicker" name="mmBod" <c:out value="${dto.mmBod }"/> placeholder="8글자로 입력해 주세요.(ex. YYYYMMDD)">
                                </div>
                            </div>
                            <div class="col-8 offset-2">
@@ -223,6 +247,9 @@
     </div>
     <!-- Footer End -->
 </form>
+	<!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -235,9 +262,6 @@
     <!-- Template Javascript -->
     <script src="/resources/template/woody/js/main.js"></script>
     
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-	
 	<!-- kakaoMap API -->
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=17e90af3c57fa367793d1f57799dd4c9&libraries=services,clusterer,drawing"></script>

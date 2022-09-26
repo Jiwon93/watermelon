@@ -54,7 +54,7 @@
         <div class="row" id="">
 	        <div class="col" style="text-align: center; margin: 4rem 0;">
 	            <div class="navbar-nav ms-auto">
-	                <a href="#" class=""><img alt="" src="/resources/images/logo.PNG" width="50px;" height="50px;"></a>
+	                <a type="button" id="btnIndex"><img alt="logo" src="/resources/images/logo.PNG" width="50px;" height="50px;"></a>
 	            </div>
             </div>
         </div>
@@ -196,7 +196,7 @@
    	   	   	   	   	   	   	   </div>
    	   	   	   	   	   	   </div>
                            <div class="col-8 offset-2">
-                               <button class="btn btn-primary w-100" type="button">가입완료!</button>
+                               <button class="btn btn-primary w-100" type="button" id="btnSave">가입완료!</button>
                            </div>
                        </div>
                </div>
@@ -246,6 +246,20 @@
 	<script src="/resources/js/user/reg.js"></script>
 	
 	<script type="text/javascript">
+	
+		var goUrlIndex = "/member/index";
+		var goUrlInst = "/member/loginForm";
+		
+		var form = $("form[name=form]");
+		
+		$("#btnIndex").on("click", function(){
+	   		$(location).attr("href", goUrlIndex);
+		}); 
+		
+		$("#btnSave").on("click", function(){
+	   		form.attr("action", goUrlInst).submit();
+		}); 
+		
 		//카카오 지도 API
 		//본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
 	    function mmrfPostcodeBtn() {

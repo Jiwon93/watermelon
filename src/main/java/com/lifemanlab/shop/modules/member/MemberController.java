@@ -110,6 +110,11 @@ public class MemberController extends BaseController {
 		return returnMap;
 	}
 	
+	@RequestMapping(value = "/index")
+	public String index() throws Exception {
+		return "infra/member/index";
+	}
+	
 	@RequestMapping(value = "/memberHome")
 	public String memberHome() throws Exception {
 		return "infra/member/user/memberHome";

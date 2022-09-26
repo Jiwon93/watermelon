@@ -40,35 +40,16 @@
     
     <!--  -->
     <link href="/resources/css/user/agree.css" rel="stylesheet">
+    <link href="/resources/css/user/datePicker.css" rel="stylesheet">
     
+    <!-- datepicker -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script type="text/javascript">
 	    $('#datePicker').datepicker({
-			format: "yyyy-mm-dd",	//데이터 포맷 형식(yyyy : 년 mm : 월 dd : 일 )
-			startDate: '-10d',	//달력에서 선택 할 수 있는 가장 빠른 날짜. 이전으로는 선택 불가능 ( d : 일 m : 달 y : 년 w : 주)
-			... //생략
-	                language : "ko"	//달력의 언어 선택, 그에 맞는 js로 교체해줘야한다.
-			    
-			})//여기까지가 기본 사용 방법
-	            .on("changeDate", function(e) {
-	                 //이벤트의 종류
-	                 //show : datePicker가 보이는 순간 호출
-	                 //hide : datePicker가 숨겨지는 순간 호출
-	                 //clearDate: clear 버튼 누르면 호출
-	                 //changeDate : 사용자가 클릭해서 날짜가 변경되면 호출 (개인적으로 가장 많이 사용함)
-	                 //changeMonth : 월이 변경되면 호출
-	                 //changeYear : 년이 변경되는 호출
-	                 //changeCentury : 한 세기가 변경되면 호출 ex) 20세기에서 21세기가 되는 순간
-	                 
-	                 console.log(e);// 찍어보면 event 객체가 나온다.
-	                 //간혹 e 객체에서 date 를 추출해야 하는 경우가 있는데 
-	                 // e.date를 찍어보면 Thu Jun 27 2019 00:00:00 GMT+0900 (한국 표준시)
-	                 // 위와 같은 형태로 보인다. 
-	                 // 추후에 yyyy-mm-dd 형태로 변경하는 코드를 업로드 하겠습니다. 
-	            }
+		})//여기까지가 기본 사용 방법
     </script>
 </head>
 <body>
@@ -213,9 +194,11 @@
 		   	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
 		   	   	   	   	   	   	   	   <span>이벤트 할인 혜택 알림 수신에 동의합니다. (선택)</span>
 	   	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   	   <div class="agreeSelection">	   
-		   	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
-		   	   	   	   	   	   	   	   <span>장기 미접속 시 계정 활성 상태 유지합니다. (선택)</span>
+	   	   	   	   	   	   	   	   <div class="agreeSelection">
+	   	   	   	   	   	   	   	   	   <a href="#">	   
+		   	   	   	   	   	   	   	   	  <i class="fa-solid fa-circle-check"></i>
+		   	   	   	   	   	   	   	   	  <span>장기 미접속 시 계정 활성 상태 유지합니다. (선택)</span>
+		   	   	   	   	   	   	   	   </a>
    	   	   	   	   	   	   	   	   </div>
    	   	   	   	   	   	   	   </div>
    	   	   	   	   	   	   </div>
@@ -248,10 +231,9 @@
     <!-- Footer End -->
 </form>
 	<!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
     
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/resources/template/woody/lib/wow/wow.min.js"></script>
     <script src="/resources/template/woody/lib/easing/easing.min.js"></script>
@@ -268,11 +250,10 @@
 	
 	<!-- JavaScript & jQuery -->
 	<script src="/resources/js/user/reg.js"></script>
-	
 	<script type="text/javascript">
 	
 		var goUrlIndex = "/member/index";
-		var goUrlInst = "/member/loginForm";
+		var goUrlInst = "/member/memberRegInst";
 		
 		var form = $("form[name=form]");
 		

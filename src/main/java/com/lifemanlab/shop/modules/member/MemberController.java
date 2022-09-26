@@ -125,6 +125,11 @@ public class MemberController extends BaseController {
 		return "infra/member/user/loginForm";
 	}
 	
+	@RequestMapping(value = "/kakaoLogin")
+	public String kakaoLogin() throws Exception {
+		return "redirect:/member/index";
+	}
+	
 	@RequestMapping(value = "/idPwFindForm")
 	public String idPwFindForm() throws Exception {
 		return "infra/member/user/idPwFindForm";

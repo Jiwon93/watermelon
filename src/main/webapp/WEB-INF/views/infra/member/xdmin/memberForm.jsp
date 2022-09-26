@@ -10,6 +10,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Favicon -->
+    <link href="/resources/images/logo.PNG" rel="icon">
 <title>memberForm</title>
 
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sidebars/">
@@ -17,6 +20,7 @@
 	
 	<!-- Fontawesome Stylesheet -->
     <script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<style type="text/css">
 		label {
 			font-size: large;
@@ -41,7 +45,7 @@
 	<link href="/resources/css/list.css" rel="stylesheet">
 </head>
 <body>
-	<form id="form" name="form" method="post" autocomplete="off" enctype="multipart/form-data">
+	<form id="form" name="form" method="post" onkeydown="return captureReturnKey(event)" autocomplete="off" enctype="multipart/form-data">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<div class="col-1">
@@ -195,7 +199,9 @@
 							<div class="row m-4">
 								<div class="col mx-auto">
 									<label class="form-label" for="mmEmail">Email</label>
-									<input type="text" class="form-control" id="mmEmail" name="mmEmail" value="<c:out value="${dto.mmEmail }"/>" placeholder="한글,숫자">
+									<input type="hidden" id="mmEmailAllowedNy" name="mmEmailAllowedNy" value="0">
+									<input type="text" class="form-control" id="mmEmail" name="mmEmail" <c:out value="${dto.mmEmail }"/> placeholder="이메일을 입력해 주세요.">
+									<div class="invalid-feedback" id="mmEmailFeedback"></div>
 								</div>
 								<div class="col mx-auto">
 									<label class="form-label" for="ccgNameEng" style="display: block;">이메일 정보 마케팅 사용 동의</label>
@@ -328,12 +334,11 @@
 	    </div>
 	    <!-- Footer End -->
 	</form>
-	<script src="/resources/js/list.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=17e90af3c57fa367793d1f57799dd4c9&libraries=services,clusterer,drawing"></script>
 	
+	<script src="/resources/js/user/reg.js"></script>
 	<script type="text/javascript">
 	
 		var goUrlList = "/member/memberList";
@@ -469,8 +474,6 @@
 		});
 		
 	</script>
-	
-	
 	
 	<!-- <script type="text/javascript">
 		

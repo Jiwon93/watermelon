@@ -79,7 +79,7 @@
                            	   <label class="form-label" for="mmEmail">이메일</label>	
                                <div class="input-group">
                                	   <input type="hidden" id="mmEmailAllowedNy" name="mmEmailAllowedNy" value="0">
-                                   <input type="type" class="form-control" id="mmEmail" name="mmEmail" <c:out value="${dto.mmEmail }"/> placeholder="이메일을 입력해 주세요.">
+                                   <input type="text" class="form-control" id="mmEmail" name="mmEmail" <c:out value="${dto.mmEmail }"/> placeholder="이메일을 입력해 주세요.">
                                	   <div class="invalid-feedback" id="mmEmailFeedback"></div>
                                </div>
                            </div>
@@ -89,7 +89,8 @@
                                    <input type="password" class="form-control" id="mmPw" name="mmPw" <c:out value="${dto.mmPw }"/> placeholder="비밀번호를 입력해 주세요.">
                                </div>
                                <div class="input-group">
-                                   <input type="password" class="form-control" id="passwordReg" placeholder="동일하게 한번 더 입력해 주세요.">
+                                   <input type="password" class="form-control" id="mmPwChk" name="mmPwChk" placeholder="동일하게 한번 더 입력해 주세요.">
+                               	   <div class="invalid-feedback" id="mmPwChkFeedback"></div>
                                </div>
                            </div>
                            <div class="col-8 offset-2">
@@ -151,7 +152,7 @@
 						   <div class="col-8 offset-2">
                            	   <label class="form-label" for="favoriteReg">관심선택(중복 선택 가능)</label>
                            	   <div class="input-group">
-		                           <select class="form-select" id="favoriteReg" multiple>
+		                           <select class="form-select" id="favoriteReg" name="favoriteReg" multiple>
 									   <option selected>디자인</option>
 									   <option value="f1">IT 프로그래밍</option>
 									   <option value="f2">영상 사진 음향</option>
@@ -166,6 +167,7 @@
 									   <option value="f11">이벤트</option>
 									   <option value="f12">레슨</option>
 								   </select>
+								   <div class=""></div>
 							   </div>
 						   </div>
 						   <div class="col-8 offset-2">

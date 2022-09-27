@@ -167,5 +167,28 @@
 		SELECT COUNT(*)
 		FROM member WHERE 1=1 AND mmEmail = #{mmEmail}
 	</select>
+	
+	<!-- 암호화 -->
+	<select id="selectOneId" resultMap="resultMapObj">
+		SELECT
+			a.mmSeq
+			,a.mmEmail
+		FROM
+			member a
+		WHERE 1=1
+			AND a.mmEmail = #{mmEmail}
+	</select>
+	
+	<select id="selectOneLogin" resultMap="resultMapObj">
+		SELECT
+			a.mmSeq
+			,a.mmEmail
+			,a.mmName
+		FROM
+			member a
+		WHERE 1=1
+			AND a.mmEmail = #{mmEmail}
+			<if test="mmPw != null and !mmPw.equals('')">AND a.mmPw = #{mmPw}</if>
+	</select>
 
 </mapper>

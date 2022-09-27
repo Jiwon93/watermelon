@@ -40,7 +40,7 @@
 	<link href="/resources/css/list.css" rel="stylesheet">
 </head>
 <body>
-	<form id="form" name="form" method="post" autocomplete="off" enctype="multipart/form-data">
+	<form id="form" name="form" method="get" autocomplete="off" enctype="multipart/form-data">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<div class="col-1">
@@ -262,7 +262,6 @@
 	
 		var goUrlList = "/codeGroup/codeGroupList";
 		var goUrlInst = "/codeGroup/codeGroupInst";
-		var goUrlUpdt = "/codeGroup/codeGroupUpdt";
 		var goUrlUele = "/codeGroup/codeGroupUele";
 		var goUrlDele = "/codeGroup/codeGroupDele";
 	
@@ -361,7 +360,6 @@
 			
 		} 
 		*/
-	
 	</script>
 </body>
 </html>

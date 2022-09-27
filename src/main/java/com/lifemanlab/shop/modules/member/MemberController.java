@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.lifemanlab.shop.common.base.BaseController;
+import com.lifemanlab.shop.common.constants.Constants;
 
 
 @Controller
@@ -207,4 +210,54 @@ public class MemberController extends BaseController {
 		return "infra/member/user/saleManage";
 	}
 
+	@ResponseBody
+	@RequestMapping(value = "/loginProc")
+	public Map<String, Object> loginProc(Member dto, HttpSession httpSession) throws Exception {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+
+		Member rtMember = service.selectOneId(dto);
+
+		if (rtMember != null) {
+			Member rtMember2 = service.selectOneLogin(dto);
+
+			if (rtMember2 != null) {
+				
+				//if(dto.getAutoLogin() == true) {
+				//	UtilCookie.createCookie(Constants.COOKIE_NAME_SEQ, rtMember2.getMmSeq(), Constants.COOKIE_DOMAIN, Constants.COOKIE_PATH, Constants.COOKIE_MAXAGE);
+				//} else {
+					// by pass
+				//}
+				
+				httpSession.setMaxInactiveInterval(60 * Constants.SESSION_MINUTE); // 60second * 30 = 30minute
+				httpSession.setAttribute("sessSeq", rtMember2.getMmSeq());
+				httpSession.setAttribute("sessEmail", rtMember2.getMmEmail());
+				httpSession.setAttribute("sessName", rtMember2.getMmName());
+
+				//rtMember2.setIflgResultNy(1);
+				//service.insertLogLogin(rtMember2);
+
+				//Date date = rtMember2.getMmPwModDate();
+				//LocalDateTime mmPwModDateLocalDateTime = LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault());
+
+				//if (ChronoUnit.DAYS.between(ifmmPwdModDateLocalDateTime, UtilDateTime.nowLocalDateTime()) > Constants.PASSWOPRD_CHANGE_INTERVAL) {
+				//	returnMap.put("changePwd", "true");
+				//}
+
+				returnMap.put("rt", "success");
+			} else {
+				//dto.setMmSeq(rtMember.getMmSeq());
+				//dto.setIflgResultNy(0);
+				//service.insertLogLogin(dto);
+
+				returnMap.put("rt", "fail");
+			}
+		} else {
+			//dto.setIflgResultNy(0);
+			//service.insertLogLogin(dto);
+
+			returnMap.put("rt", "fail");
+		}
+		return returnMap;
+	}
+	
 }

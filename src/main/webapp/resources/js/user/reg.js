@@ -86,31 +86,4 @@ var regExpEm = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA
 	    });
 		
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// 암호화
-		$("#btnLogin").on("click", function(){
-		if(validation() == false) return false;
-		
-		$.ajax({
-			async: true 
-			,cache: false
-			,type: "post"
-			/* ,dataType:"json" */
-			,url: "/member/loginProc"
-			/* ,data : $("#formLogin").serialize() */
-			,data : { "ifmmId" : $("#ifmmId").val(), "ifmmPassword" : $("#ifmmPassword").val(), "autoLogin" : $("#autoLogin").is(":checked")}
-			,success: function(response) {
-				if(response.rt == "success") {
-					if(response.changePwd == "true") {
-						location.href = URL_CHANGE_PWD_FORM;
-					} else {
-						location.href = URL_INDEX_ADMIN;
-					}
-				} else {
-					alert("회원없음");
-				}
-			}
-			,error : function(jqXHR, textStatus, errorThrown){
-				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
-			}
-		});
-	});
+	

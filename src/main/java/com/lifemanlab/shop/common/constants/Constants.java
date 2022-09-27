@@ -12,5 +12,12 @@ public final class Constants {
 	public static final String DATE_FORMAT_BASIC = "yyyy-MM-dd";
 	
 	public static final int DATE_INERVAL = -7;
+	
+	//암호화
+	public static final int SESSION_MINUTE = 30;
+	//public static final String COOKIE_NAME_SEQ = ;
+	//public static final String COOKIE_DOMAIN = ;
+	//public static final String COOKIE_PATH = ;
+	//public static final String COOKIE_MAXAGE = ;
 
 }

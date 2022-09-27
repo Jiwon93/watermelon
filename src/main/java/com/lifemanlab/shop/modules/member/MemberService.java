@@ -15,8 +15,11 @@ public interface MemberService {
 	public int uelete(Member dto) throws Exception;
 	public int delete(MemberVo vo) throws Exception;
 	
+	//회원가입
 	public int memberRegC(Member dto) throws Exception;
 	
-	
+	//암호화
+	public Member selectOneId(Member dto) throws Exception;
+	public Member selectOneLogin(Member dto) throws Exception;
 
 }

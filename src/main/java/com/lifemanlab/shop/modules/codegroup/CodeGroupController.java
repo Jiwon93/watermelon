@@ -74,10 +74,6 @@ public class CodeGroupController extends BaseController{
 		vo.setCcgSeq(dto.getCcgSeq());
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
-		System.out.println("InstCcgName: " + dto.getCcgName());
-		System.out.println("InstCcgNameEng " + dto.getCcgNameEng());
-		System.out.println("InstCcgOrder " + dto.getCcgOrder());
-		System.out.println("InstCcgUseNy " + dto.getCcgUseNy());
 		return "redirect:/codeGroup/codeGroupView";
 	}
 	
@@ -85,10 +81,6 @@ public class CodeGroupController extends BaseController{
 	public String codeGroupUpdt(CodeGroupVo vo, CodeGroup dto, RedirectAttributes redirectAttributes) throws Exception {
 		int result = service.update(dto);
 		System.out.println("Updt result: " + result);
-		System.out.println("UpdtCcgName: " + dto.getCcgName());
-		System.out.println("UpdtCcgNameEng " + dto.getCcgNameEng());
-		System.out.println("UpdtCcgOrder " + dto.getCcgOrder());
-		System.out.println("UpdtCcgUseNy " + dto.getCcgUseNy());
 		return "redirect:/codeGroup/codeGroupList";
 	}
 	

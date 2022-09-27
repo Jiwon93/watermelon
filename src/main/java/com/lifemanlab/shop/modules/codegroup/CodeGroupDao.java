@@ -44,7 +44,7 @@ public class CodeGroupDao {
 	}
 	
 	public int update(CodeGroup dto) {
-		int result = sqlSession.update(namespace + ".update", dto); 
+		int result = sqlSession.update(namespace + ".update", dto);
 		System.out.println("dao.updt result: " + result);
 		return result;
 	}

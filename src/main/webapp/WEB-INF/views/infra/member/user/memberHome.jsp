@@ -73,6 +73,7 @@
 		            <li><a class="dropdown-item" href="memberViewC.html">계정 설정</a></li>
 		            <li><hr class="dropdown-divider"></li>
 		            <li><a class="dropdown-item" href="../../index.html">로그 아웃</a></li>
+		            <input type="hidden" <c:out value="${sessSeq }"/> <c:out value="${sessName }"/> <c:out value="${sessEmail }"/>>
 		        </ul>
             </div>
         </div>

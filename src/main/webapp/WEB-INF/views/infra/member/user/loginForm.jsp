@@ -59,7 +59,7 @@
 </head>
 
 <body>
-<form>
+<form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
         <a href="#l" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
@@ -91,18 +91,18 @@
                    <div class="row g-3">
                        <div class="col-8 offset-2">
                            <div class="form-floating">
-                               <input type="email" class="form-control" id="newEmail">
+                               <input type="email" class="form-control" id="mmEmail" name="mmEmail">
                                <label for="newEmail">이메일</label>
                            </div>
                        </div>
                        <div class="col-8 offset-2">
                            <div class="form-floating">
-                               <input type="password" class="form-control" id="newPw">
+                               <input type="password" class="form-control" id="mmPw" name="mmPw">
                                <label for="newPw">비밀번호</label>
                            </div>
                        </div>
                        <div class="col-8 offset-2">
-                           <button class="btn btn-primary w-100" type="button" onclick="location.href='memberHome.html'">로그인</button>
+                           <button class="btn btn-primary w-100" type="button" id="btnLogin">로그인</button>
                        </div>
                        <div class="col-md-3 offset-2">
                            <div class="form-check">
@@ -147,7 +147,7 @@
                      <span class="mb-4">아직 회원이 아니시라면?</span>
                  </div>
                  <div class="col-8 offset-2">
-                           <button class="btn btn-secondary w-100 py-2" type="button" onclick="location.href='memberRegFormC.html'">회원가입</button>
+                           <button class="btn btn-secondary w-100 py-2" type="button" id="btnReg">회원가입</button>
                        </div>
                    </div>
                    
@@ -178,7 +178,6 @@
     <!-- Footer End -->
 </form>
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/resources/template/woody/lib/wow/wow.min.js"></script>
     <script src="/resources/template/woody/lib/easing/easing.min.js"></script>
@@ -188,6 +187,9 @@
 
     <!-- Template Javascript -->
     <script src="/resources/template/woody/js/main.js"></script>
+    
+    <!-- JavaScript & jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
     <script type="text/javascript">
 	    function loginWithKakao() {
@@ -223,6 +225,36 @@
 	      var parts = document.cookie.split(name + '=');
 	      if (parts.length === 2) { return parts[1].split(';')[0]; }
 	    }
+	    
+	    var goUrlLogin = "/member/memberHome";
+	 // 암호화
+		$("#btnLogin").on("click", function(){
+		//if(validation() == false) return false;
+		
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				/* ,dataType:"json" */
+				,url: "/member/loginProc"
+				/* ,data : $("#formLogin").serialize() */
+				//,data : { "mmEmail" : $("#mmEmail").val(), "mmPw" : $("#mmPw").val(), "autoLogin" : $("#autoLogin").is(":checked")}
+				,data : { "mmEmail" : $("#mmEmail").val(), "mmPw" : $("#mmPw").val()}
+				,success: function(response) {
+					if(response.rt == "success") {
+						//if(response.changePwd == "true") {
+						//	location.href = URL_CHANGE_PWD_FORM;
+						//} else {
+							location.href = goUrlLogin;
+					} else {
+						alert("회원없음");
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+		});
     </script>
 </body>
 

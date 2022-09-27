@@ -37,14 +37,9 @@
 	</style>
 	
 	<link href="/resources/css/list.css" rel="stylesheet">
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-  	<link rel="stylesheet" href="/resources/demos/style.css">
-	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </head>
 <body>
-	<!-- <form name="form" id="form" method="post" enctype="multipart/form-data"> -->
-	<form id="form" name="form" method="post" autocomplete="off" enctype="multipart/form-data">
+	<form id="form" name="form" method="get" autocomplete="off" enctype="multipart/form-data">
 	<!-- *Vo.jsp s -->
 	<%@include file="../../common/xdmin/includeV1/codeGroupVo.jsp"%>		<!-- #-> -->
 	<!-- *Vo.jsp e -->
@@ -161,7 +156,7 @@
 							<div class="row m-4">
 								<div class="col-6">
 									<label class="form-label" for="ccgSeq">코드그룹 코드</label>
-									<input type="text" class="form-control" id="ccgSeq" name="ccgSeq" value="<c:out value="${item.ccgSeq }"/>">
+									<input type="text" class="form-control" id="ccgSeq" value="<c:out value="${item.ccgSeq }"/>" readonly>
 								</div>
 								<div class="col-6">
 									<label class="form-label" for="cgfCodeGroupCodeAnother">코드그룹 코드 (Another)</label>
@@ -277,7 +272,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script>
 		var goUrlList = "/codeGroup/codeGroupList";
-		var goUrlInst = "/codeGroup/codeGroupInst";
 		var goUrlUpdt = "/codeGroup/codeGroupUpdt";
 		var goUrlUele = "/codeGroup/codeGroupUele";
 		var goUrlDele = "/codeGroup/codeGroupDele";

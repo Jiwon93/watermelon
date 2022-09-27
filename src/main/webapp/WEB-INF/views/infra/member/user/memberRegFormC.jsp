@@ -205,7 +205,7 @@
    	   	   	   	   	   	   	   </div>
    	   	   	   	   	   	   </div>
                            <div class="col-8 offset-2">
-                               <button class="btn btn-primary w-100" type="button" id="btnLogin">가입완료!</button>
+                               <button class="btn btn-primary w-100" type="button" id="btnReg">가입완료!</button>
                            </div>
                        </div>
                </div>
@@ -264,7 +264,7 @@
 	   		$(location).attr("href", goUrlIndex);
 		}); 
 	 
-		$("#btnLogin").on("click", function(){
+		$("#btnReg").on("click", function(){
 	   		form.attr("action", goUrlRegInst).submit();
 		}); 
 		

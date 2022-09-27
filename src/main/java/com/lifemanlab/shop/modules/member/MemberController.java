@@ -65,15 +65,17 @@ public class MemberController extends BaseController {
 	}
 	
 	//회원가입
-	@SuppressWarnings(value = {"all"})
-	@RequestMapping(value = "memberRegInst")
-	public String memberRegInst(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
-		service.memberRegC(dto);
-		vo.setMmSeq(dto.getMmSeq());
-		
-		redirectAttributes.addFlashAttribute("vo", vo);
-		return "redirect:/member/user/loginForm";
+	@RequestMapping(value = "memberRegCInst")
+	public String memberRegCInst(Member dto) throws Exception {
+		int result = service.memberRegC(dto);
+		System.out.println("controller.Reg: " + result);
+		System.out.println(dto.getMmAddress1());
+		System.out.println(dto.getMmAddress2());
+		System.out.println(dto.getMmZip());
+		System.out.println(dto.getMmEmail());
+		return "redirect:/member/loginForm";
 	}
+	
 	
 	@RequestMapping(value = "memberUpdt")
 	public String memberUpdt(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {

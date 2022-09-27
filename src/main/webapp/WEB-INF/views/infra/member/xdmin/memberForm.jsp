@@ -159,37 +159,52 @@
 							<div class="row m-4">
 								<div class="col-6">
 									<label class="form-label" for="mmSeq">회원번호</label>
-									<input type="text" class="form-control" id="mmSeq">
+									<input type="text" class="form-control" id="mmSeq" placeholder="자동입력">
 								</div>
 								<div class="col-6">
 									<label class="form-label" for="mmRank">회원등급</label>
-									<input type="text" class="form-control" id="mmRank" name="mmRank" placeholder="영문(대소문자),숫자">
+									<div class="input-group">
+			                            <select class="form-select" id="mmRank" name="mmRank">
+										   <option value="" <c:if test="${empty dto.mmRank }">selected</c:if>>회원등급선택</option>
+										   <option value="1" <c:if test="${dto.mmRank eq 1 }">selected</c:if>>일반</option>
+										   <option value="2" <c:if test="${dto.mmRank eq 2 }">selected</c:if>>만렙</option>
+									    </select>
+							    	</div>
 								</div>
 							</div>
 							<div class="row m-4">
-								<div class="col-6">
-									<label class="form-label" for="mmId">아이디</label>
-									<input type="text" class="form-control" id="mmId">
+								<div class="col mx-auto">
+									<label class="form-label" for="mmEmail">이메일</label>
+									<input type="hidden" id="mmEmailAllowedNy" name="mmEmailAllowedNy" value="0">
+									<input type="text" class="form-control" id="mmEmail" name="mmEmail" <c:out value="${dto.mmEmail }"/> placeholder="이메일을 입력해 주세요.">
+									<div class="invalid-feedback" id="mmEmailFeedback"></div>
 								</div>
 								<div class="col-6">
 									<label class="form-label" for="mmPw">비밀번호</label>
-									<input type="text" class="form-control" id="mmPw" placeholder="영문(대소문자),숫자">
+									<input type="password" class="form-control" id="mmPw" name="mmPw" value="<c:out value="${dto.mmPw }"/>" placeholder="영문(대소문자),숫자">
 								</div>
 							</div>
 							<div class="row m-4">
 								<div class="col-6">
 									<label class="form-label" for="mmName">이름</label>
-									<input type="text" class="form-control" id="mmName">
+									<input type="text" class="form-control" id="mmName" name="mmName" value="<c:out value="${dto.mmName }"/>" placeholder="한글,영문(대소문자),숫자">
 								</div>
 								<div class="col-6">
 									<label class="form-label" for="mmNickname">닉네임</label>
-									<input type="text" class="form-control" id="mmNickname" placeholder="영문(대소문자),숫자">
+									<input type="text" class="form-control" id="mmNickname" name="mmNickname" value="<c:out value="${dto.mmNickname }"/>" placeholder="영문(대소문자),숫자">
 								</div>
 							</div>
 							<div class="row m-4">
 								<div class="col mx-auto">
 									<label class="form-label" for="mmGender">성별</label>
-									<input type="text" class="form-control" id="mmGender" name="mmGender" value="<c:out value="${dto.mmGender }"/>" placeholder="한글,숫자">
+									<div class="input-group">
+			                            <select class="form-select" id="mmGender" name="mmGender">
+										   <option value="" <c:if test="${empty dto.mmGender }">selected</c:if>>성별선택</option>
+										   <option value="1" <c:if test="${dto.mmGender eq 1 }">selected</c:if>>남성</option>
+										   <option value="2" <c:if test="${dto.mmGender eq 2 }">selected</c:if>>여성</option>
+										   <option value="3" <c:if test="${dto.mmGender eq 3 }">selected</c:if>>기타</option>
+									    </select>
+							    	</div>
 								</div>
 								<div class="col mx-auto">
 									<label class="form-label" for="mmBod">생일</label>
@@ -198,50 +213,45 @@
 							</div>
 							<div class="row m-4">
 								<div class="col mx-auto">
-									<label class="form-label" for="mmEmail">Email</label>
-									<input type="hidden" id="mmEmailAllowedNy" name="mmEmailAllowedNy" value="0">
-									<input type="text" class="form-control" id="mmEmail" name="mmEmail" <c:out value="${dto.mmEmail }"/> placeholder="이메일을 입력해 주세요.">
-									<div class="invalid-feedback" id="mmEmailFeedback"></div>
-								</div>
-								<div class="col mx-auto">
-									<label class="form-label" for="ccgNameEng" style="display: block;">이메일 정보 마케팅 사용 동의</label>
-									<input type="checkbox" class="form-check-input" id="" name="" value="<c:out value="${dto.ccgNameEng }"/>">
-									<label class="form-check-label" for="">동의합니다.</label>
-								</div>
-							</div>
-							<div class="row m-4">
-								<div class="col mx-auto">
-									<div class="row">
-										<div class="col mx-auto">
-											<label class="form-label" for="ccgUseNy">통신사</label>
-											<input type="text" class="form-control" id="ccgRegDatetime" name="ccgRegDatetime" value="<c:out value="${dto.ccgRegDatetime }"/>">
-										</div>
-										<div class="col mx-auto">
-											<label class="form-label" for="ccgUseNy">모바일</label>
-											<input type="text" class="form-control" id="ccgRegDatetime" name="ccgRegDatetime" value="<c:out value="${dto.ccgRegDatetime }"/>">
-										</div>
-									</div>
-								</div>
-								<div class="col mx-auto">
-									<label class="form-label" for="ccgOrder" style="display: block;">핸드폰 정보 마케팅 사용 동의</label>
-									<input type="checkbox" class="form-check-input" id="" name="" value="<c:out value="${dto.ccgOrder }"/>">
-									<label class="form-check-label" for="">동의합니다.</label>
-								</div>
-							</div>
+	                           	   <label class="form-label" for="mmJob">직업</label>
+	                           	   <div class="input-group">
+			                           <select class="form-select" id="mmJob" name="mmJob">
+										   <option value="" <c:if test="${empty dto.mmJob }">selected</c:if>>직업선택</option>
+										   <option value="1" <c:if test="${dto.mmJob eq 1 }">selected</c:if>>직장인</option>
+										   <option value="2" <c:if test="${dto.mmJob eq 2 }">selected</c:if>>프리랜서</option>
+										   <option value="3" <c:if test="${dto.mmJob eq 3 }">selected</c:if>>소상공인</option>
+										   <option value="4" <c:if test="${dto.mmJob eq 4 }">selected</c:if>>스타트업 창업자</option>
+										   <option value="5" <c:if test="${dto.mmJob eq 5 }">selected</c:if>>대학(원)생</option>
+										   <option value="6" <c:if test="${dto.mmJob eq 6 }">selected</c:if>>취업준비생</option>
+									   </select>
+								   </div>
+							    </div>
+							    <div class="col mx-auto">
+	                           	   <label class="form-label" for="mmInterest">관심분야(중복 선택 가능)</label>
+	                           	   <div class="input-group">
+			                           <select class="form-select" id="mmInterest" name="mmInterest" multiple>
+										   <option value="" <c:if test="${empty dto.mmInterest }">selected</c:if>>관심분야선택</option>
+										   <option value="1" <c:if test="${dto.mmInterest eq 1 }">selected</c:if>>디자인</option>
+										   <option value="2" <c:if test="${dto.mmInterest eq 2 }">selected</c:if>>IT 프로그래밍</option>
+										   <option value="3" <c:if test="${dto.mmInterest eq 3 }">selected</c:if>>영상 사진 음향</option>
+										   <option value="4" <c:if test="${dto.mmInterest eq 4 }">selected</c:if>>마케팅</option>
+										   <option value="5" <c:if test="${dto.mmInterest eq 5 }">selected</c:if>>번역 통역</option>
+										   <option value="6" <c:if test="${dto.mmInterest eq 6 }">selected</c:if>>문서 글쓰기</option>
+										   <option value="7" <c:if test="${dto.mmInterest eq 7 }">selected</c:if>>건강 미용</option>
+										   <option value="8" <c:if test="${dto.mmInterest eq 8 }">selected</c:if>>비즈니스 컨설팅</option>
+										   <option value="9" <c:if test="${dto.mmInterest eq 9 }">selected</c:if>>심리상담</option>
+										   <option value="10" <c:if test="${dto.mmInterest eq 10 }">selected</c:if>>주문제작</option>
+										   <option value="11" <c:if test="${dto.mmInterest eq 11 }">selected</c:if>>세무 법무 노무</option>
+										   <option value="12" <c:if test="${dto.mmInterest eq 12 }">selected</c:if>>이벤트</option>
+										   <option value="13" <c:if test="${dto.mmInterest eq 13 }">selected</c:if>>레슨</option>
+									   </select>
+								   </div>
+							   </div>
+					   		</div>	
 							<div class="row m-4">
 								<div class="col mx-auto">
 									<label class="form-label" for="ccgOrder">전화번호</label>
-									<input type="text" class="form-control" id="ccgOrder" name="ccgOrder" value="<c:out value="${dto.ccgOrder }"/>" placeholder="숫자">
-								</div>
-								<div class="col mx-auto">
-									<label class="form-label" for="ccgDelNy">팩스번호</label>
-									<input type="text" class="form-control" id="ccgRegDatetime" name="ccgRegDatetime" value="<c:out value="${dto.ccgRegDatetime }"/>">
-								</div>
-							</div>
-							<div class="row m-4">
-								<div class="col-6">
-									<label class="form-label" for="ccgRegDatetime">거주국가</label>
-									<input type="text" class="form-control" id="ccgRegDatetime" name="ccgRegDatetime" value="<c:out value="${dto.ccgRegDatetime }"/>">
+									<input type="text" class="form-control" placeholder="전화번호를 입력해주세요.">
 								</div>
 							</div>
 							<div class="row m-4">
@@ -250,7 +260,7 @@
 									<div class="row mb-2">
 										<div class="col-sm-5">
 											<div class="input-group">
-												<input class="form-control" type="text" id="mmPostcode" name="mmPostcode" placeholder="우편번호" readonly>	
+												<input class="form-control" type="text" id="mmPostcode" name="mmZip" value="<c:out value="${dto.mmZip }"/>" placeholder="우편번호" readonly>	
 												<button class="btn btn-light btn-outline-secondary" type="button" onclick="mmExecDaumPostcode()"><i class="fa-solid fa-magnifying-glass"></i></button>
 												<button class="btn btn-light btn-outline-secondary" type="button" id="btnAddressClear"><i class="fa-solid fa-x"></i></button>
 											</div>
@@ -258,7 +268,7 @@
 									</div>
 									<div class="row">
 										<div class="col mx-auto">
-											<input class="form-control" type="text" id="mmRoadAddress" placeholder="도로명주소" readonly>
+											<input class="form-control" type="text" id="mmRoadAddress" name="mmAddress1" value="<c:out value="${dto.mmAddress1 }"/>" placeholder="도로명주소" readonly>
 										</div>
 									</div>
 									<div class="row mt-2">
@@ -269,7 +279,7 @@
 									<span id="guide" style="color:#999;display:none"></span>
 									<div class="row mt-2">
 										<div class="col mx-auto">
-											<input class="form-control" type="text" id="mmDetailAddress" placeholder="상세주소">
+											<input class="form-control" type="text" id="mmDetailAddress" name="mmAddress2" value="<c:out value="${dto.mmAddress2 }"/>" placeholder="상세주소">
 										</div>
 									</div>
 									<div class="row mt-2">

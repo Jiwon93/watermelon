@@ -45,7 +45,6 @@
     <!-- datepicker -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script type="text/javascript">
 	   	$( function() {
@@ -54,7 +53,7 @@
     </script>
 </head>
 <body>
-<form method="post" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
+<form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
     <!-- Navbar Start -->
     <nav class="container-fluid">
         <div class="row" id="">
@@ -110,15 +109,15 @@
                            	   <label class="form-label" for="genderReg">성별</label>	
                                <br>
                                <div class="form-check form-check-inline">
-                                   <input type="radio" class="form-check-input" name="mmGnder" id="mmGnder0" value="0" <c:if test="${dto.mmGnder eq 0 }">selected</c:if>>
+                                   <input type="radio" class="form-check-input" name="mmGender" id="mmGender0" value="0" <c:if test="${dto.mmGender eq 0 }">selected</c:if>>
                                    <label class="form-check-label" for="genderRegM">남자</label>
                                </div>
                                <div class="form-check form-check-inline">
-                                   <input type="radio" class="form-check-input" name="mmGender" id="mmGnder1" value="1" <c:if test="${dto.mmGnder eq 1 }">selected</c:if>>
+                                   <input type="radio" class="form-check-input" name="mmGender" id="mmGender1" value="1" <c:if test="${dto.mmGender eq 1 }">selected</c:if>>
                                    <label class="form-check-label" for="genderRegW">여자</label>
                                </div>
                                <div class="form-check form-check-inline">
-                                   <input type="radio" class="form-check-input" name="mmGender" id="mmGnder2" value="2" <c:if test="${dto.mmGnder eq 2 }">selected</c:if>>
+                                   <input type="radio" class="form-check-input" name="mmGender" id="mmGender2" value="2" <c:if test="${dto.mmGender eq 2 }">selected</c:if>>
                                    <label class="form-check-label" for="genderRegW">기타</label>
                                </div>
                            </div>
@@ -139,8 +138,8 @@
                            <div class="col-8 offset-2">
                            	   <label class="form-label" for="mmJob">직업</label>
                            	   <div class="input-group">
-		                           <select class="form-select" id="mmJob">
-									   <option value="" <c:if test="${empty dto.Job }">selected</c:if>>직업선택</option>
+		                           <select class="form-select" id="mmJob" name="mmJob">
+									   <option value="" <c:if test="${empty dto.mmJob }">selected</c:if>>직업선택</option>
 									   <option value="1" <c:if test="${dto.mmJob eq 1 }">selected</c:if>>직장인</option>
 									   <option value="2" <c:if test="${dto.mmJob eq 2 }">selected</c:if>>프리랜서</option>
 									   <option value="3" <c:if test="${dto.mmJob eq 3 }">selected</c:if>>소상공인</option>
@@ -206,7 +205,7 @@
    	   	   	   	   	   	   	   </div>
    	   	   	   	   	   	   </div>
                            <div class="col-8 offset-2">
-                               <button class="btn btn-primary w-100" type="button" id="btnSave">가입완료!</button>
+                               <button class="btn btn-primary w-100" type="button" id="btnLogin">가입완료!</button>
                            </div>
                        </div>
                </div>
@@ -252,20 +251,21 @@
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=17e90af3c57fa367793d1f57799dd4c9&libraries=services,clusterer,drawing"></script>
 	
 	<!-- JavaScript & jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script src="/resources/js/user/reg.js"></script>
 	<script type="text/javascript">
 	
 		var goUrlIndex = "/member/index";
-		var goUrlInst = "/member/memberRegInst";
+		var goUrlRegInst = "/member/memberRegCInst";
 		
 		var form = $("form[name=form]");
 		
 		$("#btnIndex").on("click", function(){
 	   		$(location).attr("href", goUrlIndex);
 		}); 
-		
-		$("#btnSave").on("click", function(){
-	   		form.attr("action", goUrlInst).submit();
+	 
+		$("#btnLogin").on("click", function(){
+	   		form.attr("action", goUrlRegInst).submit();
 		}); 
 		
 		//카카오 지도 API

@@ -73,57 +73,29 @@
 			mmName
 			,mmNickname
 			,mmEmail
-			,mmEmailSelect
 			,mmPw
 			,mmBod
 			,mmGender
 			,mmZip
 			,mmAddress1
 			,mmAddress2
-			,mmDelNy
 			,mmRank
 			,mmJob
 			,mmInterest
-			,mmSpecial
-			,mmDetail
-			,mmTechnique
-			,mmCareer
-			,mmSchool
-			,mmSchoolMajor
-			,mmSchoolState
-			,mmCertificate
-			,mmWishPay
-			,mmWorkTime
-			,mmIntroduce
-			,mmCash
 		)
 		VALUES (
 			#{mmName}
 			,#{mmNickname}
 			,#{mmEmail}
-			,#{mmEmailSelect}
 			,#{mmPw}
 			,#{mmBod}
 			,#{mmGender}
 			,#{mmZip}
 			,#{mmAddress1}
 			,#{mmAddress2}
-			,#{mmDelNy}
 			,#{mmRank}
 			,#{mmJob}
 			,#{mmInterest}
-			,#{mmSpecial}
-			,#{mmDetail}
-			,#{mmTechnique}
-			,#{mmCareer}
-			,#{mmSchool}
-			,#{mmSchoolMajor}
-			,#{mmSchoolState}
-			,#{mmCertificate}
-			,#{mmWishPay}
-			,#{mmWorkTime}
-			,#{mmIntroduce}
-			,#{mmCash}
 		)
 			<selectKey resultType="String" keyProperty="mmSeq" order="AFTER">
 				SELECT last_insert_id()
@@ -136,29 +108,15 @@
 			mmName = #{mmName}
 			,mmNickname = #{mmNickname}
 			,mmEmail = #{mmEmail}
-			,mmEmailSelect = #{mmEmailSelect}
 			,mmPw = #{mmPw}
 			,mmBod = #{mmBod}
 			,mmGender = #{mmGender}
 			,mmZip = #{mmZip}
 			,mmAddress1 = #{mmAddress1}
 			,mmAddress2 = #{mmAddress2}
-			,mmDelNy = #{mmDelNy}
 			,mmRank = #{mmRank}
 			,mmJob = #{mmJob}
 			,mmInterest = #{mmInterest}
-			,mmSpecial = #{mmSpecial}
-			,mmDetail = #{mmDetail}
-			,mmTechnique = #{mmTechnique}
-			,mmCareer = #{mmCareer}
-			,mmSchool = #{mmSchool}
-			,mmSchoolMajor = #{mmSchoolMajor}
-			,mmSchoolState = #{mmSchoolState}
-			,mmCertificate = #{mmCertificate}
-			,mmWishPay = #{mmWishPay}
-			,mmWorkTime = #{mmWorkTime}
-			,mmIntroduce = #{mmIntroduce}
-			,mmCash = #{mmCash}
 		WHERE
 			mmSeq = #{mmSeq}
 	</update>
@@ -190,14 +148,14 @@
 		)
 		VALUES(
 			#{mmEmail}
-			#{mmPw}
-			#{mmBod}
-			#{mmGender}
-			#{mmZip}
-			#{mmAddress1}
-			#{mmAddress2}
-			#{mmJob}
-			#{mmInterest}
+			,#{mmPw}
+			,#{mmBod}
+			,#{mmGender}
+			,#{mmZip}
+			,#{mmAddress1}
+			,#{mmAddress2}
+			,#{mmJob}
+			,#{mmInterest}
 		)
 		<selectKey resultType="String" keyProperty="mmSeq" order="AFTER">
 			SELECT last_insert_id()

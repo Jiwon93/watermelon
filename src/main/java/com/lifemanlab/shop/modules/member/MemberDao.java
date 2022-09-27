@@ -42,10 +42,11 @@ public class MemberDao {
 	
 	//회원가입
 	public int memberRegC(Member dto) {
-		int result = sqlSession.insert(namespace + ".insert", dto);
-		System.out.println("dao result: " + result);
+		int result = sqlSession.insert(namespace + ".memberRegC", dto);
+		System.out.println("dao.Reg: " + result);
 		return result;
 	}
+	
 	
 	//Email 확인
 	public int selectOneIdCheck(Member dto) {

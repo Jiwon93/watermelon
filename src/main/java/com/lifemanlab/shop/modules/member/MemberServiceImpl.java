@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lifemanlab.shop.common.util.UtilSecurity;
+
 @Service
 public class MemberServiceImpl implements MemberService {
 	
@@ -54,15 +56,20 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public int memberRegC(Member dto) throws Exception {
-		int result = dao.memberRegC(dto);
-		System.out.println("service result: " + result);
-		return result;
+	public int selectOneIdCheck(Member dto) throws Exception {
+		return dao.selectOneIdCheck(dto);
 	}
 
 	@Override
-	public int selectOneIdCheck(Member dto) throws Exception {
-		return dao.selectOneIdCheck(dto);
+	public int memberRegC(Member dto) throws Exception {
+		
+		dto.setMmPw(UtilSecurity.encryptSha256(dto.getMmPw()));
+		dto.setMmName(dto.getMmName());
+		//dto.setMmPwdModDate(UtilDateTime.nowDate());
+		
+		int result = dao.memberRegC(dto);
+		System.out.println("service.Reg: " + result);
+		return result;
 	}
 
 	

@@ -42,7 +42,7 @@ public class CodeGroupServiceImpl implements CodeGroupService {
 	@Override
 	public int insert(CodeGroup dto) throws Exception {
 		int result = dao.insert(dto);
-		System.out.println("service result: " + result);
+		System.out.println("service.inst result: " + result);
 		return result;
 	}
 

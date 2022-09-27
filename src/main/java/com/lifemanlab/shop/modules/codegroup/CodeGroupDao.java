@@ -39,7 +39,7 @@ public class CodeGroupDao {
 	
 	public int insert(CodeGroup dto) {
 		int result = sqlSession.insert(namespace + ".insert", dto);
-		System.out.println("dao result: " + result);
+		System.out.println("dao.inst result: " + result);
 		return result;
 	}
 	

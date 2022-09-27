@@ -80,14 +80,14 @@
                            	   <label class="form-label" for="mmEmail">이메일</label>	
                                <div class="input-group">
                                	   <input type="hidden" id="mmEmailAllowedNy" name="mmEmailAllowedNy" value="0">
-                                   <input type="text" class="form-control" id="mmEmail" name="mmEmail" <c:out value="${dto.mmEmail }"/> placeholder="이메일을 입력해 주세요.">
+                                   <input type="text" class="form-control" id="mmEmail" name="mmEmail" value="<c:out value="${dto.mmEmail }"/>" placeholder="이메일을 입력해 주세요.">
                                	   <div class="invalid-feedback" id="mmEmailFeedback"></div>
                                </div>
                            </div>
                            <div class="col-8 offset-2">
                            	   <label class="form-label" for="mmPw">비밀번호</label>
                                <div class="input-group mb-2">
-                                   <input type="password" class="form-control" id="mmPw" name="mmPw" <c:out value="${dto.mmPw }"/> placeholder="비밀번호를 입력해 주세요.">
+                                   <input type="password" class="form-control" id="mmPw" name="mmPw" value="<c:out value="${dto.mmPw }" />" placeholder="비밀번호를 입력해 주세요.">
                                </div>
                                <div class="input-group">
                                    <input type="password" class="form-control" id="mmPwChk" name="mmPwChk" placeholder="동일하게 한번 더 입력해 주세요.">
@@ -97,7 +97,7 @@
                            <div class="col-8 offset-2">
                            	   <label class="form-label" for="mmBod">생년월일</label>	
                                <div class="input-group">
-                                   <input type="text" class="form-control" id="datePicker" name="mmBod" <c:out value="${dto.mmBod }"/> placeholder="8글자로 입력해 주세요.(ex. YYYYMMDD)">
+                                   <input type="text" class="form-control" id="datePicker" name="mmBod" value="<c:out value="${dto.mmBod }" />" placeholder="8글자로 입력해 주세요.(ex. YYYYMMDD)">
                                </div>
                            </div>
                            <div class="col-8 offset-2">
@@ -126,49 +126,49 @@
                            	   <label class="form-label" for="mmrfPostcode">주소</label>
                            	   <div class="input-group mb-2">
                            	   	   <button class="btn btn-primary" type="button" style="height: 38px;" onclick="mmrfPostcodeBtn()">주소검색</button>
-                                   <input type="text" class="form-control" placeholder="우편번호" id="mmrfPostcode">
+                                   <input type="text" class="form-control" placeholder="우편번호" id="mmrfPostcode" name="mmZip" value="<c:out value="${dto.mmZip }" />">
                                </div>
                                <div class="input-group mb-2">
-                                   <input type="text" class="form-control" placeholder="주소를 입력해 주세요." id="mmrfRoadAddress" readonly>
+                                   <input type="text" class="form-control" placeholder="주소를 입력해 주세요." id="mmrfRoadAddress" name="mmAddress1" value="<c:out value="${dtp.mmAddress1 }" />" readonly>
                                </div>
                                <span id="guide" style="color:#999;display:none"></span>
                                <div class="input-group">
-                                   <input type="text" class="form-control" placeholder="상세주소를 입력해 주세요." id="mmrfDetailAddress">
+                                   <input type="text" class="form-control" placeholder="상세주소를 입력해 주세요." id="mmrfDetailAddress" name="mmAddress2" value="<c:out value="${dtp.mmAddress2 }" />">
                                </div>
                            </div>
                            <div class="col-8 offset-2">
-                           	   <label class="form-label" for="jobReg">직업</label>
+                           	   <label class="form-label" for="mmJob">직업</label>
                            	   <div class="input-group">
-		                           <select class="form-select" id="jobReg">
-									   <option selected>직업선택</option>
-									   <option value="j1">직장인</option>
-									   <option value="j2">프리랜서</option>
-									   <option value="j3">소상공인</option>
-									   <option value="j4">스타트업 창업자</option>
-									   <option value="j5">대학(원)생</option>
-									   <option value="j6">취업준비생</option>
+		                           <select class="form-select" id="mmJob">
+									   <option value="" <c:if test="${empty dto.Job }">selected</c:if>>직업선택</option>
+									   <option value="1" <c:if test="${dto.mmJob eq 1 }">selected</c:if>>직장인</option>
+									   <option value="2" <c:if test="${dto.mmJob eq 2 }">selected</c:if>>프리랜서</option>
+									   <option value="3" <c:if test="${dto.mmJob eq 3 }">selected</c:if>>소상공인</option>
+									   <option value="4" <c:if test="${dto.mmJob eq 4 }">selected</c:if>>스타트업 창업자</option>
+									   <option value="5" <c:if test="${dto.mmJob eq 5 }">selected</c:if>>대학(원)생</option>
+									   <option value="6" <c:if test="${dto.mmJob eq 6 }">selected</c:if>>취업준비생</option>
 								   </select>
 							   </div>
 						   </div>
 						   <div class="col-8 offset-2">
-                           	   <label class="form-label" for="favoriteReg">관심선택(중복 선택 가능)</label>
+                           	   <label class="form-label" for="mmInterest">관심분야(중복 선택 가능)</label>
                            	   <div class="input-group">
-		                           <select class="form-select" id="favoriteReg" name="favoriteReg" multiple>
-									   <option selected>디자인</option>
-									   <option value="f1">IT 프로그래밍</option>
-									   <option value="f2">영상 사진 음향</option>
-									   <option value="f3">마케팅</option>
-									   <option value="f4">번역 통역</option>
-									   <option value="f5">문서 글쓰기</option>
-									   <option value="f6">건강 미용</option>
-									   <option value="f7">비즈니스 컨설팅</option>
-									   <option value="f8">심리상담</option>
-									   <option value="f9">주문제작</option>
-									   <option value="f10">세무 법무 노무</option>
-									   <option value="f11">이벤트</option>
-									   <option value="f12">레슨</option>
+		                           <select class="form-select" id="mmInterest" name="mmInterest" multiple>
+									   <option value="" <c:if test="${empty dto.mmInterest }">selected</c:if>>관심분야선택</option>
+									   <option value="1" <c:if test="${dto.mmInterest eq 1 }">selected</c:if>>디자인</option>
+									   <option value="2" <c:if test="${dto.mmInterest eq 2 }">selected</c:if>>IT 프로그래밍</option>
+									   <option value="3" <c:if test="${dto.mmInterest eq 3 }">selected</c:if>>영상 사진 음향</option>
+									   <option value="4" <c:if test="${dto.mmInterest eq 4 }">selected</c:if>>마케팅</option>
+									   <option value="5" <c:if test="${dto.mmInterest eq 5 }">selected</c:if>>번역 통역</option>
+									   <option value="6" <c:if test="${dto.mmInterest eq 6 }">selected</c:if>>문서 글쓰기</option>
+									   <option value="7" <c:if test="${dto.mmInterest eq 7 }">selected</c:if>>건강 미용</option>
+									   <option value="8" <c:if test="${dto.mmInterest eq 8 }">selected</c:if>>비즈니스 컨설팅</option>
+									   <option value="9" <c:if test="${dto.mmInterest eq 9 }">selected</c:if>>심리상담</option>
+									   <option value="10" <c:if test="${dto.mmInterest eq 10 }">selected</c:if>>주문제작</option>
+									   <option value="11" <c:if test="${dto.mmInterest eq 11 }">selected</c:if>>세무 법무 노무</option>
+									   <option value="12" <c:if test="${dto.mmInterest eq 12 }">selected</c:if>>이벤트</option>
+									   <option value="13" <c:if test="${dto.mmInterest eq 13 }">selected</c:if>>레슨</option>
 								   </select>
-								   <div class=""></div>
 							   </div>
 						   </div>
 						   <div class="col-8 offset-2">

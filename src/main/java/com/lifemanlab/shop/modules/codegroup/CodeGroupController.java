@@ -70,7 +70,7 @@ public class CodeGroupController extends BaseController{
 	public String codeGroupInst(CodeGroupVo vo, CodeGroup dto, RedirectAttributes redirectAttributes) throws Exception {
 		
 		int result = service.insert(dto);
-		System.out.println("controller result :" +result);
+		System.out.println("Inst result :" + result);
 		vo.setCcgSeq(dto.getCcgSeq());
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
@@ -84,7 +84,12 @@ public class CodeGroupController extends BaseController{
 	@SuppressWarnings(value = {"all"})
 	@RequestMapping(value = "codeGroupUpdt")
 	public String codeGroupUpdt(CodeGroupVo vo, CodeGroup dto, RedirectAttributes redirectAttributes) throws Exception {
-		service.update(dto);
+		int result = service.update(dto);
+		System.out.println("Updt result: " + result);
+		System.out.println("getCcgName: " + dto.getCcgName());
+		System.out.println("getCcgNameEng " + dto.getCcgNameEng());
+		System.out.println("getCcgOrder " + dto.getCcgOrder());
+		System.out.println("getCcgUseNy " + dto.getCcgUseNy());
 		return "redirect:/codeGroup/codeGroupList";
 	}
 	

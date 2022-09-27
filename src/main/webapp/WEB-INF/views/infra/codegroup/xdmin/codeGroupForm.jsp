@@ -40,7 +40,6 @@
 	<link href="/resources/css/list.css" rel="stylesheet">
 </head>
 <body>
-	<!-- <form name="form" id="form" method="post" enctype="multipart/form-data"> -->
 	<form id="form" name="form" method="post" autocomplete="off" enctype="multipart/form-data">
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
@@ -165,11 +164,11 @@
 							<div class="row m-4">
 								<div class="col mx-auto">
 									<label class="form-label" for="ccgName">코드그룹 이름 (한글)</label>
-									<input type="text" class="form-control" id="ccgName" name="ccgName" value="<c:out value="${dto.ccgName }"/>" placeholder="한글,숫자">
+									<input type="text" class="form-control" id="ccgName" name="ccgName" value="<c:out value="${dto.ccgName }"/>">
 								</div>
 								<div class="col mx-auto">
 									<label class="form-label" for="ccgNameEng">코드그룹 이름 (영문)</label>
-									<input type="text" class="form-control" id="ccgNameEng" name="ccgNameEng" value="<c:out value="${dto.ccgNameEng }"/>" placeholder="영문(대소문자),숫자">
+									<input type="text" class="form-control" id="ccgNameEng" name="ccgNameEng" value="<c:out value="${dto.ccgNameEng }"/>">
 								</div>
 							</div>
 							<div class="row m-4">
@@ -183,7 +182,7 @@
 								</div>
 								<div class="col mx-auto">
 									<label class="form-label" for="ccgOrder">순서</label>
-									<input type="text" class="form-control" id="ccgOrder" name="ccgOrder" value="<c:out value="${dto.ccgOrder }"/>" placeholder="숫자">
+									<input type="text" class="form-control" id="ccgOrder" name="ccgOrder" value="<c:out value="${dto.ccgOrder }"/>">
 								</div>
 							</div>
 							<div class="row m-4">
@@ -257,7 +256,6 @@
 	    <!-- Footer End -->
 	</form>
 	<script src="/resources/js/list.js"></script>
-	<script src="/resources/js/sidebar.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script type="text/javascript">

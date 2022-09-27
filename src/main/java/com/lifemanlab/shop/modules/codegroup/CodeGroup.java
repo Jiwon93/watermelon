@@ -15,6 +15,7 @@ public class CodeGroup extends Base {
 	private String ccgNameEng;
 	private Date ccgRegDatetime;
 	private Date ccgModDatetime;
+	private String codeGroup_ccgSeq;
 ////////////////////////////////////////
 	public String getCcgSeq() {
 		return ccgSeq;
@@ -70,5 +71,12 @@ public class CodeGroup extends Base {
 	public void setCcgModDatetime(Date ccgModDatetime) {
 		this.ccgModDatetime = ccgModDatetime;
 	}
+	public String getCodeGroup_ccgSeq() {
+		return codeGroup_ccgSeq;
+	}
+	public void setCodeGroup_ccgSeq(String codeGroup_ccgSeq) {
+		this.codeGroup_ccgSeq = codeGroup_ccgSeq;
+	}
+	
 	
 }

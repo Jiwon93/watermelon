@@ -45,12 +45,15 @@
     <!-- datepicker -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script type="text/javascript">
-	   	$( function() {
-	        $( "#datePicker" ).datepicker({ dateFormat: 'yy-mm-dd' }).val();
-	    } );
-    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+	  <link rel="stylesheet" href="/resources/demos/style.css">
+	  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	  <script>
+	  $( function() {
+	    $( "#datepicker" ).datepicker();
+	  } );
+	  </script>
 </head>
 <body>
 <form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
@@ -96,7 +99,7 @@
                            <div class="col-8 offset-2">
                            	   <label class="form-label" for="mmBod">생년월일</label>	
                                <div class="input-group">
-                                   <input type="text" class="form-control" id="datePicker" name="mmBod" value="<c:out value="${dto.mmBod }" />" placeholder="8글자로 입력해 주세요.(ex. YYYYMMDD)">
+                                   <input type="text" class="form-control" id="datepicker" name="mmBod" value="<c:out value="${dto.mmBod }" />" placeholder="8글자로 입력해 주세요.(ex. YYYYMMDD)">
                                </div>
                            </div>
                            <div class="col-8 offset-2">

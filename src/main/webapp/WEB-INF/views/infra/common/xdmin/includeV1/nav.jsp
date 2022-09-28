@@ -36,7 +36,7 @@
 				            <li><a class="dropdown-item" type="button" id="btnSaleManage">판매 관리</a></li>
 				            <li><a class="dropdown-item" type="button" id="btnMemberMod">계정 설정</a></li>
 				            <li><hr class="dropdown-divider"></li>
-				            <li><a class="dropdown-item" type="button" id="btn">로그 아웃</a></li>
+				            <li><a class="dropdown-item" type="button" id="btnLogout">로그 아웃</a></li>
 				        </ul>
 		            </div>
 		        </c:when>
@@ -66,25 +66,17 @@
 		var goUrlLogout = "/member/memberHome";
 		 
 		$("#btnLogout").on("click", function(){
-		//if(validation() == false) return false;
-		
 			$.ajax({
 				async: true 
 				,cache: false
 				,type: "post"
-				/* ,dataType:"json" */
 				,url: "/member/logoutProc"
-				/* ,data : $("#formLogin").serialize() */
-				//,data : { "mmEmail" : $("#mmEmail").val(), "mmPw" : $("#mmPw").val(), "autoLogin" : $("#autoLogin").is(":checked")}
-				,data : { "mmEmail" : $("#mmEmail").val(), "mmPw" : $("#mmPw").val()}
+				,data : {}
 				,success: function(response) {
 					if(response.rt == "success") {
-						//if(response.changePwd == "true") {
-						//	location.href = URL_CHANGE_PWD_FORM;
-						//} else {
 							location.href = goUrlLogout;
 					} else {
-						alert("회원없음");
+						// by pass
 					}
 				}
 				,error : function(jqXHR, textStatus, errorThrown){

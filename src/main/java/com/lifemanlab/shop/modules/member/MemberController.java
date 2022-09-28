@@ -106,7 +106,7 @@ public class MemberController extends BaseController {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 		System.out.println("returnMap: " + returnMap);
 		int result = service.selectOneIdCheck(dto);
-		System.out.println("service: " + result);
+		System.out.println("service.checkId: " + result);
 		
 		if (result > 0) {
 			returnMap.put("rt", "fail");
@@ -123,7 +123,14 @@ public class MemberController extends BaseController {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 		System.out.println("returnMap: " + returnMap);
 		int result = service.selectOnePwCheck(dto);
-		System.out.println("");
+		System.out.println("service.checkPw: " + result);
+		
+		if (result > 0) {
+			returnMap.put("rt", "fail");
+		} else {
+			returnMap.put("rt", "success");
+		}
+		return returnMap;
 	}
 	
 	@RequestMapping(value = "/index")

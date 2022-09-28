@@ -33,6 +33,7 @@ public class Member extends Base{
 	private Integer mmWorkTime;
 	private String mmIntroduce;
 	private Integer mmCash;
+	private String mmpPhoneNumber;
 	
 ///////////////////////////////////////////////
 	public String getMmSeq() {
@@ -197,6 +198,11 @@ public class Member extends Base{
 	public void setMmCash(Integer mmCash) {
 		this.mmCash = mmCash;
 	}
-	
+	public String getMmpPhoneNumber() {
+		return mmpPhoneNumber;
+	}
+	public void setMmpPhoneNumber(String mmpPhoneNumber) {
+		this.mmpPhoneNumber = mmpPhoneNumber;
+	}
 	
 }

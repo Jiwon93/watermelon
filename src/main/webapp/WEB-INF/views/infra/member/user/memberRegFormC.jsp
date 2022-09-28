@@ -44,16 +44,15 @@
     
     <!-- datepicker -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-	  <link rel="stylesheet" href="/resources/demos/style.css">
-	  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-	  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-	  <script>
-	  $( function() {
-	    $( "#datepicker" ).datepicker();
-	  } );
-	  </script>
+	<link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<script src="/resources/js/common/jqueryNoConflict.js"></script>
+	<script>
+	 	$jQ( function() {
+	   		$jQ( "#datePicker" ).datepicker();
+	  	} );
+	</script>
 </head>
 <body>
 <form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
@@ -62,7 +61,7 @@
         <div class="row" id="">
 	        <div class="col" style="text-align: center; margin: 4rem 0;">
 	            <div class="navbar-nav ms-auto">
-	                <a type="button" id="btnIndex"><img alt="logo" src="/resources/images/logo.PNG" width="50px;" height="50px;"></a>
+	                <a type="button" id="btnHome"><img alt="logo" src="/resources/images/logo.PNG" width="50px;" height="50px;"></a>
 	            </div>
             </div>
         </div>
@@ -99,13 +98,13 @@
                            <div class="col-8 offset-2">
                            	   <label class="form-label" for="mmBod">생년월일</label>	
                                <div class="input-group">
-                                   <input type="text" class="form-control" id="datepicker" name="mmBod" value="<c:out value="${dto.mmBod }" />" placeholder="8글자로 입력해 주세요.(ex. YYYYMMDD)">
+                                   <input type="text" class="form-control" id="datePicker" name="mmBod" value="<c:out value="${dto.mmBod }" />" placeholder="8글자로 입력해 주세요.(ex. YYYYMMDD)">
                                </div>
                            </div>
                            <div class="col-8 offset-2">
-                           	   <label class="form-label" for="phoneReg">핸드폰</label>	
+                           	   <label class="form-label" for="mmpPhoneNumber">핸드폰</label>	
                                <div class="input-group">
-                                   <input type="text" class="form-control" id="phoneReg" placeholder="(-)를 제외한 11글자로 입력해 주세요." maxlength="11">
+                                   <input type="text" class="form-control" id="mmpPhoneNumber" name="mmpPhoneNumber" value="<c:out value="${dto.mmpPhoneNumber }" />" placeholder="(-)를 제외한 11글자로 입력해 주세요." maxlength="11">
                                </div>
                            </div>
                            <div class="col-8 offset-2">
@@ -258,13 +257,13 @@
 	<script src="/resources/js/user/reg.js"></script>
 	<script type="text/javascript">
 	
-		var goUrlIndex = "/member/index";
+		var goUrlHome = "/member/memberHome";
 		var goUrlRegInst = "/member/memberRegCInst";
 		
 		var form = $("form[name=form]");
 		
-		$("#btnIndex").on("click", function(){
-	   		$(location).attr("href", goUrlIndex);
+		$("#btnHome").on("click", function(){
+	   		$(location).attr("href", goUrlHome);
 		}); 
 	 
 		$("#btnReg").on("click", function(){

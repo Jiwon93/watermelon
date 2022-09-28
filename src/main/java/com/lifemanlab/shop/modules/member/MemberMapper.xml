@@ -184,6 +184,7 @@
 			a.mmSeq
 			,a.mmEmail
 			,a.mmName
+			,a.mmRank
 		FROM
 			member a
 		WHERE 1=1

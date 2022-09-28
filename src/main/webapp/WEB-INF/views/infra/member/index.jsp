@@ -407,7 +407,6 @@
 </form>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/resourcestemplate/woody/lib/wow/wow.min.js"></script>
     <script src="/resourcestemplate/woody/lib/easing/easing.min.js"></script>
@@ -419,6 +418,10 @@
 
     <!-- Template Javascript -->
     <script src="/resources/template/woody/js/main.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
     <script type="text/javascript">
     	function
     </script>

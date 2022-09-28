@@ -52,6 +52,13 @@ public class MemberDao {
 		return sqlSession.selectOne(namespace + ".selectOneIdCheck", dto);
 	}
 	
+	//비밀번호 확인
+	public int selectOnePwCheck(Member dto) {
+		return sqlSession.selectOne(namespace + ".selectOnePwCheck", dto);
+	}
+	
+	//비밀번호 변경
+	
 	//암호화
 	public Member selectOneId(Member dto) {
 		return sqlSession.selectOne(namespace + ".selectOneId", dto);

@@ -19,5 +19,7 @@ public final class Constants {
 	//public static final String COOKIE_DOMAIN = ;
 	//public static final String COOKIE_PATH = ;
 	//public static final String COOKIE_MAXAGE = ;
+	
+	public static final String URL_LOGINFORM = "/member/loginForm";
 
 }

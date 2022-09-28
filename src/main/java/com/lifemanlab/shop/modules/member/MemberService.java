@@ -18,6 +18,11 @@ public interface MemberService {
 	//회원가입
 	public int memberRegC(Member dto) throws Exception;
 	
+	//비밀번호 확인
+	public int selectOnePwCheck(Member dto) throws Exception;
+	
+	//비밀번호 변경
+	
 	//암호화
 	public Member selectOneId(Member dto) throws Exception;
 	public Member selectOneLogin(Member dto) throws Exception;

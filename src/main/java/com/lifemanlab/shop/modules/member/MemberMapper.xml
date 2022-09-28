@@ -192,6 +192,20 @@
 			<if test="mmPw != null and !mmPw.equals('')">AND a.mmPw = #{mmPw}</if>
 	</select>
 	
+	<!-- 비밀번호 확인 -->
+	<select id="selectOnePwCheck" resultType="Integer">
+		SELECT COUNT(*)
+		FROM member WHERE 1=1 AND mmPw = #{mmPw} AND mmSeq = #{mmSeq}
+	</select>
+	
+	<!-- 비밀번호 변경 -->
+	<update id="pwChange">
+		UPDATE member
+		SET
+			mmPw = #{mmPw}
+		WHERE 1=1
+			AND mmSeq = #{mmSeq}
+	</update>
 	
 
 </mapper>

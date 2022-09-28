@@ -98,6 +98,7 @@ public class MemberController extends BaseController {
 		return "redirect:/member/memberList";
 	}
 	
+	//아이디 확인
 	@ResponseBody
 	@RequestMapping(value = "checkId")
 	public Map<String, Object> checkId(Member dto) throws Exception {
@@ -113,6 +114,16 @@ public class MemberController extends BaseController {
 			returnMap.put("rt", "success");
 		}
 		return returnMap;
+	}
+	
+	//비밀번호 확인
+	@ResponseBody
+	@RequestMapping(value = "checkPw")
+	public Map<String, Object> checkPw(Member dto) throws Exception {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		System.out.println("returnMap: " + returnMap);
+		int result = service.selectOnePwCheck(dto);
+		System.out.println("");
 	}
 	
 	@RequestMapping(value = "/index")
@@ -210,6 +221,11 @@ public class MemberController extends BaseController {
 		return "infra/member/user/saleManage";
 	}
 
+	@RequestMapping(value = "/xdminLoginForm")
+	public String xdminLoginForm() throws Exception {
+		return "infra/member/xdmin/xdminLoginForm";
+	}	
+	
 	@ResponseBody
 	@RequestMapping(value = "/loginProc")
 	public Map<String, Object> loginProc(Member dto, HttpSession httpSession) throws Exception {

@@ -76,36 +76,10 @@
 </head>
 
 <body>
+<form>
 	<!-- Navbar Start -->
-	<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-		<a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-			<img src="/resources/images/logo.PNG" alt="" style="width: 60px; height: 60px;">
-		</a>
-		<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-			<form class="d-flex" role="search">
-				<input class="form-control me-2" type="search" style="width: 400px;" placeholder="Search" aria-label="Search">
-				<button class="btn btn-outline-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-			</form>
-		</div>
-		<div class="collapse navbar-collapse" id="navbarCollapse">
-			<div class="navbar-nav ms-auto p-4 p-lg-0">
-				<a href="loginForm.html" class="nav-item nav-link"><i class="fa-solid fa-comment fa-2x"></i></a>
-				<a href="memberRegFormC.html" class="nav-item nav-link"><i class="fa-solid fa-bell fa-2x"></i></a>
-				<a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user fa-2x"></i></a>
-				<ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="memberViewC.html">마이페이지</a></li>
-					<li><a class="dropdown-item" href="purchaseHistory.html">구매 목록</a></li>
-					<li><a class="dropdown-item" href="memberViewC.html">계정 설정</a></li>
-					<li><hr class="dropdown-divider"></li>
-					<li><a class="dropdown-item" href="index.html">로그 아웃</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<!-- Navbar End -->
+    <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
+    <!-- Navbar End -->
 	<!-- Contact Start -->
 	<div class="container-fluid overflow-hidden" style="margin: 1rem 0;">
 		<div class="row">
@@ -336,7 +310,7 @@
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
-
+</form>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

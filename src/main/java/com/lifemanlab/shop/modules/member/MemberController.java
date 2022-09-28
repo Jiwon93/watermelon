@@ -170,14 +170,14 @@ public class MemberController extends BaseController {
 		return "infra/member/user/memberRegFormC";
 	}
 	
-	@RequestMapping(value = "memberRegViewB")
+	@RequestMapping(value = "memberViewB")
 	public String memberRegViewB() throws Exception {
-		return "infra/member/user/memberRegViewB";
+		return "infra/member/user/memberViewB";
 	}
 	
-	@RequestMapping(value = "memberRegViewC")
+	@RequestMapping(value = "memberViewC")
 	public String memberRegViewC() throws Exception {
-		return "infra/member/user/memberRegViewC";
+		return "infra/member/user/memberViewC";
 	}
 	
 	@RequestMapping(value = "/pwChangFormB")
@@ -258,6 +258,16 @@ public class MemberController extends BaseController {
 
 			returnMap.put("rt", "fail");
 		}
+		return returnMap;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "logoutProc")
+	public Map<String, Object> logoutProc(HttpSession httpSession) throws Exception {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		/* UtilCookie.deleteCookie(); */
+		httpSession.invalidate();
+		returnMap.put("rt", "success");
 		return returnMap;
 	}
 	

@@ -191,5 +191,7 @@
 			AND a.mmEmail = #{mmEmail}
 			<if test="mmPw != null and !mmPw.equals('')">AND a.mmPw = #{mmPw}</if>
 	</select>
+	
+	
 
 </mapper>

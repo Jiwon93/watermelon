@@ -50,65 +50,8 @@
 <body>
 <form>
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-        <a type="button" id="btnHome" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <img src="/resources/images/logo.PNG" alt="" style="width: 60px; height: 60px;">
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-        	<form class="d-flex" role="search">
-		        <input class="form-control me-2" type="search" style="width: 400px;" placeholder="Search" aria-label="Search">
-		        <button class="btn btn-outline-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-		    </form>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto">
-            <c:choose>
-            	<c:when test="${sessSeq eq null }">
-            		<div class="navbar-nav ms-auto">
-		                <a href="/member/loginForm" class="nav-item nav-link">로그인</a>
-		                <a href="#" class="nav-item nav-link">회원가입</a>
-		            </div>
-		            <div class="navbar-nav ms-auto pe-3 pt-3">
-		            	<button class="btn btn-primary" type="button">만렙등록</button>
-		            </div>
-		        </c:when>
-		        <c:when test="${sessRank eq 25 }">
-		        	<div class="navbar-nav ms-auto p-4 p-lg-0">
-		                <a href="loginForm.html" class="nav-item nav-link"><i class="fa-solid fa-comment fa-2x"></i></a>
-		                <a href="memberRegFormC.html" class="nav-item nav-link"><i class="fa-solid fa-bell fa-2x"></i></a>
-		                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user fa-2x"></i></a>
-		                <ul class="dropdown-menu" role="menu" style="right: 0; left: auto;">
-		                	<li class="dropdown-item"><span style="font-weight: bold;"><c:out value="${sessName }"/>회원님</span></li>
-				            <li><a class="dropdown-item"  type="button" id="btnMypage">마이페이지</a></li>
-				            <li><a class="dropdown-item" type="button" id="btnSaleManage">판매 관리</a></li>
-				            <li><a class="dropdown-item" type="button" id="btnMemberMod">계정 설정</a></li>
-				            <li><hr class="dropdown-divider"></li>
-				            <li><a class="dropdown-item" type="button" id="btn">로그 아웃</a></li>
-				        </ul>
-		            </div>
-		        </c:when>
-		        <c:otherwise>
-		        	<a href="#" class="nav-item nav-link"><i class="fa-solid fa-comment fa-2x"></i></a>
-	                <a href="#" class="nav-item nav-link"><i class="fa-solid fa-bell fa-2x"></i></a>
-	                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user fa-2x"></i></a>
-	                <ul class="dropdown-menu" id="" role="menu" style="right: 0; left: auto;">
-	                	<li class="dropdown-item"><span style="font-weight: bold;"><c:out value="${sessName }"/>회원님</span></li>
-			            <li><a class="dropdown-item" type="button" id="btnMypage">마이페이지</a></li>
-			            <li><a class="dropdown-item" type="button" id="btnPurchaseHistory">구매 목록</a></li>
-			            <li><a class="dropdown-item" type="button" id="btnMemberMod">계정 설정</a></li>
-			            <li><hr class="dropdown-divider"></li>
-			            <li><a class="dropdown-item" type="button" id="btn">로그 아웃</a></li>
-			        </ul>
-		        </c:otherwise>
-	        </c:choose>
-            </div>
-        </div>
-    </nav>
+    <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
     <!-- Navbar End -->
-
 
     <!-- Carousel Start -->
     <div class="container-fluid p-0 pb-5 mt-5">
@@ -130,8 +73,8 @@
 	<div class="container py-5">
 		<div class="row ms-5 me-5">
 			<div class="col overflow-hidden text-center">
-				<a href="#" id="developDesign"><i class="fa-solid fa-computer fa-4x"></i></a>
-				<br><label class="text-primary" for="developDesign"><b>개발/디자인</b></label>
+				<a id="btnItemMenu"><i class="fa-solid fa-computer fa-4x"></i></a>
+				<br><label class="text-primary" for="btnItemMenu"><b>개발/디자인</b></label>
 			</div>
 			<div class="col text-center">
 				<a href="#" id="homeLiving"><i class="fa-solid fa-house-chimney fa-4x"></i></a>
@@ -190,7 +133,7 @@
                         <div class="p-4 text-center border border-5 border-light border-top-0">
                             <h5 class="mb-3">개발/디자인</h5>
                             <h4 class="mb-3">웹</h4>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                            <a class="fw-medium">Read More<i class="fa fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -440,6 +383,7 @@
 </form>
 
     <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/resources/template/woody/lib/wow/wow.min.js"></script>
     <script src="/resources/template/woody/lib/easing/easing.min.js"></script>
@@ -457,10 +401,11 @@
     
     <script type="text/javascript">
     	var goUrlHome = "/member/memberHome";
-    	var goUrlMypage = "member/memberViewC";
-    	var goUrlMemberMod = "member/memberModFormC";
-    	var goUrlSaleManage = "member/saleManage";
-    	var goUrlPurchaseHistory = "member/purchaseHistory";
+    	var goUrlMypage = "/member/memberViewC";
+    	var goUrlMemberMod = "/member/memberModFormC";
+    	var goUrlSaleManage = "/member/saleManage";
+    	var goUrlPurchaseHistory = "/member/purchaseHistory";
+    	var goUrlItemMenu = "/item/itemMenu";
     	
     	$("#btnHome").on("click", function(){
 	   		$(location).attr("href", goUrlHome);
@@ -480,6 +425,10 @@
     	
     	$("#btnPurchaseHistory").on("click", function(){
 	   		$(location).attr("href", goUrlPurchaseHistory);
+		});
+    	
+    	$("#btnItemMenu").on("click", function(){
+	   		$(location).attr("href", goUrlItemMenu);
 		});
     	
     </script>

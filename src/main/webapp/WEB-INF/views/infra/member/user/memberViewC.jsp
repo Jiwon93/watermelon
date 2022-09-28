@@ -76,35 +76,9 @@
 </head>
 
 <body>
+<form>
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-        <a href="../../index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <img src="/resources/images/logo.PNG" alt="" style="width: 60px; height: 60px;">
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-        	<form class="d-flex" role="search">
-		        <input class="form-control me-2" type="search" style="width: 400px;" placeholder="Search" aria-label="Search">
-		        <button class="btn btn-outline-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-		    </form>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="#" class="nav-item nav-link"><i class="fa-solid fa-comment fa-2x"></i></a>
-                <a href="#" class="nav-item nav-link"><i class="fa-solid fa-bell fa-2x"></i></a>
-                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user fa-2x"></i></a>
-                <ul class="dropdown-menu" role="menu" style="right: 0; left: auto;">
-		            <li><a class="dropdown-item" href="memberViewC.html">마이페이지</a></li>
-		            <li><a class="dropdown-item" href="purchaseHistory.html">구매 목록</a></li>
-		            <li><a class="dropdown-item" href="memberViewC.html">계정 설정</a></li>
-		            <li><hr class="dropdown-divider"></li>
-		            <li><a class="dropdown-item" href="../../index.html">로그 아웃</a></li>
-		        </ul>
-            </div>
-        </div>
-    </nav>
+    <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
     <!-- Navbar End -->
     <!-- Contact Start -->
     <div class="container-fluid overflow-hidden" style="margin: 1rem 0;">
@@ -118,7 +92,7 @@
 						<span class="px-3">jiwon123</span>
 					</div>
 					<div class="text-center pb-5">
-						<button class="btn btn-primary" style="width: 200px;" onclick="location.href='memberViewB.html'">만렙으로 전환</button>
+						<button class="btn btn-primary" style="width: 200px;">만렙으로 전환</button>
 					</div>
 					<div class="pt-4">
 						<h4 class="" style="border-bottom: 2px solid #AB7442;">마이페이지</h4>
@@ -330,7 +304,7 @@
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
-
+</form>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -345,6 +319,42 @@
 
     <!-- Template Javascript -->
     <script src="/resources/template/woody/js/main.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+	    var goUrlHome = "/member/memberHome";
+		var goUrlMypage = "/member/memberViewC";
+		var goUrlMemberMod = "/member/memberModFormC";
+		var goUrlSaleManage = "/member/saleManage";
+		var goUrlPurchaseHistory = "/member/purchaseHistory";
+		var goUrlItemMenu = "/item/itemMenu";
+		
+		$("#btnHome").on("click", function(){
+	   		$(location).attr("href", goUrlHome);
+		});
+		
+		$("#btnMypage").on("click", function(){
+	   		$(location).attr("href", goUrlMypage);
+		});
+		
+		$("#btnMemberMod").on("click", function(){
+	   		$(location).attr("href", goUrlMemberMod);
+		});
+		
+		$("#btnSaleManage").on("click", function(){
+	   		$(location).attr("href", goUrlSaleManage);
+		});
+		
+		$("#btnPurchaseHistory").on("click", function(){
+	   		$(location).attr("href", goUrlPurchaseHistory);
+		});
+		
+		$("#btnItemMenu").on("click", function(){
+	   		$(location).attr("href", goUrlItemMenu);
+		});
+    </script>
 </body>
 
 </html>

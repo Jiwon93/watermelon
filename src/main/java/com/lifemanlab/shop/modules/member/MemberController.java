@@ -133,6 +133,13 @@ public class MemberController extends BaseController {
 		return returnMap;
 	}
 	
+	//비밀번호 변경
+	@RequestMapping(value = "pwChange")
+	public String pwChange(Member dto) throws Exception {
+		service.pwChange(dto);
+		return "redirect:/member/pwChangeFormC";
+	}
+	
 	@RequestMapping(value = "/index")
 	public String index() throws Exception {
 		return "infra/member/index";

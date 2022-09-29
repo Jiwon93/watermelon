@@ -62,7 +62,7 @@ var regExpEm = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA
 		});
 		
 		// 비밀번호 확인
-		$("#mmPwChk").on("keyup", function(key){
+		$("#mmPwChk").on("keyup", function(){
 		      var p1 = document.getElementById('mmPw').value;
 		      var p2 = document.getElementById('mmPwChk').value;
 		      

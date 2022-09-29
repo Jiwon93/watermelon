@@ -22,6 +22,7 @@ public interface MemberService {
 	public int selectOnePwCheck(Member dto) throws Exception;
 	
 	//비밀번호 변경
+	public int pwChange(Member dto) throws Exception;
 	
 	//암호화
 	public Member selectOneId(Member dto) throws Exception;

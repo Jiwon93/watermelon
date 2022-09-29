@@ -58,6 +58,7 @@ public class MemberDao {
 	}
 	
 	//비밀번호 변경
+	public int pwChange(Member dto) { return sqlSession.update(namespace + ".pwChange", dto); }
 	
 	//암호화
 	public Member selectOneId(Member dto) {

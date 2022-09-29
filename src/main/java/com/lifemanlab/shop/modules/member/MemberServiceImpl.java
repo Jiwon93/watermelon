@@ -87,8 +87,11 @@ public class MemberServiceImpl implements MemberService {
 	public int selectOnePwCheck(Member dto) throws Exception {
 		return dao.selectOnePwCheck(dto);
 	}
-	
-	//비밀번호 변경
 
+	//비밀번호 변경
+	@Override
+	public int pwChange(Member dto) throws Exception {
+		return dao.pwChange(dto);
+	}
 	
 }

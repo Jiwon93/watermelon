@@ -76,10 +76,12 @@
 </head>
 
 <body>
-<form>
+<form form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
+	<input type="hidden" name="mmSeq" value="<c:out value="${vo.mmSeq}"/>"/>   
     <!-- Navbar Start -->
     <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
     <!-- Navbar End -->
+    
     <!-- Contact Start -->
     <div class="container-fluid overflow-hidden" style="margin: 1rem 0;">
            <div class="row">
@@ -89,7 +91,7 @@
 					</div>
 					<div class="text-center pb-4">
 						<button class="btn btn-secondary" style="height: 30px; width: 60px; font-size: small;">일반</button>
-						<span class="px-3">jiwon123</span>
+						<span class="px-3"><c:out value="${item.mmName }"/></span>
 					</div>
 					<div class="text-center pb-5">
 						<button class="btn btn-primary" style="width: 200px;">만렙으로 전환</button>
@@ -116,75 +118,81 @@
 	                   <div class="p-4 border border-2 border-light">
 		                   <div class="row g-3">
 		                   	   <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="nicknameMod">닉네임</label>	
+		                       	   <label class="form-label" for="mmNickname">닉네임</label>	
 		                           <div class="input-group">
-		                               <input type="text" class="form-control" id="nicknameMod" value="jiwon123" readonly>
+		                               <input type="text" class="form-control" id="mmNickname" value="<c:out value="${item.mmNickname }"/>" readonly>
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="emailMod">이메일</label>
+		                       	   <label class="form-label" for="mmEmail">이메일</label>
 		                           <div class="input-group">
-		                               <input type="email" class="form-control" id="emailMod" value="jiwon123@naver.com" readonly>
+		                               <input type="email" class="form-control" id="mmEmail" value="<c:out value="${item.mmEmail }"/>" readonly>
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="passwordReg">비밀번호</label>
+		                       	   <label class="form-label" for="mmBod">생년월일</label>	
 		                           <div class="input-group">
-		                               <input type="password" class="form-control" id="passwordReg" value="jiwon12345" readonly>
+		                               <input type="text" class="form-control" id="mmBod" value="<c:out value="${item.mmBod }"/>" readonly>
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="bodReg">생년월일</label>	
+		                       	   <label class="form-label" for="mmpPhoneNumber">핸드폰</label>	
 		                           <div class="input-group">
-		                               <input type="text" class="form-control" id="bodReg" value="1993-02-10" readonly>
-		                           </div>
-		                       </div>
-		                       <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="phoneReg">핸드폰</label>	
-		                           <div class="input-group">
-		                               <input type="text" class="form-control" id="phoneReg" value="010-2236-0210" readonly>
+		                               <input type="text" class="form-control" id="mmpPhoneNumber" value="<c:out value="${item.mmpPhoneNumber }"/>" readonly>
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
 		                       	   <label class="form-label" for="genderReg">성별</label>	
 		                           <br>
 		                           <div class="form-check form-check-inline">
-		                               <input type="radio" class="form-check-input" name="gender" id="genderRegM" checked readonly>
+		                           	   <c:choose>
+		                           	   	   <c:when test="${item.mmGender eq 5 }">
+		                               <input type="radio" class="form-check-input" name="mmGender" id="mmGender1" checked readonly>
 		                               <label class="form-check-label" for="genderRegM">남자</label>
+		                               	   </c:when>
+		                               	   <c:when test="${item.mmGender eq 6 }">
+	                               	   <input type="radio" class="form-check-input" name="mmGender" id="mmGender2" checked readonly>
+		                               <label class="form-check-label" for="genderRegM">여자</label>
+		                               	   </c:when>
+		                               	   <c:otherwise>
+	                               	   <input type="radio" class="form-check-input" name="mmGender" id="mmGender3" checked readonly>
+		                               <label class="form-check-label" for="genderRegM">기타</label>
+		                               	   </c:otherwise>
+	                               	   </c:choose>
 		                           </div>
 		                       </div>
 		                       <div class="col-3 offset-2">
-		                       	   <label class="form-label" for="addressReg">주소</label>
+		                       	   <label class="form-label" for="mmZip">주소</label>
 		                       	   <div class="input-group">
-		                               <input type="text" class="form-control w-25" id="addressReg" value="06598" readonly>
+		                               <input type="text" class="form-control w-25" id="mmZip" value="<c:out value="${item.mmZip }"/>" readonly>
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2 mt-2">
 		                           <div class="input-group mb-2">
-		                               <input type="text" class="form-control" id="addressReg" value="서울 서초구 고무래로 89" readonly>
+		                               <input type="text" class="form-control" id="mmAddress1" value="<c:out value="${item.mmAddress1 }"/>" readonly>
 		                           </div>
 		                           <div class="input-group">
-		                               <input type="text" class="form-control" id="addressReg" value="반포써밋 아파트 101동 1001호" readonly>
+		                               <input type="text" class="form-control" id="mmAddress2" value="<c:out value="${item.mmAddress2 }"/>" readonly>
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="jobReg">직업</label>
+		                       	   <label class="form-label" for="mmJob">직업</label>
 		                       	   <div class="input-group">
 				                       <div class="input-group">
-										   <input type="text" class="form-control"  id="jobReg" value="직장인" readonly>
+										   <input type="text" class="form-control"  id="mmJob" value="<c:out value="${item.mmJob }"/>" readonly>
 								   	   </div>
 					   		   	   </div>
 				  			   </div>
 							   <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="favoriteReg">관심분야</label>
+		                       	   <label class="form-label" for="mmInterest">관심분야</label>
 		                       	   <div class="input-group">
 			                           <div class="input-group">
-										   <input type="text" class="form-control" id="favoriteReg" value="IT 프로그래밍" readonly>
+										   <input type="text" class="form-control" id="mmInterest" value="<c:out value="${item.mmInterest }"/>" readonly>
 									   </div>
 								   </div>
 							   </div>
 							   <div class="col-sm-12 text-center">
-							   	   <button type="button" class="btn btn-primary w-25" onclick="location.href='memberModFormC.html'">수정하기</button>	
+							   	   <button type="button" class="btn btn-primary w-25">수정하기</button>	
 							   </div>
 		                   </div>
 	                   </div>
@@ -192,118 +200,18 @@
 	           </div>
            </div>
     </div>
+    
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer mt-5 pt-5">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-4 col-md-6">
-                    <h5 class="text-light mb-4">문의</h5>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>1599-9999</p>
-                    <p class="mb-2">10:00 ~ 18:00(점심시간 13:00 ~ 14:00)</p>
-                    <p class="mb-2">주말, 공휴일 휴무</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <div class="pt-2">
-                    	<button href="" class="btn btn-primary w-75" type="button">1:1문의</button>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="text-light mb-4">인생만렙</h5>
-                    <a class="btn btn-link" href="">회사소개</a>
-                    <a class="btn btn-link" href="">채용안내</a>
-                    <a class="btn btn-link" href="">서비스소개</a>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="text-light mb-4">만렙안내</h5>
-                    <a class="btn btn-link" href="">이용안내</a>
-                    <a class="btn btn-link" href="">만렙가이드</a>
-                    <a class="btn btn-link" href="">만렙등록</a>
-                    <a class="btn btn-link" href="">만렙센터</a>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="text-light mb-4">고객안내</h5>
-                    <a class="btn btn-link" href="">이용안내</a>
-                    <a class="btn btn-link" href="">안전정책</a>
-                    <a class="btn btn-link" href="">예상금액</a>
-                    <a class="btn btn-link" href="">인생만렙보증</a>
-                    <a class="btn btn-link" href="">인생만렙찾기</a>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="text-light mb-4">고객센터</h5>
-                    <a class="btn btn-link" href="">공지사항</a>
-                    <a class="btn btn-link" href="">자주묻는질문</a>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-        	<div class="row py-1">
-        		<div class="col text-center">
-        			이용약관
-        		</div>
-        		<div class="col text-center">
-        			개인정보처리방침
-        		</div>
-        		<div class="col text-center">
-        			사업자 정보확인
-        		</div>
-        	</div>
-        	<div class="row">
-        		<div class="col text-center">
-        			<p class="m-0">
-        				(주)인생만렙은 통신판매중개자로서 통신판매의 당사자가 아니면 개별 판매자가 제공하는 서비스에 대한 이행, 
-        				계약사항 등과 관련한 의무와 책임은 거래당사자에게 있습니다.
-        			</p>
-        		</div>
-        	</div>
-        </div>
-        <div class="container">
-        	<div class="row">
-        		<div class="col text-center">
-        			<p class="m-0">
-        				상호명: (주)인생만렙 대표이사: 신지원 개인정보책임관리자: 신지원 주소: 서울특별시 서초구 서초대로77길 55,에이프로스퀘어 3층
-        			</p>
-        		</div>
-        	</div>
-        	<div class="row">
-        		<div class="col text-center">
-        			<p class="m-0">
-        				사업자등록번호: 000-00-00000 통신판매업신고증: 제 2022-서울강남-00000호 직업정보제공사업 신고번호: 서울청 제 2022-00호
-        			</p>
-        		</div>
-        	</div>
-        	<div class="row">
-        		<div class="col text-center">
-        			<p class="m-0 mb-2">
-        				고객센터: 1599-9999 이메일: support@insaengmanlab.com
-        			</p>
-        		</div>
-        	</div>
-        </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col text-center">
-                        Copyright &copy; 2022&nbsp;<a class="border-bottom" href="#">ISML</a>&nbsp;lnc, All Right Reserved.
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col text-center">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <%@include file="../../common/xdmin/includeV1/footer.jsp"%>
     <!-- Footer End -->
-
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+</form>
+<form name="formVo" id="formVo" method="post">
+<!-- *Vo.jsp s -->
+<input type="hidden" name="mmSeq" value="<c:out value="${vo.mmSeq}"/>"/> 
+<!-- *Vo.jsp e -->
 </form>
 
     <!-- JavaScript Libraries -->
@@ -331,6 +239,11 @@
 		var goUrlPurchaseHistory = "/member/purchaseHistory";
 		var goUrlItemMenu = "/item/itemMenu";
 		var goUrlPwChange = "/member/pwChangeFormC"
+		
+		var seq = $("input:hidden[name=mmSeq]");
+		
+		var form = $("form[name=form]");
+		var formVo = $("form[name=formVo]");
 		
 		$("#btnHome").on("click", function(){
 	   		$(location).attr("href", goUrlHome);

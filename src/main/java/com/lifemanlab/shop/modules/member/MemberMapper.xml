@@ -212,5 +212,26 @@
 			AND mmSeq = #{mmSeq}
 	</update>
 	
+	<!-- 마이페이지(View) -->
+	<select id="selectOneView" resultMap="resultMapObj">
+			SELECT
+				a.mmNickname
+				,a.mmEmail
+				,a.mmName
+				,a.mmBod
+				,b.mmpPhoneNumber
+				,a.mmGender
+				,a.mmZip
+				,a.mmAddress1
+				,a.mmAddress2
+				,a.mmJob
+				,a.mmInterest
+			FROM member a
+			JOIN member_phone b on a.mmSeq = b.member_mmSeq
+			WHERE 1=1
+				AND mmSeq = #{mmSeq}
+				AND mmpDiv = 98
+	</select>
+	
 
 </mapper>

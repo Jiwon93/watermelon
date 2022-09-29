@@ -137,6 +137,16 @@ public class MemberController extends BaseController {
 		return "redirect:/member/pwChangeFormC";
 	}
 	
+	//마이페이지View
+	@RequestMapping(value = "memberViewC")
+	public String memberViewC(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+		Member item = service.selectOneView(vo);
+		model.addAttribute("item", item);
+		
+		return "infra/member/user/memberViewC";
+	}
+	
+	
 	@RequestMapping(value = "/index")
 	public String index() throws Exception {
 		return "infra/member/index";
@@ -195,11 +205,6 @@ public class MemberController extends BaseController {
 	@RequestMapping(value = "memberViewB")
 	public String memberRegViewB() throws Exception {
 		return "infra/member/user/memberViewB";
-	}
-	
-	@RequestMapping(value = "memberViewC")
-	public String memberRegViewC() throws Exception {
-		return "infra/member/user/memberViewC";
 	}
 	
 	@RequestMapping(value = "/pwChangeFormB")

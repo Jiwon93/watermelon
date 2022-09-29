@@ -98,4 +98,12 @@ public class MemberServiceImpl implements MemberService {
 		return result;
 	}
 	
+	//마이페이지View
+	@Override
+	public Member selectOneView(MemberVo vo) throws Exception {
+		Member item = dao.selectOneView(vo);
+		System.out.println("service.view item: " + item);
+		return item;
+	}
+	
 }

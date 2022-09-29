@@ -75,6 +75,13 @@ public class MemberDao {
 		return sqlSession.selectOne(namespace + ".selectOneLogin", dto);
 	}
 	
+	//마이페이지View
+	public Member selectOneView(MemberVo vo) {
+		Member item = sqlSession.selectOne(namespace + ".selectOneView", vo);
+		System.out.println("dao.view item: " + item);
+		return item;
+	}
+	
 	public int update(Member dto) { return sqlSession.update(namespace + ".update", dto); }
 	public int uelete(Member dto) { return sqlSession.update(namespace + ".uelete", dto); }
 	public int delete(MemberVo vo) { return sqlSession.delete(namespace + ".delete", vo); }

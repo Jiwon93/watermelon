@@ -48,7 +48,7 @@
 </head>
 
 <body>
-<form>
+<form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
     <!-- Navbar Start -->
     <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
     <!-- Navbar End -->

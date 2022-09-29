@@ -76,6 +76,7 @@
 </head>
 
 <body>
+<form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
     <!-- Navbar Start -->
     <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
     <!-- Navbar End -->
@@ -206,7 +207,7 @@
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
-
+</form>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -221,6 +222,44 @@
 
     <!-- Template Javascript -->
     <script src="/resources/template/woody/js/main.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+    	var goUrlHome = "/member/memberHome";
+    	var goUrlMypage = "/member/memberViewC";
+    	var goUrlMemberMod = "/member/memberModFormC";
+    	var goUrlSaleManage = "/member/saleManage";
+    	var goUrlPurchaseHistory = "/member/purchaseHistory";
+    	var goUrlItemMenu = "/item/itemMenu";
+    	
+    	$("#btnHome").on("click", function(){
+	   		$(location).attr("href", goUrlHome);
+		});
+    	
+    	$("#btnMypage").on("click", function(){
+	   		$(location).attr("href", goUrlMypage);
+		});
+    	
+    	$("#btnMemberMod").on("click", function(){
+	   		$(location).attr("href", goUrlMemberMod);
+		});
+    	
+    	$("#btnSaleManage").on("click", function(){
+	   		$(location).attr("href", goUrlSaleManage);
+		});
+    	
+    	$("#btnPurchaseHistory").on("click", function(){
+	   		$(location).attr("href", goUrlPurchaseHistory);
+		});
+    	
+    	$("#btnItemMenu").on("click", function(){
+	   		$(location).attr("href", goUrlItemMenu);
+		});
+    	
+    	
+    </script>
 </body>
 
 </html>

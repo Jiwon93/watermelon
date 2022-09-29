@@ -1,0 +1,27 @@
+.menuDD{
+    		width: 100%;
+    		height: 100%;
+    		border-radius: 3%; 
+    	}
+
+.mainName {
+	color: #9E9FAB;
+	text-align: left;
+}
+
+.mainTitle {
+	font-size: large;
+	text-align: left;
+}
+
+.mainPay {
+	font-size: large;
+	font-weight: bold;
+	text-align: right;
+}
+
+.mainGrade {
+	font-size: small;
+	font-weight: bold;
+	text-align: right;
+}

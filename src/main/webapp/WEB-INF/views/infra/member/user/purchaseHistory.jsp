@@ -288,6 +288,44 @@
 
     <!-- Template Javascript -->
     <script src="/resources/template/woody/js/main.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+    	var goUrlHome = "/member/memberHome";
+    	var goUrlMypage = "/member/memberViewC";
+    	var goUrlMemberMod = "/member/memberModFormC";
+    	var goUrlSaleManage = "/member/saleManage";
+    	var goUrlPurchaseHistory = "/member/purchaseHistory";
+    	var goUrlItemMenu = "/item/itemMenu";
+    	
+    	$("#btnHome").on("click", function(){
+	   		$(location).attr("href", goUrlHome);
+		});
+    	
+    	$("#btnMypage").on("click", function(){
+	   		$(location).attr("href", goUrlMypage);
+		});
+    	
+    	$("#btnMemberMod").on("click", function(){
+	   		$(location).attr("href", goUrlMemberMod);
+		});
+    	
+    	$("#btnSaleManage").on("click", function(){
+	   		$(location).attr("href", goUrlSaleManage);
+		});
+    	
+    	$("#btnPurchaseHistory").on("click", function(){
+	   		$(location).attr("href", goUrlPurchaseHistory);
+		});
+    	
+    	$("#btnItemMenu").on("click", function(){
+	   		$(location).attr("href", goUrlItemMenu);
+		});
+    	
+    	
+    </script>
 </body>
 
 </html>

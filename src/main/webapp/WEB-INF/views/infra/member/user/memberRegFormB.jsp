@@ -46,7 +46,7 @@
 </head>
 
 <body>
-
+<form>
     <!-- Navbar Start -->
     <nav class="container-fluid">
         <div class="row" id="">
@@ -67,241 +67,131 @@
                    <div class="section-title text-center">
                        <h1 class="display-6 mb-4">만렙가입</h1>
                    </div>
-                   <form>
-                       <div class="row g-3">
-                           <div class="col-8 offset-2">
-                           	   <label class="form-label" for="emailReg">이메일</label>	
-                               <div class="input-group">
-                                   <input type="email" class="form-control" id="emailReg" placeholder="이메일을 입력해 주세요.">
-                               </div>
-                           </div>
-                           <div class="col-8 offset-2">
-                           	   <label class="form-label" for="passwordReg">비밀번호</label>
-                               <div class="input-group mb-2">
-                                   <input type="password" class="form-control" id="passwordReg" placeholder="비밀번호를 입력해 주세요.">
-                               </div>
-                               <div class="input-group">
-                                   <input type="password" class="form-control" id="passwordReg" placeholder="동일하게 한번 더 입력해 주세요.">
-                               </div>
-                           </div>
-                           <div class="col-8 offset-2">
-                           	   <label class="form-label" for="bodReg">생년월일</label>	
-                               <div class="input-group">
-                                   <input type="text" class="form-control" id="bodReg" placeholder="8글자로 입력해 주세요.(ex. YYYYMMDD)" maxlength="8">
-                               </div>
-                           </div>
-                           <div class="col-8 offset-2">
-                           	   <label class="form-label" for="phoneReg">핸드폰</label>	
-                               <div class="input-group">
-                                   <input type="text" class="form-control" id="phoneReg" placeholder="(-)를 제외한 11글자로 입력해 주세요." maxlength="11">
-                               </div>
-                           </div>
-                           <div class="col-8 offset-2">
-                           	   <label class="form-label" for="genderReg">성별</label>	
-                               <br>
-                               <div class="form-check form-check-inline">
-                                   <input type="radio" class="form-check-input" name="gender" id="genderRegM">
-                                   <label class="form-check-label" for="genderRegM">남자</label>
-                               </div>
-                               <div class="form-check form-check-inline">
-                                   <input type="radio" class="form-check-input" name="gender" id="genderRegW">
-                                   <label class="form-check-label" for="genderRegW">여자</label>
-                               </div>
-                           </div>
-                           <div class="col-8 offset-2">
-                           	   <label class="form-label" for="addressReg">주소</label>
-                           	   <div class="input-group mb-2">
-                           	   	   <button class="btn btn-primary" type="button" style="height: 38px;">주소검색</button>
-                                   <input type="text" class="form-control" id="addressReg" placeholder="우편번호">
-                               </div>
-                               <div class="input-group mb-2">
-                                   <input type="text" class="form-control" id="addressReg" placeholder="주소를 입력해 주세요.">
-                               </div>
-                               <div class="input-group">
-                                   <input type="text" class="form-control" id="addressReg" placeholder="상세주소를 입력해 주세요.">
-                               </div>
-                           </div>
-                           <div class="col-8 offset-2">
-                           	   <label class="form-label" for="jobReg">직업</label>
-                           	   <div class="input-group">
-		                           <select class="form-select" id="jobReg">
-									   <option selected>직업선택</option>
-									   <option value="j1">직장인</option>
-									   <option value="j2">프리랜서</option>
-									   <option value="j3">소상공인</option>
-									   <option value="j4">스타트업 창업자</option>
-									   <option value="j5">대학(원)생</option>
-									   <option value="j6">취업준비생</option>
-								   </select>
-							   </div>
-						   </div>
-						   <div class="col-8 offset-2">
-                           	   <label class="form-label" for="favoriteReg">관심선택(중복 선택 가능)</label>
-                           	   <div class="input-group">
-		                           <select class="form-select" id="favoriteReg" multiple>
-									   <option selected>디자인</option>
-									   <option value="f1">IT 프로그래밍</option>
-									   <option value="f2">영상 사진 음향</option>
-									   <option value="f3">마케팅</option>
-									   <option value="f4">번역 통역</option>
-									   <option value="f5">문서 글쓰기</option>
-									   <option value="f6">건강 미용</option>
-									   <option value="f7">비즈니스 컨설팅</option>
-									   <option value="f8">심리상담</option>
-									   <option value="f9">주문제작</option>
-									   <option value="f10">세무 법무 노무</option>
-									   <option value="f11">이벤트</option>
-									   <option value="f12">레슨</option>
-								   </select>
-							   </div>
-						   </div>
-						   <div class="col-8 offset-2">
-							   <style data-emotion="css z5u2sd">
-							   	   .css-z5u2sd {
-							   	   	   padding:16px;
-							   	   	   border:1px solid #e4e5ed;
-							   	   	   border-radius:4px;
-							   	   	   margin-bottom:20px;
-							   	   	   background-color: white;
-						   	   	   }
-						   	   </style>
-						   	   <div name="agreements" class="css-z5u2sd ebb1x3g0">
-						   	   	   <style data-emotion="css 19dxxop">
-						   	   	   	   .css-19dxxop {
-						   	   	   	   	   font-size:15px;
-						   	   	   	   	   padding-bottom:16px;
-						   	   	   	   	   border-bottom:1px solid #e4e5ed;
-						   	   	   	   	   cursor:pointer;
-					   	   	   	   	   }
-					   	   	   	   </style>
-					   	   	   	   <div class="css-19dxxop ebb1x3g1">
-					   	   	   	   	   <style data-emotion="css 1om2ydj">
-					   	   	   	   	   	   .css-1om2ydj {
-					   	   	   	   	   	   	   margin-right:8px;
-					   	   	   	   	   	   	   display:inline-block;
-					   	   	   	   	   	   	   background-color:#e4e5ed;
-					   	   	   	   	   	   	   border-radius:50%;
-					   	   	   	   	   	   	   padding:2px;
-					   	   	   	   	   	   	   line-height:1.15;
-				   	   	   	   	   	   	   }
-				   	   	   	   	   	   </style>
-				   	   	   	   	   	   <div class="css-1om2ydj ebb1x3g4">
-				   	   	   	   	   	   	   <style data-emotion="css 1qcqzrg">
-				   	   	   	   	   	   	   	   .css-1qcqzrg {
-				   	   	   	   	   	   	   	   	   display:inline-block;
-				   	   	   	   	   	   	   	   	   color:inherit;
-				   	   	   	   	   	   	   	   	   font-style:normal;
-				   	   	   	   	   	   	   	   	   line-height:0;
-				   	   	   	   	   	   	   	   	   text-align:center;
-				   	   	   	   	   	   	   	   	   text-transform:none;
-				   	   	   	   	   	   	   	   	   vertical-align:-0.125em;
-				   	   	   	   	   	   	   	   	   text-rendering:optimizeLegibility;
-				   	   	   	   	   	   	   	   	   -webkit-font-smoothing:antialiased;
-				   	   	   	   	   	   	   	   	   -moz-osx-font-smoothing:grayscale;
-				   	   	   	   	   	   	   	   	   color:#ffffff;
-			   	   	   	   	   	   	   	   	   }
-			   	   	   	   	   	   	   	   </style>
-			   	   	   	   	   	   	   	   <span role="img" color="#ffffff" rotate="0" class="css-1qcqzrg e181xm9y1">
-			   	   	   	   	   	   	   	   	   <style data-emotion="css 7kp13n">
-			   	   	   	   	   	   	   	   	   	   .css-7kp13n {
-			   	   	   	   	   	   	   	   	   	   	   display:inline-block;
-		   	   	   	   	   	   	   	   	   	   	   }
-		   	   	   	   	   	   	   	   	   	   </style>
-		   	   	   	   	   	   	   	   	   	   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet" class="css-7kp13n e181xm9y0">
-		   	   	   	   	   	   	   	   	   	   	   <path d="M0 0h24v24H0V0z" fill="none"></path>
-		   	   	   	   	   	   	   	   	   	   	   <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
-	   	   	   	   	   	   	   	   	   	   	   </svg>
-	   	   	   	   	   	   	   	   	   	   </span>
-	   	   	   	   	   	   	   	   	   </div>모두 동의합니다.
-	   	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   	   <style data-emotion="css 1yuhvjn">
-	   	   	   	   	   	   	   	   	   .css-1yuhvjn {
-	   	   	   	   	   	   	   	   	   	   margin-top:16px;
-	   	   	   	   	   	   	   	   	   }
-	   	   	   	   	   	   	   	   </style>
-	   	   	   	   	   	   	   	   <div class="css-1yuhvjn ebb1x3g2">
-	   	   	   	   	   	   	   	   	   <style data-emotion="css zh2w40">
-	  	   	   	   	   	   	   	   	   	   .css-zh2w40 {
-	  	   	   	   	   	   	   	   	   	   	   font-size:12px;
-	  	   	   	   	   	   	   	   	   	   	   color:#727585;
-	  	   	   	   	   	   	   	   	   	   	   margin-bottom:4px;
-	  	   	   	   	   	   	   	   	   	   	   cursor:pointer;
-	   	   	   	   	   	   	   	   	   	   }
-	   	   	   	   	   	   	   	   	   </style>
-	   	   	   	   	   	   	   	   	   <div class="css-zh2w40 ebb1x3g3">
-	   	   	   	   	   	   	   	   	   	   <div class="css-1om2ydj ebb1x3g4">
-	   	   	   	   	   	   	   	   	   	   	   <span role="img" color="#ffffff" rotate="0" class="css-1qcqzrg e181xm9y1">
-	   	   	   	   	   	   	   	   	   	   	   	   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet" class="css-7kp13n e181xm9y0">
-	   	   	   	   	   	   	   	   	   	   	   	   	   <path d="M0 0h24v24H0V0z" fill="none"></path>
-	   	   	   	   	   	   	   	   	   	   	   	   	   <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
-	   	   	   	   	   	   	   	   	   	   	   	   </svg>
-	   	   	   	   	   	   	   	   	   	   	   </span>
-	   	   	   	   	   	   	   	   	   	   </div>만 14세 이상입니다.
-	   	   	   	   	   	   	   	   	   	   <!-- --> 
-	   	   	   	   	   	   	   	   	   	   <style data-emotion="css 1b63ro4">
-	   	   	   	   	   	   	   	   	   	   	   .css-1b63ro4 {
-	   	   	   	   	   	   	   	   	   	   	   	   color:#ff7262;
-	   	   	   	   	   	   	   	   	   	   	   }
-	   	   	   	   	   	   	   	   	   	   </style>
-	   	   	   	   	   	   	   	   	   	   <span class="css-1b63ro4 ebb1x3g5">(필수)</span>
-	   	   	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   	   	   <div class="css-zh2w40 ebb1x3g3">
-	   	   	   	   	   	   	   	   	   	   <div class="css-1om2ydj ebb1x3g4">
-	   	   	   	   	   	   	   	   	   	   	   <span role="img" color="#ffffff" rotate="0" class="css-1qcqzrg e181xm9y1">
-	   	   	   	   	   	   	   	   	   	   	   	   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet" class="css-7kp13n e181xm9y0">
-	   	   	   	   	   	   	   	   	   	   	   	   	   <path d="M0 0h24v24H0V0z" fill="none"></path>
-	   	   	   	   	   	   	   	   	   	   	   	   	   <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
-	   	   	   	   	   	   	   	   	   	   	   	   </svg>
-	   	   	   	   	   	   	   	   	   	   	   </span>
-	   	   	   	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   	   	   	   <style data-emotion="css 1ebg73i">
-	   	   	   	   	   	   	   	   	   	   	   .css-1ebg73i {
-	   	   	   	   	   	   	   	   	   	   	   	   color:#727585;
-	   	   	   	   	   	   	   	   	   	   	   }
-	   	   	   	   	   	   	   	   	   	   </style>
-	   	   	   	   	   	   	   	   	   	   <a target="_blank" href="https://support.kmong.com/hc/ko/articles/900005915466" class="css-1ebg73i e1jfpg0i0">서비스 이용약관</a>에 동의합니다.<!-- --> 
-	   	   	   	   	   	   	   	   	   	   <span class="css-1b63ro4 ebb1x3g5">(필수)</span>
-	   	   	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   	   	   <div class="css-zh2w40 ebb1x3g3">
-	   	   	   	   	   	   	   	   	   	   <div class="css-1om2ydj ebb1x3g4">
-	   	   	   	   	   	   	   	   	   	   	   <span role="img" color="#ffffff" rotate="0" class="css-1qcqzrg e181xm9y1">
-	   	   	   	   	   	   	   	   	   	   	   	   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet" class="css-7kp13n e181xm9y0">
-	   	   	   	   	   	   	   	   	   	   	   	   	   <path d="M0 0h24v24H0V0z" fill="none"></path>
-	   	   	   	   	   	   	   	   	   	   	   	   	   <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
-	   	   	   	   	   	   	   	   	   	   	   	   </svg>
-	   	   	   	   	   	   	   	   	   	   	   </span>
-	   	   	   	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   	   	   	   <a target="_blank" href="https://support.kmong.com/hc/ko/articles/4408694164377" class="css-1ebg73i e1jfpg0i0">개인정보 수집/이용</a>에 동의합니다.<!-- --> 
-	   	   	   	   	   	   	   	   	   	   <span class="css-1b63ro4 ebb1x3g5">(필수)</span>
-	   	   	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   	   	   <div class="css-zh2w40 ebb1x3g3">
-	   	   	   	   	   	   	   	   	   	   <div class="css-1om2ydj ebb1x3g4">
-	   	   	   	   	   	   	   	   	   	   	   <span role="img" color="#ffffff" rotate="0" class="css-1qcqzrg e181xm9y1">
-	   	   	   	   	   	   	   	   	   	   	   	   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet" class="css-7kp13n e181xm9y0">
-	   	   	   	   	   	   	   	   	   	   	   	   	   <path d="M0 0h24v24H0V0z" fill="none"></path>
-	   	   	   	   	   	   	   	   	   	   	   	   	   <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
-	   	   	   	   	   	   	   	   	   	   	   	   </svg>
-	   	   	   	   	   	   	   	   	   	   	   </span>
-	   	   	   	   	   	   	   	   	   	   </div>이벤트 할인 혜택 알림 수신에 동의합니다. (선택)
-	  	   	   	   	   	   	   	   	   </div>
-	  	   	   	   	   	   	   	   	   <div class="css-zh2w40 ebb1x3g3">
-	  	   	   	   	   	   	   	   	   	   <div class="css-1om2ydj ebb1x3g4">
-	  	   	   	   	   	   	   	   	   	   	   <span role="img" color="#ffffff" rotate="0" class="css-1qcqzrg e181xm9y1">
-	  	   	   	   	   	   	   	   	   	   	   	   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet" class="css-7kp13n e181xm9y0">
-	  	   	   	   	   	   	   	   	   	   	   	   	   <path d="M0 0h24v24H0V0z" fill="none"></path>
-	  	   	   	   	   	   	   	   	   	   	   	   	   <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
-	   	   	   	   	   	   	   	   	   	   	   	   </svg>
-	   	   	   	   	   	   	   	   	   	   	   </span>
-	  	   	   	   	   	   	   	   	   	   </div>장기 미접속 시 계정 활성 상태 유지합니다. (선택)
-	  	   	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   </div>
-   	   	   	   	   	   	   </div>
-                           <div class="col-8 offset-2">
-                               <button class="btn btn-primary w-100" type="button" onclick="location.href='loginForm.html'">가입완료!</button>
+                   <div class="row g-3">
+                       <div class="col-8 offset-2">
+                       	   <label class="form-label" for="emailReg">이메일</label>	
+                           <div class="input-group">
+                               <input type="email" class="form-control" id="emailReg" placeholder="이메일을 입력해 주세요.">
                            </div>
                        </div>
-                   </form>
+                       <div class="col-8 offset-2">
+                       	   <label class="form-label" for="passwordReg">비밀번호</label>
+                           <div class="input-group mb-2">
+                               <input type="password" class="form-control" id="passwordReg" placeholder="비밀번호를 입력해 주세요.">
+                           </div>
+                           <div class="input-group">
+                               <input type="password" class="form-control" id="passwordReg" placeholder="동일하게 한번 더 입력해 주세요.">
+                           </div>
+                       </div>
+                       <div class="col-8 offset-2">
+                       	   <label class="form-label" for="bodReg">생년월일</label>	
+                           <div class="input-group">
+                               <input type="text" class="form-control" id="bodReg" placeholder="8글자로 입력해 주세요.(ex. YYYYMMDD)" maxlength="8">
+                           </div>
+                       </div>
+                       <div class="col-8 offset-2">
+                       	   <label class="form-label" for="phoneReg">핸드폰</label>	
+                           <div class="input-group">
+                               <input type="text" class="form-control" id="phoneReg" placeholder="(-)를 제외한 11글자로 입력해 주세요." maxlength="11">
+                           </div>
+                       </div>
+                       <div class="col-8 offset-2">
+                       	   <label class="form-label" for="genderReg">성별</label>	
+                           <br>
+                           <div class="form-check form-check-inline">
+                               <input type="radio" class="form-check-input" name="gender" id="genderRegM">
+                               <label class="form-check-label" for="genderRegM">남자</label>
+                           </div>
+                           <div class="form-check form-check-inline">
+                               <input type="radio" class="form-check-input" name="gender" id="genderRegW">
+                               <label class="form-check-label" for="genderRegW">여자</label>
+                           </div>
+                       </div>
+                       <div class="col-8 offset-2">
+                       	   <label class="form-label" for="addressReg">주소</label>
+                       	   <div class="input-group mb-2">
+                       	   	   <button class="btn btn-primary" type="button" style="height: 38px;">주소검색</button>
+                               <input type="text" class="form-control" id="addressReg" placeholder="우편번호">
+                           </div>
+                           <div class="input-group mb-2">
+                               <input type="text" class="form-control" id="addressReg" placeholder="주소를 입력해 주세요.">
+                           </div>
+                           <div class="input-group">
+                               <input type="text" class="form-control" id="addressReg" placeholder="상세주소를 입력해 주세요.">
+                           </div>
+                       </div>
+                       <div class="col-8 offset-2">
+                       	   <label class="form-label" for="jobReg">직업</label>
+                       	   <div class="input-group">
+                         <select class="form-select" id="jobReg">
+					   <option selected>직업선택</option>
+					   <option value="j1">직장인</option>
+					   <option value="j2">프리랜서</option>
+					   <option value="j3">소상공인</option>
+					   <option value="j4">스타트업 창업자</option>
+					   <option value="j5">대학(원)생</option>
+					   <option value="j6">취업준비생</option>
+				   </select>
+			   </div>
+		   </div>
+		   <div class="col-8 offset-2">
+                       	   <label class="form-label" for="favoriteReg">관심선택(중복 선택 가능)</label>
+                       	   <div class="input-group">
+                         <select class="form-select" id="favoriteReg" multiple>
+					   <option selected>디자인</option>
+					   <option value="f1">IT 프로그래밍</option>
+					   <option value="f2">영상 사진 음향</option>
+					   <option value="f3">마케팅</option>
+					   <option value="f4">번역 통역</option>
+					   <option value="f5">문서 글쓰기</option>
+					   <option value="f6">건강 미용</option>
+					   <option value="f7">비즈니스 컨설팅</option>
+					   <option value="f8">심리상담</option>
+					   <option value="f9">주문제작</option>
+					   <option value="f10">세무 법무 노무</option>
+					   <option value="f11">이벤트</option>
+					   <option value="f12">레슨</option>
+				   </select>
+			   </div>
+		   </div>
+		   <div class="col-8 offset-2">
+		   	   <div class="agreeBox">
+		   	   	   <div class="agreeAll">
+  	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
+  	   	   	   	   	   	   <span>모두 동의합니다.</span>
+ 	   	   	   	   	   	   </div>
+ 	   	   	   	   	   	   <hr>
+ 	   	   	   	   	   	   <div class="agreeCertain">
+ 	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
+ 	   	   	   	   	   	   	   <span>만 14세 이상입니다.</span>
+ 	   	   	   	   	   	   	   <span class="certain">(필수)</span>
+	   	   	   	   	   	   	   </div>
+ 	   	   	   	   	   	   <div class="agreeCertain">
+ 	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
+  	   	   	   	   	   	   <span>서비스 이용약관에 동의합니다.</span>
+  	   	   	   	   	   	   <span class="certain">(필수)</span>
+	   	   	   	   	   	   	   </div>
+	   	   	   	   	   	   	   <div class="agreeCertain">
+ 	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
+  	   	   	   	   	   	   <span>개인정보 수집/이용에 동의합니다.</span>
+  	   	   	   	   	   	   <span class="certain">(필수)</span>
+	   	   	   	   	   	   	   </div>
+	   	   	   	   	   	   	   <div class="agreeSelection">	   
+ 	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
+ 	   	   	   	   	   	   	   <span>이벤트 할인 혜택 알림 수신에 동의합니다. (선택)</span>
+	   	   	   	   	   	   	   </div>
+	   	   	   	   	   	   	   <div class="agreeSelection">
+	   	   	   	   	   	   	   	   <a href="#">	   
+ 	   	   	   	   	   	   	   	  <i class="fa-solid fa-circle-check"></i>
+ 	   	   	   	   	   	   	   	  <span>장기 미접속 시 계정 활성 상태 유지합니다. (선택)</span>
+ 	   	   	   	   	   	   	   </a>
+   	   	   	   	   	   	   	   </div>
+   	   	   	   	   	   	   </div>
+   	   	   	   	   	   </div>
+                       <div class="col-8 offset-2">
+                           <button class="btn btn-primary w-100" type="button" onclick="location.href='loginForm.html'">가입완료!</button>
+                       </div>
+                   </div>
                </div>
            </div>
         </div>
@@ -325,6 +215,7 @@
         </div>
     </div>
     <!-- Footer End -->
+</form>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -337,6 +228,44 @@
 
     <!-- Template Javascript -->
     <script src="/resources/template/woody/js/main.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+    	var goUrlHome = "/member/memberHome";
+    	var goUrlMypage = "/member/memberViewC";
+    	var goUrlMemberMod = "/member/memberModFormC";
+    	var goUrlSaleManage = "/member/saleManage";
+    	var goUrlPurchaseHistory = "/member/purchaseHistory";
+    	var goUrlItemMenu = "/item/itemMenu";
+    	
+    	$("#btnHome").on("click", function(){
+	   		$(location).attr("href", goUrlHome);
+		});
+    	
+    	$("#btnMypage").on("click", function(){
+	   		$(location).attr("href", goUrlMypage);
+		});
+    	
+    	$("#btnMemberMod").on("click", function(){
+	   		$(location).attr("href", goUrlMemberMod);
+		});
+    	
+    	$("#btnSaleManage").on("click", function(){
+	   		$(location).attr("href", goUrlSaleManage);
+		});
+    	
+    	$("#btnPurchaseHistory").on("click", function(){
+	   		$(location).attr("href", goUrlPurchaseHistory);
+		});
+    	
+    	$("#btnItemMenu").on("click", function(){
+	   		$(location).attr("href", goUrlItemMenu);
+		});
+    	
+    	
+    </script>
 </body>
 
 </html>

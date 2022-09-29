@@ -1,6 +1,5 @@
 package com.lifemanlab.shop.modules.item;
 
-import java.util.List;
 
 import javax.annotation.Resource;
 import javax.inject.Inject;
@@ -15,7 +14,6 @@ public class ItemDao {
 	@Resource(name = "sqlSession")
 	private SqlSession sqlSession;
 	
-	private static String namespace = "com.junefw.infra.modules.item.ItemMapper";
+	//private static String namespace = "com.junefw.infra.modules.item.ItemMapper";
 	
-	public List<Item> selectList(){ return sqlSession.selectList(namespace + ".selectList", ""); }
 }

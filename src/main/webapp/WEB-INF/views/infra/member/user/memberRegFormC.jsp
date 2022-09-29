@@ -76,140 +76,140 @@
                    <div class="section-title text-center">
                        <h1 class="display-6 mb-4">회원가입</h1>
                    </div>
-                       <div class="row g-3">
-                           <div class="col-8 offset-2">
-                           	   <label class="form-label" for="mmEmail">이메일</label>	
-                               <div class="input-group">
-                               	   <input type="hidden" id="mmEmailAllowedNy" name="mmEmailAllowedNy" value="0">
-                                   <input type="text" class="form-control" id="mmEmail" name="mmEmail" value="<c:out value="${dto.mmEmail }"/>" placeholder="이메일을 입력해 주세요.">
-                               	   <div class="invalid-feedback" id="mmEmailFeedback"></div>
-                               </div>
-                           </div>
-                           <div class="col-8 offset-2">
-                           	   <label class="form-label" for="mmPw">비밀번호</label>
-                               <div class="input-group mb-2">
-                                   <input type="password" class="form-control" id="mmPw" name="mmPw" value="<c:out value="${dto.mmPw }" />" placeholder="비밀번호를 입력해 주세요.">
-                               </div>
-                               <div class="input-group">
-                                   <input type="password" class="form-control" id="mmPwChk" name="mmPwChk" placeholder="동일하게 한번 더 입력해 주세요.">
-                               	   <div class="invalid-feedback" id="mmPwChkFeedback"></div>
-                               </div>
-                           </div>
-                           <div class="col-8 offset-2">
-                           	   <label class="form-label" for="mmBod">생년월일</label>	
-                               <div class="input-group">
-                                   <input type="text" class="form-control" id="datePicker" name="mmBod" value="<c:out value="${dto.mmBod }" />" placeholder="8글자로 입력해 주세요.(ex. YYYYMMDD)">
-                               </div>
-                           </div>
-                           <div class="col-8 offset-2">
-                           	   <label class="form-label" for="mmpPhoneNumber">핸드폰</label>	
-                               <div class="input-group">
-                                   <input type="text" class="form-control" id="mmpPhoneNumber" name="mmpPhoneNumber" value="<c:out value="${dto.mmpPhoneNumber }" />" placeholder="(-)를 제외한 11글자로 입력해 주세요." maxlength="11">
-                               </div>
-                           </div>
-                           <div class="col-8 offset-2">
-                           	   <label class="form-label" for="genderReg">성별</label>	
-                               <br>
-                               <div class="form-check form-check-inline">
-                                   <input type="radio" class="form-check-input" name="mmGender" id="mmGender0" value="0" <c:if test="${dto.mmGender eq 0 }">selected</c:if>>
-                                   <label class="form-check-label" for="genderRegM">남자</label>
-                               </div>
-                               <div class="form-check form-check-inline">
-                                   <input type="radio" class="form-check-input" name="mmGender" id="mmGender1" value="1" <c:if test="${dto.mmGender eq 1 }">selected</c:if>>
-                                   <label class="form-check-label" for="genderRegW">여자</label>
-                               </div>
-                               <div class="form-check form-check-inline">
-                                   <input type="radio" class="form-check-input" name="mmGender" id="mmGender2" value="2" <c:if test="${dto.mmGender eq 2 }">selected</c:if>>
-                                   <label class="form-check-label" for="genderRegW">기타</label>
-                               </div>
-                           </div>
-                           <div class="col-8 offset-2">
-                           	   <label class="form-label" for="mmrfPostcode">주소</label>
-                           	   <div class="input-group mb-2">
-                           	   	   <button class="btn btn-primary" type="button" style="height: 38px;" onclick="mmrfPostcodeBtn()">주소검색</button>
-                                   <input type="text" class="form-control" placeholder="우편번호" id="mmrfPostcode" name="mmZip" value="<c:out value="${dto.mmZip }" />">
-                               </div>
-                               <div class="input-group mb-2">
-                                   <input type="text" class="form-control" placeholder="주소를 입력해 주세요." id="mmrfRoadAddress" name="mmAddress1" value="<c:out value="${dtp.mmAddress1 }" />" readonly>
-                               </div>
-                               <span id="guide" style="color:#999;display:none"></span>
-                               <div class="input-group">
-                                   <input type="text" class="form-control" placeholder="상세주소를 입력해 주세요." id="mmrfDetailAddress" name="mmAddress2" value="<c:out value="${dtp.mmAddress2 }" />">
-                               </div>
-                           </div>
-                           <div class="col-8 offset-2">
-                           	   <label class="form-label" for="mmJob">직업</label>
-                           	   <div class="input-group">
-		                           <select class="form-select" id="mmJob" name="mmJob">
-									   <option value="" <c:if test="${empty dto.mmJob }">selected</c:if>>직업선택</option>
-									   <option value="1" <c:if test="${dto.mmJob eq 1 }">selected</c:if>>직장인</option>
-									   <option value="2" <c:if test="${dto.mmJob eq 2 }">selected</c:if>>프리랜서</option>
-									   <option value="3" <c:if test="${dto.mmJob eq 3 }">selected</c:if>>소상공인</option>
-									   <option value="4" <c:if test="${dto.mmJob eq 4 }">selected</c:if>>스타트업 창업자</option>
-									   <option value="5" <c:if test="${dto.mmJob eq 5 }">selected</c:if>>대학(원)생</option>
-									   <option value="6" <c:if test="${dto.mmJob eq 6 }">selected</c:if>>취업준비생</option>
-								   </select>
-							   </div>
-						   </div>
-						   <div class="col-8 offset-2">
-                           	   <label class="form-label" for="mmInterest">관심분야(중복 선택 가능)</label>
-                           	   <div class="input-group">
-		                           <select class="form-select" id="mmInterest" name="mmInterest" multiple>
-									   <option value="" <c:if test="${empty dto.mmInterest }">selected</c:if>>관심분야선택</option>
-									   <option value="1" <c:if test="${dto.mmInterest eq 1 }">selected</c:if>>디자인</option>
-									   <option value="2" <c:if test="${dto.mmInterest eq 2 }">selected</c:if>>IT 프로그래밍</option>
-									   <option value="3" <c:if test="${dto.mmInterest eq 3 }">selected</c:if>>영상 사진 음향</option>
-									   <option value="4" <c:if test="${dto.mmInterest eq 4 }">selected</c:if>>마케팅</option>
-									   <option value="5" <c:if test="${dto.mmInterest eq 5 }">selected</c:if>>번역 통역</option>
-									   <option value="6" <c:if test="${dto.mmInterest eq 6 }">selected</c:if>>문서 글쓰기</option>
-									   <option value="7" <c:if test="${dto.mmInterest eq 7 }">selected</c:if>>건강 미용</option>
-									   <option value="8" <c:if test="${dto.mmInterest eq 8 }">selected</c:if>>비즈니스 컨설팅</option>
-									   <option value="9" <c:if test="${dto.mmInterest eq 9 }">selected</c:if>>심리상담</option>
-									   <option value="10" <c:if test="${dto.mmInterest eq 10 }">selected</c:if>>주문제작</option>
-									   <option value="11" <c:if test="${dto.mmInterest eq 11 }">selected</c:if>>세무 법무 노무</option>
-									   <option value="12" <c:if test="${dto.mmInterest eq 12 }">selected</c:if>>이벤트</option>
-									   <option value="13" <c:if test="${dto.mmInterest eq 13 }">selected</c:if>>레슨</option>
-								   </select>
-							   </div>
-						   </div>
-						   <div class="col-8 offset-2">
-						   	   <div class="agreeBox">
-						   	   	   <div class="agreeAll">
-			   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
-			   	   	   	   	   	   	   <span>모두 동의합니다.</span>
-		   	   	   	   	   	   	   </div>
-		   	   	   	   	   	   	   <hr>
-		   	   	   	   	   	   	   <div class="agreeCertain">
-		   	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
-		   	   	   	   	   	   	   	   <span>만 14세 이상입니다.</span>
-		   	   	   	   	   	   	   	   <span class="certain">(필수)</span>
-	   	   	   	   	   	   	   	   </div>
-		   	   	   	   	   	   	   <div class="agreeCertain">
-		   	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
-			   	   	   	   	   	   	   <span>서비스 이용약관에 동의합니다.</span>
-			   	   	   	   	   	   	   <span class="certain">(필수)</span>
-	   	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   	   <div class="agreeCertain">
-		   	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
-			   	   	   	   	   	   	   <span>개인정보 수집/이용에 동의합니다.</span>
-			   	   	   	   	   	   	   <span class="certain">(필수)</span>
-	   	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   	   <div class="agreeSelection">	   
-		   	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
-		   	   	   	   	   	   	   	   <span>이벤트 할인 혜택 알림 수신에 동의합니다. (선택)</span>
-	   	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   	   <div class="agreeSelection">
-	   	   	   	   	   	   	   	   	   <a href="#">	   
-		   	   	   	   	   	   	   	   	  <i class="fa-solid fa-circle-check"></i>
-		   	   	   	   	   	   	   	   	  <span>장기 미접속 시 계정 활성 상태 유지합니다. (선택)</span>
-		   	   	   	   	   	   	   	   </a>
-   	   	   	   	   	   	   	   	   </div>
-   	   	   	   	   	   	   	   </div>
-   	   	   	   	   	   	   </div>
-                           <div class="col-8 offset-2">
-                               <button class="btn btn-primary w-100" type="button" id="btnReg">가입완료!</button>
+                   <div class="row g-3">
+                       <div class="col-8 offset-2">
+                       	   <label class="form-label" for="mmEmail">이메일</label>	
+                           <div class="input-group">
+                           	   <input type="hidden" id="mmEmailAllowedNy" name="mmEmailAllowedNy" value="0">
+                               <input type="text" class="form-control" id="mmEmail" name="mmEmail" value="<c:out value="${dto.mmEmail }"/>" placeholder="이메일을 입력해 주세요.">
+                           	   <div class="invalid-feedback" id="mmEmailFeedback"></div>
                            </div>
                        </div>
+                       <div class="col-8 offset-2">
+                       	   <label class="form-label" for="mmPw">비밀번호</label>
+                           <div class="input-group mb-2">
+                               <input type="password" class="form-control" id="mmPw" name="mmPw" value="<c:out value="${dto.mmPw }" />" placeholder="비밀번호를 입력해 주세요.">
+                           </div>
+                           <div class="input-group">
+                               <input type="password" class="form-control" id="mmPwChk" name="mmPwChk" placeholder="동일하게 한번 더 입력해 주세요.">
+                           	   <div class="invalid-feedback" id="mmPwChkFeedback"></div>
+                           </div>
+                       </div>
+                       <div class="col-8 offset-2">
+                       	   <label class="form-label" for="mmBod">생년월일</label>	
+                           <div class="input-group">
+                               <input type="text" class="form-control" id="datePicker" name="mmBod" value="<c:out value="${dto.mmBod }" />" placeholder="8글자로 입력해 주세요.(ex. YYYYMMDD)">
+                           </div>
+                       </div>
+                       <div class="col-8 offset-2">
+                       	   <label class="form-label" for="mmpPhoneNumber">핸드폰</label>	
+                           <div class="input-group">
+                               <input type="text" class="form-control" id="mmpPhoneNumber" name="mmpPhoneNumber" value="<c:out value="${dto.mmpPhoneNumber }" />" placeholder="(-)를 제외한 11글자로 입력해 주세요." maxlength="11">
+                           </div>
+                       </div>
+                       <div class="col-8 offset-2">
+                       	   <label class="form-label" for="genderReg">성별</label>	
+                           <br>
+                           <div class="form-check form-check-inline">
+                               <input type="radio" class="form-check-input" name="mmGender" id="mmGender0" value="0" <c:if test="${dto.mmGender eq 0 }">selected</c:if>>
+                               <label class="form-check-label" for="genderRegM">남자</label>
+                           </div>
+                           <div class="form-check form-check-inline">
+                               <input type="radio" class="form-check-input" name="mmGender" id="mmGender1" value="1" <c:if test="${dto.mmGender eq 1 }">selected</c:if>>
+                               <label class="form-check-label" for="genderRegW">여자</label>
+                           </div>
+                           <div class="form-check form-check-inline">
+                               <input type="radio" class="form-check-input" name="mmGender" id="mmGender2" value="2" <c:if test="${dto.mmGender eq 2 }">selected</c:if>>
+                               <label class="form-check-label" for="genderRegW">기타</label>
+                           </div>
+                       </div>
+                       <div class="col-8 offset-2">
+                       	   <label class="form-label" for="mmrfPostcode">주소</label>
+                       	   <div class="input-group mb-2">
+                       	   	   <button class="btn btn-primary" type="button" style="height: 38px;" onclick="mmrfPostcodeBtn()">주소검색</button>
+                               <input type="text" class="form-control" placeholder="우편번호" id="mmrfPostcode" name="mmZip" value="<c:out value="${dto.mmZip }" />">
+                           </div>
+                           <div class="input-group mb-2">
+                               <input type="text" class="form-control" placeholder="주소를 입력해 주세요." id="mmrfRoadAddress" name="mmAddress1" value="<c:out value="${dtp.mmAddress1 }" />" readonly>
+                           </div>
+                           <span id="guide" style="color:#999;display:none"></span>
+                           <div class="input-group">
+                               <input type="text" class="form-control" placeholder="상세주소를 입력해 주세요." id="mmrfDetailAddress" name="mmAddress2" value="<c:out value="${dtp.mmAddress2 }" />">
+                           </div>
+                       </div>
+                       <div class="col-8 offset-2">
+                       	   <label class="form-label" for="mmJob">직업</label>
+                       	   <div class="input-group">
+	                           <select class="form-select" id="mmJob" name="mmJob">
+								   <option value="" <c:if test="${empty dto.mmJob }">selected</c:if>>직업선택</option>
+								   <option value="1" <c:if test="${dto.mmJob eq 1 }">selected</c:if>>직장인</option>
+								   <option value="2" <c:if test="${dto.mmJob eq 2 }">selected</c:if>>프리랜서</option>
+								   <option value="3" <c:if test="${dto.mmJob eq 3 }">selected</c:if>>소상공인</option>
+								   <option value="4" <c:if test="${dto.mmJob eq 4 }">selected</c:if>>스타트업 창업자</option>
+								   <option value="5" <c:if test="${dto.mmJob eq 5 }">selected</c:if>>대학(원)생</option>
+								   <option value="6" <c:if test="${dto.mmJob eq 6 }">selected</c:if>>취업준비생</option>
+							   </select>
+			   			  </div>
+		  			   </div>
+					   <div class="col-8 offset-2">
+                       	  <label class="form-label" for="mmInterest">관심분야(중복 선택 가능)</label>
+                       	  <div class="input-group">
+	                           <select class="form-select" id="mmInterest" name="mmInterest" multiple>
+								   <option value="" <c:if test="${empty dto.mmInterest }">selected</c:if>>관심분야선택</option>
+								   <option value="1" <c:if test="${dto.mmInterest eq 1 }">selected</c:if>>디자인</option>
+								   <option value="2" <c:if test="${dto.mmInterest eq 2 }">selected</c:if>>IT 프로그래밍</option>
+								   <option value="3" <c:if test="${dto.mmInterest eq 3 }">selected</c:if>>영상 사진 음향</option>
+								   <option value="4" <c:if test="${dto.mmInterest eq 4 }">selected</c:if>>마케팅</option>
+								   <option value="5" <c:if test="${dto.mmInterest eq 5 }">selected</c:if>>번역 통역</option>
+								   <option value="6" <c:if test="${dto.mmInterest eq 6 }">selected</c:if>>문서 글쓰기</option>
+								   <option value="7" <c:if test="${dto.mmInterest eq 7 }">selected</c:if>>건강 미용</option>
+								   <option value="8" <c:if test="${dto.mmInterest eq 8 }">selected</c:if>>비즈니스 컨설팅</option>
+								   <option value="9" <c:if test="${dto.mmInterest eq 9 }">selected</c:if>>심리상담</option>
+								   <option value="10" <c:if test="${dto.mmInterest eq 10 }">selected</c:if>>주문제작</option>
+								   <option value="11" <c:if test="${dto.mmInterest eq 11 }">selected</c:if>>세무 법무 노무</option>
+								   <option value="12" <c:if test="${dto.mmInterest eq 12 }">selected</c:if>>이벤트</option>
+								   <option value="13" <c:if test="${dto.mmInterest eq 13 }">selected</c:if>>레슨</option>
+							   </select>
+						   </div>
+					   </div>
+		   			   <div class="col-8 offset-2">
+					   	   <div class="agreeBox">
+					   	   	   <div class="agreeAll">
+		  	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
+		  	   	   	   	   	   	   <span>모두 동의합니다.</span>
+ 	   	   	   	   	   	   	   </div>
+ 	   	   	   	   	   		   <hr>
+ 	   	   	   	   	   	   	   <div class="agreeCertain">
+	 	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
+	 	   	   	   	   	   	   	   <span>만 14세 이상입니다.</span>
+	 	   	   	   	   	   	   	   <span class="certain">(필수)</span>
+	   	   	   	   	   	   	   </div>
+ 	   	   	   	   	   	   	   <div class="agreeCertain">
+	 	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
+		  	   	   	   	   	   	   <span>서비스 이용약관에 동의합니다.</span>
+		  	   	   	   	   	   	   <span class="certain">(필수)</span>
+	   	   	   	   	   	   	   </div>
+	   	   	   	   	   	   	   <div class="agreeCertain">
+	 	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
+		  	   	   	   	   	   	   <span>개인정보 수집/이용에 동의합니다.</span>
+		  	   	   	   	   	   	   <span class="certain">(필수)</span>
+	   	   	   	   	   	   	   </div>
+	   	   	   	   	   	   	   <div class="agreeSelection">	   
+	 	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
+	 	   	   	   	   	   	   	   <span>이벤트 할인 혜택 알림 수신에 동의합니다. (선택)</span>
+	   	   	   	   	   	   	   </div>
+	   	   	   	   	   	   	   <div class="agreeSelection">
+	   	   	   	   	   	   	   	   <a href="#">	   
+ 	   	   	   	   	   	   	   	   	  <i class="fa-solid fa-circle-check"></i>
+ 	   	   	   	   	   	   	   	   	  <span>장기 미접속 시 계정 활성 상태 유지합니다. (선택)</span>
+ 	   	   	   	   	   	   	   	   </a>
+   	   	   	   	   	   	   	   </div>
+   	   	   	   	   	   	   </div>
+   	   	   	   	   	   </div>
+                       <div class="col-8 offset-2">
+                           <button class="btn btn-primary w-100" type="button" id="btnReg">가입완료!</button>
+                       </div>
+                   </div>
                </div>
            </div>
         </div>

@@ -31,6 +31,10 @@
 			<exclude-mapping path="/resources/**" />
 			<exclude-mapping path="/code/**" />
 			<exclude-mapping path="/codeGroup/**" />
+			<exclude-mapping path="/item/itemMenu" />
+			<exclude-mapping path="/item/itemMenuView" />
+			<exclude-mapping path="/member/idPwFindForm" />
+			<exclude-mapping path="/member/memberRegFormC" />
 			<exclude-mapping path="/member/memberHome" />
 			<exclude-mapping path="/member/loginForm" />
 			<exclude-mapping path="/member/loginProc" />

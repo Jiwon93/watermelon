@@ -39,110 +39,13 @@
     
     <!-- Fontawesome Stylesheet -->
     <script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
-	<style type="text/css">
 	
-		.priceInfo {
-			border-top: 1px solid black;
-			border-bottom: 1px solid black;
-			border-collapse: collapse;
-		}
-		
-		.priceHead {
-			background-color: #FAFAFC;
-			text-align: center;
-			border-bottom: 1px solid #F1F1F5;
-			padding: 10px;
-		}
-		
-		.priceBody {
-			text-align: center;
-			height: 80px;
-			border-bottom: 1px solid #F1F1F5;
-			padding: 10px;
-		}
-		
-		.priceBtn {
-			text-align: center;
-			height: 80px;
-			border-bottom: 1px solid white;
-		}
-		
-		.btn{
-			border-radius: 5px;
-			height: 45px;
-		}
-		
-		.listCheck {
-			text-align: right;
-		}
-		
-		.payView {
-			font-size: x-large;
-			font-weight: bolder;
-		}
-		
-		.vatView {
-			color: gray;
-		}
-		
-		.titleView {
-			font-weight: bold;
-		}
-		
-		.inquiryTable {
-			border: 1px solid #E4E5ED;
-		}
-		
-		.inquiryHead {
-			height: 50px;
-			vertical-align: middle;
-			text-indent: 10px;
-			font-size: 18px;
-			background-color: #F2F3F7;
-			border-bottom: 1px solid #F1F1F5;
-			padding: 10px;
-		}
-		
-		.inquiryBody1 {
-			text-align: left;
-			text-indent: 5px;
-			padding: 10px;
-		}
-		
-		.inquiryBodyTable {
-			background-color: #FAFAFC;
-			border-radius: 5px;
-			margin-left:auto; 
-   	 		margin-right:auto;
-   	 		width: 400px;
-		}
-		
-		.inquiryBodyTableHead {
-			text-align: center;
-		}
-		
-		.inquiryBodyTableBody {
-			text-align: center;
-			font-size: 11px;
-			color: darkgray;
-		}
-		
-		.inquiryBody2 {
-			padding: 10px;
-		}
-		
-		.inquiryBody3 {
-			padding: 10px;
-		}
-		
-		.inquiryTail {
-			padding: 10px;
-		}
-	</style>
-
+	<!-- CSS -->
+    <link href="/resources/css/user/itemMenuView.css" rel="stylesheet">
 </head>
 
 <body>
+<form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
 	<div class="container-fluid">
     <!-- Navbar Start -->
     <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
@@ -153,7 +56,7 @@
 	        	<div class="col-8 pe-5">
 	        		<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
 						<ol class="breadcrumb">
-					    	<li class="breadcrumb-item"><a href="../../index.html">홈</a></li>
+					    	<li class="breadcrumb-item"><a href="#">홈</a></li>
 					    	<li class="breadcrumb-item"><a href="#">개발/디자인</a></li>
 					    	<li class="breadcrumb-item active" aria-current="page">웹</li>
 						</ol>
@@ -293,9 +196,9 @@
 	       						</tr>
 	       						<tr>
 	       							<td class="priceBtn"></td>
-	       							<td class="priceBtn"><button class="btn btn-primary" style="width: 180px;" onclick="location.href='itDesignPayment.html'">구매</button></td>
-	       							<td class="priceBtn"><button class="btn btn-primary" style="width: 180px;" onclick="location.href='itDesignPayment.html'">구매</button></td>
-	       							<td class="priceBtn"><button class="btn btn-primary" style="width: 180px;" onclick="location.href='itDesignPayment.html'">구매</button></td>
+	       							<td class="priceBtn"><button class="btn btn-primary" style="width: 180px;" type="button">구매</button></td>
+	       							<td class="priceBtn"><button class="btn btn-primary" style="width: 180px;" type="button">구매</button></td>
+	       							<td class="priceBtn"><button class="btn btn-primary" style="width: 180px;" type="button">구매</button></td>
 	       						</tr>
 	       						
 	       					</table>
@@ -537,7 +440,7 @@
 					     				</div>
 							     	</div>
 							     	<div>
-							     		<button class="btn btn-primary w-100" onclick="location.href='#'">구매하기</button>
+							     		<button class="btn btn-primary w-100" type="button">구매하기</button>
 							     	</div>
 							     </div>
 							     <div class="tab-pane fade ms-3 me-3" id="bestDetail">
@@ -613,7 +516,7 @@
 					     				</div>
 							     	</div>
 							     	<div>
-							     		<button class="btn btn-primary w-100" onclick="location.href='#'">구매하기</button>
+							     		<button class="btn btn-primary w-100" type="button">구매하기</button>
 							     	</div>
 							     </div>
 							     <div class="tab-pane fade ms-3 me-3" id="proDetail">
@@ -689,7 +592,7 @@
 					     				</div>
 							     	</div>
 							     	<div>
-							     		<button class="btn btn-primary w-100" type="button" onclick="location.href='#'">구매하기</button>
+							     		<button class="btn btn-primary w-100" type="button" type="button">구매하기</button>
 							     	</div>
 							     </div>
 							</div>
@@ -777,7 +680,7 @@
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
-
+</form>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -795,6 +698,44 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+    	var goUrlHome = "/member/memberHome";
+    	var goUrlMypage = "/member/memberViewC";
+    	var goUrlMemberMod = "/member/memberModFormC";
+    	var goUrlSaleManage = "/member/saleManage";
+    	var goUrlPurchaseHistory = "/member/purchaseHistory";
+    	var goUrlItemMenu = "/item/itemMenu";
+    	
+    	$("#btnHome").on("click", function(){
+	   		$(location).attr("href", goUrlHome);
+		});
+    	
+    	$("#btnMypage").on("click", function(){
+	   		$(location).attr("href", goUrlMypage);
+		});
+    	
+    	$("#btnMemberMod").on("click", function(){
+	   		$(location).attr("href", goUrlMemberMod);
+		});
+    	
+    	$("#btnSaleManage").on("click", function(){
+	   		$(location).attr("href", goUrlSaleManage);
+		});
+    	
+    	$("#btnPurchaseHistory").on("click", function(){
+	   		$(location).attr("href", goUrlPurchaseHistory);
+		});
+    	
+    	$("#btnItemMenu").on("click", function(){
+	   		$(location).attr("href", goUrlItemMenu);
+		});
+    	
+    	
+    </script>
 </body>
 
 </html>

@@ -61,23 +61,7 @@
 <body>
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-        <a href="../../index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <img src="/resources/images/logo.PNG" alt="" style="width: 60px; height: 60px;">
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto">
-                <a href="loginForm.html" class="nav-item nav-link">로그인</a>
-                <a href="memberRegFormC.html" class="nav-item nav-link">회원가입</a>
-            </div>
-            <div class="pe-3">
-            	<button class="btn btn-primary" type="button" href="memberRegFormB.html">만렙등록</button>
-            </div>
-        </div>
-    </nav>
+    <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
     <!-- Navbar End -->
 
     <!-- Contact Start -->

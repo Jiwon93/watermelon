@@ -165,7 +165,9 @@
 	<!-- Email 확인 -->
 	<select id="selectOneIdCheck" resultType="Integer">
 		SELECT COUNT(*)
-		FROM member WHERE 1=1 AND mmEmail = #{mmEmail}
+		FROM member 
+		WHERE 1=1 
+		AND mmEmail = #{mmEmail}
 	</select>
 	
 	<!-- 암호화 -->
@@ -194,8 +196,11 @@
 	
 	<!-- 비밀번호 확인 -->
 	<select id="selectOnePwCheck" resultType="Integer">
-		SELECT COUNT(*)
-		FROM member WHERE 1=1 AND mmPw = #{mmPw} AND mmSeq = #{mmSeq}
+		SELECT 
+			COUNT(*)
+		FROM member 
+		WHERE 1=1 
+			AND mmPw = #{mmPw} 
 	</select>
 	
 	<!-- 비밀번호 변경 -->

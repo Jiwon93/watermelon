@@ -97,14 +97,14 @@
 					<div class="pt-4">
 						<h4 class="" style="border-bottom: 2px solid #AB7442;">마이페이지</h4>
 						<ul class="mypageC">
-				            <li class="mypageList pt-3 pb-5"><a class="" href="purchaseHistory.html">구매 내역</a></li>
+				            <li class="mypageList pt-3 pb-5"><a class="" href="#">구매 내역</a></li>
 				            <li class="mypageList"><a class="" href="#">문의 내역</a></li>
 				            <li class="mypageList"><a class="" href="#">만렙 후기</a></li>
 				            <li class="mypageList"><a class="" href="#">만렙 캐시</a></li>
 				            <li class="mypageList"><a class="" href="#">쿠폰/이벤트</a></li>
-				            <li class="mypageList"><a class="" href="memberViewC.html">계정설정</a></li>
-				            <li class="mypageList"><a class="" href="pwChangeFormC.html">비밀번호 변경</a></li>
-				            <li class="mypageList"><a class="" href="memberDropFormC.html">계정 탈퇴</a></li>
+				            <li class="mypageList"><a class="" href="#">계정설정</a></li>
+				            <li class="mypageList"><a class="" type="button" id="btnPwChange">비밀번호 변경</a></li>
+				            <li class="mypageList"><a class="" href="#">계정 탈퇴</a></li>
 				        </ul>					
 					</div>
 	           </div>
@@ -330,6 +330,7 @@
 		var goUrlSaleManage = "/member/saleManage";
 		var goUrlPurchaseHistory = "/member/purchaseHistory";
 		var goUrlItemMenu = "/item/itemMenu";
+		var goUrlPwChange = "/member/pwChangeFormC"
 		
 		$("#btnHome").on("click", function(){
 	   		$(location).attr("href", goUrlHome);
@@ -353,6 +354,10 @@
 		
 		$("#btnItemMenu").on("click", function(){
 	   		$(location).attr("href", goUrlItemMenu);
+		});
+		
+		$("#btnPwChange").on("click", function(){
+	   		$(location).attr("href", goUrlPwChange);
 		});
     </script>
 </body>

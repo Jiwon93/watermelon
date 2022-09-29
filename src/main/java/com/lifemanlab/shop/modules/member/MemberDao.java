@@ -54,11 +54,17 @@ public class MemberDao {
 	
 	//비밀번호 확인
 	public int selectOnePwCheck(Member dto) {
-		return sqlSession.selectOne(namespace + ".selectOnePwCheck", dto);
+		int result = sqlSession.selectOne(namespace + ".selectOnePwCheck", dto);
+		System.out.println("dao.pwCheck: " + result);
+		return result;
 	}
 	
 	//비밀번호 변경
-	public int pwChange(Member dto) { return sqlSession.update(namespace + ".pwChange", dto); }
+	public int pwChange(Member dto) { 
+		int result = sqlSession.update(namespace + ".pwChange", dto);
+		System.out.println("dao.pwChange: " + result);
+		return result;  
+	}
 	
 	//암호화
 	public Member selectOneId(Member dto) {

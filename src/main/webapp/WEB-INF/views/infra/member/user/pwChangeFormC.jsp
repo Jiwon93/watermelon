@@ -77,9 +77,11 @@
 
 <body>
 <form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
+	<input type="hidden" name="mmSeq" value="<c:out value="${vo.mmSeq}"/>"/>    
     <!-- Navbar Start -->
     <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
     <!-- Navbar End -->
+    
     <!-- Contact Start -->
     <div class="container-fluid overflow-hidden" style="margin: 1rem 0;">
            <div class="row">
@@ -103,7 +105,7 @@
 				            <li class="mypageList"><a class="" href="#">만렙 캐시</a></li>
 				            <li class="mypageList"><a class="" href="#">쿠폰/이벤트</a></li>
 				            <li class="mypageList"><a class="" href="#">계정설정</a></li>
-				            <li class="mypageList"><a class="" href="#">비밀번호 변경</a></li>
+				            <li class="mypageList"><a class="" type="button" id="btnPwChange">비밀번호 변경</a></li>
 				            <li class="mypageList"><a class="" href="#">계정 탈퇴</a></li>
 				        </ul>					
 					</div>
@@ -119,14 +121,14 @@
 		                       	   <label class="form-label" for="mmModPwChk">현재 비밀번호</label>
 		                           <div class="input-group">
 		                           	   <input type="hidden" id="mmModPwChkAllowedNy" name="mmModPwChkAllowedNy" value="0">
-		                               <input type="password" class="form-control" id="mmModPwChk" placeholder="현재 비밀번호를 입력해 주세요.">
+		                               <input type="password" class="form-control" id="mmPw" placeholder="현재 비밀번호를 입력해 주세요.">
 		                               <div class="invalid-feedback" id="mmModPwChkFeedback"></div>
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
 		                       	   <label class="form-label" for="passwordReg">새로운 비밀번호</label>
 		                           <div class="input-group">
-		                               <input type="password" class="form-control" id="mmNewPw" name="mmPw" placeholder="새로운 비밀번호를 입력해 주세요.">
+		                               <input type="password" class="form-control" id="mmNewPw" name="mmPw" value="<c:out value="${dto.mmPw }"/>" placeholder="새로운 비밀번호를 입력해 주세요.">
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
@@ -137,7 +139,7 @@
 		                           </div>
 		                       </div>
 							   <div class="col-sm-12 text-center vertical-align-bottom">
-							   	   <button class="btn btn-primary w-25" type="button">변경완료</button>	
+							   	   <button class="btn btn-primary w-25" type="button" id="btnModPw">변경완료</button>	
 							   </div>
 		                   </div>
 	                   </div>
@@ -169,6 +171,12 @@
     <!-- Template Javascript -->
     <script src="/resources/template/woody/js/main.js"></script>
     
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+    <!-- myQuery -->
+    <script src="/resources/js/user/mod.js"></script>
+    
     <script type="text/javascript">
 	    var goUrlHome = "/member/memberHome";
 		var goUrlMypage = "/member/memberViewC";
@@ -176,6 +184,10 @@
 		var goUrlSaleManage = "/member/saleManage";
 		var goUrlPurchaseHistory = "/member/purchaseHistory";
 		var goUrlItemMenu = "/item/itemMenu";
+		var goUrlPwChange = "/member/pwChangeFormC";
+		var gorUrlModPw = "/member/pwChange";
+		
+		var form = $("form[name=form]");
 		
 		$("#btnHome").on("click", function(){
 	   		$(location).attr("href", goUrlHome);
@@ -199,6 +211,14 @@
 		
 		$("#btnItemMenu").on("click", function(){
 	   		$(location).attr("href", goUrlItemMenu);
+		});
+		
+		$("#btnModPw").on("click", function(){
+	   		form.attr("action", gorUrlModPw).submit();
+		}); 
+		
+		$("#btnPwChange").on("click", function(){
+	   		$(location).attr("href", goUrlPwChange);
 		});
     </script>
 </body>

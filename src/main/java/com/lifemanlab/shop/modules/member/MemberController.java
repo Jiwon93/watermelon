@@ -72,10 +72,6 @@ public class MemberController extends BaseController {
 	public String memberRegCInst(Member dto) throws Exception {
 		int result = service.memberRegC(dto);
 		System.out.println("controller.Reg: " + result);
-		System.out.println(dto.getMmAddress1());
-		System.out.println(dto.getMmAddress2());
-		System.out.println(dto.getMmZip());
-		System.out.println(dto.getMmEmail());
 		return "redirect:/member/loginForm";
 	}
 	
@@ -123,20 +119,21 @@ public class MemberController extends BaseController {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 		System.out.println("returnMap: " + returnMap);
 		int result = service.selectOnePwCheck(dto);
-		System.out.println("service.checkPw: " + result);
+		System.out.println("controller.checkPw: " + result);
 		
 		if (result > 0) {
-			returnMap.put("rt", "fail");
-		} else {
 			returnMap.put("rt", "success");
+		} else {
+			returnMap.put("rt", "fail");
 		}
 		return returnMap;
 	}
 	
 	//비밀번호 변경
 	@RequestMapping(value = "pwChange")
-	public String pwChange(Member dto) throws Exception {
-		service.pwChange(dto);
+	public String pwChange(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
+		int result = service.pwChange(dto);
+		System.out.println("controller.pwChange: " + result);
 		return "redirect:/member/pwChangeFormC";
 	}
 	
@@ -205,14 +202,14 @@ public class MemberController extends BaseController {
 		return "infra/member/user/memberViewC";
 	}
 	
-	@RequestMapping(value = "/pwChangFormB")
+	@RequestMapping(value = "/pwChangeFormB")
 	public String pwChangFormB() throws Exception {
-		return "infra/member/user/pwChangFormB";
+		return "infra/member/user/pwChangeFormB";
 	}
 	
-	@RequestMapping(value = "/pwChangFormC")
+	@RequestMapping(value = "/pwChangeFormC")
 	public String pwChangFormC() throws Exception {
-		return "infra/member/user/pwChangFormC";
+		return "infra/member/user/pwChangeFormC";
 	}
 	
 	@RequestMapping(value = "/saleReg")

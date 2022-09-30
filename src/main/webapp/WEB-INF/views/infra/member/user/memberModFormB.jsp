@@ -81,32 +81,11 @@
     <!-- Contact Start -->
     <div class="container-fluid overflow-hidden" style="margin: 1rem 0;">
            <div class="row">
-	           <div class="col-sm-3 p-lg-5">
-	           		<div class="text-center pb-4">
-						<img src="/resources/images/men.png" class="border border-3 rounded-circle" style="height: 40%; width: 40%;" alt="">
-					</div>
-					<div class="text-center pb-4">
-						<button class="btn btn-primary" style="height: 30px; width: 60px; font-size: small;">만렙</button>
-						<span class="px-3">jiwon123</span>
-					</div>
-					<div class="text-center pb-5">
-						<button class="btn btn-secondary" style="width: 200px;" onclick="location.href='memberViewC.html'">일반으로 전환</button>
-					</div>
-					<div class="pt-4">
-						<h4 class="" style="border-bottom: 2px solid #AB7442;">마이페이지</h4>
-						<ul class="mypageC">
-				            <li class="mypageList pt-3 pb-5"><a class="" href="saleManage.html">판매 관리</a></li>
-				            <li class="mypageList"><a class="" href="saleReg.html">판매 등록</a></li>
-				            <li class="mypageList"><a class="" href="#">수익 관리</a></li>
-				            <li class="mypageList"><a class="" href="#">광고 신청</a></li>
-				            <li class="mypageList"><a class="" href="#">나의 만렙 등급</a></li>
-				            <li class="mypageList"><a class="" href="#">문의 관리</a></li>
-				            <li class="mypageList"><a class="" href="memberViewB.html">계정 설정</a></li>
-				            <li class="mypageList"><a class="" href="pwChangeFormB.html">비밀번호 변경</a></li>
-				            <li class="mypageList"><a class="" href="memberDropFormB.html">계정 탈퇴</a></li>
-				        </ul>					
-					</div>  
-	           </div>
+           
+	           <!-- mypageList Start -->
+		       <%@include file="../../common/xdmin/includeV1/mypageList.jsp"%>
+		       <!-- mypageList End -->
+		       
 	           <div class="col-sm-9 p-2">
 	               <div class="p-lg-5">
 	                   <div class="">

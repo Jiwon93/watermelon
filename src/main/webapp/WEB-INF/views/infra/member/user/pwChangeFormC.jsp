@@ -105,13 +105,13 @@
 		                       <div class="col-8 offset-2">
 		                       	   <label class="form-label" for="passwordReg">새로운 비밀번호</label>
 		                           <div class="input-group">
-		                               <input type="password" class="form-control" id="mmNewPw" name="mmPw" value="<c:out value="${dto.mmPw }"/>" placeholder="새로운 비밀번호를 입력해 주세요.">
+		                               <input type="password" class="form-control" id="mmNewPw" name="mmPw" value="<c:out value="${dto.mmPw }"/>" placeholder="새로운 비밀번호를 입력해 주세요." readonly>
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
 		                       	   <label class="form-label" for="passwordReg">비밀번호 확인</label>
 		                           <div class="input-group">
-		                               <input type="password" class="form-control" id="mmNewPwChk" name="mmNewPwChk" placeholder="새로운 비밀번호를 한번 더 입력해 주세요.">
+		                               <input type="password" class="form-control" id="mmNewPwChk" name="mmNewPwChk" placeholder="새로운 비밀번호를 한번 더 입력해 주세요." readonly>
 		                          	   <div class="invalid-feedback" id="mmNewPwChkFeedback"></div>
 		                           </div>
 		                       </div>

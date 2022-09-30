@@ -20,7 +20,8 @@
 							document.getElementById("mmModPwChkFeedback").classList.remove('invalid-feedback');
 							document.getElementById("mmModPwChkFeedback").classList.add('valid-feedback');
 							document.getElementById("mmModPwChkFeedback").innerText = "일치합니다.";
-							
+							$('#mmNewPw').attr('readonly', false);
+							$('#mmNewPwChk').attr('readonly', false);
 							document.getElementById("mmModPwChkAllowedNy").value = 1;
 						} else {
 							document.getElementById("mmPw").classList.add('is-invalid');
@@ -29,7 +30,8 @@
 							document.getElementById("mmModPwChkFeedback").classList.remove('valid-feedback');
 							document.getElementById("mmModPwChkFeedback").classList.add('invalid-feedback');
 							document.getElementById("mmModPwChkFeedback").innerText = "잘못 입력하였습니다.";
-							
+							$('#mmNewPw').attr('readonly', true);
+							$('#mmNewPwChk').attr('readonly', true);
 							document.getElementById("mmModPwChkAllowedNy").value = 0;
 						}
 					}

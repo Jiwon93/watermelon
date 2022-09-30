@@ -197,9 +197,9 @@
 	       						</tr>
 	       						<tr>
 	       							<td class="priceBtn"></td>
-	       							<td class="priceBtn"><button class="btn btn-primary" style="width: 180px;" type="button">구매</button></td>
-	       							<td class="priceBtn"><button class="btn btn-primary" style="width: 180px;" type="button">구매</button></td>
-	       							<td class="priceBtn"><button class="btn btn-primary" style="width: 180px;" type="button">구매</button></td>
+	       							<td class="priceBtn"><button class="btn btn-primary" style="width: 180px;" type="button" id="btnPurchase1">구매</button></td>
+	       							<td class="priceBtn"><button class="btn btn-primary" style="width: 180px;" type="button" id="btnPurchase2">구매</button></td>
+	       							<td class="priceBtn"><button class="btn btn-primary" style="width: 180px;" type="button" id="btnPurchase3">구매</button></td>
 	       						</tr>
 	       						
 	       					</table>
@@ -441,7 +441,7 @@
 					     				</div>
 							     	</div>
 							     	<div>
-							     		<button class="btn btn-primary w-100" type="button">구매하기</button>
+							     		<button class="btn btn-primary w-100" type="button" id="btnPurchase4">구매하기</button>
 							     	</div>
 							     </div>
 							     <div class="tab-pane fade ms-3 me-3" id="bestDetail">
@@ -517,7 +517,7 @@
 					     				</div>
 							     	</div>
 							     	<div>
-							     		<button class="btn btn-primary w-100" type="button">구매하기</button>
+							     		<button class="btn btn-primary w-100" type="button" id="btnPurchase5">구매하기</button>
 							     	</div>
 							     </div>
 							     <div class="tab-pane fade ms-3 me-3" id="proDetail">
@@ -593,7 +593,7 @@
 					     				</div>
 							     	</div>
 							     	<div>
-							     		<button class="btn btn-primary w-100" type="button" type="button">구매하기</button>
+							     		<button class="btn btn-primary w-100" type="button" id="btnPurchase6">구매하기</button>
 							     	</div>
 							     </div>
 							</div>
@@ -703,38 +703,36 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
+    <!-- js -->
+    <script src="/resources/js/user/mypageBtn.js"></script>
+    
     <script type="text/javascript">
-    	var goUrlHome = "/member/memberHome";
-    	var goUrlMypage = "/member/memberViewC";
-    	var goUrlMemberMod = "/member/memberModFormC";
-    	var goUrlSaleManage = "/member/saleManage";
-    	var goUrlPurchaseHistory = "/member/purchaseHistory";
     	var goUrlItemMenu = "/item/itemMenu";
+    	var goUrlPurchase = "/item/itemPayment";
     	
-    	$("#btnHome").on("click", function(){
-	   		$(location).attr("href", goUrlHome);
+    	$("#btnPurchase1").on("click", function(){
+	   		$(location).attr("href", goUrlPurchase);
 		});
     	
-    	$("#btnMypage").on("click", function(){
-	   		$(location).attr("href", goUrlMypage);
+    	$("#btnPurchase2").on("click", function(){
+	   		$(location).attr("href", goUrlPurchase);
 		});
     	
-    	$("#btnMemberMod").on("click", function(){
-	   		$(location).attr("href", goUrlMemberMod);
+    	$("#btnPurchase3").on("click", function(){
+	   		$(location).attr("href", goUrlPurchase);
 		});
     	
-    	$("#btnSaleManage").on("click", function(){
-	   		$(location).attr("href", goUrlSaleManage);
+    	$("#btnPurchase4").on("click", function(){
+	   		$(location).attr("href", goUrlPurchase);
 		});
     	
-    	$("#btnPurchaseHistory").on("click", function(){
-	   		$(location).attr("href", goUrlPurchaseHistory);
+    	$("#btnPurchase5").on("click", function(){
+	   		$(location).attr("href", goUrlPurchase);
 		});
     	
-    	$("#btnItemMenu").on("click", function(){
-	   		$(location).attr("href", goUrlItemMenu);
+    	$("#btnPurchase6").on("click", function(){
+	   		$(location).attr("href", goUrlPurchase);
 		});
-    	
     	
     </script>
 </body>

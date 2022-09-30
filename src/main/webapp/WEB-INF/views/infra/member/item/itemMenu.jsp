@@ -442,30 +442,12 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
+    <!-- js -->
+    <script src="/resources/js/user/mypageBtn.js"></script>
+    
     <script type="text/javascript">
-    	
-    	
-    	var goUrlMemberMod = "/member/memberModFormC";
-    	var goUrlSaleManage = "/member/saleManage";
-    	var goUrlPurchaseHistory = "/member/purchaseHistory";
     	var goUrlItemMenu = "/item/itemMenu";
     	var goUrlItemMenuView = "/item/itemMenuView";
-    	
-    	
-    	
-    	
-    	
-    	$("#btnMemberMod").on("click", function(){
-	   		$(location).attr("href", goUrlMemberMod);
-		});
-    	
-    	$("#btnSaleManage").on("click", function(){
-	   		$(location).attr("href", goUrlSaleManage);
-		});
-    	
-    	$("#btnPurchaseHistory").on("click", function(){
-	   		$(location).attr("href", goUrlPurchaseHistory);
-		});
     	
     	$("#btnItemMenu").on("click", function(){
 	   		$(location).attr("href", goUrlItemMenu);
@@ -474,9 +456,6 @@
     	$("#btnMenu1").on("click", function(){
 	   		$(location).attr("href", goUrlItemMenuView);
 		});
-    	
-    	
-    	
     </script>
 </body>
 

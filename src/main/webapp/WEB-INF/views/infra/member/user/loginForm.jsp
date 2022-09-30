@@ -37,6 +37,11 @@
     <!-- Template Stylesheet -->
     <link href="/resources/template/woody/css/style.css" rel="stylesheet">
     
+    <link href="/resources/css/user/nav.css" rel="stylesheet">
+    
+    <!-- Fontawesome Stylesheet -->
+    <script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
+    
     <!-- kakao login -->
     <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.0/kakao.min.js" integrity="sha384-PFHeU/4gvSH8kpvhrigAPfZGBDPs372JceJq3jAXce11bVA6rMvGWzvP4fMQuBGL" crossorigin="anonymous"></script>
  	<script>Kakao.init('17e90af3c57fa367793d1f57799dd4c9');</script>
@@ -48,12 +53,6 @@
 			border-radius: 70%;
 			overflow: hidden;
 		}
-		
-		.btn {
-			border-radius: 5px;
-			height: 45px;
-		}
-		
 	</style>
 
 </head>

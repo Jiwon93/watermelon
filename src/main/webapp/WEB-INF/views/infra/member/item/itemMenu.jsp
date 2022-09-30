@@ -39,6 +39,7 @@
     
     <!-- CSS -->
     <link href="/resources/css/user/mainCss.css" rel="stylesheet">
+    <link href="/resources/css/user/nav.css" rel="stylesheet">
     
     <!-- Fontawesome Stylesheet -->
     <script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
@@ -70,11 +71,6 @@
 			font-size: 13px;
 			word-spacing: 20px;
 		}
-		
-		.btn {
-    		border-radius: 5px;
-    		height: 45px;
-    	}
     </style>
 </head>
 
@@ -205,7 +201,7 @@
 				<div class="row p-1 mt-5 mb-5">
 	           		<div class="col-3 service-item">
 	               		<div class="overflow-hidden">
-	               	    	<a href="itDesignMenuView.html"><img class="menuDD" src="/resources/images/main.jpg"></a>
+	               	    	<a id="btnMenu1" type="button"><img class="menuDD" src="/resources/images/main.jpg"></a>
 	           			</div>
 	           			<div class="pt-3">
 	           				<p class="mainName">케이홈페이지입니다</p>
@@ -447,20 +443,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
     <script type="text/javascript">
-    	var goUrlHome = "/member/memberHome";
-    	var goUrlMypage = "/member/memberViewC";
+    	
+    	
     	var goUrlMemberMod = "/member/memberModFormC";
     	var goUrlSaleManage = "/member/saleManage";
     	var goUrlPurchaseHistory = "/member/purchaseHistory";
     	var goUrlItemMenu = "/item/itemMenu";
+    	var goUrlItemMenuView = "/item/itemMenuView";
     	
-    	$("#btnHome").on("click", function(){
-	   		$(location).attr("href", goUrlHome);
-		});
     	
-    	$("#btnMypage").on("click", function(){
-	   		$(location).attr("href", goUrlMypage);
-		});
+    	
+    	
     	
     	$("#btnMemberMod").on("click", function(){
 	   		$(location).attr("href", goUrlMemberMod);
@@ -477,6 +470,11 @@
     	$("#btnItemMenu").on("click", function(){
 	   		$(location).attr("href", goUrlItemMenu);
 		});
+    	
+    	$("#btnMenu1").on("click", function(){
+	   		$(location).attr("href", goUrlItemMenuView);
+		});
+    	
     	
     	
     </script>

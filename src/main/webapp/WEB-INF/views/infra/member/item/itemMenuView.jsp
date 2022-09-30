@@ -42,6 +42,7 @@
 	
 	<!-- CSS -->
     <link href="/resources/css/user/itemMenuView.css" rel="stylesheet">
+    <link href="/resources/css/user/nav.css" rel="stylesheet">
 </head>
 
 <body>

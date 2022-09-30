@@ -37,6 +37,8 @@
     <!-- Template Stylesheet -->
     <link href="/resources/template/woody/css/style.css" rel="stylesheet">
     
+    <link href="/resources/css/user/nav.css" rel="stylesheet">
+    
     <!-- Fontawesome Stylesheet -->
     <script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
     <style type="text/css">
@@ -56,11 +58,6 @@
     		font-size: 0.7em;
     		text-align: center;
     		padding: 4px 3px 3px 3px;
-    	}
-    	
-    	.btn {
-    		border-radius: 5px;
-    		height: 45px;
     	}
     	
     	.mypageC {

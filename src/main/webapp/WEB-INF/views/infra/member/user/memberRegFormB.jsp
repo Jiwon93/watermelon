@@ -36,12 +36,8 @@
 
     <!-- Template Stylesheet -->
     <link href="/resources/template/woody/css/style.css" rel="stylesheet">
-    <style type="text/css">
-    	.btn {
-    		border-radius: 5px;
-    		height: 45px;
-    	}
-    </style>
+    
+    <link href="/resources/css/user/nav.css" rel="stylesheet">
 
 </head>
 

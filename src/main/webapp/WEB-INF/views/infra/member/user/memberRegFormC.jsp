@@ -41,6 +41,7 @@
     <!--  -->
     <link href="/resources/css/user/agree.css" rel="stylesheet">
     <link href="/resources/css/user/datePicker.css" rel="stylesheet">
+    <link href="/resources/css/user/nav.css" rel="stylesheet">
     
     <!-- datepicker -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">

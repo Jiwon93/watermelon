@@ -37,12 +37,17 @@
     <!-- Template Stylesheet -->
     <link href="/resources/template/woody/css/style.css" rel="stylesheet">
     
+    <link href="/resources/css/user/nav.css" rel="stylesheet">
+    
     <!-- Fontawesome Stylesheet -->
     <script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
     <style type="text/css">
-    	.btn {
-    		border-radius: 5px;
-    		height: 45px;
+    	.computer {
+    		color: #AB7442;
+    	}
+    	
+    	.computer:hover {
+    		color: #895D35;
     	}
     </style>
 </head>
@@ -73,7 +78,7 @@
 	<div class="container py-5">
 		<div class="row ms-5 me-5">
 			<div class="col overflow-hidden text-center">
-				<a id="btnItemMenu"><i class="fa-solid fa-computer fa-4x"></i></a>
+				<a class="computer" id="btnItemMenu" type="button"><i class="fa-solid fa-computer fa-4x"></i></a>
 				<br><label class="text-primary" for="btnItemMenu"><b>개발/디자인</b></label>
 			</div>
 			<div class="col text-center">

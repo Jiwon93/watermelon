@@ -18,8 +18,8 @@
             <c:choose>
             	<c:when test="${sessSeq eq null }">
             		<div class="navbar-nav ms-auto">
-		                <a href="/member/loginForm" class="nav-item nav-link">로그인</a>
-		                <a href="#" class="nav-item nav-link">회원가입</a>
+		                <a id="btnLoginGo" type="button" class="nav-item nav-link">로그인</a>
+		                <a id="btnMemberReg" type="button"class="nav-item nav-link">회원가입</a>
 		            </div>
 		            <div class="navbar-nav ms-auto pe-3 pt-3">
 		            	<button class="btn btn-primary" type="button">만렙등록</button>
@@ -63,7 +63,42 @@
     
     <script>
 	 // 로그아웃
+	 	var goUrlHome = "/member/memberHome";
+	 	var goUrlMypage = "/member/memberViewC";
 		var goUrlLogout = "/member/memberHome";
+		var goUrlLoginGo = "/member/loginForm";
+		var goUrlMemberReg = "/member/memberRegFormC";
+		var goUrlPurchaseHistory = "/member/purchaseHistory";
+		var goUrlMemberMod = "/member/memberModFormC";
+		var goUrlSaleManage = "/member/saleManage";
+		
+		$("#btnHome").on("click", function(){
+	   		$(location).attr("href", goUrlHome);
+		});
+		
+		$("#btnLoginGo").on("click", function(){
+	   		$(location).attr("href", goUrlLoginGo);
+		});
+		
+		$("#btnMypage").on("click", function(){
+	   		$(location).attr("href", goUrlMypage);
+		});
+		
+		$("#btnMemberReg").on("click", function(){
+	   		$(location).attr("href", goUrlMemberReg);
+		});
+		
+		$("#btnPurchaseHistory").on("click", function(){
+	   		$(location).attr("href", goUrlPurchaseHistory);
+		});
+		
+		$("#btnMemberMod").on("click", function(){
+	   		$(location).attr("href", goUrlMemberMod);
+		});
+		
+		$("#btnSaleManage").on("click", function(){
+	   		$(location).attr("href", goUrlSaleManage);
+		});
 		 
 		$("#btnLogout").on("click", function(){
 			$.ajax({

@@ -5,6 +5,7 @@ import com.lifemanlab.shop.common.base.BaseVo;
 public class MemberVo extends BaseVo {
 	
 	private String mmSeq;
+	private String sessSeq;
 ////////////////////////////////////////////////
 
 	public String getMmSeq() {
@@ -14,5 +15,14 @@ public class MemberVo extends BaseVo {
 	public void setMmSeq(String mmSeq) {
 		this.mmSeq = mmSeq;
 	}
+
+	public String getSessSeq() {
+		return sessSeq;
+	}
+
+	public void setSessSeq(String sessSeq) {
+		this.sessSeq = sessSeq;
+	}
+
 
 }

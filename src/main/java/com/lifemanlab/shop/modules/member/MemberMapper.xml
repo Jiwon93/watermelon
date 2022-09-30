@@ -229,7 +229,7 @@
 			FROM member a
 			JOIN member_phone b on a.mmSeq = b.member_mmSeq
 			WHERE 1=1
-				AND mmSeq = #{mmSeq}
+				AND mmSeq = #{sessSeq}
 				AND mmpDiv = 98
 	</select>
 	

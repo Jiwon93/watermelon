@@ -174,49 +174,17 @@
     <!-- myQuery -->
     <script src="/resources/js/user/mod.js"></script>
     
+    <!-- js -->
+    <script src="/resources/js/user/mypageBtn.js"></script>
+    
     <script type="text/javascript">
-	    var goUrlHome = "/member/memberHome";
-		var goUrlMypage = "/member/memberViewC";
-		var goUrlMemberMod = "/member/memberModFormC";
-		var goUrlSaleManage = "/member/saleManage";
-		var goUrlPurchaseHistory = "/member/purchaseHistory";
-		var goUrlItemMenu = "/item/itemMenu";
-		var goUrlPwChange = "/member/pwChangeFormC";
 		var gorUrlModPw = "/member/pwChange";
 		
 		var form = $("form[name=form]");
 		
-		$("#btnHome").on("click", function(){
-	   		$(location).attr("href", goUrlHome);
-		});
-		
-		$("#btnMypage").on("click", function(){
-	   		$(location).attr("href", goUrlMypage);
-		});
-		
-		$("#btnMemberMod").on("click", function(){
-	   		$(location).attr("href", goUrlMemberMod);
-		});
-		
-		$("#btnSaleManage").on("click", function(){
-	   		$(location).attr("href", goUrlSaleManage);
-		});
-		
-		$("#btnPurchaseHistory").on("click", function(){
-	   		$(location).attr("href", goUrlPurchaseHistory);
-		});
-		
-		$("#btnItemMenu").on("click", function(){
-	   		$(location).attr("href", goUrlItemMenu);
-		});
-		
 		$("#btnModPw").on("click", function(){
 	   		form.attr("action", gorUrlModPw).submit();
 		}); 
-		
-		$("#btnPwChange").on("click", function(){
-	   		$(location).attr("href", goUrlPwChange);
-		});
     </script>
 </body>
 

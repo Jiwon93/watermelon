@@ -100,22 +100,24 @@
 </head>
 
 <body>
+<form>
     <!-- Navbar Start -->
     <nav class="container sticky-top p-0">
     	<div class="row">
 	    	<div class="col-6 p-4">
-		        <a href="../../index.html">
+		        <a type="button" id="btnHome">
 		            <img src="/resources/images/logo.PNG" alt="" style="width: 60px; height: 60px;">
 		        </a>
 	        </div>
 	        <div class="col-6 text-end p-4">
 	            <div>
-	            	<button class="btn btn-primary" type="button" onclick="location.href='./user/member/memberRegFormB.html'">만렙등록</button>
+	            	<button class="btn btn-primary" type="button">만렙등록</button>
 	            </div>
 	        </div>
         </div>
     </nav>
     <!-- Navbar End -->
+    
     <!-- Contact Start -->
     
 	<div class="container">
@@ -579,7 +581,7 @@
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
-
+</form>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -600,37 +602,10 @@
     
     <script type="text/javascript">
     	var goUrlHome = "/member/memberHome";
-    	var goUrlMypage = "/member/memberViewC";
-    	var goUrlMemberMod = "/member/memberModFormC";
-    	var goUrlSaleManage = "/member/saleManage";
-    	var goUrlPurchaseHistory = "/member/purchaseHistory";
-    	var goUrlItemMenu = "/item/itemMenu";
     	
     	$("#btnHome").on("click", function(){
 	   		$(location).attr("href", goUrlHome);
 		});
-    	
-    	$("#btnMypage").on("click", function(){
-	   		$(location).attr("href", goUrlMypage);
-		});
-    	
-    	$("#btnMemberMod").on("click", function(){
-	   		$(location).attr("href", goUrlMemberMod);
-		});
-    	
-    	$("#btnSaleManage").on("click", function(){
-	   		$(location).attr("href", goUrlSaleManage);
-		});
-    	
-    	$("#btnPurchaseHistory").on("click", function(){
-	   		$(location).attr("href", goUrlPurchaseHistory);
-		});
-    	
-    	$("#btnItemMenu").on("click", function(){
-	   		$(location).attr("href", goUrlItemMenu);
-		});
-    	
-    	
     </script>
 </body>
 

@@ -95,45 +95,48 @@
                        </div>
                        <div class="col">
                            <div class="form-floating">
-                           	   <a class="" href="idPwFindForm.html">아이디/비밀번호 찾기</a>
+                           	   <a class="" type="button" id="btnIdPwFind">아이디/비밀번호 찾기</a>
                            </div>
                        </div>
                    </div>
                    <br>
                    <div class="row g-3">
-                    <div class="col-8 offset-2 text-center">
-                     <h4 class="mb-4">간편 로그인</h4>
-                 </div>
-                </div>
-                <div class="row g-3 justify-content-center">
-                 <div class="easyLoginBox col-2">
-                 	   <a href="#"><img src="/resources/images/naver.png" alt="" class="easyLogin"></a>			
-                 </div>
-                 <div class="easyLoginBox col-2">
-               	    <a id="kakao-login-btn" href="https://kauth.kakao.com/oauth/authorize?client_id=17e90af3c57fa367793d1f57799dd4c9&redirect_uri=http://localhost:8080/member/kakaoLogin&response_type=code">
-						<img src="/resources/images/kakao.png" alt="" class="easyLogin">
-					</a>
-					
-							
-                 </div>
-                 <p id="token-result" style="display: none;"></p>
-                 <div class="easyLoginBox col-2">
-                 	   <a href="#"><img src="/resources/images/facebook.png" alt="" class="easyLogin"></a>			
-                 </div>
-                 <div class="easyLoginBox col-2">
-                 	   <a href="#"><img src="/resources/images/google.png" alt="" class="easyLogin"></a>			
-                 </div>
+                   	   <div class="col-8 offset-2 text-center">
+                     	  <h4 class="mb-4">간편 로그인</h4>
+                 	   </div>
+                   </div>
+                   <div class="row g-3 justify-content-center">
+                 	   <div class="easyLoginBox col-2">
+                 	   	   <a href="#">
+                 	   	   	   <img src="/resources/images/naver.png" alt="" class="easyLogin">
+                 	   	   </a>			
+                 	   </div>
+                 	   <div class="easyLoginBox col-2">
+	               	       <a id="kakao-login-btn" href="https://kauth.kakao.com/oauth/authorize?client_id=17e90af3c57fa367793d1f57799dd4c9&redirect_uri=http://localhost:8080/member/kakaoLogin&response_type=code">
+							   <img src="/resources/images/kakao.png" alt="" class="easyLogin">
+						   </a>
+                 	   </div>
+                 	   <p id="token-result" style="display: none;"></p>
+	                   <div class="easyLoginBox col-2">
+	                 	   <a href="#">
+	                 	   	   <img src="/resources/images/facebook.png" alt="" class="easyLogin">
+	                 	   </a>			
+	                   </div>
+	                   <div class="easyLoginBox col-2">
+	                 	   <a href="#">
+	                 	   	   <img src="/resources/images/google.png" alt="" class="easyLogin">
+	                 	   </a>			
+	                   </div>
                    </div>
                    <br><br>
                    <div class="row g-3">
-                    <div class="text-center">
-                     <span class="mb-4">아직 회원이 아니시라면?</span>
-                 </div>
-                 <div class="col-8 offset-2">
+                   	   <div class="text-center">
+                   		   <span class="mb-4">아직 회원이 아니시라면?</span>
+                	   </div>
+                 	   <div class="col-8 offset-2">
                            <button class="btn btn-secondary w-100 py-2" type="button" id="btnReg">회원가입</button>
                        </div>
                    </div>
-                   
                </div>
            </div>
         </div>
@@ -176,6 +179,19 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
     <script type="text/javascript">
+    
+    	var goUrlIdPwFind = "/member/idPwFindForm";
+    	var goUrlReg = "/member/memberRegFormC";
+    	
+    	$("#btnIdPwFind").on("click", function(){
+    		$(location).attr("href", goUrlIdPwFind);
+    	});
+    	
+    	$("#btnReg").on("click", function(){
+    		$(location).attr("href", goUrlReg);
+    	});
+    	
+    	
 	    function loginWithKakao() {
 	    /* 	
 	      Kakao.Auth.authorize({

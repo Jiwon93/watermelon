@@ -74,7 +74,6 @@
 
 <body>
 <form form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
-	<input type="hidden" name="mmSeq" value="<c:out value="${vo.mmSeq}"/>"/>   
     <!-- Navbar Start -->
     <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
     <!-- Navbar End -->
@@ -82,31 +81,11 @@
     <!-- Contact Start -->
     <div class="container-fluid overflow-hidden" style="margin: 1rem 0;">
            <div class="row">
-	           <div class="col-sm-3 p-lg-5">
-	           		<div class="text-center pb-4">
-						<img src="/resources/images/men.png" class="border border-3 rounded-circle" style="height: 40%; width: 40%;" alt="">
-					</div>
-					<div class="text-center pb-4">
-						<button class="btn btn-secondary" style="height: 30px; width: 60px; font-size: small;">일반</button>
-						<span class="px-3"><c:out value="${item.mmName }"/></span>
-					</div>
-					<div class="text-center pb-5">
-						<button class="btn btn-primary" style="width: 200px;">만렙으로 전환</button>
-					</div>
-					<div class="pt-4">
-						<h4 class="" style="border-bottom: 2px solid #AB7442;">마이페이지</h4>
-						<ul class="mypageC">
-				            <li class="mypageList pt-3 pb-5"><a class="" href="#">구매 내역</a></li>
-				            <li class="mypageList"><a class="" href="#">문의 내역</a></li>
-				            <li class="mypageList"><a class="" href="#">만렙 후기</a></li>
-				            <li class="mypageList"><a class="" href="#">만렙 캐시</a></li>
-				            <li class="mypageList"><a class="" href="#">쿠폰/이벤트</a></li>
-				            <li class="mypageList"><a class="" href="#">계정설정</a></li>
-				            <li class="mypageList"><a class="" type="button" id="btnPwChange">비밀번호 변경</a></li>
-				            <li class="mypageList"><a class="" href="#">계정 탈퇴</a></li>
-				        </ul>					
-					</div>
-	           </div>
+           
+	           <!-- mypageList Start -->
+		       <%@include file="../../common/xdmin/includeV1/mypageList.jsp"%>
+		       <!-- mypageList End -->
+		       
 	           <div class="col-sm-9 p-2">
 	               <div class="p-lg-5">
 	                   <div class="">
@@ -117,25 +96,25 @@
 		                   	   <div class="col-8 offset-2">
 		                       	   <label class="form-label" for="mmNickname">닉네임</label>	
 		                           <div class="input-group">
-		                               <input type="text" class="form-control" id="mmNickname" value="<c:out value="${item.mmNickname }"/>" readonly>
+		                               <input type="text" class="form-control" id="mmNickname" name="mmNickname" value="<c:out value="${item.mmNickname }"/>" readonly>
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
 		                       	   <label class="form-label" for="mmEmail">이메일</label>
 		                           <div class="input-group">
-		                               <input type="email" class="form-control" id="mmEmail" value="<c:out value="${item.mmEmail }"/>" readonly>
+		                               <input type="email" class="form-control" id="mmEmail" name="mmEmail" value="<c:out value="${item.mmEmail }"/>" readonly>
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
 		                       	   <label class="form-label" for="mmBod">생년월일</label>	
 		                           <div class="input-group">
-		                               <input type="text" class="form-control" id="mmBod" value="<c:out value="${item.mmBod }"/>" readonly>
+		                               <input type="text" class="form-control" id="mmBod" name="mmBod" value="<c:out value="${item.mmBod }"/>" readonly>
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
 		                       	   <label class="form-label" for="mmpPhoneNumber">핸드폰</label>	
 		                           <div class="input-group">
-		                               <input type="text" class="form-control" id="mmpPhoneNumber" value="<c:out value="${item.mmpPhoneNumber }"/>" readonly>
+		                               <input type="text" class="form-control" id="mmpPhoneNumber" name="mmpPhoneNumber" value="<c:out value="${item.mmpPhoneNumber }"/>" readonly>
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
@@ -161,22 +140,22 @@
 		                       <div class="col-3 offset-2">
 		                       	   <label class="form-label" for="mmZip">주소</label>
 		                       	   <div class="input-group">
-		                               <input type="text" class="form-control w-25" id="mmZip" value="<c:out value="${item.mmZip }"/>" readonly>
+		                               <input type="text" class="form-control w-25" id="mmZip" name="mmZip" value="<c:out value="${item.mmZip }"/>" readonly>
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2 mt-2">
 		                           <div class="input-group mb-2">
-		                               <input type="text" class="form-control" id="mmAddress1" value="<c:out value="${item.mmAddress1 }"/>" readonly>
+		                               <input type="text" class="form-control" id="mmAddress1" name="mmAddress1" value="<c:out value="${item.mmAddress1 }"/>" readonly>
 		                           </div>
 		                           <div class="input-group">
-		                               <input type="text" class="form-control" id="mmAddress2" value="<c:out value="${item.mmAddress2 }"/>" readonly>
+		                               <input type="text" class="form-control" id="mmAddress2" name="mmAddress2" value="<c:out value="${item.mmAddress2 }"/>" readonly>
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
 		                       	   <label class="form-label" for="mmJob">직업</label>
 		                       	   <div class="input-group">
 				                       <div class="input-group">
-										   <input type="text" class="form-control"  id="mmJob" value="<c:out value="${item.mmJob }"/>" readonly>
+										   <input type="text" class="form-control"  id="mmJob" name="mmJob" value="<c:out value="${item.mmJob }"/>" readonly>
 								   	   </div>
 					   		   	   </div>
 				  			   </div>
@@ -184,7 +163,7 @@
 		                       	   <label class="form-label" for="mmInterest">관심분야</label>
 		                       	   <div class="input-group">
 			                           <div class="input-group">
-										   <input type="text" class="form-control" id="mmInterest" value="<c:out value="${item.mmInterest }"/>" readonly>
+										   <input type="text" class="form-control" id="mmInterest" name="mmInterest" value="<c:out value="${item.mmInterest }"/>" readonly>
 									   </div>
 								   </div>
 							   </div>
@@ -205,11 +184,6 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 </form>
-<form name="formVo" id="formVo" method="post">
-<!-- *Vo.jsp s -->
-<input type="hidden" name="mmSeq" value="<c:out value="${vo.mmSeq}"/>"/> 
-<!-- *Vo.jsp e -->
-</form>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -228,47 +202,14 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
+    <!-- js -->
+    <script src="/resources/js/user/mypageBtn.js"></script>
+    
     <script type="text/javascript">
-	    var goUrlHome = "/member/memberHome";
-		var goUrlMypage = "/member/memberViewC";
-		var goUrlMemberMod = "/member/memberModFormC";
-		var goUrlSaleManage = "/member/saleManage";
-		var goUrlPurchaseHistory = "/member/purchaseHistory";
-		var goUrlItemMenu = "/item/itemMenu";
-		var goUrlPwChange = "/member/pwChangeFormC"
-		
-		var seq = $("input:hidden[name=mmSeq]");
+		var seq = $("input:hidden[name=sessSeq]");
 		
 		var form = $("form[name=form]");
 		var formVo = $("form[name=formVo]");
-		
-		$("#btnHome").on("click", function(){
-	   		$(location).attr("href", goUrlHome);
-		});
-		
-		$("#btnMypage").on("click", function(){
-	   		$(location).attr("href", goUrlMypage);
-		});
-		
-		$("#btnMemberMod").on("click", function(){
-	   		$(location).attr("href", goUrlMemberMod);
-		});
-		
-		$("#btnSaleManage").on("click", function(){
-	   		$(location).attr("href", goUrlSaleManage);
-		});
-		
-		$("#btnPurchaseHistory").on("click", function(){
-	   		$(location).attr("href", goUrlPurchaseHistory);
-		});
-		
-		$("#btnItemMenu").on("click", function(){
-	   		$(location).attr("href", goUrlItemMenu);
-		});
-		
-		$("#btnPwChange").on("click", function(){
-	   		$(location).attr("href", goUrlPwChange);
-		});
     </script>
 </body>
 

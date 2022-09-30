@@ -48,7 +48,7 @@
         <div class="row" id="">
 	        <div class="col" style="text-align: center; margin: 4rem 0;">
 	            <div class="navbar-nav ms-auto">
-	                <a href="#" class=""><img alt="" src="/resources/images/logo.PNG" width="50px;" height="50px;"></a>
+	                <a class="" type="button" id="btnHome"><img alt="" src="/resources/images/logo.PNG" width="50px;" height="50px;"></a>
 	            </div>
             </div>
         </div>
@@ -230,37 +230,10 @@
     
     <script type="text/javascript">
     	var goUrlHome = "/member/memberHome";
-    	var goUrlMypage = "/member/memberViewC";
-    	var goUrlMemberMod = "/member/memberModFormC";
-    	var goUrlSaleManage = "/member/saleManage";
-    	var goUrlPurchaseHistory = "/member/purchaseHistory";
-    	var goUrlItemMenu = "/item/itemMenu";
     	
     	$("#btnHome").on("click", function(){
 	   		$(location).attr("href", goUrlHome);
 		});
-    	
-    	$("#btnMypage").on("click", function(){
-	   		$(location).attr("href", goUrlMypage);
-		});
-    	
-    	$("#btnMemberMod").on("click", function(){
-	   		$(location).attr("href", goUrlMemberMod);
-		});
-    	
-    	$("#btnSaleManage").on("click", function(){
-	   		$(location).attr("href", goUrlSaleManage);
-		});
-    	
-    	$("#btnPurchaseHistory").on("click", function(){
-	   		$(location).attr("href", goUrlPurchaseHistory);
-		});
-    	
-    	$("#btnItemMenu").on("click", function(){
-	   		$(location).attr("href", goUrlItemMenu);
-		});
-    	
-    	
     </script>
 </body>
 

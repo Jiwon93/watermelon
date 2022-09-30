@@ -94,13 +94,13 @@
 					<div class="pt-4">
 						<h4 class="" style="border-bottom: 2px solid #AB7442;">마이페이지</h4>
 						<ul class="mypageC">
-				            <li class="mypageList pt-3 pb-5"><a class="" href="saleManage.html">판매 관리</a></li>
-				            <li class="mypageList"><a class="" href="saleReg.html">판매 등록</a></li>
-				            <li class="mypageList"><a class="" href="#">수익 관리</a></li>
-				            <li class="mypageList"><a class="" href="#">광고 신청</a></li>
-				            <li class="mypageList"><a class="" href="#">나의 만렙 등급</a></li>
-				            <li class="mypageList"><a class="" href="#">문의 관리</a></li>
-				            <li class="mypageList"><a class="" href="memberViewB.html">계정 설정</a></li>
+				            <li class="mypageList pt-3 pb-5"><a class="" type="button" id="">판매 관리</a></li>
+				            <li class="mypageList"><a class="" type="button" id="">판매 등록</a></li>
+				            <li class="mypageList"><a class="" type="button" id="">수익 관리</a></li>
+				            <li class="mypageList"><a class="" type="button" id="">광고 신청</a></li>
+				            <li class="mypageList"><a class="" type="button" id="">나의 만렙 등급</a></li>
+				            <li class="mypageList"><a class="" type="button" id="">문의 관리</a></li>
+				            <li class="mypageList"><a class="" type="button" id="">계정 설정</a></li>
 				            <li class="mypageList"><a class="" href="pwChangeFormB.html">비밀번호 변경</a></li>
 				            <li class="mypageList"><a class="" href="memberDropFormB.html">계정 탈퇴</a></li>
 				        </ul>					
@@ -183,7 +183,7 @@
 										           	   <button class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">취소</button>
 										           </div>
 										           <div class="col-6 text-center">
-										           	   <button class="btn btn-danger" onclick="location.href='../../index.html'">확인</button>
+										           	   <button class="btn btn-danger" type="button" id="btnDrop">확인</button>
 										           </div>
 									           </div>
 									       </div>
@@ -222,40 +222,9 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
-    <script type="text/javascript">
-    	var goUrlHome = "/member/memberHome";
-    	var goUrlMypage = "/member/memberViewC";
-    	var goUrlMemberMod = "/member/memberModFormC";
-    	var goUrlSaleManage = "/member/saleManage";
-    	var goUrlPurchaseHistory = "/member/purchaseHistory";
-    	var goUrlItemMenu = "/item/itemMenu";
-    	
-    	$("#btnHome").on("click", function(){
-	   		$(location).attr("href", goUrlHome);
-		});
-    	
-    	$("#btnMypage").on("click", function(){
-	   		$(location).attr("href", goUrlMypage);
-		});
-    	
-    	$("#btnMemberMod").on("click", function(){
-	   		$(location).attr("href", goUrlMemberMod);
-		});
-    	
-    	$("#btnSaleManage").on("click", function(){
-	   		$(location).attr("href", goUrlSaleManage);
-		});
-    	
-    	$("#btnPurchaseHistory").on("click", function(){
-	   		$(location).attr("href", goUrlPurchaseHistory);
-		});
-    	
-    	$("#btnItemMenu").on("click", function(){
-	   		$(location).attr("href", goUrlItemMenu);
-		});
-    	
-    	
-    </script>
+    <!-- js -->
+    <script src="/resources/js/user/mypageBtn.js"></script>
+    
 </body>
 
 </html>

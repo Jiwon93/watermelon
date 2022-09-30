@@ -1,0 +1,97 @@
+.priceInfo {
+			border-top: 1px solid black;
+			border-bottom: 1px solid black;
+			border-collapse: collapse;
+		}
+		
+		.priceHead {
+			background-color: #FAFAFC;
+			text-align: center;
+			border-bottom: 1px solid #F1F1F5;
+			padding: 10px;
+		}
+		
+		.priceBody {
+			text-align: center;
+			height: 80px;
+			border-bottom: 1px solid #F1F1F5;
+			padding: 10px;
+		}
+		
+		.priceBtn {
+			text-align: center;
+			height: 80px;
+			border-bottom: 1px solid white;
+		}
+		
+		.btn{
+			border-radius: 5px;
+			height: 45px;
+		}
+		
+		.listCheck {
+			text-align: right;
+		}
+		
+		.payView {
+			font-size: x-large;
+			font-weight: bolder;
+		}
+		
+		.vatView {
+			color: gray;
+		}
+		
+		.titleView {
+			font-weight: bold;
+		}
+		
+		.inquiryTable {
+			border: 1px solid #E4E5ED;
+		}
+		
+		.inquiryHead {
+			height: 50px;
+			vertical-align: middle;
+			text-indent: 10px;
+			font-size: 18px;
+			background-color: #F2F3F7;
+			border-bottom: 1px solid #F1F1F5;
+			padding: 10px;
+		}
+		
+		.inquiryBody1 {
+			text-align: left;
+			text-indent: 5px;
+			padding: 10px;
+		}
+		
+		.inquiryBodyTable {
+			background-color: #FAFAFC;
+			border-radius: 5px;
+			margin-left:auto; 
+   	 		margin-right:auto;
+   	 		width: 400px;
+		}
+		
+		.inquiryBodyTableHead {
+			text-align: center;
+		}
+		
+		.inquiryBodyTableBody {
+			text-align: center;
+			font-size: 11px;
+			color: darkgray;
+		}
+		
+		.inquiryBody2 {
+			padding: 10px;
+		}
+		
+		.inquiryBody3 {
+			padding: 10px;
+		}
+		
+		.inquiryTail {
+			padding: 10px;
+		}

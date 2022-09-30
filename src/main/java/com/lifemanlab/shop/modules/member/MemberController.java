@@ -67,15 +67,6 @@ public class MemberController extends BaseController {
 		return "redirect:/member/memberView";
 	}
 	
-	//회원가입
-	@RequestMapping(value = "memberRegCInst")
-	public String memberRegCInst(Member dto) throws Exception {
-		int result = service.memberRegC(dto);
-		System.out.println("controller.Reg: " + result);
-		return "redirect:/member/loginForm";
-	}
-	
-	
 	@RequestMapping(value = "memberUpdt")
 	public String memberUpdt(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
 		service.update(dto);
@@ -129,19 +120,9 @@ public class MemberController extends BaseController {
 		return "infra/member/user/idPwFindForm";
 	}
 	
-	@RequestMapping(value = "/memberDropFormB")
-	public String memberDropFormB() throws Exception {
-		return "infra/member/user/memberDropFormB";
-	}
-	
 	@RequestMapping(value = "/memberDropFormC")
 	public String memberDropFormC() throws Exception {
 		return "infra/member/user/memberDropFormC";
-	}
-	
-	@RequestMapping(value = "/memberModFormB")
-	public String memberModFormB() throws Exception {
-		return "infra/member/user/memberModFormB";
 	}
 	
 	@RequestMapping(value = "/memberModFormC")
@@ -149,24 +130,9 @@ public class MemberController extends BaseController {
 		return "infra/member/user/memberModFormC";
 	}
 	
-	@RequestMapping(value = "memberRegFormB")
-	public String memberRegFormB() throws Exception {
-		return "infra/member/user/memberRegFormB";
-	}
-	
 	@RequestMapping(value = "memberRegFormC")
 	public String memberRegFormC() throws Exception {
 		return "infra/member/user/memberRegFormC";
-	}
-	
-	@RequestMapping(value = "memberViewB")
-	public String memberRegViewB() throws Exception {
-		return "infra/member/user/memberViewB";
-	}
-	
-	@RequestMapping(value = "/pwChangeFormB")
-	public String pwChangFormB() throws Exception {
-		return "infra/member/user/pwChangeFormB";
 	}
 	
 	@RequestMapping(value = "/pwChangeFormC")
@@ -297,5 +263,13 @@ public class MemberController extends BaseController {
 			int result = service.pwChange(dto);
 			System.out.println("controller.pwChange: " + result);
 			return "redirect:/member/pwChangeFormC";
+		}
+		
+		//회원가입
+		@RequestMapping(value = "memberRegCInst")
+		public String memberRegCInst(Member dto) throws Exception {
+			int result = service.memberRegC(dto);
+			System.out.println("controller.Reg: " + result);
+			return "redirect:/member/loginForm";
 		}
 }

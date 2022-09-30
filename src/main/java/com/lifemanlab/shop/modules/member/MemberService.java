@@ -10,10 +10,12 @@ public interface MemberService {
 	public Member selectOne(MemberVo vo) throws Exception;
  	
 	public int insert(Member dto) throws Exception;
-	public int selectOneIdCheck(Member dto) throws Exception;
 	public int update(Member dto) throws Exception;
 	public int uelete(Member dto) throws Exception;
 	public int delete(MemberVo vo) throws Exception;
+	
+	//Email 확인
+	public int selectOneIdCheck(Member dto) throws Exception;
 	
 	//회원가입
 	public int memberRegC(Member dto) throws Exception;

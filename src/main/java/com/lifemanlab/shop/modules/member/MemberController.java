@@ -94,49 +94,6 @@ public class MemberController extends BaseController {
 		return "redirect:/member/memberList";
 	}
 	
-	//아이디 확인
-	@ResponseBody
-	@RequestMapping(value = "checkId")
-	public Map<String, Object> checkId(Member dto) throws Exception {
-		
-		Map<String, Object> returnMap = new HashMap<String, Object>();
-		System.out.println("returnMap: " + returnMap);
-		int result = service.selectOneIdCheck(dto);
-		System.out.println("service.checkId: " + result);
-		
-		if (result > 0) {
-			returnMap.put("rt", "fail");
-		} else {
-			returnMap.put("rt", "success");
-		}
-		return returnMap;
-	}
-	
-	//비밀번호 확인
-	@ResponseBody
-	@RequestMapping(value = "checkPw")
-	public Map<String, Object> checkPw(Member dto) throws Exception {
-		Map<String, Object> returnMap = new HashMap<String, Object>();
-		System.out.println("returnMap: " + returnMap);
-		int result = service.selectOnePwCheck(dto);
-		System.out.println("controller.checkPw: " + result);
-		
-		if (result > 0) {
-			returnMap.put("rt", "success");
-		} else {
-			returnMap.put("rt", "fail");
-		}
-		return returnMap;
-	}
-	
-	//비밀번호 변경
-	@RequestMapping(value = "pwChange")
-	public String pwChange(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
-		int result = service.pwChange(dto);
-		System.out.println("controller.pwChange: " + result);
-		return "redirect:/member/pwChangeFormC";
-	}
-	
 	//마이페이지View
 	@RequestMapping(value = "memberViewC")
 	public String memberViewC(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
@@ -303,4 +260,42 @@ public class MemberController extends BaseController {
 		return returnMap;
 	}
 	
+	//아이디 확인
+		@ResponseBody
+		@RequestMapping(value = "checkId")
+		public Map<String, Object> checkId(Member dto) throws Exception {
+			Map<String, Object> returnMap = new HashMap<String, Object>();
+			int result = service.selectOneIdCheck(dto);
+			
+			if (result > 0) {
+				returnMap.put("rt", "fail");
+			} else {
+				returnMap.put("rt", "success");
+			}
+			return returnMap;
+		}
+
+		
+	  //비밀번호 확인
+	  @ResponseBody
+	  @RequestMapping(value = "checkPw") 
+	  public Map<String, Object> checkPw(Member dto) throws Exception { 
+		  Map<String, Object> returnMap = new HashMap<String, Object>(); 
+		  int result = service.selectOnePwCheck(dto); 
+		  
+		  if (result > 0) { 
+			  returnMap.put("rt", "success"); 
+		  } else {
+			  returnMap.put("rt", "fail"); 
+		  } 
+		  return returnMap; 
+	  }
+		 
+		//비밀번호 변경
+		@RequestMapping(value = "pwChange")
+		public String pwChange(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
+			int result = service.pwChange(dto);
+			System.out.println("controller.pwChange: " + result);
+			return "redirect:/member/pwChangeFormC";
+		}
 }

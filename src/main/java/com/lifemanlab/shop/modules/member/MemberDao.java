@@ -54,9 +54,7 @@ public class MemberDao {
 	
 	//비밀번호 확인
 	public int selectOnePwCheck(Member dto) {
-		int result = sqlSession.selectOne(namespace + ".selectOnePwCheck", dto);
-		System.out.println("dao.pwCheck: " + result);
-		return result;
+		return sqlSession.selectOne(namespace + ".selectOnePwCheck", dto);
 	}
 	
 	//비밀번호 변경

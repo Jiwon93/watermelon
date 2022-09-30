@@ -54,7 +54,8 @@ public class MemberServiceImpl implements MemberService {
 	public int delete(MemberVo vo) throws Exception {
 		return dao.delete(vo);
 	}
-
+	
+	//Email 확인
 	@Override
 	public int selectOneIdCheck(Member dto) throws Exception {
 		return dao.selectOneIdCheck(dto);
@@ -85,9 +86,7 @@ public class MemberServiceImpl implements MemberService {
 	//비밀번호 확인
 	@Override
 	public int selectOnePwCheck(Member dto) throws Exception {
-		int result = dao.selectOnePwCheck(dto);
-		System.out.println("service.pwCheck: " + result);
-		return result;
+		return dao.selectOnePwCheck(dto);
 	}
 
 	//비밀번호 변경

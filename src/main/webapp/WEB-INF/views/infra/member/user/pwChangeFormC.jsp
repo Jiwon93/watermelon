@@ -104,7 +104,7 @@
 		                       <div class="col-8 offset-2">
 		                       	   <label class="form-label" for="passwordReg">새로운 비밀번호</label>
 		                           <div class="input-group">
-		                               <input type="password" class="form-control" id="mmNewPw" name="mmPw" value="<c:out value="${dto.mmPw }"/>" placeholder="새로운 비밀번호를 입력해 주세요.">
+		                               <input type="password" class="form-control" id="mmNewPw" name="mmPw" value="<c:out value="${dto.mmPw }"/>" placeholder="새로운 비밀번호를 입력해 주세요." readonly>
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
@@ -147,11 +147,13 @@
     <!-- Template Javascript -->
     <script src="/resources/template/woody/js/main.js"></script>
     
+    <!-- myQuery -->
+    <script src="/resources/js/user/mod.js"></script>
+    
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
-    <!-- myQuery -->
-    <script src="/resources/js/user/mod.js"></script>
+    
     
     <script type="text/javascript">
 		var gorUrlModPw = "/member/pwChange";

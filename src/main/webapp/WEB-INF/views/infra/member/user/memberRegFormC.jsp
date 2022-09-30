@@ -40,20 +40,22 @@
     
     <!--  -->
     <link href="/resources/css/user/agree.css" rel="stylesheet">
-    <link href="/resources/css/user/datePicker.css" rel="stylesheet">
+    
     <link href="/resources/css/user/nav.css" rel="stylesheet">
     
     <!-- datepicker -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-	<link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="/resources/css/user/datePicker.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<link rel="stylesheet" href="/resources/demos/style.css">
 	<script src="/resources/js/common/jqueryNoConflict.js"></script>
 	<script>
 	 	$jQ( function() {
-	   		$jQ( "#datePicker" ).datepicker();
+	   		$jQ("#datepicker").datepicker({dateFormat:"yy-mm-dd"});
 	  	} );
 	</script>
+	
 </head>
 <body>
 <form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
@@ -99,7 +101,7 @@
                        <div class="col-8 offset-2">
                        	   <label class="form-label" for="mmBod">생년월일</label>	
                            <div class="input-group">
-                               <input type="text" class="form-control" id="datePicker" name="mmBod" value="<c:out value="${dto.mmBod }" />" placeholder="8글자로 입력해 주세요.(ex. YYYYMMDD)">
+                               <input type="text" class="form-control" id="datepicker" name="mmBod" value="<c:out value="${dto.mmBod }" />" placeholder="8글자로 입력해 주세요.(ex. YYYYMMDD)">
                            </div>
                        </div>
                        <div class="col-8 offset-2">
@@ -112,15 +114,15 @@
                        	   <label class="form-label" for="genderReg">성별</label>	
                            <br>
                            <div class="form-check form-check-inline">
-                               <input type="radio" class="form-check-input" name="mmGender" id="mmGender0" value="0" <c:if test="${dto.mmGender eq 0 }">selected</c:if>>
+                               <input type="radio" class="form-check-input" name="mmGender" id="mmGender0" value="5" <c:if test="${dto.mmGender eq 5 }">selected</c:if>>
                                <label class="form-check-label" for="genderRegM">남자</label>
                            </div>
                            <div class="form-check form-check-inline">
-                               <input type="radio" class="form-check-input" name="mmGender" id="mmGender1" value="1" <c:if test="${dto.mmGender eq 1 }">selected</c:if>>
+                               <input type="radio" class="form-check-input" name="mmGender" id="mmGender1" value="6" <c:if test="${dto.mmGender eq 6 }">selected</c:if>>
                                <label class="form-check-label" for="genderRegW">여자</label>
                            </div>
                            <div class="form-check form-check-inline">
-                               <input type="radio" class="form-check-input" name="mmGender" id="mmGender2" value="2" <c:if test="${dto.mmGender eq 2 }">selected</c:if>>
+                               <input type="radio" class="form-check-input" name="mmGender" id="mmGender2" value="7" <c:if test="${dto.mmGender eq 7 }">selected</c:if>>
                                <label class="form-check-label" for="genderRegW">기타</label>
                            </div>
                        </div>
@@ -143,12 +145,13 @@
                        	   <div class="input-group">
 	                           <select class="form-select" id="mmJob" name="mmJob">
 								   <option value="" <c:if test="${empty dto.mmJob }">selected</c:if>>직업선택</option>
-								   <option value="1" <c:if test="${dto.mmJob eq 1 }">selected</c:if>>직장인</option>
-								   <option value="2" <c:if test="${dto.mmJob eq 2 }">selected</c:if>>프리랜서</option>
-								   <option value="3" <c:if test="${dto.mmJob eq 3 }">selected</c:if>>소상공인</option>
-								   <option value="4" <c:if test="${dto.mmJob eq 4 }">selected</c:if>>스타트업 창업자</option>
-								   <option value="5" <c:if test="${dto.mmJob eq 5 }">selected</c:if>>대학(원)생</option>
-								   <option value="6" <c:if test="${dto.mmJob eq 6 }">selected</c:if>>취업준비생</option>
+								   <option value="13" <c:if test="${dto.mmJob eq 13 }">selected</c:if>>직장인</option>
+								   <option value="14" <c:if test="${dto.mmJob eq 14 }">selected</c:if>>프리랜서</option>
+								   <option value="15" <c:if test="${dto.mmJob eq 15 }">selected</c:if>>소상공인</option>
+								   <option value="16" <c:if test="${dto.mmJob eq 16 }">selected</c:if>>스타트업 창업자</option>
+								   <option value="17" <c:if test="${dto.mmJob eq 17 }">selected</c:if>>대학(원)생</option>
+								   <option value="18" <c:if test="${dto.mmJob eq 18 }">selected</c:if>>취업준비생</option>
+								   <option value="19" <c:if test="${dto.mmJob eq 19 }">selected</c:if>>무직</option>
 							   </select>
 			   			  </div>
 		  			   </div>
@@ -157,19 +160,16 @@
                        	  <div class="input-group">
 	                           <select class="form-select" id="mmInterest" name="mmInterest" multiple>
 								   <option value="" <c:if test="${empty dto.mmInterest }">selected</c:if>>관심분야선택</option>
-								   <option value="1" <c:if test="${dto.mmInterest eq 1 }">selected</c:if>>디자인</option>
-								   <option value="2" <c:if test="${dto.mmInterest eq 2 }">selected</c:if>>IT 프로그래밍</option>
-								   <option value="3" <c:if test="${dto.mmInterest eq 3 }">selected</c:if>>영상 사진 음향</option>
-								   <option value="4" <c:if test="${dto.mmInterest eq 4 }">selected</c:if>>마케팅</option>
-								   <option value="5" <c:if test="${dto.mmInterest eq 5 }">selected</c:if>>번역 통역</option>
-								   <option value="6" <c:if test="${dto.mmInterest eq 6 }">selected</c:if>>문서 글쓰기</option>
-								   <option value="7" <c:if test="${dto.mmInterest eq 7 }">selected</c:if>>건강 미용</option>
-								   <option value="8" <c:if test="${dto.mmInterest eq 8 }">selected</c:if>>비즈니스 컨설팅</option>
-								   <option value="9" <c:if test="${dto.mmInterest eq 9 }">selected</c:if>>심리상담</option>
-								   <option value="10" <c:if test="${dto.mmInterest eq 10 }">selected</c:if>>주문제작</option>
-								   <option value="11" <c:if test="${dto.mmInterest eq 11 }">selected</c:if>>세무 법무 노무</option>
-								   <option value="12" <c:if test="${dto.mmInterest eq 12 }">selected</c:if>>이벤트</option>
-								   <option value="13" <c:if test="${dto.mmInterest eq 13 }">selected</c:if>>레슨</option>
+								   <option value="35" <c:if test="${dto.mmInterest eq 1 }">selected</c:if>>개발/디자인</option>
+								   <option value="36" <c:if test="${dto.mmInterest eq 2 }">selected</c:if>>홈/리빙</option>
+								   <option value="37" <c:if test="${dto.mmInterest eq 3 }">selected</c:if>>레슨</option>
+								   <option value="38" <c:if test="${dto.mmInterest eq 4 }">selected</c:if>>통역/번역</option>
+								   <option value="39" <c:if test="${dto.mmInterest eq 5 }">selected</c:if>>사진/영상</option>
+								   <option value="40" <c:if test="${dto.mmInterest eq 6 }">selected</c:if>>세무/법무/노무</option>
+								   <option value="41" <c:if test="${dto.mmInterest eq 7 }">selected</c:if>>미용/건강</option>
+								   <option value="42" <c:if test="${dto.mmInterest eq 8 }">selected</c:if>>취업/입시</option>
+								   <option value="43" <c:if test="${dto.mmInterest eq 9 }">selected</c:if>>마케팅</option>
+								   <option value="44" <c:if test="${dto.mmInterest eq 10 }">selected</c:if>>이벤트</option>
 							   </select>
 						   </div>
 					   </div>
@@ -252,10 +252,11 @@
     
 	<!-- kakaoMap API -->
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=17e90af3c57fa367793d1f57799dd4c9&libraries=services,clusterer,drawing"></script>
+	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=17e90af3c57fa367793d1f57799dd4c9&libraries=services,clusterer,drawing"></script>
 	
 	<!-- JavaScript & jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	
 	<script src="/resources/js/user/reg.js"></script>
 	
 	<script type="text/javascript">
@@ -318,7 +319,6 @@
 	        }).open();
 	
 	    }
-		
 	    
 		$("#btnAddressClear").on("click", function(){
 			$("#mmrfPostcode").val('');
@@ -327,6 +327,7 @@
 			$("#mmrfDetailAddress").val('');
 			/* $("#mmExtraAddress").val(''); */
 		});
+		
 	</script>
 	
 </body>

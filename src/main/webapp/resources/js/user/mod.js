@@ -1,6 +1,5 @@
 	// 현재 비밀번호 확인
-	$("#mmPw").on("keyup", function(key){
-		if(key.keyCode==13) {
+	$("#mmPw").on("focusout", function(key){
 			/* if(!checkId('mmEmail', 2, 0, "영대소문자,숫자,특수문자(-_.),4~20자리만 입력 가능합니다")) {
 				return false;
 			} else { */
@@ -40,7 +39,6 @@
 					}
 				});
 			/* } */
-			}
 		});
 		
 		// 변경할 비밀번호 확인

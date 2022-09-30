@@ -115,7 +115,7 @@
 		                           </div>
 		                       </div>
 							   <div class="col-sm-12 text-center vertical-align-bottom">
-							   	   <button class="btn btn-primary w-25" type="button" id="btnModPw">변경완료</button>	
+							   	   <button class="btn btn-primary w-25" type="button" id="btnPwUpdt">변경완료</button>	
 							   </div>
 		                   </div>
 	                   </div>
@@ -155,15 +155,6 @@
     
     
     
-    <script type="text/javascript">
-		var gorUrlModPw = "/member/pwChange";
-		
-		var form = $("form[name=form]");
-		
-		$("#btnModPw").on("click", function(){
-	   		form.attr("action", gorUrlModPw).submit();
-		}); 
-    </script>
 </body>
 
 </html>

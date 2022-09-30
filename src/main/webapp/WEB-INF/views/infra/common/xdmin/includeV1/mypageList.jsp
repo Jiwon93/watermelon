@@ -69,6 +69,7 @@
 		var goUrlListSaleManage = "/member/saleManage"
 		var goUrlListSaleReg = "/member/saleReg"
 		var goUrlListMypage = "/member/memberViewC";
+		var goUrlPwUpdt = "/member/pwChange";
 
 
 		$("#btnListPwChange").on("click", function(){
@@ -93,6 +94,10 @@
 
 		$("#btnListSaleReg").on("click", function(){
 			$(location).attr("href", goUrlListSaleReg);
+		});
+		
+		$("#btnPwUpdt").on("click",function(){
+			form.attr("action", goUrlPwUpdt).submit();
 		});
 
 		var form = $("form[name=form]");

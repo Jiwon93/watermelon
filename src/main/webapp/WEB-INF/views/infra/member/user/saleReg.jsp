@@ -73,7 +73,7 @@
 </head>
 
 <body>
-<form>
+<form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
     <!-- Navbar Start -->
     <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
     <!-- Navbar End -->
@@ -236,8 +236,6 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
-    <!-- js -->
-    <script src="/resources/js/user/mypageBtn.js"></script>
 </body>
 
 </html>

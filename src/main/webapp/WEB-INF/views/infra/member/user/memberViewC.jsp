@@ -168,7 +168,7 @@
 								   </div>
 							   </div>
 							   <div class="col-sm-12 text-center">
-							   	   <button type="button" class="btn btn-primary w-25">수정하기</button>	
+							   	   <button type="button" class="btn btn-primary w-25" id="btnModForm">수정하기</button>	
 							   </div>
 		                   </div>
 	                   </div>
@@ -202,14 +202,22 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
-    <!-- js -->
-    <script src="/resources/js/user/mypageBtn.js"></script>
-    
     <script type="text/javascript">
-		var seq = $("input:hidden[name=sessSeq]");
-		
 		var form = $("form[name=form]");
-		var formVo = $("form[name=formVo]");
+		
+		var goUrlModForm = "/member/memberModFormC";
+		
+		$("#btnModForm").on("click", function(){
+	   		$(location).attr("href", goUrlModForm);
+		});
+		
+		var seq = $("input:hidden[name=sessSeq]");
+
+		goMod = function(keyValue) {
+			/* if(keyValue != 0) seq.val(btoa(keyValue)); */
+			seq.val(keyValue);
+			form.attr("action", goUrlModForm).submit();
+		}
     </script>
 </body>
 

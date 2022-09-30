@@ -72,7 +72,7 @@
 </head>
 
 <body>
-<form>
+<form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
 	<!-- Navbar Start -->
     <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
     <!-- Navbar End -->
@@ -162,7 +162,7 @@
 													<button class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">취소</button>
 												</div>
 												<div class="col-6 text-center">
-													<button class="btn btn-danger" onclick="location.href='../../index.html'">확인</button>
+													<button class="btn btn-danger" type="button">확인</button>
 												</div>
 											</div>
 										</div>
@@ -202,8 +202,6 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
-    <!-- js -->
-    <script src="/resources/js/user/mypageBtn.js"></script>
 </body>
 
 </html>

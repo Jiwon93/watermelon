@@ -442,9 +442,6 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
-    <!-- js -->
-    <script src="/resources/js/user/mypageBtn.js"></script>
-    
     <script type="text/javascript">
     	var goUrlItemMenu = "/item/itemMenu";
     	var goUrlItemMenuView = "/item/itemMenuView";

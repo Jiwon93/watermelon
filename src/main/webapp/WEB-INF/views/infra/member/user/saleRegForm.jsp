@@ -100,7 +100,7 @@
 </head>
 
 <body>
-<form>
+<form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
     <!-- Navbar Start -->
     <nav class="container sticky-top p-0">
     	<div class="row">

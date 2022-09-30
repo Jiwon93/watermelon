@@ -74,7 +74,6 @@
 
 <body>
 <form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
-	<input type="hidden" name="mmSeq" value="<c:out value="${vo.mmSeq}"/>"/>    
     <!-- Navbar Start -->
     <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
     <!-- Navbar End -->
@@ -105,7 +104,7 @@
 		                       <div class="col-8 offset-2">
 		                       	   <label class="form-label" for="passwordReg">새로운 비밀번호</label>
 		                           <div class="input-group">
-		                               <input type="password" class="form-control" id="mmNewPw" name="mmPw" value="<c:out value="${dto.mmPw }"/>" placeholder="새로운 비밀번호를 입력해 주세요." readonly>
+		                               <input type="password" class="form-control" id="mmNewPw" name="mmPw" value="<c:out value="${dto.mmPw }"/>" placeholder="새로운 비밀번호를 입력해 주세요.">
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
@@ -153,9 +152,6 @@
     
     <!-- myQuery -->
     <script src="/resources/js/user/mod.js"></script>
-    
-    <!-- js -->
-    <script src="/resources/js/user/mypageBtn.js"></script>
     
     <script type="text/javascript">
 		var gorUrlModPw = "/member/pwChange";

@@ -73,7 +73,7 @@
 </head>
 
 <body>
-<form>
+<form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
     <!-- Navbar Start -->
     <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
     <!-- Navbar End -->
@@ -96,60 +96,62 @@
 		                   	   <div class="col-8 offset-2">
 		                       	   <label class="form-label" for="nicknameMod">닉네임</label>	
 		                           <div class="input-group">
-		                               <input type="text" class="form-control" id="nicknameMod" value="jiwon123">
+		                               <input type="text" class="form-control" id="mmNickname" name="mmNickname" value="<c:out value="${item.mmNickname }"/>">
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
 		                       	   <label class="form-label" for="emailMod">이메일</label>
 		                       	   <button class="confirm btn btn-primary" style="height: 30px; color: #AB7442;">인증</button>	
 		                           <div class="input-group">
-		                               <input type="email" class="form-control" id="emailMod" value="jiwon123@naver.com">
-		                           </div>
-		                       </div>
-		                       <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="passwordReg">비밀번호</label>
-		                           <div class="input-group">
-		                               <input type="password" class="form-control" id="passwordReg" value="********">
+		                               <input type="email" class="form-control"  id="mmEmail" name="mmEmail" value="<c:out value="${item.mmEmail }"/>">
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
 		                       	   <label class="form-label" for="bodReg">생년월일</label>	
 		                           <div class="input-group">
-		                               <input type="text" class="form-control" id="bodReg" value="1993-02-10">
+		                               <input type="text" class="form-control" id="mmBod" name="mmBod" value="<c:out value="${item.mmBod }"/>">
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
 		                       	   <label class="form-label" for="phoneReg">핸드폰</label>	
 		                       	   <button class="confirm btn btn-primary" style="height: 30px; color: #AB7442;">인증</button>
 		                           <div class="input-group">
-		                               <input type="text" class="form-control" id="phoneReg" value="010-2236-0210">
+		                               <input type="text" class="form-control" id="mmpPhoneNumber" name="mmpPhoneNumber" value="<c:out value="${item.mmpPhoneNumber }"/>">
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
 		                       	   <label class="form-label" for="genderReg">성별</label>	
 		                           <br>
 		                           <div class="form-check form-check-inline">
-		                               <input type="radio" class="form-check-input" name="gender" id="genderRegM" checked>
+		                           	   <c:choose>
+		                           	   	   <c:when test="${item.mmGender eq 5 }">
+		                               <input type="radio" class="form-check-input" name="mmGender" id="mmGender1" checked>
 		                               <label class="form-check-label" for="genderRegM">남자</label>
-		                           </div>
-		                           <div class="form-check form-check-inline">
-		                               <input type="radio" class="form-check-input" name="gender" id="genderRegW">
-		                               <label class="form-check-label" for="genderRegW">여자</label>
+		                               	   </c:when>
+		                               	   <c:when test="${item.mmGender eq 6 }">
+	                               	   <input type="radio" class="form-check-input" name="mmGender" id="mmGender2" checked>
+		                               <label class="form-check-label" for="genderRegM">여자</label>
+		                               	   </c:when>
+		                               	   <c:otherwise>
+	                               	   <input type="radio" class="form-check-input" name="mmGender" id="mmGender3" checked>
+		                               <label class="form-check-label" for="genderRegM">기타</label>
+		                               	   </c:otherwise>
+	                               	   </c:choose>
 		                           </div>
 		                       </div>
 		                       <div class="col-3 offset-2">
 		                       	   <label class="form-label" for="addressReg">주소</label>
 		                       	   <div class="input-group">
 		                       	   	   <button class="btn btn-primary" type="submit">주소검색</button>
-		                               <input type="text" class="form-control w-25" id="addressReg" value="06598">
+		                               <input type="text" class="form-control w-25" id="mmZip" name="mmZip" value="<c:out value="${item.mmZip }"/>">
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2 mt-2">
 		                           <div class="input-group mb-2">
-		                               <input type="text" class="form-control" id="addressReg" value="서울 서초구 고무래로 89">
+		                               <input type="text" class="form-control" id="mmAddress1" name="mmAddress1" value="<c:out value="${item.mmAddress1 }"/>">
 		                           </div>
 		                           <div class="input-group">
-		                               <input type="text" class="form-control" id="addressReg" value="반포써밋 아파트 101동 1001호">
+		                               <input type="text" class="form-control" id="mmAddress2" name="mmAddress2" value="<c:out value="${item.mmAddress2 }"/>">
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
@@ -221,8 +223,6 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
-    <!-- js -->
-    <script src="/resources/js/user/mypageBtn.js"></script>
 </body>
 
 </html>

@@ -7,6 +7,28 @@
 <mapper namespace="com.lifemanlab.shop.modules.item.ItemMapper">
 
     <resultMap id="resultMapObj" type="com.lifemanlab.shop.modules.item.Item"></resultMap>
+    
+    <sql id ="selectCommon">
+		FROM item a
+		WHERE 1=1
+			<if test="shDelNy != null and !shDelNy.equals('')">AND itDelNy = #{shDelNy}</if>
+			<choose>
+				<when test="shOption == 1">AND itMain LIKE CONCAT('%',#{shValue},'%')</when>
+			</choose>
+	</sql>
+	
+	<select id="selectList" resultMap="resultMapObj">
+		<include refid="Base.selectListUpperForMysql" />
+			SELECT
+				a.itemSeq
+				,a.itMain
+				<!-- ,(select count(aa.ccSeq) from code aa where 1=1 and aa.ccDelNy = 0 and aa.codeGroup_ccgSeq = b.ccgSeq) as ccCount -->
+				<!-- <include refid="Base.selectRegModWithAlies" /> -->
+			<include refid="selectCommon" />
+			ORDER BY a.itemSeq DESC
+			<!-- <include refid="Base.orderByLimitForMysql" /> -->
+		<include refid="Base.selectListLowerForMysql" />
+	</select>
 	
 	
 

@@ -17,6 +17,9 @@ public interface MemberService {
 	//Email 확인
 	public int selectOneIdCheck(Member dto) throws Exception;
 	
+	//Email 찾기
+	public Member findEmail(MemberVo vo) throws Exception;
+	
 	//회원가입
 	public int memberRegC(Member dto) throws Exception;
 	

@@ -170,6 +170,17 @@
 		AND mmEmail = #{mmEmail}
 	</select>
 	
+	<!-- 이메일 찾기 -->
+	<select id="findEmail" resultMap="resultMapObj">
+		SELECT
+			a.*
+		FROM member a
+		JOIN member_phone b on a.mmSeq = b.member_mmSeq
+		WHERE 1=1
+			AND mmName = #{mmName}
+			AND mmpPhoneNumber = #{mmpPhoneNumber}
+	</select>
+	
 	<!-- 암호화 -->
 	<select id="selectOneId" resultMap="resultMapObj">
 		SELECT

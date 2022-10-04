@@ -226,7 +226,7 @@
 								   </div>
 							   </div>
 							   <div class="col-sm-12 text-center">
-							   	   <button type="button" class="btn btn-primary w-25" onclick="location.href='memberModFormB.html'">수정하기</button>	
+							   	   <button type="button" class="btn btn-primary w-25" id="">수정하기</button>	
 							   </div>
 		                   </div>
 	                   </div>

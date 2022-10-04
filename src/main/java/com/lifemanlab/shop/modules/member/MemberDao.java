@@ -52,6 +52,13 @@ public class MemberDao {
 		return sqlSession.selectOne(namespace + ".selectOneIdCheck", dto);
 	}
 	
+	//Email 찾기
+	public Member findEmail(MemberVo vo) {
+		Member result = sqlSession.selectOne(namespace + ".findEmail", vo);
+		System.out.println("dao.findEmail: " + result);
+		return result;
+	}
+	
 	//비밀번호 확인
 	public int selectOnePwCheck(Member dto) {
 		return sqlSession.selectOne(namespace + ".selectOnePwCheck", dto);

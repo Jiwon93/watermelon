@@ -240,6 +240,9 @@ public class MemberController extends BaseController {
 			}
 			return returnMap;
 		}
+	
+	//Email 찾기
+		
 
 		
 	  //비밀번호 확인

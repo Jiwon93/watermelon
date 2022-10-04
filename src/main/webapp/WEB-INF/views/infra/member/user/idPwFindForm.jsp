@@ -164,10 +164,10 @@
         	<div class="col-sm-4 p-0">
         		<div class="row mt-3">
    		   		   <div class="col-6">
-			   		   <button type="button" class="btn btn-secondary mt-2" style="width: 100px;" onclick="location.href='loginForm.html'">로그인</button>
+			   		   <button type="button" class="btn btn-secondary mt-2" style="width: 100px;" id="btnLogin2">로그인</button>
 			   	   </div>
 			   	   <div class="col-6 text-end">
-			   		   <button type="button" class="btn btn-secondary mt-2" style="width: 100px;" onclick="location.href='memberRegFormC.html'">회원가입</button>
+			   		   <button type="button" class="btn btn-secondary mt-2" style="width: 100px;" id="btnRegForm2">회원가입</button>
 			   	   </div>
 			   </div>
         	</div>
@@ -209,6 +209,20 @@
     
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+    	var goUrlLogin2 = "/member/loginForm";
+    	var goUrlRegForm2 = "/member/memberRegFormC";
+    	
+    	$("#btnLogin2").on("click", function(){
+	   		$(location).attr("href", goUrlLogin2);
+		});
+    	
+    	$("btnRegForm2").on("click", function(){
+   			$(location).attr("href", goUrlRegForm2);
+    	});
+    
+    </script>
     
 </body>
 

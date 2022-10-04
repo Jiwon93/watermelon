@@ -93,7 +93,7 @@
 								</ul>
 							</nav>
 	       				</div>
-	       				<div class="col-12 text-start mt-4" data-bs-spy="scroll" data-bs-target="#productMenu">
+	       				<div class="col-12 text-start mt-4">
 	       					<br>
 	       					<h5 id="productMenu1">상품 설명</h5>
 	       					<article>
@@ -124,7 +124,7 @@
 	       					</article>
 	       				</div>
 	       				<div class="col-12 text-start mt-4">
-	       					<h5>가격 정보</h5>
+	       					<h5 id="productMenu2">가격 정보</h5>
 	       					<table class="priceInfo">
 	       						<tr>
 		       						<th class="priceHead"></th>
@@ -207,7 +207,7 @@
 	       					<hr>
 	      				</div>
 	       				<div class="col-12 text-start mt-4">
-	       					<h5>취소 환불</h5>
+	       					<h5 id="productMenu3">취소 환불</h5>
 	       					<article>
 	       						가. 기본 환불 규정<br>
 	       						1. 전문가와 의뢰인의 상호 협의하에 청약 철회 및 환불이 가능합니다.<br>
@@ -226,7 +226,7 @@
 	       					</article>
 	       				</div>
 	       				<div class="col-12 text-start mt-4">
-	       					<h5>상품 평가</h5>
+	       					<h5 id="productMenu4">상품 평가</h5>
 	       					<i class="fa-solid fa-star" style="color: #FFD400;"></i>
 		       				<i class="fa-solid fa-star" style="color: #FFD400;"></i>
 		       				<i class="fa-solid fa-star" style="color: #FFD400;"></i>

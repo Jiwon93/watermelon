@@ -60,6 +60,14 @@ public class MemberServiceImpl implements MemberService {
 	public int selectOneIdCheck(Member dto) throws Exception {
 		return dao.selectOneIdCheck(dto);
 	}
+	
+	//Email 찾기
+	@Override
+	public Member findEmail(MemberVo vo) throws Exception {
+		Member result = dao.findEmail(vo);
+		System.out.println("service.findEmail: " + result);
+		return result;
+	}
 
 	@Override
 	public int memberRegC(Member dto) throws Exception {
@@ -104,5 +112,7 @@ public class MemberServiceImpl implements MemberService {
 		System.out.println("service.view item: " + item);
 		return item;
 	}
+
+	
 	
 }

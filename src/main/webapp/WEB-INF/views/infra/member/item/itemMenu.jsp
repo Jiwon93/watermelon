@@ -205,7 +205,7 @@
 	           			</div>
 	           			<div class="pt-3">
 	           				<p class="mainName">케이홈페이지입니다</p>
-	           				<p class="mainTitle">최신 테마 반응형 홈페이지를 제작해 드립니다.</p>
+	           				<p class="mainTitle"><c:out value="${item.itTitle }" /></p>
 	           				<div class="mainPay">
 	           					<i class="fa-solid fa-receipt">&nbsp;550,000원~</i>
            					</div>

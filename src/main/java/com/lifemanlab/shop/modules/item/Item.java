@@ -14,6 +14,7 @@ public class Item {
 	private String proPrice;
 	private String proDetail;
 	private String itInquiry;
+	private String mmNickname;
 //////////////////////////////////////////////
 	public String getItemSeq() {
 		return itemSeq;
@@ -86,6 +87,12 @@ public class Item {
 	}
 	public void setItInquiry(String itInquiry) {
 		this.itInquiry = itInquiry;
+	}
+	public String getMmNickname() {
+		return mmNickname;
+	}
+	public void setMmNickname(String mmNickname) {
+		this.mmNickname = mmNickname;
 	}
 	
 	

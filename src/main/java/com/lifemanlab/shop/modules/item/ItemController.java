@@ -3,6 +3,8 @@ package com.lifemanlab.shop.modules.item;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -14,7 +16,10 @@ public class ItemController {
 	
 
 	@RequestMapping(value = "itemMenu")
-	public String itemMenu() throws Exception {
+	public String itemMenu(@ModelAttribute("vo") ItemVo vo, Model model) throws Exception {
+		Item item = service.selectOne(vo);
+		model.addAttribute("item", item);
+		
 		return "infra/member/item/itemMenu";
 	}
 	

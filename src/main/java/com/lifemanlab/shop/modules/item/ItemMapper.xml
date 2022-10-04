@@ -13,7 +13,7 @@
 		WHERE 1=1
 			<if test="shDelNy != null and !shDelNy.equals('')">AND itDelNy = #{shDelNy}</if>
 			<choose>
-				<when test="shOption == 1">AND itMain LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 1">AND itTitle LIKE CONCAT('%',#{shValue},'%')</when>
 			</choose>
 	</sql>
 	
@@ -21,13 +21,30 @@
 		<include refid="Base.selectListUpperForMysql" />
 			SELECT
 				a.itemSeq
-				,a.itMain
+				,a.itTitle
+				,b.mmNickname
 				<!-- ,(select count(aa.ccSeq) from code aa where 1=1 and aa.ccDelNy = 0 and aa.codeGroup_ccgSeq = b.ccgSeq) as ccCount -->
 				<!-- <include refid="Base.selectRegModWithAlies" /> -->
-			<include refid="selectCommon" />
+			FROM item a
+			WHERE 1=1
+				AND b.mmRank = 25
+			JOIN member b on a.member_mmSeq = b.mmSeq
 			ORDER BY a.itemSeq DESC
 			<!-- <include refid="Base.orderByLimitForMysql" /> -->
 		<include refid="Base.selectListLowerForMysql" />
+	</select>
+	
+	<select id="selectOneCount" resultType="Integer">
+		SELECT COUNT(*)
+		<include refid="selectCommon" />
+	</select>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT
+			a.*
+		FROM item a
+		WHERE 1=1
+			AND itemSeq = #{itemSeq}
 	</select>
 	
 	

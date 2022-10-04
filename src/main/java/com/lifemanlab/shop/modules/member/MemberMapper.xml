@@ -173,7 +173,7 @@
 	<!-- 이메일 찾기 -->
 	<select id="findEmail" resultMap="resultMapObj">
 		SELECT
-			a.*
+			a.mmEmail
 		FROM member a
 		JOIN member_phone b on a.mmSeq = b.member_mmSeq
 		WHERE 1=1

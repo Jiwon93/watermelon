@@ -4,7 +4,7 @@ public class Item {
 	
 	private String itemSeq;
 	private String member_mmSeq;
-	private String itMain;
+	private String itTitle;
 	private String itServiceDetail;
 	private String itCancleRefund;
 	private String basicPrice;
@@ -27,11 +27,11 @@ public class Item {
 	public void setMember_mmSeq(String member_mmSeq) {
 		this.member_mmSeq = member_mmSeq;
 	}
-	public String getItMain() {
-		return itMain;
+	public String getItTitle() {
+		return itTitle;
 	}
-	public void setItMain(String itMain) {
-		this.itMain = itMain;
+	public void setItTitle(String itTitle) {
+		this.itTitle = itTitle;
 	}
 	public String getItServiceDetail() {
 		return itServiceDetail;

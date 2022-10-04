@@ -1,5 +1,7 @@
 package com.lifemanlab.shop.modules.item;
 
-public class ItemVo {
+import com.lifemanlab.shop.common.base.BaseVo;
+
+public class ItemVo extends BaseVo {
 
 }

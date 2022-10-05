@@ -80,7 +80,7 @@
                <div class="row mb-3">
                    <div class="col">
                        <div class="form-floating">
-                           <input type="text" class="form-control" id="nameFind">
+                           <input type="text" class="form-control" id="mmName" name="mmName">
                            <label for="nameFind">이름</label>
                        </div>
                    </div>
@@ -88,19 +88,19 @@
                <div class="row">
                    <div class="col">
                        <div class="form-floating">
-                           <input type="text" class="form-control" id="phoneFind">
+                           <input type="text" class="form-control" id="mmpPhoneNumber" name="mmpPhoneNumber">
                            <label for="phoneFind">핸드폰 번호</label>
                        </div>
                    </div>
                </div>
                <div class="row mt-3">
                    <div class="col">
-                   	   <p>본인인증 받으신 정보를 입력해 주세요. 휴대폰 번호로 이메일 주소를 보내드립니다.</p>
+                   	   <p>본인인증 받으신 정보를 입력해 주세요.</p>
                    </div>
                </div>
                <div class="row mb-4">
                    <div class="col">
-                       <button class="btn btn-primary w-100 py-2" type="button" data-bs-toggle="modal" data-bs-target="#emailAddress">이메일 주소 전송</button>
+                       <button class="btn btn-primary w-100 py-2" type="button" id="btnFindEmail" data-bs-toggle="modal" data-bs-target="#emailAddress">이메일 주소 찾기</button>
                    </div>
                    <div class="modal fade" id="emailAddress" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				   	   <div class="modal-dialog modal-dialog-centered">
@@ -110,8 +110,8 @@
 					       	   </div>
 						       <div class="modal-body text-center">
 						      	   <i class="fa-solid fa-circle-check fa-4x" style="color: #2ECC71;"></i>
-						           <h5 class="modal-title mt-2" id="exampleModalLabel">전송완료</h5>
-						           <p class="mt-5 mb-3">SMS로 가입하신 이메일 주소를 발송하였습니다.</p>
+						           <h5 class="modal-title mt-2" id="exampleModalLabel">가입하신 이메일 주소는</h5>
+						           <p class="mt-5 mb-3"><c:out value="${item.mmEmail }" /></p>
 						       </div>
 					       </div>
 				   	   </div>
@@ -213,6 +213,10 @@
     <script type="text/javascript">
     	var goUrlLogin2 = "/member/loginForm";
     	var goUrlRegForm2 = "/member/memberRegFormC";
+    	var goUrlFindEmail = "/member/findEmail";
+    	var goUrlFindEmailCheck = "/member/findEmailCheck";
+    	
+    	var form = $("form[name=form]");
     	
     	$("#btnLogin2").on("click", function(){
 	   		$(location).attr("href", goUrlLogin2);
@@ -221,7 +225,15 @@
     	$("btnRegForm2").on("click", function(){
    			$(location).attr("href", goUrlRegForm2);
     	});
-    
+    	
+    	$("btnFindEmail").on("click", function(){
+    		form.attr("action", goUrlFindEmail).submit();
+    	})
+    	
+    	$("btnFindEmailCheck").on("click", function(){
+    		form.attr("action", goUrlFindEmailCheck).submit();
+    	})
+    	
     </script>
     
 </body>

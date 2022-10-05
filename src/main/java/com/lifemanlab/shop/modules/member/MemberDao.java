@@ -58,10 +58,14 @@ public class MemberDao {
 	}
 	
 	//Email 찾기
-	public Member findEmail(MemberVo vo) {
-		Member result = sqlSession.selectOne(namespace + ".findEmail", vo);
+	public List<Member> findEmail(MemberVo vo) {
+		List<Member> result = sqlSession.selectList(namespace + ".findEmail", vo);
 		System.out.println("dao.findEmail: " + result);
 		return result;
+	}
+	
+	public int findEmailCheck(Member dto) {
+		return sqlSession.selectOne(namespace + ".findEmailCheck", dto);
 	}
 	
 	//비밀번호 확인

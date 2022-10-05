@@ -242,6 +242,26 @@ public class MemberController extends BaseController {
 		}
 	
 	//Email 찾기
+	@RequestMapping(value = "findEmail")
+	public String findEmail(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+		List<Member> item = service.findEmail(vo);
+		model.addAttribute("item", item);
+		
+		return "infra/member/user/loginForm";
+	}
+	
+	@RequestMapping(value = "findEmailCheck")
+	public Map<String, Object> findEmailCheck(Member dto) throws Exception {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		int result = service.findEmailCheck(dto);
+		
+		if (result == 0) {
+			//modal.addAttribute("msg", "이름과 핸드폰 번호를 확인해 주세요.");
+		} else {
+			returnMap.put("rt", "success");
+		}
+		return returnMap;
+	}
 		
 
 		

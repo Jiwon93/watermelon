@@ -199,6 +199,15 @@
 			AND mmpPhoneNumber = #{mmpPhoneNumber}
 	</select>
 	
+	<select id="findEmailCheck" resultType="Integer">
+		SELECT COUNT(*)
+		FROM member
+		JOIN member_phone b on a.mmSeq = b.member_mmSeq 
+		WHERE 1=1 
+			AND mmName = #{mmName}
+			AND mmpPhoneNumber = #{mmpPhoneNumber}
+	</select>
+	
 	<!-- 암호화 -->
 	<select id="selectOneId" resultMap="resultMapObj">
 		SELECT

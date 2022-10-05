@@ -16,5 +16,34 @@
 		limit #{rowNumToShow} offset #{startRnumForMysql}
 	</sql>
 	
+	<!-- uploaded s -->
+	<insert id="insertUploaded">
+		INSERT INTO ${tableName} (
+			type
+			,defaultNy
+			,sort
+			,path
+			,originalName
+			,uuidName
+			,exit
+			,size
+			,delNy
+			<include refid="Base.insertRegColumn" />
+			,pSeq
+		) values (
+			#{type}
+			,#{defaultNy}
+			,#{sort}
+			,#{path}
+			,#{originalName}
+			,#{uuidName}
+			,#{exit}
+			,#{size}
+			,0
+			<include refid="Base.insertRegValue" />
+			,#{pSeq}
+		)
+	</insert>
+	<!-- uploaded e -->
 		
 </mapper>

@@ -1,11 +1,21 @@
 //////////////////////////////////////////////////////////////////////////////////////////////
+
+		var passwdCheck = RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*()\-_=+\\\|\[\]{};:\'",.<>\/?]).{8,16}$/);
+		var nameCheck = RegExp(/^[가-힣]{2,6}$/);
+		var nickNameCheck = RegExp(/^[가-힣a-zA-Z0-9]{2,10}$/);
+		var emailCheck = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
+		var birthdayCheck = RegExp(/^(19|20)[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/);
+		var phonNumberCheck = RegExp(/^01[0179][0-9]{7,8}$/);
 		
 		// 이메일 확인
-		$("#mmEmail").on("keyup", function(key){
-			if(key.keyCode==13) {
+		$("#mmEmail").on("focusout", function(){
+			//if(key.keyCode==13) {
 				/* if(!checkId('mmEmail', 2, 0, "영대소문자,숫자,특수문자(-_.),4~20자리만 입력 가능합니다")) {
 					return false;
 				} else { */
+				//if(emailCheck.test($('#mmEmail').val())){
+				//	alert("이메일 양식에 맞춰서 입력해 주세요.");
+				//}
 					$.ajax({
 						async: true 
 						,cache: false
@@ -41,7 +51,7 @@
 						}
 					});
 				/* } */
-				}
+				//}
 			});
 		
 		// 비밀번호 확인

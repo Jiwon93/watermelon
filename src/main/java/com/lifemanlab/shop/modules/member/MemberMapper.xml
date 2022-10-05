@@ -164,16 +164,18 @@
 	
 	<insert id="memberRegPhoneC">
 		INSERT INTO member_phone (
-			mmpPhoneNumber
+			member_mmSeq
+			,mmpPhoneNumber
 			,mmpDiv
 			,mmpDefaultNy
 		)
 		VALUES(
-			#{mmpPhoneNumber}
+			#{mmSeq}
+			,#{mmpPhoneNumber}
 			,98
 			,1
 		)
-		<selectKey resultType="String" keyProperty="mmpSeq" order="AFTER">
+		<selectKey resultType="String" keyProperty="mmSeq" order="AFTER">
 			SELECT last_insert_id()
 		</selectKey>
 	</insert>

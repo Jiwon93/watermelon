@@ -1,11 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-		var passwdCheck = RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*()\-_=+\\\|\[\]{};:\'",.<>\/?]).{8,16}$/);
-		var nameCheck = RegExp(/^[가-힣]{2,6}$/);
-		var nickNameCheck = RegExp(/^[가-힣a-zA-Z0-9]{2,10}$/);
-		var emailCheck = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
-		var birthdayCheck = RegExp(/^(19|20)[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/);
-		var phonNumberCheck = RegExp(/^01[0179][0-9]{7,8}$/);
+		
+		
 		
 		// 이메일 확인
 		$("#mmEmail").on("focusout", function(){
@@ -54,10 +50,12 @@
 				//}
 			});
 		
+		
 		// 비밀번호 확인
 		$("#mmPwChk").on("keyup", function(){
 		      var p1 = document.getElementById('mmPw').value;
 		      var p2 = document.getElementById('mmPwChk').value;
+		      
 		      
 		          if( p1 == p2 ) {
 		            document.getElementById("mmPwChk").classList.remove('is-invalid');
@@ -77,6 +75,20 @@
 		            return true;
 		          }
 	    });
+	    
+	    //validation
+	    validationInst = function() {
+			if(validationUpdt() == false) return false;
+		}
+		
+		validationUpdt = function() {
+			if(!EmailCheck('mmEmail',2,0,"비밀번호는 8~16자로 입력해 주세요.")) return false;
+			if(!PwCheck('mmPw',2,0,"비밀번호는 8~16자로 입력해 주세요.")) return false;
+			if(!NameCheck('mmName',2,0,"한글로만 입력해 주세요.")) return false;
+			if(!NicknameCheck('mmNickname',2,0,"한글, 영어, 숫자로 입력해 주세요.")) return false;
+			if(!BodCheck('mmBod',2,0,"알맞게 입력해 주세요.")) return false;
+			if(!PhoneNumberCheck('mmpPhoneNumber',2,0,"숫자로만 입력해 주세요.")) return false;
+		}
 		
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	

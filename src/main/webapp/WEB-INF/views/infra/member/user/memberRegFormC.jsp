@@ -258,6 +258,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	
 	<script src="/resources/js/user/reg.js"></script>
+	<script src="/resources/js/user/validation.js"></script>
 	
 	<script type="text/javascript">
 	

@@ -273,6 +273,9 @@ public class MemberController extends BaseController {
 		public String memberRegCInst(Member dto) throws Exception {
 			int result = service.memberRegC(dto);
 			System.out.println("controller.Reg: " + result);
+			
+			int result2 = service.memberRegPhoneC(dto);
+			System.out.println("controller.PhoneReg: " + result2);
 			return "redirect:/member/loginForm";
 		}
 }

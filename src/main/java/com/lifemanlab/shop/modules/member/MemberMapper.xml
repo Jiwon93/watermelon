@@ -162,6 +162,22 @@
 		</selectKey>
 	</insert>
 	
+	<insert id="memberRegPhoneC">
+		INSERT INTO member_phone (
+			mmpPhoneNumber
+			,mmpDiv
+			,mmpDefaultNy
+		)
+		VALUES(
+			#{mmpPhoneNumber}
+			,98
+			,1
+		)
+		<selectKey resultType="String" keyProperty="mmpSeq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	
 	<!-- Email 확인 -->
 	<select id="selectOneIdCheck" resultType="Integer">
 		SELECT COUNT(*)

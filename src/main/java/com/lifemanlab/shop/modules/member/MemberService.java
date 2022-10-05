@@ -22,6 +22,7 @@ public interface MemberService {
 	
 	//회원가입
 	public int memberRegC(Member dto) throws Exception;
+	public int memberRegPhoneC(Member dto) throws Exception;
 	
 	//비밀번호 확인
 	public int selectOnePwCheck(Member dto) throws Exception;

@@ -34,6 +34,10 @@ public class Member extends Base{
 	private String mmIntroduce;
 	private Integer mmCash;
 	private String mmpPhoneNumber;
+	private String mmpSeq;
+	private Integer mmpDiv;
+	private String member_mmSeq;
+	private Integer mmpDefaultNy;
 	
 ///////////////////////////////////////////////
 	public String getMmSeq() {
@@ -203,6 +207,30 @@ public class Member extends Base{
 	}
 	public void setMmpPhoneNumber(String mmpPhoneNumber) {
 		this.mmpPhoneNumber = mmpPhoneNumber;
+	}
+	public String getMmpSeq() {
+		return mmpSeq;
+	}
+	public void setMmpSeq(String mmpSeq) {
+		this.mmpSeq = mmpSeq;
+	}
+	public Integer getMmpDiv() {
+		return mmpDiv;
+	}
+	public void setMmpDiv(Integer mmpDiv) {
+		this.mmpDiv = mmpDiv;
+	}
+	public String getMember_mmSeq() {
+		return member_mmSeq;
+	}
+	public void setMember_mmSeq(String member_mmSeq) {
+		this.member_mmSeq = member_mmSeq;
+	}
+	public Integer getMmpDefaultNy() {
+		return mmpDefaultNy;
+	}
+	public void setMmpDefaultNy(Integer mmpDefaultNy) {
+		this.mmpDefaultNy = mmpDefaultNy;
 	}
 	
 }

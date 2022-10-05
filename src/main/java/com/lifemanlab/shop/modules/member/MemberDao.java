@@ -47,6 +47,11 @@ public class MemberDao {
 		return result;
 	}
 	
+	public int memberRegPhoneC(Member dto) {
+		int result = sqlSession.insert(namespace + ".memberRegPhoneC", dto);
+		return result;
+	}
+	
 	//Email 확인
 	public int selectOneIdCheck(Member dto) {
 		return sqlSession.selectOne(namespace + ".selectOneIdCheck", dto);

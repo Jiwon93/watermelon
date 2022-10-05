@@ -69,6 +69,7 @@ public class MemberServiceImpl implements MemberService {
 		return result;
 	}
 
+	//회원가입
 	@Override
 	public int memberRegC(Member dto) throws Exception {
 		
@@ -78,6 +79,12 @@ public class MemberServiceImpl implements MemberService {
 		
 		int result = dao.memberRegC(dto);
 		System.out.println("service.Reg: " + result);
+		return result;
+	}
+	
+	@Override
+	public int memberRegPhoneC(Member dto) throws Exception {
+		int result = dao.memberRegPhoneC(dto);
 		return result;
 	}
 
@@ -112,6 +119,8 @@ public class MemberServiceImpl implements MemberService {
 		System.out.println("service.view item: " + item);
 		return item;
 	}
+
+	
 
 	
 	

@@ -77,12 +77,8 @@
 	    });
 	    
 	    //validation
-	    validationInst = function() {
-			if(validationUpdt() == false) return false;
-		}
-		
 		validationUpdt = function() {
-			if(!EmailCheck('mmEmail',2,0,"비밀번호는 8~16자로 입력해 주세요.")) return false;
+			if(!EmailCheck('mmEmail',2,0,"이메일 형식에 맞춰서 입력해 주세요.")) return false;
 			if(!PwCheck('mmPw',2,0,"비밀번호는 8~16자로 입력해 주세요.")) return false;
 			if(!NameCheck('mmName',2,0,"한글로만 입력해 주세요.")) return false;
 			if(!NicknameCheck('mmNickname',2,0,"한글, 영어, 숫자로 입력해 주세요.")) return false;

@@ -63,14 +63,12 @@ public class MemberServiceImpl implements MemberService {
 	
 	//Email 찾기
 	@Override
-	public List<Member> findEmail(MemberVo vo) throws Exception {
-		List<Member> result = dao.findEmail(vo);
-		System.out.println("service.findEmail: " + result);
-		return result;
+	public Member findEmail(Member dto) throws Exception {
+		return dao.findEmail(dto);
 	}
-	
+
 	@Override
-	public int findEmailCheck(Member dto) throws Exception {
+	public Member findEmailCheck(Member dto) throws Exception {
 		return dao.findEmailCheck(dto);
 	}
 
@@ -92,7 +90,15 @@ public class MemberServiceImpl implements MemberService {
 		int result = dao.memberRegPhoneC(dto);
 		return result;
 	}
+	
+	//회원정보수정
+	@Override
+	public int memberMod(Member dto) throws Exception {
+		int result = dao.memberMod(dto);
+		return result;
+	}
 
+	//로그인
 	@Override
 	public Member selectOneId(Member dto) throws Exception {
 		return dao.selectOneId(dto);
@@ -127,8 +133,5 @@ public class MemberServiceImpl implements MemberService {
 
 	
 
-	
-
-	
 	
 }

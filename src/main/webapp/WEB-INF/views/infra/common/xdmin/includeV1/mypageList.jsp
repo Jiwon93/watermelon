@@ -1,5 +1,5 @@
 	<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-	<input type="hidden" id="sessSeq" name="sessSeq">
+	<!-- <input type="hidden" id="sessSeq" name="sessSeq"> -->
 		
 	<c:choose>
 		<c:when test="${sessRank eq 26}">

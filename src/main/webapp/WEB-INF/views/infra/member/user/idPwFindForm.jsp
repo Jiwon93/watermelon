@@ -80,16 +80,16 @@
                <div class="row mb-3">
                    <div class="col">
                        <div class="form-floating">
-                           <input type="text" class="form-control" id="mmName" name="mmName">
-                           <label for="nameFind">이름</label>
+                           <input type="text" class="form-control" id="mmName" name="mmName" value="${dto.mmName }">
+                           <label for="mmName">이름</label>
                        </div>
                    </div>
                </div>
                <div class="row">
                    <div class="col">
                        <div class="form-floating">
-                           <input type="text" class="form-control" id="mmpPhoneNumber" name="mmpPhoneNumber">
-                           <label for="phoneFind">핸드폰 번호</label>
+                           <input type="text" class="form-control" id="mmpPhoneNumber" name="mmpPhoneNumber" value="${dto.mmpPhoneNumber }">
+                           <label for="mmpPhoneNumber">핸드폰 번호</label>
                        </div>
                    </div>
                </div>
@@ -111,7 +111,7 @@
 						       <div class="modal-body text-center">
 						      	   <i class="fa-solid fa-circle-check fa-4x" style="color: #2ECC71;"></i>
 						           <h5 class="modal-title mt-2" id="exampleModalLabel">가입하신 이메일 주소는</h5>
-						           <p class="mt-5 mb-3"><c:out value="${item.mmEmail }" /></p>
+						           <p class="mt-5 mb-3"><c:out value="${sessEmail }" /></p>
 						       </div>
 					       </div>
 				   	   </div>
@@ -213,8 +213,6 @@
     <script type="text/javascript">
     	var goUrlLogin2 = "/member/loginForm";
     	var goUrlRegForm2 = "/member/memberRegFormC";
-    	var goUrlFindEmail = "/member/findEmail";
-    	var goUrlFindEmailCheck = "/member/findEmailCheck";
     	
     	var form = $("form[name=form]");
     	
@@ -226,13 +224,34 @@
    			$(location).attr("href", goUrlRegForm2);
     	});
     	
-    	$("btnFindEmail").on("click", function(){
-    		form.attr("action", goUrlFindEmail).submit();
-    	})
-    	
-    	$("btnFindEmailCheck").on("click", function(){
-    		form.attr("action", goUrlFindEmailCheck).submit();
-    	})
+    	//아이디 찾기
+    	$("#btnFindEmail").on("click", function(){
+    		//if(validation() == false) return false;
+    		
+    			$.ajax({
+    				async: true 
+    				,cache: false
+    				,type: "post"
+    				/* ,dataType:"json" */
+    				,url: "/member/findEmail"
+    				/* ,data : $("#formLogin").serialize() */
+    				//,data : { "mmEmail" : $("#mmEmail").val(), "mmPw" : $("#mmPw").val(), "autoLogin" : $("#autoLogin").is(":checked")}
+    				,data : { "mmName" : $("#mmName").val(), "mmpPhoneNumber" : $("#mmpPhoneNumber").val()}
+    				,success: function(response) {
+    					if(response.rt == "success") {
+    						//if(response.changePwd == "true") {
+    						//	location.href = URL_CHANGE_PWD_FORM;
+    						//} else {
+    							location.href = goUrlLogin;
+    					} else {
+    						alert("회원없음");
+    					}
+    				}
+    				,error : function(jqXHR, textStatus, errorThrown){
+    					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+    				}
+    			});
+    		});
     	
     </script>
     

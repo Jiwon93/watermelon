@@ -184,6 +184,23 @@
 		</selectKey>
 	</insert>
 	
+	<!-- 회원정보 수정 -->
+	<update id="memberMod">
+		UPDATE member
+		SET
+			mmNickname = #{mmNickname}
+			,mmName = #{mmName}
+			,mmBod = #{mmBod}
+			,mmGender = #{mmGender}
+			,mmZip = #{mmZip}
+			,mmAddress1 = #{mmAddress1}
+			,mmAddress2 = #{mmAddress2}
+			,mmJob = #{mmJob}
+			,mmInterest = #{mmInterest}
+		WHERE
+			mmSeq = #{mmSeq}
+	</update>
+	
 	<!-- Email 확인 -->
 	<select id="selectOneIdCheck" resultType="Integer">
 		SELECT COUNT(*)
@@ -195,24 +212,25 @@
 	<!-- 이메일 찾기 -->
 	<select id="findEmail" resultMap="resultMapObj">
 		SELECT
-			a.mmEmail
+			a.mmSeq
+			,a.mmName
 		FROM member a
-		JOIN member_phone b on a.mmSeq = b.member_mmSeq
 		WHERE 1=1
-			AND mmName = #{mmName}
-			AND mmpPhoneNumber = #{mmpPhoneNumber}
+			AND a.mmName = #{mmName}
 	</select>
 	
-	<select id="findEmailCheck" resultType="Integer">
-		SELECT COUNT(*)
-		FROM member
+	<select id="findEmailCheck" resultMap="resultMapObj">
+		SELECT 
+			a.mmSeq
+			,a.mmEmail
+		FROM member a
 		JOIN member_phone b on a.mmSeq = b.member_mmSeq 
 		WHERE 1=1 
-			AND mmName = #{mmName}
-			AND mmpPhoneNumber = #{mmpPhoneNumber}
+			AND a.mmName = #{mmName}
+			<if test="mmpPhoneNumber != null and !mmpPhoneNumber.equals('')">AND b.mmpPhoneNumber = #{mmpPhoneNumber}</if>
 	</select>
 	
-	<!-- 암호화 -->
+	<!-- 로그인 -->
 	<select id="selectOneId" resultMap="resultMapObj">
 		SELECT
 			a.mmSeq

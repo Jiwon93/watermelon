@@ -18,13 +18,15 @@ public interface MemberService {
 	public int selectOneIdCheck(Member dto) throws Exception;
 	
 	//Email 찾기
-	public List<Member> findEmail(MemberVo vo) throws Exception;
-	
-	public int findEmailCheck(Member dto) throws Exception;
+	public Member findEmail(Member dto) throws Exception;
+	public Member findEmailCheck(Member dto) throws Exception;
 	
 	//회원가입
 	public int memberRegC(Member dto) throws Exception;
 	public int memberRegPhoneC(Member dto) throws Exception;
+	
+	//회원정보수정
+	public int memberMod(Member dto) throws Exception;
 	
 	//비밀번호 확인
 	public int selectOnePwCheck(Member dto) throws Exception;

@@ -176,7 +176,8 @@
 								   </div>
 							   </div>
 							   <div class="col-sm-12 text-center">
-							   	   <button type="button" class="btn btn-primary w-25" id="btnModForm">수정하기</button>	
+							   	   <button class="btn btn-primary w-25" type="button" id="btnMod">수정하기</button>	
+							   	   <button class="btn btn-primary w-25" type="button" id="btnMemberMod">수정완료</button>
 							   </div>
 		                   </div>
 	                   </div>
@@ -212,20 +213,32 @@
     
     <script type="text/javascript">
 		var form = $("form[name=form]");
-		
+		var seq = $("input:hidden[name=sessSeq]");
 		var goUrlModForm = "/member/memberModFormC";
-		
+		var goUrlMemberMod = "/member/memberMod";
+		/* 
 		$("#btnModForm").on("click", function(){
 	   		$(location).attr("href", goUrlModForm);
 		});
+		 */
+		$("#btnMemberMod").on("click", function(){
+			form.attr("action", goUrlMemberMod).submit();
+		});
 		
-		var seq = $("input:hidden[name=sessSeq]");
-
+		
+		/* 
 		goMod = function(keyValue) {
-			/* if(keyValue != 0) seq.val(btoa(keyValue)); */
+			if(keyValue != 0) seq.val(btoa(keyValue));
 			seq.val(keyValue);
 			form.attr("action", goUrlModForm).submit();
 		}
+		*/
+		 
+		$("#btnMod").on("click", function(){
+			$('#mmNickname').attr('readonly', false);
+			$('#mmJob').attr('readonly', false);
+			$('#mmInterest').attr('readonly', false);
+		});
     </script>
 </body>
 

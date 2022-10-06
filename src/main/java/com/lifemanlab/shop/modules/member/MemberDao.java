@@ -52,19 +52,23 @@ public class MemberDao {
 		return result;
 	}
 	
+	//회원정보 수정
+	public int memberMod(Member dto) {
+		int result = sqlSession.update(namespace + ".memberMod", dto);
+		return result;
+	}
+	
 	//Email 확인
 	public int selectOneIdCheck(Member dto) {
 		return sqlSession.selectOne(namespace + ".selectOneIdCheck", dto);
 	}
 	
 	//Email 찾기
-	public List<Member> findEmail(MemberVo vo) {
-		List<Member> result = sqlSession.selectList(namespace + ".findEmail", vo);
-		System.out.println("dao.findEmail: " + result);
-		return result;
+	public Member findEmail(Member dto) {
+		return sqlSession.selectOne(namespace + ".findEmail", dto);
 	}
 	
-	public int findEmailCheck(Member dto) {
+	public Member findEmailCheck(Member dto) {
 		return sqlSession.selectOne(namespace + ".findEmailCheck", dto);
 	}
 	
@@ -80,7 +84,7 @@ public class MemberDao {
 		return result;  
 	}
 	
-	//암호화
+	//로그인
 	public Member selectOneId(Member dto) {
 		return sqlSession.selectOne(namespace + ".selectOneId", dto);
 	}

@@ -75,11 +75,41 @@ public class MemberController extends BaseController {
 		
 		return "infra/member/user/memberViewC";
 	}
+	
+	//회원정보수정
+	@RequestMapping(value = "memberMod")
+	public String memberMod(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
+		int result = service.memberMod(dto);
+		System.out.println("controller.Mod: " + result);
+		return "redirect:/member/memberViewC";
+	}
+	
+	//Email 찾기
+	@ResponseBody
+	@RequestMapping(value = "findEmail")
+	public Map<String, Object> findEmail(Member dto, HttpSession httpSession) throws Exception {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
 		
+		Member rtMember = service.findEmail(dto);
+		
+		if (rtMember != null) {
+			Member rtMember2 = service.findEmailCheck(dto);
+			
+			if (rtMember2 != null ) {
+				httpSession.setAttribute("sessEmail", rtMember2.getMmEmail());
+				returnMap.put("rt", "success");
+			} else {
+				returnMap.put("rt", "fail");
+			}
+		} else {
+			returnMap.put("rt", "fail");
+		}
+		return returnMap;
+	}
 		
 	//로그인
 	@ResponseBody
-	@RequestMapping(value = "/loginProc")
+	@RequestMapping(value = "loginProc")
 	public Map<String, Object> loginProc(Member dto, HttpSession httpSession) throws Exception {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 
@@ -155,30 +185,6 @@ public class MemberController extends BaseController {
 		return returnMap;
 	}
 	
-	//Email 찾기
-	@RequestMapping(value = "findEmail")
-	public String findEmail(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
-		List<Member> item = service.findEmail(vo);
-		model.addAttribute("item", item);
-		
-		return "infra/member/user/loginForm";
-	}
-	
-	@RequestMapping(value = "findEmailCheck")
-	public Map<String, Object> findEmailCheck(Member dto) throws Exception {
-		Map<String, Object> returnMap = new HashMap<String, Object>();
-		int result = service.findEmailCheck(dto);
-		
-		if (result == 0) {
-			//modal.addAttribute("msg", "이름과 핸드폰 번호를 확인해 주세요.");
-		} else {
-			returnMap.put("rt", "success");
-		}
-		return returnMap;
-	}
-		
-
-		
 	  //비밀번호 확인
 	  @ResponseBody
 	  @RequestMapping(value = "checkPw") 

@@ -153,6 +153,16 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
+    <script>
+    	var goUrlPwchange = "/member/pwChange";
+    	var form = $("form[name=form]");
+    	
+    	$("btnPwUpdt").on("click", function() {
+    		form.attr("action", goUrlPwchange).submit();
+    	});
+    
+    </script>
+    
     
     
 </body>

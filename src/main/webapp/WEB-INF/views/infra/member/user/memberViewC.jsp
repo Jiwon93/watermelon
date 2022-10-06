@@ -88,6 +88,57 @@
 			color: white;
 			cursor: pointer;
 		}
+		
+		/* 파일첨부 */
+		.file-label {
+		  margin-top: 30px;
+		  background-color: #5b975b;
+		  color: #fff;
+		  text-align: center;
+		  padding: 10px 0;
+		  width: 65%;
+		  border-radius: 6px;
+		  cursor: pointer;
+		}
+		.file {
+		  display: none;
+		}
+		.upload-box {
+		  width: 100%;
+		  box-sizing: border-box;
+		  margin-right: 30px;
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+		  align-items: center;
+		}
+		.upload-box .drag-file {
+		  position: relative;
+		  width: 100%;
+		  height: 360px;
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+		  align-items: center;
+		  border: 3px dashed #dbdbdb;
+		}
+		.upload-box .drag-file.highlight {
+		  border: 3px dashed red;
+		}
+		.upload-box .drag-file .image {
+		  width: 40px;
+		}
+		.upload-box .drag-file .message {
+		  margin-bottom: 0;
+		}
+		.upload-box .drag-file .preview {
+		  display: none;
+		  position: absolute;
+		  left: 0;
+		  height: 0;
+		  width: 100%;
+		  height: 100%;
+		}
     </style>
 </head>
 
@@ -215,6 +266,17 @@
 										   </div>
 								       </div>
 							       </div>
+							   </div>
+							   <div class="col-8 offset-2">
+							   	   <div class="upload-box">
+								   	   <div id="drop-file" class="drag-file">
+								   	   	   <img src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일 아이콘" class="image">
+								   	   	   <p class="message">Drag files to upload</p>
+								   	   	   <img src="" alt="미리보기 이미지" class="preview">
+								   	   </div>
+								   </div>
+								   <label class="file-label" for="chooseFile">Choose File</label>
+								   <input class="file" id="chooseFile" type="file" onchange="dropFile.handleFiles(this.files)" accept="image/png, image/jpeg, image/gif">
 							   </div>
 							   <div class="col-sm-12 text-center">
 							   	   <button class="btn btn-primary w-25" type="button" id="btnMod">수정하기</button>	
@@ -346,6 +408,72 @@
 		delLi = function(seq, index) {
 			$("#li_"+seq+"_"+index).remove();
 		}
+		
+		//파일첨부
+			function DropFile(dropAreaId, fileListId) {
+			  let dropArea = document.getElementById(dropAreaId);
+			  let fileList = document.getElementById(fileListId);
+
+			  function preventDefaults(e) {
+			    e.preventDefault();
+			    e.stopPropagation();
+			  }
+
+			  function highlight(e) {
+			    preventDefaults(e);
+			    dropArea.classList.add("highlight");
+			  }
+
+			  function unhighlight(e) {
+			    preventDefaults(e);
+			    dropArea.classList.remove("highlight");
+			  }
+
+			  function handleDrop(e) {
+			    unhighlight(e);
+			    let dt = e.dataTransfer;
+			    let files = dt.files;
+
+			    handleFiles(files);
+
+			    const fileList = document.getElementById(fileListId);
+			    if (fileList) {
+			      fileList.scrollTo({ top: fileList.scrollHeight });
+			    }
+			  }
+
+			  function handleFiles(files) {
+			    files = [...files];
+			    // files.forEach(uploadFile);
+			    files.forEach(previewFile);
+			  }
+
+			  function previewFile(file) {
+			    console.log(file);
+			    renderFile(file);
+			  }
+
+			  function renderFile(file) {
+			    let reader = new FileReader();
+			    reader.readAsDataURL(file);
+			    reader.onloadend = function () {
+			      let img = dropArea.getElementsByClassName("preview")[0];
+			      img.src = reader.result;
+			      img.style.display = "block";
+			    };
+			  }
+
+			  dropArea.addEventListener("dragenter", highlight, false);
+			  dropArea.addEventListener("dragover", highlight, false);
+			  dropArea.addEventListener("dragleave", unhighlight, false);
+			  dropArea.addEventListener("drop", handleDrop, false);
+
+			  return {
+			    handleFiles
+			  };
+			}
+
+			const dropFile = new DropFile("drop-file", "files");
     </script>
 </body>
 

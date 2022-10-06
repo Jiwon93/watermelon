@@ -4,6 +4,9 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
+
+<jsp:useBean id="CodeServiceImpl" class="com.lifemanlab.shop.modules.code.CodeServiceImpl"/>
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -155,15 +158,12 @@
 		                       	   <label class="form-label" for="mmJob">직업</label>
 		                       	   <div class="input-group">
 				                       <div class="input-group">
-				                       <%-- 
 				                       <c:set var="listCodeJob" value="${CodeServiceImpl.selectListCachedCode('4')}"/>
 				                       <c:forEach items="${listCodeJob}" var="listJob" varStatus="statusJob">
-										   <c:if test="${list.mmJob eq listJob.ccSeq}">
-										   	   <c:out value="${listJob.ccName }"/>
-										   </c:if>
+										   <c:if test="${item.mmJob eq listJob.ccSeq}">
+										   <input type="text" class="form-control"  id="mmJob" name="mmJob" value="${listJob.ccName }" readonly>
+								   	   	   </c:if>
 								   	   </c:forEach>
-								   	    --%>
-										   <input type="text" class="form-control"  id="mmJob" name="mmJob" value="<c:out value="${item.mmJob }"/>" readonly>
 								   	   </div>
 					   		   	   </div>
 				  			   </div>
@@ -171,7 +171,12 @@
 		                       	   <label class="form-label" for="mmInterest">관심분야</label>
 		                       	   <div class="input-group">
 			                           <div class="input-group">
-										   <input type="text" class="form-control" id="mmInterest" name="mmInterest" value="<c:out value="${item.mmInterest }"/>" readonly>
+			                           <c:set var="listCodeInterest" value="${CodeServiceImpl.selectListCachedCode('8')}"/>
+			                           <c:forEach items="${listCodeInterest}" var="listInterest" varStatus="statusInterest">
+			                           	   <c:if test="${item.mmInterest eq listInterest.ccSeq}">
+										   <input type="text" class="form-control" id="mmInterest" name="mmInterest" value="${listInterest.ccName }" readonly>
+									   	   </c:if>
+								   	   </c:forEach>
 									   </div>
 								   </div>
 							   </div>

@@ -1,6 +1,8 @@
 package com.lifemanlab.shop.modules.item;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,8 +19,8 @@ public class ItemController {
 
 	@RequestMapping(value = "itemMenu")
 	public String itemMenu(@ModelAttribute("vo") ItemVo vo, Model model) throws Exception {
-		Item item = service.selectOne(vo);
-		model.addAttribute("item", item);
+		List<Item> list = service.selectList(vo);
+		model.addAttribute("list", list);
 		
 		return "infra/member/item/itemMenu";
 	}

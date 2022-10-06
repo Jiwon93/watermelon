@@ -199,13 +199,19 @@
 					</table>
 				</div>
 				<div class="row p-1 mt-5 mb-5">
+					<c:choose>
+						<c:when test="${fn:length(list) eq 0 }">
+							<p>준비된 상품이 없습니다.</p>
+						</c:when>
+						<c:otherwise>
+							<c:forEach items="${list}" var="list" varStatus="status">
 	           		<div class="col-3 service-item">
 	               		<div class="overflow-hidden">
 	               	    	<a id="btnMenu1" type="button"><img class="menuDD" src="/resources/images/main.jpg"></a>
 	           			</div>
 	           			<div class="pt-3">
-	           				<p class="mainName">케이홈페이지입니다</p>
-	           				<p class="mainTitle"><c:out value="${item.itTitle }" /></p>
+	           				<p class="mainName"><c:out value="${list.mmNickname }" /></p>
+	           				<p class="mainTitle"><c:out value="${list.itTitle }" /></p>
 	           				<div class="mainPay">
 	           					<i class="fa-solid fa-receipt">&nbsp;550,000원~</i>
            					</div>
@@ -215,6 +221,9 @@
 		       				</div>
 	           			</div>
 	           		</div>
+	           				</c:forEach>
+									</c:otherwise>
+								</c:choose>
 	                <div class="col-3 service-item">
 	                    <div class="overflow-hidden">
 	                        <img class="menuDD" src="/resources/images/main1.jpg">

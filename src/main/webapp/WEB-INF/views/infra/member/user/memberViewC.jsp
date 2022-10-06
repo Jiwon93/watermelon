@@ -155,6 +155,14 @@
 		                       	   <label class="form-label" for="mmJob">직업</label>
 		                       	   <div class="input-group">
 				                       <div class="input-group">
+				                       <%-- 
+				                       <c:set var="listCodeJob" value="${CodeServiceImpl.selectListCachedCode('4')}"/>
+				                       <c:forEach items="${listCodeJob}" var="listJob" varStatus="statusJob">
+										   <c:if test="${list.mmJob eq listJob.ccSeq}">
+										   	   <c:out value="${listJob.ccName }"/>
+										   </c:if>
+								   	   </c:forEach>
+								   	    --%>
 										   <input type="text" class="form-control"  id="mmJob" name="mmJob" value="<c:out value="${item.mmJob }"/>" readonly>
 								   	   </div>
 					   		   	   </div>

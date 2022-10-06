@@ -278,7 +278,7 @@
 		}); 
 	 
 		$("#btnReg").on("click", function(){
-			if (validationInst() == false) return false;
+			/* if (validationInst() == false) return false; */
 			form.attr("action", goUrlRegInst).submit();
 		}); 
 		

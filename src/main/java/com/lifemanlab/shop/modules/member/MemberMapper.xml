@@ -133,11 +133,12 @@
 	</delete>
 	
 	
-	<!-- 회원가입 -->
+	<!-- 회원가입(일반) -->
 	<insert id="memberRegC">
 		INSERT INTO member (
 			mmEmail
 			,mmPw
+			,mmRank
 			,mmName
 			,mmBod
 			,mmGender
@@ -150,6 +151,7 @@
 		VALUES(
 			#{mmEmail}
 			,#{mmPw}
+			,26
 			,#{mmName}
 			,#{mmBod}
 			,#{mmGender}

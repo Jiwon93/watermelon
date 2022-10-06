@@ -138,6 +138,7 @@
 		INSERT INTO member (
 			mmEmail
 			,mmPw
+			,mmName
 			,mmBod
 			,mmGender
 			,mmZip
@@ -149,6 +150,7 @@
 		VALUES(
 			#{mmEmail}
 			,#{mmPw}
+			,#{mmName}
 			,#{mmBod}
 			,#{mmGender}
 			,#{mmZip}

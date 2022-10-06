@@ -99,6 +99,12 @@
                            </div>
                        </div>
                        <div class="col-8 offset-2">
+                       	   <label class="form-label" for="mmName">이름</label>	
+                           <div class="input-group">
+                               <input type="text" class="form-control" id="mmName" name="mmName" value="<c:out value="${dto.mmName }"/>" placeholder="이름을 입력해 주세요.">
+                           </div>
+                       </div>
+                       <div class="col-8 offset-2">
                        	   <label class="form-label" for="mmBod">생년월일</label>	
                            <div class="input-group">
                                <input type="text" class="form-control" id="datepicker" name="mmBod" value="<c:out value="${dto.mmBod }" />" placeholder="8글자로 입력해 주세요.(ex. YYYYMMDD)">

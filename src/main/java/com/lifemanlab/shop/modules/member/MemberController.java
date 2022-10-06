@@ -219,91 +219,91 @@ public class MemberController extends BaseController {
 		return "redirect:/member/loginForm";
 	}
 		
-		@RequestMapping(value = "memberUpdt")
-		public String memberUpdt(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
-			service.update(dto);
-			return "redirect:/member/memberList";
-		}
+	@RequestMapping(value = "memberUpdt")
+	public String memberUpdt(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
+		service.update(dto);
+		return "redirect:/member/memberList";
+	}
 		
-		@RequestMapping(value = "memberUele")
-		public String memberUele(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
-			service.uelete(dto);
-			return "redirect:/member/memberList";
-		}
-		
-		@RequestMapping(value = "memberDele")
-		public String memberDele(MemberVo vo, RedirectAttributes redirectAttributes) throws Exception {
-			service.delete(vo);
-			return "redirect:/member/memberList";
-		}
-		
-		@RequestMapping(value = "/index")
-		public String index() throws Exception {
-			return "infra/member/index";
-		}
-		
-		@RequestMapping(value = "/memberHome")
-		public String memberHome() throws Exception {
-			return "infra/member/user/memberHome";
-		}
-		
-		@RequestMapping(value = "/loginForm")
-		public String loginForm() throws Exception {
-			return "infra/member/user/loginForm";
-		}
-		
-		@RequestMapping(value = "/kakaoLogin")
-		public String kakaoLogin() throws Exception {
-			return "redirect:/member/index";
-		}
-		
-		@RequestMapping(value = "/idPwFindForm")
-		public String idPwFindForm() throws Exception {
-			return "infra/member/user/idPwFindForm";
-		}
-		
-		@RequestMapping(value = "/memberDropFormC")
-		public String memberDropFormC() throws Exception {
-			return "infra/member/user/memberDropFormC";
-		}
-		
-		@RequestMapping(value = "/memberModFormC")
-		public String memberModFormC() throws Exception {
-			return "infra/member/user/memberModFormC";
-		}
-		
-		@RequestMapping(value = "memberRegFormC")
-		public String memberRegFormC() throws Exception {
-			return "infra/member/user/memberRegFormC";
-		}
-		
-		@RequestMapping(value = "/pwChangeFormC")
-		public String pwChangFormC() throws Exception {
-			return "infra/member/user/pwChangeFormC";
-		}
-		
-		@RequestMapping(value = "/saleReg")
-		public String saleReg() throws Exception {
-			return "infra/member/user/saleReg";
-		}
-		
-		@RequestMapping(value = "/saleRegForm")
-		public String saleRegForm() throws Exception {
-			return "infra/member/user/saleRegForm";
-		}
-		
-		@RequestMapping(value = "/purchaseHistory")
-		public String purchaseHistory() throws Exception {
-			return "infra/member/user/purchaseHistory";
-		}
-		
-		@RequestMapping(value = "/saleManage")
-		public String saleManage() throws Exception {
-			return "infra/member/user/saleManage";
-		}
+	@RequestMapping(value = "memberUele")
+	public String memberUele(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
+		service.uelete(dto);
+		return "redirect:/member/memberList";
+	}
+	
+	@RequestMapping(value = "memberDele")
+	public String memberDele(MemberVo vo, RedirectAttributes redirectAttributes) throws Exception {
+		service.delete(vo);
+		return "redirect:/member/memberList";
+	}
+	
+	@RequestMapping(value = "index")
+	public String index() throws Exception {
+		return "infra/member/index";
+	}
+	
+	@RequestMapping(value = "memberHome")
+	public String memberHome() throws Exception {
+		return "infra/member/user/memberHome";
+	}
+	
+	@RequestMapping(value = "loginForm")
+	public String loginForm() throws Exception {
+		return "infra/member/user/loginForm";
+	}
+	
+	@RequestMapping(value = "kakaoLogin")
+	public String kakaoLogin() throws Exception {
+		return "redirect:/member/index";
+	}
+	
+	@RequestMapping(value = "idPwFindForm")
+	public String idPwFindForm() throws Exception {
+		return "infra/member/user/idPwFindForm";
+	}
+	
+	@RequestMapping(value = "memberDropFormC")
+	public String memberDropFormC() throws Exception {
+		return "infra/member/user/memberDropFormC";
+	}
+	
+	@RequestMapping(value = "memberModFormC")
+	public String memberModFormC() throws Exception {
+		return "infra/member/user/memberModFormC";
+	}
+	
+	@RequestMapping(value = "memberRegFormC")
+	public String memberRegFormC() throws Exception {
+		return "infra/member/user/memberRegFormC";
+	}
+	
+	@RequestMapping(value = "pwChangeFormC")
+	public String pwChangFormC() throws Exception {
+		return "infra/member/user/pwChangeFormC";
+	}
+	
+	@RequestMapping(value = "saleReg")
+	public String saleReg() throws Exception {
+		return "infra/member/user/saleReg";
+	}
+	
+	@RequestMapping(value = "saleRegForm")
+	public String saleRegForm() throws Exception {
+		return "infra/member/user/saleRegForm";
+	}
+	
+	@RequestMapping(value = "purchaseHistory")
+	public String purchaseHistory() throws Exception {
+		return "infra/member/user/purchaseHistory";
+	}
+	
+	@RequestMapping(value = "saleManage")
+	public String saleManage() throws Exception {
+		return "infra/member/user/saleManage";
+	}
 
-		@RequestMapping(value = "/xdminLoginForm")
-		public String xdminLoginForm() throws Exception {
-			return "infra/member/xdmin/xdminLoginForm";
-		}
+	@RequestMapping(value = "xdminLoginForm")
+	public String xdminLoginForm() throws Exception {
+		return "infra/member/xdmin/xdminLoginForm";
+	}
 }

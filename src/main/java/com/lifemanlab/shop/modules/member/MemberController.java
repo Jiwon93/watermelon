@@ -202,7 +202,7 @@ public class MemberController extends BaseController {
 		 
 	//비밀번호 변경
 	@RequestMapping(value = "pwChange")
-	public String pwChange(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
+	public String pwChange(Member dto, RedirectAttributes redirectAttributes) throws Exception {
 		int result = service.pwChange(dto);
 		System.out.println("controller.pwChange: " + result);
 		return "redirect:/member/pwChangeFormC";

@@ -269,7 +269,7 @@
 		SET
 			mmPw = #{mmPw}
 		WHERE 1=1
-			AND mmSeq = #{mmSeq}
+			AND mmSeq = #{sessSeq}
 	</update>
 	
 	<!-- 마이페이지(View) -->

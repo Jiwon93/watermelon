@@ -104,7 +104,7 @@
 		                       <div class="col-8 offset-2">
 		                       	   <label class="form-label" for="passwordReg">새로운 비밀번호</label>
 		                           <div class="input-group">
-		                               <input type="password" class="form-control" id="mmNewPw" name="mmPw" value="<c:out value="${dto.mmPw }"/>" placeholder="새로운 비밀번호를 입력해 주세요." readonly>
+		                               <input type="password" class="form-control" id="mmNewPw" name="mmPw" value="<c:out value="${item.mmPw }"/>" placeholder="새로운 비밀번호를 입력해 주세요." readonly>
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
@@ -157,7 +157,7 @@
     	var goUrlPwchange = "/member/pwChange";
     	var form = $("form[name=form]");
     	
-    	$("btnPwUpdt").on("click", function() {
+    	$("#btnPwUpdt").on("click", function(){
     		form.attr("action", goUrlPwchange).submit();
     	});
     

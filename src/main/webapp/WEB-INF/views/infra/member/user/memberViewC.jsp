@@ -144,6 +144,7 @@
 
 <body>
 <form method="get" name="form" autocomplete="off" enctype="multipart/form-data">
+	<input type="hidden" name="mmSeq" value="<c:out value="${vo.mmSeq }" />" />
     <!-- Navbar Start -->
     <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
     <!-- Navbar End -->
@@ -279,8 +280,7 @@
 								   <input class="file" id="chooseFile" type="file" onchange="dropFile.handleFiles(this.files)" accept="image/png, image/jpeg, image/gif">
 							   </div>
 							   <div class="col-sm-12 text-center">
-							   	   <button class="btn btn-primary w-25" type="button" id="btnMod">수정하기</button>	
-							   	   <button class="btn btn-primary w-25" type="button" id="btnMemberMod">수정완료</button>
+							   	   <a class="btn btn-primary w-25" href="javascript:goMod(<c:out value="${item.mmSeq }" />)">수정하기</a>	
 							   </div>
 		                   </div>
 	                   </div>
@@ -315,18 +315,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
     <script type="text/javascript">
-		var form = $("form[name=form]");
-		var seq = $("input:hidden[name=sessSeq]");
+		
 		var goUrlModForm = "/member/memberModFormC";
-		var goUrlMemberMod = "/member/memberMod";
+		
+		var form = $("form[name=form]");
+		
+		var seq = $("input:hidden[name=mmSeq]");
 		/* 
 		$("#btnModForm").on("click", function(){
 	   		$(location).attr("href", goUrlModForm);
 		});
 		 */
-		$("#btnMemberMod").on("click", function(){
-			form.attr("action", goUrlMemberMod).submit();
-		});
+		
+		goMod = function(keyValue) {
+			 seq.val(keyValue);
+			 form.attr("action", goUrlModForm).submit();
+		 }
 		
 		
 		/* 
@@ -337,11 +341,6 @@
 		}
 		*/
 		 
-		$("#btnMod").on("click", function(){
-			$('#mmNickname').attr('readonly', false);
-			$('#mmJob').attr('readonly', false);
-			$('#mmInterest').attr('readonly', false);
-		});
 		
 		upload = function(objName, seq, allowedMaxTotalFileNumber, allowedExtdiv, allowedEachFileSize, allowedTotalFileSize, uiType) {
 //			objName 과 seq 는 jsp 내에서 유일 하여야 함.

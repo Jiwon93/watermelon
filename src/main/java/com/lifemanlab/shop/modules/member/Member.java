@@ -38,6 +38,7 @@ public class Member extends Base{
 	private Integer mmpDiv;
 	private String member_mmSeq;
 	private Integer mmpDefaultNy;
+	private String sessSeq;
 	
 ///////////////////////////////////////////////
 	public String getMmSeq() {
@@ -231,6 +232,12 @@ public class Member extends Base{
 	}
 	public void setMmpDefaultNy(Integer mmpDefaultNy) {
 		this.mmpDefaultNy = mmpDefaultNy;
+	}
+	public String getSessSeq() {
+		return sessSeq;
+	}
+	public void setSessSeq(String sessSeq) {
+		this.sessSeq = sessSeq;
 	}
 	
 }

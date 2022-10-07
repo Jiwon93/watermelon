@@ -10,7 +10,7 @@
 			</div>
 			<div class="text-center pb-4">
 				<button class="btn btn-secondary" style="height: 30px; width: 60px; font-size: small;">일반</button>
-				<span class="px-3"><c:out value="${item.mmName }"/></span>
+				<span class="px-3"><c:out value="${sessName }"/></span>
 			</div>
 			<div class="text-center pb-5">
 				<button class="btn btn-primary" style="width: 200px;">만렙으로 전환</button>
@@ -37,7 +37,7 @@
 			</div>
 			<div class="text-center pb-4">
 				<button class="btn btn-primary" style="height: 30px; width: 60px; font-size: small;">만렙</button>
-				<span class="px-3"><c:out value="${item.mmName }"/></span>
+				<span class="px-3"><c:out value="${sessName }"/></span>
 			</div>
 			<div class="text-center pb-5">
 				<button class="btn btn-secondary" style="width: 200px;" type="button">일반으로 전환</button>

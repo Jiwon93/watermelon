@@ -250,17 +250,18 @@
 							   </div>
 							   <div class="col-8 offset-2">
 							   	   <div class="row mt-sm-4">
+							   	   	   <input type="file" name="img" id="img" multiple="multiple">
 								       <div class="col-sm-6 mt-3 mt-sm-0">
-								           <label for="ifmmUploadedImage" class="form-label input-file-button">이미지첨부</label>
-								 		   <input class="form-control form-control-sm" id="ifmmUploadedImage" name="ifmmUploadedImage" type="file" multiple="multiple" style="display: none;" onChange="upload('ifmmUploadedImage', 1, 0, 1, 0, 0, 1);">
+								           <label for="mmUploadedImage" class="form-label input-file-button">이미지첨부</label>
+								 		   <input class="form-control form-control-sm" id="mmUploadedImage" name="mmUploadedImage" type="file" multiple="multiple" style="display: none;" onChange="upload('mmUploadedImage', 1, 0, 1, 0, 0, 1);">
 										   <div class="addScroll">
 											   <ul id="ulFile1" class="list-group">
 											   </ul>
 										   </div>
 							           </div>
 							           <div class="col-sm-6 mt-3 mt-sm-0">
-										   <label for="ifmmUploadedFile" class="form-label input-file-button">파일첨부</label>
-										   <input class="form-control form-control-sm" id="ifmmUploadedFile" name="ifmmUploadedFile" type="file" multiple="multiple" style="display: none;" onChange="upload('ifmmUploadedFile', 2, 0, 2, 0, 0, 2);" >
+										   <label for="mmUploadedFile" class="form-label input-file-button">파일첨부</label>
+										   <input class="form-control form-control-sm" id="mmUploadedFile" name="mmUploadedFile" type="file" multiple="multiple" style="display: none;" onChange="upload('mmUploadedFile', 2, 0, 2, 0, 0, 2);" >
 										   <div class="addScroll">
 											   <ul id="ulFile2" class="list-group">
 											   </ul>
@@ -328,6 +329,26 @@
 		 */
 		
 		goMod = function(keyValue) {
+			 
+			var obj = document.getElementById("img").files; //배열
+			//var obj = document.querySelector("#img").files;
+			
+			alert(obj);
+			alert(obj.length);
+			alert(obj.name);
+			
+			for(var i=0; i<obj.length; i++) {
+				alert(obj[i].name + " : " + obj[i].size);
+			}
+			
+			for(var i=0; i<obj.length; i++) {
+				sum += obj[i];
+				alert(sum);
+			}
+			
+			
+			return false;
+			 
 			 seq.val(keyValue);
 			 form.attr("action", goUrlModForm).submit();
 		 }
@@ -340,6 +361,7 @@
 			form.attr("action", goUrlModForm).submit();
 		}
 		*/
+		
 		 
 		
 		upload = function(objName, seq, allowedMaxTotalFileNumber, allowedExtdiv, allowedEachFileSize, allowedTotalFileSize, uiType) {

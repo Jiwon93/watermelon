@@ -123,11 +123,11 @@
 		                       	   <label class="form-label" for="mmGender">성별</label>	
 		                           <br>
 		                           <div class="form-check form-check-inline">
-		                               <input type="radio" class="form-check-input" name="mmGender" id="mmGender1" value="5" <c:if test="${item.mmGender eq 5 }">selected</c:if>>
+		                               <input type="radio" class="form-check-input" name="mmGender" id="mmGender1" value="5" <c:if test="${item.mmGender eq 5 }">checked</c:if>>
 		                               <label class="form-check-label" for="genderRegM">남자</label>
-	                               	   <input type="radio" class="form-check-input" name="mmGender" id="mmGender2" value="6" <c:if test="${item.mmGender eq 6 }">selected</c:if>>
+	                               	   <input type="radio" class="form-check-input" name="mmGender" id="mmGender2" value="6" <c:if test="${item.mmGender eq 6 }">checked</c:if>>
 		                               <label class="form-check-label" for="genderRegM">여자</label>
-	                               	   <input type="radio" class="form-check-input" name="mmGender" id="mmGender3" value="7" <c:if test="${item.mmGender eq 7 }">selected</c:if>>
+	                               	   <input type="radio" class="form-check-input" name="mmGender" id="mmGender3" value="7" <c:if test="${item.mmGender eq 7 }">checked</c:if>>
 		                               <label class="form-check-label" for="genderRegM">기타</label>
 		                           </div>
 		                       </div>

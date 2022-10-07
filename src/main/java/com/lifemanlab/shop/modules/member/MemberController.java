@@ -267,8 +267,12 @@ public class MemberController extends BaseController {
 		return "infra/member/user/memberDropFormC";
 	}
 	
+	//마이페이지Mod
 	@RequestMapping(value = "memberModFormC")
-	public String memberModFormC() throws Exception {
+	public String memberModFormC(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+		Member item = service.selectOneView(vo);
+		model.addAttribute("item", item);
+		
 		return "infra/member/user/memberModFormC";
 	}
 	

@@ -58,6 +58,11 @@ public class MemberDao {
 		return result;
 	}
 	
+	public int memberModPhone(Member dto) {
+		int result = sqlSession.update(namespace + ".memberMod", dto);
+		return result;
+	}
+	
 	//Email 확인
 	public int selectOneIdCheck(Member dto) {
 		return sqlSession.selectOne(namespace + ".selectOneIdCheck", dto);

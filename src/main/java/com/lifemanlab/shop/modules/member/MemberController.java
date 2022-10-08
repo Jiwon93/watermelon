@@ -79,10 +79,12 @@ public class MemberController extends BaseController {
 	//회원정보수정
 	@RequestMapping(value = "memberMod")
 	public String memberMod(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
-		int result = service.memberMod(dto);
-		System.out.println("controller.Mod: " + result);
+		service.memberMod(dto);
+		service.memberModPhone(dto);
 		return "redirect:/member/memberViewC";
 	}
+	
+	
 	
 	//Email 찾기
 	@ResponseBody

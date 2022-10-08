@@ -28,6 +28,8 @@ public interface MemberService {
 	//회원정보수정
 	public int memberMod(Member dto) throws Exception;
 	
+	public int memberModPhone(Member dto) throws Exception;
+	
 	//비밀번호 확인
 	public int selectOnePwCheck(Member dto) throws Exception;
 	

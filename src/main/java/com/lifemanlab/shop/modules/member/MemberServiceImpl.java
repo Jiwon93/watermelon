@@ -97,6 +97,12 @@ public class MemberServiceImpl implements MemberService {
 		int result = dao.memberMod(dto);
 		return result;
 	}
+	
+	@Override
+	public int memberModPhone(Member dto) throws Exception {
+		int result = dao.memberModPhone(dto);
+		return result;
+	}
 
 	//로그인
 	@Override

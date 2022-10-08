@@ -201,6 +201,17 @@
 			mmSeq = #{mmSeq}
 	</update>
 	
+	<update id="memberModPhone">
+		UPDATE member_phone
+		SET
+			member_mmSeq = #{member_mmSeq}
+			,mmpPhoneNumber = #{mmpPhoneNumber}
+			,mmpDiv = #{mmpDiv}
+			,mmpDefaultNy = #{mmpDefaultNy}
+		WHERE
+			mmSeq = #{mmSeq}
+	</update>
+	
 	<!-- Email 확인 -->
 	<select id="selectOneIdCheck" resultType="Integer">
 		SELECT COUNT(*)

@@ -266,20 +266,10 @@
 						   </div>
 					   </div>
 					   <div class="col-8 offset-2">
-                       	  <label class="form-label" for="mmInterest">자기소개</label>
+                       	  <label class="form-label" for="mmIntroduce">자기소개</label>
                        	  <div class="input-group">
-	                           <select class="form-select" id="mmInterest" name="mmInterest" multiple>
-								   <option value="" <c:if test="${empty dto.mmInterest }">selected</c:if>>관심분야선택</option>
-								   <option value="35" <c:if test="${dto.mmInterest eq 35 }">selected</c:if>>개발/디자인</option>
-								   <option value="36" <c:if test="${dto.mmInterest eq 36 }">selected</c:if>>홈/리빙</option>
-								   <option value="37" <c:if test="${dto.mmInterest eq 37 }">selected</c:if>>레슨</option>
-								   <option value="38" <c:if test="${dto.mmInterest eq 38 }">selected</c:if>>통역/번역</option>
-								   <option value="39" <c:if test="${dto.mmInterest eq 39 }">selected</c:if>>사진/영상</option>
-								   <option value="40" <c:if test="${dto.mmInterest eq 40 }">selected</c:if>>세무/법무/노무</option>
-								   <option value="41" <c:if test="${dto.mmInterest eq 41 }">selected</c:if>>미용/건강</option>
-								   <option value="42" <c:if test="${dto.mmInterest eq 42 }">selected</c:if>>취업/입시</option>
-								   <option value="43" <c:if test="${dto.mmInterest eq 43 }">selected</c:if>>마케팅</option>
-								   <option value="44" <c:if test="${dto.mmInterest eq 44 }">selected</c:if>>이벤트</option>
+	                           <select class="form-select" id="mmIntroduce" name="mmIntroduce" multiple>
+								   <option value="44" <c:if test="${dto.mmIntroduce eq 44 }">selected</c:if>>이벤트</option>
 							   </select>
 						   </div>
 					   </div>

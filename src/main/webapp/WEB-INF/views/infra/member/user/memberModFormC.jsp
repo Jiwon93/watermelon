@@ -79,128 +79,129 @@
     <!-- Navbar End -->
     
     <!-- Contact Start -->
-    <div class="container-fluid overflow-hidden" style="margin: 1rem 0;">
-           <div class="row">
-           
-	           <!-- mypageList Start -->
-		       <%@include file="../../common/xdmin/includeV1/mypageList.jsp"%>
-		       <!-- mypageList End -->
-		       
-	           <div class="col-sm-9 p-2">
-	               <div class="p-lg-5">
-	                   <div class="">
-	                       <h4 class="mb-4">계정설정</h4>
-	                   </div>
-	                   <div class="p-4 border border-2 border-light">
-		                   <div class="row g-3">
-		                   	   <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="mmNickname">닉네임</label>	
-		                           <div class="input-group">
-		                               <input type="text" class="form-control" id="mmNickname" name="mmNickname" value="<c:out value="${item.mmNickname }"/>" placeholder="닉네임을 입력해 주세요.">
-		                           </div>
-		                       </div>
-		                       <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="mmEmail">이메일</label>
-		                       	   <button class="confirm btn btn-primary" style="height: 30px; color: #AB7442;">인증</button>	
-		                           <div class="input-group">
-		                               <input type="email" class="form-control"  id="mmEmail" name="mmEmail" value="<c:out value="${item.mmEmail }"/>">
-		                           </div>
-		                       </div>
-		                       <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="mmBod">생년월일</label>	
-		                           <div class="input-group">
-		                               <input type="text" class="form-control" id="mmBod" name="mmBod" value="<c:out value="${item.mmBod }"/>">
-		                           </div>
-		                       </div>
-		                       <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="mmpPhoneNumber">핸드폰</label>	
-		                       	   <button class="confirm btn btn-primary" style="height: 30px; color: #AB7442;">인증</button>
-		                           <div class="input-group">
-		                               <input type="text" class="form-control" id="mmpPhoneNumber" name="mmpPhoneNumber" value="<c:out value="${item.mmpPhoneNumber }"/>">
-		                           </div>
-		                       </div>
-		                       <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="mmGender">성별</label>	
-		                           <br>
-		                           <div class="form-check form-check-inline">
-		                               <input type="radio" class="form-check-input" name="mmGender" id="mmGender1" value="5" <c:if test="${item.mmGender eq 5 }">checked</c:if>>
-		                               <label class="form-check-label" for="genderRegM">남자</label>
-	                               	   <input type="radio" class="form-check-input" name="mmGender" id="mmGender2" value="6" <c:if test="${item.mmGender eq 6 }">checked</c:if>>
-		                               <label class="form-check-label" for="genderRegM">여자</label>
-	                               	   <input type="radio" class="form-check-input" name="mmGender" id="mmGender3" value="7" <c:if test="${item.mmGender eq 7 }">checked</c:if>>
-		                               <label class="form-check-label" for="genderRegM">기타</label>
-		                           </div>
-		                       </div>
-		                       <div class="col-3 offset-2">
-		                       	   <label class="form-label" for="addressReg">주소</label>
-		                       	   <div class="input-group">
-		                       	   	   <button class="btn btn-primary" type="submit" onclick="mmrfPostcodeBtn()">주소검색</button>
-		                               <input type="text" class="form-control w-25" id="mmrfPostcode" name="mmZip" value="<c:out value="${item.mmZip }"/>">
-		                           </div>
-		                       </div>
-		                       <div class="col-8 offset-2 mt-2">
-		                           <div class="input-group mb-2">
-		                               <input type="text" class="form-control" id="mmrfRoadAddress" name="mmAddress1" value="<c:out value="${item.mmAddress1 }"/>">
-		                           </div>
-		                           <span id="guide" style="color:#999;display:none"></span>
-		                           <div class="input-group">
-		                               <input type="text" class="form-control" id="mmrfDetailAddress" name="mmAddress2" value="<c:out value="${item.mmAddress2 }"/>">
-		                           </div>
-		                       </div>
-		                       <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="mmJob">직업</label>
-		                       	   <div class="input-group">
-				                       <select class="form-select" id="mmJob" name="mmJob">
-										   <option value="" <c:if test="${empty item.mmJob }">selected</c:if>>직업선택</option>
-										   <option value="13" <c:if test="${item.mmJob eq 13 }">selected</c:if>>직장인</option>
-										   <option value="14" <c:if test="${item.mmJob eq 14 }">selected</c:if>>프리랜서</option>
-										   <option value="15" <c:if test="${item.mmJob eq 15 }">selected</c:if>>소상공인</option>
-										   <option value="16" <c:if test="${item.mmJob eq 16 }">selected</c:if>>스타트업 창업자</option>
-										   <option value="17" <c:if test="${item.mmJob eq 17 }">selected</c:if>>대학(원)생</option>
-										   <option value="18" <c:if test="${item.mmJob eq 18 }">selected</c:if>>취업준비생</option>
-										   <option value="19" <c:if test="${item.mmJob eq 19 }">selected</c:if>>무직</option>
-								   	   </select>
-					   		   	   </div>
-				  			   </div>
-							   <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="mmInterest">관심선택(중복 선택 가능)</label>
-		                       	   <div class="input-group">
-			                           <select class="form-select" id="mmInterest" name="mmInterest" multiple>
-										   <option value="" <c:if test="${empty item.mmInterest }">selected</c:if>>관심분야선택</option>
-										   <option value="35" <c:if test="${item.mmInterest eq 35 }">selected</c:if>>개발/디자인</option>
-										   <option value="36" <c:if test="${item.mmInterest eq 36 }">selected</c:if>>홈/리빙</option>
-										   <option value="37" <c:if test="${item.mmInterest eq 37 }">selected</c:if>>레슨</option>
-										   <option value="38" <c:if test="${item.mmInterest eq 38 }">selected</c:if>>통역/번역</option>
-										   <option value="39" <c:if test="${item.mmInterest eq 39 }">selected</c:if>>사진/영상</option>
-										   <option value="40" <c:if test="${item.mmInterest eq 40 }">selected</c:if>>세무/법무/노무</option>
-										   <option value="41" <c:if test="${item.mmInterest eq 41 }">selected</c:if>>미용/건강</option>
-										   <option value="42" <c:if test="${item.mmInterest eq 42 }">selected</c:if>>취업/입시</option>
-										   <option value="43" <c:if test="${item.mmInterest eq 43 }">selected</c:if>>마케팅</option>
-										   <option value="44" <c:if test="${item.mmInterest eq 44 }">selected</c:if>>이벤트</option>
-									   </select>
-								   </div>
-							   </div>
-							   <div class="col-sm-12 text-center">
-							   	   <button class="btn btn-primary w-25" type="button" id="btnMod">수정완료</button>	
-							   </div>
-		                   </div>
-	                   </div>
-	               </div>
-	           </div>
-           </div>
-    </div>
-    
-    <!-- Footer Start -->
-    <%@include file="../../common/xdmin/includeV1/footer.jsp"%>
-    <!-- Footer End -->
+	<div class="container-fluid overflow-hidden" style="margin: 1rem 0;">
+		<div class="row">
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+		<!-- mypageList Start -->
+		<%@include file="../../common/xdmin/includeV1/mypageList.jsp"%>
+		<!-- mypageList End -->
+
+			<div class="col-sm-9 p-2">
+				<div class="p-lg-5">
+					<div class="">
+						<h4 class="mb-4">계정설정</h4>
+					</div>
+					<div class="p-4 border border-2 border-light">
+						<div class="row g-3">
+							<div class="col-8 offset-2">
+								<label class="form-label" for="mmNickname">닉네임</label>	
+								<div class="input-group">
+									<input type="text" class="form-control" id="mmNickname" name="mmNickname" value="<c:out value="${item.mmNickname }"/>" placeholder="닉네임을 입력해 주세요.">
+								</div>
+							</div>
+							<div class="col-8 offset-2">
+								<label class="form-label" for="mmEmail">이메일</label>
+								<button class="confirm btn btn-primary" style="height: 30px; color: #AB7442;">인증</button>	
+								<div class="input-group">
+									<input type="email" class="form-control"  id="mmEmail" name="mmEmail" value="<c:out value="${item.mmEmail }"/>">
+								</div>
+							</div>
+							<div class="col-8 offset-2">
+								<label class="form-label" for="mmBod">생년월일</label>	
+								<div class="input-group">
+									<input type="text" class="form-control" id="mmBod" name="mmBod" value="<c:out value="${item.mmBod }"/>">
+								</div>
+							</div>
+							<div class="col-8 offset-2">
+								<label class="form-label" for="mmpPhoneNumber">핸드폰</label>	
+								<button class="confirm btn btn-primary" style="height: 30px; color: #AB7442;">인증</button>
+								<div class="input-group">
+									<input type="text" class="form-control" id="mmpPhoneNumber" name="mmpPhoneNumber" value="<c:out value="${item.mmpPhoneNumber }"/>">
+								</div>
+							</div>
+							<div class="col-8 offset-2">
+								<label class="form-label" for="mmGender">성별</label>	
+								<br>
+								<div class="form-check form-check-inline">
+									<input type="radio" class="form-check-input" name="mmGender" id="mmGender1" value="5" <c:if test="${item.mmGender eq 5 }">checked</c:if>>
+									<label class="form-check-label" for="genderRegM">남자</label>
+									<input type="radio" class="form-check-input" name="mmGender" id="mmGender2" value="6" <c:if test="${item.mmGender eq 6 }">checked</c:if>>
+									<label class="form-check-label" for="genderRegM">여자</label>
+									<input type="radio" class="form-check-input" name="mmGender" id="mmGender3" value="7" <c:if test="${item.mmGender eq 7 }">checked</c:if>>
+									<label class="form-check-label" for="genderRegM">기타</label>
+								</div>
+							</div>
+							<div class="col-3 offset-2">
+								<label class="form-label" for="addressReg">주소</label>
+								<div class="input-group">
+									<button class="btn btn-primary" type="submit" onclick="mmrfPostcodeBtn()">주소검색</button>
+									<input type="text" class="form-control w-25" id="mmrfPostcode" name="mmZip" value="<c:out value="${item.mmZip }"/>">
+								</div>
+							</div>
+							<div class="col-8 offset-2 mt-2">
+								<div class="input-group mb-2">
+									<input type="text" class="form-control" id="mmrfRoadAddress" name="mmAddress1" value="<c:out value="${item.mmAddress1 }"/>">
+								</div>
+								<span id="guide" style="color:#999;display:none"></span>
+								<div class="input-group">
+									<input type="text" class="form-control" id="mmrfDetailAddress" name="mmAddress2" value="<c:out value="${item.mmAddress2 }"/>">
+								</div>
+							</div>
+							<div class="col-8 offset-2">
+								<label class="form-label" for="mmJob">직업</label>
+								<div class="input-group">
+									<select class="form-select" id="mmJob" name="mmJob">
+										<option value="" <c:if test="${empty item.mmJob }">selected</c:if>>직업선택</option>
+										<option value="13" <c:if test="${item.mmJob eq 13 }">selected</c:if>>직장인</option>
+										<option value="14" <c:if test="${item.mmJob eq 14 }">selected</c:if>>프리랜서</option>
+										<option value="15" <c:if test="${item.mmJob eq 15 }">selected</c:if>>소상공인</option>
+										<option value="16" <c:if test="${item.mmJob eq 16 }">selected</c:if>>스타트업 창업자</option>
+										<option value="17" <c:if test="${item.mmJob eq 17 }">selected</c:if>>대학(원)생</option>
+										<option value="18" <c:if test="${item.mmJob eq 18 }">selected</c:if>>취업준비생</option>
+										<option value="19" <c:if test="${item.mmJob eq 19 }">selected</c:if>>무직</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-8 offset-2">
+								<label class="form-label" for="mmInterest">관심선택(중복 선택 가능)</label>
+								<div class="input-group">
+									<select class="form-select" id="mmInterest" name="mmInterest" multiple>
+										<option value="" <c:if test="${empty item.mmInterest }">selected</c:if>>관심분야선택</option>
+										<option value="35" <c:if test="${item.mmInterest eq 35 }">selected</c:if>>개발/디자인</option>
+										<option value="36" <c:if test="${item.mmInterest eq 36 }">selected</c:if>>홈/리빙</option>
+										<option value="37" <c:if test="${item.mmInterest eq 37 }">selected</c:if>>레슨</option>
+										<option value="38" <c:if test="${item.mmInterest eq 38 }">selected</c:if>>통역/번역</option>
+										<option value="39" <c:if test="${item.mmInterest eq 39 }">selected</c:if>>사진/영상</option>
+										<option value="40" <c:if test="${item.mmInterest eq 40 }">selected</c:if>>세무/법무/노무</option>
+										<option value="41" <c:if test="${item.mmInterest eq 41 }">selected</c:if>>미용/건강</option>
+										<option value="42" <c:if test="${item.mmInterest eq 42 }">selected</c:if>>취업/입시</option>
+										<option value="43" <c:if test="${item.mmInterest eq 43 }">selected</c:if>>마케팅</option>
+										<option value="44" <c:if test="${item.mmInterest eq 44 }">selected</c:if>>이벤트</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-sm-12 text-center">
+								<button class="btn btn-primary w-25" type="button" id="btnMod">수정완료</button>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+	<!-- Footer Start -->
+	<%@include file="../../common/xdmin/includeV1/footer.jsp"%>
+	<!-- Footer End -->
+
+	<!-- Back to Top -->
+	<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 </form>
+
 <form name="formVo" id="formVo" method="post">
-<!-- *Vo.jsp s -->
-<%@include file="../../common/xdmin/includeV1/memberVo.jsp"%>		<!-- #-> -->
-<!-- *Vo.jsp e -->
+	<!-- *Vo.jsp s -->
+	<%@include file="../../common/xdmin/includeV1/memberVo.jsp"%>		<!-- #-> -->
+	<!-- *Vo.jsp e -->
 </form>
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

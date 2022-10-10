@@ -46,112 +46,18 @@
 </head>
 <body>
 	<form id="form" name="form" method="post" onkeydown="return captureReturnKey(event)" autocomplete="off" enctype="multipart/form-data">
-		<nav class="navbar navbar-expand-lg">
-			<div class="container-fluid">
-				<div class="col-1">
-					<img src="/resources/images/logo.PNG" alt="" style="width: 60px; height: 60px;">
-				</div>
-				<div class="col-7 text-center">
-					<h4>인생만렙 Management System</h4>
-				</div>
-				<div class="col-1 text-center">
-					<img src="/resources/images/men.png" class="border border-3 rounded-circle" style="height: 35%; width: 35%;" alt="">
-				</div>
-				<div class="col-2 text-start">
-					<span class="fs-5">Jiwon Shion</span>
-					<br>
-					<span class="fs-6">Administrator</span>
-				</div>
-				<div class="col-1">
-					<select class="form-select form-select-sm">
-						<option selected>언어</option>
-						<option>한국어</option>
-						<option>영어</option>
-					</select>
-				</div>
-			</div>
-		</nav>
-		<nav class="navbar navbar-expand-lg" style="background-color: #E3F2FD">
-		    <div class="container-fluid">
-		        <a class="navbar-brand" href="#">Navbar</a>
-		        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-			        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-			          <li class="nav-item">
-			            <a class="nav-link active" aria-current="page" href="#">코드그룹</a>
-			          </li>
-			          <li class="nav-item">
-			            <a class="nav-link" href="#">코드그룹관리</a>
-			          </li>
-			          <li class="nav-item">
-			            <a class="nav-link" href="#">코드</a>
-			          </li>
-			          <li class="nav-item">
-			            <a class="nav-link" href="#">코드관리</a>
-			          </li>
-			        </ul>
-		        </div>
-		    </div>
-		</nav>
+		
+		<!-- *header.jsp s -->
+		<%@include file="../../common/xdmin/includeV1/header.jsp"%>		<!-- #-> -->
+		<!-- *header.jsp e -->
+		
 		<div class="container-fluid">
 			<div class="row mt-4">
-				<div class="col-2">
-					<div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-				    <ul class="list-unstyled ps-0">
-				      <li class="mb-1">
-				        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-				          Home
-				        </button>
-				        <div class="collapse show" id="home-collapse">
-				          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Updates</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Reports</a></li>
-				          </ul>
-				        </div>
-				      </li>
-				      <li class="mb-1">
-				        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-				          Dashboard
-				        </button>
-				        <div class="collapse" id="dashboard-collapse">
-				          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Weekly</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Monthly</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
-				          </ul>
-				        </div>
-				      </li>
-				      <li class="mb-1">
-				        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-				          Orders
-				        </button>
-				        <div class="collapse" id="orders-collapse">
-				          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Processed</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Shipped</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Returned</a></li>
-				          </ul>
-				        </div>
-				      </li>
-				      <li class="border-top my-3"></li>
-				      <li class="mb-1">
-				        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-				          Account
-				        </button>
-				        <div class="collapse" id="account-collapse">
-				          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New...</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
-				            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
-				          </ul>
-				        </div>
-				      </li>
-				    </ul>
-				  </div>
-				</div>
+			
+				<!-- *sidebar.jsp s -->
+				<%@include file="../../common/xdmin/includeV1/sidebar.jsp"%>		<!-- #-> -->
+				<!-- *sidebar.jsp e -->
+				
 				<div class="col-10">
 					<div class="row">
 						<h4>회원 관리</h4>

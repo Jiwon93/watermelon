@@ -25,10 +25,6 @@ public class Member extends Base{
 	private Integer mmDetail;
 	private Integer mmTechnique;
 	private Integer mmCareer;
-	private Integer mmSchool;
-	private Integer mmSchoolMajor;
-	private Integer mmSchoolState;
-	private Integer mmCertificate;
 	private Integer mmWishPay;
 	private Integer mmWorkTime;
 	private String mmIntroduce;
@@ -154,30 +150,6 @@ public class Member extends Base{
 	}
 	public void setMmCareer(Integer mmCareer) {
 		this.mmCareer = mmCareer;
-	}
-	public Integer getMmSchool() {
-		return mmSchool;
-	}
-	public void setMmSchool(Integer mmSchool) {
-		this.mmSchool = mmSchool;
-	}
-	public Integer getMmSchoolMajor() {
-		return mmSchoolMajor;
-	}
-	public void setMmSchoolMajor(Integer mmSchoolMajor) {
-		this.mmSchoolMajor = mmSchoolMajor;
-	}
-	public Integer getMmSchoolState() {
-		return mmSchoolState;
-	}
-	public void setMmSchoolState(Integer mmSchoolState) {
-		this.mmSchoolState = mmSchoolState;
-	}
-	public Integer getMmCertificate() {
-		return mmCertificate;
-	}
-	public void setMmCertificate(Integer mmCertificate) {
-		this.mmCertificate = mmCertificate;
 	}
 	public Integer getMmWishPay() {
 		return mmWishPay;

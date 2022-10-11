@@ -1,5 +1,5 @@
 	<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-	<input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
+	<%-- <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }"> --%>
 	
 	<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
         <a type="button" id="btnHome" class="navbar-brand d-flex align-items-center px-4 px-lg-5">

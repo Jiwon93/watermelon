@@ -4,6 +4,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
+
+<jsp:useBean id="CodeServiceImpl" class="com.lifemanlab.shop.modules.code.CodeServiceImpl"/>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -74,6 +76,7 @@
 
 <body>
 <form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
+    <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
     <!-- Navbar Start -->
     <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
     <!-- Navbar End -->

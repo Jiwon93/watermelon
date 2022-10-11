@@ -65,6 +65,7 @@
 
 <body>
 <form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
+    <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
         <a href="#" class="navbar-brand d-flex align-items-center px-4 px-lg-5">

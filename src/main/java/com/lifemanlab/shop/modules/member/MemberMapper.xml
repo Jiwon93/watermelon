@@ -204,12 +204,11 @@
 	<update id="memberModPhone">
 		UPDATE member_phone
 		SET
-			member_mmSeq = #{member_mmSeq}
-			,mmpPhoneNumber = #{mmpPhoneNumber}
+			mmpPhoneNumber = #{mmpPhoneNumber}
 			,mmpDiv = #{mmpDiv}
 			,mmpDefaultNy = #{mmpDefaultNy}
 		WHERE
-			mmSeq = #{sessSeq}
+			member_mmSeq = #{sessSeq}
 	</update>
 	
 	<!-- Email 확인 -->
@@ -279,8 +278,8 @@
 		UPDATE member
 		SET
 			mmPw = #{mmPw}
-		WHERE 1=1
-			AND mmSeq = #{sessSeq}
+		WHERE
+			mmSeq = #{sessSeq}
 	</update>
 	
 	<!-- 마이페이지(View) -->

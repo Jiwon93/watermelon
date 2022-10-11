@@ -59,6 +59,7 @@
 </head>
 <body>
 <form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
+    <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
     <!-- Navbar Start -->
     <nav class="container-fluid">
         <div class="row" id="">

@@ -144,7 +144,8 @@
 
 <body>
 <form method="get" name="form" autocomplete="off" enctype="multipart/form-data">
-<input type="hidden" name="mmSeq" value="<c:out value="${vo.mmSeq }" />" />
+<input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
+<input type="hidden" name="mmSeq" value="<c:out value="${vo.mmSeq }" />">
 	<!-- Navbar Start -->
 	<%@include file="../../common/xdmin/includeV1/nav.jsp"%>
 	<!-- Navbar End -->

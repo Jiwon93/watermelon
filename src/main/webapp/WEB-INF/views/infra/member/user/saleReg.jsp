@@ -75,13 +75,16 @@
 <body>
 <form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
     <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
+    <input type="hidden" id="itemSeq" name="itemSeq" value="${dto.itemSeq }">
+    <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
+	<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
     <!-- Navbar Start -->
     <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
     <!-- Navbar End -->
     
     <!-- Contact Start -->
     <div class="container-fluid overflow-hidden" style="margin: 1rem 0;">
-           <div class="row">
+          	<div class="row">
            
 	           <!-- mypageList Start -->
 		       <%@include file="../../common/xdmin/includeV1/mypageList.jsp"%>
@@ -138,17 +141,9 @@
 					               </div>
 					           </div>
 				           </div>
-		                   <div class="page m-5 mb-0">
-		                   	   <ul class="pagination justify-content-center">
-		                   	   	   <li><a href="#" class="start m-3"><i class="fa-solid fa-angle-left"></i></a></li>
-		                   	   	   <li><a href="#" class="first m-3"><i class="fa-solid fa-1"></i></a></li>
-		                   	   	   <li><a href="#" class="second m-3"><i class="fa-solid fa-2"></i></a></li>
-		                   	   	   <li><a href="#" class="third m-3"><i class="fa-solid fa-3"></i></a></li>
-		                   	   	   <li><a href="#" class="forth m-3"><i class="fa-solid fa-4"></i></a></li>
-		                   	   	   <li><a href="#" class="fifth m-3"><i class="fa-solid fa-5"></i></a></li>
-		                   	   	   <li><a href="#" class="end m-3"><i class="fa-solid fa-angle-right"></i></a></li>
-		                   	   </ul>
-		                   </div>
+		                   <!-- pagination s -->
+						   <%@include file="../../common/xdmin/includeV1/pagination.jsp"%>
+						   <!-- pagination e -->
 	                   </div>
 	               </div>
 	           </div>

@@ -19,6 +19,9 @@ public class ItemController {
 
 	@RequestMapping(value = "itemMenu")
 	public String itemMenu(@ModelAttribute("vo") ItemVo vo, Model model) throws Exception {
+		
+		vo.setParamsPaging(service.selectOneCount(vo));
+		
 		List<Item> list = service.selectList(vo);
 		model.addAttribute("list", list);
 		

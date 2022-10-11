@@ -205,8 +205,6 @@
 		UPDATE member_phone
 		SET
 			mmpPhoneNumber = #{mmpPhoneNumber}
-			,mmpDiv = #{mmpDiv}
-			,mmpDefaultNy = #{mmpDefaultNy}
 		WHERE
 			member_mmSeq = #{sessSeq}
 	</update>

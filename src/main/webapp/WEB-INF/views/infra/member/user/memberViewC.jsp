@@ -145,7 +145,7 @@
 <body>
 <form method="get" name="form" autocomplete="off" enctype="multipart/form-data">
 <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
-<input type="hidden" name="mmSeq" value="<c:out value="${vo.mmSeq }" />">
+<input type="hidden" id="mmSeq" name="mmSeq" value="${vo.mmSeq }">
 	<!-- Navbar Start -->
 	<%@include file="../../common/xdmin/includeV1/nav.jsp"%>
 	<!-- Navbar End -->
@@ -195,15 +195,15 @@
 								<div class="form-check form-check-inline">
 								<c:choose>
 									<c:when test="${item.mmGender eq 5 }">
-									<input type="radio" class="form-check-input" name="mmGender" id="mmGender1" checked readonly>
+									<input type="radio" class="form-check-input" name="mmGender" id="mmGender1" checked disable>
 									<label class="form-check-label" for="genderRegM">남자</label>
 									</c:when>
 									<c:when test="${item.mmGender eq 6 }">
-									<input type="radio" class="form-check-input" name="mmGender" id="mmGender2" checked readonly>
+									<input type="radio" class="form-check-input" name="mmGender" id="mmGender2" checked disable>
 									<label class="form-check-label" for="genderRegM">여자</label>
 									</c:when>
 									<c:otherwise>
-									<input type="radio" class="form-check-input" name="mmGender" id="mmGender3" checked readonly>
+									<input type="radio" class="form-check-input" name="mmGender" id="mmGender3" checked disable>
 									<label class="form-check-label" for="genderRegM">기타</label>
 									</c:otherwise>
 								</c:choose>
@@ -294,6 +294,7 @@
 	<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 </form>
 
+
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -319,7 +320,6 @@
 		var goUrlModForm = "/member/memberModFormC";
 		
 		var form = $("form[name=form]");
-		
 		var seq = $("input:hidden[name=mmSeq]");
 		/* 
 		$("#btnModForm").on("click", function(){

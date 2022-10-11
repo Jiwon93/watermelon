@@ -59,7 +59,7 @@ public class MemberDao {
 	}
 	
 	public int memberModPhone(Member dto) {
-		int result = sqlSession.update(namespace + ".memberMod", dto);
+		int result = sqlSession.update(namespace + ".memberModPhone", dto);
 		return result;
 	}
 	

@@ -81,9 +81,10 @@ public class MemberController extends BaseController {
 	public String memberMod(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
 		service.memberMod(dto);
 		service.memberModPhone(dto);
+		
+		redirectAttributes.addFlashAttribute("vo", vo);
 		return "redirect:/member/memberViewC";
 	}
-	
 	
 	
 	//Email 찾기

@@ -100,6 +100,12 @@
 								</div>
 							</div>
 							<div class="col-8 offset-2">
+								<label class="form-label" for="mmName">이름</label>	
+								<div class="input-group">
+									<input type="text" class="form-control" id="mmName" name="mmName" value="<c:out value="${item.mmName }"/>" placeholder="닉네임을 입력해 주세요.">
+								</div>
+							</div>
+							<div class="col-8 offset-2">
 								<label class="form-label" for="mmEmail">이메일</label>
 								<button class="confirm btn btn-primary" style="height: 30px; color: #AB7442;">인증</button>	
 								<div class="input-group">
@@ -123,12 +129,20 @@
 								<label class="form-label" for="mmGender">성별</label>	
 								<br>
 								<div class="form-check form-check-inline">
-									<input type="radio" class="form-check-input" name="mmGender" id="mmGender1" value="5" <c:if test="${item.mmGender eq 5 }">checked</c:if>>
+								<c:choose>
+									<c:when test="${item.mmGender eq 5 }">
+									<input type="radio" class="form-check-input" name="mmGender" id="mmGender1" value="5" readonly <c:if test="${item.mmGender eq 5 }">checked</c:if>>
 									<label class="form-check-label" for="genderRegM">남자</label>
-									<input type="radio" class="form-check-input" name="mmGender" id="mmGender2" value="6" <c:if test="${item.mmGender eq 6 }">checked</c:if>>
+									</c:when>
+									<c:when test="${item.mmGender eq 6 }">
+									<input type="radio" class="form-check-input" name="mmGender" id="mmGender2" value="6" readonly <c:if test="${item.mmGender eq 6 }">checked</c:if>>
 									<label class="form-check-label" for="genderRegM">여자</label>
-									<input type="radio" class="form-check-input" name="mmGender" id="mmGender3" value="7" <c:if test="${item.mmGender eq 7 }">checked</c:if>>
+									</c:when>
+									<c:otherwise>
+									<input type="radio" class="form-check-input" name="mmGender" id="mmGender3" value="7" readonly <c:if test="${item.mmGender eq 7 }">checked</c:if>>
 									<label class="form-check-label" for="genderRegM">기타</label>
+									</c:otherwise>
+								</c:choose>
 								</div>
 							</div>
 							<div class="col-3 offset-2">
@@ -181,7 +195,7 @@
 								</div>
 							</div>
 							<div class="col-sm-12 text-center">
-								<button class="btn btn-primary w-25" type="button" id="btnMod">수정완료</button>	
+								<button class="btn btn-primary w-25" type="button" id="btnSave">수정완료</button>	
 							</div>
 						</div>
 					</div>
@@ -235,9 +249,6 @@
     		form.attr("action", goUrlMemberMod).submit();
     	});
     
-    	$("#btnList").on("click", function(){
-			formVo.attr("action", goUrlList).submit();
-		});
 	  //카카오 지도 API
 		//본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
 	    function mmrfPostcodeBtn() {

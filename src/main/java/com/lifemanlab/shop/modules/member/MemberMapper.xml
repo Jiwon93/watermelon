@@ -198,7 +198,7 @@
 			,mmJob = #{mmJob}
 			,mmInterest = #{mmInterest}
 		WHERE
-			mmSeq = #{mmSeq}
+			mmSeq = #{sessSeq}
 	</update>
 	
 	<update id="memberModPhone">
@@ -209,7 +209,7 @@
 			,mmpDiv = #{mmpDiv}
 			,mmpDefaultNy = #{mmpDefaultNy}
 		WHERE
-			mmSeq = #{mmSeq}
+			mmSeq = #{sessSeq}
 	</update>
 	
 	<!-- Email 확인 -->

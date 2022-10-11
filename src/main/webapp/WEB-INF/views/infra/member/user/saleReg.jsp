@@ -122,79 +122,22 @@
 					   </div>
 	                   <div class="p-4 pb-1 border border-2 border-light">
 		                   <div class="row g-3">
-		                   	   <table class="m-4">
-		                   	   	   <tr>
-		                   	   	   	   <td rowspan="6" style="width: 270px;"><img alt="" src="/resources/images/main.jpg" style="width: 220px; height: 150px;"></td>
-		                   	   	   	   <td><span class="btn btn-secondary btn-sm" style="height: 30px; width: 80px;">주문완료</span></td>
-		                   	   	   	   <td></td>
-		                   	   	   </tr>
-		                   	   	   <tr>
-		                   	   	   	   <!-- <td></td> -->
-		                   	   	   	   <td><b>최신 테마 반응형 홈페이지를 제작해 드립니다.</b></td>
-		                   	   	   	   <td><b>10,000,000원</b></td>
-		                   	   	   </tr>
-		                   	   	   <tr>
-		                   	   	   	   <!-- <td></td> -->
-		                   	   	   	   <td>작업완료일 : 22.07.21 10:21</td>
-		                   	   	   	   <td></td>
-		                   	   	   </tr>
-		                   	   </table>
-		                   	   <hr>
-		                   	   <table class="m-4">
-		                   	   	   <tr>
-		                   	   	   	   <td rowspan="6" style="width: 270px;"><img alt="" src="/resources/images/main.jpg" style="width: 220px; height: 150px;"></td>
-		                   	   	   	   <td><span class="btn btn-primary btn-sm" style="height: 30px; width: 80px;">발송중</span></td>
-		                   	   	   	   <td></td>
-		                   	   	   </tr>
-		                   	   	   <tr>
-		                   	   	   	   <!-- <td></td> -->
-		                   	   	   	   <td><b>최신 테마 반응형 홈페이지를 제작해 드립니다.</b></td>
-		                   	   	   	   <td><b>10,000,000원</b></td>
-		                   	   	   </tr>
-		                   	   	   <tr>
-		                   	   	   	   <!-- <td></td> -->
-		                   	   	   	   <td>작업완료일 : 22.07.21 10:21</td>
-		                   	   	   	   <td></td>
-		                   	   	   </tr>
-		                   	   </table>
-		                   	   <hr>
-		                   	   <table class="m-4">
-		                   	   	   <tr>
-		                   	   	   	   <td rowspan="6" style="width: 270px;"><img alt="" src="/resources/images/main.jpg" style="width: 220px; height: 150px;"></td>
-		                   	   	   	   <td><span class="btn btn-success btn-sm" style="height: 30px; width: 80px;">완료</span></td>
-		                   	   	   	   <td></td>
-		                   	   	   </tr>
-		                   	   	   <tr>
-		                   	   	   	   <!-- <td></td> -->
-		                   	   	   	   <td><b>최신 테마 반응형 홈페이지를 제작해 드립니다.</b></td>
-		                   	   	   	   <td><b>10,000,000원</b></td>
-		                   	   	   </tr>
-		                   	   	   <tr>
-		                   	   	   	   <!-- <td></td> -->
-		                   	   	   	   <td>작업완료일 : 22.07.21 10:21</td>
-		                   	   	   	   <td></td>
-		                   	   	   </tr>
-		                   	   </table>
-		                   	   <hr>
-		                   	   <table class="m-4">
-		                   	   	   <tr>
-		                   	   	   	   <td rowspan="6" style="width: 270px;"><img alt="" src="/resources/images/main.jpg" style="width: 220px; height: 150px;"></td>
-		                   	   	   	   <td><span class="btn btn-danger btn-sm" style="height: 30px; width: 80px;">취소</span></td>
-		                   	   	   	   <td></td>
-		                   	   	   </tr>
-		                   	   	   <tr>
-		                   	   	   	   <!-- <td></td> -->
-		                   	   	   	   <td><b>최신 테마 반응형 홈페이지를 제작해 드립니다.</b></td>
-		                   	   	   	   <td><b>10,000,000원</b></td>
-		                   	   	   </tr>
-		                   	   	   <tr>
-		                   	   	   	   <!-- <td></td> -->
-		                   	   	   	   <td>작업완료일 : 22.07.21 10:21</td>
-		                   	   	   	   <td></td>
-		                   	   	   </tr>
-		                   	   </table>
-		                   	   <hr>
-		                   </div>
+		                   	   <div class="col-sm-9 p-2">
+					               <div class="p-lg-5">
+					                   <div class="">
+					                       <h4 class="mb-4">판매등록</h4>
+					                   </div>
+					                   <div class="saleRegF">
+					                   	   <div class="saleRegBtn">
+						                   	   <a class="" id="saleRegL" type="button" >
+						                   	   	   <i class="fa-solid fa-plus fa-3x"></i>
+						                   	   	   <p>판매 등록하기</p>
+					               	   		   </a>
+				               	   		   </div>
+					                   </div>
+					               </div>
+					           </div>
+				           </div>
 		                   <div class="page m-5 mb-0">
 		                   	   <ul class="pagination justify-content-center">
 		                   	   	   <li><a href="#" class="start m-3"><i class="fa-solid fa-angle-left"></i></a></li>

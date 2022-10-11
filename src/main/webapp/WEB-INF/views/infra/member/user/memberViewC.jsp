@@ -92,6 +92,8 @@
 		/* 파일첨부 */
 		.file-label {
 		  margin-top: 30px;
+		  margin-left: auto;
+		  margin-right: auto;
 		  background-color: #5b975b;
 		  color: #fff;
 		  text-align: center;

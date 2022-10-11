@@ -199,22 +199,22 @@
 						</tr>
 					</table>
 				</div>
-				<div class="row p-1 mt-5 mb-5">
+				<div class="row p-1 mt-3 mb-5">
 					<c:choose>
 						<c:when test="${fn:length(list) eq 0 }">
 							<p>준비된 상품이 없습니다.</p>
 						</c:when>
 						<c:otherwise>
 							<c:forEach items="${list}" var="list" varStatus="status">
-	           		<div class="col-3 service-item">
+	           		<div class="col-3 mt-3 service-item">
 	               		<div class="overflow-hidden">
 	               	    	<a id="btnMenu1" type="button"><img class="menuDD" src="/resources/images/main.jpg"></a>
 	           			</div>
-	           			<div class="pt-3">
+	           			<div class="pt-2">
 	           				<p class="mainName"><c:out value="${list.mmNickname }" /></p>
 	           				<p class="mainTitle"><c:out value="${list.itTitle }" /></p>
 	           				<div class="mainPay">
-	           					<i class="fa-solid fa-receipt">&nbsp;550,000원~</i>
+	           					<i class="fa-solid fa-receipt">&nbsp;<c:out value="${list.bestPrice }" /></i>
            					</div>
            					<div class="mainGrade">
 			       				<i class="fa-solid fa-star" style="color: #FFD400;"></i>
@@ -223,200 +223,20 @@
 	           			</div>
 	           		</div>
 	           				</c:forEach>
-									</c:otherwise>
-								</c:choose>
-	                <div class="col-3 service-item">
-	                    <div class="overflow-hidden">
-	                        <img class="menuDD" src="/resources/images/main1.jpg">
-	                    </div>
-	                    <div class="pt-3">
-	           				<p class="mainName">새라디자인</p>
-	           				<p class="mainTitle">홈페이지 디자인부터 제작까지 완벽하게 제작해 드립니다.</p>
-	           				<div class="mainPay">
-	           					400,000원~
-           					</div>
-           					<div class="mainGrade">
-			       				<i class="fa-solid fa-star" style="color: #FFD400;"></i>
-			       				<span style="color: #9A9BA7;">5.0ㅣ12개의 평가</span>
-		       				</div>
-	           			</div>
-	                </div>
-	                <div class="col-3 service-item">
-	               		<div class="overflow-hidden">
-	               	    	<img class="menuDD" src="/resources/images/main2.jpg">
-	           			</div>
-	           			<div class="pt-3">
-	           				<p class="mainName">영앤스마트</p>
-	           				<p class="mainTitle">카카오 대회 우승팀 제작 "만족도 5.0" 소개홈페이지</p>
-	           				<div class="mainPay">
-	           					<i class="fa-solid fa-receipt">&nbsp;1,650,000원~</i>
-           					</div>
-           					<div class="mainGrade">
-			       				<i class="fa-solid fa-star" style="color: #FFD400;"></i>
-			       				<span style="color: #9A9BA7;">5.0ㅣ66개의 평가</span>
-		       				</div>
-	           			</div>
-	           		</div>
-	                <div class="col-3 service-item">
-	               		<div class="overflow-hidden">
-	               	    	<img class="menuDD" src="/resources/images/main3.jpg">
-	           			</div>
-	           			<div class="pt-3">
-	           				<p class="mainName">pixelartdesign</p>
-	           				<p class="mainTitle">반응형 홈페이지 누구나 쉽게 기획부터 디자인까지 완성해 드립니다.</p>
-	           				<div class="mainPay">
-	           					<i class="fa-solid fa-receipt">&nbsp;1,000,000원~</i>
-           					</div>
-           					<div class="mainGrade">
-			       				<i class="fa-solid fa-star" style="color: #FFD400;"></i>
-			       				<span style="color: #9A9BA7;">5.0ㅣ67개의 평가</span>
-		       				</div>
-	           			</div>
-	           		</div>
+						</c:otherwise>
+					</c:choose>
 	            </div>
-	            <div class="row p-1 mb-5">
-	           		<div class="col-3 service-item">
-	               		<div class="overflow-hidden">
-	               	    	<img class="menuDD" src="/resources/images/main4.png">
-	           			</div>
-	           			<div class="pt-3">
-	           				<p class="mainName">홈파인</p>
-	           				<p class="mainTitle">마케팅에 최적화된 랜딩페이지, 랜딩홈페이지 제작을 해 드립니다.</p>
-	           				<div class="mainPay">
-	           					<i class="fa-solid fa-receipt">&nbsp;165,000원~</i>
-           					</div>
-           					<div class="mainGrade">
-			       				<i class="fa-solid fa-star" style="color: #FFD400;"></i>
-			       				<span style="color: #9A9BA7;">4.9ㅣ70개의 평가</span>
-		       				</div>
-	           			</div>
-	           		</div>
-	                <div class="col-3 service-item">
-	                    <div class="overflow-hidden">
-	                        <img class="menuDD" src="/resources/images/main5.jpg">
-	                    </div>
-	                    <div class="pt-3">
-	           				<p class="mainName">hyuuuk</p>
-	           				<p class="mainTitle">홈페이지 디자인부터 퍼블리싱까지 해 드립니다.</p>
-	           				<div class="mainPay">
-	           					19,000원~
-           					</div>
-           					<div class="mainGrade">
-			       				<i class="fa-solid fa-star" style="color: #FFD400;"></i>
-			       				<span style="color: #9A9BA7;">5.0ㅣ76개의 평가</span>
-		       				</div>
-	           			</div>
-	                </div>
-	                <div class="col-3 service-item">
-	               		<div class="overflow-hidden">
-	               	    	<img class="menuDD" src="/resources/images/main6.jpg">
-	           			</div>
-	           			<div class="pt-3">
-	           				<p class="mainName">수석프로그래머</p>
-	           				<p class="mainTitle">기업, 개인, 이벤트, 홍보 홈페이지를 제작해 드립니다.</p>
-	           				<div class="mainPay">
-	           					440,000원~
-           					</div>
-           					<div class="mainGrade">
-			       				<i class="fa-solid fa-star" style="color: #FFD400;"></i>
-			       				<span style="color: #9A9BA7;">5.0ㅣ74개의 평가</span>
-		       				</div>
-	           			</div>
-	           		</div>
-	                <div class="col-3 service-item">
-	               		<div class="overflow-hidden">
-	               	    	<img class="menuDD" src="/resources/images/main7.jpg">
-	           			</div>
-	           			<div class="pt-3">
-	           				<p class="mainName">JACKSEO</p>
-	           				<p class="mainTitle">반응형 홈페이지 제작 48시간안에 드립니다.</p>
-	           				<div class="mainPay">
-	           					1,000,000원
-           					</div>
-           					<div class="mainGrade">
-			       				<i class="fa-solid fa-star" style="color: #9A9BA7;"></i>
-			       				<span style="color: #9A9BA7;">0.0ㅣ0개의 평가</span>
-		       				</div>
-	           			</div>
-	           		</div>
-	            </div>
-	            <div class="row p-1">
-	           		<div class="col-3 service-item">
-	               		<div class="overflow-hidden">
-	               	    	<img class="menuDD" src="/resources/images/main8.png">
-	           			</div>
-	           			<div class="pt-3">
-	           				<p class="mainName">180도</p>
-	           				<p class="mainTitle">디자인, SEO 제대로 된 최고의 홈페이지를 제작해 드립니다.</p>
-	           				<div class="mainPay">
-	           					<i class="fa-solid fa-receipt">&nbsp;1,320,000원~</i>
-           					</div>
-           					<div class="mainGrade">
-			       				<i class="fa-solid fa-star" style="color: #FFD400;"></i>
-			       				<span style="color: #9A9BA7;">5.0ㅣ126개의 평가</span>
-		       				</div>
-	           			</div>
-	           		</div>
-	                <div class="col-3 service-item">
-	                    <div class="overflow-hidden">
-	                        <img class="menuDD" src="/resources/images/main9.jpg">
-	                    </div>
-	                    <div class="pt-3">
-	           				<p class="mainName">디자인여기야</p>
-	           				<p class="mainTitle">사용자가 사용하기 편안한 반응형 홈페이지를 제작해 드립니다.</p>
-	           				<div class="mainPay">
-	           					350,000원
-           					</div>
-           					<div class="mainGrade">
-			       				<i class="fa-solid fa-star" style="color: #FFD400;"></i>
-			       				<span style="color: #9A9BA7;">4.9ㅣ14개의 평가</span>
-		       				</div>
-	           			</div>
-	                </div>
-	                <div class="col-3 service-item">
-	               		<div class="overflow-hidden">
-	               	    	<img class="menuDD" src="/resources/images/main10.png">
-	           			</div>
-	           			<div class="pt-3">
-	           				<p class="mainName">인터랙티브디벨로퍼</p>
-	           				<p class="mainTitle" style="height: 54px;">인터랙티브 웹사이트 제작해 드립니다.</p>
-	           				<div class="mainPay">
-	           					<i class="fa-solid fa-receipt">&nbsp;250,000원~</i>
-           					</div>
-           					<div class="mainGrade">
-			       				<i class="fa-solid fa-star" style="color: #FFD400;"></i>
-			       				<span style="color: #9A9BA7;">5.0ㅣ8개의 평가</span>
-		       				</div>
-	           			</div>
-	           		</div>
-	                <div class="col-3 service-item">
-	               		<div class="overflow-hidden">
-	               	    	<img class="menuDD" src="/resources/images/main11.jpg">
-	           			</div>
-	           			<div class="pt-3">
-	           				<p class="mainName">어거스트웨어</p>
-	           				<p class="mainTitle">기획부터 반응형 디자인 도메인 호스팅 검색등록까지해 드립니다.</p>
-	           				<div class="mainPay">
-	           					<i class="fa-solid fa-receipt">&nbsp;880,000원~</i>
-           					</div>
-           					<div class="mainGrade">
-			       				<i class="fa-solid fa-star" style="color: #FFD400;"></i>
-			       				<span style="color: #9A9BA7;">4.9ㅣ52개의 평가</span>
-		       				</div>
-	           			</div>
-	           		</div>
-	           		<div class="page m-5 mb-0">
-                   	   <ul class="pagination justify-content-center">
-                   	   	   <li><a href="#" class="start m-3"><i class="fa-solid fa-angle-left"></i></a></li>
-                   	   	   <li><a href="#" class="first m-3"><i class="fa-solid fa-1"></i></a></li>
-                   	   	   <li><a href="#" class="second m-3"><i class="fa-solid fa-2"></i></a></li>
-                   	   	   <li><a href="#" class="third m-3"><i class="fa-solid fa-3"></i></a></li>
-                   	   	   <li><a href="#" class="forth m-3"><i class="fa-solid fa-4"></i></a></li>
-                   	   	   <li><a href="#" class="fifth m-3"><i class="fa-solid fa-5"></i></a></li>
-                   	   	   <li><a href="#" class="end m-3"><i class="fa-solid fa-angle-right"></i></a></li>
-                   	   </ul>
-                   </div>
-	            </div>
+	            <div class="page m-5 mb-0">
+               	   <ul class="pagination justify-content-center">
+               	   	   <li><a href="#" class="start m-3"><i class="fa-solid fa-angle-left"></i></a></li>
+               	   	   <li><a href="#" class="first m-3"><i class="fa-solid fa-1"></i></a></li>
+               	   	   <li><a href="#" class="second m-3"><i class="fa-solid fa-2"></i></a></li>
+               	   	   <li><a href="#" class="third m-3"><i class="fa-solid fa-3"></i></a></li>
+               	   	   <li><a href="#" class="forth m-3"><i class="fa-solid fa-4"></i></a></li>
+               	   	   <li><a href="#" class="fifth m-3"><i class="fa-solid fa-5"></i></a></li>
+               	   	   <li><a href="#" class="end m-3"><i class="fa-solid fa-angle-right"></i></a></li>
+               	   </ul>
+                </div>
 			</div>
 		</div>
     </div>

@@ -6,7 +6,7 @@
 		<div class="col-sm-3 p-lg-5">
 			<div class="text-center pb-4">
 				<img src="/resources/images/men.png" class="border border-3 rounded-circle" style="height: 40%; width: 40%;" alt="">
-				<input class="form-control" type="file" id="file" name="file" multiple>
+				<br><label for="mmUploadedImage" class="form-label input-file-button">프로필변경</label>
 			</div>
 			<div class="text-center pb-4">
 				<button class="btn btn-secondary" style="height: 30px; width: 60px; font-size: small;">일반</button>
@@ -34,6 +34,7 @@
 		<div class="col-sm-3 p-lg-5">
 			<div class="text-center pb-4">
 				<img src="/resources/images/men.png" class="border border-3 rounded-circle" style="height: 40%; width: 40%;" alt="">
+				<br><label for="mmUploadedImage" class="form-label input-file-button">프로필변경</label>
 			</div>
 			<div class="text-center pb-4">
 				<button class="btn btn-primary" style="height: 30px; width: 60px; font-size: small;">만렙</button>

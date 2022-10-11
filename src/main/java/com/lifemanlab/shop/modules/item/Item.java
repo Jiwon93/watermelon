@@ -1,6 +1,8 @@
 package com.lifemanlab.shop.modules.item;
 
-public class Item {
+import com.lifemanlab.shop.common.base.Base;
+
+public class Item extends Base {
 	
 	private String itemSeq;
 	private String member_mmSeq;

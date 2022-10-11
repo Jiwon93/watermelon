@@ -265,6 +265,7 @@
     <script type="text/javascript">
     	var goUrlItemMenu = "/item/itemMenu";
     	var goUrlItemMenuView = "/item/itemMenuView";
+    	var goUrlList = "/item/itemMenu";
     	
     	var form = $("form[name=form]");
     	

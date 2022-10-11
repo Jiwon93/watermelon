@@ -129,7 +129,7 @@
 					                   </div>
 					                   <div class="saleRegF">
 					                   	   <div class="saleRegBtn">
-						                   	   <a class="" id="saleRegL" type="button" >
+						                   	   <a class="" id="btnSaleRegForm" type="button" >
 						                   	   	   <i class="fa-solid fa-plus fa-3x"></i>
 						                   	   	   <p>판매 등록하기</p>
 					               	   		   </a>
@@ -179,6 +179,14 @@
     
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+    <script>
+    	var goUrlSaleRegForm = "/member/saleRegForm";
+    	
+    	$("#btnSaleRegForm").on("click", function(){
+			$(location).attr("href", goUrlSaleRegForm);
+		});
+    </script>
     
 </body>
 

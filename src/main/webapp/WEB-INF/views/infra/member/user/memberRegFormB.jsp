@@ -199,7 +199,7 @@
 							   </select>
 						   </div>
 						   <div class="input-group">
-	                           <select class="form-select" id="mmDetail" name="mmDetail" multiple>
+	                           <select class="form-select" id="mmDetail" name="mmDetail">
 								   <option value="" <c:if test="${empty dto.mmDetail }">selected</c:if>>상세분야선택</option>
 								   <option value="56" <c:if test="${dto.mmDetail eq 56 }">selected</c:if>>웹사이트신규제작</option>
 								   <option value="57" <c:if test="${dto.mmDetail eq 57 }">selected</c:if>>웹사이트개선버그수정</option>
@@ -275,7 +275,7 @@
 					   <div class="col-8 offset-2">
                        	  <label class="form-label" for="mmIntroduce">자기소개</label>
                        	  <div class="input-group">
-                       	  	   <textarea class="form-control" id="mmIntroduce" name="mmIntroduce" value="<c:out value="${dto.mmIntroduce }" />">
+                       	  	   <textarea class="form-control" id="mmIntroduce" name="mmIntroduce" value="<c:out value="${dto.mmIntroduce }" />" style="height: 150px;">
 							   </textarea>
 						   </div>
 					   </div>

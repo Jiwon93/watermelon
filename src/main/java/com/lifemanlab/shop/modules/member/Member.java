@@ -2,6 +2,8 @@ package com.lifemanlab.shop.modules.member;
 
 import java.sql.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.lifemanlab.shop.common.base.Base;
 
 public class Member extends Base{
@@ -36,6 +38,9 @@ public class Member extends Base{
 	private Integer mmpDefaultNy;
 	private String sessSeq;
 	
+	private MultipartFile[] mmUploadedProfileImage;
+	private MultipartFile[] mmUploadedImage;
+	private MultipartFile[] mmUploadedFile;
 ///////////////////////////////////////////////
 	public String getMmSeq() {
 		return mmSeq;
@@ -210,6 +215,24 @@ public class Member extends Base{
 	}
 	public void setSessSeq(String sessSeq) {
 		this.sessSeq = sessSeq;
+	}
+	public MultipartFile[] getMmUploadedProfileImage() {
+		return mmUploadedProfileImage;
+	}
+	public void setMmUploadedProfileImage(MultipartFile[] mmUploadedProfileImage) {
+		this.mmUploadedProfileImage = mmUploadedProfileImage;
+	}
+	public MultipartFile[] getMmUploadedImage() {
+		return mmUploadedImage;
+	}
+	public void setMmUploadedImage(MultipartFile[] mmUploadedImage) {
+		this.mmUploadedImage = mmUploadedImage;
+	}
+	public MultipartFile[] getMmUploadedFile() {
+		return mmUploadedFile;
+	}
+	public void setMmUploadedFile(MultipartFile[] mmUploadedFile) {
+		this.mmUploadedFile = mmUploadedFile;
 	}
 	
 }

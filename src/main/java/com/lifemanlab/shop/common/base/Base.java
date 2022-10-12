@@ -12,13 +12,15 @@ public class Base {
 	private Integer type;
 	private Integer defaultNy;
 	private Integer sort;
+	private String path;
 	private String originalName;
 	private String uuidName;
 	private String ext;
 	private long size;
 	private Integer delNy;
-	private String pseq;
-	private String path;
+	private String pSeq;
+	
+	// ccg
 	private String ccgSeq;
 	private String ccgName;
 	private Integer ccgOrder;
@@ -28,6 +30,13 @@ public class Base {
 	private String ccgNameEng;
 	private Date ccgRegDatetime;
 	private Date ccgModDatetime;
+	
+	//regmod
+	private String regIp;
+	private String regSeq;
+	private Integer regDeviceCd;
+	private Date regDateTime;
+	private Date regDateTimeSvr;
 ////////////////////////////////////////
 	
 	//uploaded
@@ -85,12 +94,6 @@ public class Base {
 	public void setDelNy(Integer delNy) {
 		this.delNy = delNy;
 	}
-	public String getPseq() {
-		return pseq;
-	}
-	public void setPseq(String pseq) {
-		this.pseq = pseq;
-	}
 	public String getTableName() {
 		return tableName;
 	}
@@ -102,6 +105,12 @@ public class Base {
 	}
 	public void setPath(String path) {
 		this.path = path;
+	}
+	public String getpSeq() {
+		return pSeq;
+	}
+	public void setpSeq(String pSeq) {
+		this.pSeq = pSeq;
 	}
 	////////////////////////////////////////
 	
@@ -160,8 +169,38 @@ public class Base {
 		this.ccgModDatetime = ccgModDatetime;
 	}
 	
+	///////////////////////////////////////////////////////////
+	public String getRegIp() {
+		return regIp;
+	}
+	public void setRegIp(String regIp) {
+		this.regIp = regIp;
+	}
+	public String getRegSeq() {
+		return regSeq;
+	}
+	public void setRegSeq(String regSeq) {
+		this.regSeq = regSeq;
+	}
+	public Integer getRegDeviceCd() {
+		return regDeviceCd;
+	}
+	public void setRegDeviceCd(Integer regDeviceCd) {
+		this.regDeviceCd = regDeviceCd;
+	}
+	public Date getRegDateTime() {
+		return regDateTime;
+	}
+	public void setRegDateTime(Date regDateTime) {
+		this.regDateTime = regDateTime;
+	}
+	public Date getRegDateTimeSvr() {
+		return regDateTimeSvr;
+	}
+	public void setRegDateTimeSvr(Date regDateTimeSvr) {
+		this.regDateTimeSvr = regDateTimeSvr;
+	}
 	
 	
-	//
-
+	
 }

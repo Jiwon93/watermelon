@@ -132,6 +132,22 @@
 		DELETE FROM member WHERE mmSeq = #{mmSeq}
 	</delete>
 	
+	<!-- 업로드 리스트 -->
+	<select id="selectListUploaded" resultMap="resultMapObj">
+		SELECT
+			seq
+			,type
+			,defaultNy
+			,path
+			,originalName
+			,uuidName
+		FROM mmUploaded
+		WHERE 1=1
+			AND delNy = 0
+			AND pSeq = #{mmSeq}
+		ORDER BY
+			type, sort
+	</select>
 	
 	<!-- 회원가입(일반) -->
 	<insert id="memberRegC">
@@ -258,10 +274,10 @@
 	
 	<!-- Email 확인 -->
 	<select id="selectOneIdCheck" resultType="Integer">
-		SELECT COUNT(*)
-		FROM member 
+		SELECT COUNT(mmSeq)
+		FROM member a
 		WHERE 1=1 
-		AND mmEmail = #{mmEmail}
+		AND a.mmEmail = #{mmEmail}
 	</select>
 	
 	<!-- 이메일 찾기 -->

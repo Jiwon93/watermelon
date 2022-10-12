@@ -16,6 +16,23 @@
 		limit #{rowNumToShow} offset #{startRnumForMysql}
 	</sql>
 	
+	<sql id="insertRegColumn">	
+		,regIp
+		,regSeq
+		,regDeviceCd
+		,regDateTime
+		,regDateTimeSvr
+	</sql>
+    
+    
+    <sql id="insertRegValue">	
+		,#{regIp}
+		,#{regSeq}
+		,#{regDeviceCd}
+		,#{regDateTime}
+		,#{regDateTimeSvr}
+	</sql>
+	
 	<!-- uploaded s -->
 	<insert id="insertUploaded">
 		INSERT INTO ${tableName} (
@@ -25,10 +42,10 @@
 			,path
 			,originalName
 			,uuidName
-			,exit
+			,ext
 			,size
 			,delNy
-			<!-- <include refid="Base.insertRegColumn" /> -->
+			<include refid="Base.insertRegColumn" />
 			,pSeq
 		) values (
 			#{type}
@@ -37,10 +54,10 @@
 			,#{path}
 			,#{originalName}
 			,#{uuidName}
-			,#{exit}
+			,#{ext}
 			,#{size}
 			,0
-			<!-- <include refid="Base.insertRegValue" /> -->
+			<include refid="Base.insertRegValue" />
 			,#{pSeq}
 		)
 	</insert>

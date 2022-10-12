@@ -292,6 +292,11 @@ public class MemberController extends BaseController {
 		return "infra/member/user/memberRegFormC";
 	}
 	
+	@RequestMapping(value = "memberRegFormB")
+	public String memberRegFormB() throws Exception {
+		return "infra/member/user/memberRegFormB";
+	}
+	
 	@RequestMapping(value = "pwChangeFormC")
 	public String pwChangFormC() throws Exception {
 		return "infra/member/user/pwChangeFormC";

@@ -275,9 +275,8 @@
 					   <div class="col-8 offset-2">
                        	  <label class="form-label" for="mmIntroduce">자기소개</label>
                        	  <div class="input-group">
-	                           <select class="form-select" id="mmIntroduce" name="mmIntroduce" multiple>
-								   <option value="44" <c:if test="${dto.mmIntroduce eq 44 }">selected</c:if>>이벤트</option>
-							   </select>
+                       	  	   <textarea class="form-control" id="mmIntroduce" name="mmIntroduce" value="<c:out value="${dto.mmIntroduce }" />">
+							   </textarea>
 						   </div>
 					   </div>
 					  <!--  
@@ -372,7 +371,7 @@
 	<script type="text/javascript">
 	
 		var goUrlHome = "/member/memberHome";
-		var goUrlRegInst = "/member/memberRegCInst";
+		var goUrlRegInst = "/member/memberRegBInst";
 		
 		var form = $("form[name=form]");
 		

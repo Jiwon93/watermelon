@@ -72,75 +72,6 @@
     	.mypageList {
     		height: 45px;
     	}
-    	
-    	.addScroll{
-			overflow-y:auto;
-			height: 200px;
-			background-color:#E9ECEF;
-			padding-top:5px; 
-			padding-left:5px;
-		}
-	 	
-		.input-file-button{
-			padding: 4px 25px;
-			background-color:#FF6600;
-			border-radius: 4px;
-			color: white;
-			cursor: pointer;
-		}
-		
-		/* 파일첨부 */
-		.file-label {
-		  margin-top: 30px;
-		  margin-left: auto;
-		  margin-right: auto;
-		  background-color: #5b975b;
-		  color: #fff;
-		  text-align: center;
-		  padding: 10px 0;
-		  width: 65%;
-		  border-radius: 6px;
-		  cursor: pointer;
-		}
-		.file {
-		  display: none;
-		}
-		.upload-box {
-		  width: 100%;
-		  box-sizing: border-box;
-		  margin-right: 30px;
-		  display: flex;
-		  flex-direction: column;
-		  justify-content: center;
-		  align-items: center;
-		}
-		.upload-box .drag-file {
-		  position: relative;
-		  width: 100%;
-		  height: 360px;
-		  display: flex;
-		  flex-direction: column;
-		  justify-content: center;
-		  align-items: center;
-		  border: 3px dashed #dbdbdb;
-		}
-		.upload-box .drag-file.highlight {
-		  border: 3px dashed red;
-		}
-		.upload-box .drag-file .image {
-		  width: 40px;
-		}
-		.upload-box .drag-file .message {
-		  margin-bottom: 0;
-		}
-		.upload-box .drag-file .preview {
-		  display: none;
-		  position: absolute;
-		  left: 0;
-		  height: 0;
-		  width: 100%;
-		  height: 100%;
-		}
     </style>
 </head>
 
@@ -247,37 +178,6 @@
 									</c:forEach>
 								</div>
 							</div>
-							<div class="col-8 offset-2">
-								<div class="row mt-sm-4">
-									<div class="col-sm-6 mt-3 mt-sm-0">
-										<label for="mmUploadedImage" class="form-label input-file-button">이미지첨부</label>
-										<input class="form-control form-control-sm" id="mmUploadedImage" name="mmUploadedImage" type="file" multiple="multiple" style="display: none;" onChange="upload('mmUploadedImage', 1, 0, 1, 0, 0, 1);">
-										<div class="addScroll">
-											<ul id="ulFile1" class="list-group">
-											</ul>
-										</div>
-									</div>
-									<div class="col-sm-6 mt-3 mt-sm-0">
-										<label for="mmUploadedFile" class="form-label input-file-button">파일첨부</label>
-										<input class="form-control form-control-sm" id="mmUploadedFile" name="mmUploadedFile" type="file" multiple="multiple" style="display: none;" onChange="upload('mmUploadedFile', 2, 0, 2, 0, 0, 2);" >
-										<div class="addScroll">
-											<ul id="ulFile2" class="list-group">
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-8 offset-2">
-								<div class="upload-box">
-									<div id="drop-file" class="drag-file">
-										<img src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일 아이콘" class="image">
-										<p class="message">Drag files to upload</p>
-										<img src="" alt="미리보기 이미지" class="preview">
-									</div>
-								</div>
-								<label class="file-label" for="chooseFile">Choose File</label>
-								<input class="file" id="chooseFile" type="file" onchange="dropFile.handleFiles(this.files)" accept="image/png, image/jpeg, image/gif">
-							</div>
 							<div class="col-sm-12 text-center">
 								<a class="btn btn-primary w-25" href="javascript:goMod(<c:out value="${item.mmSeq }" />)">수정하기</a>	
 							</div>
@@ -330,71 +230,6 @@
 		 */
 		
 		goMod = function(keyValue) {
-			 upload = function(objName, seq, allowedMaxTotalFileNumber, allowedExtdiv, allowedEachFileSize, allowedTotalFileSize, uiType) {
-//					objName 과 seq 는 jsp 내에서 유일 하여야 함.
-//					memberProfileImage: 1
-//					memberImage: 2
-//					memberFile : 3
-					
-					var totalFileSize = 0;
-					var obj = $("#" + objName +"")[0].files;	
-					var fileCount = obj.length;
-					
-					allowedMaxTotalFileNumber = allowedMaxTotalFileNumber == 0 ? MAX_TOTAL_FILE_NUMBER : allowedMaxTotalFileNumber;
-					allowedEachFileSize = allowedEachFileSize == 0 ? MAX_EACH_FILE_SIZE : allowedEachFileSize;
-					allowedTotalFileSize = allowedTotalFileSize == 0 ? MAX_TOTAL_FILE_SIZE : allowedTotalFileSize;
-					
-					if(checkUploadedTotalFileNumber(obj, allowedMaxTotalFileNumber, fileCount) == false) { return false; }
-					
-					for (var i = 0 ; i < fileCount ; i++) {
-						if(checkUploadedExt($("#" + objName +"")[0].files[i].name, seq, allowedExtdiv) == false) { return false; }
-						if(checkUploadedEachFileSize($("#" + objName +"")[0].files[i], seq, allowedEachFileSize) == false) { return false; }
-						totalFileSize += $("#" + objName +"")[0].files[i].size;
-					}
-					if(checkUploadedTotalFileSize(seq, totalFileSize, allowedTotalFileSize) == false) { return false; }
-					
-					if (uiType == 1) {
-						$("#ulFile" + seq).children().remove();
-						
-						for (var i = 0 ; i < fileCount ; i++) {
-							addUploadLi(seq, i, $("#" + objName +"")[0].files[i].name);
-						}
-					} else if(uiType == 2) {
-						$("#ulFile" + seq).children().remove();
-						
-						for (var i = 0 ; i < fileCount ; i++) {
-							addUploadLi(seq, i, $("#" + objName +"")[0].files[i].name);
-						}
-					} else if (uiType == 3) {
-						var fileReader = new FileReader();
-						 fileReader.readAsDataURL($("#" + objName +"")[0].files[0]);
-						
-						 fileReader.onload = function () {
-							 $("#imgProfile").attr("src", fileReader.result);		/* #-> */
-						 }		
-					} else {
-						return false;
-					}
-					return false;
-				}
-			 
-			 addUploadLi = function (seq, index, name){
-					
-					var ul_list = $("#ulFile0");
-					
-					li = '<li id="li_'+seq+'_'+index+'" class="list-group-item d-flex justify-content-between align-items-center">';
-					li = li + name;
-					li = li + '<span class="badge bg-danger rounded-pill" onClick="delLi('+ seq +','+ index +')"><i class="fa-solid fa-x" style="cursor: pointer;"></i></span>';
-					li = li + '</li>';
-					
-					$("#ulFile"+seq).append(li);
-				}
-				
-				
-				delLi = function(seq, index) {
-					$("#li_"+seq+"_"+index).remove();
-				}
-			 
 			 seq.val(keyValue);
 			 form.attr("action", goUrlModForm).submit();
 		 }
@@ -407,72 +242,6 @@
 			form.attr("action", goUrlModForm).submit();
 		}
 		*/
-		
-		//파일첨부
-			function DropFile(dropAreaId, fileListId) {
-			  let dropArea = document.getElementById(dropAreaId);
-			  let fileList = document.getElementById(fileListId);
-
-			  function preventDefaults(e) {
-			    e.preventDefault();
-			    e.stopPropagation();
-			  }
-
-			  function highlight(e) {
-			    preventDefaults(e);
-			    dropArea.classList.add("highlight");
-			  }
-
-			  function unhighlight(e) {
-			    preventDefaults(e);
-			    dropArea.classList.remove("highlight");
-			  }
-
-			  function handleDrop(e) {
-			    unhighlight(e);
-			    let dt = e.dataTransfer;
-			    let files = dt.files;
-
-			    handleFiles(files);
-
-			    const fileList = document.getElementById(fileListId);
-			    if (fileList) {
-			      fileList.scrollTo({ top: fileList.scrollHeight });
-			    }
-			  }
-
-			  function handleFiles(files) {
-			    files = [...files];
-			    // files.forEach(uploadFile);
-			    files.forEach(previewFile);
-			  }
-
-			  function previewFile(file) {
-			    console.log(file);
-			    renderFile(file);
-			  }
-
-			  function renderFile(file) {
-			    let reader = new FileReader();
-			    reader.readAsDataURL(file);
-			    reader.onloadend = function () {
-			      let img = dropArea.getElementsByClassName("preview")[0];
-			      img.src = reader.result;
-			      img.style.display = "block";
-			    };
-			  }
-
-			  dropArea.addEventListener("dragenter", highlight, false);
-			  dropArea.addEventListener("dragover", highlight, false);
-			  dropArea.addEventListener("dragleave", unhighlight, false);
-			  dropArea.addEventListener("drop", handleDrop, false);
-
-			  return {
-			    handleFiles
-			  };
-			}
-
-			const dropFile = new DropFile("drop-file", "files");
     </script>
 </body>
 

@@ -40,6 +40,7 @@
     <link href="/resources/template/woody/css/style.css" rel="stylesheet">
     
     <link href="/resources/css/user/nav.css" rel="stylesheet">
+    <link href="/resources/css/user/upload.css" rel="stylesheet">
     
     <!-- Fontawesome Stylesheet -->
     <script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
@@ -198,6 +199,37 @@
 									</select>
 								</div>
 							</div>
+							<div class="col-8 offset-2">
+								<div class="row mt-sm-4">
+									<div class="col-sm-6 mt-3 mt-sm-0">
+										<label for="mmUploadedImage" class="form-label input-file-button">이미지첨부</label>
+										<input class="form-control form-control-sm" id="mmUploadedImage" name="mmUploadedImage" type="file" multiple="multiple" style="display: none;" onChange="upload('mmUploadedImage', 1, 0, 1, 0, 0, 1);">
+										<div class="addScroll">
+											<ul id="ulFile1" class="list-group">
+											</ul>
+										</div>
+									</div>
+									<div class="col-sm-6 mt-3 mt-sm-0">
+										<label for="mmUploadedFile" class="form-label input-file-button">파일첨부</label>
+										<input class="form-control form-control-sm" id="mmUploadedFile" name="mmUploadedFile" type="file" multiple="multiple" style="display: none;" onChange="upload('mmUploadedFile', 2, 0, 2, 0, 0, 2);" >
+										<div class="addScroll">
+											<ul id="ulFile2" class="list-group">
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-8 offset-2">
+								<div class="upload-box">
+									<div id="drop-file" class="drag-file">
+										<img src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일 아이콘" class="image">
+										<p class="message">Drag files to upload</p>
+										<img src="" alt="미리보기 이미지" class="preview">
+									</div>
+								</div>
+								<label class="file-label" for="chooseFile">Choose File</label>
+								<input class="file" id="chooseFile" type="file" onchange="dropFile.handleFiles(this.files)" accept="image/png, image/jpeg, image/gif">
+							</div>
 							<div class="col-sm-12 text-center">
 								<button class="btn btn-primary w-25" type="button" id="btnSave">수정완료</button>	
 							</div>
@@ -308,6 +340,137 @@
 			$("#mmrfDetailAddress").val('');
 			/* $("#mmExtraAddress").val(''); */
 		});
+		
+		upload = function(objName, seq, allowedMaxTotalFileNumber, allowedExtdiv, allowedEachFileSize, allowedTotalFileSize, uiType) {
+//			objName 과 seq 는 jsp 내에서 유일 하여야 함.
+//			memberProfileImage: 1
+//			memberImage: 2
+//			memberFile : 3
+			
+			var totalFileSize = 0;
+			var obj = $("#" + objName +"")[0].files;	
+			var fileCount = obj.length;
+			
+			allowedMaxTotalFileNumber = allowedMaxTotalFileNumber == 0 ? MAX_TOTAL_FILE_NUMBER : allowedMaxTotalFileNumber;
+			allowedEachFileSize = allowedEachFileSize == 0 ? MAX_EACH_FILE_SIZE : allowedEachFileSize;
+			allowedTotalFileSize = allowedTotalFileSize == 0 ? MAX_TOTAL_FILE_SIZE : allowedTotalFileSize;
+			
+			if(checkUploadedTotalFileNumber(obj, allowedMaxTotalFileNumber, fileCount) == false) { return false; }
+			
+			for (var i = 0 ; i < fileCount ; i++) {
+				if(checkUploadedExt($("#" + objName +"")[0].files[i].name, seq, allowedExtdiv) == false) { return false; }
+				if(checkUploadedEachFileSize($("#" + objName +"")[0].files[i], seq, allowedEachFileSize) == false) { return false; }
+				totalFileSize += $("#" + objName +"")[0].files[i].size;
+			}
+			if(checkUploadedTotalFileSize(seq, totalFileSize, allowedTotalFileSize) == false) { return false; }
+			
+			if (uiType == 1) {
+				$("#ulFile" + seq).children().remove();
+				
+				for (var i = 0 ; i < fileCount ; i++) {
+					addUploadLi(seq, i, $("#" + objName +"")[0].files[i].name);
+				}
+			} else if(uiType == 2) {
+				$("#ulFile" + seq).children().remove();
+				
+				for (var i = 0 ; i < fileCount ; i++) {
+					addUploadLi(seq, i, $("#" + objName +"")[0].files[i].name);
+				}
+			} else if (uiType == 3) {
+				var fileReader = new FileReader();
+				 fileReader.readAsDataURL($("#" + objName +"")[0].files[0]);
+				
+				 fileReader.onload = function () {
+					 $("#imgProfile").attr("src", fileReader.result);		/* #-> */
+				 }		
+			} else {
+				return false;
+			}
+			return false;
+		}
+	 
+	 	addUploadLi = function (seq, index, name){
+			
+			var ul_list = $("#ulFile0");
+			
+			li = '<li id="li_'+seq+'_'+index+'" class="list-group-item d-flex justify-content-between align-items-center">';
+			li = li + name;
+			li = li + '<span class="badge bg-danger rounded-pill" onClick="delLi('+ seq +','+ index +')"><i class="fa-solid fa-x" style="cursor: pointer;"></i></span>';
+			li = li + '</li>';
+			
+			$("#ulFile"+seq).append(li);
+		}
+		
+		
+		delLi = function(seq, index) {
+			$("#li_"+seq+"_"+index).remove();
+		}
+	 
+		//파일첨부
+		function DropFile(dropAreaId, fileListId) {
+		  let dropArea = document.getElementById(dropAreaId);
+		  let fileList = document.getElementById(fileListId);
+
+		  function preventDefaults(e) {
+		    e.preventDefault();
+		    e.stopPropagation();
+		  }
+
+		  function highlight(e) {
+		    preventDefaults(e);
+		    dropArea.classList.add("highlight");
+		  }
+
+		  function unhighlight(e) {
+		    preventDefaults(e);
+		    dropArea.classList.remove("highlight");
+		  }
+
+		  function handleDrop(e) {
+		    unhighlight(e);
+		    let dt = e.dataTransfer;
+		    let files = dt.files;
+
+		    handleFiles(files);
+
+		    const fileList = document.getElementById(fileListId);
+		    if (fileList) {
+		      fileList.scrollTo({ top: fileList.scrollHeight });
+		    }
+		  }
+
+		  function handleFiles(files) {
+		    files = [...files];
+		    // files.forEach(uploadFile);
+		    files.forEach(previewFile);
+		  }
+
+		  function previewFile(file) {
+		    console.log(file);
+		    renderFile(file);
+		  }
+
+		  function renderFile(file) {
+		    let reader = new FileReader();
+		    reader.readAsDataURL(file);
+		    reader.onloadend = function () {
+		      let img = dropArea.getElementsByClassName("preview")[0];
+		      img.src = reader.result;
+		      img.style.display = "block";
+		    };
+		  }
+
+		  dropArea.addEventListener("dragenter", highlight, false);
+		  dropArea.addEventListener("dragover", highlight, false);
+		  dropArea.addEventListener("dragleave", unhighlight, false);
+		  dropArea.addEventListener("drop", handleDrop, false);
+
+		  return {
+		    handleFiles
+		  };
+		}
+
+		const dropFile = new DropFile("drop-file", "files");
     
     </script>
     

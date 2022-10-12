@@ -184,6 +184,57 @@
 		</selectKey>
 	</insert>
 	
+	<!-- 회원가입(만렙) -->
+	<insert id="memberRegB">
+		INSERT INTO member (
+			mmEmail
+			,mmPw
+			,mmRank
+			,mmName
+			,mmBod
+			,mmGender
+			,mmZip
+			,mmAddress1
+			,mmAddress2
+			,mmJob
+			,mmInterest
+		)
+		VALUES(
+			#{mmEmail}
+			,#{mmPw}
+			,26
+			,#{mmName}
+			,#{mmBod}
+			,#{mmGender}
+			,#{mmZip}
+			,#{mmAddress1}
+			,#{mmAddress2}
+			,#{mmJob}
+			,#{mmInterest}
+		)
+		<selectKey resultType="String" keyProperty="mmSeq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	
+	<insert id="memberRegPhoneB">
+		INSERT INTO member_phone (
+			member_mmSeq
+			,mmpPhoneNumber
+			,mmpDiv
+			,mmpDefaultNy
+		)
+		VALUES(
+			#{mmSeq}
+			,#{mmpPhoneNumber}
+			,98
+			,1
+		)
+		<selectKey resultType="String" keyProperty="mmSeq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	
 	<!-- 회원정보 수정 -->
 	<update id="memberMod">
 		UPDATE member

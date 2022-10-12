@@ -78,7 +78,7 @@
            <div class="col-6 contact-text py-2 offset-3">
                <div class="p-lg-5">
                    <div class="section-title text-center">
-                       <h1 class="display-6 mb-4">회원가입</h1>
+                       <h1 class="display-6 mb-4">만렙 회원가입</h1>
                    </div>
                    <div class="row g-3">
                        <div class="col-8 offset-2">

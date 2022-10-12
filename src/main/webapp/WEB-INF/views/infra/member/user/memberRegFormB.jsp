@@ -184,32 +184,41 @@
                        	  <label class="form-label">전문분야 및 상세분야</label>
                        	  <div class="input-group">
 	                           <select class="form-select" id="mmSpecial" name="mmSpecial">
-								   <option value="" <c:if test="${empty dto.mmSpecial }">selected</c:if>>관심분야선택</option>
-								   <option value="35" <c:if test="${dto.mmSpecial eq 35 }">selected</c:if>>개발/디자인</option>
-								   <option value="36" <c:if test="${dto.mmSpecial eq 36 }">selected</c:if>>홈/리빙</option>
-								   <option value="37" <c:if test="${dto.mmSpecial eq 37 }">selected</c:if>>레슨</option>
-								   <option value="38" <c:if test="${dto.mmSpecial eq 38 }">selected</c:if>>통역/번역</option>
-								   <option value="39" <c:if test="${dto.mmSpecial eq 39 }">selected</c:if>>사진/영상</option>
-								   <option value="40" <c:if test="${dto.mmSpecial eq 40 }">selected</c:if>>세무/법무/노무</option>
-								   <option value="41" <c:if test="${dto.mmSpecial eq 41 }">selected</c:if>>미용/건강</option>
-								   <option value="42" <c:if test="${dto.mmSpecial eq 42 }">selected</c:if>>취업/입시</option>
-								   <option value="43" <c:if test="${dto.mmSpecial eq 43 }">selected</c:if>>마케팅</option>
-								   <option value="44" <c:if test="${dto.mmSpecial eq 44 }">selected</c:if>>이벤트</option>
+								   <option value="" <c:if test="${empty dto.mmSpecial }">selected</c:if>>전문분야선택</option>
+								   <option value="45" <c:if test="${dto.mmSpecial eq 45 }">selected</c:if>>개발</option>
+								   <option value="46" <c:if test="${dto.mmSpecial eq 46 }">selected</c:if>>디자인</option>
+								   <option value="47" <c:if test="${dto.mmSpecial eq 47 }">selected</c:if>>홈/리빙</option>
+								   <option value="48" <c:if test="${dto.mmSpecial eq 48 }">selected</c:if>>레슨</option>
+								   <option value="49" <c:if test="${dto.mmSpecial eq 49 }">selected</c:if>>통역/번역</option>
+								   <option value="50" <c:if test="${dto.mmSpecial eq 50 }">selected</c:if>>사진/영상</option>
+								   <option value="51" <c:if test="${dto.mmSpecial eq 51 }">selected</c:if>>세무/법무/노무</option>
+								   <option value="52" <c:if test="${dto.mmSpecial eq 52 }">selected</c:if>>미용/건강</option>
+								   <option value="53" <c:if test="${dto.mmSpecial eq 53 }">selected</c:if>>취업/입시</option>
+								   <option value="54" <c:if test="${dto.mmSpecial eq 54 }">selected</c:if>>마케팅</option>
+								   <option value="55" <c:if test="${dto.mmSpecial eq 55 }">selected</c:if>>이벤트</option>
 							   </select>
 						   </div>
 						   <div class="input-group">
 	                           <select class="form-select" id="mmDetail" name="mmDetail" multiple>
-								   <option value="" <c:if test="${empty dto.mmDetail }">selected</c:if>>관심분야선택</option>
-								   <option value="35" <c:if test="${dto.mmDetail eq 35 }">selected</c:if>>개발/디자인</option>
-								   <option value="36" <c:if test="${dto.mmDetail eq 36 }">selected</c:if>>홈/리빙</option>
-								   <option value="37" <c:if test="${dto.mmDetail eq 37 }">selected</c:if>>레슨</option>
-								   <option value="38" <c:if test="${dto.mmDetail eq 38 }">selected</c:if>>통역/번역</option>
-								   <option value="39" <c:if test="${dto.mmDetail eq 39 }">selected</c:if>>사진/영상</option>
-								   <option value="40" <c:if test="${dto.mmDetail eq 40 }">selected</c:if>>세무/법무/노무</option>
-								   <option value="41" <c:if test="${dto.mmDetail eq 41 }">selected</c:if>>미용/건강</option>
-								   <option value="42" <c:if test="${dto.mmDetail eq 42 }">selected</c:if>>취업/입시</option>
-								   <option value="43" <c:if test="${dto.mmDetail eq 43 }">selected</c:if>>마케팅</option>
-								   <option value="44" <c:if test="${dto.mmDetail eq 44 }">selected</c:if>>이벤트</option>
+								   <option value="" <c:if test="${empty dto.mmDetail }">selected</c:if>>상세분야선택</option>
+								   <option value="56" <c:if test="${dto.mmDetail eq 56 }">selected</c:if>>웹사이트신규제작</option>
+								   <option value="57" <c:if test="${dto.mmDetail eq 57 }">selected</c:if>>웹사이트개선버그수정</option>
+								   <option value="58" <c:if test="${dto.mmDetail eq 58 }">selected</c:if>>모바일앱신규제작</option>
+								   <option value="59" <c:if test="${dto.mmDetail eq 59 }">selected</c:if>>모바일앱개선버그수정</option>
+								   <option value="60" <c:if test="${dto.mmDetail eq 60 }">selected</c:if>>프로그램개발</option>
+								   <option value="61" <c:if test="${dto.mmDetail eq 61 }">selected</c:if>>게임</option>
+								   <option value="62" <c:if test="${dto.mmDetail eq 62 }">selected</c:if>>기획</option>
+								   <option value="63" <c:if test="${dto.mmDetail eq 63 }">selected</c:if>>로고디자인</option>
+								   <option value="64" <c:if test="${dto.mmDetail eq 64 }">selected</c:if>>로고+명함디자인</option>
+								   <option value="65" <c:if test="${dto.mmDetail eq 65 }">selected</c:if>>로고+간판디자인</option>
+								   <option value="66" <c:if test="${dto.mmDetail eq 66 }">selected</c:if>>웹모바일디자인</option>
+								   <option value="67" <c:if test="${dto.mmDetail eq 67 }">selected</c:if>>앱디자인</option>
+								   <option value="68" <c:if test="${dto.mmDetail eq 68 }">selected</c:if>>인테리어</option>
+								   <option value="69" <c:if test="${dto.mmDetail eq 69 }">selected</c:if>>청소</option>
+								   <option value="70" <c:if test="${dto.mmDetail eq 70 }">selected</c:if>>가전설치/수리</option>
+								   <option value="71" <c:if test="${dto.mmDetail eq 71 }">selected</c:if>>보컬/랩</option>
+								   <option value="72" <c:if test="${dto.mmDetail eq 72 }">selected</c:if>>미디/작곡/편곡</option>
+								   <option value="73" <c:if test="${dto.mmDetail eq 73 }">selected</c:if>>스포츠</option>
 							   </select>
 						   </div>
 					   </div>
@@ -217,17 +226,14 @@
                        	  <label class="form-label" for="mmTechnique">보유기술(중복 선택 가능)</label>
                        	  <div class="input-group">
 	                           <select class="form-select" id="mmTechnique" name="mmTechnique" multiple>
-								   <option value="" <c:if test="${empty dto.mmTechnique }">selected</c:if>>관심분야선택</option>
-								   <option value="35" <c:if test="${dto.mmTechnique eq 35 }">selected</c:if>>개발/디자인</option>
-								   <option value="36" <c:if test="${dto.mmTechnique eq 36 }">selected</c:if>>홈/리빙</option>
-								   <option value="37" <c:if test="${dto.mmTechnique eq 37 }">selected</c:if>>레슨</option>
-								   <option value="38" <c:if test="${dto.mmTechnique eq 38 }">selected</c:if>>통역/번역</option>
-								   <option value="39" <c:if test="${dto.mmTechnique eq 39 }">selected</c:if>>사진/영상</option>
-								   <option value="40" <c:if test="${dto.mmTechnique eq 40 }">selected</c:if>>세무/법무/노무</option>
-								   <option value="41" <c:if test="${dto.mmTechnique eq 41 }">selected</c:if>>미용/건강</option>
-								   <option value="42" <c:if test="${dto.mmTechnique eq 42 }">selected</c:if>>취업/입시</option>
-								   <option value="43" <c:if test="${dto.mmTechnique eq 43 }">selected</c:if>>마케팅</option>
-								   <option value="44" <c:if test="${dto.mmTechnique eq 44 }">selected</c:if>>이벤트</option>
+								   <option value="" <c:if test="${empty dto.mmTechnique }">selected</c:if>>보유기술선택</option>
+								   <option value="100" <c:if test="${dto.mmTechnique eq 100 }">selected</c:if>>JavaScript</option>
+								   <option value="101" <c:if test="${dto.mmTechnique eq 101 }">selected</c:if>>Java</option>
+								   <option value="102" <c:if test="${dto.mmTechnique eq 102 }">selected</c:if>>Python</option>
+								   <option value="103" <c:if test="${dto.mmTechnique eq 103 }">selected</c:if>>PHP</option>
+								   <option value="104" <c:if test="${dto.mmTechnique eq 104 }">selected</c:if>>React</option>
+								   <option value="105" <c:if test="${dto.mmTechnique eq 105 }">selected</c:if>>Bootstrap</option>
+								   <option value="106" <c:if test="${dto.mmTechnique eq 106 }">selected</c:if>>JSP</option>
 							   </select>
 						   </div>
 					   </div>
@@ -258,11 +264,11 @@
                        	  <div class="input-group">
 	                           <select class="form-select" id="mmWorkTime" name="mmWorkTime" multiple>
 								   <option value="" <c:if test="${empty dto.mmWorkTime }">selected</c:if>>희망근로시간선택</option>
-								   <option value="35" <c:if test="${dto.mmWorkTime eq 35 }">selected</c:if>>오전</option>
-								   <option value="36" <c:if test="${dto.mmWorkTime eq 36 }">selected</c:if>>오후</option>
-								   <option value="37" <c:if test="${dto.mmWorkTime eq 37 }">selected</c:if>>저녁</option>
-								   <option value="38" <c:if test="${dto.mmWorkTime eq 38 }">selected</c:if>>새벽</option>
-								   <option value="39" <c:if test="${dto.mmWorkTime eq 39 }">selected</c:if>>협의가능</option>
+								   <option value="93" <c:if test="${dto.mmWorkTime eq 93 }">selected</c:if>>오전</option>
+								   <option value="94" <c:if test="${dto.mmWorkTime eq 94 }">selected</c:if>>오후</option>
+								   <option value="95" <c:if test="${dto.mmWorkTime eq 95 }">selected</c:if>>저녁</option>
+								   <option value="96" <c:if test="${dto.mmWorkTime eq 96 }">selected</c:if>>새벽</option>
+								   <option value="97" <c:if test="${dto.mmWorkTime eq 97 }">selected</c:if>>협의가능</option>
 							   </select>
 						   </div>
 					   </div>
@@ -274,40 +280,42 @@
 							   </select>
 						   </div>
 					   </div>
-		   			   <div class="col-8 offset-2">
-					   	   <div class="agreeBox">
-					   	   	   <div class="agreeAll">
-		  	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
-		  	   	   	   	   	   	   <span>모두 동의합니다.</span>
- 	   	   	   	   	   	   	   </div>
- 	   	   	   	   	   		   <hr>
- 	   	   	   	   	   	   	   <div class="agreeCertain">
-	 	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
-	 	   	   	   	   	   	   	   <span>만 14세 이상입니다.</span>
-	 	   	   	   	   	   	   	   <span class="certain">(필수)</span>
-	   	   	   	   	   	   	   </div>
- 	   	   	   	   	   	   	   <div class="agreeCertain">
-	 	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
-		  	   	   	   	   	   	   <span>서비스 이용약관에 동의합니다.</span>
-		  	   	   	   	   	   	   <span class="certain">(필수)</span>
-	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   <div class="agreeCertain">
-	 	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
-		  	   	   	   	   	   	   <span>개인정보 수집/이용에 동의합니다.</span>
-		  	   	   	   	   	   	   <span class="certain">(필수)</span>
-	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   <div class="agreeSelection">	   
-	 	   	   	   	   	   	   	   <i class="fa-solid fa-circle-check"></i>
-	 	   	   	   	   	   	   	   <span>이벤트 할인 혜택 알림 수신에 동의합니다. (선택)</span>
-	   	   	   	   	   	   	   </div>
-	   	   	   	   	   	   	   <div class="agreeSelection">
-	   	   	   	   	   	   	   	   <a href="#">	   
- 	   	   	   	   	   	   	   	   	  <i class="fa-solid fa-circle-check"></i>
- 	   	   	   	   	   	   	   	   	  <span>장기 미접속 시 계정 활성 상태 유지합니다. (선택)</span>
- 	   	   	   	   	   	   	   	   </a>
-   	   	   	   	   	   	   	   </div>
-   	   	   	   	   	   	   </div>
-   	   	   	   	   	   </div>
+					  <!--  
+						<div class="col-8 offset-2">
+							<div class="agreeBox">
+								<div class="agreeAll">
+									<i class="fa-solid fa-circle-check"></i>
+									<span>모두 동의합니다.</span>
+								</div>
+								<hr>
+								<div class="agreeCertain">
+									<i class="fa-solid fa-circle-check"></i>
+									<span>만 14세 이상입니다.</span>
+									<span class="certain">(필수)</span>
+								</div>
+								<div class="agreeCertain">
+									<i class="fa-solid fa-circle-check"></i>
+									<span>서비스 이용약관에 동의합니다.</span>
+									<span class="certain">(필수)</span>
+								</div>
+								<div class="agreeCertain">
+									<i class="fa-solid fa-circle-check"></i>
+									<span>개인정보 수집/이용에 동의합니다.</span>
+									<span class="certain">(필수)</span>
+								</div>
+								<div class="agreeSelection">	   
+									<i class="fa-solid fa-circle-check"></i>
+									<span>이벤트 할인 혜택 알림 수신에 동의합니다. (선택)</span>
+								</div>
+								<div class="agreeSelection">
+									<a href="#">	   
+									<i class="fa-solid fa-circle-check"></i>
+									<span>장기 미접속 시 계정 활성 상태 유지합니다. (선택)</span>
+									</a>
+								</div>
+							</div>
+						</div>
+						 -->
                        <div class="col-8 offset-2">
                            <button class="btn btn-primary w-100" type="button" id="btnReg">가입완료!</button>
                        </div>

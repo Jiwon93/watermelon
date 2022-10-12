@@ -180,6 +180,7 @@
 							   </select>
 						   </div>
 					   </div>
+					   <!-- 
 		   			   <div class="col-8 offset-2">
 					   	   <div class="agreeBox">
 					   	   	   <div class="agreeAll">
@@ -214,6 +215,7 @@
    	   	   	   	   	   	   	   </div>
    	   	   	   	   	   	   </div>
    	   	   	   	   	   </div>
+   	   	   	   	   	    -->
                        <div class="col-8 offset-2">
                            <button class="btn btn-primary w-100" type="button" id="btnReg">가입완료!</button>
                        </div>

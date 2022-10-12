@@ -72,7 +72,7 @@ public class MemberServiceImpl implements MemberService {
 		return dao.findEmailCheck(dto);
 	}
 
-	//회원가입
+	//회원가입(일반)
 	@Override
 	public int memberRegC(Member dto) throws Exception {
 		
@@ -86,9 +86,19 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
-	public int memberRegPhoneC(Member dto) throws Exception {
-		int result = dao.memberRegPhoneC(dto);
+	public int memberRegPhone(Member dto) throws Exception {
+		int result = dao.memberRegPhone(dto);
 		return result;
+	}
+	
+	//회원가입(만렙)
+	@Override
+	public int memberRegB(Member dto) throws Exception {
+		
+		dto.setMmPw(UtilSecurity.encryptSha256(dto.getMmPw()));
+		dto.setMmName(dto.getMmName());
+		
+		return dao.memberRegB(dto);
 	}
 	
 	//회원정보수정
@@ -107,6 +117,7 @@ public class MemberServiceImpl implements MemberService {
 	//로그인
 	@Override
 	public Member selectOneId(Member dto) throws Exception {
+		dto.setMmPw(UtilSecurity.encryptSha256(dto.getMmPw()));
 		return dao.selectOneId(dto);
 	}
 

@@ -40,16 +40,21 @@ public class MemberDao {
 		return result;
 	}
 	
-	//회원가입
+	//회원가입(일반)
 	public int memberRegC(Member dto) {
 		int result = sqlSession.insert(namespace + ".memberRegC", dto);
 		System.out.println("dao.Reg: " + result);
 		return result;
 	}
 	
-	public int memberRegPhoneC(Member dto) {
-		int result = sqlSession.insert(namespace + ".memberRegPhoneC", dto);
+	public int memberRegPhone(Member dto) {
+		int result = sqlSession.insert(namespace + ".memberRegPhone", dto);
 		return result;
+	}
+	
+	//회원가입(만렙)
+	public int memberRegB(Member dto) {
+		return sqlSession.insert(namespace + ".memberRegB", dto);
 	}
 	
 	//회원정보 수정

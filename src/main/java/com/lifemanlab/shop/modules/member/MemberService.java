@@ -21,9 +21,12 @@ public interface MemberService {
 	public Member findEmail(Member dto) throws Exception;
 	public Member findEmailCheck(Member dto) throws Exception;
 	
-	//회원가입
+	//회원가입(일반)
 	public int memberRegC(Member dto) throws Exception;
-	public int memberRegPhoneC(Member dto) throws Exception;
+	public int memberRegPhone(Member dto) throws Exception;
+	
+	//회원가입(만렙)
+	public int memberRegB(Member dto) throws Exception;
 	
 	//회원정보수정
 	public int memberMod(Member dto) throws Exception;

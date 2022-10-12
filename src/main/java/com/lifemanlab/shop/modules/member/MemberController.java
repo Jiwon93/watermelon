@@ -211,17 +211,25 @@ public class MemberController extends BaseController {
 		return "redirect:/member/pwChangeFormC";
 	}
 	
-	//회원가입
+	//회원가입(일반)
 	@RequestMapping(value = "memberRegCInst")
 	public String memberRegCInst(Member dto) throws Exception {
 		int result = service.memberRegC(dto);
 		System.out.println("controller.Reg: " + result);
 		
-		int result2 = service.memberRegPhoneC(dto);
+		int result2 = service.memberRegPhone(dto);
 		System.out.println("controller.PhoneReg: " + result2);
 		return "redirect:/member/loginForm";
 	}
-		
+	
+	//회원가입(만렙)
+	@RequestMapping(value = "memberRegBInst")
+	public String memberRegBInst(Member dto) throws Exception {
+		service.memberRegB(dto);
+		service.memberRegPhone(dto);
+		return "redirect:/member/loginForm";
+	}
+	
 	@RequestMapping(value = "memberUpdt")
 	public String memberUpdt(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
 		service.update(dto);

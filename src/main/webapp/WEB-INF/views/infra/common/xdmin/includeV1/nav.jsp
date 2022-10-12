@@ -18,10 +18,10 @@
             	<c:when test="${sessSeq eq null }">
             		<div class="navbar-nav ms-auto">
 		                <a id="btnLoginGo" type="button" class="nav-item nav-link">로그인</a>
-		                <a id="btnMemberReg" type="button"class="nav-item nav-link">회원가입</a>
+		                <a id="btnMemberRegC" type="button"class="nav-item nav-link">회원가입</a>
 		            </div>
 		            <div class="navbar-nav ms-auto pe-3 pt-3">
-		            	<button class="btn btn-primary" type="button">만렙등록</button>
+		            	<button class="btn btn-primary" type="button" id="btnMemberRegB">만렙등록</button>
 		            </div>
 		        </c:when>
 		        <c:when test="${sessRank eq 25 }">
@@ -65,7 +65,8 @@
 	 	var goUrlMypage = "/member/memberViewC";
 		var goUrlLogout = "/member/memberHome";
 		var goUrlLoginGo = "/member/loginForm";
-		var goUrlMemberReg = "/member/memberRegFormC";
+		var goUrlMemberRegC = "/member/memberRegFormC";
+		var goUrlMemberRegB = "/member/memberRegFormB";
 		var goUrlPurchaseHistory = "/member/purchaseHistory";
 		var goUrlMemberMod = "/member/memberModFormC";
 		var goUrlSaleManage = "/member/saleManage";
@@ -82,8 +83,12 @@
 	   		$(location).attr("href", goUrlMypage);
 		});
 		
-		$("#btnMemberReg").on("click", function(){
-	   		$(location).attr("href", goUrlMemberReg);
+		$("#btnMemberRegC").on("click", function(){
+	   		$(location).attr("href", goUrlMemberRegC);
+		});
+		
+		$("#btnMemberRegB").on("click", function(){
+	   		$(location).attr("href", goUrlMemberRegB);
 		});
 		
 		$("#btnPurchaseHistory").on("click", function(){

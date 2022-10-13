@@ -25,7 +25,7 @@ public class UtilUpload {
 		  
 		multipartFile.transferTo(new File(path + uuidFileName));
 		
-		//dto.setPath(pathForView);
+		dto.setPath(pathForView);
 		dto.setOriginalName(fileName);
 		dto.setUuidName(uuidFileName);
 		dto.setExt(ext);

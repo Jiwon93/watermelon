@@ -4,14 +4,21 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.lifemanlab.shop.common.base.BaseServiceImpl;
 import com.lifemanlab.shop.common.util.UtilSecurity;
 
 @Service
-public class MemberServiceImpl implements MemberService {
+public class MemberServiceImpl extends BaseServiceImpl implements MemberService {
 	
 	@Autowired
 	MemberDao dao;
+	
+	@Override
+	public void uploadFiles(MultipartFile[] multipartFiles, Member dto, String tableName) throws Exception {
+		
+	}
 	
 	@Override
 	public List<Member> selectList(MemberVo vo) throws Exception {
@@ -22,21 +29,18 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int selectOneCount(MemberVo vo) throws Exception {
 		int count = dao.selectOneCount(vo);
-		System.out.println("service count: " + count);
 		return count;
 	}
 
 	@Override
 	public Member selectOne(MemberVo vo) throws Exception {
 		Member item = dao.selectOne(vo);
-		System.out.println("service item: " + item);
 		return item;
 	}
 	
 	@Override
 	public int insert(Member dto) throws Exception {
 		int result = dao.insert(dto);
-		System.out.println("service result: " + result);
 		return result;
 	}
 
@@ -53,6 +57,12 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int delete(MemberVo vo) throws Exception {
 		return dao.delete(vo);
+	}
+	
+	//이미지, 파일 업로드
+	@Override
+	public List<Member> selectListUploaded(MemberVo vo) throws Exception {
+		return dao.selectListUploaded(vo);
 	}
 	
 	//Email 확인
@@ -81,7 +91,6 @@ public class MemberServiceImpl implements MemberService {
 		//dto.setMmPwdModDate(UtilDateTime.nowDate());
 		
 		int result = dao.memberRegC(dto);
-		System.out.println("service.Reg: " + result);
 		return result;
 	}
 	
@@ -117,7 +126,7 @@ public class MemberServiceImpl implements MemberService {
 	//로그인
 	@Override
 	public Member selectOneId(Member dto) throws Exception {
-		dto.setMmPw(UtilSecurity.encryptSha256(dto.getMmPw()));
+		/* dto.setMmPw(UtilSecurity.encryptSha256(dto.getMmPw())); */
 		return dao.selectOneId(dto);
 	}
 
@@ -136,7 +145,6 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int pwChange(Member dto) throws Exception {
 		int result = dao.pwChange(dto);
-		System.out.println("service.pwChange: " + result);
 		return result;
 	}
 	
@@ -144,7 +152,6 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public Member selectOneView(MemberVo vo) throws Exception {
 		Member item = dao.selectOneView(vo);
-		System.out.println("service.view item: " + item);
 		return item;
 	}
 

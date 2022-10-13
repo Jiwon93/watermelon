@@ -83,6 +83,7 @@ public class MemberController extends BaseController {
 		service.memberModPhone(dto);
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
+		redirectAttributes.addFlashAttribute("listUploaded", service.selectListUploaded(vo));
 		return "redirect:/member/memberViewC";
 	}
 	

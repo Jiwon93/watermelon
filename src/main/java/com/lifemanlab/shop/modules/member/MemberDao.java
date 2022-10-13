@@ -28,7 +28,6 @@ public class MemberDao {
 	
 	//이미지, 파일 업로드
 	public int insertUploaded(Member dto) { return sqlSession.insert("Base" + ".insertUploaded" , dto); }
-	
 	public List<Member> selectListUploaded(MemberVo vo) { return sqlSession.selectList(namespace + ".selectListUploaded", vo); }
 	
 	//회원가입(일반)

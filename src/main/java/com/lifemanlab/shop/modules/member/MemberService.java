@@ -2,17 +2,24 @@ package com.lifemanlab.shop.modules.member;
 
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public interface MemberService {
 	
-	public List<Member> selectList(MemberVo vo) throws Exception; 
+	/* public void setRegMod(Member dto) throws Exception; */
+	public void uploadFiles(MultipartFile[] multipartFiles, Member dto, String tableName) throws Exception;
 	
+	//member
+	public List<Member> selectList(MemberVo vo) throws Exception; 
 	public int selectOneCount(MemberVo vo) throws Exception;
 	public Member selectOne(MemberVo vo) throws Exception;
- 	
 	public int insert(Member dto) throws Exception;
 	public int update(Member dto) throws Exception;
 	public int uelete(Member dto) throws Exception;
 	public int delete(MemberVo vo) throws Exception;
+	
+	//이미지, 파일 업로드
+	List<Member> selectListUploaded(MemberVo vo) throws Exception;
 	
 	//Email 확인
 	public int selectOneIdCheck(Member dto) throws Exception;

@@ -69,6 +69,16 @@
     	.mypageList {
     		height: 45px;
     	}
+    	
+    	.saleRegF {
+    		border: 2px dashed darkgray;
+    		text-align: center;
+    		height: 250px;
+    	}
+    	
+    	.saleRegBtn {
+    		margin-top: 80px;
+    	}
     </style>
 </head>
 
@@ -84,70 +94,28 @@
     
     <!-- Contact Start -->
     <div class="container-fluid overflow-hidden" style="margin: 1rem 0;">
-          	<div class="row">
-           
-	           <!-- mypageList Start -->
-		       <%@include file="../../common/xdmin/includeV1/mypageList.jsp"%>
-		       <!-- mypageList End -->
-		       
-	           <div class="col-sm-9 p-2">
-	               <div class="p-lg-5">
-	                   <div class="">
-	                       <h4 class="mb-4">판매관리</h4>
-	                   </div>
-	                   <div class="row g-3 mb-3">
-	                   	   <div class="col-3">
-	                       	   <div class="input-group">
-		                           <select class="form-select" id="serviceReg">
-									   <option value="s0" selected>서비스를 선택해주세요.</option>
-								   </select>
-							   </div>
-						   </div>
-						   <div class="col-2">
-							   <div class="input-group">
-		                           <select class="form-select" id="orderReg">
-									   <option value="s0" selected>주문번호</option>
-								   </select>
-							   </div>
-						   </div>
-						   <div class="col-2 form-inline">
-						   		<div class="input-group">
-						        <input class="form-control" type="search" placeholder="검색어">
-						        <a class="btn btn-outline-primary" type="button"><i class="fa-solid fa-magnifying-glass"></i></a>
-					       		</div>
-					       </div>
-					       <div class="col offset-1">
-					       	   <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">주문날짜순</a>
-						       <ul class="dropdown-menu">
-						            <li><a class="dropdown-item" href="#">가격순</a></li>
-						       </ul>
-					       </div>
-					   </div>
-	                   <div class="p-4 pb-1 border border-2 border-light">
-		                   <div class="row g-3">
-		                   	   <div class="col-sm-9 p-2">
-					               <div class="p-lg-5">
-					                   <div class="">
-					                       <h4 class="mb-4">판매등록</h4>
-					                   </div>
-					                   <div class="saleRegF">
-					                   	   <div class="saleRegBtn">
-						                   	   <a class="" id="btnSaleRegForm" type="button" >
-						                   	   	   <i class="fa-solid fa-plus fa-3x"></i>
-						                   	   	   <p>판매 등록하기</p>
-					               	   		   </a>
-				               	   		   </div>
-					                   </div>
-					               </div>
-					           </div>
-				           </div>
-		                   <!-- pagination s -->
-						   <%@include file="../../common/xdmin/includeV1/pagination.jsp"%>
-						   <!-- pagination e -->
-	                   </div>
-	               </div>
-	           </div>
-           </div>
+		<div class="row">
+
+		<!-- mypageList Start -->
+		<%@include file="../../common/xdmin/includeV1/mypageList.jsp"%>
+		<!-- mypageList End -->
+
+			<div class="col-sm-9 p-2">
+    			<div class="p-lg-5">
+			        <div class="">
+			            <h4 class="mb-4">판매등록</h4>
+			        </div>
+        			<div class="saleRegF">
+        	   			<div class="saleRegBtn">
+         	   				<a class="" id="btnSaleRegForm" type="button">
+			         	   	   <i class="fa-solid fa-plus fa-3x"></i>
+			         	   	   <p>판매 등록하기</p>
+    	   		   			</a>
+   	   		   			</div>
+        			</div>
+    			</div>
+			</div>
+		</div>
     </div>
     
     <!-- Footer Start -->

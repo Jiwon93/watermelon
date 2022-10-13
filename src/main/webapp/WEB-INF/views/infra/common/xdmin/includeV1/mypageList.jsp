@@ -5,8 +5,20 @@
 		<c:when test="${sessRank eq 26}">
 		<div class="col-sm-3 p-lg-5">
 			<div class="text-center pb-4">
-				<img src="/resources/images/men.png" class="border border-3 rounded-circle" style="height: 40%; width: 40%;" alt="">
-				<br><label for="mmUploadedImage" class="form-label input-file-button">프로필변경</label>
+			<c:choose>
+				<c:when test="${fn:length(listUploaded) eq 0 }">
+					<img id="imgProfile" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
+				</c:when>
+				<c:otherwise>
+					<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
+						<c:if test="${listUploaded.type eq '1' }">
+							<img id="imgProfile" src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" class="rounded-circle mx-auto d-block" width="100" height="100">
+						</c:if>
+					</c:forEach>
+				</c:otherwise>
+			</c:choose>
+				<label for="mmUploadedProfileImage" class="form-label input-file-button"><b>+</b></label>
+ 				<input class="form-control form-control-sm" id="mmUploadedProfileImage" name="mmUploadedProfileImage" type="file" multiple="multiple" style="display: none;" onChange="upload('mmUploadedProfileImage', 0, 1, 1, 0, 0, 3);">
 			</div>
 			<div class="text-center pb-4">
 				<button class="btn btn-secondary" style="height: 30px; width: 60px; font-size: small;">일반</button>

@@ -60,6 +60,14 @@
 		WHERE 1=1
 			AND mmSeq = #{mmSeq}
 	</select>
+	
+	<select id="ccNameList" resultMap="resultMapObj">
+		SELECT
+			a.ccSeq
+			,a.ccName
+		FROM code a
+		WHERE 1=1
+	</select>
 	<!-- 	
 	<select id="memberPhoneList" resultMap="resultMapObj">
 		SELECT

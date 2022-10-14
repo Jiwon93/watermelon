@@ -6,6 +6,8 @@ public class MemberVo extends BaseVo {
 	
 	private String mmSeq;
 	private String sessSeq;
+	private String ccSeq;
+	private String ccName;
 ////////////////////////////////////////////////
 
 	public String getMmSeq() {
@@ -24,5 +26,21 @@ public class MemberVo extends BaseVo {
 		this.sessSeq = sessSeq;
 	}
 
+	public String getCcSeq() {
+		return ccSeq;
+	}
+
+	public void setCcSeq(String ccSeq) {
+		this.ccSeq = ccSeq;
+	}
+
+	public String getCcName() {
+		return ccName;
+	}
+
+	public void setCcName(String ccName) {
+		this.ccName = ccName;
+	}
+	
 
 }

@@ -8,6 +8,11 @@ import com.lifemanlab.shop.common.base.Base;
 
 public class Member extends Base{
 	
+	//공통코드
+	private String ccSeq;
+	private String ccName;
+	
+	//member
 	private String mmSeq;
 	private String mmName;
 	private String mmNickname;
@@ -42,6 +47,22 @@ public class Member extends Base{
 	private MultipartFile[] mmUploadedImage;
 	private MultipartFile[] mmUploadedFile;
 ///////////////////////////////////////////////
+	
+	//공통코드
+	public String getCcSeq() {
+		return ccSeq;
+	}
+	public void setCcSeq(String ccSeq) {
+		this.ccSeq = ccSeq;
+	}
+	public String getCcName() {
+		return ccName;
+	}
+	public void setCcName(String ccName) {
+		this.ccName = ccName;
+	}
+
+	//member
 	public String getMmSeq() {
 		return mmSeq;
 	}
@@ -234,5 +255,7 @@ public class Member extends Base{
 	public void setMmUploadedFile(MultipartFile[] mmUploadedFile) {
 		this.mmUploadedFile = mmUploadedFile;
 	}
+	
+	
 	
 }

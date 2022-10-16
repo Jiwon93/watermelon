@@ -410,7 +410,19 @@
 				<h5>4. 이미지</h5>
 				<div class="col-sm-6 mt-3 mt-sm-0">
 					<label for="mmUploadedImage"
-						class="form-label input-file-button">이미지첨부</label> <input
+						class="form-label input-file-button">대표 이미지첨부</label> <input
+						class="form-control form-control-sm" id="mmUploadedImage"
+						name="mmUploadedImage" type="file" multiple="multiple"
+						style="display: none;"
+						onChange="upload('mmUploadedImage', 1, 0, 1, 0, 0, 1);">
+					<div class="addScroll">
+						<ul id="ulFile1" class="list-group">
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-6 mt-3 mt-sm-0">
+					<label for="mmUploadedImage"
+						class="form-label input-file-button">추가 이미지첨부</label> <input
 						class="form-control form-control-sm" id="mmUploadedImage"
 						name="mmUploadedImage" type="file" multiple="multiple"
 						style="display: none;"

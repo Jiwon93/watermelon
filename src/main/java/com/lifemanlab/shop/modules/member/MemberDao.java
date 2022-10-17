@@ -21,7 +21,7 @@ public class MemberDao {
 	public List<Member> selectList(MemberVo vo){ return sqlSession.selectList("com.lifemanlab.shop.modules.member.MemberMapper.selectList", vo); }
 	public int selectOneCount(MemberVo vo) { return sqlSession.selectOne(namespace + ".selectOneCount", vo); }
 	public Member selectOne(MemberVo vo) { return sqlSession.selectOne(namespace + ".selectOne", vo); }
-	//public List<Member> ccNameList() { return sqlSession.selectList("com.lifemanlab.shop.modules.Member.MemberMapper.ccNameList", ""); }
+	public List<Member> ccNameList() { return sqlSession.selectList(namespace + ".ccNameList", ""); }
 	public int insert(Member dto) { return sqlSession.insert(namespace + ".insert", dto); }
 	public int update(Member dto) { return sqlSession.update(namespace + ".update", dto); }
 	public int uelete(Member dto) { return sqlSession.update(namespace + ".uelete", dto); }

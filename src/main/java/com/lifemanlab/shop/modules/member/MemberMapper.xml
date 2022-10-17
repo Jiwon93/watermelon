@@ -62,15 +62,14 @@
 	</select>
 	
 	
-	<!-- 
+	
 	<select id="ccNameList" resultMap="resultMapObj">
 		SELECT
-			a.ccSeq
-			,a.ccName
+			a.*
 		FROM code a
 		WHERE 1=1
 	</select>
-	 -->
+	
 	
 	<!-- 	
 	<select id="memberPhoneList" resultMap="resultMapObj">

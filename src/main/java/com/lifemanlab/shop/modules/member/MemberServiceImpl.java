@@ -38,10 +38,10 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 		return item;
 	}
 	
-	//@Override
-	//public List<Member> ccNameList() throws Exception {
-	//	return dao.ccNameList();
-	//}
+	@Override
+	public List<Member> ccNameList() throws Exception {
+		return dao.ccNameList();
+	}
 	
 	@Override
 	public int insert(Member dto) throws Exception {

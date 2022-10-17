@@ -355,6 +355,7 @@ label {
 
 	<script src="/resources/js/user/constantsUser.js"></script>
 	<script src="/resources/js/user/commonUser.js"></script>
+	<script srt="/resources/js/common/common.js"></script>
 	
 	<!-- jQuery -->
 	<script

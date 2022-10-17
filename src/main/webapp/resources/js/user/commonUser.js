@@ -1,3 +1,5 @@
+document.write("<script src='/resources/js/common/common.js'></script>");
+
 checkUploadedTotalFileNumber = function(obj, allowedMaxTotalFileNumber, filesCount, uploadedFilesCount) {
 	if(allowedMaxTotalFileNumber < (filesCount + uploadedFilesCount)){
 		alert("전체 파일 갯수는 "+ allowedMaxTotalFileNumber +"개 까지 허용됩니다.");

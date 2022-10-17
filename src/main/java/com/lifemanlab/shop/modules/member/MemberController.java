@@ -290,8 +290,10 @@ public class MemberController extends BaseController {
 	
 	@RequestMapping(value = "memberRegFormC")
 	public String memberRegFormC(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
-		List<Member> ccNameList = service.ccNameList();
-		model.addAttribute("ccNameList", ccNameList);
+		/*
+		 * List<Member> ccNameList = service.ccNameList();
+		 * model.addAttribute("ccNameList", ccNameList);
+		 */
 		Member item = service.selectOneView(vo);
 		model.addAttribute("item", item);
 		return "infra/member/user/memberRegFormC";

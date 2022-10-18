@@ -90,8 +90,7 @@ label {
 </head>
 
 <body>
-	<c:forEach items="${listUploaded}" var="listUploaded"
-		varStatus="statusUploaded">
+	<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
 		<c:out value="${listUploaded.type }" />
 	</c:forEach>
 	<form method="get" id="form" name="form" autocomplete="off"

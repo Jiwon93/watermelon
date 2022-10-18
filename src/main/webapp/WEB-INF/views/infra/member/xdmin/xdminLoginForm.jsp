@@ -46,6 +46,7 @@
 		
 		.btn {
 			border-radius: 5px;
+			height: 45px;
 		}
 		
 		.container-fluid {
@@ -61,7 +62,8 @@
 <body>
 
     <!-- Contact Start -->
-	<form method="get" name="form" id="form">
+	<form method="get" name="form" id="form" autocomplete="off" enctype="multipart/form-data">
+		<input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
 		<div class="container-fluid overflow-hidden" style="margin: 1rem 0;">
 			<div class="col mt-5" style="text-align: center;">
 				<a type="button">
@@ -79,22 +81,22 @@
 				<div class="row">
 					<div class="col-8 mx-auto mb-3">
 						<div class="form-floating">
-							<input type="email" class="form-control" id="newEmail">
-							<label for="newEmail">아이디</label>
+							<input type="email" class="form-control" id="mmEmail" name="mmEmail">
+                            <label for="newEmail">이메일</label>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-8 mx-auto mb-3">
 						<div class="form-floating">
-							<input type="password" class="form-control" id="newPw">
-							<label for="newPw">비밀번호</label>
+							<input type="password" class="form-control" id="mmPw" name="mmPw">
+                            <label for="newPw">비밀번호</label>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-8 mx-auto">
-						<button class="btn btn-secondary w-100" type="button" style="height: 45px;">로그인</button>
+						<button class="btn btn-secondary w-100" type="button" id="btnLogin">로그인</button>
 					</div>
 				</div>
 				<div class="row mt-3">
@@ -103,9 +105,6 @@
 							<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
 							<label class="form-check-label" for="flexSwitchCheckDefault">Auto login</label>
 						</div>
-					</div>
-					<div class="col-4" style="text-align: right;">
-						<a class="" href="idPwFindForm.html">아이디/비밀번호 찾기</a>
 					</div>
 				</div>
 			</div>    
@@ -123,6 +122,41 @@
 
     <!-- Template Javascript -->
     <script src="/resources/template/woody/js/main.js"></script>
+    
+    <!-- JavaScript & jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	
+	<script>
+		var goUrlLogin = "/member/memberList";
+	 	// 암호화
+		$("#btnLogin").on("click", function(){
+		//if(validation() == false) return false;
+		
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				/* ,dataType:"json" */
+				,url: "/member/loginProc"
+				/* ,data : $("#formLogin").serialize() */
+				//,data : { "mmEmail" : $("#mmEmail").val(), "mmPw" : $("#mmPw").val(), "autoLogin" : $("#autoLogin").is(":checked")}
+				,data : { "mmEmail" : $("#mmEmail").val(), "mmPw" : $("#mmPw").val()}
+				,success: function(response) {
+					if(response.rt == "success") {
+						//if(response.changePwd == "true") {
+						//	location.href = URL_CHANGE_PWD_FORM;
+						//} else {
+							location.href = goUrlLogin;
+					} else {
+						alert("회원없음");
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+		});
+	</script>
 </body>
 
 </html>

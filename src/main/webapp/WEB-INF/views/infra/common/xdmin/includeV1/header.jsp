@@ -12,7 +12,7 @@
 					<img src="/resources/images/men.png" class="border border-3 rounded-circle" style="height: 35%; width: 35%;" alt="">
 				</div>
 				<div class="col-2 text-start">
-					<span class="fs-5">Tony Chang</span>
+					<span class="fs-5"><c:out value="${sessName }" /></span>
 					<br>
 					<span class="fs-6">Administrator</span>
 				</div>

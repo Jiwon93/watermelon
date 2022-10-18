@@ -151,106 +151,63 @@
                        	   <label class="form-label" for="mmJob">직업</label>
                        	   <div class="input-group">
 	                           <select class="form-select" id="mmJob" name="mmJob">
-								   <option value="" <c:if test="${empty dto.mmJob }">selected</c:if>>직업선택</option>
-								   <option value="13" <c:if test="${dto.mmJob eq 13 }">selected</c:if>>직장인</option>
-								   <option value="14" <c:if test="${dto.mmJob eq 14 }">selected</c:if>>프리랜서</option>
-								   <option value="15" <c:if test="${dto.mmJob eq 15 }">selected</c:if>>소상공인</option>
-								   <option value="16" <c:if test="${dto.mmJob eq 16 }">selected</c:if>>스타트업 창업자</option>
-								   <option value="17" <c:if test="${dto.mmJob eq 17 }">selected</c:if>>대학(원)생</option>
-								   <option value="18" <c:if test="${dto.mmJob eq 18 }">selected</c:if>>취업준비생</option>
-								   <option value="19" <c:if test="${dto.mmJob eq 19 }">selected</c:if>>무직</option>
-							   </select>
+								   <option>직업선택</option>
+								   <c:forEach begin="12" end="18" items="${ccNameList }" var="ccNameList" varStatus="status">
+								   <option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+								   </c:forEach>
+						       </select>
 			   			  </div>
 		  			   </div>
 					   <div class="col-8 offset-2">
                        	  <label class="form-label" for="mmInterest">관심분야(중복 선택 가능)</label>
                        	  <div class="input-group">
-	                           <select class="form-select" id="mmInterest" name="mmInterest" multiple>
-								   <option value="" <c:if test="${empty dto.mmInterest }">selected</c:if>>관심분야선택</option>
-								   <option value="35" <c:if test="${dto.mmInterest eq 35 }">selected</c:if>>개발/디자인</option>
-								   <option value="36" <c:if test="${dto.mmInterest eq 36 }">selected</c:if>>홈/리빙</option>
-								   <option value="37" <c:if test="${dto.mmInterest eq 37 }">selected</c:if>>레슨</option>
-								   <option value="38" <c:if test="${dto.mmInterest eq 38 }">selected</c:if>>통역/번역</option>
-								   <option value="39" <c:if test="${dto.mmInterest eq 39 }">selected</c:if>>사진/영상</option>
-								   <option value="40" <c:if test="${dto.mmInterest eq 40 }">selected</c:if>>세무/법무/노무</option>
-								   <option value="41" <c:if test="${dto.mmInterest eq 41 }">selected</c:if>>미용/건강</option>
-								   <option value="42" <c:if test="${dto.mmInterest eq 42 }">selected</c:if>>취업/입시</option>
-								   <option value="43" <c:if test="${dto.mmInterest eq 43 }">selected</c:if>>마케팅</option>
-								   <option value="44" <c:if test="${dto.mmInterest eq 44 }">selected</c:if>>이벤트</option>
+	                           <select class="form-select" id="mmInterest" name="mmInterest">
+								   <option>관심분야선택</option>
+								   <c:forEach begin="29" end="38" items="${ccNameList }" var="ccNameList" varStatus="status">
+								   <option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+								   </c:forEach>
 							   </select>
 						   </div>
 					   </div>
 					   <div class="col-8 offset-2">
                        	  <label class="form-label">전문분야 및 상세분야</label>
                        	  <div class="input-group">
-	                           <select class="form-select" id="mmSpecial" name="mmSpecial">
-								   <option value="" <c:if test="${empty dto.mmSpecial }">selected</c:if>>전문분야선택</option>
-								   <option value="45" <c:if test="${dto.mmSpecial eq 45 }">selected</c:if>>개발</option>
-								   <option value="46" <c:if test="${dto.mmSpecial eq 46 }">selected</c:if>>디자인</option>
-								   <option value="47" <c:if test="${dto.mmSpecial eq 47 }">selected</c:if>>홈/리빙</option>
-								   <option value="48" <c:if test="${dto.mmSpecial eq 48 }">selected</c:if>>레슨</option>
-								   <option value="49" <c:if test="${dto.mmSpecial eq 49 }">selected</c:if>>통역/번역</option>
-								   <option value="50" <c:if test="${dto.mmSpecial eq 50 }">selected</c:if>>사진/영상</option>
-								   <option value="51" <c:if test="${dto.mmSpecial eq 51 }">selected</c:if>>세무/법무/노무</option>
-								   <option value="52" <c:if test="${dto.mmSpecial eq 52 }">selected</c:if>>미용/건강</option>
-								   <option value="53" <c:if test="${dto.mmSpecial eq 53 }">selected</c:if>>취업/입시</option>
-								   <option value="54" <c:if test="${dto.mmSpecial eq 54 }">selected</c:if>>마케팅</option>
-								   <option value="55" <c:if test="${dto.mmSpecial eq 55 }">selected</c:if>>이벤트</option>
-							   </select>
+                       	  	   <select class="form-select" id="mmSpecial" name="mmSpecial">
+								   <option>전문분야선택</option>
+								   <c:forEach begin="39" end="49" items="${ccNameList }" var="ccNameList" varStatus="status">
+								   <option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+								   </c:forEach>
+						       </select>
 						   </div>
 						   <div class="input-group">
-	                           <select class="form-select" id="mmDetail" name="mmDetail">
-								   <option value="" <c:if test="${empty dto.mmDetail }">selected</c:if>>상세분야선택</option>
-								   <option value="56" <c:if test="${dto.mmDetail eq 56 }">selected</c:if>>웹사이트신규제작</option>
-								   <option value="57" <c:if test="${dto.mmDetail eq 57 }">selected</c:if>>웹사이트개선버그수정</option>
-								   <option value="58" <c:if test="${dto.mmDetail eq 58 }">selected</c:if>>모바일앱신규제작</option>
-								   <option value="59" <c:if test="${dto.mmDetail eq 59 }">selected</c:if>>모바일앱개선버그수정</option>
-								   <option value="60" <c:if test="${dto.mmDetail eq 60 }">selected</c:if>>프로그램개발</option>
-								   <option value="61" <c:if test="${dto.mmDetail eq 61 }">selected</c:if>>게임</option>
-								   <option value="62" <c:if test="${dto.mmDetail eq 62 }">selected</c:if>>기획</option>
-								   <option value="63" <c:if test="${dto.mmDetail eq 63 }">selected</c:if>>로고디자인</option>
-								   <option value="64" <c:if test="${dto.mmDetail eq 64 }">selected</c:if>>로고+명함디자인</option>
-								   <option value="65" <c:if test="${dto.mmDetail eq 65 }">selected</c:if>>로고+간판디자인</option>
-								   <option value="66" <c:if test="${dto.mmDetail eq 66 }">selected</c:if>>웹모바일디자인</option>
-								   <option value="67" <c:if test="${dto.mmDetail eq 67 }">selected</c:if>>앱디자인</option>
-								   <option value="68" <c:if test="${dto.mmDetail eq 68 }">selected</c:if>>인테리어</option>
-								   <option value="69" <c:if test="${dto.mmDetail eq 69 }">selected</c:if>>청소</option>
-								   <option value="70" <c:if test="${dto.mmDetail eq 70 }">selected</c:if>>가전설치/수리</option>
-								   <option value="71" <c:if test="${dto.mmDetail eq 71 }">selected</c:if>>보컬/랩</option>
-								   <option value="72" <c:if test="${dto.mmDetail eq 72 }">selected</c:if>>미디/작곡/편곡</option>
-								   <option value="73" <c:if test="${dto.mmDetail eq 73 }">selected</c:if>>스포츠</option>
-							   </select>
+					   	   	   <select class="form-select" id="mmDetail" name="mmDetail">
+								   <option>상세분야선택</option>
+								   <c:forEach begin="50" end="67" items="${ccNameList }" var="ccNameList" varStatus="status">
+								   <option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+								   </c:forEach>
+						       </select>
 						   </div>
 					   </div>
 					   <div class="col-8 offset-2">
                        	  <label class="form-label" for="mmTechnique">보유기술(중복 선택 가능)</label>
                        	  <div class="input-group">
-	                           <select class="form-select" id="mmTechnique" name="mmTechnique" multiple>
-								   <option value="" <c:if test="${empty dto.mmTechnique }">selected</c:if>>보유기술선택</option>
-								   <option value="100" <c:if test="${dto.mmTechnique eq 100 }">selected</c:if>>JavaScript</option>
-								   <option value="101" <c:if test="${dto.mmTechnique eq 101 }">selected</c:if>>Java</option>
-								   <option value="102" <c:if test="${dto.mmTechnique eq 102 }">selected</c:if>>Python</option>
-								   <option value="103" <c:if test="${dto.mmTechnique eq 103 }">selected</c:if>>PHP</option>
-								   <option value="104" <c:if test="${dto.mmTechnique eq 104 }">selected</c:if>>React</option>
-								   <option value="105" <c:if test="${dto.mmTechnique eq 105 }">selected</c:if>>Bootstrap</option>
-								   <option value="106" <c:if test="${dto.mmTechnique eq 106 }">selected</c:if>>JSP</option>
-							   </select>
+                       	  	   <select class="form-select" id="mmTechnique" name="mmTechnique">
+								   <option>보유기술선택</option>
+								   <c:forEach begin="75" end="81" items="${ccNameList }" var="ccNameList" varStatus="status">
+								   <option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+								   </c:forEach>
+						       </select>
 						   </div>
 					   </div>
 					   <div class="col-8 offset-2">
                        	  <label class="form-label" for="mmCareer">경력</label>
                        	  <div class="input-group">
-	                           <select class="form-select" id="mmCareer" name="mmCareer">
-								   <option value="" <c:if test="${empty dto.mmCareer }">selected</c:if>>경력선택</option>
-								   <option value="27" <c:if test="${dto.mmCareer eq 27 }">selected</c:if>>신입</option>
-								   <option value="28" <c:if test="${dto.mmCareer eq 28 }">selected</c:if>>1년</option>
-								   <option value="29" <c:if test="${dto.mmCareer eq 29 }">selected</c:if>>2년</option>
-								   <option value="30" <c:if test="${dto.mmCareer eq 30 }">selected</c:if>>3년</option>
-								   <option value="31" <c:if test="${dto.mmCareer eq 31 }">selected</c:if>>4년</option>
-								   <option value="32" <c:if test="${dto.mmCareer eq 32 }">selected</c:if>>10년</option>
-								   <option value="33" <c:if test="${dto.mmCareer eq 33 }">selected</c:if>>15년 이상</option>
-								   <option value="34" <c:if test="${dto.mmCareer eq 34 }">selected</c:if>>직접입력</option>
-							   </select>
+                       	  	   <select class="form-select" id="mmCareer" name="mmCareer">
+								   <option>경력선택</option>
+								   <c:forEach begin="21" end="28" items="${ccNameList }" var="ccNameList" varStatus="status">
+								   <option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+								   </c:forEach>
+						       </select>
 						   </div>
 					   </div>
 					   <div class="col-8 offset-2">
@@ -262,14 +219,12 @@
 					   <div class="col-8 offset-2">
                        	  <label class="form-label" for="mmWorkTime">희망근로시간</label>
                        	  <div class="input-group">
-	                           <select class="form-select" id="mmWorkTime" name="mmWorkTime" multiple>
-								   <option value="" <c:if test="${empty dto.mmWorkTime }">selected</c:if>>희망근로시간선택</option>
-								   <option value="93" <c:if test="${dto.mmWorkTime eq 93 }">selected</c:if>>오전</option>
-								   <option value="94" <c:if test="${dto.mmWorkTime eq 94 }">selected</c:if>>오후</option>
-								   <option value="95" <c:if test="${dto.mmWorkTime eq 95 }">selected</c:if>>저녁</option>
-								   <option value="96" <c:if test="${dto.mmWorkTime eq 96 }">selected</c:if>>새벽</option>
-								   <option value="97" <c:if test="${dto.mmWorkTime eq 97 }">selected</c:if>>협의가능</option>
-							   </select>
+                       	  	   <select class="form-select" id="mmCareer" name="mmCareer">
+								   <option>희망근로시간선택</option>
+								   <c:forEach begin="68" end="72" items="${ccNameList }" var="ccNameList" varStatus="status">
+								   <option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+								   </c:forEach>
+						       </select>
 						   </div>
 					   </div>
 					   <div class="col-8 offset-2">

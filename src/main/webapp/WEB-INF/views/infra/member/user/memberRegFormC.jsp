@@ -150,6 +150,13 @@
                        <div class="col-8 offset-2">
                        	   <label class="form-label" for="mmJob">직업</label>
                        	   <div class="input-group">
+                       	   	   <select class="form-select" id="mmJob" name="mmJob">
+								   <option>관심분야선택</option>
+								   <c:forEach begin="12" end="18" items="${ccNameList }" var="ccNameList" varStatus="status">
+								   <option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+								   </c:forEach>
+						       </select>
+                       	   	   <%-- 
 	                           <select class="form-select" id="mmJob" name="mmJob">
 								   <option value="" <c:if test="${empty dto.mmJob }">selected</c:if>>직업선택</option>
 								   <option value="13" <c:if test="${dto.mmJob eq 13 }">selected</c:if>>직장인</option>
@@ -160,6 +167,7 @@
 								   <option value="18" <c:if test="${dto.mmJob eq 18 }">selected</c:if>>취업준비생</option>
 								   <option value="19" <c:if test="${dto.mmJob eq 19 }">selected</c:if>>무직</option>
 							   </select>
+							    --%>
 			   			  </div>
 		  			   </div>
 					   <div class="col-8 offset-2">
@@ -169,7 +177,10 @@
 								   <option>관심분야선택</option>
 								   <c:forEach begin="29" end="38" items="${ccNameList }" var="ccNameList" varStatus="status">
 								   <option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
-								   <%-- 
+								   </c:forEach>
+							   </select>
+							   <%-- 
+							   <select class="form-select" id="mmInterest" name="mmInterest">
 								   <option value="35" <c:if test="${dto.mmInterest eq 35 }">selected</c:if>>개발/디자인</option>
 								   <option value="36" <c:if test="${dto.mmInterest eq 36 }">selected</c:if>>홈/리빙</option>
 								   <option value="37" <c:if test="${dto.mmInterest eq 37 }">selected</c:if>>레슨</option>
@@ -180,9 +191,8 @@
 								   <option value="42" <c:if test="${dto.mmInterest eq 42 }">selected</c:if>>취업/입시</option>
 								   <option value="43" <c:if test="${dto.mmInterest eq 43 }">selected</c:if>>마케팅</option>
 								   <option value="44" <c:if test="${dto.mmInterest eq 44 }">selected</c:if>>이벤트</option>
-								    --%>
-								   </c:forEach>
-							   </select>
+							   </select> 
+							    --%>
 						   </div>
 					   </div>
 					   <!-- 

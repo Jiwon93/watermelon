@@ -1,12 +1,16 @@
 package com.lifemanlab.shop.modules.member;
 
+import java.io.File;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.lifemanlab.shop.common.base.BaseServiceImpl;
+import com.lifemanlab.shop.common.constants.Constants;
+import com.lifemanlab.shop.common.util.UtilDatetime;
 import com.lifemanlab.shop.common.util.UtilSecurity;
 
 @Service
@@ -15,9 +19,51 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	@Autowired
 	MemberDao dao;
 	
-	@Override
-	public void uploadFiles(MultipartFile[] multipartFiles, Member dto, String tableName) throws Exception {
+	public void uploadFiles(MultipartFile[] multipartFiles, Member dto, String tableName, int type, int maxNumber) throws Exception {
+		System.out.println(" dto.getUploadImgMaxNumber() : " + dto.getUploadImgMaxNumber());
 		
+		for(int i=0; i<multipartFiles.length; i++) {
+    	
+			if(!multipartFiles[i].isEmpty()) {
+				
+				System.out.println(i + ": multipartFiles[i].getOriginalFilename() : " + multipartFiles[i].getOriginalFilename());
+				
+				String className = dto.getClass().getSimpleName().toString().toLowerCase();		
+				String fileName = multipartFiles[i].getOriginalFilename();
+				String ext = fileName.substring(fileName.lastIndexOf(".") + 1);
+				String uuid = UUID.randomUUID().toString();
+				String uuidFileName = uuid + "." + ext;
+				String pathModule = className;
+				String nowString = UtilDatetime.nowString();
+				String pathDate = nowString.substring(0,4) + "/" + nowString.substring(5,7) + "/" + nowString.substring(8,10); 
+				String path = Constants.UPLOAD_PATH_PREFIX + "/" + pathModule + "/" + pathDate + "/";
+				String pathForView = Constants.UPLOAD_PATH_PREFIX_FOR_VIEW + "/" + pathModule + "/" + pathDate + "/";
+				
+				File uploadPath = new File(path);
+				
+				if (!uploadPath.exists()) {
+					uploadPath.mkdir();
+				} else {
+					// by pass
+				}
+				  
+				multipartFiles[i].transferTo(new File(path + uuidFileName));
+				
+				dto.setPath(pathForView);
+				dto.setOriginalName(fileName);
+				dto.setUuidName(uuidFileName);
+				dto.setExt(ext);
+				dto.setSize(multipartFiles[i].getSize());
+				
+				dto.setTableName(tableName);
+				dto.setType(type);
+//				dto.setDefaultNy(j == 0 ? 1 : 0);
+				dto.setSort(maxNumber + i + 1);
+				dto.setpSeq(dto.getMmSeq());
+
+				dao.insertUploaded(dto);
+    		}
+		}
 	}
 	
 	@Override

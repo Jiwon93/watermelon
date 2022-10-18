@@ -45,6 +45,7 @@ public class Member extends Base{
 	
 	private MultipartFile[] mmUploadedProfileImage;
 	private MultipartFile[] mmUploadedImage;
+	private Integer uploadImgMaxNumber;
 	private MultipartFile[] mmUploadedFile;
 ///////////////////////////////////////////////
 	
@@ -254,6 +255,12 @@ public class Member extends Base{
 	}
 	public void setMmUploadedFile(MultipartFile[] mmUploadedFile) {
 		this.mmUploadedFile = mmUploadedFile;
+	}
+	public Integer getUploadImgMaxNumber() {
+		return uploadImgMaxNumber;
+	}
+	public void setUploadImgMaxNumber(Integer uploadImgMaxNumber) {
+		this.uploadImgMaxNumber = uploadImgMaxNumber;
 	}
 	
 	

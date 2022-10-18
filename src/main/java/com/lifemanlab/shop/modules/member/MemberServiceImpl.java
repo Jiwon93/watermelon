@@ -165,6 +165,7 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	@Override
 	public int memberMod(Member dto) throws Exception {
 		int result = dao.memberMod(dto);
+		uploadFiles(dto.getMmUploadedProfileImage(), dto, "mmUploaded", 2, dto.getUploadImgMaxNumber());
 		return result;
 	}
 	

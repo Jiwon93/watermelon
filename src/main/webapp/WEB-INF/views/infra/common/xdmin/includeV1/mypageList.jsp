@@ -2,7 +2,7 @@
 	<%-- <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }"> --%>
 		
 	<c:choose>
-		<c:when test="${sessRank eq 26}">
+		<c:when test="${sessRank eq 21}">
 		<div class="col-sm-3 p-lg-5">
 			<div class="text-center pb-4">
 			<c:choose>

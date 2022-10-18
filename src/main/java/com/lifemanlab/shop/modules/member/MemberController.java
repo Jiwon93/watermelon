@@ -284,7 +284,7 @@ public class MemberController extends BaseController {
 	public String memberModFormC(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
 		Member item = service.selectOneView(vo);
 		model.addAttribute("item", item);
-		
+		model.addAttribute("listUploaded", service.selectListUploaded(vo));
 		return "infra/member/user/memberModFormC";
 	}
 	

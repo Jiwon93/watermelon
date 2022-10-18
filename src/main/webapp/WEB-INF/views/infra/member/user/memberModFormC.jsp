@@ -90,11 +90,13 @@ label {
 </head>
 
 <body>
-	<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
-		<c:out value="${listUploaded.type }" />
-	</c:forEach>
-	<form method="get" id="form" name="form" autocomplete="off"
-		enctype="multipart/form-data">
+	
+	<form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
+	<%-- 
+		<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
+			<c:out value="${listUploaded.type }" />
+		</c:forEach>
+		 --%>
 		<input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
 		<input type="hidden" id="mmSeq" name="mmSeq" value="${vo.mmSeq }">
 		<!-- Navbar Start -->
@@ -261,6 +263,7 @@ label {
 										</select>
 									</div>
 								</div>
+								<!-- 
 								<div class="col-8 offset-2">
 									<div class="row mt-sm-4">
 										<div class="col-sm-6 mt-3 mt-sm-0">
@@ -289,6 +292,7 @@ label {
 										</div>
 									</div>
 								</div>
+								 -->
 								<!-- 
 							<div class="col-8 offset-2">
 								<div class="upload-box">

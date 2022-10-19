@@ -48,6 +48,7 @@
 <body>
 <form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
 	<input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
+	<input type="hidden" id="itemSeq" name="itemSeq" value="${vo.itemSeq }">
 	<div class="container-fluid">
     <!-- Navbar Start -->
     <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
@@ -354,7 +355,7 @@
 	       				</div>
 	        		</div>
 	        		<div class="row mt-3">
-	        			<h5>최신 테마 반응형 홈페이지를 제작해 드립니다.</h5>
+	        			<h5 name="itTitle"><c:out value="${item.itTitle }"/></h5>
 	        		</div>
 		        	<div class="row">
 		        		<div class="container-fluid">

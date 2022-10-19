@@ -26,6 +26,7 @@ public class ItemServiceImpl implements ItemService {
 
 	@Override
 	public Item selectOne(ItemVo vo) throws Exception {
+		System.out.println("service1");
 		Item item = dao.selectOne(vo);
 		return item;
 	}

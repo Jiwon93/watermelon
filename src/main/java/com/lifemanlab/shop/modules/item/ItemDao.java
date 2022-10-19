@@ -29,6 +29,7 @@ public class ItemDao {
 	}
 	
 	public Item selectOne(ItemVo vo) {
+		System.out.println("dao1");
 		Item item = sqlSession.selectOne(namespace + ".selectOne", vo);
 		return item;
 	}

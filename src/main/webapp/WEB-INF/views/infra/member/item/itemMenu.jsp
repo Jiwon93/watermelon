@@ -203,15 +203,15 @@
 					</table>
 				</div>
 				<div class="row p-1 mt-3 mb-5">
-					<c:choose>
-						<c:when test="${fn:length(list) eq 0 }">
-							<p>준비된 상품이 없습니다.</p>
-						</c:when>
-						<c:otherwise>
-							<c:forEach items="${list}" var="list" varStatus="status">
+				<c:choose>
+					<c:when test="${fn:length(list) eq 0 }">
+						<p>준비된 상품이 없습니다.</p>
+					</c:when>
+					<c:otherwise>
+						<c:forEach items="${list}" var="list" varStatus="status">
 	           		<div class="col-3 mt-3 service-item">
 	               		<div class="overflow-hidden">
-	               	    	<a id="btnMenu1" type="button"><img class="menuDD" src="/resources/images/main.jpg"></a>
+	               	    	<a href="javascript:goView(<c:out value="${list.itemSeq }" />)"><img class="menuDD" src="/resources/images/main.jpg"></a>
 	           			</div>
 	           			<div class="pt-2">
 	           				<p class="mainName"><c:out value="${list.mmNickname }" /></p>
@@ -225,9 +225,9 @@
 		       				</div>
 	           			</div>
 	           		</div>
-	           				</c:forEach>
-						</c:otherwise>
-					</c:choose>
+           				</c:forEach>
+					</c:otherwise>
+				</c:choose>
 	            </div>
 	            <!-- pagination s -->
 			    <%@include file="../../common/xdmin/includeV1/pagination.jsp"%>
@@ -264,22 +264,24 @@
     
     <script type="text/javascript">
     	var goUrlItemMenu = "/item/itemMenu";
-    	var goUrlItemMenuView = "/item/itemMenuView";
     	var goUrlList = "/item/itemMenu";
+    	var goUrlView = "/item/itemMenuView";
     	
     	var form = $("form[name=form]");
+    	var seq = $("input:hidden[name=itemSeq]");
     	
     	$("#btnItemMenu").on("click", function(){
 	   		$(location).attr("href", goUrlItemMenu);
 		});
     	
-    	$("#btnMenu1").on("click", function(){
-	   		$(location).attr("href", goUrlItemMenuView);
-		});
-    	
     	goList = function(thisPage) {
 			$("input:hidden[name=thisPage]").val(thisPage);
 			form.attr("action", goUrlList).submit();
+		}
+    	
+    	goView = function(keyValue) {
+	    	seq.val(keyValue);
+			form.attr("action", goUrlView).submit();
 		}
     </script>
 </body>

@@ -31,8 +31,7 @@
 			<exclude-mapping path="/resources/**" />
 			<exclude-mapping path="/code/**" />
 			<exclude-mapping path="/codeGroup/**" />
-			<exclude-mapping path="/item/itemMenu" />
-			<exclude-mapping path="/item/itemMenuView" />
+			<exclude-mapping path="/item/**" />
 			<exclude-mapping path="/member/**" />
 			<exclude-mapping path="/" />
 			<beans:bean id="checkLoginSessionInterception" class="com.lifemanlab.shop.common.interceptor.CheckLoginSessionInterception"/>

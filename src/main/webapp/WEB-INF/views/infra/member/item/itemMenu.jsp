@@ -77,7 +77,7 @@
 <body>
 <form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
     <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
-    <input type="hidden" id="itemSeq" name="itemSeq" value="${dto.itemSeq }">
+    <input type="hidden" name="itemSeq" value="${dto.itemSeq }">
     <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
 	<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
     <!-- Navbar Start -->
@@ -211,7 +211,7 @@
 						<c:forEach items="${list}" var="list" varStatus="status">
 	           		<div class="col-3 mt-3 service-item">
 	               		<div class="overflow-hidden">
-	               	    	<a href="javascript:goView(<c:out value="${list.itemSeq }" />)"><img class="menuDD" src="/resources/images/main.jpg"></a>
+	               	    	<a href="javascript:goView(<c:out value="${item.itemSeq }" />)"><img class="menuDD" src="/resources/images/main.jpg"></a>
 	           			</div>
 	           			<div class="pt-2">
 	           				<p class="mainName"><c:out value="${list.mmNickname }" /></p>
@@ -262,7 +262,7 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
-    <script type="text/javascript">
+    <script>
     	var goUrlItemMenu = "/item/itemMenu";
     	var goUrlList = "/item/itemMenu";
     	var goUrlView = "/item/itemMenuView";

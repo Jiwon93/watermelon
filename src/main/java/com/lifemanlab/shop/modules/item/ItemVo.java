@@ -6,12 +6,10 @@ public class ItemVo extends BaseVo {
 	
 	private String itemSeq;
 
-	
 	////////////////////////////////////////
 	public String getItemSeq() {
 		return itemSeq;
 	}
-
 	public void setItemSeq(String itemSeq) {
 		this.itemSeq = itemSeq;
 	}

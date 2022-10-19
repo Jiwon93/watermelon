@@ -48,7 +48,7 @@
 <body>
 <form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
 	<input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
-	<input type="hidden" id="itemSeq" name="itemSeq" value="${vo.itemSeq }">
+	<input type="hidden" name="itemSeq" value="${vo.itemSeq }">
 	<div class="container-fluid">
     <!-- Navbar Start -->
     <%@include file="../../common/xdmin/includeV1/nav.jsp"%>

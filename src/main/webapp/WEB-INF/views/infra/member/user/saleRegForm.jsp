@@ -368,7 +368,7 @@
 			<div class="saleRegMenu">
 				<div class="row">
 					<div class="col-2 pe-0">
-						<p>가격정보</p>
+						<p>추가옵션</p>
 					</div>
 					<div class="col">
 						<table class="m-2">
@@ -408,28 +408,31 @@
 			</div>
 			<div class="row m-2 mt-5 mb-3">
 				<h5>4. 이미지</h5>
-				<div class="col-sm-6 mt-3 mt-sm-0">
-					<label for="mmUploadedImage"
-						class="form-label input-file-button">대표 이미지첨부</label> <input
-						class="form-control form-control-sm" id="mmUploadedImage"
-						name="mmUploadedImage" type="file" multiple="multiple"
-						style="display: none;"
-						onChange="upload('mmUploadedImage', 1, 0, 1, 0, 0, 1);">
-					<div class="addScroll">
-						<ul id="ulFile1" class="list-group">
-						</ul>
+			</div>
+			<div class="saleRegMenu">
+				<div class="row">
+					<div class="col-2 pe-0">
+						<p>추가옵션</p>
 					</div>
-				</div>
-				<div class="col-sm-6 mt-3 mt-sm-0">
-					<label for="mmUploadedImage"
-						class="form-label input-file-button">추가 이미지첨부</label> <input
-						class="form-control form-control-sm" id="mmUploadedImage"
-						name="mmUploadedImage" type="file" multiple="multiple"
-						style="display: none;"
-						onChange="upload('mmUploadedImage', 1, 0, 1, 0, 0, 1);">
-					<div class="addScroll">
-						<ul id="ulFile1" class="list-group">
-						</ul>
+					<div class="col">
+						<div class="row mb-3">
+							<div class="col-5 mt-3 mx-2">
+								<label for="mmUploadedImage" class="form-label input-file-button">대표 이미지첨부</label>
+								<input class="form-control form-control-sm" id="mmUploadedImage" name="mmUploadedImage" type="file" multiple="multiple" style="display: none;" onChange="upload('mmUploadedImage', 1, 0, 1, 0, 0, 1);">
+								<div class="addScroll">
+									<ul id="ulFile1" class="list-group">
+									</ul>
+								</div>
+							</div>
+							<div class="col-5 mt-3">
+								<label for="mmUploadedImage" class="form-label input-file-button">추가 이미지첨부</label>
+								<input class="form-control form-control-sm" id="mmUploadedImage" name="mmUploadedImage" type="file" multiple="multiple" style="display: none;" onChange="upload('mmUploadedImage', 1, 0, 1, 0, 0, 1);">
+								<div class="addScroll">
+									<ul id="ulFile1" class="list-group">
+									</ul>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -439,14 +442,14 @@
 			<div class="saleRegMenu">
 				<div class="row">
 					<div class="col-2 pe-0">
-						<p>가격정보</p>
+						<p>추가요청</p>
 					</div>
 					<div class="col">
 						<table class="m-2">
 							<tr>
-								<th>작업전 요청사항(선택)</th>
+								<th>작업전 요청사항</th>
 								<td>
-									<a class="btn btn-outline-primary w-100" href="#">+요청사항 추가</a>
+									<a class="btn btn-outline-primary" style="width: 840px;" href="#">+요청사항 추가</a>
 								</td>
 							</tr>
 						</table>

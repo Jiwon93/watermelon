@@ -151,7 +151,7 @@
                        	   <label class="form-label" for="mmJob">직업</label>
                        	   <div class="input-group">
                        	   	   <select class="form-select" id="mmJob" name="mmJob">
-								   <option>관심분야선택</option>
+								   <option>직업선택</option>
 								   <c:forEach begin="12" end="18" items="${ccNameList }" var="ccNameList" varStatus="status">
 								   <option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
 								   </c:forEach>

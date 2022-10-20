@@ -34,4 +34,8 @@ public class ItemDao {
 		return item;
 	}
 	
+	//상품등록
+	public int productReg(Item dto) {
+		return sqlSession.insert(namespace + ".productReg", dto);
+	}
 }

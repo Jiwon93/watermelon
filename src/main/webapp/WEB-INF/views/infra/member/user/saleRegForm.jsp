@@ -6,7 +6,6 @@
 
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="utf-8">
     <title>혼자서 할 수 없던 것 | 인생만렙에서 만렙들과 해보세요.</title>
@@ -40,69 +39,15 @@
     <link href="/resources/css/user/nav.css" rel="stylesheet">
     <link href="/resources/css/user/upload.css" rel="stylesheet">
     
+    <link href="/resources/css/user/saleRegForm.css" rel="stylesheet">
+    
     <!-- Fontawesome Stylesheet -->
     <script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
-    
-    <style type="text/css">
-    
-    	table {
-    		border-collapse: separate;
-    		border-spacing: 3px;
-    	}
-    
-    	label {
-    		font-weight: bold;
-    	}
-    	
-    	.input-group {
-    		border-radius: 5px;
-    	}
-    	
-    	.saleRegF {
-    		border: 1px solid gray;
-    		border-radius: 5px;
-    		height: 100%;
-    	}
-    	
-    	.saleRegMenu {
-    		border: 1px solid lightgray;
-    		border-radius: 5px;
-    		margin: 10px;
-    	}
-    	
-    	th {
-    		width: 160px;
-    		height: 40px;
-    		text-indent: 10px;
-    		border-radius: 5px;
-    	}
-    	
-    	th, td {
-    		background-color: #FAFAFC;
-    	}
-    	
-    	.checkOption {
-    		text-align: right;
-    	}
-    	
-    	.form-check-input {
-    		margin-right: 10px;
-    	}
-    	
-    	.form-select {
-    		width: 840px;
-    	}
-    	
-    	p {
-    		font-weight: bold;
-    		margin: 15px;
-    	}
-    </style>
 </head>
-
 <body>
 <form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
     <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
+    <input type="hidden" id="ccSeq" name="ccSeq" value="${ccSeq }">
     <!-- Navbar Start -->
     <nav class="container sticky-top p-0">
     	<div class="row">
@@ -136,7 +81,7 @@
 						<table class="m-2">
 							<tr>
 								<td>
-									<input class="form-control" type="text" style="width: 1000px;" placeholder="서비스를 잘 드러낼 수 있는 제목을 입력해주세요">
+									<input class="form-control" type="text" style="width: 1000px;" id="itTitle" name="itTitle" value="<c:out value="${dto.itTitle }" />" placeholder="서비스를 잘 드러낼 수 있는 제목을 입력해주세요">
 								</td>
 							</tr>
 						</table>
@@ -153,20 +98,22 @@
 							<tr>
 								<th>상위 카테고리</th>
 								<td>
-									<select class="form-select">
-										<option selected>선택해주세요</option>
-										<option></option>
-										<option></option>
+									<select class="form-select" id="category1" name="category1">
+										<option>선택해주세요</option>
+										<c:forEach begin="96" end="105" items="${ccNameList }" var="ccNameList" varStatus="status">
+										<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+										</c:forEach>
 									</select>
 								</td>
 							</tr>
 							<tr>
 								<th>하위 카테고리</th>
 								<td>
-									<select class="form-select">
-										<option selected>선택해주세요</option>
-										<option></option>
-										<option></option>
+									<select class="form-select" id="category2" name="category2">
+										<option>선택해주세요</option>
+										<c:forEach begin="106" end="117" items="${ccNameList }" var="ccNameList" varStatus="status">
+										<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+										</c:forEach>
 									</select>
 								</td>
 							</tr>

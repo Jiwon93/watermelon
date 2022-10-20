@@ -1,0 +1,52 @@
+table {
+	border-collapse: separate;
+	border-spacing: 3px;
+}
+
+label {
+	font-weight: bold;
+}
+
+.input-group {
+	border-radius: 5px;
+}
+
+.saleRegF {
+	border: 1px solid gray;
+	border-radius: 5px;
+	height: 100%;
+}
+
+.saleRegMenu {
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	margin: 10px;
+}
+
+th {
+	width: 160px;
+	height: 40px;
+	text-indent: 10px;
+	border-radius: 5px;
+}
+
+th, td {
+	background-color: #FAFAFC;
+}
+
+.checkOption {
+	text-align: right;
+}
+
+.form-check-input {
+	margin-right: 10px;
+}
+
+.form-select {
+	width: 840px;
+}
+
+p {
+	font-weight: bold;
+	margin: 15px;
+}

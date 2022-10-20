@@ -45,6 +45,41 @@
 			AND itemSeq = #{itemSeq}
 	</select>
 	
+	<!-- 상품등록 -->
+	<insert id="productReg">
+		INSERT INTO item (
+			itTitle
+			,itServiceDetail
+			,itCancelRefund
+			,bestPrice
+			,bestDetail
+			,category1
+			,category2
+			,skillLevel
+			,teamSize
+			,serviceCategory
+			,residency
+			,developLanguage
+		)
+		VALUES (
+			#{itTitle}
+			,#{itServiceDetail}
+			,#{itCancelRefund}
+			,#{bestPrice}
+			,#{bestDetail}
+			,#{category1}
+			,#{category2}
+			,#{skillLevel}
+			,#{teamSize}
+			,#{serviceCategory}
+			,#{residency}
+			,#{developLanguage}
+		)
+			<selectKey resultType="String" keyProperty="itemSeq" order="AFTER">
+				SELECT last_insert_id()
+			</selectKey>
+	</insert>
+	
 	
 
 </mapper>

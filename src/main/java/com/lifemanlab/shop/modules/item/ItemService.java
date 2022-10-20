@@ -8,5 +8,8 @@ public interface ItemService {
 	
 	public int selectOneCount(ItemVo vo) throws Exception;
 	public Item selectOne(ItemVo vo) throws Exception;
+	
+	//상품등록
+	public int productReg(Item dto) throws Exception;
 
 }

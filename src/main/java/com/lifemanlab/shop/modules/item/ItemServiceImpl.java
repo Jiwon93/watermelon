@@ -30,5 +30,10 @@ public class ItemServiceImpl implements ItemService {
 		System.out.println("service item: " + item);
 		return item;
 	}
+
+	@Override
+	public int productReg(Item dto) throws Exception {
+		return dao.productReg(dto);
+	}
 	
 }

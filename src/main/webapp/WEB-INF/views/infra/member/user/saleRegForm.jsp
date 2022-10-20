@@ -131,50 +131,55 @@
 							<tr>
 								<th>기술 수준</th>
 								<td>
-									<select class="form-select">
-										<option selected>선택해주세요</option>
-										<option></option>
-										<option></option>
+									<select class="form-select" id="skillLevel" name="skillLevel">
+										<option>선택해주세요</option>
+										<c:forEach begin="118" end="121" items="${ccNameList }" var="ccNameList" varStatus="status">
+										<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+										</c:forEach>
 									</select>
 								</td>
 							</tr>
 							<tr>
 								<th>팀 규모</th>
 								<td>
-									<select class="form-select">
-										<option selected>선택해주세요</option>
-										<option></option>
-										<option></option>
+									<select class="form-select" id="teamSize" name="teamSize">
+										<option>선택해주세요</option>
+										<c:forEach begin="122" end="126" items="${ccNameList }" var="ccNameList" varStatus="status">
+										<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+										</c:forEach>
 									</select>
 								</td>
 							</tr>
 							<tr>
 								<th>상주 여부</th>
 								<td>
-									<select class="form-select">
-										<option selected>선택해주세요</option>
-										<option></option>
-										<option></option>
+									<select class="form-select" id="residency" name="residency">
+										<option>선택해주세요</option>
+										<c:forEach begin="127" end="129" items="${ccNameList }" var="ccNameList" varStatus="status">
+										<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+										</c:forEach>
 									</select>
 								</td>
 							</tr>
 							<tr>
-								<th>카테고리</th>
+								<th>서비스 카테고리</th>
 								<td>
-									<select class="form-select">
-										<option selected>선택해주세요</option>
-										<option></option>
-										<option></option>
+									<select class="form-select" id="serviceCategory" name="serviceCategory">
+										<option>선택해주세요</option>
+										<c:forEach begin="130" end="135" items="${ccNameList }" var="ccNameList" varStatus="status">
+										<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+										</c:forEach>
 									</select>
 								</td>
 							</tr>
 							<tr>
 								<th>개발 언어</th>
 								<td>
-									<select class="form-select">
-										<option selected>선택해주세요</option>
-										<option></option>
-										<option></option>
+									<select class="form-select" id="developLanguage" name="developLanguage">
+										<option>선택해주세요</option>
+										<c:forEach begin="136" end="146" items="${ccNameList }" var="ccNameList" varStatus="status">
+										<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+										</c:forEach>
 									</select>
 								</td>
 							</tr>
@@ -315,7 +320,7 @@
 			<div class="saleRegMenu">
 				<div class="row">
 					<div class="col-2 pe-0">
-						<p>추가옵션</p>
+						<p>상품 설명</p>
 					</div>
 					<div class="col">
 						<table class="m-2">
@@ -359,7 +364,7 @@
 			<div class="saleRegMenu">
 				<div class="row">
 					<div class="col-2 pe-0">
-						<p>추가옵션</p>
+						<p>이미지 설정</p>
 					</div>
 					<div class="col">
 						<div class="row mb-3">
@@ -433,6 +438,7 @@
     
     <script type="text/javascript">
     	var goUrlHome = "/member/memberHome";
+    	var goUrlProductReg = "/item/productReg";
     	
     	$("#btnHome").on("click", function(){
 	   		$(location).attr("href", goUrlHome);

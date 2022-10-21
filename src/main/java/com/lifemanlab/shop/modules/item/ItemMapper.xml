@@ -23,7 +23,6 @@
 			SELECT
 				a.itTitle
 				,b.mmNickname
-				,a.bestPrice
 				<!-- ,(select count(aa.ccSeq) from code aa where 1=1 and aa.ccDelNy = 0 and aa.codeGroup_ccgSeq = b.ccgSeq) as ccCount -->
 				<!-- <include refid="Base.selectRegModWithAlies" /> -->
 			<include refid="selectCommon" />
@@ -51,8 +50,6 @@
 			itTitle
 			,itServiceDetail
 			,itCancelRefund
-			,bestPrice
-			,bestDetail
 			,category1
 			,category2
 			,skillLevel
@@ -65,8 +62,6 @@
 			#{itTitle}
 			,#{itServiceDetail}
 			,#{itCancelRefund}
-			,#{bestPrice}
-			,#{bestDetail}
 			,#{category1}
 			,#{category2}
 			,#{skillLevel}

@@ -343,7 +343,7 @@
 								</td>
 							</tr>
 							<tr>
-								<th>취소 및 환불 규정</th>
+								<th>취소 및 환불 규정</th> <!-- 모달로 띄우기 -->
 								<td>
 									<a class="btn btn-outline-primary w-100" href="#">[IT 프로그래밍>웹] 취소 및 환불 규정 보기</a>
 								</td>

@@ -9,12 +9,6 @@ public class Item extends Base {
 	private String itTitle;
 	private String itServiceDetail;
 	private String itCancelRefund;
-	private String basicPrice;
-	private String basicDetail;
-	private String bestPrice;
-	private String bestDetail;
-	private String proPrice;
-	private String proDetail;
 	private String itInquiry;
 	private String mmNickname;
 	private Integer category1;
@@ -66,42 +60,6 @@ public class Item extends Base {
 	}
 	public void setItCancelRefund(String itCancelRefund) {
 		this.itCancelRefund = itCancelRefund;
-	}
-	public String getBasicPrice() {
-		return basicPrice;
-	}
-	public void setBasicPrice(String basicPrice) {
-		this.basicPrice = basicPrice;
-	}
-	public String getBasicDetail() {
-		return basicDetail;
-	}
-	public void setBasicDetail(String basicDetail) {
-		this.basicDetail = basicDetail;
-	}
-	public String getBestPrice() {
-		return bestPrice;
-	}
-	public void setBestPrice(String bestPrice) {
-		this.bestPrice = bestPrice;
-	}
-	public String getBestDetail() {
-		return bestDetail;
-	}
-	public void setBestDetail(String bestDetail) {
-		this.bestDetail = bestDetail;
-	}
-	public String getProPrice() {
-		return proPrice;
-	}
-	public void setProPrice(String proPrice) {
-		this.proPrice = proPrice;
-	}
-	public String getProDetail() {
-		return proDetail;
-	}
-	public void setProDetail(String proDetail) {
-		this.proDetail = proDetail;
 	}
 	public String getItInquiry() {
 		return itInquiry;

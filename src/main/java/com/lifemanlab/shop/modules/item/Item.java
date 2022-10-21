@@ -24,6 +24,18 @@ public class Item extends Base {
 	private Integer serviceCategory;
 	private Integer residency;
 	private Integer developLanguage;
+	private String itopSeq;
+	private Integer itemDiv;
+	private Integer responsiveWeb;
+	private Integer contentUpload;
+	private Integer sourceCode;
+	private Integer design;
+	private Integer functionPlus;
+	private Integer pagePlus;
+	private Integer quickWork;
+	private Integer plusMod;
+	private String item_itemSeq;
+	private String purchase_purSeq;
 //////////////////////////////////////////////
 	public String getItemSeq() {
 		return itemSeq;
@@ -144,6 +156,78 @@ public class Item extends Base {
 	}
 	public void setDevelopLanguage(Integer developLanguage) {
 		this.developLanguage = developLanguage;
+	}
+	public String getItopSeq() {
+		return itopSeq;
+	}
+	public void setItopSeq(String itopSeq) {
+		this.itopSeq = itopSeq;
+	}
+	public Integer getItemDiv() {
+		return itemDiv;
+	}
+	public void setItemDiv(Integer itemDiv) {
+		this.itemDiv = itemDiv;
+	}
+	public Integer getResponsiveWeb() {
+		return responsiveWeb;
+	}
+	public void setResponsiveWeb(Integer responsiveWeb) {
+		this.responsiveWeb = responsiveWeb;
+	}
+	public Integer getContentUpload() {
+		return contentUpload;
+	}
+	public void setContentUpload(Integer contentUpload) {
+		this.contentUpload = contentUpload;
+	}
+	public Integer getSourceCode() {
+		return sourceCode;
+	}
+	public void setSourceCode(Integer sourceCode) {
+		this.sourceCode = sourceCode;
+	}
+	public Integer getDesign() {
+		return design;
+	}
+	public void setDesign(Integer design) {
+		this.design = design;
+	}
+	public Integer getFunctionPlus() {
+		return functionPlus;
+	}
+	public void setFunctionPlus(Integer functionPlus) {
+		this.functionPlus = functionPlus;
+	}
+	public Integer getPagePlus() {
+		return pagePlus;
+	}
+	public void setPagePlus(Integer pagePlus) {
+		this.pagePlus = pagePlus;
+	}
+	public Integer getQuickWork() {
+		return quickWork;
+	}
+	public void setQuickWork(Integer quickWork) {
+		this.quickWork = quickWork;
+	}
+	public Integer getPlusMod() {
+		return plusMod;
+	}
+	public void setPlusMod(Integer plusMod) {
+		this.plusMod = plusMod;
+	}
+	public String getItem_itemSeq() {
+		return item_itemSeq;
+	}
+	public void setItem_itemSeq(String item_itemSeq) {
+		this.item_itemSeq = item_itemSeq;
+	}
+	public String getPurchase_purSeq() {
+		return purchase_purSeq;
+	}
+	public void setPurchase_purSeq(String purchase_purSeq) {
+		this.purchase_purSeq = purchase_purSeq;
 	}
 	
 }

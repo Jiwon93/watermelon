@@ -39,6 +39,7 @@ public class Item extends Base {
 	private String numberOfPage;
 	private String workPeriod;
 	private String numberOfMod;
+	private String itemPrice;
 //////////////////////////////////////////////
 	public String getItemSeq() {
 		return itemSeq;
@@ -238,6 +239,12 @@ public class Item extends Base {
 	}
 	public void setProcedure(String procedure) {
 		this.procedure = procedure;
+	}
+	public String getItemPrice() {
+		return itemPrice;
+	}
+	public void setItemPrice(String itemPrice) {
+		this.itemPrice = itemPrice;
 	}
 
 	

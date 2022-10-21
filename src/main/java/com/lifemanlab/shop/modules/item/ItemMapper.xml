@@ -11,6 +11,7 @@
     <sql id ="selectCommon">
 		FROM item a
 		JOIN member b on a.member_mmSeq = b.mmSeq
+		JOIN itemOption c on a.itemSeq = c.item_itemSeq
 		WHERE 1=1
 		<if test="shDelNy != null and !shDelNy.equals('')">AND itDelNy = #{shDelNy}</if>
 		<choose>
@@ -23,6 +24,7 @@
 			SELECT
 				a.itTitle
 				,b.mmNickname
+				,c.itemPrice
 				<!-- ,(select count(aa.ccSeq) from code aa where 1=1 and aa.ccDelNy = 0 and aa.codeGroup_ccgSeq = b.ccgSeq) as ccCount -->
 				<!-- <include refid="Base.selectRegModWithAlies" /> -->
 			<include refid="selectCommon" />
@@ -93,6 +95,7 @@
 			,plusMod
 			,itemPriceTitle
 			,itemPriceDetail
+			,itemPrice
 			,numberOfPage
 			,workPeriod
 			,numberOfMod
@@ -110,6 +113,7 @@
 			,#{plusMod}
 			,#{itemPriceTitle}
 			,#{itemPriceDetail}
+			,#{itemPrice}
 			,#{numberOfPage}
 			,#{workPeriod}
 			,#{numberOfMod}

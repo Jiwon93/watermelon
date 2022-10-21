@@ -206,7 +206,7 @@
 							<tr>
 								<th>설명</th>
 								<td>
-									<textarea class="form-control" placeholder="-메인페이지 시안 1개 제공, 공지사항, FAQ 페이지, SNS로그인 연동"></textarea>
+									<textarea class="form-control" placeholder="-메인페이지 시안 1개 제공, 공지사항, FAQ 페이지, SNS로그인 연동" resize="none;"></textarea>
 								</td>
 							</tr>
 							<tr>

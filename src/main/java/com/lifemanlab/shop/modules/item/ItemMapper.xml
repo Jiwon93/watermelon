@@ -83,8 +83,7 @@
 	
 	<insert id="productOptionReg">
 		INSERT INTO itemOption (
-			itemDiv
-			,item_itemSeq
+			item_itemSeq
 			,responsiveWeb
 			,contentUpload
 			,sourceCode
@@ -101,8 +100,7 @@
 			,numberOfMod
 		)
 		VALUES (
-			148
-			,#{itemSeq]
+			#{itemSeq]
 			,#{responsiveWeb}
 			,#{contentUpload}
 			,#{sourceCode}
@@ -118,7 +116,7 @@
 			,#{workPeriod}
 			,#{numberOfMod}
 		)
-			<selectKey resultType="String" keyProperty="itopSeq" order="AFTER">
+			<selectKey resultType="String" keyProperty="itemSeq" order="AFTER">
 				SELECT last_insert_id()
 			</selectKey>
 	</insert>

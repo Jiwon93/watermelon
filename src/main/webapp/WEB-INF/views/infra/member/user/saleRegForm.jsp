@@ -200,7 +200,7 @@
 							<tr>
 								<th>제목</th>
 								<td>
-									<input class="form-control" type="text" style="width: 840px;" placeholder="ex. 00 웹사이트">
+									<input class="form-control" type="text" style="width: 840px;" placeholder="ex. 00 웹사이트" value="<c:out value="${dto.itemPriceTitle }"/>">
 								</td>
 							</tr>
 							<tr>

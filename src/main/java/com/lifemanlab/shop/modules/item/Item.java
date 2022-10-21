@@ -30,6 +30,11 @@ public class Item extends Base {
 	private Integer plusMod;
 	private String item_itemSeq;
 	private String purchase_purSeq;
+	private String itemPriceTitle;
+	private String itemPriceDetail;
+	private String numberOfPage;
+	private String workPeriod;
+	private String numberOfMod;
 //////////////////////////////////////////////
 	public String getItemSeq() {
 		return itemSeq;
@@ -186,6 +191,36 @@ public class Item extends Base {
 	}
 	public void setPurchase_purSeq(String purchase_purSeq) {
 		this.purchase_purSeq = purchase_purSeq;
+	}
+	public String getItemPriceTitle() {
+		return itemPriceTitle;
+	}
+	public void setItemPriceTitle(String itemPriceTitle) {
+		this.itemPriceTitle = itemPriceTitle;
+	}
+	public String getItemPriceDetail() {
+		return itemPriceDetail;
+	}
+	public void setItemPriceDetail(String itemPriceDetail) {
+		this.itemPriceDetail = itemPriceDetail;
+	}
+	public String getNumberOfPage() {
+		return numberOfPage;
+	}
+	public void setNumberOfPage(String numberOfPage) {
+		this.numberOfPage = numberOfPage;
+	}
+	public String getWorkPeriod() {
+		return workPeriod;
+	}
+	public void setWorkPeriod(String workPeriod) {
+		this.workPeriod = workPeriod;
+	}
+	public String getNumberOfMod() {
+		return numberOfMod;
+	}
+	public void setNumberOfMod(String numberOfMod) {
+		this.numberOfMod = numberOfMod;
 	}
 	
 }

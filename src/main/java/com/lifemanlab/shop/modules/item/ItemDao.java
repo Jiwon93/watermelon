@@ -38,4 +38,8 @@ public class ItemDao {
 	public int productReg(Item dto) {
 		return sqlSession.insert(namespace + ".productReg", dto);
 	}
+	
+	public int productOptionReg(Item dto) {
+		return sqlSession.insert(namespace + ".productOptionReg", dto);
+	}
 }

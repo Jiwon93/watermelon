@@ -35,5 +35,10 @@ public class ItemServiceImpl implements ItemService {
 	public int productReg(Item dto) throws Exception {
 		return dao.productReg(dto);
 	}
+
+	@Override
+	public int productOptionReg(Item dto) throws Exception {
+		return dao.productOptionReg(dto);
+	}
 	
 }

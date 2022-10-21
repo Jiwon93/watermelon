@@ -57,6 +57,8 @@
 			,serviceCategory
 			,residency
 			,developLanguage
+			,procedure
+			,clientPrepare
 		)
 		VALUES (
 			#{itTitle}
@@ -69,8 +71,50 @@
 			,#{serviceCategory}
 			,#{residency}
 			,#{developLanguage}
+			,#{procedure}
+			,#{clientPrepare}
 		)
 			<selectKey resultType="String" keyProperty="itemSeq" order="AFTER">
+				SELECT last_insert_id()
+			</selectKey>
+	</insert>
+	
+	<insert id="productOptionReg">
+		INSERT INTO itemOption (
+			itemDiv
+			,item_itemSeq
+			,responsiveWeb
+			,contentUpload
+			,sourceCode
+			,design
+			,functionPlus
+			,pagePlus
+			,quickWork
+			,plusMod
+			,itemPriceTitle
+			,itemPriceDetail
+			,numberOfPage
+			,workPeriod
+			,numberOfMod
+		)
+		VALUES (
+			148
+			,#{itemSeq]
+			,#{responsiveWeb}
+			,#{contentUpload}
+			,#{sourceCode}
+			,#{design}
+			,#{functionPlus}
+			,#{pagePlus}
+			,#{quickWork}
+			,#{plusMod}
+			,#{itemPriceTitle}
+			,#{itemPriceDetail}
+			,#{numberOfPage}
+			,#{workPeriod}
+			,#{numberOfMod}
+		)
+			<selectKey resultType="String" keyProperty="itopSeq" order="AFTER">
 				SELECT last_insert_id()
 			</selectKey>
 	</insert>

@@ -11,5 +11,6 @@ public interface ItemService {
 	
 	//상품등록
 	public int productReg(Item dto) throws Exception;
+	public int productOptionReg(Item dto) throws Exception;
 
 }

@@ -18,6 +18,10 @@ public class Item extends Base {
 	private Integer serviceCategory;
 	private Integer residency;
 	private Integer developLanguage;
+	private String procedure;
+	private String clientPrepare;
+	
+	//구매등록 추가 옵션
 	private String itopSeq;
 	private Integer itemDiv;
 	private Integer responsiveWeb;
@@ -120,6 +124,13 @@ public class Item extends Base {
 	public void setDevelopLanguage(Integer developLanguage) {
 		this.developLanguage = developLanguage;
 	}
+	public String getClientPrepare() {
+		return clientPrepare;
+	}
+	public void setClientPrepare(String clientPrepare) {
+		this.clientPrepare = clientPrepare;
+	}
+	
 	public String getItopSeq() {
 		return itopSeq;
 	}
@@ -222,5 +233,12 @@ public class Item extends Base {
 	public void setNumberOfMod(String numberOfMod) {
 		this.numberOfMod = numberOfMod;
 	}
+	public String getProcedure() {
+		return procedure;
+	}
+	public void setProcedure(String procedure) {
+		this.procedure = procedure;
+	}
+
 	
 }

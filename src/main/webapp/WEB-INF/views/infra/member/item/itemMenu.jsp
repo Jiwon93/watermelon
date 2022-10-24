@@ -217,7 +217,7 @@
 	           				<p class="mainName"><c:out value="${list.mmNickname }" /></p>
 	           				<p class="mainTitle"><c:out value="${list.itTitle }" /></p>
 	           				<div class="mainPay">
-	           					<i class="fa-solid fa-receipt">&nbsp;</i>
+	           					<i class="fa-solid fa-receipt">&nbsp;</i><c:out value="${list.itemPrice }"/>
            					</div>
            					<div class="mainGrade">
 			       				<i class="fa-solid fa-star" style="color: #FFD400;"></i>

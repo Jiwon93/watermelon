@@ -100,7 +100,7 @@
 			,numberOfMod
 		)
 		VALUES (
-			#{itemSeq]
+			#{itemSeq}
 			,#{responsiveWeb}
 			,#{contentUpload}
 			,#{sourceCode}
@@ -121,6 +121,4 @@
 			</selectKey>
 	</insert>
 	
-	
-
 </mapper>

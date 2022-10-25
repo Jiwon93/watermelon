@@ -132,8 +132,8 @@
 		                   	   	   </tr>
 		                   	   	   <tr>
 		                   	   	   	   <!-- <td></td> -->
-		                   	   	   	   <td><b>최신 테마 반응형 홈페이지를 제작해 드립니다.</b></td>
-		                   	   	   	   <td><b>10,000,000원</b></td>
+		                   	   	   	   <td><b><c:out value="${item.itTitle }" /></b></td>
+		                   	   	   	   <td><b><c:out value="${item.itemPrice }" /></b></td>
 		                   	   	   </tr>
 		                   	   	   <tr>
 		                   	   	   	   <!-- <td></td> -->
@@ -144,7 +144,7 @@
 		                   	   	   	   <td></td>
 		                   	   	   	   <td class="" style="text-align: left;">
 		                   	   	   	   	   <img src="/resources/images/men.png" class="border border-1 rounded-circle" style="height: 30px; width: 30px;" alt="">
-		                   	   	   	   	   <span class="px-2 text-secondary">jiwon123</span>
+		                   	   	   	   	   <span class="px-2 text-secondary"><c:out value="${item.mmNickname }" /></span>
 		                   	   	   	   </td>
 		                   	   	   	   <td></td>
 		                   	   	   </tr>

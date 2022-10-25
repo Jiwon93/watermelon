@@ -139,8 +139,8 @@
 		                   	   	   </tr>
 		                   	   	   <tr>
 		                   	   	   	   <!-- <td></td> -->
-		                   	   	   	   <td><b>최신 테마 반응형 홈페이지를 제작해 드립니다.</b></td>
-		                   	   	   	   <td><b>10,000,000원</b></td>
+		                   	   	   	   <td><b><c:out value="${item.itTitle }" /></b></td>
+		                   	   	   	   <td><b><c:out value="${item.itPrice }" />원</b></td>
 		                   	   	   </tr>
 		                   	   	   <tr>
 		                   	   	   	   <!-- <td></td> -->

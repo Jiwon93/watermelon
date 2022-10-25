@@ -75,17 +75,20 @@
 <body>
 <form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data"> 
     <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
+    <input type="hidden" name="itemSeq" value="${dto.itemSeq }">
+    <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
+	<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
     <!-- Navbar Start -->
     <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
     <!-- Navbar End -->
     
     <!-- Contact Start -->
     <div class="container-fluid overflow-hidden" style="margin: 1rem 0;">
-           <div class="row">
+        <div class="row">
            
-	           <!-- mypageList Start -->
-		       <%@include file="../../common/xdmin/includeV1/mypageList.jsp"%>
-		       <!-- mypageList End -->
+           <!-- mypageList Start -->
+	       <%@include file="../../common/xdmin/includeV1/mypageList.jsp"%>
+	       <!-- mypageList End -->
 		       
 	           <div class="col-sm-9 p-2">
 	               <div class="p-lg-5">
@@ -112,6 +115,12 @@
 					   </div>
 	                   <div class="p-4 pb-1 border border-2 border-light">
 		                   <div class="row g-3">
+		                   <c:choose>
+		                   	   <c:when test="">
+		                   	   	   <p>구매한 상품이 없습니다.</p>
+	                   	   	   </c:when>
+	                   	   	   <c:otherwise>
+	                   	   	   	   <c:forEach items="" var="" varStatus="">
 		                   	   <table class="m-4">
 		                   	   	   <tr style="height: 40px;">
 		                   	   	   	   <td rowspan="3" style="width: 270px;"><img alt="" src="/resources/images/main.jpg" style="width: 220px; height: 150px;"></td>
@@ -141,109 +150,17 @@
 		                   	   	   </tr>
 		                   	   </table>
 		                   	   <hr>
-		                   	   <table class="m-4">
-		                   	   	   <tr style="height: 40px;">
-		                   	   	   	   <td rowspan="3" style="width: 270px;"><img alt="" src="/resources/images/main.jpg" style="width: 220px; height: 150px;"></td>
-		                   	   	   	   <td>
-		                   	   	   	   	   <span class="btn btn-secondary btn-sm" style="height: 30px; width: 80px;">주문완료</span>
-                   	   	   	   	   	   	   <span class="px-5">#2036673</span>
-                   	   	   	   	   	   </td>
-		                   	   	   	   <td></td>
-		                   	   	   </tr>
-		                   	   	   <tr>
-		                   	   	   	   <!-- <td></td> -->
-		                   	   	   	   <td><b>최신 테마 반응형 홈페이지를 제작해 드립니다.</b></td>
-		                   	   	   	   <td><b>10,000,000원</b></td>
-		                   	   	   </tr>
-		                   	   	   <tr>
-		                   	   	   	   <!-- <td></td> -->
-		                   	   	   	   <td>작업완료일 : 22.07.21 10:21</td>
-		                   	   	   	   <td><a class="btn btn-outline-primary btn-sm" href="#" style="height: 30px;">거래명세서</a></td>
-		                   	   	   </tr>
-		                   	   	   <tr>
-		                   	   	   	   <td></td>
-		                   	   	   	   <td class="" style="text-align: left;">
-		                   	   	   	   	   <img src="/resources/images/men.png" class="border border-1 rounded-circle" style="height: 30px; width: 30px;" alt="">
-		                   	   	   	   	   <span class="px-2 text-secondary">jiwon123</span>
-		                   	   	   	   </td>
-		                   	   	   	   <td></td>
-		                   	   	   </tr>
-		                   	   </table>
-		                   	   <hr>
-		                   	   <table class="m-4">
-		                   	   	   <tr style="height: 40px;">
-		                   	   	   	   <td rowspan="3" style="width: 270px;"><img alt="" src="/resources/images/main.jpg" style="width: 220px; height: 150px;"></td>
-		                   	   	   	   <td>
-		                   	   	   	   	   <span class="btn btn-secondary btn-sm" style="height: 30px; width: 80px;">주문완료</span>
-                   	   	   	   	   	   	   <span class="px-5">#2036673</span>
-                   	   	   	   	   	   </td>
-		                   	   	   	   <td></td>
-		                   	   	   </tr>
-		                   	   	   <tr>
-		                   	   	   	   <!-- <td></td> -->
-		                   	   	   	   <td><b>최신 테마 반응형 홈페이지를 제작해 드립니다.</b></td>
-		                   	   	   	   <td><b>10,000,000원</b></td>
-		                   	   	   </tr>
-		                   	   	   <tr>
-		                   	   	   	   <!-- <td></td> -->
-		                   	   	   	   <td>작업완료일 : 22.07.21 10:21</td>
-		                   	   	   	   <td><a class="btn btn-outline-primary btn-sm" href="#" style="height: 30px;">거래명세서</a></td>
-		                   	   	   </tr>
-		                   	   	   <tr>
-		                   	   	   	   <td></td>
-		                   	   	   	   <td class="" style="text-align: left;">
-		                   	   	   	   	   <img src="/resources/images/men.png" class="border border-1 rounded-circle" style="height: 30px; width: 30px;" alt="">
-		                   	   	   	   	   <span class="px-2 text-secondary">jiwon123</span>
-		                   	   	   	   </td>
-		                   	   	   	   <td></td>
-		                   	   	   </tr>
-		                   	   </table>
-		                   	   <hr>
-		                   	   <table class="m-4">
-		                   	   	   <tr style="height: 40px;">
-		                   	   	   	   <td rowspan="3" style="width: 270px;"><img alt="" src="/resources/images/main.jpg" style="width: 220px; height: 150px;"></td>
-		                   	   	   	   <td>
-		                   	   	   	   	   <span class="btn btn-secondary btn-sm" style="height: 30px; width: 80px;">주문완료</span>
-                   	   	   	   	   	   	   <span class="px-5">#2036673</span>
-                   	   	   	   	   	   </td>
-		                   	   	   	   <td></td>
-		                   	   	   </tr>
-		                   	   	   <tr>
-		                   	   	   	   <!-- <td></td> -->
-		                   	   	   	   <td><b>최신 테마 반응형 홈페이지를 제작해 드립니다.</b></td>
-		                   	   	   	   <td><b>10,000,000원</b></td>
-		                   	   	   </tr>
-		                   	   	   <tr>
-		                   	   	   	   <!-- <td></td> -->
-		                   	   	   	   <td>작업완료일 : 22.07.21 10:21</td>
-		                   	   	   	   <td><a class="btn btn-outline-primary btn-sm" href="#" style="height: 30px;">거래명세서</a></td>
-		                   	   	   </tr>
-		                   	   	   <tr>
-		                   	   	   	   <td></td>
-		                   	   	   	   <td class="" style="text-align: left;">
-		                   	   	   	   	   <img src="/resources/images/men.png" class="border border-1 rounded-circle" style="height: 30px; width: 30px;" alt="">
-		                   	   	   	   	   <span class="px-2 text-secondary">jiwon123</span>
-		                   	   	   	   </td>
-		                   	   	   	   <td></td>
-		                   	   	   </tr>
-		                   	   </table>
-		                   	   <hr>
+		                   	   	   </c:forEach>
+	                   	   	   </c:otherwise>
+                   	   	   </c:choose>
 		                   </div>
-		                   <div class="page m-5 mb-0">
-		                   	   <ul class="pagination justify-content-center">
-		                   	   	   <li><a href="#" class="start m-3"><i class="fa-solid fa-angle-left"></i></a></li>
-		                   	   	   <li><a href="#" class="first m-3"><i class="fa-solid fa-1"></i></a></li>
-		                   	   	   <li><a href="#" class="second m-3"><i class="fa-solid fa-2"></i></a></li>
-		                   	   	   <li><a href="#" class="third m-3"><i class="fa-solid fa-3"></i></a></li>
-		                   	   	   <li><a href="#" class="forth m-3"><i class="fa-solid fa-4"></i></a></li>
-		                   	   	   <li><a href="#" class="fifth m-3"><i class="fa-solid fa-5"></i></a></li>
-		                   	   	   <li><a href="#" class="end m-3"><i class="fa-solid fa-angle-right"></i></a></li>
-		                   	   </ul>
-		                   </div>
-	                   </div>
-	               </div>
-	           </div>
+	                   <!-- pagination s -->
+					   <%@include file="../../common/xdmin/includeV1/pagination.jsp"%>
+					   <!-- pagination e -->
+                   </div>
+               </div>
            </div>
+        </div>
     </div>
     
     <!-- Footer Start -->
@@ -270,6 +187,15 @@
     
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+	    var goUrlList = "/member/purchaseHistory";
+	    
+	    goList = function(thisPage) {
+			$("input:hidden[name=thisPage]").val(thisPage);
+			form.attr("action", goUrlList).submit();
+		}
+    </script>
     
 </body>
 

@@ -377,6 +377,7 @@
 	
 	<!-- 구매목록 -->
 	<select id="selectPurchaseHistory" resultMap="resultMapObj">
+		<include refid="Base.selectListUpperForMysql" />
 		SELECT
 			a.mmNickname
 			,b.itTitle
@@ -384,12 +385,15 @@
 		FROM member a
 		JOIN item b on  a.mmSeq = b.member_mmSeq
 		JOIN itemOption c on a.mmSeq = c.member_mmSeq
+		JOIN purchase d on a.mmSeq = d.member_mmSeq
 		WHERE 1=1
-			AND mmSeq = #{sessSeq]
+			AND a.mmSeq = #{sessSeq}
+		<include refid="Base.selectListLowerForMysql" />
 	</select>
 	
 	<!-- 판매등록상품 -->
 	<select id="selectSaleManage" resultMap="resultMapObj">
+		<include refid="Base.selectListUpperForMysql" />
 		SELECT
 			b.itTitle
 			,c.itemPrice
@@ -397,8 +401,9 @@
 		JOIN item b on  a.mmSeq = b.member_mmSeq
 		JOIN itemOption c on a.mmSeq = c.member_mmSeq
 		WHERE 1=1
-			AND mmSeq = #{sessSeq]
-			AND mmRank = 20
+			AND a.mmSeq = #{sessSeq}
+			AND a.mmRank = 20
+		<include refid="Base.selectListLowerForMysql" />
 	</select>
 
 </mapper>

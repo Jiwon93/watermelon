@@ -24,7 +24,7 @@
 		            	<button class="btn btn-primary" type="button" id="btnMemberRegB">만렙등록</button>
 		            </div>
 		        </c:when>
-		        <c:when test="${sessRank eq 25 }">
+		        <c:when test="${sessRank eq 20 }">
 		        	<div class="navbar-nav ms-auto p-4 p-lg-0">
 		                <a href="loginForm.html" class="nav-item nav-link"><i class="fa-solid fa-comment fa-2x"></i></a>
 		                <a href="memberRegFormC.html" class="nav-item nav-link"><i class="fa-solid fa-bell fa-2x"></i></a>

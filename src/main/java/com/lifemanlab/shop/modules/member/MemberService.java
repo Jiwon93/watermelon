@@ -55,9 +55,9 @@ public interface MemberService {
 	public Member selectOneLogin(Member dto) throws Exception;
 	
 	//구매목록
-	public Member selectPurchaseHistory(MemberVo vo) throws Exception;
+	public List<Member> selectPurchaseHistory(MemberVo vo) throws Exception;
 	
 	//판매등록상품
-	public Member selectSaleManage(MemberVo vo) throws Exception;
+	public List<Member> selectSaleManage(MemberVo vo) throws Exception;
 
 }

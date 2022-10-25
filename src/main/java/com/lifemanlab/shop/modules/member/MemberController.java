@@ -322,14 +322,16 @@ public class MemberController extends BaseController {
 	
 	@RequestMapping(value = "purchaseHistory")
 	public String purchaseHistory(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
-		Member item = service.selectPurchaseHistory(vo);
+		vo.setParamsPaging(service.selectOneCount(vo));
+		List<Member> item = service.selectPurchaseHistory(vo);
 		model.addAttribute("item", item);
 		return "infra/member/user/purchaseHistory";
 	}
 	
 	@RequestMapping(value = "saleManage")
 	public String saleManage(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
-		Member item = service.selectSaleManage(vo);
+		vo.setParamsPaging(service.selectOneCount(vo));
+		List<Member> item = service.selectSaleManage(vo);
 		model.addAttribute("item", item);
 		return "infra/member/user/saleManage";
 	}

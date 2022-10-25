@@ -126,11 +126,11 @@
 	                   <div class="p-4 pb-1 border border-2 border-light">
 		                   <div class="row g-3">
 		                   <c:choose>
-		                   	   <c:when test="">
+		                   	   <c:when test="${fn:length(item) eq 0 }">
 		                   	   	   <p>등록된 상품이 없습니다.</p>
 	                   	   	   </c:when>
 	                   	   	   <c:otherwise>
-	                   	   	   	   <c:forEach items="" var="" varStatus="status">
+	                   	   	   	   <c:forEach items="${item }" var="item" varStatus="status">
 		                   	   <table class="m-4">
 		                   	   	   <tr>
 		                   	   	   	   <td rowspan="6" style="width: 270px;"><img alt="" src="/resources/images/main.jpg" style="width: 220px; height: 150px;"></td>

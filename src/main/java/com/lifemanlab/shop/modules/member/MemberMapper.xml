@@ -375,5 +375,30 @@
 				AND mmpDiv = 98
 	</select>
 	
+	<!-- 구매목록 -->
+	<select id="selectPurchaseHistory" resultMap="resultMapObj">
+		SELECT
+			a.mmNickname
+			,b.itTitle
+			,c.itemPrice
+		FROM member a
+		JOIN item b on  a.mmSeq = b.member_mmSeq
+		JOIN itemOption c on a.mmSeq = c.member_mmSeq
+		WHERE 1=1
+			AND mmSeq = #{sessSeq]
+	</select>
+	
+	<!-- 판매등록상품 -->
+	<select id="selectSaleManage" resultMap="resultMapObj">
+		SELECT
+			b.itTitle
+			,c.itemPrice
+		FROM member a
+		JOIN item b on  a.mmSeq = b.member_mmSeq
+		JOIN itemOption c on a.mmSeq = c.member_mmSeq
+		WHERE 1=1
+			AND mmSeq = #{sessSeq]
+			AND mmRank = 20
+	</select>
 
 </mapper>

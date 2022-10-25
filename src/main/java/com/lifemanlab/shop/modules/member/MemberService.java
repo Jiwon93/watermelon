@@ -53,5 +53,11 @@ public interface MemberService {
 	//암호화
 	public Member selectOneId(Member dto) throws Exception;
 	public Member selectOneLogin(Member dto) throws Exception;
+	
+	//구매목록
+	public Member selectPurchaseHistory(MemberVo vo) throws Exception;
+	
+	//판매등록상품
+	public Member selectSaleManage(MemberVo vo) throws Exception;
 
 }

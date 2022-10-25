@@ -43,6 +43,11 @@ public class Member extends Base{
 	private Integer mmpDefaultNy;
 	private String sessSeq;
 	
+	//상품
+	private String itTitle;
+	private String itemPrice;
+	
+	
 	private MultipartFile[] mmUploadedProfileImage;
 	private MultipartFile[] mmUploadedImage;
 	private Integer uploadImgMaxNumber;
@@ -261,6 +266,18 @@ public class Member extends Base{
 	}
 	public void setUploadImgMaxNumber(Integer uploadImgMaxNumber) {
 		this.uploadImgMaxNumber = uploadImgMaxNumber;
+	}
+	public String getItTitle() {
+		return itTitle;
+	}
+	public void setItTitle(String itTitle) {
+		this.itTitle = itTitle;
+	}
+	public String getItemPrice() {
+		return itemPrice;
+	}
+	public void setItemPrice(String itemPrice) {
+		this.itemPrice = itemPrice;
 	}
 	
 	

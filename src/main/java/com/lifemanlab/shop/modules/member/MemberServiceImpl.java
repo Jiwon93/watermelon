@@ -207,6 +207,18 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 		return item;
 	}
 
+	//구매목록
+	@Override
+	public Member selectPurchaseHistory(MemberVo vo) throws Exception {
+		return dao.selectPurchaseHistory(vo);
+	}
+
+	//판매등록상품
+	@Override
+	public Member selectSaleManage(MemberVo vo) throws Exception {
+		return dao.selectSaleManage(vo);
+	}
+
 	
 
 	

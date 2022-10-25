@@ -127,7 +127,7 @@
 		                   <div class="row g-3">
 		                   <c:choose>
 		                   	   <c:when test="">
-		                   	   	   <p>준비된 상품이 없습니다.</p>
+		                   	   	   <p>등록된 상품이 없습니다.</p>
 	                   	   	   </c:when>
 	                   	   	   <c:otherwise>
 	                   	   	   	   <c:forEach items="" var="" varStatus="status">

@@ -31,22 +31,13 @@
 		        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 			        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 			          <li class="nav-item">
-			            <a class="nav-link active" aria-current="page" href="#">회원관리</a>
+			            <a class="nav-link active" aria-current="page" type="button" id="btnCcgList">코드그룹관리</a>
 			          </li>
 			          <li class="nav-item">
-			            <a class="nav-link" href="#">서비스관리</a>
+			            <a class="nav-link" type="button" id="btnCcList">코드관리</a>
 			          </li>
 			          <li class="nav-item">
-			            <a class="nav-link" href="#">사이트관리</a>
-			          </li>
-			          <li class="nav-item">
-			            <a class="nav-link" href="#">로그관리</a>
-			          </li>
-			          <li class="nav-item">
-			            <a class="nav-link" href="#">시스템관리</a>
-			          </li>
-			          <li class="nav-item">
-			            <a class="nav-link" href="#">시스템관리</a>
+			            <a class="nav-link" type="button" id="btnMmList">회원관리</a>
 			          </li>
 			        </ul>
 		        </div>

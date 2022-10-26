@@ -268,6 +268,10 @@
 			$(location).attr("href", goUrlList);
 		});
 		
+		$("#btnMmList").on("click", function(){
+			form.attr("action", goUrlList).submit();
+		});
+		
 		$("#btnPlus").on("click", function(){
 			$(location).attr("href", goUrlForm);
 		});

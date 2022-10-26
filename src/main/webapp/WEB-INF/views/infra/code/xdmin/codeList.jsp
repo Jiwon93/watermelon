@@ -240,6 +240,10 @@ th, td {
 		$("#btnSearch").on("click", function() {
 			form.attr("action", goUrlList).submit();
 		});
+		
+		$("#btnCcList").on("click", function(){
+			form.attr("action", goUrlList).submit();
+		});
 
 		$("#btnReset").on("click", function() {
 			$(location).attr("href", goUrlList);

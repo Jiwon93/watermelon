@@ -231,8 +231,6 @@
 	    </div>
 	    <!-- Footer End -->
 	</form>
-	<script src="/resources/js/list.js"></script>
-	<script src="/resources/js/sidebar.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script>
 		var goUrlList = "/codeGroup/codeGroupList";
@@ -246,6 +244,10 @@
 		var form = $("form[name=ccgFormList]");
 		
 		$("#btnSearch").on("click", function(){
+			form.attr("action", goUrlList).submit();
+		});
+		
+		$("#btnCcgList").on("click", function(){
 			form.attr("action", goUrlList).submit();
 		});
 	

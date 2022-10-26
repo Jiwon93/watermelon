@@ -1,16 +1,11 @@
 package com.lifemanlab.shop.modules.member;
 
-import java.io.File;
 import java.util.List;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.lifemanlab.shop.common.base.BaseServiceImpl;
-import com.lifemanlab.shop.common.constants.Constants;
-import com.lifemanlab.shop.common.util.UtilDatetime;
 import com.lifemanlab.shop.common.util.UtilSecurity;
 
 @Service
@@ -18,7 +13,7 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	
 	@Autowired
 	MemberDao dao;
-	
+	/*
 	public void uploadFiles(MultipartFile[] multipartFiles, Member dto, String tableName, int type, int maxNumber) throws Exception {
 		System.out.println(" dto.getUploadImgMaxNumber() : " + dto.getUploadImgMaxNumber());
 		
@@ -65,6 +60,7 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
     		}
 		}
 	}
+	*/
 	
 	@Override
 	public List<Member> selectList(MemberVo vo) throws Exception {
@@ -111,10 +107,12 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	}
 	
 	//이미지, 파일 업로드
+	/*
 	@Override
 	public List<Member> selectListUploaded(MemberVo vo) throws Exception {
 		return dao.selectListUploaded(vo);
 	}
+	*/
 	
 	//Email 확인
 	@Override
@@ -165,7 +163,7 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	@Override
 	public int memberMod(Member dto) throws Exception {
 		int result = dao.memberMod(dto);
-		uploadFiles(dto.getMmUploadedProfileImage(), dto, "mmUploaded", 2, dto.getUploadImgMaxNumber());
+		//uploadFiles(dto.getMmUploadedProfileImage(), dto, "mmUploaded", 2, dto.getUploadImgMaxNumber());
 		return result;
 	}
 	

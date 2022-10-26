@@ -76,7 +76,7 @@
 </head>
 
 <body>
-<form method="get" name="form" autocomplete="off" enctype="multipart/form-data">
+<form method="post" name="form" autocomplete="off" enctype="multipart/form-data">
 <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
 <input type="hidden" id="mmSeq" name="mmSeq" value="${vo.mmSeq }">
 	<!-- Navbar Start -->

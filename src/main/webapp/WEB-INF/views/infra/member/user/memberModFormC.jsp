@@ -91,7 +91,7 @@ label {
 
 <body>
 	
-	<form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
+	<form method="post" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
 	<%-- 
 		<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
 			<c:out value="${listUploaded.type }" />

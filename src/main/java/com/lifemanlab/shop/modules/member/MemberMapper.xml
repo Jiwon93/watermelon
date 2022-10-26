@@ -178,7 +178,7 @@
 		VALUES(
 			#{mmEmail}
 			,#{mmPw}
-			,26
+			,21
 			,#{mmName}
 			,#{mmBod}
 			,#{mmGender}
@@ -203,7 +203,7 @@
 		VALUES(
 			#{mmSeq}
 			,#{mmpPhoneNumber}
-			,98
+			,74
 			,1
 		)
 		<selectKey resultType="String" keyProperty="mmSeq" order="AFTER">
@@ -236,7 +236,7 @@
 		VALUES(
 			#{mmEmail}
 			,#{mmPw}
-			,25
+			,20
 			,#{mmName}
 			,#{mmBod}
 			,#{mmGender}

@@ -2,12 +2,11 @@ package com.lifemanlab.shop.modules.member;
 
 import java.util.List;
 
-import org.springframework.web.multipart.MultipartFile;
 
 public interface MemberService {
 	
 	/* public void setRegMod(Member dto) throws Exception; */
-	public void uploadFiles(MultipartFile[] multipartFiles, Member dto, String tableName, int type, int maxNumber) throws Exception;
+	//public void uploadFiles(MultipartFile[] multipartFiles, Member dto, String tableName, int type, int maxNumber) throws Exception;
 	
 	//member
 	public List<Member> selectList(MemberVo vo) throws Exception; 
@@ -20,7 +19,7 @@ public interface MemberService {
 	public int delete(MemberVo vo) throws Exception;
 	
 	//이미지, 파일 업로드
-	List<Member> selectListUploaded(MemberVo vo) throws Exception;
+	//List<Member> selectListUploaded(MemberVo vo) throws Exception;
 	
 	//Email 확인
 	public int selectOneIdCheck(Member dto) throws Exception;

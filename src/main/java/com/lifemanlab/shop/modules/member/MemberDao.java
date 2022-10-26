@@ -28,8 +28,8 @@ public class MemberDao {
 	public int delete(MemberVo vo) { return sqlSession.delete(namespace + ".delete", vo); }
 	
 	//이미지, 파일 업로드
-	public int insertUploaded(Member dto) { return sqlSession.insert("Base" + ".insertUploaded" , dto); }
-	public List<Member> selectListUploaded(MemberVo vo) { return sqlSession.selectList(namespace + ".selectListUploaded", vo); }
+	//public int insertUploaded(Member dto) { return sqlSession.insert("Base" + ".insertUploaded" , dto); }
+	//public List<Member> selectListUploaded(MemberVo vo) { return sqlSession.selectList(namespace + ".selectListUploaded", vo); }
 	
 	//회원가입(일반)
 	public int memberRegC(Member dto) { return sqlSession.insert(namespace + ".memberRegC", dto); }

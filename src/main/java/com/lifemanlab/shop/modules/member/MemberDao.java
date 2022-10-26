@@ -64,8 +64,8 @@ public class MemberDao {
 	public Member selectOneView(MemberVo vo) { return sqlSession.selectOne(namespace + ".selectOneView", vo); }
 		
 	//구매목록
-	public List<Member> selectPurchaseHistory(MemberVo vo) { return sqlSession.selectOne(namespace + "selectPurchaseHistory", vo); }
+	public List<Member> selectPurchaseHistory(MemberVo vo) { return sqlSession.selectList(namespace + ".selectPurchaseHistory", vo); }
 	
 	//판매등록상품
-	public List<Member> selectSaleManage(MemberVo vo) { return sqlSession.selectOne(namespace + "selectSaleManage", vo); }
+	public List<Member> selectSaleManage(MemberVo vo) { return sqlSession.selectList(namespace + ".selectSaleManage", vo); }
 }

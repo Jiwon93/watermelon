@@ -140,7 +140,7 @@
 		                   	   	   <tr>
 		                   	   	   	   <!-- <td></td> -->
 		                   	   	   	   <td><b><c:out value="${item.itTitle }" /></b></td>
-		                   	   	   	   <td><b><c:out value="${item.itPrice }" />원</b></td>
+		                   	   	   	   <td><b><c:out value="${item.itemPrice }" />원</b></td>
 		                   	   	   </tr>
 		                   	   	   <tr>
 		                   	   	   	   <!-- <td></td> -->

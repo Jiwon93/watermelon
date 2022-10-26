@@ -46,6 +46,8 @@ public class Member extends Base{
 	//상품
 	private String itTitle;
 	private String itemPrice;
+	private String itemSeq;
+	private String item_itemSeq;
 	
 	
 	private MultipartFile[] mmUploadedProfileImage;
@@ -278,6 +280,18 @@ public class Member extends Base{
 	}
 	public void setItemPrice(String itemPrice) {
 		this.itemPrice = itemPrice;
+	}
+	public String getItemSeq() {
+		return itemSeq;
+	}
+	public void setItemSeq(String itemSeq) {
+		this.itemSeq = itemSeq;
+	}
+	public String getItem_itemSeq() {
+		return item_itemSeq;
+	}
+	public void setItem_itemSeq(String item_itemSeq) {
+		this.item_itemSeq = item_itemSeq;
 	}
 	
 	

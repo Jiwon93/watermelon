@@ -379,15 +379,15 @@
 	<select id="selectPurchaseHistory" resultMap="resultMapObj">
 		<include refid="Base.selectListUpperForMysql" />
 		SELECT
-			a.mmNickname
+			d.mmNickname
 			,b.itTitle
 			,c.itemPrice
-		FROM member a
-		JOIN item b on  a.mmSeq = b.member_mmSeq
-		JOIN itemOption c on a.mmSeq = c.member_mmSeq
-		JOIN purchase d on a.mmSeq = d.member_mmSeq
+		FROM purchase a
+		JOIN item b on  a.item_itemSeq = b.itemSeq
+		JOIN itemOption c on a.item_itemSeq = c.item_itemSeq
+		JOIN member d on a.member_mmSeq = d.mmSeq
 		WHERE 1=1
-			AND a.mmSeq = #{sessSeq}
+			AND a.member_mmSeq = #{sessSeq}
 		<include refid="Base.selectListLowerForMysql" />
 	</select>
 	
@@ -395,14 +395,13 @@
 	<select id="selectSaleManage" resultMap="resultMapObj">
 		<include refid="Base.selectListUpperForMysql" />
 		SELECT
-			b.itTitle
+			a.itTitle
 			,c.itemPrice
-		FROM member a
-		JOIN item b on  a.mmSeq = b.member_mmSeq
-		JOIN itemOption c on a.mmSeq = c.member_mmSeq
+		FROM item a
+		JOIN member b on  a.member_mmSeq = b.mmSeq
+		JOIN itemOption c on a.itemSeq = c.item_itemSeq
 		WHERE 1=1
-			AND a.mmSeq = #{sessSeq}
-			AND a.mmRank = 20
+			AND b.mmSeq = #{sessSeq}
 		<include refid="Base.selectListLowerForMysql" />
 	</select>
 

@@ -1,11 +1,20 @@
 package com.lifemanlab.shop.modules.member;
 
+import java.io.File;
 import java.util.List;
+import java.util.UUID;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.lifemanlab.shop.common.base.BaseServiceImpl;
+import com.lifemanlab.shop.common.constants.Constants;
+import com.lifemanlab.shop.common.util.UtilDatetime;
 import com.lifemanlab.shop.common.util.UtilSecurity;
 
 @Service
@@ -13,9 +22,15 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	
 	@Autowired
 	MemberDao dao;
-	/*
+	
+	@Override
+	public void setRegMod(Member dto) throws Exception {
+		HttpServletRequest httpServletRequest = ((ServletRequestAttributes)RequestContextHolder.currentRequestAttributes()).getRequest();
+		
+	}
+
 	public void uploadFiles(MultipartFile[] multipartFiles, Member dto, String tableName, int type, int maxNumber) throws Exception {
-		System.out.println(" dto.getUploadImgMaxNumber() : " + dto.getUploadImgMaxNumber());
+		System.out.println(" dto.getUploadImgMaxNumber() : " + dto.getMmUploadedImageMaxNumber());
 		
 		for(int i=0; i<multipartFiles.length; i++) {
     	
@@ -60,7 +75,38 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
     		}
 		}
 	}
-	*/
+	
+	@Override
+	public void deleteFiles(String[] deleteSeq, String[] deletePathFile, Member dto, String tableName) throws Exception {
+		
+		for (int i=0; i<deleteSeq.length; i++) {
+			File file = new File(Constants.UPLOAD_PATH_PREFIX_EXTERNAL + deletePathFile[i]);
+			boolean result = file.delete();
+			
+			if(result) {
+				dto.setSeq(deleteSeq[i]);
+				dto.setTableName(tableName);
+				dao.deleteUploaded(dto);
+			}
+		}
+	}
+
+
+	@Override
+	public void ueleteFiles(String[] deleteSeq, String[] deletePathFile, Member dto, String tableName) throws Exception {
+		
+		for (int i=0; i<deleteSeq.length; i++) {
+			dto.setSeq(deleteSeq[i]);
+			dto.setTableName(tableName);
+			dao.ueleteUploaded(dto);
+		}
+	}
+
+
+	@Override
+	public List<Member> selectListUploaded(MemberVo vo) throws Exception {
+		return dao.selectListUploaded(vo);
+	}
 	
 	@Override
 	public List<Member> selectList(MemberVo vo) throws Exception {
@@ -70,8 +116,7 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 
 	@Override
 	public int selectOneCount(MemberVo vo) throws Exception {
-		int count = dao.selectOneCount(vo);
-		return count;
+		return dao.selectOneCount(vo);
 	}
 
 	@Override
@@ -135,6 +180,8 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	@Override
 	public int memberRegC(Member dto) throws Exception {
 		
+		setRegMod(dto);
+		
 		dto.setMmPw(UtilSecurity.encryptSha256(dto.getMmPw()));
 		dto.setMmName(dto.getMmName());
 		//dto.setMmPwdModDate(UtilDateTime.nowDate());
@@ -162,9 +209,10 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	//회원정보수정
 	@Override
 	public int memberMod(Member dto) throws Exception {
-		int result = dao.memberMod(dto);
-		//uploadFiles(dto.getMmUploadedProfileImage(), dto, "mmUploaded", 2, dto.getUploadImgMaxNumber());
-		return result;
+		
+		uploadFiles(dto.getMmUploadedProfileImage(), dto, "mmUploaded", 1, dto.getMmUploadedProfileMaxNumber());
+		
+		return dao.memberMod(dto);
 	}
 	
 	@Override
@@ -222,6 +270,9 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	public int memberDrop(Member dto) throws Exception {
 		return dao.memberDrop(dto);
 	}
+
+
+	
 
 	
 

@@ -51,9 +51,19 @@ public class Member extends Base{
 	
 	
 	private MultipartFile[] mmUploadedProfileImage;
+	private Integer mmUploadedProfileMaxNumber;
+	private String[] mmUploadedProfileDeleteSeq;
+	private String[] mmUploadedProfileDeletePathFile;
+	
 	private MultipartFile[] mmUploadedImage;
-	private Integer uploadImgMaxNumber;
+	private Integer mmUploadedImageMaxNumber;
+	private String[] mmUploadedImageDeleteSeq;
+	private String[] mmUploadedImageDeletePathFile;	
+	
 	private MultipartFile[] mmUploadedFile;
+	private Integer mmUploadedFileMaxNumber;
+	private String[] mmUploadedFileDeleteSeq;
+	private String[] mmUploadedFileDeletePathFile;
 ///////////////////////////////////////////////
 	
 	//공통코드
@@ -263,12 +273,6 @@ public class Member extends Base{
 	public void setMmUploadedFile(MultipartFile[] mmUploadedFile) {
 		this.mmUploadedFile = mmUploadedFile;
 	}
-	public Integer getUploadImgMaxNumber() {
-		return uploadImgMaxNumber;
-	}
-	public void setUploadImgMaxNumber(Integer uploadImgMaxNumber) {
-		this.uploadImgMaxNumber = uploadImgMaxNumber;
-	}
 	public String getItTitle() {
 		return itTitle;
 	}
@@ -292,6 +296,60 @@ public class Member extends Base{
 	}
 	public void setItem_itemSeq(String item_itemSeq) {
 		this.item_itemSeq = item_itemSeq;
+	}
+	public Integer getMmUploadedProfileMaxNumber() {
+		return mmUploadedProfileMaxNumber;
+	}
+	public void setMmUploadedProfileMaxNumber(Integer mmUploadedProfileMaxNumber) {
+		this.mmUploadedProfileMaxNumber = mmUploadedProfileMaxNumber;
+	}
+	public String[] getMmUploadedProfileDeleteSeq() {
+		return mmUploadedProfileDeleteSeq;
+	}
+	public void setMmUploadedProfileDeleteSeq(String[] mmUploadedProfileDeleteSeq) {
+		this.mmUploadedProfileDeleteSeq = mmUploadedProfileDeleteSeq;
+	}
+	public String[] getMmUploadedProfileDeletePathFile() {
+		return mmUploadedProfileDeletePathFile;
+	}
+	public void setMmUploadedProfileDeletePathFile(String[] mmUploadedProfileDeletePathFile) {
+		this.mmUploadedProfileDeletePathFile = mmUploadedProfileDeletePathFile;
+	}
+	public String[] getMmUploadedImageDeleteSeq() {
+		return mmUploadedImageDeleteSeq;
+	}
+	public void setMmUploadedImageDeleteSeq(String[] mmUploadedImageDeleteSeq) {
+		this.mmUploadedImageDeleteSeq = mmUploadedImageDeleteSeq;
+	}
+	public String[] getMmUploadedImageDeletePathFile() {
+		return mmUploadedImageDeletePathFile;
+	}
+	public void setMmUploadedImageDeletePathFile(String[] mmUploadedImageDeletePathFile) {
+		this.mmUploadedImageDeletePathFile = mmUploadedImageDeletePathFile;
+	}
+	public String[] getMmUploadedFileDeleteSeq() {
+		return mmUploadedFileDeleteSeq;
+	}
+	public void setMmUploadedFileDeleteSeq(String[] mmUploadedFileDeleteSeq) {
+		this.mmUploadedFileDeleteSeq = mmUploadedFileDeleteSeq;
+	}
+	public String[] getMmUploadedFileDeletePathFile() {
+		return mmUploadedFileDeletePathFile;
+	}
+	public void setMmUploadedFileDeletePathFile(String[] mmUploadedFileDeletePathFile) {
+		this.mmUploadedFileDeletePathFile = mmUploadedFileDeletePathFile;
+	}
+	public Integer getMmUploadedImageMaxNumber() {
+		return mmUploadedImageMaxNumber;
+	}
+	public void setMmUploadedImageMaxNumber(Integer mmUploadedImageMaxNumber) {
+		this.mmUploadedImageMaxNumber = mmUploadedImageMaxNumber;
+	}
+	public Integer getMmUploadedFileMaxNumber() {
+		return mmUploadedFileMaxNumber;
+	}
+	public void setMmUploadedFileMaxNumber(Integer mmUploadedFileMaxNumber) {
+		this.mmUploadedFileMaxNumber = mmUploadedFileMaxNumber;
 	}
 	
 	

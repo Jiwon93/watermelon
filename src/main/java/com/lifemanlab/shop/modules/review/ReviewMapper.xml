@@ -8,5 +8,45 @@
 
     <resultMap id="resultMapObj" type="com.lifemanlab.shop.modules.review.Review"></resultMap>
     
+    <sql id="selectCommon">
+    	FROM review a
+		WHERE 1=1
+			<if test="shDelNy != null and !shDelNy.equals('')">AND ccDelNy = #{shDelNy}</if>
+			<choose>
+				<when test="shOption == 1">AND codeGroup_ccgSeq = #{shValue}</when>
+				<when test="shOption == 2">AND b.ccgName LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 3">AND ccSeq LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 4">AND ccName LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 5">AND ccNameEng LIKE CONCAT('%',#{shValue},'%')</when>
+			</choose>
+    </sql>
+    
+    <select id="selectList" resultMap="resultMapObj">
+    	<include refid="Base.selectListUpperForMysql" />
+	    	SELECT
+	    		a.revSeq
+	    		,a.reNickname
+	    		,a.reGrade
+	    		,a.reWriteTime
+	    		,a.reContent
+	    		,a.reWorkload
+	    		,a.reOrderPrice
+	    	<include refid="selectCommon" />
+	    	ORDER BY a.revSeq DESC
+    	<include refid="Base.selectListLowerForMysql" />
+    </select>
+    
+    <select id="selectOneCount" resultType="Integer">
+    	SELECT COUNT(*)
+    	<include refid="selectCommon" />
+    </select>
+    
+    <select id="selectOne" resultMap="resultMapObj">
+    	SELECT
+    		a.*
+   		FROM review a
+   		WHERE 1=1
+   			AND revSeq = #{revSeq}
+    </select>
     
 </mapper>

@@ -1,5 +1,7 @@
 package com.lifemanlab.shop.modules.review;
 
-public class ReviewVo {
+import com.lifemanlab.shop.common.base.BaseVo;
+
+public class ReviewVo extends BaseVo{
 
 }

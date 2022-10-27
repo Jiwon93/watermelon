@@ -217,6 +217,12 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 		return dao.selectSaleManage(vo);
 	}
 
+	//회원탈퇴
+	@Override
+	public int memberDrop(Member dto) throws Exception {
+		return dao.memberDrop(dto);
+	}
+
 	
 
 	

@@ -27,6 +27,9 @@ public class MemberDao {
 	public int uelete(Member dto) { return sqlSession.update(namespace + ".uelete", dto); }
 	public int delete(MemberVo vo) { return sqlSession.delete(namespace + ".delete", vo); }
 	
+	//회원탈퇴
+	public int memberDrop(Member dto) { return sqlSession.update(namespace + ".memberDrop", dto); }
+	
 	//이미지, 파일 업로드
 	//public int insertUploaded(Member dto) { return sqlSession.insert("Base" + ".insertUploaded" , dto); }
 	//public List<Member> selectListUploaded(MemberVo vo) { return sqlSession.selectList(namespace + ".selectListUploaded", vo); }

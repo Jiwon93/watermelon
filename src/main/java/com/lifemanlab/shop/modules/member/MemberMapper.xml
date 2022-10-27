@@ -404,5 +404,13 @@
 			AND b.mmSeq = #{sessSeq}
 		<include refid="Base.selectListLowerForMysql" />
 	</select>
+	
+	<!-- 회원탈퇴 -->
+	<update id="memberDrop">
+		UPDATE member
+		SET
+			mmDelNy = 1
+		WHERE mmSeq = #{sessSeq}
+	</update>
 
 </mapper>

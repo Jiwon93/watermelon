@@ -253,6 +253,12 @@ public class MemberController extends BaseController {
 		return "infra/member/index";
 	}
 	
+	//회원탈퇴
+	@RequestMapping(value = "memberDrop")
+	public String memberDrop(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception{
+		service.memberDrop(dto);
+		return "redirect:/member/memberHome";
+	}
 	@RequestMapping(value = "memberHome")
 	public String memberHome() throws Exception {
 		return "infra/member/user/memberHome";

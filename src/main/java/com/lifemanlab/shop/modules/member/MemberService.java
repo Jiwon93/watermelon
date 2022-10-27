@@ -18,6 +18,9 @@ public interface MemberService {
 	public int uelete(Member dto) throws Exception;
 	public int delete(MemberVo vo) throws Exception;
 	
+	//회원탈퇴
+	public int memberDrop(Member dto) throws Exception;
+	
 	//이미지, 파일 업로드
 	//List<Member> selectListUploaded(MemberVo vo) throws Exception;
 	

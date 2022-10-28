@@ -191,7 +191,7 @@
 					   <div class="col-8 offset-2">
                        	  <label class="form-label" for="mmTechnique">보유기술(중복 선택 가능)</label>
                        	  <div class="input-group">
-                       	  	   <select class="form-select" id="mmTechnique" name="mmTechnique">
+                       	  	   <select class="form-select" id="mmTechnique" name="mmTechnique" mutiple>
 								   <option>보유기술선택</option>
 								   <c:forEach begin="75" end="81" items="${ccNameList }" var="ccNameList" varStatus="status">
 								   <option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>

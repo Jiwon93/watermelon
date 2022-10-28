@@ -27,8 +27,8 @@ public final class Constants {
 	//public static final String COOKIE_MAXAGE = ;
 	
 	public static final String URL_LOGINFORM = "/member/loginForm";
-	
 	public static final String UPLOAD_PATH_PREFIX_EXTERNAL = "D://factory/ws_sts_4151/watermelon/src/main/webapp";
+	//public static final String UPLOAD_PATH_PREFIX_EXTERNAL = "D://factory/workspace/watermelon/src/main/webapp";
 	public static final String UPLOAD_PATH_PREFIX = "D://factory/ws_sts_4151/watermelon/src/main/webapp/resources/uploaded";
 	public static final String UPLOAD_PATH_PREFIX_FOR_VIEW = "/resources/uploaded";
 	/*

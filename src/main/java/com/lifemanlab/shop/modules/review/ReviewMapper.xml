@@ -12,13 +12,6 @@
     	FROM review a
 		WHERE 1=1
 			<if test="shDelNy != null and !shDelNy.equals('')">AND ccDelNy = #{shDelNy}</if>
-			<choose>
-				<when test="shOption == 1">AND codeGroup_ccgSeq = #{shValue}</when>
-				<when test="shOption == 2">AND b.ccgName LIKE CONCAT('%',#{shValue},'%')</when>
-				<when test="shOption == 3">AND ccSeq LIKE CONCAT('%',#{shValue},'%')</when>
-				<when test="shOption == 4">AND ccName LIKE CONCAT('%',#{shValue},'%')</when>
-				<when test="shOption == 5">AND ccNameEng LIKE CONCAT('%',#{shValue},'%')</when>
-			</choose>
     </sql>
     
     <select id="selectList" resultMap="resultMapObj">
@@ -31,6 +24,8 @@
 	    		,a.reContent
 	    		,a.reWorkload
 	    		,a.reOrderPrice
+	    		,a.member_mmSeq
+	    		,a.item_itemSeq
 	    	<include refid="selectCommon" />
 	    	ORDER BY a.revSeq DESC
     	<include refid="Base.selectListLowerForMysql" />

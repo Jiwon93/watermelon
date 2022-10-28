@@ -92,11 +92,6 @@ label {
 <body>
 	
 	<form method="post" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
-	<%-- 
-		<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
-			<c:out value="${listUploaded.type }" />
-		</c:forEach>
-		 --%>
 		<input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
 		<input type="hidden" id="mmSeq" name="mmSeq" value="${vo.mmSeq }">
 		<!-- Navbar Start -->
@@ -263,49 +258,6 @@ label {
 										</select>
 									</div>
 								</div>
-								<!-- 
-								<div class="col-8 offset-2">
-									<div class="row mt-sm-4">
-										<div class="col-sm-6 mt-3 mt-sm-0">
-											<label for="mmUploadedImage"
-												class="form-label input-file-button">이미지첨부</label> <input
-												class="form-control form-control-sm" id="mmUploadedImage"
-												name="mmUploadedImage" type="file" multiple="multiple"
-												style="display: none;"
-												onChange="upload('mmUploadedImage', 1, 0, 1, 0, 0, 1);">
-											<div class="addScroll">
-												<ul id="ulFile1" class="list-group">
-												</ul>
-											</div>
-										</div>
-										<div class="col-sm-6 mt-3 mt-sm-0">
-											<label for="mmUploadedFile"
-												class="form-label input-file-button">파일첨부</label> <input
-												class="form-control form-control-sm" id="mmUploadedFile"
-												name="mmUploadedFile" type="file" multiple="multiple"
-												style="display: none;"
-												onChange="upload('mmUploadedFile', 2, 0, 2, 0, 0, 2);">
-											<div class="addScroll">
-												<ul id="ulFile2" class="list-group">
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-								 -->
-								<!-- 
-							<div class="col-8 offset-2">
-								<div class="upload-box">
-									<div id="drop-file" class="drag-file">
-										<img src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일 아이콘" class="image">
-										<p class="message">Drag files to upload</p>
-										<img src="" alt="미리보기 이미지" class="preview">
-									</div>
-								</div>
-								<label class="file-label" for="chooseFile">Choose File</label>
-								<input class="file" id="chooseFile" type="file" onchange="dropFile.handleFiles(this.files)" accept="image/png, image/jpeg, image/gif">
-							</div>
-							 -->
 								<div class="col-sm-12 text-center">
 									<button class="btn btn-primary w-25" type="button" id="btnSave">수정완료</button>
 								</div>

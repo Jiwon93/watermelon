@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.lifemanlab.shop.common.base.BaseServiceImpl;
 import com.lifemanlab.shop.common.constants.Constants;
 import com.lifemanlab.shop.common.util.UtilDatetime;
+import com.lifemanlab.shop.common.util.UtilRegMod;
 import com.lifemanlab.shop.common.util.UtilSecurity;
 
 @Service
@@ -27,6 +28,15 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	public void setRegMod(Member dto) throws Exception {
 		HttpServletRequest httpServletRequest = ((ServletRequestAttributes)RequestContextHolder.currentRequestAttributes()).getRequest();
 		
+		dto.setRegIp(UtilRegMod.getClientIp(httpServletRequest));
+		dto.setRegSeq(UtilRegMod.getSessionSeq(httpServletRequest));
+		dto.setRegDeviceCd(UtilRegMod.getDevice());
+		//dto.setRegDateTime(UtilDatetime.nowDate());
+		
+		dto.setModIp(UtilRegMod.getClientIp(httpServletRequest));
+		dto.setModSeq(UtilRegMod.getSessionSeq(httpServletRequest));
+		dto.setModDeviceCd(UtilRegMod.getDevice());
+		//dto.setModDateTime(UtilDatetime.nowDate());
 	}
 
 	public void uploadFiles(MultipartFile[] multipartFiles, Member dto, String tableName, int type, int maxNumber) throws Exception {

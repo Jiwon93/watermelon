@@ -31,16 +31,15 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 		dto.setRegIp(UtilRegMod.getClientIp(httpServletRequest));
 		dto.setRegSeq(UtilRegMod.getSessionSeq(httpServletRequest));
 		dto.setRegDeviceCd(UtilRegMod.getDevice());
-		//dto.setRegDateTime(UtilDatetime.nowDate());
+		dto.setRegDateTime(UtilDatetime.nowDate());
 		
 		dto.setModIp(UtilRegMod.getClientIp(httpServletRequest));
 		dto.setModSeq(UtilRegMod.getSessionSeq(httpServletRequest));
 		dto.setModDeviceCd(UtilRegMod.getDevice());
-		//dto.setModDateTime(UtilDatetime.nowDate());
+		dto.setModDateTime(UtilDatetime.nowDate());
 	}
 
 	public void uploadFiles(MultipartFile[] multipartFiles, Member dto, String tableName, int type, int maxNumber) throws Exception {
-		System.out.println(" dto.getUploadImgMaxNumber() : " + dto.getMmUploadedImageMaxNumber());
 		
 		for(int i=0; i<multipartFiles.length; i++) {
     	
@@ -219,10 +218,13 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	//회원정보수정
 	@Override
 	public int memberMod(Member dto) throws Exception {
+		setRegMod(dto);
 		
+		dao.memberMod(dto);
+		deleteFiles(dto.getMmUploadedImageDeleteSeq(), dto.getMmUploadedImageDeletePathFile(), dto, "mmUploaded");
 		uploadFiles(dto.getMmUploadedProfileImage(), dto, "mmUploaded", 1, dto.getMmUploadedProfileMaxNumber());
 		
-		return dao.memberMod(dto);
+		return 1;
 	}
 	
 	@Override

@@ -246,7 +246,7 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	//비밀번호 변경
 	@Override
 	public int pwChange(Member dto) throws Exception {
-		int result = dao.pwChange(dto);
+		int result = dao.pwChange(dto); 
 		return result;
 	}
 	

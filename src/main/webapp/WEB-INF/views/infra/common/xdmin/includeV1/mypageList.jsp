@@ -11,7 +11,7 @@
 				<c:when test="${mmSeq eq 0 }">
 					<img id="<c:out value="${name }"/>Preview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
 				</c:when>
-				<c:otherwise>
+				<c:otherwise> 
 					<c:choose>
 						<c:when test="${fn:length(listUploaded) eq 0 }">
 							<img id="<c:out value="${name }"/>Preview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">

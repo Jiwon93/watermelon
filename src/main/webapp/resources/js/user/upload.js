@@ -6,7 +6,7 @@
 //		memberProfileImage: 1
 //		memberImage: 2
 //		memberFile : 3
-
+ 
 //		uiType: 1 => 이미지형
 //		uiType: 2 => 파일형
 //		uiType: 3 => 프로필형

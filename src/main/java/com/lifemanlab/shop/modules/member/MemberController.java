@@ -24,7 +24,7 @@ public class MemberController extends BaseController {
 	
 	@Autowired
 	MemberServiceImpl service;
-	
+	 
 
 	@RequestMapping(value = "memberList")
 	public String memberList(@ModelAttribute("vo")MemberVo vo, Model model) throws Exception {

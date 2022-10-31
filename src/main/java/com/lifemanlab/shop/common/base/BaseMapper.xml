@@ -16,6 +16,37 @@
 		limit #{rowNumToShow} offset #{startRnumForMysql}
 	</sql>
 	
+	<sql id="orderByLimitForMysql">	
+		limit 99999999999
+	</sql>
+	
+	<sql id="insertRegModColumn">	
+		,regIp
+		,regSeq
+		,regDeviceCd
+		,regDateTime
+		,regDateTimeSvr
+		,modIp
+		,modSeq
+		,modDeviceCd
+		,modDateTime
+		,modDateTimeSvr
+	</sql>
+    
+    
+    <sql id="insertRegModValue">	
+		,#{regIp}
+		,#{regSeq}
+		,#{regDeviceCd}
+		,#{regDateTime}
+		,#{regDateTimeSvr}
+		,#{modIp}
+		,#{modSeq}
+		,#{modDeviceCd}
+		,#{modDateTime}
+		,#{modDateTimeSvr}
+	</sql>
+	
 	<sql id="insertRegColumn">	
 		,regIp
 		,regSeq
@@ -31,6 +62,43 @@
 		,#{regDeviceCd}
 		,#{regDateTime}
 		,#{regDateTimeSvr}
+	</sql>
+	
+	<sql id="updateModColumnValue">	
+		,modIp = #{modIp}
+		,modSeq = #{modSeq}
+		,modDeviceCd = #{modDeviceCd}
+		,modDateTime = #{modDateTime}
+		,modDateTimeSvr = #{modDateTimeSvr}
+	</sql>
+	
+	
+	<sql id="selectRegMod">	
+		,regIp
+		,regSeq
+		,regDeviceCd
+		,regDateTime
+		,regDateTimeSvr
+		,modIp
+		,modSeq
+		,modDeviceCd
+		,modDateTime
+		,modDateTimeSvr
+	</sql>
+	
+	<sql id="selectRegModWithAlies">	
+		,a.regIp
+		,a.regSeq
+		,(select ifmmId from infrMember where ifmmSeq = a.regSeq) as regId
+		,a.regDeviceCd
+		,a.regDateTime
+		,a.regDateTimeSvr
+		,a.modIp
+		,a.modSeq
+		,(select ifmmId from infrMember where ifmmSeq = a.modSeq) as modId
+		,a.modDeviceCd
+		,a.modDateTime
+		,a.modDateTimeSvr
 	</sql>
 	
 	<!-- uploaded s -->
@@ -61,6 +129,19 @@
 			,#{pSeq}
 		)
 	</insert>
+	
+	<delete id="deleteUploaded">
+		DELETE FROM ${tableName}
+		WHERE 1=1
+			AND seq = #{seq}
+	</delete>
+	
+	
+	<update id="ueleteUploaded">
+		UPDATE ${tableName} SET delNy = 1
+		WHERE 1=1
+			AND seq = #{seq}
+	</update>
 	<!-- uploaded e -->
 		
 </mapper>

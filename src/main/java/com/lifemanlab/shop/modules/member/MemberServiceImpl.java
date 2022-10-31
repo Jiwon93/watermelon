@@ -160,14 +160,6 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 		return dao.delete(vo);
 	}
 	
-	//이미지, 파일 업로드
-	/*
-	@Override
-	public List<Member> selectListUploaded(MemberVo vo) throws Exception {
-		return dao.selectListUploaded(vo);
-	}
-	*/
-	
 	//Email 확인
 	@Override
 	public int selectOneIdCheck(Member dto) throws Exception {

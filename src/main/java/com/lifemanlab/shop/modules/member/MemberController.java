@@ -78,11 +78,12 @@ public class MemberController extends BaseController {
 	
 	//회원정보수정
 	@RequestMapping(value = "memberMod")
-	public String memberMod(MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
+	public String memberMod(@ModelAttribute("vo") MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
 		service.memberMod(dto);
 		service.memberModPhone(dto);
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
+		//model.addAttribute("listUploaded", service.selectListUploaded(vo));
 		return "redirect:/member/memberViewC";
 	}
 	
@@ -289,7 +290,7 @@ public class MemberController extends BaseController {
 	public String memberModFormC(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
 		Member item = service.selectOneView(vo);
 		model.addAttribute("item", item);
-		//model.addAttribute("listUploaded", service.selectListUploaded(vo));
+		model.addAttribute("listUploaded", service.selectListUploaded(vo));
 		return "infra/member/user/memberModFormC";
 	}
 	

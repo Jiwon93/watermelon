@@ -6,33 +6,33 @@
 		<div class="col-sm-3 p-lg-5">
 			<div class="text-center pb-4">
 			<c:set var="type" value="1"/>	
-        	<c:set var="name" value="mmUploadedImageProfile"/>
+        	<c:set var="name" value="mmUploadedProfileImage"/>
 			<c:choose>
 				<c:when test="${mmSeq eq 0 }">
-					<img id="uploadImgProfilePreview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
+					<img id="<c:out value="${name }"/>Preview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
 				</c:when>
 				<c:otherwise>
 					<c:choose>
 						<c:when test="${fn:length(listUploaded) eq 0 }">
-							<img id="uploadImgProfilePreview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
+							<img id="<c:out value="${name }"/>Preview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
 						</c:when>
 						<c:otherwise>
-							<c:set var="uploadImgProfileGetNy" value="1"/>
+							<c:set var="uploadImgProfileGetNy" value="0"/>
 							<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
 								<c:if test="${listUploaded.type eq '1' }">
-									<img id="uploadImgProfile" src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" class="rounded-circle mx-auto d-block" width="100" height="100">
+									<img id="mmUploadedProfileImage" src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" class="rounded-circle mx-auto d-block" width="100" height="100">
 									<c:set var="uploadImgProfileGetNy" value="1"/>		
 								</c:if>
 							</c:forEach>
 							<c:if test="${uploadImgProfileGetNy eq 0 }">
-								<img id="uploadImgProfilePreview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
+								<img id="<c:out value="${name }"/>Preview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
 							</c:if>
 						</c:otherwise>
 					</c:choose>
 				</c:otherwise>
 			</c:choose>
-				<label for="mmUploadedImageProfile" class="form-label input-file-button"><b>+</b></label>
- 				<input class="form-control form-control-sm" id="mmUploadedImageProfile" name="mmUploadedImageProfile" type="file" multiple="multiple" style="display: none;" onChange="upload('uploadImgProfile', 1, 1, 1, 0, 0, 3);">
+				<label for="mmUploadedProfileImage" class="form-label input-file-button"><b>+</b></label>
+ 				<input class="form-control form-control-sm" id="mmUploadedProfileImage" name="mmUploadedProfileImage" type="file" multiple="multiple" style="display: none;" onChange="upload('mmUploadedProfileImage', 1, 1, 1, 0, 0, 3);">
 			</div>
 			<div class="text-center pb-4">
 				<button class="btn btn-secondary" style="height: 30px; width: 60px; font-size: small;">일반</button>
@@ -59,20 +59,34 @@
 		<c:otherwise>
 		<div class="col-sm-3 p-lg-5">
 			<div class="text-center pb-4">
+			<c:set var="type" value="1"/>	
+        	<c:set var="name" value="mmUploadedProfileImage"/>
 			<c:choose>
-				<c:when test="${fn:length(listUploaded) eq 0 }">
-					<img id="imgProfile" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
+				<c:when test="${mmSeq eq 0 }">
+					<img id="uploadImgProfilePreview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
 				</c:when>
 				<c:otherwise>
-					<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
-						<c:if test="${listUploaded.type eq '1' }">
-							<img id="imgProfile" src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" class="rounded-circle mx-auto d-block" width="100" height="100">
-						</c:if>
-					</c:forEach>
+					<c:choose>
+						<c:when test="${fn:length(listUploaded) eq 0 }">
+							<img id="uploadImgProfilePreview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
+						</c:when>
+						<c:otherwise>
+							<c:set var="uploadImgProfileGetNy" value="0"/>
+							<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
+								<c:if test="${listUploaded.type eq '1' }">
+									<img id="mmUploadedProfileImage" src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" class="rounded-circle mx-auto d-block" width="100" height="100">
+									<c:set var="uploadImgProfileGetNy" value="1"/>		
+								</c:if>
+							</c:forEach>
+							<c:if test="${uploadImgProfileGetNy eq 0 }">
+								<img id="uploadImgProfilePreview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
+							</c:if>
+						</c:otherwise>
+					</c:choose>
 				</c:otherwise>
 			</c:choose>
 				<label for="mmUploadedProfileImage" class="form-label input-file-button"><b>+</b></label>
- 				<input class="form-control form-control-sm" id="mmUploadedProfileImage" name="mmUploadedProfileImage" type="file" multiple="multiple" style="display: none;" onChange="upload('mmUploadedProfileImage', 0, 1, 1, 0, 0, 3);">
+ 				<input class="form-control form-control-sm" id="mmUploadedProfileImage" name="mmUploadedProfileImage" type="file" multiple="multiple" style="display: none;" onChange="upload('mmUploadedProfileImage', 1, 1, 1, 0, 0, 3);">
 			</div>
 			<div class="text-center pb-4">
 				<button class="btn btn-primary" style="height: 30px; width: 60px; font-size: small;">만렙</button>

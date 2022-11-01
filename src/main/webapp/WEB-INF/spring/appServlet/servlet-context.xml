@@ -34,6 +34,7 @@
 			<exclude-mapping path="/item/**" />
 			<exclude-mapping path="/member/**" />
 			<exclude-mapping path="/review/**" />
+			<exclude-mapping path="/rest/**" />
 			<exclude-mapping path="/" />
 			<beans:bean id="checkLoginSessionInterception" class="com.lifemanlab.shop.common.interceptor.CheckLoginSessionInterception"/>
 		</interceptor>

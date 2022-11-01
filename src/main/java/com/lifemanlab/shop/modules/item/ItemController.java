@@ -32,9 +32,8 @@ public class ItemController {
 	public String itemMenuView(@ModelAttribute("vo") ItemVo vo, Model model) throws Exception {
 		
 		Item item = service.selectOne(vo);
-		System.out.println("controller item: " + item);
 		model.addAttribute("item", item);
-		System.out.println("controller item2: " + item);
+		
 		return "infra/member/item/itemMenuView";
 	}
 	

@@ -211,11 +211,11 @@
 						<c:forEach items="${list}" var="list" varStatus="status">
 	           		<div class="col-3 mt-3 service-item">
 	               		<div class="overflow-hidden">
-	               	    	<a href="javascript:goView(<c:out value="${item.itemSeq }" />)"><img class="menuDD" src="/resources/images/main.jpg"></a>
+	               	    	<img class="menuDD" src="/resources/images/main.jpg">
 	           			</div>
 	           			<div class="pt-2">
 	           				<p class="mainName"><c:out value="${list.mmNickname }" /></p>
-	           				<p class="mainTitle"><c:out value="${list.itTitle }" /></p>
+	           				<a href="javascript:goView(<c:out value="${list.itemSeq }" />)"><p class="mainTitle"><c:out value="${list.itTitle }" /></p></a>
 	           				<div class="mainPay">
 	           					<i class="fa-solid fa-receipt">&nbsp;</i><c:out value="${list.itemPrice }"/>
            					</div>

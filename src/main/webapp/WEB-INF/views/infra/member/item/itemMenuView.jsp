@@ -125,7 +125,7 @@
 	       						5. 완료(유지보수 필요시 별도 계약 진행)<br>
 	       						→ 기획안이 정확하지 않을 시 일정이 추가될 수 있습니다.<br><br>
 	       						 -->
-	       						 <c:out value="${list.itServiceDetail}" />
+	       						 <c:out value="${item.itServiceDetail}" />
 	       						<hr>
 	       					</article>
 	       				</div>
@@ -230,7 +230,7 @@
 	       						총 작업량의 1/2 경과 전 : 이미 납부한 요금의 1/2해당액<br>
 	       						총 작업량의 1/2 경과 후 : 반환하지 않음<br><br>
 	       						 -->
-	       						 <c:out value="${list.itCancelRefund}" />
+	       						 <c:out value="${item.itCancelRefund}" />
 	       						<hr>
 	       					</article>
 	       				</div>

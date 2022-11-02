@@ -48,7 +48,7 @@ th, td {
 <link href="/resources/css/list.css" rel="stylesheet">
 </head>
 <body>
-	<form method="post" name="cdFormList" id="cdFormList">
+	<form method="post" name="form" id="form">
 		<input type="hidden" name="ccSeq" value="${dto.ccSeq }">
 		<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
 		<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
@@ -235,7 +235,7 @@ th, td {
 		var goUrlUele = "/code/codeUele";
 		var goUrlDele = "/code/codeDele";
 
-		var form = $("form[name=cdFormList]");
+		var form = $("form[name=form]");
 
 		$("#btnSearch").on("click", function() {
 			form.attr("action", goUrlList).submit();

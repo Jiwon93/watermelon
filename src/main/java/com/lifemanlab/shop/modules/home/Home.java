@@ -1,10 +1,13 @@
 package com.lifemanlab.shop.modules.home;
 
 public class Home {
-	
+	public Object response;
 	public Object header;
 	public String resultCode;
 	public String resultMsg;
+	public int pageNo;
+	public int totalCount;
+	public int numOfRows;
 	
 	public Object body;
 	public Object items;
@@ -95,6 +98,30 @@ public class Home {
 	}
 	public void setLat(String lat) {
 		this.lat = lat;
+	}
+	public int getPageNo() {
+		return pageNo;
+	}
+	public void setPageNo(int pageNo) {
+		this.pageNo = pageNo;
+	}
+	public Object getResponse() {
+		return response;
+	}
+	public void setResponse(Object response) {
+		this.response = response;
+	}
+	public int getTotalCount() {
+		return totalCount;
+	}
+	public void setTotalCount(int totalCount) {
+		this.totalCount = totalCount;
+	}
+	public int getNumOfRows() {
+		return numOfRows;
+	}
+	public void setNumOfRows(int numOfRows) {
+		this.numOfRows = numOfRows;
 	}
 
 }

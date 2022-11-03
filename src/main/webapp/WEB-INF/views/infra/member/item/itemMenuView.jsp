@@ -665,7 +665,7 @@
 					       							직접개발 보유하고 있습니다.
 					       							한번 인연을 맺으면 반드시 다른 기업의 홈페이지 추천을 소개받는 기업입니다.
 				       							</div>
-				       							<input class="btn" value="소개 더 보기" style="height: 35px;" onclick="if(this.parentNode.getElementsByTagName('div')[0].style.display != ''){this.parentNode.getElementsByTagName('div')[0].style.display = '';this.value = '접기';}else{this.parentNode.getElementsByTagName('div')[0].style.display = 'none'; this.value = '소개 더 보기';}" type="button">
+				       							<input class="btn" value="소개 더 보기" style="height: 35px;" onclick="plus();" type="button">
 			       							</div>	 
 			       						</div>
 			       					</td>
@@ -739,6 +739,16 @@
     	$("#btnPurchase6").on("click", function(){
 	   		$(location).attr("href", goUrlPurchase);
 		});
+    	
+    	function plus() {
+    		if(this.parentNode.getElementsByTagName('div')[0].style.display != ''){
+    			this.parentNode.getElementsByTagName('div')[0].style.display = '';
+    			this.value = '접기';
+ 			}else {
+   				this.parentNode.getElementsByTagName('div')[0].style.display = 'none'; 
+   				this.value = '소개 더 보기';
+			}
+    	}
     	
     </script>
 </body>

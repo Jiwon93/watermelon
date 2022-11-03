@@ -255,6 +255,7 @@
 		var goUrlUpdt = "/member/memberUpdt";
 		var goUrlUele = "/member/memberUele";
 		var goUrlDele = "/member/memberDele";
+		var excelUri = "/member/excelDownload";
 
 		var form = $("form[name=mmFormList]");
 
@@ -291,6 +292,10 @@
 	    	seq.val(keyValue);
 			form.attr("action", goUrlView).submit();
 		}
+		
+		$("#btnExcel").click(function() {
+			form.attr("action", excelUri).submit();
+		});
 	</script>
 </body>
 </html>

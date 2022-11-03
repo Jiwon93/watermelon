@@ -10,7 +10,9 @@
 	
 	<sql id ="selectCommon">
 		FROM member a
+		JOIN member_phone b on a.mmSeq = b.member_mmSeq
 		WHERE 1=1
+			AND b.mmpDiv = 98
 			<if test="shDelNy != null and !shDelNy.equals('')">AND mmDelNy = #{shDelNy}</if>
 			<choose>
 				<when test="shOption == 1">AND mmName LIKE CONCAT('%',#{shValue},'%')</when>
@@ -40,6 +42,7 @@
 				,a.mmBod
 				,a.mmAddress1
 				,a.mmInterest
+				,b.mmpPhoneNumber
 				<!-- ,(select count(aa.ccSeq) from code aa where 1=1 and aa.ccDelNy = 0 and aa.codeGroup_ccgSeq = b.ccgSeq) as ccCount -->
 				<!-- <include refid="Base.selectRegModWithAlies" /> -->
 			<include refid="selectCommon" />

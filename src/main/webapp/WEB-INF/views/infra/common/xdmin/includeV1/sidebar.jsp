@@ -10,8 +10,8 @@
                 </a>
                 <div class="collapse" id="collapsePurchase" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">판매상품목록</a>
-                        <a class="nav-link" href="#">구매상품목록</a>
+                        <a class="nav-link" type="button" id="btnSaleList">판매상품목록</a>
+                        <a class="nav-link" type="button" id="btnPurchaseList">구매상품목록</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseMember" aria-expanded="false" aria-controls="collapseMember">
@@ -20,8 +20,8 @@
                 </a>
                 <div class="collapse" id="collapseMember" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">판매자목록</a>
-                        <a class="nav-link" href="#">구매자목록</a>
+                        <a class="nav-link" type="button" id="btnSaleList">판매자목록</a>
+                        <a class="nav-link" type="button" id="btnMemberList">구매자목록</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseReview" aria-expanded="false" aria-controls="collapseReview">
@@ -30,15 +30,11 @@
                 </a>
                 <div class="collapse" id="collapseReview" aria-labelledby="headingFive" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">후기목록</a>
+                        <a class="nav-link" type="button" id="btnReviewList">후기목록</a>
                     </nav>
                 </div>
-                <a class="nav-link collapsed" href="#">
-                    코드그룹관리
-                </a>
-                <a class="nav-link collapsed" href="#">
-                    코드관리
-                </a>
+                <a class="nav-link collapsed" type="button" id="btnCodeGroupList">코드그룹관리</a>
+                <a class="nav-link collapsed" type="button" id="btnCodeList">코드관리</a>
             </div>
         </div>
         <div class="sb-sidenav-footer">
@@ -57,6 +53,35 @@
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
-	var goUrl = 
+	var goUrlSaleList = "";
+	var goUrlPurchaseList = "";
+	var goUrlCodeGroupList = "";
+	var goUrlCodeList = "";
+	var goUrlMemberList = "";
+	var goUrlReviewList = "";
+	
+	$("#btnSaleList").on("click", function(){
+		$(location).attr("href", goUrlSaleList);
+	});
+	
+	$("#btnPurchaseList").on("click", function(){
+		$(location).attr("href", goUrlPurchaseList);
+	});
+	
+	$("#btnCodeGroupList").on("click", function(){
+		$(location).attr("href", goUrlCodeGroupList);
+	});
+	
+	$("#btnCodeList").on("click", function(){
+		$(location).attr("href", goUrlCodeList);
+	});
+	
+	$("#btnMemberList").on("click", function(){
+		$(location).attr("href", goUrlMemberList);
+	});
+	
+	$("#btnReviewList").on("click", function(){
+		$(location).attr("href", goUrlReviewList);
+	});
 
 </script>

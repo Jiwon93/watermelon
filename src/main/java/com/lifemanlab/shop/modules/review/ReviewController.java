@@ -22,4 +22,16 @@ public class ReviewController {
 		
 		return "infra/review/xdmin/reviewList";
 	}
+	
+	@RequestMapping(value = "reviewForm")
+	public String reviewForm() throws Exception {
+		return "infra/review/xdmin/reviewForm";
+	}
+	
+	@RequestMapping(value = "reviewView")
+	public String reviewView(@ModelAttribute("vo") ReviewVo vo, Model model) throws Exception {
+		Review item = service.selectOne(vo);
+		model.addAttribute("item", item);
+		return "infra/review/xdmin/reviewView";
+	}
 }

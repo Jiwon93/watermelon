@@ -275,6 +275,16 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 		return dao.memberDrop(dto);
 	}
 
+	@Override
+	public Member snsLoginCheck(Member dto) throws Exception {
+		return dao.snsLoginCheck(dto);
+	}
+
+	@Override
+	public int kakaoInst(Member dto) throws Exception {
+		return dao.kakaoInst(dto);
+	}
+
 
 	
 

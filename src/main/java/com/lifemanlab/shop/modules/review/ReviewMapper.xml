@@ -44,4 +44,32 @@
    			AND revSeq = #{revSeq}
     </select>
     
+    <insert id="insert">
+    	INSERT INTO review (
+    	
+    	)
+    	VALUES (
+    	
+    	)
+    		<selectKey resultType="String" keyProperty="revSeq" order="AFTER">
+				SELECT last_insert_id()
+			</selectKey>
+    </insert>
+    
+    <update id="update">
+    	UPDATE review
+    	SET
+    	
+    	WHERE
+    		revSeq = #{revSeq}
+    </update>
+    
+    <update id="uelete">
+    	UPDATE review
+    	SET
+    		reDelNy = 1
+    	WHERE
+    		revSeq = #{revSeq}
+    </update>
+    
 </mapper>

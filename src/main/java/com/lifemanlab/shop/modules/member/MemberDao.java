@@ -64,6 +64,8 @@ public class MemberDao {
 	//로그인
 	public Member selectOneId(Member dto) { return sqlSession.selectOne(namespace + ".selectOneId", dto); }
 	public Member selectOneLogin(Member dto) { return sqlSession.selectOne(namespace + ".selectOneLogin", dto); }
+	public Member snsLoginCheck(Member dto) { return sqlSession.selectOne(namespace + ".snsLoginCheck", dto); }
+	public int kakaoInst(Member dto) { return sqlSession.insert(namespace + ".kakaoInst", dto); }
 	
 	//마이페이지View
 	public Member selectOneView(MemberVo vo) { return sqlSession.selectOne(namespace + ".selectOneView", vo); }

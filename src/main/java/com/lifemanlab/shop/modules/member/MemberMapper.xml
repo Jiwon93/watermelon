@@ -339,6 +339,32 @@
 			<if test="mmPw != null and !mmPw.equals('')">AND a.mmPw = #{mmPw}</if>
 	</select>
 	
+	<select id="snsLoginCheck" resultMap="resultMapObj">
+		SELECT
+			a.*
+		FROM member a
+		WHERE 1=1
+			AND a.mmEmail = #{mmEmail}
+	</select>
+	
+	<insert id="kakaoInst">
+		INSERT INTO member (
+			mmEmail
+			,mmName
+			,mmGender
+			,mmRank
+		)
+		VALUES (
+			#{mmEmail}
+			,#{mmName}
+			,#{mmGender}
+			,21		
+		)
+			<selectKey resultType="String" keyProperty="mmSeq" order="AFTER">
+				SELECT last_insert_id()
+			</selectKey>
+	</insert>
+	
 	<!-- 비밀번호 확인 -->
 	<select id="selectOnePwCheck" resultType="Integer">
 		SELECT 

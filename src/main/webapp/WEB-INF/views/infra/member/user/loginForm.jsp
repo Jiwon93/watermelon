@@ -42,10 +42,6 @@
     <!-- Fontawesome Stylesheet -->
     <script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
     
-    <!-- kakao login -->
-    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.0/kakao.min.js" integrity="sha384-PFHeU/4gvSH8kpvhrigAPfZGBDPs372JceJq3jAXce11bVA6rMvGWzvP4fMQuBGL" crossorigin="anonymous"></script>
- 	<script>Kakao.init('17e90af3c57fa367793d1f57799dd4c9');</script>
- 	
 	<style type="text/css">
 		.easyLogin {
 			width: 70px;
@@ -60,6 +56,13 @@
 <body>
 <form method="post" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
     <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
+    <input type="hidden" name="mmName"/>
+	<input type="hidden" name="mmEmail"/>
+	<input type="hidden" name="mmpPhoneNumber"/>
+	<input type="hidden" name="mmGender"/>
+	<input type="hidden" name="mmBod"/>
+	<input type="hidden" name="snsImg"/>
+	<input type="hidden" name="token"/>
     <!-- Navbar Start -->
     <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
     <!-- Navbar End -->
@@ -109,23 +112,23 @@
                    <div class="row g-3 justify-content-center">
                  	   <div class="easyLoginBox col-2">
                  	   	   <a href="#">
-                 	   	   	   <img src="/resources/images/naver.png" alt="" class="easyLogin">
+                 	   	   	   <img src="/resources/images/naver.png" class="easyLogin">
                  	   	   </a>			
                  	   </div>
                  	   <div class="easyLoginBox col-2">
-	               	       <a id="kakao-login-btn" href="https://kauth.kakao.com/oauth/authorize?client_id=17e90af3c57fa367793d1f57799dd4c9&redirect_uri=http://localhost:8080/member/kakaoLogin&response_type=code">
-							   <img src="/resources/images/kakao.png" alt="" class="easyLogin">
+	               	       <a id="kakaoBtn">
+							   <img src="/resources/images/kakao.png" class="easyLogin">
 						   </a>
                  	   </div>
                  	   <p id="token-result" style="display: none;"></p>
 	                   <div class="easyLoginBox col-2">
 	                 	   <a href="#">
-	                 	   	   <img src="/resources/images/facebook.png" alt="" class="easyLogin">
+	                 	   	   <img src="/resources/images/facebook.png" class="easyLogin">
 	                 	   </a>			
 	                   </div>
 	                   <div class="easyLoginBox col-2">
 	                 	   <a href="#">
-	                 	   	   <img src="/resources/images/google.png" alt="" class="easyLogin">
+	                 	   	   <img src="/resources/images/google.png" class="easyLogin">
 	                 	   </a>			
 	                   </div>
                    </div>
@@ -176,6 +179,9 @@
     <!-- Template Javascript -->
     <script src="/resources/template/woody/js/main.js"></script>
     
+    <!-- kakao login -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    
     <!-- JavaScript & jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
@@ -193,40 +199,86 @@
     	});
     	
     	
-	    function loginWithKakao() {
-	    /* 	
-	      Kakao.Auth.authorize({
-	        redirectUri: 'https://developers.kakao.com/tool/demo/oauth',
-	      });
-	       */
-	       
-	    }
-	
-	    // 아래는 데모를 위한 UI 코드입니다.
-	    displayToken()
-	    function displayToken() {
-	      var token = getCookie('authorize-access-token');
-	
-	      if(token) {
-	        Kakao.Auth.setAccessToken(token);
-	        Kakao.Auth.getStatusInfo()
-	          .then(function(res) {
-	            if (res.status === 'connected') {
-	              document.getElementById('token-result').innerText
-	                = 'login success, token: ' + Kakao.Auth.getAccessToken();
-	            }
-	          })
-	          .catch(function(err) {
-	            Kakao.Auth.setAccessToken(null);
-	          });
-	      }
-	    }
-	
-	    function getCookie(name) {
-	      var parts = document.cookie.split(name + '=');
-	      if (parts.length === 2) { return parts[1].split(';')[0]; }
-	    }
+    	Kakao.init('17e90af3c57fa367793d1f57799dd4c9'); // test 용
+    	console.log(Kakao.isInitialized());
+/*     	Kakao.init('ec2655da82c3779d622f0aff959060e6');
+    	console.log(Kakao.isInitialized()); */
+    	
+    	$("#kakaoBtn").on("click", function() {
+    		/* Kakao.Auth.authorize({
+   		      redirectUri: 'http://localhost:8080/member/kakaoCallback',
+   		    }); */
+    		
+    		Kakao.Auth.login({
+   		      success: function (response) {
+   		        Kakao.API.request({
+   		          url: '/v2/user/me',
+   		          success: function (response) {
+   		        	  
+   		        	  var accessToken = Kakao.Auth.getAccessToken();
+   		        	  Kakao.Auth.setAccessToken(accessToken);
+
+   		        	  var account = response.kakao_account;
+   		        	  
+   		        	  console.log(response)
+   		        	  console.log("email : " + account.email);
+   		        	  console.log("name : " + account.name);
+   		        	  //console.log("nickname : " + account.profile.nickname);
+   		        	  //console.log("picture : " + account.profile.thumbnail_image_url);
+   		        	  console.log("picture : " + account.gender);
+   		        	  //console.log("picture : " + account.birthday);
+   		        	  //console.log("picture : " + account.birthday.substring(0,2) + "-" + account.birthday.substring(2,account.birthday.length));
+  	        	  
+	  	        	  //$("input[name=snsId]").val("카카오로그인");
+	  	        	  $("input[name=mmName]").val(account.profile.nickname);
+	  	        	  //$("input[name=mmpPhoneNumber]").val(account.profile.phone_number);
+	  	        	  $("input[name=mmEmail]").val(account.email);
+	  	        	 // $("input[name=mmBod]").val(account.birthday.substring(0,2) + "-" + account.birthday.substring(2,account.birthday.length));
+	  	        	  //$("input[name=snsImg]").val(account.profile.thumbnail_image_url);
+	  	        	  $("input[name=token]").val(accessToken);
+	  	        	  
+	  	        	  if (account.gender === "male") {
+	  	        		  $("input[name=mmGender]").val(5);
+	          		  } else {
+	          			  $("input[name=mmGender]").val(6);
+         			  } 
+	  	        	  
+	  	        	 /*  $("form[name=form]").attr("action", "/member/kakaoLoginProc").submit(); */
+					
+	  	        	  $.ajax({
+						async: true
+						,cache: false
+						,type:"POST"
+						,url: "/member/kakaoLoginProc"
+						,data: {"mmName": $("input[name=mmName]").val(), 
+								"mmEmail": $("input[name=mmEmail]").val(), 
+								"mmGender": $("input[name=mmGender]").val(), 
+								"token": $("input[name=token]").val()}
+						,success : function(response) {
+							if (response.rt == "fail") {
+								alert("아이디와 비밀번호를 다시 확인 후 시도해 주세요.");
+								return false;
+							} else {
+								window.location.href = "/member/memberHome";
+							}
+						},
+						error : function(jqXHR, status, error) {
+							alert("알 수 없는 에러 [ " + error + " ]");
+						}
+					});
+   		          },
+   		          fail: function (error) {
+   		            console.log(error)
+   		          },
+   		        })
+   		      },
+   		      fail: function (error) {
+   		        console.log(error)
+   		      },
+   		    })
+		});
 	    
+    	
 	    var goUrlLogin = "/member/memberHome";
 	 // 암호화
 		$("#btnLogin").on("click", function(){

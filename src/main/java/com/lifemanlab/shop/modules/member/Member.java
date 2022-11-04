@@ -42,6 +42,7 @@ public class Member extends Base{
 	private String member_mmSeq;
 	private Integer mmpDefaultNy;
 	private String sessSeq;
+	private String token;
 	
 	//상품
 	private String itTitle;
@@ -350,6 +351,12 @@ public class Member extends Base{
 	}
 	public void setMmUploadedFileMaxNumber(Integer mmUploadedFileMaxNumber) {
 		this.mmUploadedFileMaxNumber = mmUploadedFileMaxNumber;
+	}
+	public String getToken() {
+		return token;
+	}
+	public void setToken(String token) {
+		this.token = token;
 	}
 	
 	

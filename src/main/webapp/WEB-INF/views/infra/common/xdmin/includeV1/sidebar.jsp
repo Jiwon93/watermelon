@@ -20,8 +20,7 @@
                 </a>
                 <div class="collapse" id="collapseMember" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" type="button" id="btnSaleList">판매자목록</a>
-                        <a class="nav-link" type="button" id="btnMemberList">구매자목록</a>
+                        <a class="nav-link" type="button" id="btnMemberList">회원목록</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseReview" aria-expanded="false" aria-controls="collapseReview">

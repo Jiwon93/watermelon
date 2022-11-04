@@ -228,6 +228,7 @@ th, td {
 		<!-- Footer End -->
 	</form>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="/resources/js/xdmin/sidebar.js"></script>
 	<script>
 		var goUrlList = "/code/codeList";
 		var goUrlForm = "/code/codeForm";

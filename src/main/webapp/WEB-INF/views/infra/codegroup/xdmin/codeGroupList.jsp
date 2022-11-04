@@ -213,25 +213,28 @@
 			</div>
 		</div>
 		<!-- Footer Start -->
-	    <div class="container-fluid bg-dark text-light footer mt-5 pt-5">
-	    	<div class="container">
-	            <div class="copyright">
-	                <div class="row">
-	                    <div class="col text-center">
-	                        Copyright &copy; 2022&nbsp;<a class="border-bottom" href="#">ISML</a>&nbsp;lnc, All Right Reserved.
-	                    </div>
-	                </div>
-	                <div class="row">
-	                    <div class="col text-center">
-	                        Designed By <a class="border-bottom" href="#">HTML Codex</a>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
+		<footer>
+		    <div class="container-fluid bg-dark text-light footer py-5 mt-5">
+		    	<div class="container">
+		            <div class="copyright">
+		                <div class="row">
+		                    <div class="col text-center">
+		                        Copyright &copy; 2022&nbsp;<a class="border-bottom" href="#">ISML</a>&nbsp;lnc, All Right Reserved.
+		                    </div>
+		                </div>
+		                <div class="row">
+		                    <div class="col text-center">
+		                        Designed By <a class="border-bottom" href="#">HTML Codex</a>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+	    </footer>
 	    <!-- Footer End -->
 	</form>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="/resources/js/xdmin/sidebar.js"></script>
 	<script>
 		var goUrlList = "/codeGroup/codeGroupList";
 		var goUrlForm = "/codeGroup/codeGroupForm";

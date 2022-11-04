@@ -71,7 +71,7 @@
 		<%@include file="../../common/xdmin/includeV1/header.jsp"%>		<!-- #-> -->
 		<!-- *header.jsp e -->
 		
-		<div class="container-fluid">
+		<div class="container-fluid mt-5 ps-0">
 			<div class="row mt-4">
 				
 				<!-- *sidebar.jsp s -->

@@ -54,7 +54,7 @@
 				
 				<div class="col-10">
 					<div class="row">
-						<h4>코드 관리</h4>
+						<h4>코드 등록</h4>
 						<div class="container-fluid">
 							<div class="row m-4">
 								<div class="col-6">

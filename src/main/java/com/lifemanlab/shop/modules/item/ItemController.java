@@ -17,6 +17,16 @@ public class ItemController {
 	ItemServiceImpl service;
 	
 	//판매목록 리스트(관리자)
+	@RequestMapping(value = "itemList")
+	public String itemList(@ModelAttribute("vo") ItemVo vo, Model model) throws Exception {
+		
+		vo.setParamsPaging(service.selectOneCount(vo));
+		
+		List<Item> list = service.selectList(vo);
+		model.addAttribute("list", list);
+		return "infra/item/xdmin/itemList";
+	}
+	
 	
 	//구매목록 리스트(관리자)
 

@@ -49,7 +49,7 @@ th, td {
 </head>
 <body>
 	<form method="post" name="form" id="form">
-		<input type="hidden" name="revSeq" value="${dto.revSeq }">
+		<input type="hidden" name="itemSeq" value="${dto.itemSeq }">
 		<%-- 
 		<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
 		<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
@@ -66,7 +66,7 @@ th, td {
 				<!-- *sidebar.jsp e -->
 				<div class="col-10">
 					<div class="row">
-						<h4>후기 관리</h4>
+						<h4>판매상품 관리</h4>
 						<div class="col border me-4">
 							<div class="row mt-2 mb-2">
 								<div class="col-2 p-1">
@@ -149,7 +149,7 @@ th, td {
 								<c:choose>
 									<c:when test="${fn:length(list) eq 0 }">
 										<tr>
-											<td class="text-center" colspan="9">There is no data!</td>
+											<td class="text-center" colspan="6">There is no data!</td>
 										</tr>
 									</c:when>
 									<c:otherwise>
@@ -157,13 +157,10 @@ th, td {
 											<tr style="cursor: pointer;">
 												<td class="tableHead1"><input class="listCheck" type="checkbox"></td>
 												<td class="tableHead1"><c:out value="${status.count }" /></td>
-												<td><c:out value="${list.item_itemSeq }" /></td>
-												<td><a href="javascript:goView(<c:out value="${list.revSeq }" />)" class="text-decoration-none"><c:out value="${list.reNickname }" /></a></td>
-												<td><c:out value="${list.reGrade }" /></td>
-												<td><c:out value="${list.reContent }" /></td>
-												<td><c:out value="${list.reWorkload }" /></td>
-												<td><c:out value="${list.reOrderPrice }" /></td>
-												<td><c:out value="${list.reWriteTime }" /></td>
+												<td><c:out value="${list.itemSeq }" /></td>
+												<td><a href="javascript:goView(<c:out value="${list.mmNickname }" />)" class="text-decoration-none"><c:out value="${list.reNickname }" /></a></td>
+												<td><c:out value="${list.itTilte }" /></td>
+												<td><c:out value="${list.itemPirce }" /></td>
 											</tr>
 										</c:forEach>
 									</c:otherwise>
@@ -222,7 +219,7 @@ th, td {
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script src="/resources/js/xdmin/sidebar.js"></script>
 	<script>
-		var goUrlList = "/review/reviewList";
+		var goUrlList = "/item/itemList";
 		/* 
 		var goUrlForm = "/review/reviewForm";
 		var goUrlView = "/review/reviewView";

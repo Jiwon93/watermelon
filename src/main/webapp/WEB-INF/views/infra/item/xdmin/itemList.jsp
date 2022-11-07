@@ -139,12 +139,9 @@ th, td {
 									<th class="tableHead1"><input class="listCheck" type="checkbox"></th>
 									<th class="tableHead1">#</th>
 									<th>상품번호</th>
-									<th>작성자 닉네임</th>
-									<th>평점</th>
-									<th>후기내용</th>
-									<th>작업기간</th>
-									<th>주문가격</th>
-									<th>작성일시</th>
+									<th>판매자</th>
+									<th>판매제목</th>
+									<th>판매가격</th>
 								</tr>
 								<c:choose>
 									<c:when test="${fn:length(list) eq 0 }">
@@ -158,9 +155,9 @@ th, td {
 												<td class="tableHead1"><input class="listCheck" type="checkbox"></td>
 												<td class="tableHead1"><c:out value="${status.count }" /></td>
 												<td><c:out value="${list.itemSeq }" /></td>
-												<td><a href="javascript:goView(<c:out value="${list.mmNickname }" />)" class="text-decoration-none"><c:out value="${list.reNickname }" /></a></td>
-												<td><c:out value="${list.itTilte }" /></td>
-												<td><c:out value="${list.itemPirce }" /></td>
+												<td><a href="javascript:goView(<c:out value="${list.itemSeq }" />)" class="text-decoration-none"><c:out value="${list.mmNickname }" /></a></td>
+												<td><c:out value="${list.itTitle }" /></td>
+												<td><c:out value="${list.itemPrice }" /></td>
 											</tr>
 										</c:forEach>
 									</c:otherwise>

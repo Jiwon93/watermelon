@@ -52,35 +52,5 @@
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
-	var goUrlSaleList = "";
-	var goUrlPurchaseList = "";
-	var goUrlCodeGroupList = "";
-	var goUrlCodeList = "";
-	var goUrlMemberList = "";
-	var goUrlReviewList = "";
-	
-	$("#btnSaleList").on("click", function(){
-		$(location).attr("href", goUrlSaleList);
-	});
-	
-	$("#btnPurchaseList").on("click", function(){
-		$(location).attr("href", goUrlPurchaseList);
-	});
-	
-	$("#btnCodeGroupList").on("click", function(){
-		$(location).attr("href", goUrlCodeGroupList);
-	});
-	
-	$("#btnCodeList").on("click", function(){
-		$(location).attr("href", goUrlCodeList);
-	});
-	
-	$("#btnMemberList").on("click", function(){
-		$(location).attr("href", goUrlMemberList);
-	});
-	
-	$("#btnReviewList").on("click", function(){
-		$(location).attr("href", goUrlReviewList);
-	});
 
 </script>

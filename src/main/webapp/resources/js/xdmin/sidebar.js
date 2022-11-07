@@ -1,4 +1,4 @@
-var goUrlSaleList = "/item/saleList";
+var goUrlSaleList = "/item/itemList";
 var goUrlPurchaseList = "/item/purchaseList";
 var goUrlMemberList = "/member/memberList";
 var goUrlReviewList = "/review/reviewList";

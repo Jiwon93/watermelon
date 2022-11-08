@@ -8,10 +8,12 @@
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- 
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 	        <input class="form-control me-2" type="search" style="width: 400px;" placeholder="Search" aria-label="Search">
 	        <button class="btn btn-outline-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
+         -->
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto">
             <c:choose>

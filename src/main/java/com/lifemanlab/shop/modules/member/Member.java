@@ -52,6 +52,7 @@ public class Member extends Base{
 	
 	
 	private MultipartFile[] mmUploadedProfileImage;
+	private Integer uploadImgProfileType;	
 	private Integer mmUploadedProfileMaxNumber;
 	private String[] mmUploadedProfileDeleteSeq;
 	private String[] mmUploadedProfileDeletePathFile;
@@ -357,6 +358,12 @@ public class Member extends Base{
 	}
 	public void setToken(String token) {
 		this.token = token;
+	}
+	public Integer getUploadImgProfileType() {
+		return uploadImgProfileType;
+	}
+	public void setUploadImgProfileType(Integer uploadImgProfileType) {
+		this.uploadImgProfileType = uploadImgProfileType;
 	}
 	
 	

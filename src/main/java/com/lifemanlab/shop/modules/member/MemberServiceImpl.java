@@ -211,10 +211,13 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	@Override
 	public int memberMod(Member dto) throws Exception {
 		setRegMod(dto);
-		
 		dao.memberMod(dto);
-		deleteFiles(dto.getMmUploadedImageDeleteSeq(), dto.getMmUploadedImageDeletePathFile(), dto, "mmUploaded");
-		uploadFiles(dto.getMmUploadedProfileImage(), dto, "mmUploaded", 1, dto.getMmUploadedProfileMaxNumber());
+		if(!dto.getMmUploadedProfileImage()[0].isEmpty()) {
+			deleteFiles(dto.getMmUploadedImageDeleteSeq(), dto.getMmUploadedImageDeletePathFile(), dto, "mmUploaded");
+			uploadFiles(dto.getMmUploadedProfileImage(), dto, "mmUploaded", dto.getUploadImgProfileType(), dto.getMmUploadedProfileMaxNumber());
+		} else {
+			//by pass: empty
+		}
 		
 		return 1;
 	}
@@ -228,7 +231,7 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	//로그인
 	@Override
 	public Member selectOneId(Member dto) throws Exception {
-		/* dto.setMmPw(UtilSecurity.encryptSha256(dto.getMmPw())); */
+		dto.setMmPw(UtilSecurity.encryptSha256(dto.getMmPw()));
 		return dao.selectOneId(dto);
 	}
 

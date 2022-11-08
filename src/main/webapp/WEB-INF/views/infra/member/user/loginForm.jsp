@@ -48,6 +48,7 @@
 			height: 70px;
 			border-radius: 70%;
 			overflow: hidden;
+			cursor: pointer;
 		}
 	</style>
 

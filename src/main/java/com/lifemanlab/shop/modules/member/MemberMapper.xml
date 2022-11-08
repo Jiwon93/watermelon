@@ -12,7 +12,7 @@
 		FROM member a
 		JOIN member_phone b on a.mmSeq = b.member_mmSeq
 		WHERE 1=1
-			AND b.mmpDiv = 98
+			AND b.mmpDiv = 74
 			<if test="shDelNy != null and !shDelNy.equals('')">AND mmDelNy = #{shDelNy}</if>
 			<choose>
 				<when test="shOption == 1">AND mmName LIKE CONCAT('%',#{shValue},'%')</when>
@@ -155,7 +155,7 @@
 			,path
 			,originalName
 			,uuidName
-		FROM mmUploaded
+		FROM espresso.mmUploaded
 		WHERE 1=1
 			AND delNy = 0
 			AND pSeq = #{mmSeq}
@@ -401,7 +401,7 @@
 			JOIN member_phone b on a.mmSeq = b.member_mmSeq
 			WHERE 1=1
 				AND mmSeq = #{sessSeq}
-				AND mmpDiv = 98
+				AND mmpDiv = 74
 	</select>
 	
 	<!-- 구매목록 -->

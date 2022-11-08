@@ -86,6 +86,16 @@ public class MemberController extends BaseController {
 		return "infra/member/user/memberViewC";
 	}
 	
+
+	//마이페이지Mod
+	@RequestMapping(value = "memberModFormC")
+	public String memberModFormC(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+		Member item = service.selectOneView(vo);
+		model.addAttribute("item", item);
+		model.addAttribute("listUploaded", service.selectListUploaded(vo));
+		return "infra/member/user/memberModFormC";
+	}
+	
 	//회원정보수정
 	@RequestMapping(value = "memberMod")
 	public String memberMod(@ModelAttribute("vo") MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
@@ -94,7 +104,12 @@ public class MemberController extends BaseController {
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
 		//model.addAttribute("listUploaded", service.selectListUploaded(vo));
-		return "redirect:/member/memberViewC";
+		
+		if (Constants.UPDATE_AFTER_TYPE == 1) {
+			return "redirect:/member/memberModFormC";
+		} else {
+			return "redirect:/member/memberViewC";
+		}
 	}
 	
 	
@@ -328,15 +343,6 @@ public class MemberController extends BaseController {
 	@RequestMapping(value = "memberDropFormC")
 	public String memberDropFormC() throws Exception {
 		return "infra/member/user/memberDropFormC";
-	}
-	
-	//마이페이지Mod
-	@RequestMapping(value = "memberModFormC")
-	public String memberModFormC(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
-		Member item = service.selectOneView(vo);
-		model.addAttribute("item", item);
-		model.addAttribute("listUploaded", service.selectListUploaded(vo));
-		return "infra/member/user/memberModFormC";
 	}
 	
 	@RequestMapping(value = "memberRegFormC")

@@ -268,6 +268,7 @@
     	var goUrlView = "/item/itemMenuView";
     	
     	var form = $("form[name=form]");
+    	
     	var seq = $("input:hidden[name=itemSeq]");
     	
     	$("#btnItemMenu").on("click", function(){

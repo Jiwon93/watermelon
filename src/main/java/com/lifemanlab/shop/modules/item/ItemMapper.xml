@@ -123,4 +123,20 @@
 			</selectKey>
 	</insert>
 	
+	<select id="selectListUploaded" resultMap="resultMapObj">
+		SELECT 
+			seq
+			,type
+			,defaultNy
+			,sort
+			,path
+			,originalName
+			,uuidName
+		FROM espresso.itUploaded
+		WHERE 1=1
+			AND delNy = 0
+			AND pseq = #{itemSeq}
+		ORDER BY
+			type, sort
+	</select>
 </mapper>

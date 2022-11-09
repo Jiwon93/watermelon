@@ -42,4 +42,11 @@ public class ItemDao {
 	public int productOptionReg(Item dto) {
 		return sqlSession.insert(namespace + ".productOptionReg", dto);
 	}
+	
+//	uploaded
+	public int insertUploaded(Item dto) { return sqlSession.insert("Base" + ".insertUploaded", dto); }
+	public int ueleteUploaded(Item dto) { return sqlSession.insert("Base" + ".ueleteUploaded", dto); }
+	public int deleteUploaded(Item dto) { return sqlSession.insert("Base" + ".deleteUploaded", dto); }
+	
+	public List<Item> selectListUploaded(ItemVo vo){ return sqlSession.selectList(namespace + ".selectListUploaded", vo); }
 }

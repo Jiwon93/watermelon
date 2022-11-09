@@ -1,5 +1,7 @@
 package com.lifemanlab.shop.modules.item;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.lifemanlab.shop.common.base.Base;
 
 public class Item extends Base {
@@ -41,6 +43,19 @@ public class Item extends Base {
 	private String workPeriod;
 	private String numberOfMod;
 	private String itemPrice;
+	
+	// 이미지 업로드
+	private MultipartFile[] uploadImg;
+	private Integer uploadImgType;	
+	private Integer uploadImgMaxNumber;
+	private String[] uploadImgDeleteSeq;
+	private String[] uploadImgDeletePathFile;	
+	
+	private MultipartFile[] uploadFile;
+	private Integer uploadFileType;
+	private Integer uploadFileMaxNumber;
+	private String[] uploadFileDeleteSeq;
+	private String[] uploadFileDeletePathFile;
 //////////////////////////////////////////////
 	public String getItemSeq() {
 		return itemSeq;
@@ -253,6 +268,66 @@ public class Item extends Base {
 	public void setMmSeq(String mmSeq) {
 		this.mmSeq = mmSeq;
 	}
-
+	public MultipartFile[] getUploadImg() {
+		return uploadImg;
+	}
+	public void setUploadImg(MultipartFile[] uploadImg) {
+		this.uploadImg = uploadImg;
+	}
+	public Integer getUploadImgType() {
+		return uploadImgType;
+	}
+	public void setUploadImgType(Integer uploadImgType) {
+		this.uploadImgType = uploadImgType;
+	}
+	public Integer getUploadImgMaxNumber() {
+		return uploadImgMaxNumber;
+	}
+	public void setUploadImgMaxNumber(Integer uploadImgMaxNumber) {
+		this.uploadImgMaxNumber = uploadImgMaxNumber;
+	}
+	public String[] getUploadImgDeleteSeq() {
+		return uploadImgDeleteSeq;
+	}
+	public void setUploadImgDeleteSeq(String[] uploadImgDeleteSeq) {
+		this.uploadImgDeleteSeq = uploadImgDeleteSeq;
+	}
+	public String[] getUploadImgDeletePathFile() {
+		return uploadImgDeletePathFile;
+	}
+	public void setUploadImgDeletePathFile(String[] uploadImgDeletePathFile) {
+		this.uploadImgDeletePathFile = uploadImgDeletePathFile;
+	}
+	public MultipartFile[] getUploadFile() {
+		return uploadFile;
+	}
+	public void setUploadFile(MultipartFile[] uploadFile) {
+		this.uploadFile = uploadFile;
+	}
+	public Integer getUploadFileType() {
+		return uploadFileType;
+	}
+	public void setUploadFileType(Integer uploadFileType) {
+		this.uploadFileType = uploadFileType;
+	}
+	public Integer getUploadFileMaxNumber() {
+		return uploadFileMaxNumber;
+	}
+	public void setUploadFileMaxNumber(Integer uploadFileMaxNumber) {
+		this.uploadFileMaxNumber = uploadFileMaxNumber;
+	}
+	public String[] getUploadFileDeleteSeq() {
+		return uploadFileDeleteSeq;
+	}
+	public void setUploadFileDeleteSeq(String[] uploadFileDeleteSeq) {
+		this.uploadFileDeleteSeq = uploadFileDeleteSeq;
+	}
+	public String[] getUploadFileDeletePathFile() {
+		return uploadFileDeletePathFile;
+	}
+	public void setUploadFileDeletePathFile(String[] uploadFileDeletePathFile) {
+		this.uploadFileDeletePathFile = uploadFileDeletePathFile;
+	}
+	
 	
 }

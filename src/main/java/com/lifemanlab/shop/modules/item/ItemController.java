@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping(value = "/item/")
@@ -58,10 +59,13 @@ public class ItemController {
 	
 	//상품등록
 	@RequestMapping(value = "saleRegInst")
-	public String productReg(Item dto) throws Exception {
+	public String productReg(ItemVo vo, Item dto, RedirectAttributes redirectAttributes) throws Exception {
 		
 		service.productReg(dto);
-		service.productOptionReg(dto);
+		vo.setItemSeq(dto.getItemSeq());
+		
+		redirectAttributes.addFlashAttribute("vo", vo);
+		
 		return "redirect:/member/saleManage";
 	}
 	

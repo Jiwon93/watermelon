@@ -60,7 +60,7 @@
     <!-- Navbar End -->
 
     <!-- Carousel Start -->
-    <div class="container-fluid p-0 pb-5 mt-5">
+    <div class="container-fluid p-0 pb-5 mt-4">
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative">
                 <img class="img-fluid" src="/resources/images/slide1.jpg" alt="">
@@ -76,7 +76,7 @@
     <!-- Carousel End -->
     
     <!--  Menu Start -->
-	<div class="container py-5">
+	<div class="container py-4">
 		<div class="row ms-5 me-5">
 			<div class="col overflow-hidden text-center">
 				<a class="computer" id="btnItemMenu" type="button"><i class="fa-solid fa-computer fa-4x"></i></a>

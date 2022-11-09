@@ -48,6 +48,7 @@
 <form method="post" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
     <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
     <input type="hidden" id="ccSeq" name="ccSeq" value="${ccSeq }">
+    
     <!-- Navbar Start -->
     <nav class="container sticky-top p-0">
     	<div class="row">
@@ -66,7 +67,6 @@
     <!-- Navbar End -->
     
     <!-- Contact Start -->
-    
 	<div class="container">
 		<div class="saleRegF">
 			<div class="row m-2 mt-4">

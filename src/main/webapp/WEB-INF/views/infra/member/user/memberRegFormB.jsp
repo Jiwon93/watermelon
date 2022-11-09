@@ -4,6 +4,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
+<jsp:useBean id="CodeServiceImpl" class="com.lifemanlab.shop.modules.code.CodeServiceImpl"/>
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -219,7 +221,7 @@
 					   <div class="col-8 offset-2">
                        	  <label class="form-label" for="mmWorkTime">희망근로시간</label>
                        	  <div class="input-group">
-                       	  	   <select class="form-select" id="mmCareer" name="mmCareer">
+                       	  	   <select class="form-select" id="mmWorkTime" name="mmWorkTime">
 								   <option>희망근로시간선택</option>
 								   <c:forEach begin="68" end="72" items="${ccNameList }" var="ccNameList" varStatus="status">
 								   <option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
@@ -230,7 +232,8 @@
 					   <div class="col-8 offset-2">
                        	  <label class="form-label" for="mmIntroduce">자기소개</label>
                        	  <div class="input-group">
-                       	  	   <textarea class="form-control" id="mmIntroduce" name="mmIntroduce" value="<c:out value="${dto.mmIntroduce }" />" style="height: 150px;">
+                       	  	   <textarea class="form-control" id="mmIntroduce" name="mmIntroduce" style="height: 150px;">
+							   	  <c:out value="${dto.mmIntroduce }" />
 							   </textarea>
 						   </div>
 					   </div>

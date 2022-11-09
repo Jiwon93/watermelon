@@ -201,6 +201,8 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	@Override
 	public int memberRegB(Member dto) throws Exception {
 		
+		setRegMod(dto);
+		
 		dto.setMmPw(UtilSecurity.encryptSha256(dto.getMmPw()));
 		dto.setMmName(dto.getMmName());
 		

@@ -43,6 +43,22 @@
     
     <!-- Fontawesome Stylesheet -->
     <script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
+    <style type="text/css">
+    	input[type=text]{
+    		border-radius: 5px;
+    	}
+    	.form-select{
+    		border-radius: 5px;
+    	}
+    	.form-control{
+    		border-radius: 5px;
+    	}
+    	
+    	#itemPriceDetail{
+    		height: 150px;
+    	}
+    </style>
+    
 </head>
 <body>
 <form method="post" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
@@ -201,56 +217,56 @@
 							<tr>
 								<th>제목</th>
 								<td>
-									<input class="form-control" type="text" style="width: 840px;" placeholder="ex. 00 웹사이트" value="<c:out value="${dto.itemPriceTitle }"/>">
+									<input class="form-control" type="text" style="width: 840px;" placeholder="ex. 00 웹사이트" name="itemPriceTitle" value="<c:out value="${dto.itemPriceTitle }"/>">
 								</td>
 							</tr>
 							<tr>
 								<th>설명</th>
 								<td>
-									<textarea class="form-control" placeholder="-메인페이지 시안 1개 제공, 공지사항, FAQ 페이지, SNS로그인 연동" resize="none;"></textarea>
+									<textarea class="form-control" placeholder="-메인페이지 시안 1개 제공, 공지사항, FAQ 페이지, SNS로그인 연동" id="itemPriceDetail" name="itemPriceDetail" resize="none;"><c:out value="${dto.itemPriceDetail }"/></textarea>
 								</td>
 							</tr>
 							<tr>
 								<th>금액(VAT 포함)</th>
 								<td>
-									<input class="form-control" type="text" placeholder="서비스를 잘 드러낼 수 있는 제목을 입력해주세요">
+									<input class="form-control" type="text" placeholder="서비스를 잘 드러낼 수 있는 제목을 입력해주세요" name="itemPrice" value="<c:out value="${dto.itemPrice }"/>">
 								</td>
 							</tr>
 							<tr>
 								<th>작업 기간</th>
 								<td>
-									<select class="form-select">
-										<option selected>선택해주세요</option>
-										<option></option>
-										<option></option>
-									</select>
+									<input class="form-control" type="text" style="width: 840px;" placeholder="ex. 00 웹사이트" name="workPeriod" value="<c:out value="${dto.workPeriod }"/>">
 								</td>
 							</tr>
 							<tr>
 								<th>수정 횟수</th>
 								<td>
-									<select class="form-select">
-										<option selected>선택해주세요</option>
-										<option></option>
-										<option></option>
-									</select>
+									<input class="form-control" type="text" style="width: 840px;" placeholder="ex. 00 웹사이트" name="numberOfMod" value="<c:out value="${dto.numberOfMod }"/>">
 								</td>
 							</tr>
 							<tr>
 								<th>반응형 웹</th>
-								<td class="checkOption"><input type="checkbox" class="form-check-input"></td>
+								<td class="checkOption">
+									<input type="checkbox" class="form-check-input">
+								</td>
 							</tr>
 							<tr>
 								<th>콘텐츠 업로드</th>
-								<td class="checkOption"><input type="checkbox" class="form-check-input"></td>
+								<td class="checkOption">
+									<input type="checkbox" class="form-check-input">
+								</td>
 							</tr>
 							<tr>
 								<th>소스 코드 제공</th>
-								<td class="checkOption"><input type="checkbox" class="form-check-input"></td>
+								<td class="checkOption">
+									<input type="checkbox" class="form-check-input">
+								</td>
 							</tr>
 							<tr>
 								<th>맞춤 디자인 제공</th>
-								<td class="checkOption"><input type="checkbox" class="form-check-input"></td>
+								<td class="checkOption">
+									<input type="checkbox" class="form-check-input">
+								</td>
 							</tr>
 							<tr>
 								<th>기능 추가</th>

@@ -49,7 +49,8 @@
 	<!-- 상품등록 -->
 	<insert id="productReg">
 		INSERT INTO item (
-			itTitle
+			member_mmSeq
+			,itTitle
 			,itServiceDetail
 			,itCancelRefund
 			,category1
@@ -63,7 +64,8 @@
 			,clientPrepare
 		)
 		VALUES (
-			#{itTitle}
+			#{mmSeq}
+			,#{itTitle}
 			,#{itServiceDetail}
 			,#{itCancelRefund}
 			,#{category1}

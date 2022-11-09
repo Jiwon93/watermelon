@@ -63,13 +63,13 @@
     <div class="container-fluid p-0 pb-5 mt-4">
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="/resources/images/slide1.jpg" alt="">
+                <img class="img-fluid" src="/resources/images/slide1.jpg">
             </div>
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="/resources/images/slide2.jpg" alt="">
+                <img class="img-fluid" src="/resources/images/slide2.jpg">
             </div>
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="/resources/images/slide3.jpg" alt="">
+                <img class="img-fluid" src="/resources/images/slide3.jpg">
             </div>
         </div>
     </div>

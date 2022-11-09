@@ -48,7 +48,8 @@
 <form method="post" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
     <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
     <input type="hidden" id="ccSeq" name="ccSeq" value="${ccSeq }">
-    
+    <input type="hidden" id="itemSeq" name="itemSeq" value="${itemSeq }">
+    <input type="hidden" id="itopSeq" name="itopSeq" value="${itopSeq }">
     <!-- Navbar Start -->
     <nav class="container sticky-top p-0">
     	<div class="row">
@@ -59,7 +60,7 @@
 	        </div>
 	        <div class="col-6 text-end p-4">
 	            <div>
-	            	<button class="btn btn-primary" type="button">제출하기</button>
+	            	<button class="btn btn-primary" type="button" id="btnReg">제출하기</button>
 	            </div>
 	        </div>
         </div>
@@ -438,11 +439,18 @@
     
     <script type="text/javascript">
     	var goUrlHome = "/member/memberHome";
-    	var goUrlProductReg = "/item/productReg";
+    	var goUrlsaleRegInst = "/item/saleRegInst";
+    	
+    	var form = $("form[name=form]");
     	
     	$("#btnHome").on("click", function(){
 	   		$(location).attr("href", goUrlHome);
 		});
+    	
+    	$("#btnReg").on("click", function(){
+			/* if (validationInst() == false) return false; */
+			form.attr("action", goUrlsaleRegInst).submit();
+		}); 
     </script>
 </body>
 

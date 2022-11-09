@@ -57,12 +57,12 @@ public class ItemController {
 	}
 	
 	//상품등록
-	@RequestMapping(value = "productReg")
+	@RequestMapping(value = "saleRegInst")
 	public String productReg(Item dto) throws Exception {
 		
 		service.productReg(dto);
 		service.productOptionReg(dto);
-		return "redirect:/item/itemMenu";
+		return "redirect:/member/saleManage";
 	}
 	
 }

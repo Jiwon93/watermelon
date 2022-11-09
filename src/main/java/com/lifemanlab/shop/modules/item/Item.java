@@ -6,6 +6,7 @@ public class Item extends Base {
 	
 	private String itemSeq;
 	private String member_mmSeq;
+	private String mmSeq;
 	private String itTitle;
 	private String itServiceDetail;
 	private String itCancelRefund;
@@ -245,6 +246,12 @@ public class Item extends Base {
 	}
 	public void setItemPrice(String itemPrice) {
 		this.itemPrice = itemPrice;
+	}
+	public String getMmSeq() {
+		return mmSeq;
+	}
+	public void setMmSeq(String mmSeq) {
+		this.mmSeq = mmSeq;
 	}
 
 	

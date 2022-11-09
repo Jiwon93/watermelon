@@ -223,7 +223,9 @@
 							<tr>
 								<th>설명</th>
 								<td>
-									<textarea class="form-control" placeholder="-메인페이지 시안 1개 제공, 공지사항, FAQ 페이지, SNS로그인 연동" id="itemPriceDetail" name="itemPriceDetail" resize="none;"><c:out value="${dto.itemPriceDetail }"/></textarea>
+									<textarea class="form-control" placeholder="-메인페이지 시안 1개 제공, 공지사항, FAQ 페이지, SNS로그인 연동" id="itemPriceDetail" name="itemPriceDetail" resize="none;">
+										<c:out value="${dto.itemPriceDetail }"/>
+									</textarea>
 								</td>
 							</tr>
 							<tr>
@@ -344,19 +346,25 @@
 							<tr>
 								<th>서비스 설명</th>
 								<td>
-									<textarea class="form-control" style="width: 840px;" rows="15" placeholder=""></textarea>
+									<textarea class="form-control" style="width: 840px;" name="itServiceDetail" rows="15" placeholder="">
+										<c:out value="${dto.itServiceDetail }"/>
+									</textarea>
 								</td>
 							</tr>
 							<tr>
 								<th>서비스 제공 절차</th>
 								<td>
-									<textarea class="form-control" rows="15" placeholder=""></textarea>
+									<textarea class="form-control" rows="15" name="procedure" placeholder="">
+										<c:out value="${dto.procedure }"/>
+									</textarea>
 								</td>
 							</tr>
 							<tr>
 								<th>의뢰인 준비사항</th>
 								<td>
-									<textarea class="form-control" rows="15" placeholder=""></textarea>
+									<textarea class="form-control" rows="15" name="clientPrepare" placeholder="">
+										<c:out value="${dto.clientPrepare }"/>
+									</textarea>
 								</td>
 							</tr>
 							<tr>
@@ -452,6 +460,8 @@
     
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="/resources/js/user/upload.js"></script>
+    <script src="/resources/js/common/mmUpload.js"></script>
     
     <script type="text/javascript">
     	var goUrlHome = "/member/memberHome";

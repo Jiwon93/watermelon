@@ -1,4 +1,32 @@
 document.write("<script src='/resources/js/common/common.js'></script>");
+document.write("<script src='/resources/js/user/constantsUser.js'></script>");
+document.write("<script src='/resources/js/user/validation.js'></script>");
+
+
+divSearchControl = function() {
+    var screenWidth = $(window).width();
+    if (screenWidth < BOOTSTRAP5_SM_DIMENSIONS) {
+        $('#divSearch').hide();
+        $('#iSearchControlUp').hide();
+        $('#iSearchControlDown').show();
+    } else {
+        // by pass
+    }
+}
+ 
+ 
+$('#divSearchControl').on('click', function() {
+    if ($('#divSearch').is(':visible')) {
+         $('#divSearch').hide();
+         $('#iSearchControlUp').hide();
+         $('#iSearchControlDown').show();
+    } else {
+         $('#divSearch').show();
+         $('#iSearchControlUp').show();
+         $('#iSearchControlDown').hide();
+    }
+ });
+
 
 checkUploadedTotalFileNumber = function(obj, allowedMaxTotalFileNumber, filesCount, uploadedFilesCount) {
 	if(allowedMaxTotalFileNumber < (filesCount + uploadedFilesCount)){
@@ -39,3 +67,4 @@ checkUploadedTotalFileSize = function(seq, totalSize, allowedTotalFileSize) {
 		return false;
 	}
 }
+

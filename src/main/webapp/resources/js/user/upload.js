@@ -1,12 +1,10 @@
-		
-		
-		upload = function(objName, seq, allowedMaxTotalFileNumber, allowedExtdiv, allowedEachFileSize, allowedTotalFileSize, uiType) {
+upload = function(objName, seq, allowedMaxTotalFileNumber, allowedExtdiv, allowedEachFileSize, allowedTotalFileSize, uiType) {
 	
 //		objName 과 seq 는 jsp 내에서 유일 하여야 함.
 //		memberProfileImage: 1
 //		memberImage: 2
 //		memberFile : 3
- 
+
 //		uiType: 1 => 이미지형
 //		uiType: 2 => 파일형
 //		uiType: 3 => 프로필형

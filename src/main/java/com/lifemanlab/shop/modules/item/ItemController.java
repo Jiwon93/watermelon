@@ -57,10 +57,17 @@ public class ItemController {
 		return "infra/member/item/itemPayment";
 	}
 	
+	public void setCheckboxNull(Item dto) throws Exception {
+		//dto.setEmail_ctr(dto.getEmail_ctr() == null ? 0 : dto.getEmail_ctr());
+		//dto.setKakao_ctr(dto.getKakao_ctr() == null ? 0 : dto.getKakao_ctr());
+		//dto.setSms_ctr(dto.getSms_ctr() == null ? 0 : dto.getSms_ctr());
+	}
+	
 	//상품등록
 	@RequestMapping(value = "saleRegInst")
 	public String productReg(ItemVo vo, Item dto, RedirectAttributes redirectAttributes) throws Exception {
 		
+		setCheckboxNull(dto);
 		service.productReg(dto);
 		vo.setItemSeq(dto.getItemSeq());
 		

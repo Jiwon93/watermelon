@@ -52,7 +52,6 @@
 			member_mmSeq
 			,itTitle
 			,itServiceDetail
-			,itCancelRefund
 			,category1
 			,category2
 			,skillLevel
@@ -60,14 +59,13 @@
 			,serviceCategory
 			,residency
 			,developLanguage
-			,procedure
+			,provisionProcedure
 			,clientPrepare
 		)
 		VALUES (
 			#{mmSeq}
 			,#{itTitle}
 			,#{itServiceDetail}
-			,#{itCancelRefund}
 			,#{category1}
 			,#{category2}
 			,#{skillLevel}
@@ -75,7 +73,7 @@
 			,#{serviceCategory}
 			,#{residency}
 			,#{developLanguage}
-			,#{procedure}
+			,#{provisionProcedure}
 			,#{clientPrepare}
 		)
 			<selectKey resultType="String" keyProperty="itemSeq" order="AFTER">

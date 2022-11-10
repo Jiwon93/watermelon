@@ -63,6 +63,7 @@
 <body>
 <form method="post" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
     <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
+    <input type="hidden" id="mmSeq" name="mmSeq" value="<c:out value="${dto.mmSeq }" />">
     <input type="hidden" id="ccSeq" name="ccSeq" value="${ccSeq }">
     <input type="hidden" id="itemSeq" name="itemSeq" value="${itemSeq }">
     <input type="hidden" id="itopSeq" name="itopSeq" value="${itopSeq }">
@@ -249,41 +250,37 @@
 							<tr>
 								<th>반응형 웹</th>
 								<td class="checkOption">
-									<input type="checkbox" class="form-check-input" name="responsiveWeb" value="<c:out value="${dto.responsiveWeb }" />">
+									<input type="checkbox" class="form-check-input" name="responsiveWeb" value="1">
 								</td>
 							</tr>
 							<tr>
 								<th>콘텐츠 업로드</th>
 								<td class="checkOption">
-									<input type="checkbox" class="form-check-input" name="contentUpload" value="<c:out value="${dto.contentUpload }" />">
+									<input type="checkbox" class="form-check-input" name="contentUpload" value="1">
 								</td>
 							</tr>
 							<tr>
 								<th>소스 코드 제공</th>
 								<td class="checkOption">
-									<input type="checkbox" class="form-check-input" name="sourceCode" value="<c:out value="${dto.sourceCode }" />">
+									<input type="checkbox" class="form-check-input" name="sourceCode" value="1">
 								</td>
 							</tr>
 							<tr>
 								<th>맞춤 디자인 제공</th>
 								<td class="checkOption">
-									<input type="checkbox" class="form-check-input" name="design" value="<c:out value="${dto.design }" />">
+									<input type="checkbox" class="form-check-input" name="design" value="1">
 								</td>
 							</tr>
 							<tr>
 								<th>기능 추가</th>
 								<td>
-									<select class="form-select">
-										<option selected>선택해주세요</option>
-										<option></option>
-										<option></option>
-									</select>
+									<input type="checkbox" class="form-check-input" name="functionPlus" value="1">
 								</td>
 							</tr>
 							<tr>
 								<th>페이지 수</th>
 								<td>
-									<input class="form-control" type="text" placeholder="입력해주세요">
+									<input class="form-control" type="text" placeholder="입력해주세요" name="numberOfPage" value="<c:out value="${dto.numberOfPage }" />">
 								</td>
 							</tr>
 						</table>
@@ -300,13 +297,19 @@
 							<tr>
 								<th>빠른 작업</th>
 								<td class="checkOption" style="width: 840px;">
-									<input type="checkbox" class="form-check-input" name="quickWork" value="<c:out value="${dto.quickWork }" />">
+									<input type="checkbox" class="form-check-input" name="quickWork" value="1">
 								</td>
 							</tr>
 							<tr>
 								<th>추가 수정</th>
 								<td class="checkOption">
-									<input type="checkbox" class="form-check-input" name="plusMod" value="<c:out value="${dto.plusMod }" />">
+									<input type="checkbox" class="form-check-input" name="plusMod" value="1">
+								</td>
+							</tr>
+							<tr>
+								<th>추가 페이지</th>
+								<td class="checkOption">
+									<input type="checkbox" class="form-check-input" name="pagePlus" value="1">
 								</td>
 							</tr>
 						</table>
@@ -334,8 +337,8 @@
 							<tr>
 								<th>서비스 제공 절차</th>
 								<td>
-									<textarea class="form-control" rows="15" name="procedure" placeholder="">
-										<c:out value="${dto.procedure }"/>
+									<textarea class="form-control" rows="15" name="provisionProcedure" placeholder="">
+										<c:out value="${dto.provisionProcedure }"/>
 									</textarea>
 								</td>
 							</tr>
@@ -350,13 +353,35 @@
 							<tr>
 								<th>취소 및 환불 규정</th> <!-- 모달로 띄우기 -->
 								<td>
-									<a class="btn btn-outline-primary w-100" href="#">[IT 프로그래밍>웹] 취소 및 환불 규정 보기</a>
-								</td>
-							</tr>
-							<tr>
-								<th>자주묻는질문</th>
-								<td>
-									<a class="btn btn-outline-primary w-100" href="#">+질문 추가</a>
+									<button class="btn btn-outline-primary w-100" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">[IT 프로그래밍>웹] 취소 및 환불 규정 보기</button>
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h1 class="modal-title fs-5" id="exampleModalLabel">취소 및 환불 규정보기</h1>
+												</div>
+												<div class="modal-body">
+													가. 기본 환불 규정
+													<br>1. 전문가와 의뢰인의 상호 협의하에 청약 철회 및 환불이 가능합니다.
+													<br>2. 작업이 완료된 이후 또는 자료, 프로그램 등 서비스가 제공된 이후에는 환불이 불가합니다.
+													<br>( 소비자보호법 17조 2항의 5조. 용역 또는 「문화산업진흥 기본법」 제2조 제5호의 디지털콘텐츠의 제공이 개시된 경우에 해당)
+													<br>
+													<br>나. 전문가 책임 사유
+													<br>1. 전문가의 귀책사유로 당초 약정했던 서비스 미이행 혹은 보편적인 관점에서 심각하게 잘못 이행한 경우 결제 금액 전체 환불이 가능합니다.
+													<br>
+													<br>다. 의뢰인 책임 사유
+													<br>1. 서비스 진행 도중 의뢰인의 귀책사유로 인해 환불을 요청할 경우, 사용 금액을 아래와 같이 계산 후 총 금액의 10%를 공제하여 환불합니다.
+													<br>총 작업량의 1/3 경과 전 : 이미 납부한 요금의 2/3해당액
+													<br>총 작업량의 1/2 경과 전 : 이미 납부한 요금의 1/2해당액
+													<br>총 작업량의 1/2 경과 후 : 반환하지 않음
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">확인</button>
+												</div>
+											</div>
+										</div>
+									</div>
 								</td>
 							</tr>
 						</table>
@@ -416,26 +441,6 @@
 								</div>
 					        </div>
 					    </div>
-					</div>
-				</div>
-			</div>
-			<div class="row m-2 mt-5 mb-3">
-				<h5>5. 요청사항</h5>
-			</div>
-			<div class="saleRegMenu">
-				<div class="row">
-					<div class="col-2 pe-0">
-						<p>추가요청</p>
-					</div>
-					<div class="col">
-						<table class="m-2">
-							<tr>
-								<th>작업전 요청사항</th>
-								<td>
-									<a class="btn btn-outline-primary" style="width: 840px;" href="#">+요청사항 추가</a>
-								</td>
-							</tr>
-						</table>
 					</div>
 				</div>
 			</div>

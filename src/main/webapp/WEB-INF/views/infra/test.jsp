@@ -22,5 +22,7 @@ IncheonBreadList
 	<br><c:out value="${item.lat }"/>	
 </c:forEach>
 
+
+
 </body>
 </html>

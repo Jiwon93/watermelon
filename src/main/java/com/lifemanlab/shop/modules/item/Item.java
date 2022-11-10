@@ -6,6 +6,8 @@ import com.lifemanlab.shop.common.base.Base;
 
 public class Item extends Base {
 	
+	private String sessSeq;
+	
 	private String itemSeq;
 	private String member_mmSeq;
 	private String mmSeq;
@@ -21,7 +23,7 @@ public class Item extends Base {
 	private Integer serviceCategory;
 	private Integer residency;
 	private Integer developLanguage;
-	private String procedure;
+	private String provisionProcedure;
 	private String clientPrepare;
 	
 	//구매등록 추가 옵션
@@ -250,11 +252,11 @@ public class Item extends Base {
 	public void setNumberOfMod(String numberOfMod) {
 		this.numberOfMod = numberOfMod;
 	}
-	public String getProcedure() {
-		return procedure;
+	public String getProvisionProcedure() {
+		return provisionProcedure;
 	}
-	public void setProcedure(String procedure) {
-		this.procedure = procedure;
+	public void setProvisionProcedure(String provisionProcedure) {
+		this.provisionProcedure = provisionProcedure;
 	}
 	public String getItemPrice() {
 		return itemPrice;
@@ -327,6 +329,12 @@ public class Item extends Base {
 	}
 	public void setUploadFileDeletePathFile(String[] uploadFileDeletePathFile) {
 		this.uploadFileDeletePathFile = uploadFileDeletePathFile;
+	}
+	public String getSessSeq() {
+		return sessSeq;
+	}
+	public void setSessSeq(String sessSeq) {
+		this.sessSeq = sessSeq;
 	}
 	
 	

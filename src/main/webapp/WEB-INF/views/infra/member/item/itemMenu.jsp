@@ -212,11 +212,11 @@
 	               	    	<img class="menuDD" src="/resources/images/main.jpg">
 	           			</div>
 	           			<div class="pt-2">
-	           				<p class="mainName"><c:out value="${list.mmNickname }" /></p>
-	           				<a href="javascript:goView(<c:out value="${list.itemSeq }" />)"><p class="mainTitle"><c:out value="${list.itTitle }" /></p></a>
-	           				<div class="mainPay">
-	           					<i class="fa-solid fa-receipt">&nbsp;</i><c:out value="${list.itemPrice }"/>
-           					</div>
+	           				<p class="mainName mb-0"><c:out value="${list.mmNickname }" /></p>
+	           				<a href="javascript:goView(<c:out value="${list.itemSeq }" />)"><p class="mainTitle mb-0"><c:out value="${list.itTitle }" /></p></a>
+	           				<p class="mainPay mb-0" id="itemPrice">
+	           					<i class="fa-solid fa-receipt">&nbsp;</i><c:out value="${list.itemPrice }"/>원
+           					</p>
            					<div class="mainGrade">
 			       				<i class="fa-solid fa-star" style="color: #FFD400;"></i>
 			       				<span style="color: #9A9BA7;">5.0ㅣ32개의 평가</span>
@@ -253,6 +253,7 @@
     <script src="/resources/template/woody/lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="/resources/template/woody/lib/isotope/isotope.pkgd.min.js"></script>
     <script src="/resources/template/woody/lib/lightbox/js/lightbox.min.js"></script>
+    <script src="/resources/js/user/validation.js"></script>
 
     <!-- Template Javascript -->
     <script src="/resources/template/woody/js/main.js"></script>

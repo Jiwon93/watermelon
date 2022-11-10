@@ -85,6 +85,7 @@ function checkOnlyNumber (objName, pattern, nullAllowedNy, minMaxCheckNy, min, m
 }
 
 
+
 function checkSelectNull (objName, pattern, message) {
 	var obj = document.getElementById(objName);
 	var objValue = document.getElementById(objName).value;
@@ -315,3 +316,4 @@ checkEstablishedYear = function(obj, value, message) {
 		return false;
 	}
 }
+

@@ -87,7 +87,6 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	
 	@Override
 	public void deleteFiles(String[] deleteSeq, String[] deletePathFile, Member dto, String tableName) throws Exception {
-		
 		for (int i=0; i<deleteSeq.length; i++) {
 			File file = new File(Constants.UPLOAD_PATH_PREFIX_EXTERNAL + deletePathFile[i]);
 			boolean result = file.delete();
@@ -103,7 +102,6 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 
 	@Override
 	public void ueleteFiles(String[] deleteSeq, String[] deletePathFile, Member dto, String tableName) throws Exception {
-		
 		for (int i=0; i<deleteSeq.length; i++) {
 			dto.setSeq(deleteSeq[i]);
 			dto.setTableName(tableName);
@@ -218,7 +216,7 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 			deleteFiles(dto.getMmUploadedImageDeleteSeq(), dto.getMmUploadedImageDeletePathFile(), dto, "mmUploaded");
 			uploadFiles(dto.getMmUploadedProfileImage(), dto, "mmUploaded", dto.getUploadImgProfileType(), dto.getMmUploadedProfileMaxNumber());
 		} else {
-			//by pass: empty
+			// by pass: empty
 		}
 		
 		return 1;

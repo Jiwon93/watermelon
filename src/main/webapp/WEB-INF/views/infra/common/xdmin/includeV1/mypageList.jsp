@@ -17,22 +17,26 @@
 							<img id="<c:out value="${name }"/>Preview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
 						</c:when>
 						<c:otherwise>
-							<c:set var="uploadImgProfileGetNy" value="0"/>
+							<c:set var="GetNy" value="0"/>
 							<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
-								<c:if test="${listUploaded.type eq '1' }">
-									<img id="mmUploadedProfileImage" src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" class="rounded-circle mx-auto d-block" width="100" height="100">
-									<c:set var="uploadImgProfileGetNy" value="1"/>		
+								<c:if test="${listUploaded.type eq type }">
+						        	<input type="hidden" id="<c:out value="${name }"/>DeleteSeq" name="<c:out value="${name }"/>DeleteSeq" value="<c:out value="${listUploaded.seq }"/>"/>
+						        	<input type="hidden" id="<c:out value="${name }"/>DeletePathFile" name="<c:out value="${name }"/>DeletePathFile" value="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>"/>  
+									<img id="<c:out value="${name }"/>Preview" src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" class="rounded-circle mx-auto d-block" width="100" height="100">
+									<c:set var="GetNy" value="1"/>		
 								</c:if>
 							</c:forEach>
-							<c:if test="${uploadImgProfileGetNy eq 0 }">
+							<c:if test="${GetNy eq 0 }">
 								<img id="<c:out value="${name }"/>Preview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
 							</c:if>
 						</c:otherwise>
 					</c:choose>
 				</c:otherwise>
 			</c:choose>
-				<label for="mmUploadedProfileImage" class="form-label input-file-button"><b>+</b></label>
- 				<input class="form-control form-control-sm" id="mmUploadedProfileImage" name="mmUploadedProfileImage" type="file" multiple="multiple" style="display: none;" onChange="upload('mmUploadedProfileImage', 1, 1, 1, 0, 0, 3);">
+				<input type="hidden" id="<c:out value="${name }"/>Type" name="<c:out value="${name }"/>Type" value="<c:out value="${type }"/>"/>
+				<input type="hidden" id="<c:out value="${name }"/>MaxNumber" name="<c:out value="${name }"/>MaxNumber" value="0"/>
+				<label for="<c:out value="${name }"/>" class="form-label input-file-button"><b>+</b></label>
+ 				<input class="form-control form-control-sm" id="<c:out value="${name }"/>" name="<c:out value="${name }"/>" type="file" multiple="multiple" style="display: none;" onChange="upload('<c:out value="${name }"/>', <c:out value="${type }"/>, 1, 1, 0, 0, 3);">
 			</div>
 			<div class="text-center pb-4">
 				<button class="btn btn-secondary" style="height: 30px; width: 60px; font-size: small;">일반</button>
@@ -63,30 +67,34 @@
         	<c:set var="name" value="mmUploadedProfileImage"/>
 			<c:choose>
 				<c:when test="${mmSeq eq 0 }">
-					<img id="uploadImgProfilePreview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
+					<img id="<c:out value="${name }"/>Preview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
 				</c:when>
 				<c:otherwise>
 					<c:choose>
 						<c:when test="${fn:length(listUploaded) eq 0 }">
-							<img id="uploadImgProfilePreview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
+							<img id="<c:out value="${name }"/>Preview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
 						</c:when>
 						<c:otherwise>
-							<c:set var="uploadImgProfileGetNy" value="0"/>
+							<c:set var="GetNy" value="0"/>
 							<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
-								<c:if test="${listUploaded.type eq '1' }">
-									<img id="mmUploadedProfileImage" src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" class="rounded-circle mx-auto d-block" width="100" height="100">
-									<c:set var="uploadImgProfileGetNy" value="1"/>		
+								<c:if test="${listUploaded.type eq type }">
+						        	<input type="hidden" id="<c:out value="${name }"/>DeleteSeq" name="<c:out value="${name }"/>DeleteSeq" value="<c:out value="${listUploaded.seq }"/>"/>
+						        	<input type="hidden" id="<c:out value="${name }"/>DeletePathFile" name="<c:out value="${name }"/>DeletePathFile" value="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>"/>  
+									<img id="<c:out value="${name }"/>Preview" src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" class="rounded-circle mx-auto d-block" width="100" height="100">
+									<c:set var="GetNy" value="1"/>		
 								</c:if>
 							</c:forEach>
-							<c:if test="${uploadImgProfileGetNy eq 0 }">
-								<img id="uploadImgProfilePreview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
+							<c:if test="${GetNy eq 0 }">
+								<img id="<c:out value="${name }"/>Preview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
 							</c:if>
 						</c:otherwise>
 					</c:choose>
 				</c:otherwise>
 			</c:choose>
-				<label for="mmUploadedProfileImage" class="form-label input-file-button"><b>+</b></label>
- 				<input class="form-control form-control-sm" id="mmUploadedProfileImage" name="mmUploadedProfileImage" type="file" multiple="multiple" style="display: none;" onChange="upload('mmUploadedProfileImage', 1, 1, 1, 0, 0, 3);">
+				<input type="hidden" id="<c:out value="${name }"/>Type" name="<c:out value="${name }"/>Type" value="<c:out value="${type }"/>"/>
+				<input type="hidden" id="<c:out value="${name }"/>MaxNumber" name="<c:out value="${name }"/>MaxNumber" value="0"/>
+				<label for="<c:out value="${name }"/>" class="form-label input-file-button"><b>+</b></label>
+ 				<input class="form-control form-control-sm" id="<c:out value="${name }"/>" name="<c:out value="${name }"/>" type="file" multiple="multiple" style="display: none;" onChange="upload('<c:out value="${name }"/>', <c:out value="${type }"/>, 1, 1, 0, 0, 3);">
 			</div>
 			<div class="text-center pb-4">
 				<button class="btn btn-primary" style="height: 30px; width: 60px; font-size: small;">만렙</button>
@@ -249,7 +257,7 @@
 			} else if (uiType == 3) {
 				var fileReader = new FileReader();
 				 fileReader.onload = function () {
-					 $("#uploadImgProfilePreview").attr("src", fileReader.result);		/* #-> */
+					 $("#mmUploadedProfileImagePreview").attr("src", fileReader.result);		/* #-> */
 				 }	
 				 fileReader.readAsDataURL($("#" + objName +"")[0].files[0]);
 			} else {

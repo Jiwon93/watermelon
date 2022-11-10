@@ -308,9 +308,7 @@ label {
 	<script
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=17e90af3c57fa367793d1f57799dd4c9&libraries=services,clusterer,drawing"></script>
 
-	<script src="/resources/js/user/constantsUser.js"></script>
 	<script src="/resources/js/user/commonUser.js"></script>
-	<script srt="/resources/js/common/common.js"></script>
 	
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>

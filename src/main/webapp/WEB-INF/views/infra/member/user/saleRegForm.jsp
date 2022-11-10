@@ -249,25 +249,25 @@
 							<tr>
 								<th>반응형 웹</th>
 								<td class="checkOption">
-									<input type="checkbox" class="form-check-input">
+									<input type="checkbox" class="form-check-input" name="responsiveWeb" value="<c:out value="${dto.responsiveWeb }" />">
 								</td>
 							</tr>
 							<tr>
 								<th>콘텐츠 업로드</th>
 								<td class="checkOption">
-									<input type="checkbox" class="form-check-input">
+									<input type="checkbox" class="form-check-input" name="contentUpload" value="<c:out value="${dto.contentUpload }" />">
 								</td>
 							</tr>
 							<tr>
 								<th>소스 코드 제공</th>
 								<td class="checkOption">
-									<input type="checkbox" class="form-check-input">
+									<input type="checkbox" class="form-check-input" name="sourceCode" value="<c:out value="${dto.sourceCode }" />">
 								</td>
 							</tr>
 							<tr>
 								<th>맞춤 디자인 제공</th>
 								<td class="checkOption">
-									<input type="checkbox" class="form-check-input">
+									<input type="checkbox" class="form-check-input" name="design" value="<c:out value="${dto.design }" />">
 								</td>
 							</tr>
 							<tr>
@@ -299,35 +299,15 @@
 						<table class="m-2">
 							<tr>
 								<th>빠른 작업</th>
-								<td class="checkOption" style="width: 840px;"><input type="checkbox" class="form-check-input"></td>
+								<td class="checkOption" style="width: 840px;">
+									<input type="checkbox" class="form-check-input" name="quickWork" value="<c:out value="${dto.quickWork }" />">
+								</td>
 							</tr>
 							<tr>
 								<th>추가 수정</th>
-								<td class="checkOption"><input type="checkbox" class="form-check-input"></td>
-							</tr>
-							<tr>
-								<th>반응형 웹</th>
-								<td class="checkOption"><input type="checkbox" class="form-check-input"></td>
-							</tr>
-							<tr>
-								<th>콘텐츠 업로드</th>
-								<td class="checkOption"><input type="checkbox" class="form-check-input"></td>
-							</tr>
-							<tr>
-								<th>소스 코드 제공</th>
-								<td class="checkOption"><input type="checkbox" class="form-check-input"></td>
-							</tr>
-							<tr>
-								<th>맞춤 디자인 제공</th>
-								<td class="checkOption"><input type="checkbox" class="form-check-input"></td>
-							</tr>
-							<tr>
-								<th>기능 추가</th>
-								<td class="checkOption"><input type="checkbox" class="form-check-input"></td>
-							</tr>
-							<tr>
-								<th>페이지 추가</th>
-								<td class="checkOption"><input type="checkbox" class="form-check-input"></td>
+								<td class="checkOption">
+									<input type="checkbox" class="form-check-input" name="plusMod" value="<c:out value="${dto.plusMod }" />">
+								</td>
 							</tr>
 						</table>
 					</div>

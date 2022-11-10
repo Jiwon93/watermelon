@@ -29,9 +29,11 @@
 			<div class="container contract">
 				<div class="row mt-5 pt-5">
 					<div class="col-6">
+						<img src="/resources/images/loginUser.png" style="height: 400px; width: 475px;">
 						<a class="btn btn-primary w-75" type="button" id="btnHomeMember">사용자</a>
 					</div>
 					<div class="col-6">
+						<img src="/resources/images/loginXdmin.png" style="height: 400px; width: 475px;">
 						<a class="btn btn-secondary w-75" type="button" id="btnLoginXdmin">관리자</a>
 					</div>
 				</div>

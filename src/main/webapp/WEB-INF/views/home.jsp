@@ -27,14 +27,19 @@
 	<form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
 		<div class="container-fluid mt-5 pt-5">
 			<div class="container contract">
+				<div class="row">
+					<div style="display: flex; justify-content: center;">
+						<img src="/resources/images/logo.PNG" style="width: 70px; height: 70px;">
+					</div>
+				</div>
 				<div class="row mt-5 pt-5">
 					<div class="col-6">
-						<img src="/resources/images/loginUser.png" style="height: 400px; width: 475px;">
-						<a class="btn btn-primary w-75" type="button" id="btnHomeMember">사용자</a>
+						<img src="/resources/images/loginUser.png" style="height: 430px; width: 100%;">
+						<a class="btn btn-primary w-100" type="button" id="btnHomeMember" style="color: white;">사용자</a>
 					</div>
 					<div class="col-6">
-						<img src="/resources/images/loginXdmin.png" style="height: 400px; width: 475px;">
-						<a class="btn btn-secondary w-75" type="button" id="btnLoginXdmin">관리자</a>
+						<img src="/resources/images/loginXdmin.png" style="height: 430px; width: 100%;">
+						<a class="btn btn-secondary w-100" type="button" id="btnLoginXdmin">관리자</a>
 					</div>
 				</div>
 			</div>

@@ -658,14 +658,14 @@
 			       								케이홈페이지는 지난 13년간 3,000개 이상의 홈페이지를 제작해 왔습니다.
 			       							</div>
 			       							<div>
-				       							<div style="text-align: left; display: none; font-size: 13px;">
+				       							<div id="plus" style="text-align: left; display: none; font-size: 13px;">
 					       							기본적으로 모든 테마는 반응형[PC+모바일+노트북+태블릿 모두지원]으로 
 					       							이루어져 있고 멋지고 세련된 테마를 통해 보다 빠른 제작이 가능하십니다.
 					       							케이홈페이지는 퀄리티가 높은 테마를 제공합니다. 게시판 프로그램 스킨도 
 					       							직접개발 보유하고 있습니다.
 					       							한번 인연을 맺으면 반드시 다른 기업의 홈페이지 추천을 소개받는 기업입니다.
 				       							</div>
-				       							<input class="btn" value="소개 더 보기" style="height: 35px;" onclick="plus();" type="button">
+				       							<input class="btn" value="소개 더 보기" style="height: 35px;" onclick="if(this.parentNode.getElementsByTagName('div')[0].style.display != ''){this.parentNode.getElementsByTagName('div')[0].style.display = '';this.value = '접기';}else{this.parentNode.getElementsByTagName('div')[0].style.display = 'none'; this.value = '소개 더 보기';}" type="button">
 			       							</div>	 
 			       						</div>
 			       					</td>
@@ -739,16 +739,6 @@
     	$("#btnPurchase6").on("click", function(){
 	   		$(location).attr("href", goUrlPurchase);
 		});
-    	
-    	function plus() {
-    		if(this.parentNode.getElementsByTagName('div')[0].style.display != ''){
-    			this.parentNode.getElementsByTagName('div')[0].style.display = '';
-    			this.value = '접기';
- 			}else {
-   				this.parentNode.getElementsByTagName('div')[0].style.display = 'none'; 
-   				this.value = '소개 더 보기';
-			}
-    	}
     	
     </script>
 </body>

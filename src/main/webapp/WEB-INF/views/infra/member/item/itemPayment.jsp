@@ -127,9 +127,9 @@
 		           					<tr>
 		           						<td>[00홈페이지] 프로페셔널형</td>
 		           						<td style="text-align: center;">
-		           							<a href="#"><i class="fa-solid fa-square-minus"></i></a>
-											<span>1</span>
-		           							<a href="#"><i class="fa-solid fa-square-plus"></i></a>
+		           							<a type='button' onclick='count("minus")'><i class="fa-solid fa-square-minus"></i></a>
+											<span id="result">1</span>
+		           							<a type='button' onclick='count("plus")'><i class="fa-solid fa-square-plus"></i></a>
 		       							</td>
 		           						<td style="text-align: center;">10일</td>
 		           						<td style="text-align: right;">10,000,000원</td>
@@ -210,7 +210,7 @@
 		       				</div>
 		       				<div style="vertical-align: bottom;">
 		       				<div class="col-12 pt-5">
-			           			<input type="checkbox" class="form-check-input" name="" id="paymentAgree">
+			           			<input type="checkbox" class="form-check-input" name="paymentAgree" id="paymentAgree">
 			           			<label class="form-chech-label" for="paymentAgree">
 			           				<span style="font-size: small;">주문 내용을 확인하였으며, 결제에 동의합니다.(필수)</span>
 			           			</label>
@@ -247,6 +247,7 @@
 		       			</div>
 	       			</div>
        			</div>
+       			<!-- 
        			<div class="p-4 border border-2 border-light mb-3">
            			<h5 class="mb-3">할인 / 캐시사용</h5>
            			<div class="input-group row mb-3">
@@ -265,6 +266,7 @@
             			<button class="col-sm-1 btn btn-primary" type="button" style="background-color: white; color: #AB7442; height: 38px; border-radius: 5px;">전액사용</button>
            			</div>
        			</div>
+       			 -->
        			<div class="p-4 border border-2 border-light mb-3">
            			<h5 class="mb-3">결제방법</h5>
            			<div class="form-check form-check-inline">
@@ -356,7 +358,34 @@
 	   		$(location).attr("href", goUrlItemMenu);
 		});
     	
+    	function count(type)  {
+   		  // 결과를 표시할 element
+   		  const resultElement = document.getElementById('result');
+   		  
+   		  // 현재 화면에 표시된 값
+   		  let number = resultElement.innerText;
+   		  
+   		  // 더하기/빼기
+   		  if(type === 'plus') {
+   		    number = parseInt(number) + 1;
+   		  }else if(type === 'minus' && number >= 2)  {
+   		    number = parseInt(number) - 1;
+   		  }
+   		  
+   		  // 결과 출력
+   		  resultElement.innerText = number;
+   		}
     	
+    	/*
+    	$("#paymentBtn").on("click", function(){
+    		if($('input:checkbox[name="paymentAgree"]').is(":checked") == true) {
+    			$('#paymentBtn').modal();
+    		} else {
+    			alert("결제 동의에 체크해주세요.");
+    			return false;
+    		}
+    	});
+    	*/
     </script>
 </body>
 

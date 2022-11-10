@@ -50,7 +50,7 @@ public class MemberController extends BaseController {
 		List<Member> list = service.selectList(vo);
 		model.addAttribute("list", list);
 		
-		return "infra/member/xdmin/memberList";
+		return "infra/xdmin/member/memberList";
 	}
 	
 	@RequestMapping(value = "memberView")
@@ -58,12 +58,12 @@ public class MemberController extends BaseController {
 		Member item = service.selectOne(vo);
 		model.addAttribute("item", item);
 		
-		return "infra/member/xdmin/memberView";
+		return "infra/xdmin/member/memberView";
 	}
 	
 	@RequestMapping(value = "memberForm")
 	public String memberForm() throws Exception {
-		return "infra/member/xdmin/memberForm";
+		return "infra/xdmin/member/memberForm";
 	}
 	
 	@SuppressWarnings(value = {"all"})
@@ -83,7 +83,15 @@ public class MemberController extends BaseController {
 		Member item = service.selectOneView(vo);
 		model.addAttribute("item", item);
 		model.addAttribute("listUploaded", service.selectListUploaded(vo));
-		return "infra/member/user/memberViewC";
+		return "infra/user/member/clients/memberViewC";
+	}
+	
+	@RequestMapping(value = "memberViewB")
+	public String memberViewB(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+		Member item = service.selectOneView(vo);
+		model.addAttribute("item", item);
+		model.addAttribute("listUploaded", service.selectListUploaded(vo));
+		return "infra/user/member/pro/memberViewB";
 	}
 	
 
@@ -93,7 +101,15 @@ public class MemberController extends BaseController {
 		Member item = service.selectOneView(vo);
 		model.addAttribute("item", item);
 		model.addAttribute("listUploaded", service.selectListUploaded(vo));
-		return "infra/member/user/memberModFormC";
+		return "infra/user/member/clients/memberModFormC";
+	}
+	
+	@RequestMapping(value = "memberModFormB")
+	public String memberModFormB(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+		Member item = service.selectOneView(vo);
+		model.addAttribute("item", item);
+		model.addAttribute("listUploaded", service.selectListUploaded(vo));
+		return "infra/user/member/pro/memberModFormB";
 	}
 	
 	//회원정보수정
@@ -311,7 +327,7 @@ public class MemberController extends BaseController {
 	
 	@RequestMapping(value = "index")
 	public String index() throws Exception {
-		return "infra/member/index";
+		return "infra/user/index";
 	}
 	
 	//회원탈퇴
@@ -322,12 +338,12 @@ public class MemberController extends BaseController {
 	}
 	@RequestMapping(value = "memberHome")
 	public String memberHome() throws Exception {
-		return "infra/member/user/memberHome";
+		return "infra/user/member/memberHome";
 	}
 	
 	@RequestMapping(value = "loginForm")
 	public String loginForm() throws Exception {
-		return "infra/member/user/loginForm";
+		return "infra/user/member/loginForm";
 	}
 	
 	@RequestMapping(value = "kakaoLogin")
@@ -337,12 +353,12 @@ public class MemberController extends BaseController {
 	
 	@RequestMapping(value = "idPwFindForm")
 	public String idPwFindForm() throws Exception {
-		return "infra/member/user/idPwFindForm";
+		return "infra/user/member/idPwFindForm";
 	}
 	
 	@RequestMapping(value = "memberDropFormC")
 	public String memberDropFormC() throws Exception {
-		return "infra/member/user/memberDropFormC";
+		return "infra/user/member/clients/memberDropFormC";
 	}
 	
 	@RequestMapping(value = "memberRegFormC")
@@ -351,7 +367,7 @@ public class MemberController extends BaseController {
 		List<Member> ccNameList = service.ccNameList();
 		model.addAttribute("ccNameList", ccNameList);
 		 
-		return "infra/member/user/memberRegFormC";
+		return "infra/user/member/clients/memberRegFormC";
 	}
 	
 	@RequestMapping(value = "memberRegFormB")
@@ -360,17 +376,17 @@ public class MemberController extends BaseController {
 		List<Member> ccNameList = service.ccNameList();
 		model.addAttribute("ccNameList", ccNameList);
 		
-		return "infra/member/user/memberRegFormB";
+		return "infra/user/member/pro/memberRegFormB";
 	}
 	
 	@RequestMapping(value = "pwChangeFormC")
 	public String pwChangFormC() throws Exception {
-		return "infra/member/user/pwChangeFormC";
+		return "infra/user/member/clients/pwChangeFormC";
 	}
 	
 	@RequestMapping(value = "saleReg")
 	public String saleReg() throws Exception {
-		return "infra/member/user/saleReg";
+		return "infra/user/member/pro/saleReg";
 	}
 	
 	@RequestMapping(value = "saleRegForm")
@@ -379,7 +395,7 @@ public class MemberController extends BaseController {
 		List<Member> ccNameList = service.ccNameList();
 		model.addAttribute("ccNameList", ccNameList);
 		
-		return "infra/member/user/saleRegForm";
+		return "infra/user/member/pro/saleRegForm";
 	}
 	
 	@RequestMapping(value = "purchaseHistory")
@@ -387,7 +403,7 @@ public class MemberController extends BaseController {
 		vo.setParamsPaging(service.selectOneCount(vo));
 		List<Member> item = service.selectPurchaseHistory(vo);
 		model.addAttribute("item", item);
-		return "infra/member/user/purchaseHistory";
+		return "infra/user/member/clients/purchaseHistory";
 	}
 	
 	@RequestMapping(value = "saleManage")
@@ -395,12 +411,12 @@ public class MemberController extends BaseController {
 		vo.setParamsPaging(service.selectOneCount(vo));
 		List<Member> item = service.selectSaleManage(vo);
 		model.addAttribute("item", item);
-		return "infra/member/user/saleManage";
+		return "infra/user/member/pro/saleManage";
 	}
 
 	@RequestMapping(value = "xdminLoginForm")
 	public String xdminLoginForm() throws Exception {
-		return "infra/member/xdmin/xdminLoginForm";
+		return "infra/xdmin/member/xdminLoginForm";
 	}
 	
 	@RequestMapping("excelDownload")

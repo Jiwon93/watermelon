@@ -47,7 +47,7 @@ public class CodeGroupController extends BaseController{
 		 * vo.getShDateEnd());
 		 */
 		
-		return "infra/codegroup/xdmin/codeGroupList";
+		return "infra/xdmin/codegroup/codeGroupList";
 	}
 	
 	
@@ -57,13 +57,13 @@ public class CodeGroupController extends BaseController{
 		System.out.println("controller item: " + item);
 		model.addAttribute("item", item);
 		
-		return "infra/codegroup/xdmin/codeGroupView";
+		return "infra/xdmin/codegroup/codeGroupView";
 	} 
 		
 	
 	@RequestMapping(value = "codeGroupForm")
 	public String codeGroupForm() throws Exception {
-		return "infra/codegroup/xdmin/codeGroupForm";
+		return "infra/xdmin/codegroup/codeGroupForm";
 	}
 	
 	@RequestMapping(value = "codeGroupInst")

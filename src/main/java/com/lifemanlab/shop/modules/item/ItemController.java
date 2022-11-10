@@ -25,12 +25,11 @@ public class ItemController {
 		
 		List<Item> list = service.selectList(vo);
 		model.addAttribute("list", list);
-		return "infra/item/xdmin/itemList";
+		return "infra/xdmin/item/itemList";
 	}
 	
 	
 	//구매목록 리스트(관리자)
-
 	@RequestMapping(value = "itemMenu")
 	public String itemMenu(@ModelAttribute("vo") ItemVo vo, Model model) throws Exception {
 		
@@ -39,7 +38,7 @@ public class ItemController {
 		List<Item> list = service.selectList(vo);
 		model.addAttribute("list", list);
 		
-		return "infra/member/item/itemMenu";
+		return "infra/user/item/itemMenu";
 	}
 	
 	@RequestMapping(value = "itemMenuView")
@@ -49,12 +48,12 @@ public class ItemController {
 		System.out.println("controller item: " + item);
 		model.addAttribute("item", item);
 		
-		return "infra/member/item/itemMenuView";
+		return "infra/user/item/itemMenuView";
 	}
 	
 	@RequestMapping(value = "itemPayment")
 	public String itemPayment() throws Exception {
-		return "infra/member/item/itemPayment";
+		return "infra/user/item/itemPayment";
 	}
 	
 	public void setCheckboxNull(Item dto) throws Exception {

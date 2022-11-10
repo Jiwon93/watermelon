@@ -20,18 +20,18 @@ public class ReviewController {
 		List<Review> list = service.selectList(vo);
 		model.addAttribute("list", list);
 		
-		return "infra/review/xdmin/reviewList";
+		return "infra/xdmin/review/reviewList";
 	}
 	
 	@RequestMapping(value = "reviewForm")
 	public String reviewForm() throws Exception {
-		return "infra/review/xdmin/reviewForm";
+		return "infra/xdmin/review/reviewForm";
 	}
 	
 	@RequestMapping(value = "reviewView")
 	public String reviewView(@ModelAttribute("vo") ReviewVo vo, Model model) throws Exception {
 		Review item = service.selectOne(vo);
 		model.addAttribute("item", item);
-		return "infra/review/xdmin/reviewView";
+		return "infra/xdmin/review/reviewView";
 	}
 }

@@ -33,7 +33,7 @@ public class CodeController extends BaseController {
 		List<Code> list = service.selectList(vo);
 		model.addAttribute("list", list);
 		
-		return "infra/code/xdmin/codeList";
+		return "infra/xdmin/code/codeList";
 	}
 	
 	@RequestMapping(value = "codeView")
@@ -44,14 +44,14 @@ public class CodeController extends BaseController {
 		Code item = service.selectOne(vo);
 		model.addAttribute("item", item);
 		
-		return "infra/code/xdmin/codeView";
+		return "infra/xdmin/code/codeView";
 	}
 	
 	@RequestMapping(value = "codeForm")
 	public String codeForm(Model model) throws Exception {
 		List<Code> ccgNameList = service.ccgNameList();
 		model.addAttribute("ccgNameList", ccgNameList);
-		return "infra/code/xdmin/codeForm";
+		return "infra/xdmin/code/codeForm";
 	}
 	
 	@SuppressWarnings(value = {"all"})

@@ -79,7 +79,7 @@
 				<div class="row">
 					<div class="col-8 mx-auto mb-3">
 						<div class="form-floating">
-							<input type="email" class="form-control" id="mmEmail" name="mmEmail">
+							<input type="email" class="form-control" id="mmEmail" name="mmEmail" value="root@naver.com">
                             <label for="newEmail">이메일</label>
 						</div>
 					</div>
@@ -87,7 +87,7 @@
 				<div class="row">
 					<div class="col-8 mx-auto mb-3">
 						<div class="form-floating">
-							<input type="password" class="form-control" id="mmPw" name="mmPw">
+							<input type="password" class="form-control" id="mmPw" name="mmPw" value="123123">
                             <label for="newPw">비밀번호</label>
 						</div>
 					</div>

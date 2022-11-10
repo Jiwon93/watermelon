@@ -37,7 +37,7 @@
     <!-- Template Stylesheet -->
     <link href="/resources/template/woody/css/style.css" rel="stylesheet">
     
-    <link href="/resources/css/user/nav.css" rel="stylesheet">
+    <link href="/resources/user/css/nav.css" rel="stylesheet">
     
     <!-- Fontawesome Stylesheet -->
     <script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
@@ -59,7 +59,7 @@
 <form method="post" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
 	<input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
 	<!-- Navbar Start -->
-	<%@include file="../../common/xdmin/includeV1/nav.jsp"%>
+	<%@include file="../common/nav.jsp"%>
 	<!-- Navbar End -->
 
 	<!-- Contact Start -->
@@ -252,9 +252,7 @@
     				}
     			});
     		});
-    	
     </script>
-    
 </body>
 
 </html>

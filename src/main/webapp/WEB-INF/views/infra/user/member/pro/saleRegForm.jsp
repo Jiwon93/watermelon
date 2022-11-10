@@ -36,10 +36,10 @@
     <!-- Template Stylesheet -->
     <link href="/resources/template/woody/css/style.css" rel="stylesheet">
     
-    <link href="/resources/css/user/nav.css" rel="stylesheet">
-    <link href="/resources/css/user/upload.css" rel="stylesheet">
+    <link href="/resources/user/css/nav.css" rel="stylesheet">
+    <link href="/resources/user/css/upload.css" rel="stylesheet">
     
-    <link href="/resources/css/user/saleRegForm.css" rel="stylesheet">
+    <link href="/resources/user/css/saleRegForm.css" rel="stylesheet">
     
     <!-- Fontawesome Stylesheet -->
     <script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
@@ -448,7 +448,7 @@
 	</div>
 	
     <!-- Footer Start -->
-	<%@include file="../../common/xdmin/includeV1/footer.jsp"%>
+	<%@include file="../../common/footer.jsp"%>
 	<!-- Footer End -->
 
     <!-- Back to Top -->
@@ -471,9 +471,9 @@
     
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="/resources/js/user/upload.js"></script>
-    <script src="/resources/js/common/mmUpload.js"></script>
-    <script src="/resources/js/user/commonUser.js"></script>
+    <script src="/resources/user/js/upload.js"></script>
+    <script src="/resources/common/js/mmUpload.js"></script>
+    <script src="/resources/user/js/commonUser.js"></script>
     <script type="text/javascript">
     	var goUrlHome = "/member/memberHome";
     	var goUrlsaleRegInst = "/item/saleRegInst";

@@ -1,6 +1,6 @@
 	<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 	<%-- <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }"> --%>
-		
+	<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>	
 	<c:choose>
 		<c:when test="${sessRank eq 21}">
 		<div class="col-sm-3 p-lg-5">

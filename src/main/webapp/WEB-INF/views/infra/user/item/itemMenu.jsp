@@ -38,8 +38,8 @@
     <link href="/resources/template/woody/css/style.css" rel="stylesheet">
     
     <!-- CSS -->
-    <link href="/resources/css/user/mainCss.css" rel="stylesheet">
-    <link href="/resources/css/user/nav.css" rel="stylesheet">
+    <link href="/resources/user/css/mainCss.css" rel="stylesheet">
+    <link href="/resources/user/css/nav.css" rel="stylesheet">
     
     <!-- Fontawesome Stylesheet -->
     <script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
@@ -81,7 +81,7 @@
     <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
 	<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
     <!-- Navbar Start -->
-    <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
+    <%@include file="../common/nav.jsp"%>
     <!-- Navbar End -->
     <!-- Carousel Start -->
     <div class="container-fluid p-0 pb-5 mt-5">
@@ -228,7 +228,7 @@
 				</c:choose>
 	            </div>
 	            <!-- pagination s -->
-			    <%@include file="../../common/xdmin/includeV1/pagination.jsp"%>
+			    <%@include file="../common/pagination.jsp"%>
 			    <!-- pagination e -->
 			</div>
 		</div>
@@ -236,7 +236,7 @@
     <!-- Service End -->
 
     <!-- Footer Start -->
-    <%@include file="../../common/xdmin/includeV1/footer.jsp"%>
+    <%@include file="../common/footer.jsp"%>
     <!-- Footer End -->
 
     <!-- Back to Top -->
@@ -253,10 +253,11 @@
     <script src="/resources/template/woody/lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="/resources/template/woody/lib/isotope/isotope.pkgd.min.js"></script>
     <script src="/resources/template/woody/lib/lightbox/js/lightbox.min.js"></script>
-    <script src="/resources/js/user/validation.js"></script>
-
+    
     <!-- Template Javascript -->
     <script src="/resources/template/woody/js/main.js"></script>
+    
+    <script src="/resources/user/js/validation.js"></script>
     
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>

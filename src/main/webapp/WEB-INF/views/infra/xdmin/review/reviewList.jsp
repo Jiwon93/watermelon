@@ -9,16 +9,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>codeList</title>
-<link rel="canonical"
-	href="https://getbootstrap.com/docs/5.2/examples/sidebars/">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-	crossorigin="anonymous">
+<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sidebars/">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	
 <!-- Fontawesome Stylesheet -->
-<script src="https://kit.fontawesome.com/059fbc3cf8.js"
-	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
+	
 <style type="text/css">
 label {
 	font-size: large;
@@ -45,7 +41,7 @@ th, td {
 }
 </style>
 
-<link href="/resources/css/list.css" rel="stylesheet">
+<link href="/resources/xdmin/css/list.css" rel="stylesheet">
 </head>
 <body>
 	<form method="post" name="form" id="form">
@@ -56,13 +52,13 @@ th, td {
 		<input type="hidden" name="checkboxSeqArray">
 		 --%>
 		<!-- *header.jsp s -->
-		<%@include file="../../common/xdmin/includeV1/header.jsp"%>		<!-- #-> -->
+		<%@include file="../common/header.jsp"%>		<!-- #-> -->
 		<!-- *header.jsp e -->
 		
 		<div class="container-fluid mt-5 ps-0">
 			<div class="row mt-4">
 				<!-- *sidebar.jsp s -->
-				<%@include file="../../common/xdmin/includeV1/sidebar.jsp"%>		<!-- #-> -->
+				<%@include file="../common/sidebar.jsp"%>		<!-- #-> -->
 				<!-- *sidebar.jsp e -->
 				<div class="col-10">
 					<div class="row">
@@ -220,7 +216,7 @@ th, td {
 		<!-- Footer End -->
 	</form>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-	<script src="/resources/js/xdmin/sidebar.js"></script>
+	<script src="/resources/xdmin/js/sidebar.js"></script>
 	<script>
 		var goUrlList = "/review/reviewList";
 		/* 

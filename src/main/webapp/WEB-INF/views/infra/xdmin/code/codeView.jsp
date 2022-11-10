@@ -7,10 +7,9 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>codeView</title>
-
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>codeView</title>
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sidebars/">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<!-- Fontawesome Stylesheet -->
@@ -37,7 +36,7 @@
 		
 	</style>
 	
-	<link href="/resources/css/list.css" rel="stylesheet">
+	<link href="/resources/xdmin/css/list.css" rel="stylesheet">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
   	<link rel="stylesheet" href="/resources/demos/style.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -46,17 +45,17 @@
 <body>
 	<form id="form" name="form" autocomplete="off" enctype="multipart/form-data">
 	<!-- *Vo.jsp s -->
-	<%@include file="../../common/xdmin/includeV1/codeVo.jsp"%>		<!-- #-> -->
+	<%@include file="../common/codeVo.jsp"%>		<!-- #-> -->
 	<!-- *Vo.jsp e -->
 		
 		<!-- *header.jsp s -->
-		<%@include file="../../common/xdmin/includeV1/header.jsp"%>		<!-- #-> -->
+		<%@include file="../common/header.jsp"%>		<!-- #-> -->
 		<!-- *header.jsp e -->
 		
 		<div class="container-fluid">
 			<div class="row mt-4">
 				<!-- *sidebar.jsp s -->
-				<%@include file="../../common/xdmin/includeV1/sidebar.jsp"%>		<!-- #-> -->
+				<%@include file="../common/sidebar.jsp"%>		<!-- #-> -->
 				<!-- *sidebar.jsp e -->
 				<div class="col-10">
 					<div class="row">
@@ -225,12 +224,12 @@
 	</form>
 	<form name="formVo" id="formVo" method="post">
 	<!-- *Vo.jsp s -->
-	<%@include file="../../common/xdmin/includeV1/codeVo.jsp"%>		<!-- #-> -->
+	<%@include file="../common/codeVo.jsp"%>		<!-- #-> -->
 	<!-- *Vo.jsp e -->
 	</form>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-	<script src="/resources/js/xdmin/sidebar.js"></script>
+	<script src="/resources/xdmin/js/sidebar.js"></script>
 	<script>
 		var goUrlList = "/code/codeList";
 		var goUrlInst = "/code/codeInst";

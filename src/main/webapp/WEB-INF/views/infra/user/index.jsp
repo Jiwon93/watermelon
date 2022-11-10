@@ -38,7 +38,7 @@
     <!-- Template Stylesheet -->
     <link href="/resources/template/woody/css/style.css" rel="stylesheet">
     
-    <link href="/resources/css/user/nav.css" rel="stylesheet">
+    <link href="/resources/user/css/nav.css" rel="stylesheet">
     
     <!-- Fontawesome Stylesheet -->
     <script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>

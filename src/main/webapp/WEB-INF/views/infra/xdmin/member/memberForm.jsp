@@ -8,12 +8,12 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Favicon -->
     <link href="/resources/images/logo.PNG" rel="icon">
-<title>memberForm</title>
+	<title>memberForm</title>
 
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sidebars/">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -42,20 +42,20 @@
 		}
 	</style>
 	
-	<link href="/resources/css/list.css" rel="stylesheet">
+	<link href="/resources/xdmin/css/list.css" rel="stylesheet">
 </head>
 <body>
 	<form id="form" name="form" method="post" onkeydown="return captureReturnKey(event)" autocomplete="off" enctype="multipart/form-data">
 		
 		<!-- *header.jsp s -->
-		<%@include file="../../common/xdmin/includeV1/header.jsp"%>		<!-- #-> -->
+		<%@include file="../common/header.jsp"%>		<!-- #-> -->
 		<!-- *header.jsp e -->
 		
 		<div class="container-fluid">
 			<div class="row mt-4">
 			
 				<!-- *sidebar.jsp s -->
-				<%@include file="../../common/xdmin/includeV1/sidebar.jsp"%>		<!-- #-> -->
+				<%@include file="../common/sidebar.jsp"%>		<!-- #-> -->
 				<!-- *sidebar.jsp e -->
 				
 				<div class="col-10">
@@ -253,8 +253,10 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=17e90af3c57fa367793d1f57799dd4c9&libraries=services,clusterer,drawing"></script>
-	<script src="/resources/js/xdmin/sidebar.js"></script>
-	<script src="/resources/js/user/reg.js"></script>
+	
+	<script src="/resources/xdmin/js/sidebar.js"></script>
+	<script src="/resources/xdmin/js/reg.js"></script>
+	
 	<script type="text/javascript">
 	
 		var goUrlList = "/member/memberList";

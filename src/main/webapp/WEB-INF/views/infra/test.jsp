@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
-<%@include file="common/xdmin/includeV1/head.jsp"%>
+<%@include file="xdmin/common/head.jsp"%>
 
 </head>
 <body>
@@ -21,8 +21,6 @@ IncheonBreadList
 	<br><c:out value="${item.road_nm_addr }"/>
 	<br><c:out value="${item.lat }"/>	
 </c:forEach>
-
-
 
 </body>
 </html>

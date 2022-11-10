@@ -41,8 +41,8 @@
     <script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
 	
 	<!-- CSS -->
-    <link href="/resources/css/user/itemMenuView.css" rel="stylesheet">
-    <link href="/resources/css/user/nav.css" rel="stylesheet">
+    <link href="/resources/user/css/itemMenuView.css" rel="stylesheet">
+    <link href="/resources/user/css/nav.css" rel="stylesheet">
 </head>
 
 <body>
@@ -51,7 +51,7 @@
 	<input type="hidden" name="itemSeq" value="${vo.itemSeq }">
 	<div class="container-fluid">
     <!-- Navbar Start -->
-    <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
+    <%@include file="../common/nav.jsp"%>
     <!-- Navbar End -->
 	    <!-- Service Start -->
 	    <div class="container py-5">
@@ -685,7 +685,7 @@
 	
 	
     <!-- Footer Start -->
-    <%@include file="../../common/xdmin/includeV1/footer.jsp"%>
+    <%@include file="../common/footer.jsp"%>
     <!-- Footer End -->
 
     <!-- Back to Top -->

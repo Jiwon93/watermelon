@@ -39,17 +39,17 @@
     <link href="/resources/template/woody/css/style.css" rel="stylesheet">
     
     <!--  -->
-    <link href="/resources/css/user/agree.css" rel="stylesheet">
+    <link href="/resources/user/css/agree.css" rel="stylesheet">
     
-    <link href="/resources/css/user/nav.css" rel="stylesheet">
+    <link href="/resources/user/css/nav.css" rel="stylesheet">
     
     <!-- datepicker -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/css/user/datePicker.css">
+    <link rel="stylesheet" href="/resources/user/css/datePicker.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 	<link rel="stylesheet" href="/resources/demos/style.css">
-	<script src="/resources/js/common/jqueryNoConflict.js"></script>
+	<script src="/resources/common/js/jqueryNoConflict.js"></script>
 	<script>
 	 	$jQ( function() {
 	   		$jQ("#datepicker").datepicker({dateFormat:"yy-mm-dd"});
@@ -281,8 +281,8 @@
 	<!-- JavaScript & jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	
-	<script src="/resources/js/user/reg.js"></script>
-	<script src="/resources/js/user/validation.js"></script>
+	<script src="/resources/user/js/reg.js"></script>
+	<script src="/resources/user/js/validation.js"></script>
 	
 	<script type="text/javascript">
 	

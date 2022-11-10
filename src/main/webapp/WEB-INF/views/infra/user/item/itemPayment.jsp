@@ -37,7 +37,7 @@
     <!-- Template Stylesheet -->
     <link href="/resources/template/woody/css/style.css" rel="stylesheet">
     
-    <link href="/resources/css/user/nav.css" rel="stylesheet">
+    <link href="/resources/user/css/nav.css" rel="stylesheet">
     
     <!-- Fontawesome Stylesheet -->
     <script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
@@ -77,10 +77,6 @@
     </nav>
     <!-- Navbar End -->
 
-
-    <!-- Carousel Start -->
-    <!-- Carousel End -->
-    
     <!-- Service Start -->
     <div class="container-fluid py-4">
 		<div class="container-fluid py-5">
@@ -301,7 +297,7 @@
     <!-- Testimonial End -->
 
     <!-- Footer Start -->
-    <%@include file="../../common/xdmin/includeV1/footer.jsp"%>
+    <%@include file="../common/footer.jsp"%>
     <!-- Footer End -->
 
 

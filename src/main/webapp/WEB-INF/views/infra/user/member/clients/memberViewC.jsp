@@ -40,10 +40,11 @@
     <!-- Template Stylesheet -->
     <link href="/resources/template/woody/css/style.css" rel="stylesheet">
     
-    <link href="/resources/css/user/nav.css" rel="stylesheet">
+    <link href="/resources/user/css/nav.css" rel="stylesheet">
     
     <!-- Fontawesome Stylesheet -->
     <script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
+    
     <style type="text/css">
     	label {
     		font-weight: bold;
@@ -80,7 +81,7 @@
 <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
 <input type="hidden" id="mmSeq" name="mmSeq" value="${vo.mmSeq }">
 	<!-- Navbar Start -->
-	<%@include file="../../common/xdmin/includeV1/nav.jsp"%>
+	<%@include file="../../common/nav.jsp"%>
 	<!-- Navbar End -->
 
 	<!-- Contact Start -->
@@ -88,7 +89,7 @@
 		<div class="row">
 
 	<!-- mypageList Start -->
-	<%@include file="../../common/xdmin/includeV1/mypageList.jsp"%>
+	<%@include file="../../common/mypageList.jsp"%>
 	<!-- mypageList End -->
 
 			<div class="col-sm-9 p-2">
@@ -189,13 +190,12 @@
 	</div>
     
 	<!-- Footer Start -->
-	<%@include file="../../common/xdmin/includeV1/footer.jsp"%>
+	<%@include file="../../common/footer.jsp"%>
 	<!-- Footer End -->
 
 	<!-- Back to Top -->
 	<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 </form>
-
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -211,11 +211,10 @@
     <!-- Template Javascript -->
     <script src="/resources/template/woody/js/main.js"></script>
     
-    <script src="/resources/js/common/mmUpload.js"></script>
+    <script src="/resources/common/js/mmUpload.js"></script>
     
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    
     
     <script type="text/javascript">
 		

@@ -58,9 +58,14 @@ public class ItemController {
 	}
 	
 	public void setCheckboxNull(Item dto) throws Exception {
-		//dto.setEmail_ctr(dto.getEmail_ctr() == null ? 0 : dto.getEmail_ctr());
-		//dto.setKakao_ctr(dto.getKakao_ctr() == null ? 0 : dto.getKakao_ctr());
-		//dto.setSms_ctr(dto.getSms_ctr() == null ? 0 : dto.getSms_ctr());
+		dto.setResponsiveWeb(dto.getResponsiveWeb() == null ? 0 : dto.getResponsiveWeb());
+		dto.setContentUpload(dto.getContentUpload() == null ? 0 : dto.getContentUpload());
+		dto.setSourceCode(dto.getSourceCode() == null ? 0 : dto.getSourceCode());
+		dto.setPagePlus(dto.getPagePlus() == null ? 0 : dto.getPagePlus());
+		dto.setDesign(dto.getDesign() == null ? 0 : dto.getDesign());
+		dto.setFunctionPlus(dto.getFunctionPlus() == null ? 0 : dto.getFunctionPlus());
+		dto.setQuickWork(dto.getQuickWork() == null ? 0 : dto.getQuickWork());
+		dto.setPlusMod(dto.getPlusMod() == null ? 0 : dto.getPlusMod());
 	}
 	
 	//상품등록

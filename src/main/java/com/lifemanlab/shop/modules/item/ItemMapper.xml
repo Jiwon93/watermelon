@@ -22,7 +22,8 @@
 	<select id="selectList" resultMap="resultMapObj">
 		<include refid="Base.selectListUpperForMysql" />
 			SELECT
-				a.itTitle
+				a.itemSeq
+				,a.itTitle
 				,b.mmNickname
 				,c.itemPrice
 				<!-- <include refid="Base.selectRegModWithAlies" /> -->

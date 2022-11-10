@@ -46,7 +46,7 @@
 </head>
 
 <body>
-<form method="post" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
+<form method="post" id="form" name="form" autocomplete="off">
 	<input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
 	<input type="hidden" name="itemSeq" value="${vo.itemSeq }">
 	<div class="container-fluid">

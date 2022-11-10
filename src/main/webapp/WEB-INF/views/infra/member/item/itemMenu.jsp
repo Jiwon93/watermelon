@@ -75,7 +75,7 @@
 </head>
 
 <body>
-<form method="post" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
+<form method="post" id="form" name="form" autocomplete="off">
     <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
     <input type="hidden" name="itemSeq" value="${dto.itemSeq }">
     <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
@@ -83,8 +83,6 @@
     <!-- Navbar Start -->
     <%@include file="../../common/xdmin/includeV1/nav.jsp"%>
     <!-- Navbar End -->
-
-
     <!-- Carousel Start -->
     <div class="container-fluid p-0 pb-5 mt-5">
         <div class="owl-carousel header-carousel position-relative">

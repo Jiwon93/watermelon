@@ -267,25 +267,37 @@
            			<h5 class="mb-3">결제방법</h5>
            			<div class="form-check form-check-inline">
                         <input type="radio" class="form-check-input" name="creditCard" id="creditCardP">
-                        <label class="form-check-label" for="creditCardP">신용카드</label>
+                        <label class="form-check-label" for="creditCardP">일반결제</label>
+                    </div>
+           			<div class="">
+	           			<div class="form-check form-check-inline">
+	                        <input type="radio" class="form-check-input" name="creditCard" id="creditCardP">
+	                        <label class="form-check-label" for="creditCardP">신용카드</label>
+	                    </div>
+	                    <div class="form-check form-check-inline">
+	                        <input type="radio" class="form-check-input" name="creditCard" id="">
+	                        <label class="form-check-label" for="">실시간 계좌이체</label>
+	                    </div>
+	                    <div class="form-check form-check-inline">
+	                        <input type="radio" class="form-check-input" name="creditCard" id="">
+	                        <label class="form-check-label" for="">무통장입금</label>
+	                    </div>
+	                    <div class="form-check form-check-inline">
+	                        <input type="radio" class="form-check-input" name="creditCard" id="">
+	                        <label class="form-check-label" for="">휴대폰</label>
+	                    </div>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" name="" id="">
-                        <label class="form-check-label" for="">실시간 계좌이체</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" name="" id="">
-                        <label class="form-check-label" for="">무통장입금</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" name="" id="">
-                        <label class="form-check-label" for="">휴대폰</label>
+                        <input type="radio" class="form-check-input" name="creditCard" id="creditCardP">
+                        <label class="form-check-label" for="creditCardP">카카오페이</label>
                     </div>
        			</div>
+       			<!-- 
        			<div class="p-4 border border-2 border-light mb-3">
            			<h5 class="mb-3" style="display: inline;">세금계산서 발행신청</h5>
            			<input type="checkbox" class="form-check-input" name="" id="">
        			</div>
+       			 -->
 	        </div>
         </div>
     </div>

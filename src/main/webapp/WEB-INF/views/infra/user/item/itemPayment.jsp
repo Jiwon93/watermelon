@@ -267,12 +267,12 @@
        			<div class="p-4 border border-2 border-light mb-3">
            			<h5 class="mb-3">결제방법</h5>
            			<div class="form-check form-check-inline mb-3">
-                        <input type="radio" class="form-check-input" name="paymentMethod" id="paymentBasic">
+                        <input type="radio" class="form-check-input" name="paymentMethod" id="paymentBasic" value="일반결제">
                         <label class="form-check-label" for="creditCardP">일반결제</label>
                     </div>
-           			<div class="border border-2 border-light p-3 rounded-3 mb-3">
+           			<div class="border border-2 border-light p-3 rounded-3 mb-3" id="payment" style="display: none;">
 	           			<div class="form-check form-check-inline">
-	                        <input type="radio" class="form-check-input" name="creditCard" id="paymentCard">
+	                        <input type="radio" class="form-check-input" name="creditCard" id="">
 	                        <label class="form-check-label" for="creditCardP">신용카드</label>
 	                    </div>
 	                    <div class="form-check form-check-inline">
@@ -289,7 +289,7 @@
 	                    </div>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" name="paymentMethod" id="paymentKakao">
+                        <input type="radio" class="form-check-input" name="paymentMethod" id="paymentKakao" value="카카오페이">
                         <label class="form-check-label" for="creditCardP">카카오페이</label>
                     </div>
        			</div>
@@ -398,20 +398,18 @@
     		}
     	});
     	*/
-    	function() {
-    		if($('input[id="paymentBasic"]').prop('checked',true);){
-    			$('input[id="paymentCard"]').prop('checked',true);
-    		} else {
-    			
-    		}	
-    	}
-    	
-    	$(document).ready(function() {
-    	    if($('input[id="paymentBasic"]').prop('checked',true);).click(function() {
-    	    	$('input[id="paymentCard"]').prop('checked',true);
-    	    	$("input:radio[id=paymentKakao]:checked")[0].checked = false;
-    	    })
+    	$(document).ready(function(){
+    		$("input[name='paymentMethod']").change(function(){
+    			// 일반 결제 선택 시
+    			if($("input:radio[name=paymentMethod]:checked").val() == '일반결제'){
+   					$('#payment').show();
+   				// 카카오 페이 결제 선택 시
+    			} else if($("input:radio[name=paymentMethod]:checked").val() == '카카오페이'){
+    				$('#payment').hide();
+    			}
+    		});
     	});
+    	
     </script>
     <script type="text/javascript">
     	

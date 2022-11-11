@@ -267,12 +267,12 @@
        			<div class="p-4 border border-2 border-light mb-3">
            			<h5 class="mb-3">결제방법</h5>
            			<div class="form-check form-check-inline mb-3">
-                        <input type="radio" class="form-check-input" name="creditCard" id="creditCardP">
+                        <input type="radio" class="form-check-input" name="paymentMethod" id="paymentBasic">
                         <label class="form-check-label" for="creditCardP">일반결제</label>
                     </div>
            			<div class="border border-2 border-light p-3 rounded-3 mb-3">
 	           			<div class="form-check form-check-inline">
-	                        <input type="radio" class="form-check-input" name="creditCard" id="creditCardP">
+	                        <input type="radio" class="form-check-input" name="creditCard" id="paymentCard">
 	                        <label class="form-check-label" for="creditCardP">신용카드</label>
 	                    </div>
 	                    <div class="form-check form-check-inline">
@@ -289,7 +289,7 @@
 	                    </div>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input" name="creditCard" id="creditCardP">
+                        <input type="radio" class="form-check-input" name="paymentMethod" id="paymentKakao">
                         <label class="form-check-label" for="creditCardP">카카오페이</label>
                     </div>
        			</div>
@@ -398,6 +398,20 @@
     		}
     	});
     	*/
+    	function() {
+    		if($('input[id="paymentBasic"]').prop('checked',true);){
+    			$('input[id="paymentCard"]').prop('checked',true);
+    		} else {
+    			
+    		}	
+    	}
+    	
+    	$(document).ready(function() {
+    	    if($('input[id="paymentBasic"]').prop('checked',true);).click(function() {
+    	    	$('input[id="paymentCard"]').prop('checked',true);
+    	    	$("input:radio[id=paymentKakao]:checked")[0].checked = false;
+    	    })
+    	});
     </script>
     <script type="text/javascript">
     	

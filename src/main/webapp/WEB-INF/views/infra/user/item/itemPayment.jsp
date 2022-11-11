@@ -60,6 +60,7 @@
     		height: 40px;
     		width: 200px;
     	}
+    	
     </style>
 </head>
 
@@ -84,7 +85,7 @@
 				<h4 class="pb-4">결제하기</h4>
 				<div class="row">
 					<div class="col-8 pe-0">
-		       			<div class="p-4 border border-2 border-light mb-3">
+		       			<div class="p-4 border border-2 border-light mb-3" style="height: 580px;">
 		           			<h5 class="mb-3">주문내역</h5>
 		           			<div class="col-sm-12 pb-5">
 		           				<table>
@@ -169,7 +170,7 @@
 		       			</div>
 	       			</div>
 	       			<div class="col-4">
-		       			<div class="p-4 border border-2 border-light">
+		       			<div class="p-4 border border-2 border-light" style="height: 580px;">
 		       				<h5 class="mb-5">최종확인</h5>
 		       				<div class="row mb-4">
 			       				<div class="col-6 ">
@@ -265,11 +266,11 @@
        			 -->
        			<div class="p-4 border border-2 border-light mb-3">
            			<h5 class="mb-3">결제방법</h5>
-           			<div class="form-check form-check-inline">
+           			<div class="form-check form-check-inline mb-3">
                         <input type="radio" class="form-check-input" name="creditCard" id="creditCardP">
                         <label class="form-check-label" for="creditCardP">일반결제</label>
                     </div>
-           			<div class="">
+           			<div class="border border-2 border-light p-3 rounded-3 mb-3">
 	           			<div class="form-check form-check-inline">
 	                        <input type="radio" class="form-check-input" name="creditCard" id="creditCardP">
 	                        <label class="form-check-label" for="creditCardP">신용카드</label>
@@ -334,6 +335,9 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
+    <!-- iamport.payment.js -->
+	<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-{SDK-최신버전}.js"></script>
+    
     <script type="text/javascript">
     	var goUrlHome = "/member/memberHome";
     	var goUrlMypage = "/member/memberViewC";
@@ -394,6 +398,9 @@
     		}
     	});
     	*/
+    </script>
+    <script type="text/javascript">
+    	
     </script>
 </body>
 

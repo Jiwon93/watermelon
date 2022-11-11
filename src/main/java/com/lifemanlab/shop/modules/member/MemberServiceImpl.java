@@ -38,14 +38,13 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 		dto.setModDeviceCd(UtilRegMod.getDevice());
 		dto.setModDateTime(UtilDatetime.nowDate());
 	}
-
+	
+	@Override
 	public void uploadFiles(MultipartFile[] multipartFiles, Member dto, String tableName, int type, int maxNumber) throws Exception {
-		
+			
 		for(int i=0; i<multipartFiles.length; i++) {
-    	
+	    	
 			if(!multipartFiles[i].isEmpty()) {
-				
-				System.out.println(i + ": multipartFiles[i].getOriginalFilename() : " + multipartFiles[i].getOriginalFilename());
 				
 				String className = dto.getClass().getSimpleName().toString().toLowerCase();		
 				String fileName = multipartFiles[i].getOriginalFilename();
@@ -76,40 +75,46 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 				
 				dto.setTableName(tableName);
 				dto.setType(type);
-//				dto.setDefaultNy(j == 0 ? 1 : 0);
-				dto.setSort(maxNumber + i + 1);
-				dto.setpSeq(dto.getMmSeq());
+//				dto.setDefaultNy();
+				dto.setSort(maxNumber + i);
+				dto.setPseq(dto.getMmSeq());
 
 				dao.insertUploaded(dto);
     		}
 		}
+		
 	}
-	
+
 	@Override
 	public void deleteFiles(String[] deleteSeq, String[] deletePathFile, Member dto, String tableName) throws Exception {
 		for (int i=0; i<deleteSeq.length; i++) {
 			File file = new File(Constants.UPLOAD_PATH_PREFIX_EXTERNAL + deletePathFile[i]);
+        
 			boolean result = file.delete();
-			
-			if(result) {
-				dto.setSeq(deleteSeq[i]);
-				dto.setTableName(tableName);
-				dao.deleteUploaded(dto);
-			}
+            
+            if(result) {
+            	dto.setSeq(deleteSeq[i]);
+            	dto.setTableName(tableName);
+            	dao.deleteUploaded(dto);
+            }
 		}
 	}
-
 
 	@Override
 	public void ueleteFiles(String[] deleteSeq, String[] deletePathFile, Member dto, String tableName) throws Exception {
+			
 		for (int i=0; i<deleteSeq.length; i++) {
-			dto.setSeq(deleteSeq[i]);
-			dto.setTableName(tableName);
-			dao.ueleteUploaded(dto);
+//			File file = new File(Constants.UPLOAD_PATH_PREFIX_EXTERNAL + deletePathFile[i]);
+//			boolean result = file.delete();
+			
+//			if(result) {
+				dto.setSeq(deleteSeq[i]);
+				dto.setTableName(tableName);
+				dao.ueleteUploaded(dto);
+//			}
 		}
 	}
-
-
+	
 	@Override
 	public List<Member> selectListUploaded(MemberVo vo) throws Exception {
 		return dao.selectListUploaded(vo);
@@ -212,13 +217,12 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	public int memberMod(Member dto) throws Exception {
 		setRegMod(dto);
 		dao.memberMod(dto);
-		if(!dto.getMmUploadedProfileImage()[0].isEmpty()) {
-			deleteFiles(dto.getMmUploadedImageDeleteSeq(), dto.getMmUploadedImageDeletePathFile(), dto, "mmUploaded");
-			uploadFiles(dto.getMmUploadedProfileImage(), dto, "mmUploaded", dto.getUploadImgProfileType(), dto.getMmUploadedProfileMaxNumber());
+		if(!dto.getUploadImgProfile()[0].isEmpty()) {
+			deleteFiles(dto.getUploadImgProfileDeleteSeq(), dto.getUploadImgProfileDeletePathFile(), dto, "mmUploaded");
+			uploadFiles(dto.getUploadImgProfile(), dto, "mmUploaded", dto.getUploadImgProfileType(), dto.getUploadImgProfileMaxNumber());
 		} else {
-			// by pass: empty
+			// by pass : empty
 		}
-		
 		return 1;
 	}
 	
@@ -287,6 +291,8 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	public int kakaoInst(Member dto) throws Exception {
 		return dao.kakaoInst(dto);
 	}
+
+	
 
 
 	

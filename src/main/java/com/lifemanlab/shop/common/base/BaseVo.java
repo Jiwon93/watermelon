@@ -29,6 +29,8 @@ public class BaseVo {
 	private String shDateEnd;
 	private Integer shOptionDate;
 	
+//	list
+	private String[] checkboxSeqArray;
 	
 	//insert
 	
@@ -221,6 +223,14 @@ public class BaseVo {
 //		System.out.println("getEndRnumForOracle():" + getEndRnumForOracle());
 //		System.out.println("getStartRnumForMysql(): " + getStartRnumForMysql());
 		
+	}
+
+	public String[] getCheckboxSeqArray() {
+		return checkboxSeqArray;
+	}
+
+	public void setCheckboxSeqArray(String[] checkboxSeqArray) {
+		this.checkboxSeqArray = checkboxSeqArray;
 	}
 
 	

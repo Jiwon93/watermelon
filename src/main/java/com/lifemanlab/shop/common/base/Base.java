@@ -18,7 +18,7 @@ public class Base {
 	private String ext;
 	private long size;
 	private Integer delNy;
-	private String pSeq;
+	private String pseq;
 	
 	// ccg
 	private String ccgSeq;
@@ -113,11 +113,11 @@ public class Base {
 	public void setPath(String path) {
 		this.path = path;
 	}
-	public String getpSeq() {
-		return pSeq;
+	public String getPseq() {
+		return pseq;
 	}
-	public void setpSeq(String pSeq) {
-		this.pSeq = pSeq;
+	public void setPseq(String pSeq) {
+		this.pseq = pSeq;
 	}
 	////////////////////////////////////////
 	

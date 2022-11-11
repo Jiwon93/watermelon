@@ -50,22 +50,24 @@ public class Member extends Base{
 	private String itemSeq;
 	private String item_itemSeq;
 	
-	
-	private MultipartFile[] mmUploadedProfileImage;
+	//업로드
+	private MultipartFile[] uploadImgProfile;
 	private Integer uploadImgProfileType;	
-	private Integer mmUploadedProfileMaxNumber;
-	private String[] mmUploadedProfileDeleteSeq;
-	private String[] mmUploadedProfileDeletePathFile;
+	private Integer uploadImgProfileMaxNumber;
+	private String[] uploadImgProfileDeleteSeq;
+	private String[] uploadImgProfileDeletePathFile;	
 	
-	private MultipartFile[] mmUploadedImage;
-	private Integer mmUploadedImageMaxNumber;
-	private String[] mmUploadedImageDeleteSeq;
-	private String[] mmUploadedImageDeletePathFile;	
+	private MultipartFile[] uploadImg;
+	private Integer uploadImgType;	
+	private Integer uploadImgMaxNumber;
+	private String[] uploadImgDeleteSeq;
+	private String[] uploadImgDeletePathFile;	
 	
-	private MultipartFile[] mmUploadedFile;
-	private Integer mmUploadedFileMaxNumber;
-	private String[] mmUploadedFileDeleteSeq;
-	private String[] mmUploadedFileDeletePathFile;
+	private MultipartFile[] uploadFile;
+	private Integer uploadFileType;
+	private Integer uploadFileMaxNumber;
+	private String[] uploadFileDeleteSeq;
+	private String[] uploadFileDeletePathFile;
 ///////////////////////////////////////////////
 	
 	//공통코드
@@ -257,24 +259,6 @@ public class Member extends Base{
 	public void setSessSeq(String sessSeq) {
 		this.sessSeq = sessSeq;
 	}
-	public MultipartFile[] getMmUploadedProfileImage() {
-		return mmUploadedProfileImage;
-	}
-	public void setMmUploadedProfileImage(MultipartFile[] mmUploadedProfileImage) {
-		this.mmUploadedProfileImage = mmUploadedProfileImage;
-	}
-	public MultipartFile[] getMmUploadedImage() {
-		return mmUploadedImage;
-	}
-	public void setMmUploadedImage(MultipartFile[] mmUploadedImage) {
-		this.mmUploadedImage = mmUploadedImage;
-	}
-	public MultipartFile[] getMmUploadedFile() {
-		return mmUploadedFile;
-	}
-	public void setMmUploadedFile(MultipartFile[] mmUploadedFile) {
-		this.mmUploadedFile = mmUploadedFile;
-	}
 	public String getItTitle() {
 		return itTitle;
 	}
@@ -299,71 +283,101 @@ public class Member extends Base{
 	public void setItem_itemSeq(String item_itemSeq) {
 		this.item_itemSeq = item_itemSeq;
 	}
-	public Integer getMmUploadedProfileMaxNumber() {
-		return mmUploadedProfileMaxNumber;
-	}
-	public void setMmUploadedProfileMaxNumber(Integer mmUploadedProfileMaxNumber) {
-		this.mmUploadedProfileMaxNumber = mmUploadedProfileMaxNumber;
-	}
-	public String[] getMmUploadedProfileDeleteSeq() {
-		return mmUploadedProfileDeleteSeq;
-	}
-	public void setMmUploadedProfileDeleteSeq(String[] mmUploadedProfileDeleteSeq) {
-		this.mmUploadedProfileDeleteSeq = mmUploadedProfileDeleteSeq;
-	}
-	public String[] getMmUploadedProfileDeletePathFile() {
-		return mmUploadedProfileDeletePathFile;
-	}
-	public void setMmUploadedProfileDeletePathFile(String[] mmUploadedProfileDeletePathFile) {
-		this.mmUploadedProfileDeletePathFile = mmUploadedProfileDeletePathFile;
-	}
-	public String[] getMmUploadedImageDeleteSeq() {
-		return mmUploadedImageDeleteSeq;
-	}
-	public void setMmUploadedImageDeleteSeq(String[] mmUploadedImageDeleteSeq) {
-		this.mmUploadedImageDeleteSeq = mmUploadedImageDeleteSeq;
-	}
-	public String[] getMmUploadedImageDeletePathFile() {
-		return mmUploadedImageDeletePathFile;
-	}
-	public void setMmUploadedImageDeletePathFile(String[] mmUploadedImageDeletePathFile) {
-		this.mmUploadedImageDeletePathFile = mmUploadedImageDeletePathFile;
-	}
-	public String[] getMmUploadedFileDeleteSeq() {
-		return mmUploadedFileDeleteSeq;
-	}
-	public void setMmUploadedFileDeleteSeq(String[] mmUploadedFileDeleteSeq) {
-		this.mmUploadedFileDeleteSeq = mmUploadedFileDeleteSeq;
-	}
-	public String[] getMmUploadedFileDeletePathFile() {
-		return mmUploadedFileDeletePathFile;
-	}
-	public void setMmUploadedFileDeletePathFile(String[] mmUploadedFileDeletePathFile) {
-		this.mmUploadedFileDeletePathFile = mmUploadedFileDeletePathFile;
-	}
-	public Integer getMmUploadedImageMaxNumber() {
-		return mmUploadedImageMaxNumber;
-	}
-	public void setMmUploadedImageMaxNumber(Integer mmUploadedImageMaxNumber) {
-		this.mmUploadedImageMaxNumber = mmUploadedImageMaxNumber;
-	}
-	public Integer getMmUploadedFileMaxNumber() {
-		return mmUploadedFileMaxNumber;
-	}
-	public void setMmUploadedFileMaxNumber(Integer mmUploadedFileMaxNumber) {
-		this.mmUploadedFileMaxNumber = mmUploadedFileMaxNumber;
-	}
 	public String getToken() {
 		return token;
 	}
 	public void setToken(String token) {
 		this.token = token;
 	}
+	public MultipartFile[] getUploadImgProfile() {
+		return uploadImgProfile;
+	}
+	public void setUploadImgProfile(MultipartFile[] uploadImgProfile) {
+		this.uploadImgProfile = uploadImgProfile;
+	}
 	public Integer getUploadImgProfileType() {
 		return uploadImgProfileType;
 	}
 	public void setUploadImgProfileType(Integer uploadImgProfileType) {
 		this.uploadImgProfileType = uploadImgProfileType;
+	}
+	public Integer getUploadImgProfileMaxNumber() {
+		return uploadImgProfileMaxNumber;
+	}
+	public void setUploadImgProfileMaxNumber(Integer uploadImgProfileMaxNumber) {
+		this.uploadImgProfileMaxNumber = uploadImgProfileMaxNumber;
+	}
+	public String[] getUploadImgProfileDeleteSeq() {
+		return uploadImgProfileDeleteSeq;
+	}
+	public void setUploadImgProfileDeleteSeq(String[] uploadImgProfileDeleteSeq) {
+		this.uploadImgProfileDeleteSeq = uploadImgProfileDeleteSeq;
+	}
+	public String[] getUploadImgProfileDeletePathFile() {
+		return uploadImgProfileDeletePathFile;
+	}
+	public void setUploadImgProfileDeletePathFile(String[] uploadImgProfileDeletePathFile) {
+		this.uploadImgProfileDeletePathFile = uploadImgProfileDeletePathFile;
+	}
+	public MultipartFile[] getUploadImg() {
+		return uploadImg;
+	}
+	public void setUploadImg(MultipartFile[] uploadImg) {
+		this.uploadImg = uploadImg;
+	}
+	public Integer getUploadImgType() {
+		return uploadImgType;
+	}
+	public void setUploadImgType(Integer uploadImgType) {
+		this.uploadImgType = uploadImgType;
+	}
+	public Integer getUploadImgMaxNumber() {
+		return uploadImgMaxNumber;
+	}
+	public void setUploadImgMaxNumber(Integer uploadImgMaxNumber) {
+		this.uploadImgMaxNumber = uploadImgMaxNumber;
+	}
+	public String[] getUploadImgDeleteSeq() {
+		return uploadImgDeleteSeq;
+	}
+	public void setUploadImgDeleteSeq(String[] uploadImgDeleteSeq) {
+		this.uploadImgDeleteSeq = uploadImgDeleteSeq;
+	}
+	public String[] getUploadImgDeletePathFile() {
+		return uploadImgDeletePathFile;
+	}
+	public void setUploadImgDeletePathFile(String[] uploadImgDeletePathFile) {
+		this.uploadImgDeletePathFile = uploadImgDeletePathFile;
+	}
+	public MultipartFile[] getUploadFile() {
+		return uploadFile;
+	}
+	public void setUploadFile(MultipartFile[] uploadFile) {
+		this.uploadFile = uploadFile;
+	}
+	public Integer getUploadFileType() {
+		return uploadFileType;
+	}
+	public void setUploadFileType(Integer uploadFileType) {
+		this.uploadFileType = uploadFileType;
+	}
+	public Integer getUploadFileMaxNumber() {
+		return uploadFileMaxNumber;
+	}
+	public void setUploadFileMaxNumber(Integer uploadFileMaxNumber) {
+		this.uploadFileMaxNumber = uploadFileMaxNumber;
+	}
+	public String[] getUploadFileDeleteSeq() {
+		return uploadFileDeleteSeq;
+	}
+	public void setUploadFileDeleteSeq(String[] uploadFileDeleteSeq) {
+		this.uploadFileDeleteSeq = uploadFileDeleteSeq;
+	}
+	public String[] getUploadFileDeletePathFile() {
+		return uploadFileDeletePathFile;
+	}
+	public void setUploadFileDeletePathFile(String[] uploadFileDeletePathFile) {
+		this.uploadFileDeletePathFile = uploadFileDeletePathFile;
 	}
 	
 	

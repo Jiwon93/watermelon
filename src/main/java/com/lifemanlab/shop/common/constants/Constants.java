@@ -36,5 +36,4 @@ public final class Constants {
 	 * String COOKIE_PATH = "/"; public static final String COOKIE_NAME_SEQ =
 	 * "cookieSeq";
 	 */
-	public static final Integer MAX_TOTAL_FILE_NUMBER = 3;
 }

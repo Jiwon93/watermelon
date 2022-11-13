@@ -194,53 +194,21 @@
 									<label class="form-label" for="mmJob">직업</label>
 									<div class="input-group">
 										<select class="form-select" id="mmJob" name="mmJob">
-											<option value=""
-												<c:if test="${empty item.mmJob }">selected</c:if>>직업선택</option>
-											<option value="13"
-												<c:if test="${item.mmJob eq 13 }">selected</c:if>>직장인</option>
-											<option value="14"
-												<c:if test="${item.mmJob eq 14 }">selected</c:if>>프리랜서</option>
-											<option value="15"
-												<c:if test="${item.mmJob eq 15 }">selected</c:if>>소상공인</option>
-											<option value="16"
-												<c:if test="${item.mmJob eq 16 }">selected</c:if>>스타트업
-												창업자</option>
-											<option value="17"
-												<c:if test="${item.mmJob eq 17 }">selected</c:if>>대학(원)생</option>
-											<option value="18"
-												<c:if test="${item.mmJob eq 18 }">selected</c:if>>취업준비생</option>
-											<option value="19"
-												<c:if test="${item.mmJob eq 19 }">selected</c:if>>무직</option>
+											<option>직업선택</option>
+											<c:forEach begin="12" end="18" items="${ccNameList }" var="ccNameList" varStatus="status">
+											<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }" /></option>
+											</c:forEach>
 										</select>
 									</div>
 								</div>
 								<div class="col-8 offset-2">
-									<label class="form-label" for="mmInterest">관심선택(중복 선택
-										가능)</label>
+									<label class="form-label" for="mmInterest">관심선택(중복 선택 가능)</label>
 									<div class="input-group">
 										<select class="form-select" id="mmInterest" name="mmInterest" multiple>
-											<option value=""
-												<c:if test="${empty item.mmInterest }">selected</c:if>>관심분야선택</option>
-											<option value="35"
-												<c:if test="${item.mmInterest eq 35 }">selected</c:if>>개발/디자인</option>
-											<option value="36"
-												<c:if test="${item.mmInterest eq 36 }">selected</c:if>>홈/리빙</option>
-											<option value="37"
-												<c:if test="${item.mmInterest eq 37 }">selected</c:if>>레슨</option>
-											<option value="38"
-												<c:if test="${item.mmInterest eq 38 }">selected</c:if>>통역/번역</option>
-											<option value="39"
-												<c:if test="${item.mmInterest eq 39 }">selected</c:if>>사진/영상</option>
-											<option value="40"
-												<c:if test="${item.mmInterest eq 40 }">selected</c:if>>세무/법무/노무</option>
-											<option value="41"
-												<c:if test="${item.mmInterest eq 41 }">selected</c:if>>미용/건강</option>
-											<option value="42"
-												<c:if test="${item.mmInterest eq 42 }">selected</c:if>>취업/입시</option>
-											<option value="43"
-												<c:if test="${item.mmInterest eq 43 }">selected</c:if>>마케팅</option>
-											<option value="44"
-												<c:if test="${item.mmInterest eq 44 }">selected</c:if>>이벤트</option>
+											<option>관심분야선택</option>
+											<c:forEach begin="29" end="38" items="${ccNameList }" var="ccNameList" varStatus="status">
+											<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }" /></option>
+											</c:forEach>
 										</select>
 									</div>
 								</div>
@@ -362,73 +330,180 @@
 			/* $("#mmExtraAddress").val(''); */
 		});
 		
-		/* 
-		//파일첨부
-		function DropFile(dropAreaId, fileListId) {
-		  let dropArea = document.getElementById(dropAreaId);
-		  let fileList = document.getElementById(fileListId);
+		//업로드
+		upload = function(objName, seq, allowedMaxTotalFileNumber, allowedExtdiv, allowedEachFileSize, allowedTotalFileSize, uiType) {
+	
+//		objName 과 seq 는 jsp 내에서 유일 하여야 함.
+//		memberProfileImage: 1
+//		memberImage: 2
+//		memberFile : 3
 
-		  function preventDefaults(e) {
-		    e.preventDefault();
-		    e.stopPropagation();
-		  }
+//		uiType: 1 => 이미지형
+//		uiType: 2 => 파일형
+//		uiType: 3 => 프로필형
 
-		  function highlight(e) {
-		    preventDefaults(e);
-		    dropArea.classList.add("highlight");
-		  }
+		var files = $("#" + objName +"")[0].files;
+		var filePreview = $("#" + objName +"Preview");
+		var numbering = [];
+		var maxNumber = 0;
+		
+		if(uiType == 1) {
+			var uploadedFilesCount = document.querySelectorAll("#" + objName + "Preview > div > img").length;
+			var tagIds = document.querySelectorAll("#" + objName + "Preview > div");
+			
+			for(var i=0; i<tagIds.length; i++){
+				var tagId = tagIds[i].getAttribute("id").split("_");
+				numbering.push(tagId[2]);
+			}
+			
+			if(uploadedFilesCount > 0){
+				numbering.sort();
+				maxNumber = parseInt(numbering[numbering.length-1]) + parseInt(1);
+			}
+		} else if(uiType == 2){
+			var uploadedFilesCount = document.querySelectorAll("#" + objName + "Preview > li").length;
+			var tagIds = document.querySelectorAll("#" + objName + "Preview > li");
 
-		  function unhighlight(e) {
-		    preventDefaults(e);
-		    dropArea.classList.remove("highlight");
-		  }
+			for(var i=0; i<tagIds.length; i++){
+				var tagId = tagIds[i].getAttribute("id").split("_");
+				numbering.push(tagId[2]);
+			}
+			
+			if(uploadedFilesCount > 0){
+				numbering.sort();
+				maxNumber = parseInt(numbering[numbering.length-1]) + parseInt(1);
+			}
+		} else {
+			// by pass
+		}
+		
+		$("#" + objName + "MaxNumber").val(maxNumber);
 
-		  function handleDrop(e) {
-		    unhighlight(e);
-		    let dt = e.dataTransfer;
-		    let files = dt.files;
+		var totalFileSize = 0;
+		var filesCount = files.length;
+		var filesArray = [];
+		
+		allowedMaxTotalFileNumber = allowedMaxTotalFileNumber == 0 ? MAX_TOTAL_FILE_NUMBER : allowedMaxTotalFileNumber;
+		allowedEachFileSize = allowedEachFileSize == 0 ? MAX_EACH_FILE_SIZE : allowedEachFileSize;
+		allowedTotalFileSize = allowedTotalFileSize == 0 ? MAX_TOTAL_FILE_SIZE : allowedTotalFileSize;
+		
+		if(checkUploadedTotalFileNumber(files, allowedMaxTotalFileNumber, filesCount, uploadedFilesCount) == false) { return false; }
+		
+		for (var i=0; i<filesCount; i++) {
+			if(checkUploadedExt(files[i].name, seq, allowedExtdiv) == false) { return false; }
+			if(checkUploadedEachFileSize(files[i], seq, allowedEachFileSize) == false) { return false; }
 
-		    handleFiles(files);
-
-		    const fileList = document.getElementById(fileListId);
-		    if (fileList) {
-		      fileList.scrollTo({ top: fileList.scrollHeight });
-		    }
-		  }
-
-		  function handleFiles(files) {
-		    files = [...files];
-		    // files.forEach(uploadFile);
-		    files.forEach(previewFile);
-		  }
-
-		  function previewFile(file) {
-		    console.log(file);
-		    renderFile(file);
-		  }
-
-		  function renderFile(file) {
-		    let reader = new FileReader();
-		    reader.readAsDataURL(file);
-		    reader.onloadend = function () {
-		      let img = dropArea.getElementsByClassName("preview")[0];
-		      img.src = reader.result;
-		      img.style.display = "block";
-		    };
-		  }
-
-		  dropArea.addEventListener("dragenter", highlight, false);
-		  dropArea.addEventListener("dragover", highlight, false);
-		  dropArea.addEventListener("dragleave", unhighlight, false);
-		  dropArea.addEventListener("drop", handleDrop, false);
-
-		  return {
-		    handleFiles
-		  };
+			totalFileSize += files[i].size;
+			
+			filesArray.push(files[i]);
 		}
 
-		const dropFile = new DropFile("drop-file", "files");
-		 */
+		if(checkUploadedTotalFileSize(seq, totalFileSize, allowedTotalFileSize) == false) { return false; }
+		
+		if (uiType == 1) {
+			for (var i=0; i<filesArray.length; i++) {
+				var file = filesArray[i];
+
+				var picReader = new FileReader();
+			    picReader.addEventListener("load", addEventListenerCustom (objName, seq, i, file, filePreview, maxNumber));
+			    picReader.readAsDataURL(file);
+			}			
+		} else if(uiType == 2) {
+			for (var i = 0 ; i < filesCount ; i++) {
+				addUploadLi(objName, seq, i, $("#" + objName +"")[0].files[i].name, filePreview, maxNumber);
+			}
+		} else if (uiType == 3) {
+			var fileReader = new FileReader();
+			 fileReader.onload = function () {
+				 $("#uploadImgProfilePreview").attr("src", fileReader.result);		/* #-> */
+			 }	
+			 fileReader.readAsDataURL($("#" + objName +"")[0].files[0]);
+		} else {
+			return false;
+		}
+		return false;
+	}
+	
+	
+	addEventListenerCustom = function (objName, type, i, file, filePreview, maxNumber) { 
+		return function(event) {
+			var imageFile = event.target;
+			var sort = parseInt(maxNumber) + i;
+
+			var divImage = "";
+			divImage += '<div id="imgDiv_'+type+'_'+ sort +'" style="display: inline-block; height: 95px;">';
+			divImage += '	<img src="'+ imageFile.result +'" class="rounded" width= "85px" height="85px">';
+			divImage += '	<div style="position: relative; top:-85px; left:5px"><span style="color: red; cursor:pointer;" onClick="delImgDiv(0,' + type +','+ sort +')">X</span></div>';
+			divImage += '</div> ';
+			
+			filePreview.append(divImage);
+	    };
+	}
+	
+	
+	delImgDiv = function(objName, type, sort, deleteSeq, pathFile) {
+		
+		$("#imgDiv_"+type+"_"+sort).remove();
+		
+		var objDeleteSeq = $('input[name='+ objName +'DeleteSeq]');
+		var objDeletePathFile = $('input[name='+ objName +'DeletePathFile]');
+
+		if(objDeleteSeq.val() == "") {
+			objDeleteSeq.val(deleteSeq);
+		} else {
+			objDeleteSeq.val(objDeleteSeq.val() + "," + deleteSeq);
+		}
+		
+		if(objDeletePathFile.val() == "") {
+			objDeletePathFile.val(pathFile);
+		} else {
+			objDeletePathFile.val(objDeletePathFile.val() + "," + pathFile);
+		}
+	}
+	
+	
+	addUploadLi = function (objName, type, i, name, filePreview, maxNumber){
+
+		var sort = parseInt(maxNumber) + i;
+		
+		var li ="";
+		li += '<input type="hidden" id="'+ objName +'Process_'+type+'_'+ sort +'" name="'+ objName +'Process" value="1">';
+		li += '<input type="hidden" id="'+ objName +'Sort_'+type+'_'+ sort +'" name="'+ objName +'Sort" value="'+ sort +'">';
+		li += '<li id="li_'+type+'_'+sort+'" class="list-group-item d-flex justify-content-between align-items-center">';
+		li += name;
+		li +='<span class="badge bg-danger rounded-pill" onClick="delLi(0,'+ type +','+ sort +')"><i class="fa-solid fa-x" style="cursor: pointer;"></i></span>';
+		li +='</li>';
+		
+		filePreview.append(li);
+	}
+	
+	
+	delLi = function(objName, type, sort, deleteSeq, pathFile) {
+		
+		$("#li_"+type+"_"+sort).remove();
+
+		var objDeleteSeq = $('input[name='+ objName +'DeleteSeq]');
+		var objDeletePathFile = $('input[name='+ objName +'DeletePathFile]');
+
+		if(objDeleteSeq.val() == "") {
+			objDeleteSeq.val(deleteSeq);
+		} else {
+			objDeleteSeq.val(objDeleteSeq.val() + "," + deleteSeq);
+		}
+		
+		if(objDeletePathFile.val() == "") {
+			objDeletePathFile.val(pathFile);
+		} else {
+			objDeletePathFile.val(objDeletePathFile.val() + "," + pathFile);
+		}
+	}
+	
+	openViewer = function (type, sort) {
+		var str = '<c:set var="tmp" value="'+ type +'"/>';
+		$("#modalImgViewer").append(str);
+		$("#modalImgViewer").modal("show");
+	}
+		
 	</script>
 
 </body>

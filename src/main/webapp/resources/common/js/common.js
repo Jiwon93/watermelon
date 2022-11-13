@@ -1,4 +1,4 @@
-document.write("<script src='/resources/js/common/constants.js'></script>");
+document.write("<script src='/resources/common/js/constants.js'></script>");
 
 /*
 $.datepicker.setDefaults({

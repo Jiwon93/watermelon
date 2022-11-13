@@ -99,6 +99,8 @@ public class MemberController extends BaseController {
 	@RequestMapping(value = "memberModFormC")
 	public String memberModFormC(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
 		Member item = service.selectOneView(vo);
+		List<Member> ccNameList = service.ccNameList();
+		model.addAttribute("ccNameList", ccNameList);
 		model.addAttribute("item", item);
 		model.addAttribute("listUploaded", service.selectListUploaded(vo));
 		return "infra/user/member/clients/memberModFormC";
@@ -107,6 +109,8 @@ public class MemberController extends BaseController {
 	@RequestMapping(value = "memberModFormB")
 	public String memberModFormB(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
 		Member item = service.selectOneView(vo);
+		List<Member> ccNameList = service.ccNameList();
+		model.addAttribute("ccNameList", ccNameList);
 		model.addAttribute("item", item);
 		model.addAttribute("listUploaded", service.selectListUploaded(vo));
 		return "infra/user/member/pro/memberModFormB";

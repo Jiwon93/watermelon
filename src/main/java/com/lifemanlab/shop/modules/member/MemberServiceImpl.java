@@ -188,7 +188,7 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 		
 		dto.setMmPw(UtilSecurity.encryptSha256(dto.getMmPw()));
 		dto.setMmName(dto.getMmName());
-		//dto.setMmPwdModDate(UtilDateTime.nowDate());
+		//dto.setMmPwdModDate(UtilDatetime.nowDate());
 		
 		int result = dao.memberRegC(dto);
 		return result;
@@ -218,7 +218,7 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 		setRegMod(dto);
 		dao.memberMod(dto);
 		if(!dto.getUploadImgProfile()[0].isEmpty()) {
-			deleteFiles(dto.getUploadImgProfileDeleteSeq(), dto.getUploadImgProfileDeletePathFile(), dto, "mmUploaded");
+			//deleteFiles(dto.getUploadImgProfileDeleteSeq(), dto.getUploadImgProfileDeletePathFile(), dto, "mmUploaded");
 			uploadFiles(dto.getUploadImgProfile(), dto, "mmUploaded", dto.getUploadImgProfileType(), dto.getUploadImgProfileMaxNumber());
 		} else {
 			// by pass : empty

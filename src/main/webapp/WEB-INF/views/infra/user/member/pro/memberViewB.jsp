@@ -212,17 +212,7 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
-    <script type="text/javascript">
-	    var goUrlModForm = "/member/memberModFormB";
-		
-		var form = $("form[name=form]");
-		var seq = $("input:hidden[name=mmSeq]");
-		
-		goMod = function(keyValue) {
-			 seq.val(keyValue);
-			 form.attr("action", goUrlModForm).submit();
-		 }
-    </script>
+    
     
 </body>
 

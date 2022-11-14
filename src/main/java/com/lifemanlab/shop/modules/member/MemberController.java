@@ -46,18 +46,13 @@ public class MemberController extends BaseController {
 	
 	@RequestMapping(value = "memberList")
 	public String memberList(@ModelAttribute("vo")MemberVo vo, Model model) throws Exception {
-		
-		System.out.println("vo.getShValue(): " + vo.getShValue());
-		System.out.println("vo.getShOption(): " + vo.getShOption());
-		System.out.println("vo.getShDelNy(): " + vo.getShDelNy());
-		
-		vo.setShOptionDate(vo.getShOptionDate() == null ? 2 : vo.getShOptionDate());
-		
+		setSearch(vo);
 		vo.setParamsPaging(service.selectOneCount(vo));
 		
-		List<Member> list = service.selectList(vo);
-		model.addAttribute("list", list);
-		
+		if(vo.getTotalRows() > 0) {
+			List<Member> list = service.selectList(vo);
+			model.addAttribute("list", list);
+		}
 		return "infra/xdmin/member/memberList";
 	}
 	

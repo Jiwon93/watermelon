@@ -43,6 +43,7 @@ public class Member extends Base{
 	private Integer mmpDefaultNy;
 	private String sessSeq;
 	private String token;
+	private Integer mmUseNy;
 	
 	//상품
 	private String itTitle;
@@ -378,6 +379,12 @@ public class Member extends Base{
 	}
 	public void setUploadFileDeletePathFile(String[] uploadFileDeletePathFile) {
 		this.uploadFileDeletePathFile = uploadFileDeletePathFile;
+	}
+	public Integer getMmUseNy() {
+		return mmUseNy;
+	}
+	public void setMmUseNy(Integer mmUseNy) {
+		this.mmUseNy = mmUseNy;
 	}
 	
 	

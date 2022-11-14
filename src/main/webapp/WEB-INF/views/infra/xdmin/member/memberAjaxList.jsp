@@ -41,7 +41,7 @@
 			justify-content: center;
 		}
 	</style>
-	
+	<link href="/resources/xdmin/css/styles.css" rel="stylesheet">
 	<link href="/resources/xdmin/css/list.css" rel="stylesheet">
 </head>
 <body>
@@ -116,24 +116,23 @@
 							</div>
 						</div>
 					</div>
-					<div id="Lisa"></div>						
-						<div class="row p-0">
-							<div class="col">
-								<button class="btn btn-danger" type="button" id="btnUele">
-									<i class="fa-duotone fa-x"></i>
-								</button>
-								<button class="btn btn-danger" type="button" id="btnDel">
-									<i class="fa-regular fa-trash-can"></i>
-								</button>
-							</div>
-							<div class="col" style="text-align: right;">
-								<button class="btn btn-success" type="button" id="btnExcel">
-									<i class="fa-regular fa-file-excel"></i>
-								</button>
-								<button class="btn btn-primary" type="button" id="btnPlus">
-									<i class="fa-regular fa-plus"></i>
-								</button>
-							</div>
+					<div id="Lita"></div>						
+					<div class="row p-0">
+						<div class="col">
+							<button class="btn btn-danger" type="button" id="btnUele">
+								<i class="fa-duotone fa-x"></i>
+							</button>
+							<button class="btn btn-danger" type="button" id="btnDel">
+								<i class="fa-regular fa-trash-can"></i>
+							</button>
+						</div>
+						<div class="col" style="text-align: right;">
+							<button class="btn btn-success" type="button" id="btnExcel">
+								<i class="fa-regular fa-file-excel"></i>
+							</button>
+							<button class="btn btn-primary" type="button" id="btnPlus">
+								<i class="fa-regular fa-plus"></i>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -166,6 +165,7 @@
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script src="/resources/xdmin/js/sidebar.js"></script>
+	<script src="/resources/xdmin/js/list.js"></script>
 	<script>
 		$(document).ready(function(){
 			divSearchControl();

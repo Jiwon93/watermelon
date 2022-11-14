@@ -139,27 +139,31 @@
 				</div>
 			</div>
 		</div>
-		<!-- Footer Start -->
-		<footer>
-		    <div class="container-fluid bg-dark text-light footer py-5 mt-5">
-		    	<div class="container">
-		            <div class="copyright">
-		                <div class="row">
-		                    <div class="col text-center">
-		                        Copyright &copy; 2022&nbsp;<a class="border-bottom" style="text-decoration: none;">ISML</a>&nbsp;lnc, All Right Reserved.
-		                    </div>
-		                </div>
-		                <div class="row">
-		                    <div class="col text-center">
-		                        Designed By <a class="border-bottom" style="text-decoration: none;">HTML Codex</a>
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-	    </footer>
-	    <!-- Footer End -->
 	</form>
+	<!-- Footer Start -->
+	<footer>
+	    <div class="container-fluid bg-dark text-light footer py-5 mt-5">
+	    	<div class="container">
+	            <div class="copyright">
+	                <div class="row">
+	                    <div class="col text-center">
+	                        Copyright &copy; 2022&nbsp;<a class="border-bottom" style="text-decoration: none;">ISML</a>&nbsp;lnc, All Right Reserved.
+	                    </div>
+	                </div>
+	                <div class="row">
+	                    <div class="col text-center">
+	                        Designed By <a class="border-bottom" style="text-decoration: none;">HTML Codex</a>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+    </footer>
+    <!-- Footer End -->
+    <!-- modalBase s -->
+	<%@include file="../common/modalBase.jsp"%>
+	<!-- modalBase e -->
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script src="/resources/xdmin/js/sidebar.js"></script>
 	<script>
@@ -188,8 +192,14 @@
 		var checkboxSeqArray = [];
 		
 		$("#btnSearch").on("click", function() {
-			form.attr("action", goUrlList).submit();
+			//form.attr("action", goUrlList).submit();
+			if (validationList() == false) return false;
+			setLita();
 		});
+		
+		validationList = function() {
+			/* if(!checkNull($.trim($("input[name=searchValue]").val()), "searchValue")) return false; */
+		}
 
 		$("#btnReset").on("click", function() {
 			$(location).attr("href", goUrlList);
@@ -202,7 +212,63 @@
 		$("#btnPlus").on("click", function(){
 			$(location).attr("href", goUrlForm);
 		});
+		
+		$("#btnUelete").on("click", function(){
+			if($("input[name=checkboxSeq]:checked").length > 0 ) {
+				$("input:hidden[name=exDeleteType]").val(1);
+				$(".modal-title").text("확 인");
+				$(".modal-body").text("해당 데이터를 삭제하시겠습니까 ?");
+				$("#btnModalUelete").show();
+				$("#btnModalDelete").hide();
+				$("#modalConfirm").modal("show");
+			} else {
+				$(".modal-title").text("확 인");
+				$(".modal-body").text("데이터를 선택해 주세요!");
+				$("#modalAlert").modal("show");
+			}
+		});
+		
 
+		$("#btnDelete").on("click", function(){
+			if($("input[name=checkboxSeq]:checked").length > 0 ) {
+				$("input:hidden[name=exDeleteType]").val(2);
+				$(".modal-title").text("확 인");
+				$(".modal-body").text("해당 데이터를 삭제하시겠습니까 ?");
+				$("#btnModalUelete").hide();
+				$("#btnModalDelete").show();
+				$("#modalConfirm").modal("show");
+			} else {
+				$(".modal-title").text("확 인");
+				$(".modal-body").text("데이터를 선택해 주세요!");
+				$("#modalAlert").modal("show");
+			}
+		});
+		
+		$("#btnModalUelete").on("click", function(){
+			$("input[name=checkboxSeq]:checked").each(function() { 
+				checkboxSeqArray.push($(this).val());
+			});
+			
+			$("input:hidden[name=checkboxSeqArray]").val(checkboxSeqArray);
+			
+			$("#modalConfirm").modal("hide");
+			
+			form.attr("action", goUrlMultiUele).submit();
+		});
+		
+		
+		$("#btnModalDelete").on("click", function(){
+			$("input[name=checkboxSeq]:checked").each(function() { 
+				checkboxSeqArray.push($(this).val());
+			});
+			
+			$("input:hidden[name=checkboxSeqArray]").val(checkboxSeqArray);
+			
+			$("#modalConfirm").modal("hide");
+								
+			form.attr("action", goUrlMultiDele).submit();
+		});
+		
 		goList = function(thisPage) {
 			$("input:hidden[name=thisPage]").val(thisPage);
 			form.attr("action", goUrlList).submit();

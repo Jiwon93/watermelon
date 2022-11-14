@@ -35,7 +35,15 @@ public class MemberController extends BaseController {
 	@Autowired
 	MemberServiceImpl service;
 	 
-
+	//관리자
+	public void setSearch(MemberVo vo) throws Exception {
+		vo.setShUseNy(vo.getShUseNy() == null ? 1 : vo.getShUseNy());
+		vo.setShDelNy(vo.getShDelNy() == null ? 0 : vo.getShDelNy());
+		vo.setShOptionDate(vo.getShOptionDate() == null ? null : vo.getShOptionDate());
+		vo.setShDateStart(vo.getShDateStart() == null || vo.getShDateStart() == "" ? null : UtilDatetime.add00TimeString(vo.getShDateStart()));
+		vo.setShDateEnd(vo.getShDateEnd() == null || vo.getShDateEnd() == "" ? null : UtilDatetime.add59TimeString(vo.getShDateEnd()));
+	}
+	
 	@RequestMapping(value = "memberList")
 	public String memberList(@ModelAttribute("vo")MemberVo vo, Model model) throws Exception {
 		
@@ -52,6 +60,25 @@ public class MemberController extends BaseController {
 		
 		return "infra/xdmin/member/memberList";
 	}
+	
+	@RequestMapping(value = "memberAjaxList")
+	public String memberAjaxList(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+		setSearch(vo);
+		return "infra/xdmin/member/memberAjaxList";
+	}
+	
+	@RequestMapping(value = "memberAjaxLita")
+	public String memberAjaxLita(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+		vo.setParamsPaging(service.selectOneCount(vo));
+		
+		if(vo.getTotalRows() > 0) {
+			List<Member> list = service.selectList(vo);
+			model.addAttribute("list", list);
+		}
+		
+		return "infra/xdmin/member/memberAjaxLita";
+	}
+	
 	
 	@RequestMapping(value = "memberView")
 	public String memberView(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
@@ -77,6 +104,7 @@ public class MemberController extends BaseController {
 		return "redirect:/member/memberView";
 	}
 	
+	//사용자
 	//마이페이지View
 	@RequestMapping(value = "memberViewC")
 	public String memberViewC(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {

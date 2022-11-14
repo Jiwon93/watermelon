@@ -28,6 +28,7 @@ public class BaseVo {
 	private String shDateStart;
 	private String shDateEnd;
 	private Integer shOptionDate;
+	private Integer shUseNy;
 	
 //	list
 	private String[] checkboxSeqArray;
@@ -170,6 +171,13 @@ public class BaseVo {
 	public void setShOptionDate(Integer shOptionDate) {
 	this.shOptionDate = shOptionDate;
 	}
+	public Integer getShUseNy() {
+		return shUseNy;
+	}
+	public void setShUseNy(Integer shUseNy) {
+		this.shUseNy = shUseNy;
+	}
+
 //////////////////////////////////////////////////////////////
 	
 	// insert
@@ -233,6 +241,7 @@ public class BaseVo {
 		this.checkboxSeqArray = checkboxSeqArray;
 	}
 
+	
 	
 
 	

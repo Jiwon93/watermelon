@@ -132,6 +132,19 @@ public class MemberController extends BaseController {
 		}
 	}
 	
+	@RequestMapping(value = "memberModB")
+	public String memberModB(@ModelAttribute("vo") MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
+		service.memberModB(dto);
+		service.memberModPhone(dto);
+		
+		redirectAttributes.addFlashAttribute("vo", vo);
+		
+		if (Constants.UPDATE_AFTER_TYPE == 1) {
+			return "redirect:/member/memberModFormB";
+		} else {
+			return "redirect:/member/memberViewB";
+		}
+	}
 	
 	//Email 찾기
 	@ResponseBody

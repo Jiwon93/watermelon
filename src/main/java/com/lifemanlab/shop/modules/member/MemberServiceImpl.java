@@ -227,6 +227,19 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	}
 	
 	@Override
+	public int memberModB(Member dto) throws Exception {
+		setRegMod(dto);
+		dao.memberModB(dto);
+		if(!dto.getUploadImgProfile()[0].isEmpty()) {
+			//deleteFiles(dto.getUploadImgProfileDeleteSeq(), dto.getUploadImgProfileDeletePathFile(), dto, "mmUploaded");
+			uploadFiles(dto.getUploadImgProfile(), dto, "mmUploaded", dto.getUploadImgProfileType(), dto.getUploadImgProfileMaxNumber());
+		} else {
+			// by pass : empty
+		}
+		return 1;
+	}
+	
+	@Override
 	public int memberModPhone(Member dto) throws Exception {
 		int result = dao.memberModPhone(dto);
 		return result;
@@ -291,11 +304,6 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	public int kakaoInst(Member dto) throws Exception {
 		return dao.kakaoInst(dto);
 	}
-
-	
-
-
-	
 
 	
 

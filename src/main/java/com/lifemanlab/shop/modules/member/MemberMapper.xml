@@ -273,16 +273,40 @@
 			,mmAddress2 = #{mmAddress2}
 			,mmJob = #{mmJob}
 			,mmInterest = #{mmInterest}
-		WHERE
-			mmSeq = #{sessSeq}
+		WHERE 1=1
+			AND mmSeq = #{sessSeq}
 	</update>
 	
+	<update id="memberModB">
+		UPDATE member
+		SET
+			mmNickname = #{mmNickname}
+			,mmName = #{mmName}
+			,mmBod = #{mmBod}
+			,mmGender = #{mmGender}
+			,mmZip = #{mmZip}
+			,mmAddress1 = #{mmAddress1}
+			,mmAddress2 = #{mmAddress2}
+			,mmJob = #{mmJob}
+			,mmInterest = #{mmInterest}
+			,mmSpecial = #{mmSpecial}
+			,mmDetail = #{mmDetail}
+			,mmTechnique = #{mmTechnique}
+			,mmCareer = #{mmCareer}
+			,mmWishPay = #{mmWishPay}
+			,mmWorkTime = #{mmWorkTime}
+			,mmIntroduce = #{mmIntroduce}
+		WHERE 1=1
+			AND mmSeq = #{sessSeq}
+			AND mmRank = 20
+	</update>
+		
 	<update id="memberModPhone">
 		UPDATE member_phone
 		SET
 			mmpPhoneNumber = #{mmpPhoneNumber}
-		WHERE
-			member_mmSeq = #{sessSeq}
+		WHERE 1=1
+			AND member_mmSeq = #{sessSeq}
 	</update>
 	
 	<!-- Email 확인 -->

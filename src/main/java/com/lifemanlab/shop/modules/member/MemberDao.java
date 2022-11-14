@@ -45,7 +45,7 @@ public class MemberDao {
 	
 	//회원정보 수정
 	public int memberMod(Member dto) { return sqlSession.update(namespace + ".memberMod", dto); }
-		
+	public int memberModB(Member dto) { return sqlSession.update(namespace + ".memberModB", dto); }
 	public int memberModPhone(Member dto) { return sqlSession.update(namespace + ".memberModPhone", dto); }
 	
 	//Email 확인

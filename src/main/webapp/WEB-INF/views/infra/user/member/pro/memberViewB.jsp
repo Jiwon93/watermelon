@@ -73,175 +73,124 @@
 </head>
 
 <body>
-<form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
-    <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
-    <!-- Navbar Start -->
-    <%@include file="../../common/nav.jsp"%>
-    <!-- Navbar End -->
-    
-    <!-- Contact Start -->
-    <div class="container-fluid overflow-hidden" style="margin: 1rem 0;">
-           <div class="row">
-           
-           	   <!-- mypageList Start -->
-		       <%@include file="../../common/mypageList.jsp"%>
-		       <!-- mypageList End -->
-		       
-	           <div class="col-sm-9 p-2">
-	               <div class="p-lg-5">
-	                   <div class="">
-	                       <h4 class="mb-4">계정설정</h4>
-	                   </div>
-	                   <div class="p-4 border border-2 border-light">
-		                   <div class="row g-3">
-		                   	   <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="nicknameMod">닉네임</label>	
-		                           <div class="input-group">
-		                               <input type="text" class="form-control" id="nicknameMod" value="jiwon123" readonly>
-		                           </div>
-		                       </div>
-		                       <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="emailMod">이메일</label>
-		                           <div class="input-group">
-		                               <input type="email" class="form-control" id="emailMod" value="jiwon123@naver.com" readonly>
-		                           </div>
-		                       </div>
-		                       <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="passwordReg">비밀번호</label>
-		                           <div class="input-group">
-		                               <input type="password" class="form-control" id="passwordReg" value="jiwon12345" readonly>
-		                           </div>
-		                       </div>
-		                       <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="bodReg">생년월일</label>	
-		                           <div class="input-group">
-		                               <input type="text" class="form-control" id="bodReg" value="1993-02-10" readonly>
-		                           </div>
-		                       </div>
-		                       <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="phoneReg">핸드폰</label>	
-		                           <div class="input-group">
-		                               <input type="text" class="form-control" id="phoneReg" value="010-2236-0210" readonly>
-		                           </div>
-		                       </div>
-		                       <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="genderReg">성별</label>	
-		                           <br>
-		                           <div class="form-check form-check-inline">
-		                               <input type="radio" class="form-check-input" name="gender" id="genderRegM" checked readonly>
-		                               <label class="form-check-label" for="genderRegM">남자</label>
-		                           </div>
-		                       </div>
-		                       <div class="col-3 offset-2">
-		                       	   <label class="form-label" for="addressReg">주소</label>
-		                       	   <div class="input-group">
-		                               <input type="text" class="form-control w-25" id="addressReg" value="06598" readonly>
-		                           </div>
-		                       </div>
-		                       <div class="col-8 offset-2 mt-2">
-		                           <div class="input-group mb-2">
-		                               <input type="text" class="form-control" id="addressReg" value="서울 서초구 고무래로 89" readonly>
-		                           </div>
-		                           <div class="input-group">
-		                               <input type="text" class="form-control" id="addressReg" value="반포써밋 아파트 101동 1001호" readonly>
-		                           </div>
-		                       </div>
-		                       <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="jobReg">직업</label>
-		                       	   <div class="input-group">
-				                       <div class="input-group">
-										   <input type="text" class="form-control"  id="jobReg" value="직장인" readonly>
-								   	   </div>
-					   		   	   </div>
-				  			   </div>
-							   <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="favoriteReg">관심분야</label>
-		                       	   <div class="input-group">
-			                           <div class="input-group">
-										   <input type="text" class="form-control" id="favoriteReg" value="IT 프로그래밍" readonly>
-									   </div>
-								   </div>
-							   </div>
-							   <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="favoriteReg">전문분야 및 상세분야</label>
-		                       	   <div class="input-group">
-			                           <div class="input-group">
-										   <input type="text" class="form-control" id="favoriteReg" value="IT 프로그래밍" readonly>
-									   </div>
-									   <div class="input-group mt-2">
-										   <input type="text" class="form-control" id="favoriteReg" value="웹사이트 신규 제작" readonly>
-									   </div>
-								   </div>
-							   </div>
-							   <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="techniqueReg">보유기술</label>
-		                       	   <div class="input-group">
-			                           <div class="input-group">
-										   <input type="text" class="form-control" id=""techniqueReg"" value="Java, JavaScript, Bootstrap, JSP, MySQL, jQuery, HTML, CSS" readonly>
-									   </div>
-								   </div>
-							   </div>
-							   <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="careerReg">경력사항</label>
-		                       	   <div class="input-group">
-			                           <div class="input-group">
-										   <input type="text" class="form-control" id="careerReg" value="3년" readonly>
-									   </div>
-								   </div>
-							   </div>
-							   <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="schoolReg">학력, 자격증</label>
-		                       	   <div class="input-group">
-			                           <div class="input-group">
-										   <input type="text" class="form-control" id="schoolReg" value="서울대학교 컴퓨터공학과 졸업" readonly>
-									   </div>
-								   </div>
-								   <div class="input-group mt-2">
-			                           <div class="input-group">
-										   <input type="text" class="form-control" id="schoolReg" value="정보처리기사" readonly>
-									   </div>
-								   </div>
-							   </div>
-							   <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="payReg">희망급여(단위, 만원)</label>
-		                       	   <div class="input-group">
-			                           <div class="input-group">
-										   <input type="text" class="form-control" id="payReg" value="4,500만원" readonly>
-									   </div>
-								   </div>
-							   </div>
-							   <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="wishReg">희망근로시간</label>
-		                       	   <div class="input-group">
-			                           <div class="input-group">
-										   <input type="text" class="form-control" id="wishReg" value="오전, 오후, 협의가능" readonly>
-									   </div>
-								   </div>
-							   </div>
-							   <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="introReg">자기소개</label>
-		                       	   <div class="input-group">
-			                           <div class="col-sm-12">
-										   <textarea class="form-control" rows="4" id="introReg" readonly>신규 웹사이트 제작 경력 3년자 입니다. 여러 종류의 웹사이트 제작 경험도 있고 포트폴리오도 있으니 보시고, 문의 연락주시면 상담 해드립니다. 감사합니다.</textarea>
-									   </div>
-								   </div>
-							   </div>
-							   <div class="col-sm-12 text-center">
-							   	   <button type="button" class="btn btn-primary w-25" id="">수정하기</button>	
-							   </div>
-		                   </div>
-	                   </div>
-	               </div>
-	           </div>
-           </div>
-    </div>
-    
-    <!-- Footer Start -->
-    <%@include file="../../common/footer.jsp"%>
-    <!-- Footer End -->
+<form method="post" name="form" autocomplete="off" enctype="multipart/form-data">
+<input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
+<input type="hidden" id="mmSeq" name="mmSeq" value="${vo.mmSeq }">
+	<!-- Navbar Start -->
+	<%@include file="../../common/nav.jsp"%>
+	<!-- Navbar End -->
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+	<!-- Contact Start -->
+	<div class="container-fluid overflow-hidden" style="margin: 1rem 0;">
+		<div class="row">
+
+			<!-- mypageList Start -->
+			<%@include file="../../common/mypageList.jsp"%>
+			<!-- mypageList End -->
+
+			<div class="col-sm-9 p-2">
+				<div class="p-lg-5">
+					<div class="">
+						<h4 class="mb-4">계정설정</h4>
+					</div>
+					<div class="p-4 border border-2 border-light">
+						<div class="row g-3">
+							<div class="col-8 offset-2">
+								<label class="form-label" for="mmNickname">닉네임</label>	
+								<div class="input-group">
+									<input type="text" class="form-control" id="mmNickname" name="mmNickname" value="<c:out value="${item.mmNickname }"/>" readonly>
+								</div>
+							</div>
+							<div class="col-8 offset-2">
+								<label class="form-label" for="mmEmail">이메일</label>
+								<div class="input-group">
+									<input type="email" class="form-control" id="mmEmail" name="mmEmail" value="<c:out value="${item.mmEmail }"/>" readonly>
+								</div>
+							</div>
+							<div class="col-8 offset-2">
+								<label class="form-label" for="mmBod">생년월일</label>	
+								<div class="input-group">
+									<input type="text" class="form-control" id="mmBod" name="mmBod" value="<c:out value="${item.mmBod }"/>" readonly>
+								</div>
+							</div>
+							<div class="col-8 offset-2">
+								<label class="form-label" for="mmpPhoneNumber">핸드폰</label>	
+								<div class="input-group">
+									<input type="text" class="form-control" id="mmpPhoneNumber" name="mmpPhoneNumber" value="<c:out value="${item.mmpPhoneNumber }"/>" readonly>
+								</div>
+							</div>
+							<div class="col-8 offset-2">
+								<label class="form-label" for="genderReg">성별</label>	
+								<br>
+								<div class="form-check form-check-inline">
+								<c:choose>
+									<c:when test="${item.mmGender eq 5 }">
+									<input type="radio" class="form-check-input" name="mmGender" id="mmGender1" checked disable>
+									<label class="form-check-label" for="genderRegM">남자</label>
+									</c:when>
+									<c:when test="${item.mmGender eq 6 }">
+									<input type="radio" class="form-check-input" name="mmGender" id="mmGender2" checked disable>
+									<label class="form-check-label" for="genderRegM">여자</label>
+									</c:when>
+									<c:otherwise>
+									<input type="radio" class="form-check-input" name="mmGender" id="mmGender3" checked disable>
+									<label class="form-check-label" for="genderRegM">기타</label>
+									</c:otherwise>
+								</c:choose>
+								</div>
+							</div>
+							<div class="col-3 offset-2">
+								<label class="form-label" for="mmZip">주소</label>
+								<div class="input-group">
+									<input type="text" class="form-control w-25" id="mmZip" name="mmZip" value="<c:out value="${item.mmZip }"/>" readonly>
+								</div>
+							</div>
+							<div class="col-8 offset-2 mt-2">
+								<div class="input-group mb-2">
+									<input type="text" class="form-control" id="mmAddress1" name="mmAddress1" value="<c:out value="${item.mmAddress1 }"/>" readonly>
+								</div>
+								<div class="input-group">
+									<input type="text" class="form-control" id="mmAddress2" name="mmAddress2" value="<c:out value="${item.mmAddress2 }"/>" readonly>
+								</div>
+							</div>
+							<div class="col-8 offset-2">
+								<label class="form-label" for="mmJob">직업</label>
+								<div class="input-group">
+									<c:set var="listCodeJob" value="${CodeServiceImpl.selectListCachedCode('4')}"/>
+									<c:forEach items="${listCodeJob}" var="listJob" varStatus="statusJob">
+										<c:if test="${item.mmJob eq listJob.ccSeq}">
+										<input type="text" class="form-control"  id="mmJob" name="mmJob" value="${listJob.ccName }" readonly>
+										</c:if>
+									</c:forEach>
+								</div>
+							</div>
+							<div class="col-8 offset-2">
+								<label class="form-label" for="mmInterest">관심분야</label>
+								<div class="input-group">
+									<c:set var="listCodeInterest" value="${CodeServiceImpl.selectListCachedCode('8')}"/>
+									<c:forEach items="${listCodeInterest}" var="listInterest" varStatus="statusInterest">
+										<c:if test="${item.mmInterest eq listInterest.ccSeq}">
+										<input type="text" class="form-control" id="mmInterest" name="mmInterest" value="${listInterest.ccName }" readonly>
+										</c:if>
+									</c:forEach>
+								</div>
+							</div>
+							<div class="col-sm-12 text-center">
+								<a class="btn btn-primary w-25" href="javascript:goMod(<c:out value="${item.mmSeq }" />)">수정하기</a>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+	<!-- Footer Start -->
+	<%@include file="../../common/footer.jsp"%>
+	<!-- Footer End -->
+
+	<!-- Back to Top -->
+	<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 </form>
 
     <!-- JavaScript Libraries -->
@@ -258,8 +207,22 @@
     <!-- Template Javascript -->
     <script src="/resources/template/woody/js/main.js"></script>
     
+    <script src="/resources/common/js/mmUpload.js"></script>
+    
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+	    var goUrlModForm = "/member/memberModFormB";
+		
+		var form = $("form[name=form]");
+		var seq = $("input:hidden[name=mmSeq]");
+		
+		goMod = function(keyValue) {
+			 seq.val(keyValue);
+			 form.attr("action", goUrlModForm).submit();
+		 }
+    </script>
     
 </body>
 

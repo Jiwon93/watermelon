@@ -88,9 +88,9 @@
 	<div class="container-fluid overflow-hidden" style="margin: 1rem 0;">
 		<div class="row">
 
-	<!-- mypageList Start -->
-	<%@include file="../../common/mypageList.jsp"%>
-	<!-- mypageList End -->
+			<!-- mypageList Start -->
+			<%@include file="../../common/mypageList.jsp"%>
+			<!-- mypageList End -->
 
 			<div class="col-sm-9 p-2">
 				<div class="p-lg-5">

@@ -8,7 +8,7 @@
 			<c:set var="type" value="1"/>		<!-- #-> -->
         	<c:set var="name" value="uploadImgProfile"/>		<!-- #-> -->
 			<c:choose>
-				<c:when test="${ifmmSeq eq 0 }">
+				<c:when test="${mmSeq eq 0 }">
 					<img id="<c:out value="${name }"/>Preview" src="/resources/xdmin/image/default_100_100.png" class="rounded-circle mx-auto d-block" width="100" height="100">
 				</c:when>
 				<c:otherwise>

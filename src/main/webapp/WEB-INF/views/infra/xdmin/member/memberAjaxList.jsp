@@ -116,7 +116,7 @@
 							</div>
 						</div>
 					</div>
-					<div id="Lita"></div>						
+					<div id="lita"></div>						
 					<div class="row p-0">
 						<div class="col">
 							<button class="btn btn-danger" type="button" id="btnUele">
@@ -297,7 +297,7 @@
 				,cache: false
 				,type: "post"
 				/* ,dataType:"json" */
-				,url: goUrlLita
+				,url: goUrlAjaxLita
 				,data : $("#formList").serialize()
 				/* ,data : {  } */
 				,success: function(response) {
@@ -319,7 +319,7 @@
 				,cache: false
 				,type: "post"
 				/* ,dataType:"json" */
-				,url: goUrlLita
+				,url: goUrlAjaxLita
 				,data : $("#formList").serialize()
 				/* ,data : {  } */
 				,success: function(response) {

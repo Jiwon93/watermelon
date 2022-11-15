@@ -199,7 +199,7 @@
 								<div class="col-8 offset-2">
 									<label class="form-label" for="mmInterest">관심선택(중복 선택 가능)</label>
 									<div class="input-group">
-										<select class="form-select" id="mmInterest" name="mmInterest" multiple>
+										<select class="form-select" id="mmInterest" name="mmInterest">
 											<option>관심분야선택</option>
 											<c:forEach begin="29" end="38" items="${ccNameList }" var="ccNameList" varStatus="status">
 											<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }" /></option>
@@ -207,6 +207,72 @@
 										</select>
 									</div>
 								</div>
+								<div class="col-8 offset-2">
+									<label class="form-label" for="mmInterest">전문분야 및 상세분야</label>
+									<div class="input-group">
+										<select class="form-select" id="mmSpecial" name="mmSpecial">
+											<option>전문분야선택</option>
+											<c:forEach begin="39" end="349" items="${ccNameList }" var="ccNameList" varStatus="status">
+											<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }" /></option>
+											</c:forEach>
+										</select>
+									</div>
+									<div class="input-group">
+										<select class="form-select" id="mmDetail" name="mmDetail" multiple>
+											<option>상세분야선택</option>
+											<c:forEach begin="50" end="67" items="${ccNameList }" var="ccNameList" varStatus="status">
+											<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }" /></option>
+											</c:forEach>
+										</select>
+									</div>
+								</div>
+								<div class="col-8 offset-2">
+		                       	  <label class="form-label" for="mmTechnique">보유기술(중복 선택 가능)</label>
+		                       	  <div class="input-group">
+		                       	  	   <select class="form-select" id="mmTechnique" name="mmTechnique" mutiple>
+										   <option>보유기술선택</option>
+										   <c:forEach begin="75" end="81" items="${ccNameList }" var="ccNameList" varStatus="status">
+										   <option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+										   </c:forEach>
+								       </select>
+								   </div>
+							   </div>
+							   <div class="col-8 offset-2">
+		                       	  <label class="form-label" for="mmCareer">경력</label>
+		                       	  <div class="input-group">
+		                       	  	   <select class="form-select" id="mmCareer" name="mmCareer">
+										   <option>경력선택</option>
+										   <c:forEach begin="21" end="28" items="${ccNameList }" var="ccNameList" varStatus="status">
+										   <option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+										   </c:forEach>
+								       </select>
+								   </div>
+							   </div>
+							   <div class="col-8 offset-2">
+		                       	  <label class="form-label" for="mmWishPay">희망급여</label>
+		                       	  <div class="input-group">
+		                              <input type="text" class="form-control" id="mmWishPay" name="mmWishPay" value="<c:out value="${item.mmWishPay }"/>" placeholder="희망급여를 입력해 주세요.">
+								  </div>
+							   </div>
+							   <div class="col-8 offset-2">
+		                       	  <label class="form-label" for="mmWorkTime">희망근로시간</label>
+		                       	  <div class="input-group">
+		                       	  	   <select class="form-select" id="mmWorkTime" name="mmWorkTime">
+										   <option>희망근로시간선택</option>
+										   <c:forEach begin="68" end="72" items="${ccNameList }" var="ccNameList" varStatus="status">
+										   <option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+										   </c:forEach>
+								       </select>
+								   </div>
+							   </div>
+							   <div class="col-8 offset-2">
+		                       	  <label class="form-label" for="mmIntroduce">자기소개</label>
+		                       	  <div class="input-group">
+		                       	  	   <textarea class="form-control" id="mmIntroduce" name="mmIntroduce" style="height: 150px;">
+									   	  <c:out value="${item.mmIntroduce }" />
+									   </textarea>
+								   </div>
+							   </div>
 								<div class="col-sm-12 text-center">
 									<button class="btn btn-primary w-25" type="button" id="btnSave">수정완료</button>
 								</div>

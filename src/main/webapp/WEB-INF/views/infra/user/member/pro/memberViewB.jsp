@@ -175,6 +175,72 @@
 									</c:forEach>
 								</div>
 							</div>
+							<div class="col-8 offset-2">
+								<label class="form-label">전문분야 및 상세분야</label>
+								<div class="input-group">
+									<c:set var="listCodeSpecial" value="${CodeServiceImpl.selectListCachedCode('9')}"/>
+									<c:forEach items="${listCodeSpecial}" var="listSpecial" varStatus="statusSpecial">
+										<c:if test="${item.mmSpecial eq listSpecial.ccSeq}">
+										<input type="text" class="form-control" id="mmSpecial" name="mmSpecial" value="${listSpecial.ccName }" readonly>
+										</c:if>
+									</c:forEach>
+								</div>
+								<div class="input-group">
+									<c:set var="listCodeDetail" value="${CodeServiceImpl.selectListCachedCode('10')}"/>
+									<c:forEach items="${listCodeDetail}" var="listDetail" varStatus="statusDatail">
+										<c:if test="${item.mmDetail eq listDetail.ccSeq}">
+										<input type="text" class="form-control" id="mmDetail" name="mmDetail" value="${listDetail.ccName }" readonly>
+										</c:if>
+									</c:forEach>
+								</div>
+							</div>
+							<div class="col-8 offset-2">
+								<label class="form-label" for="mmTechnique">보유기술</label>
+								<div class="input-group">
+									<c:set var="listCodeTechnique" value="${CodeServiceImpl.selectListCachedCode('11')}"/>
+									<c:forEach items="${listCodeTechnique}" var="listTechnique" varStatus="statusTechnique">
+										<c:if test="${item.mmTechnique eq listTechnique.ccSeq}">
+										<input type="text" class="form-control" id="mmTechnique" name="mmTechnique" value="${listTechnique.ccName }" readonly>
+										</c:if>
+									</c:forEach>
+								</div>
+							</div>
+							<div class="col-8 offset-2">
+								<label class="form-label" for="mmCareer">경력</label>
+								<div class="input-group">
+									<c:set var="listCodeCareer" value="${CodeServiceImpl.selectListCachedCode('11')}"/>
+									<c:forEach items="${listCodeCareer}" var="listCareer" varStatus="statusCareer">
+										<c:if test="${item.mmCareer eq listCareer.ccSeq}">
+										<input type="text" class="form-control" id="mmCareer" name="mmCareer" value="${listCareer.ccName }" readonly>
+										</c:if>
+									</c:forEach>
+								</div>
+							</div>
+							<div class="col-3 offset-2">
+								<label class="form-label" for="mmWishPay">희망급여</label>
+								<div class="input-group">
+									<input type="text" class="form-control w-25" id="mmWishPay" name="mmWishPay" value="<c:out value="${item.mmWishPay }"/>" readonly>
+								</div>
+							</div>
+							<div class="col-8 offset-2">
+								<label class="form-label" for="mmWorkTime">희망근로시간</label>
+								<div class="input-group">
+									<c:set var="listCodeWorkTime" value="${CodeServiceImpl.selectListCachedCode('13')}"/>
+									<c:forEach items="${listCodeWorkTime}" var="listWorkTime" varStatus="statusWorkTime">
+										<c:if test="${item.mmWorkTime eq listWorkTime.ccSeq}">
+										<input type="text" class="form-control" id="mmWorkTime" name="mmWorkTime" value="${listWorkTime.ccName }" readonly>
+										</c:if>
+									</c:forEach>
+								</div>
+							</div>
+							<div class="col-8 offset-2">
+                       	  <label class="form-label" for="mmIntroduce">자기소개</label>
+                       	  <div class="input-group">
+                       	  	   <textarea class="form-control" id="mmIntroduce" name="mmIntroduce" style="height: 150px;">
+							   	  <c:out value="${item.mmIntroduce }" />
+							   </textarea>
+						   </div>
+					   </div>
 							<div class="col-sm-12 text-center">
 								<a class="btn btn-primary w-25" href="javascript:goMod(<c:out value="${item.mmSeq }" />)">수정하기</a>	
 							</div>

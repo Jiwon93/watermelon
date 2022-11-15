@@ -49,10 +49,8 @@ public class MemberController extends BaseController {
 		setSearch(vo);
 		vo.setParamsPaging(service.selectOneCount(vo));
 		
-		if(vo.getTotalRows() > 0) {
 			List<Member> list = service.selectList(vo);
 			model.addAttribute("list", list);
-		}
 		return "infra/xdmin/member/memberList";
 	}
 	
@@ -66,10 +64,8 @@ public class MemberController extends BaseController {
 	public String memberAjaxLita(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
 		vo.setParamsPaging(service.selectOneCount(vo));
 		
-		if(vo.getTotalRows() > 0) {
 			List<Member> list = service.selectList(vo);
 			model.addAttribute("list", list);
-		}
 		
 		return "infra/xdmin/member/memberAjaxLita";
 	}

@@ -49,10 +49,12 @@
 				<h4 class="" style="border-bottom: 2px solid #AB7442;">마이페이지</h4>
 				<ul class="mypageC">
 					<li class="mypageList pt-3 pb-5"><a class="" type="button" id="btnListPurchaseHistory">구매 내역</a></li>
+					<!-- 
 					<li class="mypageList"><a class="" type="button" id="">문의 내역</a></li>
 					<li class="mypageList"><a class="" type="button" id="">만렙 후기</a></li>
 					<li class="mypageList"><a class="" type="button" id="">만렙 캐시</a></li>
 					<li class="mypageList"><a class="" type="button" id="">쿠폰/이벤트</a></li>
+					 -->
 					<li class="mypageList"><a class="" href="javascript:goListView(<c:out value="${sessSeq }" />)">계정설정</a></li>
 					<li class="mypageList"><a class="" type="button" id="btnListPwChange">비밀번호 변경</a></li>
 					<li class="mypageList"><a class="" type="button" id="btnListMemberDrop">계정 탈퇴</a></li>
@@ -108,11 +110,13 @@
 				<ul class="mypageC">
 					<li class="mypageList pt-3 pb-5"><a class="" type="button" id="btnListSaleManage">판매 관리</a></li>
 					<li class="mypageList"><a class="" type="button" id="btnListSaleReg">판매 등록</a></li>
+					<!-- 
 					<li class="mypageList"><a class="" type="button" id="#">수익 관리</a></li>
 					<li class="mypageList"><a class="" type="button" id="#">광고 신청</a></li>
 					<li class="mypageList"><a class="" type="button" id="#">나의 만렙 등급</a></li>
 					<li class="mypageList"><a class="" type="button" id="#">문의 관리</a></li>
-					<li class="mypageList"><a class="" href="javascript:goListView(<c:out value="${sessSeq }" />)">계정 설정</a></li>
+					 -->
+					<li class="mypageList"><a class="" href="javascript:goListViewB(<c:out value="${sessSeq }" />)">계정 설정</a></li>
 					<li class="mypageList"><a class="" type="button" id="btnListPwChange">비밀번호 변경</a></li>
 					<li class="mypageList"><a class="" type="button" id="btnListMemberDrop">계정 탈퇴</a></li>
 				</ul>					
@@ -132,6 +136,7 @@
 		var goUrlListSaleManage = "/member/saleManage"
 		var goUrlListSaleReg = "/member/saleReg"
 		var goUrlListMypage = "/member/memberViewC";
+		var goUrlListMypageB = "/member/memberViewB";
 		var goUrlPwUpdt = "/member/pwChange";
 
 
@@ -142,11 +147,15 @@
 		$("#btnListMemberDrop").on("click", function(){
 			$(location).attr("href", goUrlListMemberDrop);
 		});
-		
+		/*
 		$("#btnListMypage").on("click", function(){
 	   		$(location).attr("href", goUrlListMypage);
 		});
-
+		
+		$("#btnListMypageB").on("click", function(){
+	   		$(location).attr("href", goUrlListMypageB);
+		});
+		*/
 		$("#btnListPurchaseHistory").on("click", function(){
 			$(location).attr("href", goUrlListPurchaseHistory);
 		});
@@ -171,6 +180,12 @@
 			/* if(keyValue != 0) seq.val(btoa(keyValue)); */
 			seq.val(keyValue);
 			form.attr("action", goUrlListMypage).submit();
+		}
+		
+		goListViewB = function(keyValue) {
+			/* if(keyValue != 0) seq.val(btoa(keyValue)); */
+			seq.val(keyValue);
+			form.attr("action", goUrlListMypageB).submit();
 		}
 		
 		upload = function(objName, seq, allowedMaxTotalFileNumber, allowedExtdiv, allowedEachFileSize, allowedTotalFileSize, uiType) {

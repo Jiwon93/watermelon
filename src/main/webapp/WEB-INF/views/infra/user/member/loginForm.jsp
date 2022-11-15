@@ -62,7 +62,6 @@
 	<input type="hidden" name="mmpPhoneNumber"/>
 	<input type="hidden" name="mmGender"/>
 	<input type="hidden" name="mmBod"/>
-	<input type="hidden" name="snsImg"/>
 	<input type="hidden" name="token"/>
     <!-- Navbar Start -->
     <%@include file="../common/nav.jsp"%>
@@ -112,9 +111,9 @@
                    </div>
                    <div class="row g-3 justify-content-center">
                  	   <div class="easyLoginBox col-2">
-                 	   	   <a href="#">
+                 	   	   <a id="naverBtn">
                  	   	   	   <img src="/resources/images/naver.png" class="easyLogin">
-                 	   	   </a>			
+                 	   	   </a>	
                  	   </div>
                  	   <div class="easyLoginBox col-2">
 	               	       <a id="kakaoBtn">
@@ -182,6 +181,9 @@
     
     <!-- kakao login -->
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    
+    <!-- naver login -->
+    <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
     
     <!-- JavaScript & jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -309,6 +311,85 @@
 				}
 			});
 		});
+	 
+	/* naver login test s */
+   		
+   		/* var naverLogin = new naver.LoginWithNaverId(
+			{
+				clientId: "b8EhDTV3tvvAE_gRRBoJ",
+				callbackUrl: "http://localhost:8080/userLogin",
+				isPopup: false,
+				loginButton: {color: "green", type: 3, height: 70} 
+			}
+		); */
+		
+	
+		
+		
+		var naverLogin = new naver.LoginWithNaverId(
+			{
+				clientId: "4ZU0bIEeA8jtmta7Q58X",
+				callbackUrl: "http://localhost:8080/member/loginForm",
+				isPopup: false,
+				callbackHandle: true
+				//loginButton: {color: "green", type: 1, height: 60} 
+			}
+		);
+					
+   		
+   		$("#naverBtn").on("click", function() {
+	    	
+   		    	naverLogin.init();
+   		    	
+				naverLogin.getLoginStatus(function (status) {
+					
+					if(!status) {
+						naverLogin.authorize();
+					} else {
+						setLoginStatus();  //하늘님 메소드 실행 -> Ajax
+					}
+				});
+   		});
+   		    	
+   		    	function setLoginStatus() {
+					if (naverLogin.user.gender == 'M'){
+						$("input[name=mmGender]").val(5);
+					} else {
+						$("input[name=mmGender]").val(6);
+					} 
+					
+					$.ajax({
+						async: true
+						,cache: false
+						,type:"POST"
+						,url: "/member/naverLoginProc"
+						//,data: {"name": naverLogin.user.name, "snsId": "네이버로그인", "phone": naverLogin.user.mobile, "email": naverLogin.user.email, "gender": $("input[name=gender]").val(), "dob": naverLogin.user.birthyear+"-"+naverLogin.user.birthday, "snsImg": naverLogin.user.profile_image, "sns_id": naverLogin.user.id}
+						,data: {
+							"mmName": naverLogin.user.name,
+							//"mmpPhoneNumber": naverLogin.user.mobile, 
+							"mmEmail": naverLogin.user.email, 
+							"mmGender": $("input[name=mmGender]").val(),
+							"mmRank" : "21"
+							//"mmBod": naverLogin.user.birthyear+"-"+naverLogin.user.birthday
+							}
+						,success : function(response) {
+							if (response.rt == "fail") {
+								alert("아이디와 비밀번호를 다시 확인 후 시도해 주세요.");
+								return false;
+							} else {
+								window.location.href = "/member/memberHome";
+							}
+						},
+						error : function(jqXHR, status, error) {
+							alert("알 수 없는 에러 [ " + error + " ]");
+						}
+					});
+   		    	}
+   		
+		
+    	
+		
+    	/* naver login test e */
     </script>
 </body>
 

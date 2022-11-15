@@ -305,6 +305,11 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 		return dao.kakaoInst(dto);
 	}
 
+	@Override
+	public int naverInst(Member dto) throws Exception {
+		return dao.naverInst(dto);
+	}
+
 	
 
 	

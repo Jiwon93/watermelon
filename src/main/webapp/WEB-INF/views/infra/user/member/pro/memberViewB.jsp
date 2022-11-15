@@ -4,6 +4,9 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
+
+<jsp:useBean id="CodeServiceImpl" class="com.lifemanlab.shop.modules.code.CodeServiceImpl"/>
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -208,7 +211,7 @@
 							<div class="col-8 offset-2">
 								<label class="form-label" for="mmCareer">경력</label>
 								<div class="input-group">
-									<c:set var="listCodeCareer" value="${CodeServiceImpl.selectListCachedCode('11')}"/>
+									<c:set var="listCodeCareer" value="${CodeServiceImpl.selectListCachedCode('7')}"/>
 									<c:forEach items="${listCodeCareer}" var="listCareer" varStatus="statusCareer">
 										<c:if test="${item.mmCareer eq listCareer.ccSeq}">
 										<input type="text" class="form-control" id="mmCareer" name="mmCareer" value="${listCareer.ccName }" readonly>
@@ -236,9 +239,7 @@
 							<div class="col-8 offset-2">
                        	  <label class="form-label" for="mmIntroduce">자기소개</label>
                        	  <div class="input-group">
-                       	  	   <textarea class="form-control" id="mmIntroduce" name="mmIntroduce" style="height: 150px;">
-							   	  <c:out value="${item.mmIntroduce }" />
-							   </textarea>
+                       	  	   <textarea class="form-control" id="mmIntroduce" name="mmIntroduce" style="height: 150px;" readonly><c:out value="${item.mmIntroduce }" /></textarea>
 						   </div>
 					   </div>
 							<div class="col-sm-12 text-center">
@@ -278,6 +279,32 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
+    <script type="text/javascript">
+		
+		var goUrlModForm = "/member/memberModFormB";
+		
+		var form = $("form[name=form]");
+		var seq = $("input:hidden[name=mmSeq]");
+		/* 
+		$("#btnModForm").on("click", function(){
+	   		$(location).attr("href", goUrlModForm);
+		});
+		 */
+		
+		goMod = function(keyValue) {
+			 seq.val(keyValue);
+			 form.attr("action", goUrlModForm).submit();
+		 }
+		
+		
+		/* 
+		goMod = function(keyValue) {
+			if(keyValue != 0) seq.val(btoa(keyValue));
+			seq.val(keyValue);
+			form.attr("action", goUrlModForm).submit();
+		}
+		*/
+    </script>
     
     
 </body>

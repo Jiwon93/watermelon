@@ -137,12 +137,13 @@ public class MemberController extends BaseController {
 	
 	//회원정보수정
 	@RequestMapping(value = "memberMod")
-	public String memberMod(@ModelAttribute("vo") MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
+	public String memberMod(@ModelAttribute("vo") MemberVo vo, Member dto, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
+		dto.setMmSeq((String) httpSession.getAttribute("sessSeq"));
+		
 		service.memberMod(dto);
 		service.memberModPhone(dto);
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
-		//model.addAttribute("listUploaded", service.selectListUploaded(vo));
 		
 		if (Constants.UPDATE_AFTER_TYPE == 1) {
 			return "redirect:/member/memberModFormC";
@@ -266,6 +267,30 @@ public class MemberController extends BaseController {
 		return returnMap;
 	}
 
+	@ResponseBody
+	@RequestMapping(value = "naverLoginProc")
+	public Map<String, Object> naverLoginProc(Member dto, HttpSession httpSession) throws Exception {
+	    Map<String, Object> returnMap = new HashMap<String, Object>();
+	    
+		Member naverLogin = service.snsLoginCheck(dto);
+		
+		if (naverLogin == null) {
+			service.naverInst(dto);
+			
+			httpSession.setMaxInactiveInterval(60 * Constants.SESSION_MINUTE);
+			// session(dto.getSeq(), dto.getId(), dto.getName(), dto.getEmail(), dto.getUser_div(), dto.getSnsImg(), dto.getSns_type(), httpSession);
+            session(dto, httpSession); 
+			returnMap.put("rt", "success");
+		} else {
+			httpSession.setMaxInactiveInterval(60 * Constants.SESSION_MINUTE);
+			
+			// session(kakaoLogin.getSeq(), kakaoLogin.getId(), kakaoLogin.getName(), kakaoLogin.getEmail(), kakaoLogin.getUser_div(), kakaoLogin.getSnsImg(), kakaoLogin.getSns_type(), httpSession);
+			session(naverLogin, httpSession);
+			returnMap.put("rt", "success");
+		}
+		return returnMap;
+	}
+	
 	 public void session(Member dto, HttpSession httpSession) {
 	     httpSession.setAttribute("sessSeq", dto.getMmSeq());    
 	     httpSession.setAttribute("sessEmail", dto.getMmEmail());

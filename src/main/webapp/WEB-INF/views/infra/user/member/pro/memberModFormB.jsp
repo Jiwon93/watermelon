@@ -268,9 +268,7 @@
 							   <div class="col-8 offset-2">
 		                       	  <label class="form-label" for="mmIntroduce">자기소개</label>
 		                       	  <div class="input-group">
-		                       	  	   <textarea class="form-control" id="mmIntroduce" name="mmIntroduce" style="height: 150px;">
-									   	  <c:out value="${item.mmIntroduce }" />
-									   </textarea>
+		                       	  	   <textarea class="form-control" id="mmIntroduce" name="mmIntroduce" style="height: 150px;"><c:out value="${item.mmIntroduce }" /></textarea>
 								   </div>
 							   </div>
 								<div class="col-sm-12 text-center">

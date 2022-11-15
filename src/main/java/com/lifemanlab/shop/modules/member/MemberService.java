@@ -61,6 +61,7 @@ public interface MemberService {
 	public Member selectOneLogin(Member dto) throws Exception;
 	public Member snsLoginCheck(Member dto) throws Exception;
 	public int kakaoInst(Member dto) throws Exception;
+	public int naverInst(Member dto) throws Exception;
 	
 	//구매목록
 	public List<Member> selectPurchaseHistory(MemberVo vo) throws Exception;

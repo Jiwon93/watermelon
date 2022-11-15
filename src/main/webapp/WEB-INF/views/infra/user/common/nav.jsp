@@ -33,9 +33,8 @@
 			                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user fa-2x"></i></a>
 			                <ul class="dropdown-menu" role="menu" style="right: 0; left: auto;">
 			                	<li class="dropdown-item"><span style="font-weight: bold;"><c:out value="${sessName }"/>회원님</span></li>
-					            <li><a class="dropdown-item" href="javascript:goView(<c:out value="${sessSeq }" />)"> 마이페이지</a></li>
+					            <li><a class="dropdown-item" href="javascript:goViewB(<c:out value="${sessSeq }" />)"> 마이페이지</a></li>
 					            <li><a class="dropdown-item" type="button" id="btnSaleManage">판매 관리</a></li>
-					            <li><a class="dropdown-item" type="button" id="btnMemberMod">계정 설정</a></li>
 					            <li><hr class="dropdown-divider"></li>
 					            <li><a class="dropdown-item" type="button" id="btnLogout">로그 아웃</a></li>
 					        </ul>
@@ -49,7 +48,6 @@
 		                	<li class="dropdown-item"><span style="font-weight: bold;"><c:out value="${sessName }"/>회원님</span></li>
 				            <li><a class="dropdown-item" href="javascript:goView(<c:out value="${sessSeq }" />)">마이페이지</a></li>
 				            <li><a class="dropdown-item" type="button" id="btnPurchaseHistory">구매 목록</a></li>
-				            <li><a class="dropdown-item" type="button" id="btnMemberMod">계정 설정</a></li>
 				            <li><hr class="dropdown-divider"></li>
 				            <li><a class="dropdown-item" type="button" id="btnLogout">로그 아웃</a></li>
 				        </ul>
@@ -65,12 +63,12 @@
     <script>
 	 	var goUrlHome = "/member/memberHome";
 	 	var goUrlMypage = "/member/memberViewC";
+	 	var goUrlMypageB = "/member/memberViewB";
 		var goUrlLogout = "/member/memberHome";
 		var goUrlLoginGo = "/member/loginForm";
 		var goUrlMemberRegC = "/member/memberRegFormC";
 		var goUrlMemberRegB = "/member/memberRegFormB";
 		var goUrlPurchaseHistory = "/member/purchaseHistory";
-		var goUrlMemberMod = "/member/memberModFormC";
 		var goUrlSaleManage = "/member/saleManage";
 		
 		$("#btnHome").on("click", function(){
@@ -80,11 +78,15 @@
 		$("#btnLoginGo").on("click", function(){
 	   		$(location).attr("href", goUrlLoginGo);
 		});
-		
+		/*
 		$("#btnMypage").on("click", function(){
 	   		$(location).attr("href", goUrlMypage);
 		});
 		
+		$("#btnMypageB").on("click", function(){
+	   		$(location).attr("href", goUrlMypageB);
+		});
+		*/
 		$("#btnMemberRegC").on("click", function(){
 	   		$(location).attr("href", goUrlMemberRegC);
 		});
@@ -95,10 +97,6 @@
 		
 		$("#btnPurchaseHistory").on("click", function(){
 	   		$(location).attr("href", goUrlPurchaseHistory);
-		});
-		
-		$("#btnMemberMod").on("click", function(){
-	   		$(location).attr("href", goUrlMemberMod);
 		});
 		
 		$("#btnSaleManage").on("click", function(){
@@ -133,5 +131,11 @@
 	    	/* if(keyValue != 0) seq.val(btoa(keyValue)); */
 	    	seq.val(keyValue);
 			form.attr("action", goUrlMypage).submit();
+		}
+		
+		goViewB = function(keyValue) {
+	    	/* if(keyValue != 0) seq.val(btoa(keyValue)); */
+	    	seq.val(keyValue);
+			form.attr("action", goUrlMypageB).submit();
 		}
     </script>

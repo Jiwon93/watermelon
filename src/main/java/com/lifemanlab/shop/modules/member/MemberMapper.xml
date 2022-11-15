@@ -393,6 +393,24 @@
 			</selectKey>
 	</insert>
 	
+	<insert id="naverInst">
+		INSERT INTO member (
+			mmEmail
+			,mmName
+			,mmGender
+			,mmRank
+		)
+		VALUES (
+			#{mmEmail}
+			,#{mmName}
+			,#{mmGender}
+			,21		
+		)
+			<selectKey resultType="String" keyProperty="mmSeq" order="AFTER">
+				SELECT last_insert_id()
+			</selectKey>
+	</insert>
+	
 	<!-- 비밀번호 확인 -->
 	<select id="selectOnePwCheck" resultType="Integer">
 		SELECT 
@@ -425,8 +443,18 @@
 				,a.mmAddress2
 				,a.mmJob
 				,a.mmInterest
+				,a.mmSpecial
+				,a.mmDetail
+				,a.mmTechnique
+				,a.mmCareer
+				,a.mmWorkTime
+				,a.mmWishPay
+				,a.mmIntroduce
+				,c.path
+				,c.uuidName
 			FROM member a
 			JOIN member_phone b on a.mmSeq = b.member_mmSeq
+			LEFT JOIN mmUploaded c on a.mmSeq = c.pseq
 			WHERE 1=1
 				AND mmSeq = #{sessSeq}
 				AND mmpDiv = 74

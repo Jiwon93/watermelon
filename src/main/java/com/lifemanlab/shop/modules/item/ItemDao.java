@@ -43,6 +43,10 @@ public class ItemDao {
 		return sqlSession.insert(namespace + ".productOptionReg", dto);
 	}
 	
+	public int update(Item dto) { return sqlSession.update(namespace + ".update", dto); }
+	public int uelete(Item dto) { return sqlSession.update(namespace + ".uelete", dto); }
+	public int delete(ItemVo vo) { return sqlSession.delete(namespace + ".delete", vo); }
+	
 //	uploaded
 	public int insertUploaded(Item dto) { return sqlSession.insert("Base" + ".insertUploaded", dto); }
 	public int ueleteUploaded(Item dto) { return sqlSession.insert("Base" + ".ueleteUploaded", dto); }

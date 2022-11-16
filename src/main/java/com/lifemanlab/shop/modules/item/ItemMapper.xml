@@ -143,18 +143,31 @@
 		UPDATE item a
 		JOIN itemOption b on a.itemSeq = b.item_itemSeq
 		SET
-			mmName = #{mmName}
-			,mmNickname = #{mmNickname}
-			,mmEmail = #{mmEmail}
-			,mmPw = #{mmPw}
-			,mmBod = #{mmBod}
-			,mmGender = #{mmGender}
-			,mmZip = #{mmZip}
-			,mmAddress1 = #{mmAddress1}
-			,mmAddress2 = #{mmAddress2}
-			,mmRank = #{mmRank}
-			,mmJob = #{mmJob}
-			,mmInterest = #{mmInterest}
+			a.itTitle = #{itTitle}
+			,a.itServiceDetail = #{itServiceDetail}
+			,a.category1 = #{category1}
+			,a.category2 = #{category2}
+			,a.skillLevel = #{skillLevel}
+			,a.teamSize = #{teamSize}
+			,a.serviceCategory = #{serviceCategory}
+			,a.residency = #{residency}
+			,a.developLanguage = #{developLanguage}
+			,a.provisionProcedure = #{provisionProcedure}
+			,a.clientPrepare = #{clientPrepare}
+			,b.responsiveWeb = #{responsiveWeb}
+			,b.contentUpload = #contentUpload{}
+			,b.sourceCode = #{sourceCode}
+			,b.design = #{design}
+			,b.functionPlus = #{functionPlus}
+			,b.pagePlus = #{pagePlus}
+			,b.quickWork = #{quickWork}
+			,b.plusMod = #{plusMod}
+			,b.itemPriceTitle = #{itemPriceTitle}
+			,b.itemPriceDetail = #{itemPriceDetail}
+			,b.itemPrice = #{itemPrice}
+			,b.numberOfPage = #{numberOfPage}
+			,b.workPeriod = #{workPeriod}
+			,b.numberOfMod = #{numberOfMod}
 		WHERE
 			itemSeq = #{itemSeq}
 	</update>
@@ -166,11 +179,10 @@
 		WHERE itemSeq = #{itemSeq}
 	</update>
 	
-	<delete id="deleteItem">
-		DELETE FROM item WHERE itemSeq = #{itemSeq}
-	</delete>
-	
-	<delete id="deleteOption">
-		DELETE FROM itemOption WHERE itopSeq = #{itopSeq}
+	<delete id="delete">
+		DELETE item, itemOption 
+		FROM item 
+		JOIN itemOption on item.itemSeq = itemOption.item_itemSeq
+		WHERE item.itemSeq = #{itemSeq}
 	</delete>
 </mapper>

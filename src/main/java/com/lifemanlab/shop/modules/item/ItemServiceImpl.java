@@ -157,6 +157,30 @@ public class ItemServiceImpl implements ItemService {
 		return dao.selectListUploaded(vo);
 	}
 
+	@Override
+	public int update(Item dto) throws Exception {
+		setRegMod(dto);
+		dao.update(dto);
+		
+		deleteFiles(dto.getUploadImgDeleteSeq(), dto.getUploadImgDeletePathFile(), dto, "itUploaded");
+		uploadFiles(dto.getUploadImg(), dto, "itUploaded", dto.getUploadImgType(), dto.getUploadImgMaxNumber());
+		
+		deleteFiles(dto.getUploadFileDeleteSeq(), dto.getUploadFileDeletePathFile(), dto, "itUploaded");
+		uploadFiles(dto.getUploadFile(), dto, "itUploaded", dto.getUploadFileType(), dto.getUploadFileMaxNumber());
+		return 1;
+	}
+
+	@Override
+	public int uelete(Item dto) throws Exception {
+		setRegMod(dto);
+		return dao.uelete(dto);
+	}
+
+	@Override
+	public int delete(ItemVo vo) throws Exception {
+		return dao.delete(vo);
+	}
+
 	
 
 	

@@ -213,7 +213,7 @@ public class MemberController extends BaseController {
 				httpSession.setAttribute("sessEmail", rtMember2.getMmEmail());
 				httpSession.setAttribute("sessName", rtMember2.getMmName());
 				httpSession.setAttribute("sessRank", rtMember2.getMmRank());
-
+				System.out.println("sessSeq: " + httpSession.getAttribute("sessSeq"));
 				//rtMember2.setIflgResultNy(1);
 				//service.insertLogLogin(rtMember2);
 

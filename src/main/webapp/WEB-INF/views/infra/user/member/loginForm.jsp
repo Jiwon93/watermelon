@@ -78,7 +78,7 @@
                    <div class="row g-3">
                        <div class="col-8 offset-2">
                            <div class="form-floating">
-                               <input type="email" class="form-control" id="mmEmail" name="mmEmail" value="root@naver.com">
+                               <input type="email" class="form-control" id="mmEmail" name="mmEmail" value="testya@naver.com">
                                <label for="newEmail">이메일</label>
                            </div>
                        </div>

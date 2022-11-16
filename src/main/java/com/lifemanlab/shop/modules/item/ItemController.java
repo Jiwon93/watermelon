@@ -75,6 +75,7 @@ public class ItemController {
 		service.productReg(dto);
 		service.productOptionReg(dto);
 		vo.setItemSeq(dto.getItemSeq());
+		dto.setMember_mmSeq(dto.getMmSeq());
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
 		

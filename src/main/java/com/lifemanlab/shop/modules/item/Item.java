@@ -1,5 +1,7 @@
 package com.lifemanlab.shop.modules.item;
 
+import java.util.Date;
+
 import org.springframework.web.multipart.MultipartFile;
 
 import com.lifemanlab.shop.common.base.Base;
@@ -25,6 +27,9 @@ public class Item extends Base {
 	private Integer developLanguage;
 	private String provisionProcedure;
 	private String clientPrepare;
+	private Integer itemDelNy;
+	private Date regDatetime;
+	private Date modDatetime;
 	
 	//구매등록 추가 옵션
 	private String itopSeq;
@@ -270,6 +275,32 @@ public class Item extends Base {
 	public void setMmSeq(String mmSeq) {
 		this.mmSeq = mmSeq;
 	}
+	public String getSessSeq() {
+		return sessSeq;
+	}
+	public void setSessSeq(String sessSeq) {
+		this.sessSeq = sessSeq;
+	}
+	public Integer getItemDelNy() {
+		return itemDelNy;
+	}
+	public void setItemDelNy(Integer itemDelNy) {
+		this.itemDelNy = itemDelNy;
+	}
+	public Date getRegDatetime() {
+		return regDatetime;
+	}
+	public void setRegDatetime(Date regDatetime) {
+		this.regDatetime = regDatetime;
+	}
+	public Date getModDatetime() {
+		return modDatetime;
+	}
+	public void setModDatetime(Date modDatetime) {
+		this.modDatetime = modDatetime;
+	}
+	
+	
 	public MultipartFile[] getUploadImg() {
 		return uploadImg;
 	}
@@ -330,12 +361,7 @@ public class Item extends Base {
 	public void setUploadFileDeletePathFile(String[] uploadFileDeletePathFile) {
 		this.uploadFileDeletePathFile = uploadFileDeletePathFile;
 	}
-	public String getSessSeq() {
-		return sessSeq;
-	}
-	public void setSessSeq(String sessSeq) {
-		this.sessSeq = sessSeq;
-	}
+	
 	
 	
 }

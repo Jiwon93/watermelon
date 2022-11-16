@@ -138,4 +138,39 @@
 		ORDER BY
 			type, sort
 	</select>
+	
+	<update id="update">
+		UPDATE item a
+		JOIN itemOption b on a.itemSeq = b.item_itemSeq
+		SET
+			mmName = #{mmName}
+			,mmNickname = #{mmNickname}
+			,mmEmail = #{mmEmail}
+			,mmPw = #{mmPw}
+			,mmBod = #{mmBod}
+			,mmGender = #{mmGender}
+			,mmZip = #{mmZip}
+			,mmAddress1 = #{mmAddress1}
+			,mmAddress2 = #{mmAddress2}
+			,mmRank = #{mmRank}
+			,mmJob = #{mmJob}
+			,mmInterest = #{mmInterest}
+		WHERE
+			itemSeq = #{itemSeq}
+	</update>
+	
+	<update id="uelete">
+		UPDATE item
+		SET
+			itemDelNy = 1
+		WHERE itemSeq = #{itemSeq}
+	</update>
+	
+	<delete id="deleteItem">
+		DELETE FROM item WHERE itemSeq = #{itemSeq}
+	</delete>
+	
+	<delete id="deleteOption">
+		DELETE FROM itemOption WHERE itopSeq = #{itopSeq}
+	</delete>
 </mapper>

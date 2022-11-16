@@ -13,6 +13,7 @@ public interface ItemService {
 	
 	//상품등록
 	public int productReg(Item dto) throws Exception;
+	public int productOptionReg(Item dto) throws Exception;
 
 	//업로드
 	public void setRegMod(Item dto) throws Exception;

@@ -1,6 +1,6 @@
 package com.lifemanlab.shop.modules.member;
 
-import java.sql.Date;
+import java.util.Date;
 
 import org.springframework.web.multipart.MultipartFile;
 

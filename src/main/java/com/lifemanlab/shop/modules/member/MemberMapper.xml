@@ -63,7 +63,6 @@
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			a.*
-			<include refid="Base.selectRegModWithAlies" />
 		FROM member a
 		WHERE 1=1
 			AND mmSeq = #{mmSeq}

@@ -196,7 +196,7 @@
 										<select class="form-select" id="mmJob" name="mmJob">
 											<option>직업선택</option>
 											<c:forEach begin="12" end="18" items="${ccNameList }" var="ccNameList" varStatus="status">
-											<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }" /></option>
+											<option value="${ccNameList.ccSeq }" <c:if test="${item.mmJob eq ccNameList.ccSeq }">selected</c:if>><c:out value="${ccNameList.ccName }" /></option>
 											</c:forEach>
 										</select>
 									</div>
@@ -204,10 +204,10 @@
 								<div class="col-8 offset-2">
 									<label class="form-label" for="mmInterest">관심선택(중복 선택 가능)</label>
 									<div class="input-group">
-										<select class="form-select" id="mmInterest" name="mmInterest" multiple>
+										<select class="form-select" id="mmInterest" name="mmInterest">
 											<option>관심분야선택</option>
 											<c:forEach begin="29" end="38" items="${ccNameList }" var="ccNameList" varStatus="status">
-											<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }" /></option>
+											<option value="${ccNameList.ccSeq }" <c:if test="${item.mmInterest eq ccNameList.ccSeq }">selected</c:if>><c:out value="${ccNameList.ccName }" /></option>
 											</c:forEach>
 										</select>
 									</div>

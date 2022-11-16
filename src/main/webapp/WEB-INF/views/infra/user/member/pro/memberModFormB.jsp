@@ -191,7 +191,7 @@
 										<select class="form-select" id="mmJob" name="mmJob">
 											<option>직업선택</option>
 											<c:forEach begin="12" end="18" items="${ccNameList }" var="ccNameList" varStatus="status">
-											<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }" /></option>
+											<option value="${ccNameList.ccSeq }" <c:if test="${item.mmJob eq ccNameList.ccSeq }">selected</c:if>><c:out value="${ccNameList.ccName }" /></option>
 											</c:forEach>
 										</select>
 									</div>
@@ -202,7 +202,7 @@
 										<select class="form-select" id="mmInterest" name="mmInterest">
 											<option>관심분야선택</option>
 											<c:forEach begin="29" end="38" items="${ccNameList }" var="ccNameList" varStatus="status">
-											<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }" /></option>
+											<option value="${ccNameList.ccSeq }" <c:if test="${item.mmInterest eq ccNameList.ccSeq }">selected</c:if>><c:out value="${ccNameList.ccName }" /></option>
 											</c:forEach>
 										</select>
 									</div>
@@ -213,15 +213,15 @@
 										<select class="form-select" id="mmSpecial" name="mmSpecial">
 											<option>전문분야선택</option>
 											<c:forEach begin="39" end="349" items="${ccNameList }" var="ccNameList" varStatus="status">
-											<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }" /></option>
+											<option value="${ccNameList.ccSeq }" <c:if test="${item.mmSpecial eq ccNameList.ccSeq }">selected</c:if>><c:out value="${ccNameList.ccName }" /></option>
 											</c:forEach>
 										</select>
 									</div>
 									<div class="input-group">
-										<select class="form-select" id="mmDetail" name="mmDetail" multiple>
+										<select class="form-select" id="mmDetail" name="mmDetail">
 											<option>상세분야선택</option>
 											<c:forEach begin="50" end="67" items="${ccNameList }" var="ccNameList" varStatus="status">
-											<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }" /></option>
+											<option value="${ccNameList.ccSeq }" <c:if test="${item.mmDetail eq ccNameList.ccSeq }">selected</c:if>><c:out value="${ccNameList.ccName }" /></option>
 											</c:forEach>
 										</select>
 									</div>
@@ -229,10 +229,10 @@
 								<div class="col-8 offset-2">
 		                       	  <label class="form-label" for="mmTechnique">보유기술(중복 선택 가능)</label>
 		                       	  <div class="input-group">
-		                       	  	   <select class="form-select" id="mmTechnique" name="mmTechnique" mutiple>
+		                       	  	   <select class="form-select" id="mmTechnique" name="mmTechnique">
 										   <option>보유기술선택</option>
 										   <c:forEach begin="75" end="81" items="${ccNameList }" var="ccNameList" varStatus="status">
-										   <option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+										   <option value="${ccNameList.ccSeq }" <c:if test="${item.mmTechnique eq ccNameList.ccSeq }">selected</c:if>><c:out value="${ccNameList.ccName }"/></option>
 										   </c:forEach>
 								       </select>
 								   </div>
@@ -243,7 +243,7 @@
 		                       	  	   <select class="form-select" id="mmCareer" name="mmCareer">
 										   <option>경력선택</option>
 										   <c:forEach begin="21" end="28" items="${ccNameList }" var="ccNameList" varStatus="status">
-										   <option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+										   <option value="${ccNameList.ccSeq }" <c:if test="${item.mmCareer eq ccNameList.ccSeq }">selected</c:if>><c:out value="${ccNameList.ccName }"/></option>
 										   </c:forEach>
 								       </select>
 								   </div>
@@ -260,7 +260,7 @@
 		                       	  	   <select class="form-select" id="mmWorkTime" name="mmWorkTime">
 										   <option>희망근로시간선택</option>
 										   <c:forEach begin="68" end="72" items="${ccNameList }" var="ccNameList" varStatus="status">
-										   <option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+										   <option value="${ccNameList.ccSeq }" <c:if test="${item.mmWorkTime eq ccNameList.ccSeq }">selected</c:if>><c:out value="${ccNameList.ccName }"/></option>
 										   </c:forEach>
 								       </select>
 								   </div>

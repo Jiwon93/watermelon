@@ -30,6 +30,7 @@ public class Base {
 	private String ccgNameEng;
 	private Date ccgRegDatetime;
 	private Date ccgModDatetime;
+	private String codeGroup_ccgSeq;
 	
 	//regmod
 	private String regIp;
@@ -248,6 +249,12 @@ public class Base {
 	}
 	public void setModDateTimeSvr(Date modDateTimeSvr) {
 		this.modDateTimeSvr = modDateTimeSvr;
+	}
+	public String getCodeGroup_ccgSeq() {
+		return codeGroup_ccgSeq;
+	}
+	public void setCodeGroup_ccgSeq(String codeGroup_ccgSeq) {
+		this.codeGroup_ccgSeq = codeGroup_ccgSeq;
 	}
 	
 	

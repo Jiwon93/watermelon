@@ -73,6 +73,7 @@ public class ItemController {
 		
 		setCheckboxNull(dto);
 		service.productReg(dto);
+		service.productOptionReg(dto);
 		vo.setItemSeq(dto.getItemSeq());
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
@@ -80,4 +81,31 @@ public class ItemController {
 		return "redirect:/member/saleManage";
 	}
 	
+	@SuppressWarnings(value = { "all" })
+	@RequestMapping(value = "itemUpdt")
+	public String itemUpdt(ItemVo vo, Item dto, RedirectAttributes redirectAttributes) throws Exception {
+		service.update(dto);
+		
+		redirectAttributes.addFlashAttribute("vo", vo);
+		
+		return "redirect:/member/saleManage";
+	}
+	
+	@RequestMapping(value = "itemUele")
+	public String itemUele(ItemVo vo, Item dto, RedirectAttributes redirectAttributes) throws Exception {
+		service.uelete(dto);
+		
+		redirectAttributes.addFlashAttribute("vo", vo);
+		
+		return "redirect:/member/saleManage";
+	}
+	
+	@RequestMapping(value = "itemDele")
+	public String itemDele(ItemVo vo, RedirectAttributes redirectAttributes) throws Exception {
+		service.delete(vo);
+		
+		redirectAttributes.addFlashAttribute("vo", vo);
+		
+		return "redirect:/member/saleManage";
+	}
 }

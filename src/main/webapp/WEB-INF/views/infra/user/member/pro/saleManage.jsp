@@ -133,7 +133,24 @@
 	                   	   	   	   <c:forEach items="${item }" var="item" varStatus="status">
 		                   	   <table class="m-4">
 		                   	   	   <tr>
-		                   	   	   	   <td rowspan="6" style="width: 270px;"><img src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" style="width: 220px; height: 150px;"></td>
+		                   	   	   	   <c:set var="type" value="2"/>
+		                   	   	   	   <c:set var="name" value="uploadImg"/>
+		                   	   	   	   <td rowspan="6" style="width: 270px;">
+		                   	   	   	   	   <c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
+		                   	   	   	   	   	   <c:if test="${listUploaded.type eq type }">
+		                   	   	   	   	   <img src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" style="width: 220px; height: 150px;">
+		                   	   	   	   	   	   </c:if>
+		                   	   	   	   	   </c:forEach>
+		                   	   	   	   	   <%-- 
+		                   	   	   	   	   <c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
+												<c:if test="${listUploaded.type eq type }">
+													<div id="imgDiv_<c:out value="${type }"/>_<c:out value="${listUploaded.sort }"/>" style="display: inline-block; height: 95px;">
+														<img src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" class="rounded" width= "85px" height="85px" style="cursor:pointer;" onClick="openViewer(<c:out value="${listUploaded.type }"/>, <c:out value="${listUploaded. sort }"/>);">
+													</div>
+												</c:if>
+										   </c:forEach>
+										    --%>
+		                   	   	   	   </td>
 		                   	   	   	   <td><span class="btn btn-secondary btn-sm" style="height: 30px; width: 80px;">주문완료</span></td>
 		                   	   	   	   <td></td>
 		                   	   	   </tr>

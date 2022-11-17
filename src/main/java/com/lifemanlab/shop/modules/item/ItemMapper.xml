@@ -202,13 +202,10 @@
 			d.mmNickname
 			,b.itTitle
 			,c.itemPrice
-			,e.uuidName
-			,e.path
 		FROM purchase a
 		JOIN item b on  a.item_itemSeq = b.itemSeq
 		JOIN itemOption c on a.item_itemSeq = c.item_itemSeq
 		JOIN member d on a.member_mmSeq = d.mmSeq 
-		LEFT JOIN itUploaded e on a.itemSeq = e.pseq
 		WHERE 1=1
 			AND a.member_mmSeq = #{sessSeq}
 		<include refid="Base.selectListLowerForMysql" />
@@ -220,12 +217,9 @@
 		SELECT
 			a.itTitle
 			,c.itemPrice
-			,d.uuidName
-			,d.path
 		FROM item a
 		JOIN member b on  a.member_mmSeq = b.mmSeq
 		JOIN itemOption c on a.itemSeq = c.item_itemSeq
-		LEFT JOIN itUploaded d on a.itemSeq = d.pseq
 		WHERE 1=1
 			AND b.mmSeq = #{sessSeq}
 		<include refid="Base.selectListLowerForMysql" />

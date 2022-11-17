@@ -37,7 +37,7 @@ public class ItemController {
 		
 		List<Item> list = service.selectList(vo);
 		model.addAttribute("list", list);
-		
+		model.addAttribute("listUploaded", service.selectListUploaded(vo));
 		return "infra/user/item/itemMenu";
 	}
 	
@@ -47,7 +47,7 @@ public class ItemController {
 		Item item = service.selectOne(vo);
 		System.out.println("controller item: " + item);
 		model.addAttribute("item", item);
-		
+		model.addAttribute("listUploaded", service.selectListUploaded(vo));
 		return "infra/user/item/itemMenuView";
 	}
 	
@@ -129,6 +129,7 @@ public class ItemController {
 		vo.setParamsPaging(service.selectOneCount(vo));
 		List<Item> item = service.selectPurchaseHistory(vo);
 		model.addAttribute("item", item);
+		model.addAttribute("listUploaded", service.selectListUploaded(vo));
 		return "infra/user/member/clients/purchaseHistory";
 	}
 	
@@ -137,6 +138,7 @@ public class ItemController {
 		vo.setParamsPaging(service.selectOneCount(vo));
 		List<Item> item = service.selectSaleManage(vo);
 		model.addAttribute("item", item);
+		model.addAttribute("listUploaded", service.selectListUploaded(vo));
 		return "infra/user/member/pro/saleManage";
 	}
 }

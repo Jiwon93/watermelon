@@ -459,36 +459,6 @@
 				AND mmpDiv = 74
 	</select>
 	
-	<!-- 구매목록 -->
-	<select id="selectPurchaseHistory" resultMap="resultMapObj">
-		<include refid="Base.selectListUpperForMysql" />
-		SELECT
-			d.mmNickname
-			,b.itTitle
-			,c.itemPrice
-		FROM purchase a
-		JOIN item b on  a.item_itemSeq = b.itemSeq
-		JOIN itemOption c on a.item_itemSeq = c.item_itemSeq
-		JOIN member d on a.member_mmSeq = d.mmSeq 
-		WHERE 1=1
-			AND a.member_mmSeq = #{sessSeq}
-		<include refid="Base.selectListLowerForMysql" />
-	</select>
-	
-	<!-- 판매등록상품 -->
-	<select id="selectSaleManage" resultMap="resultMapObj">
-		<include refid="Base.selectListUpperForMysql" />
-		SELECT
-			a.itTitle
-			,c.itemPrice
-		FROM item a
-		JOIN member b on  a.member_mmSeq = b.mmSeq
-		JOIN itemOption c on a.itemSeq = c.item_itemSeq
-		WHERE 1=1
-			AND b.mmSeq = #{sessSeq}
-		<include refid="Base.selectListLowerForMysql" />
-	</select>
-	
 	<!-- 회원탈퇴 -->
 	<update id="memberDrop">
 		UPDATE member

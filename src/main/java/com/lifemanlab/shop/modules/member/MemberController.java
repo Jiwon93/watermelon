@@ -444,36 +444,6 @@ public class MemberController extends BaseController {
 	public String pwChangFormC() throws Exception {
 		return "infra/user/member/clients/pwChangeFormC";
 	}
-	
-	@RequestMapping(value = "saleReg")
-	public String saleReg() throws Exception {
-		return "infra/user/member/pro/saleReg";
-	}
-	
-	@RequestMapping(value = "saleRegForm")
-	public String saleRegForm(Model model) throws Exception {
-			
-		List<Member> ccNameList = service.ccNameList();
-		model.addAttribute("ccNameList", ccNameList);
-		
-		return "infra/user/member/pro/saleRegForm";
-	}
-	
-	@RequestMapping(value = "purchaseHistory")
-	public String purchaseHistory(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
-		vo.setParamsPaging(service.selectOneCount(vo));
-		List<Member> item = service.selectPurchaseHistory(vo);
-		model.addAttribute("item", item);
-		return "infra/user/member/clients/purchaseHistory";
-	}
-	
-	@RequestMapping(value = "saleManage")
-	public String saleManage(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
-		vo.setParamsPaging(service.selectOneCount(vo));
-		List<Member> item = service.selectSaleManage(vo);
-		model.addAttribute("item", item);
-		return "infra/user/member/pro/saleManage";
-	}
 
 	@RequestMapping(value = "xdminLoginForm")
 	public String xdminLoginForm() throws Exception {

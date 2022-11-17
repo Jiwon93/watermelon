@@ -109,4 +109,34 @@ public class ItemController {
 		
 		return "redirect:/member/saleManage";
 	}
+	
+	@RequestMapping(value = "saleReg")
+	public String saleReg() throws Exception {
+		return "infra/user/member/pro/saleReg";
+	}
+	
+	@RequestMapping(value = "saleRegForm")
+	public String saleRegForm(Model model) throws Exception {
+			
+		List<Item> ccNameList = service.ccNameList();
+		model.addAttribute("ccNameList", ccNameList);
+		
+		return "infra/user/member/pro/saleRegForm";
+	}
+	
+	@RequestMapping(value = "purchaseHistory")
+	public String purchaseHistory(@ModelAttribute("vo") ItemVo vo, Model model) throws Exception {
+		vo.setParamsPaging(service.selectOneCount(vo));
+		List<Item> item = service.selectPurchaseHistory(vo);
+		model.addAttribute("item", item);
+		return "infra/user/member/clients/purchaseHistory";
+	}
+	
+	@RequestMapping(value = "saleManage")
+	public String saleManage(@ModelAttribute("vo") ItemVo vo, Model model) throws Exception {
+		vo.setParamsPaging(service.selectOneCount(vo));
+		List<Item> item = service.selectSaleManage(vo);
+		model.addAttribute("item", item);
+		return "infra/user/member/pro/saleManage";
+	}
 }

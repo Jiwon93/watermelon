@@ -64,7 +64,7 @@
 			,clientPrepare
 		)
 		VALUES (
-			#{mmSeq}
+			#{sessSeq}
 			,#{itTitle}
 			,#{itServiceDetail}
 			,#{category1}
@@ -84,7 +84,8 @@
 	
 	<insert id="productOptionReg">
 		INSERT INTO itemOption (
-			item_itemSeq
+			member_mmSeq
+			,item_itemSeq
 			,responsiveWeb
 			,contentUpload
 			,sourceCode
@@ -101,7 +102,8 @@
 			,numberOfMod
 		)
 		VALUES (
-			#{itemSeq}
+			#{sessSeq}
+			,#{itemSeq}
 			,#{responsiveWeb}
 			,#{contentUpload}
 			,#{sourceCode}
@@ -185,4 +187,41 @@
 		JOIN itemOption on item.itemSeq = itemOption.item_itemSeq
 		WHERE item.itemSeq = #{itemSeq}
 	</delete>
+	
+	<select id="ccNameList" resultMap="resultMapObj">
+		SELECT
+			a.*
+		FROM code a
+		WHERE 1=1
+	</select>
+	
+	<!-- 구매목록 -->
+	<select id="selectPurchaseHistory" resultMap="resultMapObj">
+		<include refid="Base.selectListUpperForMysql" />
+		SELECT
+			d.mmNickname
+			,b.itTitle
+			,c.itemPrice
+		FROM purchase a
+		JOIN item b on  a.item_itemSeq = b.itemSeq
+		JOIN itemOption c on a.item_itemSeq = c.item_itemSeq
+		JOIN member d on a.member_mmSeq = d.mmSeq 
+		WHERE 1=1
+			AND a.member_mmSeq = #{sessSeq}
+		<include refid="Base.selectListLowerForMysql" />
+	</select>
+	
+	<!-- 판매등록상품 -->
+	<select id="selectSaleManage" resultMap="resultMapObj">
+		<include refid="Base.selectListUpperForMysql" />
+		SELECT
+			a.itTitle
+			,c.itemPrice
+		FROM item a
+		JOIN member b on  a.member_mmSeq = b.mmSeq
+		JOIN itemOption c on a.itemSeq = c.item_itemSeq
+		WHERE 1=1
+			AND b.mmSeq = #{sessSeq}
+		<include refid="Base.selectListLowerForMysql" />
+	</select>
 </mapper>

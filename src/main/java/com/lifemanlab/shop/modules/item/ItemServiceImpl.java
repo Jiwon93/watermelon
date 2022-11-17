@@ -146,9 +146,7 @@ public class ItemServiceImpl implements ItemService {
 	
 	@Override
 	public int productOptionReg(Item dto) throws Exception {
-		
-		dao.productOptionReg(dto);
-		return 1;
+		return dao.productOptionReg(dto);
 	}
 
 
@@ -179,6 +177,21 @@ public class ItemServiceImpl implements ItemService {
 	@Override
 	public int delete(ItemVo vo) throws Exception {
 		return dao.delete(vo);
+	}
+
+	@Override
+	public List<Item> ccNameList() throws Exception {
+		return dao.ccNameList();
+	}
+
+	@Override
+	public List<Item> selectPurchaseHistory(ItemVo vo) throws Exception {
+		return dao.selectPurchaseHistory(vo);
+	}
+
+	@Override
+	public List<Item> selectSaleManage(ItemVo vo) throws Exception {
+		return dao.selectSaleManage(vo);
 	}
 
 	

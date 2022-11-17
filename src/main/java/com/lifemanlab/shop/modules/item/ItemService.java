@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
+
 public interface ItemService {
 	
 	public List<Item> selectList(ItemVo vo) throws Exception;
@@ -24,4 +25,13 @@ public interface ItemService {
 	public void deleteFiles(String[] deleteSeq, String[] deletePathFile, Item dto, String tableName) throws Exception;
 	public void ueleteFiles(String[] deleteSeq, String[] deletePathFile, Item dto, String tableName) throws Exception;
 	List<Item> selectListUploaded(ItemVo vo) throws Exception; 
+	
+	
+	public List<Item> ccNameList() throws Exception;
+	
+	//구매목록
+	public List<Item> selectPurchaseHistory(ItemVo vo) throws Exception;
+		
+	//판매등록상품
+	public List<Item> selectSaleManage(ItemVo vo) throws Exception;
 }

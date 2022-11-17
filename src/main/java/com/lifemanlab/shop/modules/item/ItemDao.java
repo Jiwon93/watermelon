@@ -9,6 +9,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+
+
 @Repository
 public class ItemDao {
 
@@ -22,7 +24,7 @@ public class ItemDao {
 		List<Item> list = sqlSession.selectList("com.lifemanlab.shop.modules.item.ItemMapper.selectList", vo);
 		return list;
 	}
-	
+	public List<Item> ccNameList() { return sqlSession.selectList(namespace + ".ccNameList", ""); }
 	public int selectOneCount(ItemVo vo) {
 		int count = sqlSession.selectOne(namespace + ".selectOneCount", vo);
 		return count;
@@ -46,6 +48,13 @@ public class ItemDao {
 	public int update(Item dto) { return sqlSession.update(namespace + ".update", dto); }
 	public int uelete(Item dto) { return sqlSession.update(namespace + ".uelete", dto); }
 	public int delete(ItemVo vo) { return sqlSession.delete(namespace + ".delete", vo); }
+	
+	
+	//구매목록
+	public List<Item> selectPurchaseHistory(ItemVo vo) { return sqlSession.selectList(namespace + ".selectPurchaseHistory", vo); }
+		
+	//판매등록상품
+	public List<Item> selectSaleManage(ItemVo vo) { return sqlSession.selectList(namespace + ".selectSaleManage", vo); }
 	
 //	uploaded
 	public int insertUploaded(Item dto) { return sqlSession.insert("Base" + ".insertUploaded", dto); }

@@ -336,55 +336,62 @@
 			}
 		);
 					
-   		
+		naverLogin.init();
+		
    		$("#naverBtn").on("click", function() {
-	    	
-   		    	naverLogin.init();
-   		    	
 				naverLogin.getLoginStatus(function (status) {
-					
 					if(!status) {
 						naverLogin.authorize();
 					} else {
-						setLoginStatus();  //하늘님 메소드 실행 -> Ajax
+						setLoginStatus();  //메소드 실행 -> Ajax
 					}
 				});
    		});
    		    	
-   		    	function setLoginStatus() {
-					if (naverLogin.user.gender == 'M'){
-						$("input[name=mmGender]").val(5);
+   		window.addEventListener('load', function () {
+			if (naverLogin.accessToken != null) { 
+	  			naverLogin.getLoginStatus(function (status) {
+	  				if (status) {
+	  					setLoginStatus();
+	  				}
+  				});
+			}
+   		});
+   		
+    	function setLoginStatus() {
+			if (naverLogin.user.gender == 'M'){
+				$("input[name=mmGender]").val(5);
+			} else {
+				$("input[name=mmGender]").val(6);
+			} 
+			
+			$.ajax({
+				async: true
+				,cache: false
+				,type:"POST"
+				,url: "/member/naverLoginProc"
+				//,data: {"name": naverLogin.user.name, "snsId": "네이버로그인", "phone": naverLogin.user.mobile, "email": naverLogin.user.email, "gender": $("input[name=gender]").val(), "dob": naverLogin.user.birthyear+"-"+naverLogin.user.birthday, "snsImg": naverLogin.user.profile_image, "sns_id": naverLogin.user.id}
+				,data: {
+					"mmName": naverLogin.user.name,
+					//"mmpPhoneNumber": naverLogin.user.mobile, 
+					"mmEmail": naverLogin.user.email, 
+					"mmGender": $("input[name=mmGender]").val(),
+					"mmRank" : "21"
+					//"mmBod": naverLogin.user.birthyear+"-"+naverLogin.user.birthday
+					}
+				,success : function(response) {
+					if (response.rt == "fail") {
+						alert("아이디와 비밀번호를 다시 확인 후 시도해 주세요.");
+						return false;
 					} else {
-						$("input[name=mmGender]").val(6);
-					} 
-					
-					$.ajax({
-						async: true
-						,cache: false
-						,type:"POST"
-						,url: "/member/naverLoginProc"
-						//,data: {"name": naverLogin.user.name, "snsId": "네이버로그인", "phone": naverLogin.user.mobile, "email": naverLogin.user.email, "gender": $("input[name=gender]").val(), "dob": naverLogin.user.birthyear+"-"+naverLogin.user.birthday, "snsImg": naverLogin.user.profile_image, "sns_id": naverLogin.user.id}
-						,data: {
-							"mmName": naverLogin.user.name,
-							//"mmpPhoneNumber": naverLogin.user.mobile, 
-							"mmEmail": naverLogin.user.email, 
-							"mmGender": $("input[name=mmGender]").val(),
-							"mmRank" : "21"
-							//"mmBod": naverLogin.user.birthyear+"-"+naverLogin.user.birthday
-							}
-						,success : function(response) {
-							if (response.rt == "fail") {
-								alert("아이디와 비밀번호를 다시 확인 후 시도해 주세요.");
-								return false;
-							} else {
-								window.location.href = "/member/memberHome";
-							}
-						},
-						error : function(jqXHR, status, error) {
-							alert("알 수 없는 에러 [ " + error + " ]");
-						}
-					});
-   		    	}
+						window.location.href = "/member/memberHome";
+					}
+				},
+				error : function(jqXHR, status, error) {
+					alert("알 수 없는 에러 [ " + error + " ]");
+				}
+			});
+    	}
    		
 		
     	

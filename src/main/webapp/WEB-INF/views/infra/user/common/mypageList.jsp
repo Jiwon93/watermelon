@@ -132,9 +132,9 @@
 	<script>
 		var goUrlListPwChange = "/member/pwChangeFormC"
 		var goUrlListMemberDrop = "/member/memberDropFormC"
-		var goUrlListPurchaseHistory = "/member/purchaseHistory"
-		var goUrlListSaleManage = "/member/saleManage"
-		var goUrlListSaleReg = "/member/saleReg"
+		var goUrlListPurchaseHistory = "/item/purchaseHistory"
+		var goUrlListSaleManage = "/item/saleManage"
+		var goUrlListSaleReg = "/item/saleReg"
 		var goUrlListMypage = "/member/memberViewC";
 		var goUrlListMypageB = "/member/memberViewB";
 		var goUrlPwUpdt = "/member/pwChange";

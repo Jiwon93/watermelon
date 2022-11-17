@@ -188,7 +188,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
     <script type="text/javascript">
-	    var goUrlList = "/member/saleManage";
+	    var goUrlList = "/item/saleManage";
 	    
 	    goList = function(thisPage) {
 			$("input:hidden[name=thisPage]").val(thisPage);

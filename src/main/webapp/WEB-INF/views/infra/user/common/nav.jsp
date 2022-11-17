@@ -68,8 +68,8 @@
 		var goUrlLoginGo = "/member/loginForm";
 		var goUrlMemberRegC = "/member/memberRegFormC";
 		var goUrlMemberRegB = "/member/memberRegFormB";
-		var goUrlPurchaseHistory = "/member/purchaseHistory";
-		var goUrlSaleManage = "/member/saleManage";
+		var goUrlPurchaseHistory = "/item/purchaseHistory";
+		var goUrlSaleManage = "/item/saleManage";
 		
 		$("#btnHome").on("click", function(){
 	   		$(location).attr("href", goUrlHome);

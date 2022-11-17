@@ -32,6 +32,10 @@ public class Base {
 	private Date ccgModDatetime;
 	private String codeGroup_ccgSeq;
 	
+	// cc
+	private String ccSeq;
+	private String ccName;
+	
 	//regmod
 	private String regIp;
 	private String regSeq;
@@ -255,6 +259,18 @@ public class Base {
 	}
 	public void setCodeGroup_ccgSeq(String codeGroup_ccgSeq) {
 		this.codeGroup_ccgSeq = codeGroup_ccgSeq;
+	}
+	public String getCcSeq() {
+		return ccSeq;
+	}
+	public void setCcSeq(String ccSeq) {
+		this.ccSeq = ccSeq;
+	}
+	public String getCcName() {
+		return ccName;
+	}
+	public void setCcName(String ccName) {
+		this.ccName = ccName;
 	}
 	
 	

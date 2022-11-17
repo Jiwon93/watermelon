@@ -79,7 +79,7 @@ public class ItemController {
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
 		
-		return "redirect:/member/saleManage";
+		return "redirect:/item/saleManage";
 	}
 	
 	@SuppressWarnings(value = { "all" })
@@ -89,7 +89,7 @@ public class ItemController {
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
 		
-		return "redirect:/member/saleManage";
+		return "redirect:/item/saleManage";
 	}
 	
 	@RequestMapping(value = "itemUele")
@@ -98,7 +98,7 @@ public class ItemController {
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
 		
-		return "redirect:/member/saleManage";
+		return "redirect:/item/saleManage";
 	}
 	
 	@RequestMapping(value = "itemDele")
@@ -107,12 +107,12 @@ public class ItemController {
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
 		
-		return "redirect:/member/saleManage";
+		return "redirect:/item/saleManage";
 	}
 	
 	@RequestMapping(value = "saleReg")
 	public String saleReg() throws Exception {
-		return "infra/user/member/pro/saleReg";
+		return "infra/user/item/pro/saleReg";
 	}
 	
 	@RequestMapping(value = "saleRegForm")

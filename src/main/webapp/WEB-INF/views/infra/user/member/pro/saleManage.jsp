@@ -133,7 +133,7 @@
 	                   	   	   	   <c:forEach items="${item }" var="item" varStatus="status">
 		                   	   <table class="m-4">
 		                   	   	   <tr>
-		                   	   	   	   <td rowspan="6" style="width: 270px;"><img alt="" src="/resources/images/main.jpg" style="width: 220px; height: 150px;"></td>
+		                   	   	   	   <td rowspan="6" style="width: 270px;"><img src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" style="width: 220px; height: 150px;"></td>
 		                   	   	   	   <td><span class="btn btn-secondary btn-sm" style="height: 30px; width: 80px;">주문완료</span></td>
 		                   	   	   	   <td></td>
 		                   	   	   </tr>

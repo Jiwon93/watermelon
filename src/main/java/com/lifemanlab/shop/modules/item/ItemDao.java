@@ -36,6 +36,10 @@ public class ItemDao {
 		return item;
 	}
 	
+	//상품리스트
+	public List<Item> productList(ItemVo vo) { List<Item> list = sqlSession.selectList(namespace + ".productList", vo); return list; }
+	
+	
 	//상품등록
 	public int productReg(Item dto) {
 		return sqlSession.insert(namespace + ".productReg", dto);

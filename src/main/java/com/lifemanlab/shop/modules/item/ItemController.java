@@ -35,9 +35,10 @@ public class ItemController {
 		
 		vo.setParamsPaging(service.selectOneCount(vo));
 		
-		List<Item> list = service.selectList(vo);
-		model.addAttribute("list", list);
-		model.addAttribute("listUploaded", service.selectListUploaded(vo));
+		//List<Item> list = service.selectList(vo);
+		//model.addAttribute("list", list);
+		List<Item> productList = service.productList(vo);
+		model.addAttribute("productList", productList);
 		return "infra/user/item/itemMenu";
 	}
 	
@@ -137,8 +138,8 @@ public class ItemController {
 	public String saleManage(@ModelAttribute("vo") ItemVo vo, Model model) throws Exception {
 		vo.setParamsPaging(service.selectOneCount(vo));
 		List<Item> item = service.selectSaleManage(vo);
-		model.addAttribute("item", item);
-		model.addAttribute("listUploaded", service.selectListUploaded(vo));
+		model.addAttribute("saleItem", item);
+		//model.addAttribute("listUploaded", service.selectListUploaded(vo));
 		return "infra/user/member/pro/saleManage";
 	}
 }

@@ -131,6 +131,13 @@ public class ItemServiceImpl implements ItemService {
 		System.out.println("service item: " + item);
 		return item;
 	}
+	
+	//상품 리스트
+	@Override
+	public List<Item> productList(ItemVo vo) throws Exception {
+		List<Item> list = dao.productList(vo);
+		return list;
+	}
 
 	//상품등록
 	@Override
@@ -193,6 +200,8 @@ public class ItemServiceImpl implements ItemService {
 	public List<Item> selectSaleManage(ItemVo vo) throws Exception {
 		return dao.selectSaleManage(vo);
 	}
+
+	
 
 	
 

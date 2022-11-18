@@ -12,6 +12,8 @@ public interface ItemService {
 	public int selectOneCount(ItemVo vo) throws Exception;
 	public Item selectOne(ItemVo vo) throws Exception;
 	
+	//상품 리스트
+	public List<Item> productList(ItemVo vo) throws Exception;
 	//상품등록
 	public int productReg(Item dto) throws Exception;
 	public int productOptionReg(Item dto) throws Exception;

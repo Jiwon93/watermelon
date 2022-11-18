@@ -12,6 +12,7 @@
 		FROM item a
 		JOIN member b on a.member_mmSeq = b.mmSeq
 		JOIN itemOption c on a.itemSeq = c.item_itemSeq
+		LEFT JOIN itUploaded d on a.itemSeq = d.pseq
 		WHERE 1=1
 		<if test="shDelNy != null and !shDelNy.equals('')">AND itDelNy = #{shDelNy}</if>
 		<choose>
@@ -31,7 +32,7 @@
 			AND b.mmRank = 20
 			ORDER BY a.itemSeq DESC
 			<!-- <include refid="Base.orderByLimitForMysql" /> -->
-		<include refid="Base.selectListLowerForMysql" />
+		<include refid="Base.selectListUpperForMysql" />
 	</select>
 	
 	<select id="selectOneCount" resultType="Integer">
@@ -45,6 +46,26 @@
 		FROM item a
 		WHERE 1=1
 			AND itemSeq = #{itemSeq}
+	</select>
+	
+	<!-- 상품리스트 -->
+	<select id="productList" resultMap="resultMapObj">
+		<!-- <include refid="Base.selectListUpperForMysql" /> -->
+			SELECT
+				a.itemSeq
+				,a.itTitle
+				,b.mmNickname
+				,c.itemPrice
+				,d.path
+				,d.uuidName
+			FROM item a
+			LEFT JOIN member b on a.member_mmSeq = b.mmSeq
+			JOIN itemOption c on a.itemSeq = c.item_itemSeq
+			LEFT JOIN itUploaded d on a.itemSeq = d.pseq
+			WHERE 1=1	
+			AND b.mmRank = 20
+			ORDER BY a.itemSeq DESC
+		<!-- <include refid="Base.selectListUpperForMysql" /> -->
 	</select>
 	
 	<!-- 상품등록 -->
@@ -217,11 +238,16 @@
 		SELECT
 			a.itTitle
 			,c.itemPrice
+			,d.path
+			,d.uuidName
 		FROM item a
 		JOIN member b on  a.member_mmSeq = b.mmSeq
 		JOIN itemOption c on a.itemSeq = c.item_itemSeq
+		LEFT JOIN itUploaded d on a.member_mmSeq = d.regSeq
 		WHERE 1=1
 			AND b.mmSeq = #{sessSeq}
+			<!-- AND a.itemSeq = #{pseq} -->
+			AND d.regSeq = #{sessSeq}
 		<include refid="Base.selectListLowerForMysql" />
 	</select>
 </mapper>

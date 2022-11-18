@@ -202,25 +202,21 @@
 				</div>
 				<div class="row p-1 mt-3 mb-5">
 				<c:choose>
-					<c:when test="${fn:length(list) eq 0 }">
+					<c:when test="${fn:length(productList) eq 0 }">
 						<p>준비된 상품이 없습니다.</p>
 					</c:when>
 					<c:otherwise>
-						<c:forEach items="${list}" var="list" varStatus="status">
+						<c:forEach items="${productList}" var="productList" varStatus="statusProductList">
 	           		<div class="col-3 mt-3 service-item">
 	               		<div class="overflow-hidden">
 	               	    	<!-- <img class="menuDD" src="/resources/images/main.jpg"> -->
-	               	    	<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
-       	   	   	   	   	    	<c:if test="${listUploaded.type eq type }">
-           	   	   	   	    <img class="menuDD" src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" style="width: 220px; height: 150px;">
-       	   	   	   	   	    	</c:if>
-           	   	   	   	    </c:forEach>
+           	   	   	   	    <img class="menuDD" src="<c:out value="${productList.path }"/><c:out value="${productList.uuidName }"/>" style="width: 220px; height: 150px;">
 	           			</div>
 	           			<div class="pt-2">
-	           				<p class="mainName mb-0"><c:out value="${list.mmNickname }" /></p>
-	           				<a href="javascript:goView(<c:out value="${list.itemSeq }" />)"><p class="mainTitle mb-0"><c:out value="${list.itTitle }" /></p></a>
+	           				<p class="mainName mb-0"><c:out value="${productList.mmNickname }" /></p>
+	           				<a href="javascript:goView(<c:out value="${productList.itemSeq }" />)"><p class="mainTitle mb-0"><c:out value="${productList.itTitle }" /></p></a>
 	           				<p class="mainPay mb-0" id="itemPrice">
-	           					<i class="fa-solid fa-receipt">&nbsp;</i><c:out value="${list.itemPrice }"/>원
+	           					<i class="fa-solid fa-receipt">&nbsp;</i><c:out value="${productList.itemPrice }"/>원
            					</p>
            					<div class="mainGrade">
 			       				<i class="fa-solid fa-star" style="color: #FFD400;"></i>

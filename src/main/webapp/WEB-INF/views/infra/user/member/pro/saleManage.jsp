@@ -133,13 +133,9 @@
 	                   	   	   	   <c:forEach items="${item }" var="item" varStatus="status">
 		                   	   <table class="m-4">
 		                   	   	   <tr>
-		                   	   	   	   <c:set var="type" value="2"/>
-		                   	   	   	   <c:set var="name" value="uploadImg"/>
 		                   	   	   	   <td rowspan="6" style="width: 270px;">
-		                   	   	   	   	   <c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
-		                   	   	   	   	   	   <c:if test="${listUploaded.type eq type }">
-		                   	   	   	   	   <img src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" style="width: 220px; height: 150px;">
-		                   	   	   	   	   	   </c:if>
+		                   	   	   	   	   <c:forEach items="${saleItem}" var="saleItem" varStatus="statusSaleItem">
+		                   	   	   	   	   <img src="<c:out value="${saleItem.path }"/><c:out value="${saleItem.uuidName }"/>" style="width: 220px; height: 150px;">
 		                   	   	   	   	   </c:forEach>
 		                   	   	   	   	   <%-- 
 		                   	   	   	   	   <c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">

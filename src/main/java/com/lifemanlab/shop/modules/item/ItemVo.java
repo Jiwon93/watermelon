@@ -8,6 +8,7 @@ public class ItemVo extends BaseVo {
 	private String sessSeq;
 	private String ccSeq;
 	private String ccName;
+	private String pseq;
 	////////////////////////////////////////
 	public String getItemSeq() {
 		return itemSeq;
@@ -32,6 +33,12 @@ public class ItemVo extends BaseVo {
 	}
 	public void setCcName(String ccName) {
 		this.ccName = ccName;
+	}
+	public String getPseq() {
+		return pseq;
+	}
+	public void setPseq(String pseq) {
+		this.pseq = pseq;
 	}
 	
 	

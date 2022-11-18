@@ -46,11 +46,11 @@ public class MemberController extends BaseController {
 	
 	@RequestMapping(value = "memberList")
 	public String memberList(@ModelAttribute("vo")MemberVo vo, Model model) throws Exception {
-		setSearch(vo);
+		//setSearch(vo);
 		vo.setParamsPaging(service.selectOneCount(vo));
 		
-			List<Member> list = service.selectList(vo);
-			model.addAttribute("list", list);
+		List<Member> list = service.selectList(vo);
+		model.addAttribute("list", list);
 		return "infra/xdmin/member/memberList";
 	}
 	

@@ -166,10 +166,12 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script src="/resources/xdmin/js/sidebar.js"></script>
 	<script src="/resources/xdmin/js/list.js"></script>
+	<script src="/resources/xdmin/js/commonXdmin.js"></script>
+	<script src="/resources/common/js/jqueryNoConflict.js"></script>
 	<script>
 		$(document).ready(function(){
 			divSearchControl();
-			$("#shDateStart, #shDateEnd").datepicker();
+			//$("#shDateStart, #shDateEnd").datepicker();
 			
 			setLita();
 		}); 

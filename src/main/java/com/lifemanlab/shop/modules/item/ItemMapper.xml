@@ -240,14 +240,15 @@
 			,c.itemPrice
 			,d.path
 			,d.uuidName
+			,d.regDateTime
 		FROM item a
 		JOIN member b on  a.member_mmSeq = b.mmSeq
 		JOIN itemOption c on a.itemSeq = c.item_itemSeq
 		LEFT JOIN itUploaded d on a.member_mmSeq = d.regSeq
 		WHERE 1=1
 			AND b.mmSeq = #{sessSeq}
-			<!-- AND a.itemSeq = #{pseq} -->
 			AND d.regSeq = #{sessSeq}
+		GROUP BY b.mmSeq
 		<include refid="Base.selectListLowerForMysql" />
 	</select>
 </mapper>

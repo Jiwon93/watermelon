@@ -210,13 +210,13 @@
 	           		<div class="col-3 mt-3 service-item">
 	               		<div class="overflow-hidden">
 	               	    	<!-- <img class="menuDD" src="/resources/images/main.jpg"> -->
-           	   	   	   	    <img class="menuDD" src="<c:out value="${productList.path }"/><c:out value="${productList.uuidName }"/>" style="width: 220px; height: 150px;">
+           	   	   	   	    <img class="menuDD" src="<c:out value="${productList.path }"/><c:out value="${productList.uuidName }"/>">
 	           			</div>
 	           			<div class="pt-2">
 	           				<p class="mainName mb-0"><c:out value="${productList.mmNickname }" /></p>
 	           				<a href="javascript:goView(<c:out value="${productList.itemSeq }" />)"><p class="mainTitle mb-0"><c:out value="${productList.itTitle }" /></p></a>
 	           				<p class="mainPay mb-0" id="itemPrice">
-	           					<i class="fa-solid fa-receipt">&nbsp;</i><c:out value="${productList.itemPrice }"/>원
+	           					<i class="fa-solid fa-receipt">&nbsp;</i><fmt:formatNumber type="number" maxFractionDigits="3" value="${productList.itemPrice }" />원
            					</p>
            					<div class="mainGrade">
 			       				<i class="fa-solid fa-star" style="color: #FFD400;"></i>

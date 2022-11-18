@@ -128,18 +128,16 @@ public class ItemController {
 	@RequestMapping(value = "purchaseHistory")
 	public String purchaseHistory(@ModelAttribute("vo") ItemVo vo, Model model) throws Exception {
 		vo.setParamsPaging(service.selectOneCount(vo));
-		List<Item> item = service.selectPurchaseHistory(vo);
-		model.addAttribute("item", item);
-		model.addAttribute("listUploaded", service.selectListUploaded(vo));
+		List<Item> purchaseItem = service.selectPurchaseHistory(vo);
+		model.addAttribute(purchaseItem);
 		return "infra/user/member/clients/purchaseHistory";
 	}
 	
 	@RequestMapping(value = "saleManage")
 	public String saleManage(@ModelAttribute("vo") ItemVo vo, Model model) throws Exception {
 		vo.setParamsPaging(service.selectOneCount(vo));
-		List<Item> item = service.selectSaleManage(vo);
-		model.addAttribute("saleItem", item);
-		//model.addAttribute("listUploaded", service.selectListUploaded(vo));
+		List<Item> saleItem = service.selectSaleManage(vo);
+		model.addAttribute("saleItem", saleItem);
 		return "infra/user/member/pro/saleManage";
 	}
 }

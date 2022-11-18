@@ -126,38 +126,27 @@
 	                   <div class="p-4 pb-1 border border-2 border-light">
 		                   <div class="row g-3">
 		                   <c:choose>
-		                   	   <c:when test="${fn:length(item) eq 0 }">
+		                   	   <c:when test="${fn:length(saleItem) eq 0 }">
 		                   	   	   <p>등록된 상품이 없습니다.</p>
 	                   	   	   </c:when>
 	                   	   	   <c:otherwise>
-	                   	   	   	   <c:forEach items="${item }" var="item" varStatus="status">
+	                   	   	   	   <c:forEach items="${saleItem }" var="saleItem" varStatus="status">
 		                   	   <table class="m-4">
 		                   	   	   <tr>
 		                   	   	   	   <td rowspan="6" style="width: 270px;">
-		                   	   	   	   	   <c:forEach items="${saleItem}" var="saleItem" varStatus="statusSaleItem">
 		                   	   	   	   	   <img src="<c:out value="${saleItem.path }"/><c:out value="${saleItem.uuidName }"/>" style="width: 220px; height: 150px;">
-		                   	   	   	   	   </c:forEach>
-		                   	   	   	   	   <%-- 
-		                   	   	   	   	   <c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
-												<c:if test="${listUploaded.type eq type }">
-													<div id="imgDiv_<c:out value="${type }"/>_<c:out value="${listUploaded.sort }"/>" style="display: inline-block; height: 95px;">
-														<img src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" class="rounded" width= "85px" height="85px" style="cursor:pointer;" onClick="openViewer(<c:out value="${listUploaded.type }"/>, <c:out value="${listUploaded. sort }"/>);">
-													</div>
-												</c:if>
-										   </c:forEach>
-										    --%>
 		                   	   	   	   </td>
 		                   	   	   	   <td><span class="btn btn-secondary btn-sm" style="height: 30px; width: 80px;">주문완료</span></td>
 		                   	   	   	   <td></td>
 		                   	   	   </tr>
 		                   	   	   <tr>
 		                   	   	   	   <!-- <td></td> -->
-		                   	   	   	   <td><b><c:out value="${item.itTitle }" /></b></td>
-		                   	   	   	   <td><b><c:out value="${item.itemPrice }" />원</b></td>
+		                   	   	   	   <td><b><c:out value="${saleItem.itTitle }" /></b></td>
+		                   	   	   	   <td><b><fmt:formatNumber type="number" maxFractionDigits="3" value="${saleItem.itemPrice }" />원</b></td>
 		                   	   	   </tr>
 		                   	   	   <tr>
 		                   	   	   	   <!-- <td></td> -->
-		                   	   	   	   <td>작업완료일 : 22.07.21 10:21</td>
+		                   	   	   	   <td>작업완료일 : <c:out value="${saleItem.regDateTime }" /></td>
 		                   	   	   	   <td></td>
 		                   	   	   </tr>
 		                   	   </table>

@@ -328,8 +328,8 @@
 		
 		var naverLogin = new naver.LoginWithNaverId(
 			{
-				clientId: "4ZU0bIEeA8jtmta7Q58X",
-				callbackUrl: "http://localhost:8080/member/loginForm",
+				clientId: "EUMcBKlc3puI33HLfscd",
+				callbackUrl: "http://15.164.96.39/member/loginForm",
 				isPopup: false,
 				callbackHandle: true
 				//loginButton: {color: "green", type: 1, height: 60} 

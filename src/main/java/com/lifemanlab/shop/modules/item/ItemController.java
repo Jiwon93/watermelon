@@ -113,7 +113,7 @@ public class ItemController {
 	
 	@RequestMapping(value = "saleReg")
 	public String saleReg() throws Exception {
-		return "infra/user/item/pro/saleReg";
+		return "infra/user/member/pro/saleReg";
 	}
 	
 	@RequestMapping(value = "saleRegForm")

@@ -55,7 +55,7 @@
 				a.itemSeq
 				,a.itTitle
 				,b.mmNickname
-				,c.itemPrice
+				,c.itemPrice 
 				,d.path
 				,d.uuidName
 			FROM item a

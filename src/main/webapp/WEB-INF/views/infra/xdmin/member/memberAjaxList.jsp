@@ -178,7 +178,7 @@
 		
 		var goUrlAjaxList = "/member/memberAjaxList";
 		var goUrlAjaxLita = "/member/memberAjaxLita";
-		var goUrlList = "/member/memberList";
+		//var goUrlList = "/member/memberList";
 		var goUrlForm = "/member/memberForm";
 		var goUrlView = "/member/memberView";
 		var goUrlInst = "/member/memberInst";
@@ -208,7 +208,7 @@
 		});
 		
 		$("#btnMmList").on("click", function(){
-			form.attr("action", goUrlList).submit();
+			form.attr("action", goUrlAjaxList).submit();
 		});
 		
 		$("#btnPlus").on("click", function(){

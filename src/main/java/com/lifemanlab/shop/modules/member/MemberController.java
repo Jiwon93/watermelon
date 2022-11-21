@@ -44,6 +44,7 @@ public class MemberController extends BaseController {
 		vo.setShDateEnd(vo.getShDateEnd() == null || vo.getShDateEnd() == "" ? null : UtilDatetime.add59TimeString(vo.getShDateEnd()));
 	}
 	
+	/*
 	@RequestMapping(value = "memberList")
 	public String memberList(@ModelAttribute("vo")MemberVo vo, Model model) throws Exception {
 		//setSearch(vo);
@@ -53,6 +54,7 @@ public class MemberController extends BaseController {
 		model.addAttribute("list", list);
 		return "infra/xdmin/member/memberList";
 	}
+	*/
 	
 	@RequestMapping(value = "memberAjaxList")
 	public String memberAjaxList(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {

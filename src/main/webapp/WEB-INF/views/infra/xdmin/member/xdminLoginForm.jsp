@@ -125,7 +125,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	
 	<script>
-		var goUrlLogin = "/member/memberList";
+		var goUrlLogin = "/member/memberAjaxList";
 	 	// 암호화
 		$("#btnLogin").on("click", function(){
 		//if(validation() == false) return false;

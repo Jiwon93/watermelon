@@ -40,7 +40,7 @@
 			justify-content: center;
 		}
 	</style>
-
+	<link href="/resources/xdmin/css/styles.css" rel="stylesheet">
 	<link href="/resources/xdmin/css/list.css" rel="stylesheet">
 </head>
 <body>
@@ -225,6 +225,8 @@
 	</form>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script src="/resources/xdmin/js/sidebar.js"></script>
+	<script src="/resources/xdmin/js/list.js"></script>
+	<script src="/resources/common/js/jqueryNoConflict.js"></script>
 	<script>
 		var goUrlList = "/code/codeList";
 		var goUrlForm = "/code/codeForm";

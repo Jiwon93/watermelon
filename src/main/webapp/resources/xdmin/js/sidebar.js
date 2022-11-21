@@ -1,6 +1,7 @@
 var goUrlSaleList = "/item/itemList";
 var goUrlPurchaseList = "/item/purchaseList";
-var goUrlMemberList = "/member/memberList";
+//var goUrlMemberList = "/member/memberList";
+var goUrlMemberAjaxList = "/member/memberAjaxList";
 var goUrlReviewList = "/review/reviewList";
 var goUrlCodeGroupList = "/codeGroup/codeGroupList";
 var goUrlCodeList = "/code/codeList";
@@ -14,7 +15,7 @@ $("#btnPurchaseList").on("click", function(){
 });
 
 $("#btnMemberList").on("click", function(){
-	$(location).attr("href", goUrlMemberList);
+	$(location).attr("href", goUrlMemberAjaxList);
 });
 
 $("#btnReviewList").on("click", function(){

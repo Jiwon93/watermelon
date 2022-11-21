@@ -204,7 +204,7 @@
 		}
 
 		$("#btnReset").on("click", function() {
-			$(location).attr("href", goUrlList);
+			$(location).attr("href", goUrlAjaxList);
 		});
 		
 		$("#btnMmList").on("click", function(){

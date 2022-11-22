@@ -135,7 +135,7 @@
 				,cache: false
 				,type: "post"
 				/* ,dataType:"json" */
-				,url: "/member/loginProc"
+				,url: "/member/xdminLoginProc"
 				/* ,data : $("#formLogin").serialize() */
 				//,data : { "mmEmail" : $("#mmEmail").val(), "mmPw" : $("#mmPw").val(), "autoLogin" : $("#autoLogin").is(":checked")}
 				,data : { "mmEmail" : $("#mmEmail").val(), "mmPw" : $("#mmPw").val()}

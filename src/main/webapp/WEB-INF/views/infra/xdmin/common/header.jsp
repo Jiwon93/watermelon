@@ -28,26 +28,7 @@
 		</div>
 	</div>
 </nav>
-		<!-- 
-		<nav class="navbar navbar-expand-lg" style="background-color: #E3F2FD">
-		    <div class="container-fluid">
-		        <a class="navbar-brand" href="#">Navbar</a>
-		        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-			        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-			          <li class="nav-item">
-			            <a class="nav-link active" aria-current="page" type="button" id="btnCcgList">코드그룹관리</a>
-			          </li>
-			          <li class="nav-item">
-			            <a class="nav-link" type="button" id="btnCcList">코드관리</a>
-			          </li>
-			          <li class="nav-item">
-			            <a class="nav-link" type="button" id="btnMmList">회원관리</a>
-			          </li>
-			        </ul>
-		        </div>
-		    </div>
-		</nav>
-		 -->
+
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   

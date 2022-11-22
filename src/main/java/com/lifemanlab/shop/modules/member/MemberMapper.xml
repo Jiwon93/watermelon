@@ -342,7 +342,7 @@
 			<if test="mmpPhoneNumber != null and !mmpPhoneNumber.equals('')">AND b.mmpPhoneNumber = #{mmpPhoneNumber}</if>
 	</select>
 	
-	<!-- 로그인 -->
+	<!-- 사용자 로그인 -->
 	<select id="selectOneId" resultMap="resultMapObj">
 		SELECT
 			a.mmSeq
@@ -351,6 +351,7 @@
 			member a
 		WHERE 1=1
 			AND a.mmEmail = #{mmEmail}
+			AND a.mmRank != 96
 	</select>
 	
 	<select id="selectOneLogin" resultMap="resultMapObj">
@@ -364,6 +365,18 @@
 		WHERE 1=1
 			AND a.mmEmail = #{mmEmail}
 			<if test="mmPw != null and !mmPw.equals('')">AND a.mmPw = #{mmPw}</if>
+	</select>
+	
+	<!-- 관리자 로그인 -->
+	<select id="selectOneXdminId" resultMap="resultMapObj">
+		SELECT
+			a.mmSeq
+			,a.mmEmail
+		FROM
+			member a
+		WHERE 1=1
+			AND a.mmEmail = #{mmEmail}
+			AND a.mmRank = 96
 	</select>
 	
 	<select id="snsLoginCheck" resultMap="resultMapObj">

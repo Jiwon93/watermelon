@@ -243,6 +243,33 @@ public class MemberController extends BaseController {
 		return returnMap;
 	}
 	
+	//관리자 로그인
+	@ResponseBody
+	@RequestMapping(value = "xdminLoginProc")
+	public Map<String, Object> xdminLoginProc(Member dto, HttpSession httpSession) throws Exception {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+
+		Member rtMember = service.selectOneXdminId(dto);
+
+		if (rtMember != null) {
+			Member rtMember2 = service.selectOneLogin(dto);
+
+			if (rtMember2 != null) {
+				httpSession.setMaxInactiveInterval(60 * Constants.SESSION_MINUTE); // 60second * 30 = 30minute
+				httpSession.setAttribute("sessSeq", rtMember2.getMmSeq());
+				httpSession.setAttribute("sessEmail", rtMember2.getMmEmail());
+				httpSession.setAttribute("sessName", rtMember2.getMmName());
+				System.out.println("sessSeq: " + httpSession.getAttribute("sessSeq"));
+				returnMap.put("rt", "success");
+			} else {
+				returnMap.put("rt", "fail");
+			}
+		} else {
+			returnMap.put("rt", "fail");
+		}
+		return returnMap;
+	}
+	
 	@ResponseBody
 	@RequestMapping(value = "kakaoLoginProc")
 	public Map<String, Object> kakaoLoginProc(Member dto, HttpSession httpSession) throws Exception {

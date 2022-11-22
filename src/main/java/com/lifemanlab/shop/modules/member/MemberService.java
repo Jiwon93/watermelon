@@ -56,8 +56,9 @@ public interface MemberService {
 	//마이페이지View
 	public Member selectOneView(MemberVo vo) throws Exception;
 	
-	//암호화
+	//로그인
 	public Member selectOneId(Member dto) throws Exception;
+	public Member selectOneXdminId(Member dto) throws Exception;
 	public Member selectOneLogin(Member dto) throws Exception;
 	public Member snsLoginCheck(Member dto) throws Exception;
 	public int kakaoInst(Member dto) throws Exception;

@@ -251,6 +251,12 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 		dto.setMmPw(UtilSecurity.encryptSha256(dto.getMmPw()));
 		return dao.selectOneId(dto);
 	}
+	
+	@Override
+	public Member selectOneXdminId(Member dto) throws Exception {
+		dto.setMmPw(UtilSecurity.encryptSha256(dto.getMmPw()));
+		return dao.selectOneXdminId(dto);
+	}
 
 	@Override
 	public Member selectOneLogin(Member dto) throws Exception {
@@ -309,6 +315,8 @@ public class MemberServiceImpl extends BaseServiceImpl implements MemberService 
 	public int naverInst(Member dto) throws Exception {
 		return dao.naverInst(dto);
 	}
+
+	
 
 	
 

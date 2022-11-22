@@ -41,7 +41,7 @@
 
 <!-- JavaScript & jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="/resources/common/js/jqueryNoConflict.js"></script>
+
 
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -54,5 +54,12 @@
 <script src="/resources/template/woody/lib/isotope/isotope.pkgd.min.js"></script>
 <script src="/resources/template/woody/lib/lightbox/js/lightbox.min.js"></script>
 
- <!-- Template Javascript -->
+<!-- Template Javascript -->
 <script src="/resources/template/woody/js/main.js"></script>
+	 
+<!-- datepicker -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/user/css/datePicker.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script src="/resources/common/js/jqueryNoConflict.js"></script>

@@ -14,14 +14,21 @@
     <link href="/resources/user/css/agree.css" rel="stylesheet">
     
     <!-- datepicker -->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/user/css/datePicker.css">
-	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 	<link rel="stylesheet" href="/resources/demos/style.css">
+	
 	<script>
-	 	$jQ( function() {
-	   		$jQ("#datepicker").datepicker({dateFormat:"yy-mm-dd"});
+		$jQ( function() {
+	   		$jQ("#datepicker").datepicker({
+	   			dateFormat:"yy-mm-dd",
+	   			prevText: '이전 달',
+	   			nextText: '다음 달',
+	   			monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+	   			monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+	   			dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+	   			dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+	   			showMonthAfterYear: true,
+	   			yearSuffix: '년'
+				});
 	  	} );
 	</script>
 	
@@ -273,7 +280,7 @@
 	<!-- page JavaScript & jQuery -->
 	
 	<script src="/resources/user/js/reg.js"></script>
-	<script src="/resources/user/js/validation.js"></script>
+	<script src="/resources/user/js/validationUser.js"></script>
 	
 	<script type="text/javascript">
 	

@@ -95,7 +95,7 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="section-title text-center">
-                <h1 class="display-5 mb-5">인기만렙!</h1>
+                <h3 class="display-5 mb-5">인기만렙!</h3>
             </div>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3 wow">
@@ -155,7 +155,7 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="section-title text-center">
-                <h1 class="display-5 mb-5">만렙이용후기</h1>
+                <h3 class="display-5 mb-5">만렙이용후기</h3>
             </div>
             <div class="row g-4 portfolio-container">
                 <div class="col-lg-4 col-md-6 portfolio-item first">
@@ -200,7 +200,7 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="section-title text-center">
-                <h1 class="display-5 mb-5">만렙이야기</h1>
+                <h3 class="display-5 mb-5">만렙이야기</h3>
             </div>
             <div class="owl-carousel testimonial-carousel">
                 <div class="testimonial-item text-center">
@@ -248,7 +248,9 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 </form>
-    
+
+     
+	
     <script type="text/javascript">
     	var goUrlItemMenu = "/item/itemMenu";
     	var goUrlPurchase = "/item/itemPayment";

@@ -79,7 +79,7 @@
 				<div class="row">
 					<div class="col-8 mx-auto mb-3">
 						<div class="form-floating">
-							<input type="email" class="form-control" id="mmEmail" name="mmEmail" value="root@naver.com">
+							<input type="email" class="form-control" id="mmEmail" name="mmEmail" value="test@naver.com">
                             <label for="newEmail">이메일</label>
 						</div>
 					</div>

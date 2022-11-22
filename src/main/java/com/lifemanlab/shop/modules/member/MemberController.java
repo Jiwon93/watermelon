@@ -141,31 +141,19 @@ public class MemberController extends BaseController {
 	@RequestMapping(value = "memberMod")
 	public String memberMod(@ModelAttribute("vo") MemberVo vo, Member dto, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
 		dto.setMmSeq((String) httpSession.getAttribute("sessSeq"));
-		
 		service.memberMod(dto);
 		service.memberModPhone(dto);
-		
 		redirectAttributes.addFlashAttribute("vo", vo);
-		
-		if (Constants.UPDATE_AFTER_TYPE == 1) {
-			return "redirect:/member/memberModFormC";
-		} else {
-			return "redirect:/member/memberViewC";
-		}
+		return "redirect:/member/memberViewC";
 	}
 	
 	@RequestMapping(value = "memberModB")
-	public String memberModB(@ModelAttribute("vo") MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
+	public String memberModB(@ModelAttribute("vo") MemberVo vo, Member dto, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
+		dto.setMmSeq((String) httpSession.getAttribute("sessSeq"));
 		service.memberModB(dto);
 		service.memberModPhone(dto);
-		
 		redirectAttributes.addFlashAttribute("vo", vo);
-		
-		if (Constants.UPDATE_AFTER_TYPE == 1) {
-			return "redirect:/member/memberModFormB";
-		} else {
-			return "redirect:/member/memberViewB";
-		}
+		return "redirect:/member/memberViewB";
 	}
 	
 	//Email 찾기

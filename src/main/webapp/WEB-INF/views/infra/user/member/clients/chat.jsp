@@ -255,35 +255,27 @@
 	                    <div class="card mb-sm-3 mb-md-0 contacts_card">
 	                        <div class="card-header">
 	                            <div class="input-group">
-																	<input type="text" placeholder="add ChatUser Seq..." id="cuMember" name="cuMember" class="form-control search">
+									<input type="text" placeholder="add ChatUser Seq..." id="cuMember" name="cuMember" class="form-control search">
 	                                <span class="input-group-text search_btn" onclick="addChat()"><i class="fa-solid fa-plus"></i></span>
 	                            </div>
 	                        </div>
 	                        <div class="card-body contacts_body">
 	                            <ui class="contacts" id="chatList">
-	                            
 	                            	<c:forEach items="${list }" var="list" varStatus="status">
-	                            		
-																		<li class="room" id="${list.chatSeq}" onclick="selectChatRoom(${list.chatSeq})">
-		                                    <div class="d-flex bd-highlight">
-		                                        <div class="img_cont">
-																								<!-- 아래 path 와 uuidname 도 본인의 dto field에 맞게 수정 -->
-		                                            <img src="
-																										<c:if test = "${list.upPath ne null}">
-																											${list.upPath}${list.upUuidName}
-																										</c:if>
-		                                                " class="rounded-circle user_img">
-		                                        </div>
-		                                        <div class="chat_product_info">
-																								<!-- 아래 mmNickName  도 본인의 dto field에 맞게 수정 -->
-		                                            <span class="status"><c:out value="${list.mmNickName }"/></span>
-					                                 			<p>TEST TEXT FIELD</p>
-		                                        </div>
-		                                    </div>
-		                                </li>
-	                            			
+									<li class="room" id="${list.chatSeq}" onclick="selectChatRoom(${list.chatSeq})">
+	                                    <div class="d-flex bd-highlight">
+	                                        <div class="img_cont">
+											<!-- 아래 path 와 uuidname 도 본인의 dto field에 맞게 수정 -->
+	                                            <img src="<c:if test = "${list.path ne null}">${list.path}${list.uuidName}</c:if>" class="rounded-circle user_img">
+	                                        </div>
+	                                        <div class="chat_product_info">
+											<!-- 아래 mmNickName  도 본인의 dto field에 맞게 수정 -->
+	                                            <span class="status"><c:out value="${list.mmNickname }"/></span>
+	                                 			<p>TEST TEXT FIELD</p>
+	                                        </div>
+	                                    </div>
+	                                </li>
 	                            	</c:forEach>
-	                             
 	                            </ui>
 	                        </div>
 	                        <div class="card-footer"></div>
@@ -292,24 +284,18 @@
 	                <div class="col-md-8 col-xl-6 chat">
 	                    <div class="card">	                       
 	                        <div id="chatBox" class="card-body msg_card_body">
-	
-													<!-- 채팅 메세지 박스 -->
-	
+							<!-- 채팅 메세지 박스 -->
 	                        </div>
 	                        <div class="card-footer">
 	                            <div class="input-group">
 	                                <span class="input-group-text attach_btn"><i class="fas fa-paperclip"></i></span>
-	                                <textarea id="chatMessage" class="form-control type_msg"
-	                                    placeholder="Type your message..."></textarea>
+	                                <textarea id="chatMessage" class="form-control type_msg" placeholder="Type your message..."></textarea>
 	                                <span class="input-group-text send_btn" id="sendBtn"><i class="fas fa-location-arrow"></i></span>
 	                            </div>
 	                        </div>
 	                    </div>
 	                </div>
 	            </div>
-	          
-	
-	            
             </form>
         </div>
 	</div>
@@ -320,22 +306,19 @@
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
 	<script type="module">
-
-	import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
-	
+	 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
   //Firebase 프로젝트에서 추출한 정보 입력
-	const firebaseConfig = {
-  		apiKey: "",
-  		authDomain: "",
-  		databaseURL: "",
-  		projectId: "",
-  		storageBucket: "",
-  		messagingSenderId: "",
-  		appId: ""
-	};		
+	  const firebaseConfig = {
+    apiKey: "AIzaSyBh6pO3FJ_Oh62vfmK4DLN3cMZlUW_4v1w",
+    authDomain: "watermelon-chat-bcca2.firebaseapp.com",
+    databaseURL: "https://watermelon-chat-bcca2-default-rtdb.firebaseio.com",
+    projectId: "watermelon-chat-bcca2",
+    storageBucket: "watermelon-chat-bcca2.appspot.com",
+    messagingSenderId: "221656740467",
+    appId: "1:221656740467:web:e278fa6ec1a67c34f37006"
+  };	
 	// Initialize Firebase
 	const app = initializeApp(firebaseConfig);
-
 	import { getDatabase, ref, set, onValue }	from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
 	
 	const db = getDatabase();
@@ -347,7 +330,7 @@
 	sendBtn.addEventListener('click',sendMessage);
 
 
-	function enterKey() {
+	function enterKey() {	
 		
 		var keycode = event.keyCode;
 		
@@ -441,7 +424,6 @@
 		//221105080634 
 		return timetable.substring(0,2)+"-"+timetable.substring(2,4)+"-"+timetable.substring(4,6)+" "+timetable.substring(6,8)+":"+timetable.substring(8,10)+":"+timetable.substring(10,12);	
 	}
-
 	</script>
 	
 	<script>
@@ -498,9 +480,9 @@
 								txt+='<div class="img_cont">';
 								//아래 path 와 uuidname 도 본인의 dto field에 맞게 수정
 								txt+='<img src="';
-								if(result.newChat.upPath != null)
+								if(result.newChat.path != null)
 								{
-									txt+=result.newChat.upPath + result.newChat.upUuidName;
+									txt+=result.newChat.path + result.newChat.uuidName;
 								}
 								txt+='" class="rounded-circle user_img">';
 								txt+='</div>';

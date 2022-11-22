@@ -16,7 +16,7 @@ public class ChatDao {
 	@Resource(name="sqlSession")
 	private SqlSession sqlSession;
 	
-	private String namespace = "com.space.infra.modules.chat.ChatMapper";
+	private String namespace = "com.lifemanlab.shop.modules.chat.ChatMapper";
 	//본인에게 맞는 package 경로로 변경하도록 합니다.
 
 	public List<Chat> selectChatListFromOne(Integer seq) { return sqlSession.selectList(namespace+".selectChatListFromOne", seq);}

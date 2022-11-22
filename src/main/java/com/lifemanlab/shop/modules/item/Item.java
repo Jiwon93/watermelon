@@ -30,6 +30,7 @@ public class Item extends Base {
 	private Integer itemDelNy;
 	private Date regDatetime;
 	private Date modDatetime;
+	private Integer div;
 	
 	//구매등록 추가 옵션
 	private String itopSeq;
@@ -360,6 +361,12 @@ public class Item extends Base {
 	}
 	public void setUploadFileDeletePathFile(String[] uploadFileDeletePathFile) {
 		this.uploadFileDeletePathFile = uploadFileDeletePathFile;
+	}
+	public Integer getDiv() {
+		return div;
+	}
+	public void setDiv(Integer div) {
+		this.div = div;
 	}
 	
 	

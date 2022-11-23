@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <title>혼자서 할 수 없던 것 | 인생만렙에서 만렙들과 해보세요.</title>
-    <%@ include file="../common/basicSetting.jsp" %>
+    <%@ include file="../common/basicCss.jsp" %>
     
 	<!-- CSS -->
     <link href="/resources/user/css/itemMenuView.css" rel="stylesheet">
@@ -658,7 +658,8 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 </form>
-
+	<%@ include file="../common/basicJs.jsp" %>
+	
     <!-- Template Javascript -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>

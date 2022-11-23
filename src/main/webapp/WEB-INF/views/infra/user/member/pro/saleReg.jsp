@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <title>혼자서 할 수 없던 것 | 인생만렙에서 만렙들과 해보세요.</title>
-    <%@ include file="../../common/basicSetting.jsp" %>
+    <%@ include file="../../common/basicCss.jsp" %>
     
     <style type="text/css">
     	label {
@@ -53,8 +53,6 @@
 <form method="post" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
     <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
     <input type="hidden" id="itemSeq" name="itemSeq" value="${dto.itemSeq }">
-    <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
-	<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
     <!-- Navbar Start -->
     <%@include file="../../common/nav.jsp"%>
     <!-- Navbar End -->
@@ -92,6 +90,7 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 </form>
+	<%@ include file="../../common/basicJs.jsp" %>
     <script>
     	var goUrlSaleRegForm = "/item/saleRegForm";
     	

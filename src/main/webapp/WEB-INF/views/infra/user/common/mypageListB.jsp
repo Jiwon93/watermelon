@@ -57,7 +57,8 @@
 	var goUrlListSaleReg = "/item/saleReg"
 	var goUrlListMypageB = "/member/memberViewB";
 	var goUrlPwUpdt = "/member/pwChange";
-
+	var goUrlListMemberDrop = "/member/memberDropFormB";
+	
 
 	$("#btnListPwChange").on("click", function(){
 		$(location).attr("href", goUrlListPwChange);
@@ -66,15 +67,7 @@
 	$("#btnListMemberDrop").on("click", function(){
 		$(location).attr("href", goUrlListMemberDrop);
 	});
-	/*
-	$("#btnListMypage").on("click", function(){
-   		$(location).attr("href", goUrlListMypage);
-	});
 	
-	$("#btnListMypageB").on("click", function(){
-   		$(location).attr("href", goUrlListMypageB);
-	});
-	*/
 	$("#btnListSaleManage").on("click", function(){
 		$(location).attr("href", goUrlListSaleManage);
 	});

@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <title>혼자서 할 수 없던 것 | 인생만렙에서 만렙들과 해보세요.</title>
-    <%@ include file="../../common/basicSetting.jsp" %>
+    <%@ include file="../../common/basicCss.jsp" %>
     
     <style type="text/css">
     	label {
@@ -225,6 +225,7 @@
 	<!-- Back to Top -->
 	<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 </form>
+    <%@ include file="../../common/basicJs.jsp" %>
     
     <script type="text/javascript">
 		

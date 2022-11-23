@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <title>혼자서 할 수 없던 것 | 인생만렙에서 만렙들과 해보세요.</title>
-    <%@ include file="../common/basicSetting.jsp" %>
+    <%@ include file="../common/basicCss.jsp" %>
 
     <style type="text/css">
     	.computer {
@@ -50,41 +50,41 @@
 				<br><label class="text-primary" for="btnItemMenu"><b>개발/디자인</b></label>
 			</div>
 			<div class="col text-center">
-				<a href="#" id="homeLiving"><i class="fa-solid fa-house-chimney fa-4x"></i></a>
+				<a href="#" id="homeLiving" type="button"><i class="fa-solid fa-house-chimney fa-4x"></i></a>
 				<br><label class="text-primary" for="homeLiving"><b>홈/리빙</b></label>
 			</div>
 			<div class="col text-center">
-				<a href="#" id="lesson"><i class="fa-solid fa-music fa-4x"></i></a>
+				<a href="#" id="lesson" type="button"><i class="fa-solid fa-music fa-4x"></i></a>
 				<br><label class="text-primary" for="lesson"><b>레슨</b></label>
 			</div>
 			<div class="col text-center">
-				<a href="#" id="translate"><i class="fa-solid fa-language fa-4x"></i></a>
+				<a href="#" id="translate" type="button"><i class="fa-solid fa-language fa-4x"></i></a>
 				<br><label class="text-primary" for="translate"><b>통역/번역</b></label>
 			</div>
 			<div class="col text-center">
-				<a href="#" id="photoVideo"><i class="fa-solid fa-camera fa-4x"></i></a>
+				<a href="#" id="photoVideo" type="button"><i class="fa-solid fa-camera fa-4x"></i></a>
 				<br><label class="text-primary" for="photoVideo"><b>사진/영상</b></label>
 			</div>
 		</div>
 		<div class="row ms-5 me-5 mt-5">
 			<div class="col text-center">
-				<a href="#" id="beautyHealth"><i class="fa-solid fa-heart fa-4x"></i></a>
+				<a href="#" id="beautyHealth" type="button"><i class="fa-solid fa-heart fa-4x"></i></a>
 				<br><label class="text-primary" for="beautyHealth"><b>미용/건강</b></label>
 			</div>
 			<div class="col text-center">
-				<a href="#" id="employ"><i class="fa-solid fa-pencil fa-4x"></i></a>
+				<a href="#" id="employ" type="button"><i class="fa-solid fa-pencil fa-4x"></i></a>
 				<br><label class="text-primary" for="employ"><b>취업/입시</b></label>
 			</div>
 			<div class="col text-center">
-				<a href="#" id="marketing"><i class="fa-solid fa-lightbulb fa-4x"></i></a>
+				<a href="#" id="marketing" type="button"><i class="fa-solid fa-lightbulb fa-4x"></i></a>
 				<br><label class="text-primary" for="marketing"><b>마케팅</b></label>
 			</div>
 			<div class="col text-center">
-				<a href="#" id="event"><i class="fa-solid fa-puzzle-piece fa-4x"></i></a>
+				<a href="#" id="event" type="button"><i class="fa-solid fa-puzzle-piece fa-4x"></i></a>
 				<br><label class="text-primary" for="event"><b>이벤트</b></label>
 			</div>
 			<div class="col text-center">
-				<a href="#" id=""><i class="fa-solid fa-scale-balanced fa-4x"></i></a>
+				<a href="#" id="taxLegalLabor" type="button"><i class="fa-solid fa-scale-balanced fa-4x"></i></a>
 				<br><label class="text-primary" for="taxLegalLabor"><b>세무/법무/노무</b></label>
 			</div>
 		</div>
@@ -249,7 +249,7 @@
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 </form>
 
-     
+     <%@ include file="../common/basicJs.jsp" %>
 	
     <script type="text/javascript">
     	var goUrlItemMenu = "/item/itemMenu";

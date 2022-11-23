@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <title>혼자서 할 수 없던 것 | 인생만렙에서 만렙들과 해보세요.</title>
-    <%@ include file="../common/basicSetting.jsp" %>
+    <%@ include file="../common/basicCss.jsp" %>
     
 	<style type="text/css">
 		.easyLogin {
@@ -133,6 +133,8 @@
     </div>
     <!-- Footer End -->
 </form>
+	<%@ include file="../common/basicJs.jsp" %>
+	
     <!-- kakao login -->
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     

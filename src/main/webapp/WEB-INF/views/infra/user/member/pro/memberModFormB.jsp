@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <title>혼자서 할 수 없던 것 | 인생만렙에서 만렙들과 해보세요.</title>
-    <%@ include file="../../common/basicSetting.jsp" %>
+    <%@ include file="../../common/basicCss.jsp" %>
     
     <style type="text/css">
     	label {
@@ -307,7 +307,7 @@
 		<!-- Back to Top -->
 		<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 	</form>
-    
+    <%@ include file="../../common/basicJs.jsp" %>
     <!-- kakaoMap API -->
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=17e90af3c57fa367793d1f57799dd4c9&libraries=services,clusterer,drawing"></script>
@@ -322,6 +322,7 @@
 		var goUrlListSaleReg = "/item/saleReg"
 		var goUrlListMypageB = "/member/memberViewB";
 		var goUrlPwUpdt = "/member/pwChange";
+		var goUrlListMemberDrop = "/member/memberDropFormB";
 		
 		$("#btnSave").on("click", function() {
 			form.attr("action", goUrlMemberMod).submit();

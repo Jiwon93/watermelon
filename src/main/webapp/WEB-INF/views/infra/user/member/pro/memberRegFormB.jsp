@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <title>혼자서 할 수 없던 것 | 인생만렙에서 만렙들과 해보세요.</title>
-    <%@ include file="../../common/basicSetting.jsp" %>
+    <%@ include file="../../common/basicCss.jsp" %>
     
     <!-- page css -->
     <link href="/resources/user/css/agree.css" rel="stylesheet">
@@ -273,12 +273,13 @@
     </div>
     <!-- Footer End -->
 </form>
-
+	<%@ include file="../../common/basicJs.jsp" %>
+	
 	<!-- kakaoMap API -->
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=17e90af3c57fa367793d1f57799dd4c9&libraries=services,clusterer,drawing"></script>
-	<!-- page JavaScript & jQuery -->
 	
+	<!-- page JavaScript & jQuery -->
 	<script src="/resources/user/js/reg.js"></script>
 	<script src="/resources/user/js/validationUser.js"></script>
 	

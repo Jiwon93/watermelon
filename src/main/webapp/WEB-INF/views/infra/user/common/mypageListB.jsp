@@ -3,7 +3,7 @@
 <div class="col-sm-3 p-lg-5">
 	<div class="text-center pb-4">
 	<c:set var="type" value="1"/>	
-      	<c:set var="name" value="uploadImgProfile"/>
+   	<c:set var="name" value="uploadImgProfile"/>
 	<c:choose>
 		<c:when test="${mmSeq eq 0 }">
 			<img id="<c:out value="${name }"/>Preview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
@@ -14,18 +14,11 @@
 					<img id="<c:out value="${name }"/>Preview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
 				</c:when>
 				<c:otherwise>
-					<c:set var="GetNy" value="0"/>
 					<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
 						<c:if test="${listUploaded.type eq type }">
-				        	<input type="hidden" id="<c:out value="${name }"/>DeleteSeq" name="<c:out value="${name }"/>DeleteSeq" value="<c:out value="${listUploaded.seq }"/>"/>
-				        	<input type="hidden" id="<c:out value="${name }"/>DeletePathFile" name="<c:out value="${name }"/>DeletePathFile" value="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>"/>  
 							<img id="<c:out value="${name }"/>Preview" src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" class="rounded-circle mx-auto d-block" width="100" height="100">
-							<c:set var="GetNy" value="1"/>		
 						</c:if>
 					</c:forEach>
-					<c:if test="${GetNy eq 0 }">
-						<img id="<c:out value="${name }"/>Preview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
-					</c:if>
 				</c:otherwise>
 			</c:choose>
 		</c:otherwise>

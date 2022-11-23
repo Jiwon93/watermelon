@@ -435,8 +435,15 @@ public class MemberController extends BaseController {
 	}
 	
 	@RequestMapping(value = "memberDropFormC")
-	public String memberDropFormC() throws Exception {
+	public String memberDropFormC(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+		model.addAttribute("listUploaded", service.selectListUploaded(vo));
 		return "infra/user/member/clients/memberDropFormC";
+	}
+	
+	@RequestMapping(value = "memberDropFormB")
+	public String memberDropFormB(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+		model.addAttribute("listUploaded", service.selectListUploaded(vo));
+		return "infra/user/member/pro/memberDropFormB";
 	}
 	
 	@RequestMapping(value = "memberRegFormC")
@@ -444,7 +451,6 @@ public class MemberController extends BaseController {
 		
 		List<Member> ccNameList = service.ccNameList();
 		model.addAttribute("ccNameList", ccNameList);
-		 
 		return "infra/user/member/clients/memberRegFormC";
 	}
 	
@@ -458,8 +464,15 @@ public class MemberController extends BaseController {
 	}
 	
 	@RequestMapping(value = "pwChangeFormC")
-	public String pwChangFormC() throws Exception {
+	public String pwChangFormC(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+		model.addAttribute("listUploaded", service.selectListUploaded(vo));
 		return "infra/user/member/clients/pwChangeFormC";
+	}
+	
+	@RequestMapping(value = "pwChangeFormB")
+	public String pwChangFormB(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+		model.addAttribute("listUploaded", service.selectListUploaded(vo));
+		return "infra/user/member/pro/pwChangeFormB";
 	}
 
 	@RequestMapping(value = "xdminLoginForm")

@@ -161,7 +161,7 @@
 		FROM espresso.mmUploaded
 		WHERE 1=1
 			AND delNy = 0
-			AND pseq = #{mmSeq}
+			AND pseq = #{sessSeq}
 		ORDER BY
 			type, sort
 	</select>

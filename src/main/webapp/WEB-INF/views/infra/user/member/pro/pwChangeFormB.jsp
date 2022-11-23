@@ -51,7 +51,7 @@
            <div class="row">
            
 	           <!-- mypageList Start -->
-		       <%@include file="../../common/mypageList.jsp"%>
+		       <%@include file="../../common/mypageListB.jsp"%>
 		       <!-- mypageList End -->
 		       
 	           <div class="col-sm-9 p-2">

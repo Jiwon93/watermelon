@@ -80,15 +80,7 @@
 		$("#btnLoginGo").on("click", function(){
 	   		$(location).attr("href", goUrlLoginGo);
 		});
-		/*
-		$("#btnMypage").on("click", function(){
-	   		$(location).attr("href", goUrlMypage);
-		});
 		
-		$("#btnMypageB").on("click", function(){
-	   		$(location).attr("href", goUrlMypageB);
-		});
-		*/
 		$("#btnMemberRegC").on("click", function(){
 	   		$(location).attr("href", goUrlMemberRegC);
 		});

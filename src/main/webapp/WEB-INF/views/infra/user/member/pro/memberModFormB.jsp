@@ -52,7 +52,59 @@
 			<div class="row">
 
 				<!-- mypageList Start -->
-				<%@include file="../../common/mypageList.jsp"%>
+				<div class="col-sm-3 p-lg-5">
+					<div class="text-center pb-4">
+					<c:set var="type" value="1"/>	
+				      	<c:set var="name" value="uploadImgProfile"/>
+					<c:choose>
+						<c:when test="${mmSeq eq 0 }">
+							<img id="<c:out value="${name }"/>Preview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
+						</c:when>
+						<c:otherwise>
+							<c:choose>
+								<c:when test="${fn:length(listUploaded) eq 0 }">
+									<img id="<c:out value="${name }"/>Preview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
+								</c:when>
+								<c:otherwise>
+									<c:set var="GetNy" value="0"/>
+									<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
+										<c:if test="${listUploaded.type eq type }">
+								        	<input type="hidden" id="<c:out value="${name }"/>DeleteSeq" name="<c:out value="${name }"/>DeleteSeq" value="<c:out value="${listUploaded.seq }"/>"/>
+								        	<input type="hidden" id="<c:out value="${name }"/>DeletePathFile" name="<c:out value="${name }"/>DeletePathFile" value="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>"/>  
+											<img id="<c:out value="${name }"/>Preview" src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" class="rounded-circle mx-auto d-block" width="100" height="100">
+											<c:set var="GetNy" value="1"/>		
+										</c:if>
+									</c:forEach>
+									<c:if test="${GetNy eq 0 }">
+										<img id="<c:out value="${name }"/>Preview" src="/resources/images/men.png" class="rounded-circle mx-auto d-block" width="100" height="100">
+									</c:if>
+								</c:otherwise>
+							</c:choose>
+						</c:otherwise>
+					</c:choose>
+						<input type="hidden" id="<c:out value="${name }"/>Type" name="<c:out value="${name }"/>Type" value="<c:out value="${type }"/>"/>
+						<input type="hidden" id="<c:out value="${name }"/>MaxNumber" name="<c:out value="${name }"/>MaxNumber" value="0"/>
+						<label for="<c:out value="${name }"/>" class="form-label input-file-button"><b>+</b></label>
+							<input class="form-control form-control-sm" id="<c:out value="${name }"/>" name="<c:out value="${name }"/>" type="file" multiple="multiple" style="display: none;" onChange="upload('<c:out value="${name }"/>', <c:out value="${type }"/>, 1, 1, 0, 0, 3);">
+					</div>
+					<div class="text-center pb-4">
+						<button class="btn btn-primary" style="height: 30px; width: 60px; font-size: small;">만렙</button>
+						<span class="px-3"><c:out value="${sessName }"/></span>
+					</div> 
+					<div class="text-center pb-5">
+						<button class="btn btn-secondary" style="width: 200px;" type="button">일반으로 전환</button>
+					</div>
+					<div class="pt-4">
+						<h4 class="" style="border-bottom: 2px solid #AB7442;">마이페이지</h4>
+						<ul class="mypageC">
+							<li class="mypageList pt-3 pb-5"><a class="" type="button" id="btnListSaleManage">판매 관리</a></li>
+							<li class="mypageList"><a class="" type="button" id="btnListSaleReg">판매 등록</a></li>
+							<li class="mypageList"><a class="" href="javascript:goListViewB(<c:out value="${sessSeq }" />)">계정 설정</a></li>
+							<li class="mypageList"><a class="" type="button" id="btnListPwChange">비밀번호 변경</a></li>
+							<li class="mypageList"><a class="" type="button" id="btnListMemberDrop">계정 탈퇴</a></li>
+						</ul>					
+					</div>
+				</div>
 				<!-- mypageList End -->
 
 				<div class="col-sm-9 p-2">
@@ -265,12 +317,45 @@
 	
     <script>
 		var goUrlMemberMod = "/member/memberModB";
-
-		var form = $("form[name=form]");
-
+		var goUrlListPwChange = "/member/pwChangeFormB"
+		var goUrlListSaleManage = "/item/saleManage"
+		var goUrlListSaleReg = "/item/saleReg"
+		var goUrlListMypageB = "/member/memberViewB";
+		var goUrlPwUpdt = "/member/pwChange";
+		
 		$("#btnSave").on("click", function() {
 			form.attr("action", goUrlMemberMod).submit();
 		});
+		
+		$("#btnListPwChange").on("click", function(){
+			$(location).attr("href", goUrlListPwChange);
+		});
+
+		$("#btnListMemberDrop").on("click", function(){
+			$(location).attr("href", goUrlListMemberDrop);
+		});
+		
+		$("#btnListSaleManage").on("click", function(){
+			$(location).attr("href", goUrlListSaleManage);
+		});
+
+		$("#btnListSaleReg").on("click", function(){
+			$(location).attr("href", goUrlListSaleReg);
+		});
+		
+		$("#btnPwUpdt").on("click",function(){
+			form.attr("action", goUrlPwUpdt).submit();
+		});
+
+		var form = $("form[name=form]");
+				
+		var seq = $("input:hidden[name=sessSeq]");
+
+		goListViewB = function(keyValue) {
+			/* if(keyValue != 0) seq.val(btoa(keyValue)); */
+			seq.val(keyValue);
+			form.attr("action", goUrlListMypageB).submit();
+		}
 
 		//카카오 지도 API
 		//본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
@@ -335,19 +420,19 @@
 		//업로드
 		upload = function(objName, seq, allowedMaxTotalFileNumber, allowedExtdiv, allowedEachFileSize, allowedTotalFileSize, uiType) {
 	
-//		objName 과 seq 는 jsp 내에서 유일 하여야 함.
-//		memberProfileImage: 1
-//		memberImage: 2
-//		memberFile : 3
+		//		objName 과 seq 는 jsp 내에서 유일 하여야 함.
+		//		memberProfileImage: 1
+		//		memberImage: 2
+		//		memberFile : 3
+		
+		//		uiType: 1 => 이미지형
+		//		uiType: 2 => 파일형
+		//		uiType: 3 => 프로필형
 
-//		uiType: 1 => 이미지형
-//		uiType: 2 => 파일형
-//		uiType: 3 => 프로필형
-
-		var files = $("#" + objName +"")[0].files;
-		var filePreview = $("#" + objName +"Preview");
-		var numbering = [];
-		var maxNumber = 0;
+			var files = $("#" + objName +"")[0].files;
+			var filePreview = $("#" + objName +"Preview");
+			var numbering = [];
+			var maxNumber = 0;
 		
 			if(uiType == 1) {
 				var uploadedFilesCount = document.querySelectorAll("#" + objName + "Preview > div > img").length;

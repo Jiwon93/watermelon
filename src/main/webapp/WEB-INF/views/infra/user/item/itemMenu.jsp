@@ -73,134 +73,136 @@
     
     <!-- Service Start -->
     <div class="container-fluid py-4">
-    	<div class="row">
-    		<div class="col-2">
-				<ul class="nav nav-tabs">
-				  	<li class="nav-item">
-				    	<a class="nav-link active" data-toggle="tab" href="#developM">개발</a>
-				  	</li>
-				  	<li class="nav-item">
-				    	<a class="nav-link" data-toggle="tab" href="#designM">디자인</a>
-				  	</li>
-				</ul>
-				<div class="tab-content">
-					<div class="tab-pane fade show active" id="developM">
-						<ul class="sideMenu">
-							<li>
-								<a class="active" href="#">웹</a>
-							</li>
-							<li>
-								<a class="" href="#">모바일 앱</a>
-							</li>
-							<li>
-								<a class="" href="#">프로그램</a>
-							</li>
-							<li>
-								<a class="" href="#">쇼핑몰 커머스</a>
-							</li>
-							<li>
-								<a class="" href="#">데이터</a>
-							</li>
-							<li>
-								<a class="" href="#">보안</a>
-							</li>
-						</ul>
+	    <div class="container">
+	    	<div class="row">
+	    		<div class="col-2">
+					<ul class="nav nav-tabs">
+					  	<li class="nav-item">
+					    	<a class="nav-link active" data-toggle="tab" href="#developM">개발</a>
+					  	</li>
+					  	<li class="nav-item">
+					    	<a class="nav-link" data-toggle="tab" href="#designM">디자인</a>
+					  	</li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane fade show active" id="developM">
+							<ul class="sideMenu">
+								<li>
+									<a class="active" href="#">웹</a>
+								</li>
+								<li>
+									<a class="" href="#">모바일 앱</a>
+								</li>
+								<li>
+									<a class="" href="#">프로그램</a>
+								</li>
+								<li>
+									<a class="" href="#">쇼핑몰 커머스</a>
+								</li>
+								<li>
+									<a class="" href="#">데이터</a>
+								</li>
+								<li>
+									<a class="" href="#">보안</a>
+								</li>
+							</ul>
+						</div>
+						<div class="tab-pane fade" id="designM">
+							<ul>
+								<li>
+									<a class="" href="#">로고 브랜딩</a>
+								</li>
+								<li>
+									<a class="" href="#">상세 이벤트 페이지</a>
+								</li>
+								<li>
+									<a class="" href="#">명함 인쇄 홍보물</a>
+								</li>
+								<li>
+									<a class="" href="#">웹 모바일 디자인</a>
+								</li>
+								<li>
+									<a class="" href="#">일러스트 캐리커쳐</a>
+								</li>
+								<li>
+									<a class="" href="#">웹툰 캐릭터 이모티콘</a>
+								</li>
+							</ul>
+						</div>
 					</div>
-					<div class="tab-pane fade" id="designM">
-						<ul>
-							<li>
-								<a class="" href="#">로고 브랜딩</a>
-							</li>
-							<li>
-								<a class="" href="#">상세 이벤트 페이지</a>
-							</li>
-							<li>
-								<a class="" href="#">명함 인쇄 홍보물</a>
-							</li>
-							<li>
-								<a class="" href="#">웹 모바일 디자인</a>
-							</li>
-							<li>
-								<a class="" href="#">일러스트 캐리커쳐</a>
-							</li>
-							<li>
-								<a class="" href="#">웹툰 캐릭터 이모티콘</a>
-							</li>
-						</ul>
+				</div>
+				<div class="col-10">
+					<div class="row p-1">
+			            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+							<ol class="breadcrumb">
+						    	<li class="breadcrumb-item"><a href="#">홈</a></li>
+						    	<li class="breadcrumb-item"><a href="#">개발/디자인</a></li>
+						    	<li class="breadcrumb-item active" aria-current="page">웹</li>
+							</ol>
+						</nav>
 					</div>
+					<div class="row ps-3">
+						<table class="border border-1">
+							<tr>
+								<td class="menuHead">기술 수준</td>
+								<td class="menuBody">
+									<a class="menuOption" href="#">초급</a> 
+									<a class="menuOption" href="#">중급</a> 
+									<a class="menuOption" href="#">고급</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="menuHead">팀 규모</td>
+								<td class="menuBody">
+									<a class="menuOption" href="#">1인</a> 
+									<a class="menuOption" href="#">5인미만</a> 
+									<a class="menuOption" href="#">30인미만</a> 
+									<a class="menuOption" href="#">30인이상</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="menuHead">주말 여부</td>
+								<td class="menuBody">
+									<a class="menuOption" href="#">가능</a> 
+									<a class="menuOption" href="#">불가능</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="row p-1 mt-3 mb-5">
+					<c:choose>
+						<c:when test="${fn:length(productList) eq 0 }">
+							<p>준비된 상품이 없습니다.</p>
+						</c:when>
+						<c:otherwise>
+							<c:forEach items="${productList}" var="productList" varStatus="statusProductList">
+		           		<div class="col-3 mt-3 service-item">
+		               		<div class="overflow-hidden">
+		               	    	<!-- <img class="menuDD" src="/resources/images/main.jpg"> -->
+	           	   	   	   	    <img class="menuDD" src="<c:out value="${productList.path }"/><c:out value="${productList.uuidName }"/>">
+		           			</div>
+		           			<div class="pt-2">
+		           				<p class="mainName mb-0"><c:out value="${productList.mmNickname }" /></p>
+		           				<a href="javascript:goView(<c:out value="${productList.itemSeq }" />)"><p class="mainTitle mb-0"><c:out value="${productList.itTitle }" /></p></a>
+		           				<p class="mainPay mb-0" id="itemPrice">
+		           					<i class="fa-solid fa-receipt">&nbsp;</i><fmt:formatNumber type="number" maxFractionDigits="3" value="${productList.itemPrice }" />원
+	           					</p>
+	           					<div class="mainGrade">
+				       				<i class="fa-solid fa-star" style="color: #FFD400;"></i>
+				       				<span style="color: #9A9BA7;">5.0ㅣ32개의 평가</span>
+			       				</div>
+		           			</div>
+		           		</div>
+	           				</c:forEach>
+						</c:otherwise>
+					</c:choose>
+		            </div>
+		            <!-- pagination s -->
+				    <%@include file="../common/pagination.jsp"%>
+				    <!-- pagination e -->
 				</div>
 			</div>
-			<div class="col-9">
-				<div class="row p-1">
-		            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-						<ol class="breadcrumb">
-					    	<li class="breadcrumb-item"><a href="#">홈</a></li>
-					    	<li class="breadcrumb-item"><a href="#">개발/디자인</a></li>
-					    	<li class="breadcrumb-item active" aria-current="page">웹</li>
-						</ol>
-					</nav>
-				</div>
-				<div class="row ps-3">
-					<table class="border border-1">
-						<tr>
-							<td class="menuHead">기술 수준</td>
-							<td class="menuBody">
-								<a class="menuOption" href="#">초급</a> 
-								<a class="menuOption" href="#">중급</a> 
-								<a class="menuOption" href="#">고급</a>
-							</td>
-						</tr>
-						<tr>
-							<td class="menuHead">팀 규모</td>
-							<td class="menuBody">
-								<a class="menuOption" href="#">1인</a> 
-								<a class="menuOption" href="#">5인미만</a> 
-								<a class="menuOption" href="#">30인미만</a> 
-								<a class="menuOption" href="#">30인이상</a>
-							</td>
-						</tr>
-						<tr>
-							<td class="menuHead">주말 여부</td>
-							<td class="menuBody">
-								<a class="menuOption" href="#">가능</a> 
-								<a class="menuOption" href="#">불가능</a>
-							</td>
-						</tr>
-					</table>
-				</div>
-				<div class="row p-1 mt-3 mb-5">
-				<c:choose>
-					<c:when test="${fn:length(productList) eq 0 }">
-						<p>준비된 상품이 없습니다.</p>
-					</c:when>
-					<c:otherwise>
-						<c:forEach items="${productList}" var="productList" varStatus="statusProductList">
-	           		<div class="col-3 mt-3 service-item">
-	               		<div class="overflow-hidden">
-	               	    	<!-- <img class="menuDD" src="/resources/images/main.jpg"> -->
-           	   	   	   	    <img class="menuDD" src="<c:out value="${productList.path }"/><c:out value="${productList.uuidName }"/>">
-	           			</div>
-	           			<div class="pt-2">
-	           				<p class="mainName mb-0"><c:out value="${productList.mmNickname }" /></p>
-	           				<a href="javascript:goView(<c:out value="${productList.itemSeq }" />)"><p class="mainTitle mb-0"><c:out value="${productList.itTitle }" /></p></a>
-	           				<p class="mainPay mb-0" id="itemPrice">
-	           					<i class="fa-solid fa-receipt">&nbsp;</i><fmt:formatNumber type="number" maxFractionDigits="3" value="${productList.itemPrice }" />원
-           					</p>
-           					<div class="mainGrade">
-			       				<i class="fa-solid fa-star" style="color: #FFD400;"></i>
-			       				<span style="color: #9A9BA7;">5.0ㅣ32개의 평가</span>
-		       				</div>
-	           			</div>
-	           		</div>
-           				</c:forEach>
-					</c:otherwise>
-				</c:choose>
-	            </div>
-	            <!-- pagination s -->
-			    <%@include file="../common/pagination.jsp"%>
-			    <!-- pagination e -->
-			</div>
-		</div>
+	    </div>
     </div>
     <!-- Service End -->
 

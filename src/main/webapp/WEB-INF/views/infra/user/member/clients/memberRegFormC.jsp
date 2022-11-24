@@ -12,22 +12,6 @@
     <link href="/resources/user/css/agree.css" rel="stylesheet">
 	<link rel="stylesheet" href="/resources/demos/style.css">
 	
-	<script>
-	 	$jQ( function() {
-	   		$jQ("#datepicker").datepicker({
-	   			dateFormat:"yy-mm-dd",
-	   			prevText: '이전 달',
-	   			nextText: '다음 달',
-	   			monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-	   			monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-	   			dayNames: ['일', '월', '화', '수', '목', '금', '토'],
-	   			dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-	   			showMonthAfterYear: true,
-	   			yearSuffix: '년'
-   			});
-	  	} );
-	</script>
-	
 </head>
 <body>
 <form method="post" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
@@ -292,6 +276,20 @@
 			if(!BodCheck('mmBod',2,0,"알맞게 입력해 주세요.")) return false;
 			if(!PhoneNumberCheck('mmpPhoneNumber',2,0,"숫자로만 입력해 주세요.")) return false;
 		}
+		
+	 	$jQ( function() {
+	   		$jQ("#datepicker").datepicker({
+	   			dateFormat:"yy-mm-dd",
+	   			prevText: '이전 달',
+	   			nextText: '다음 달',
+	   			monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+	   			monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+	   			dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+	   			dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+	   			showMonthAfterYear: true,
+	   			yearSuffix: '년'
+   			});
+	  	} );
 		
 	</script>
 	

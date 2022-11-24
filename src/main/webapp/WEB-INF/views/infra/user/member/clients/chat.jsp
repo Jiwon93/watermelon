@@ -488,7 +488,7 @@
 								txt+='</div>';
 								txt+='<div class="chat_product_info">';
 								txt+='<span class="status">';
-								txt+=result.newChat.id;
+								txt+=result.newChat.mmName;
 								txt+='</span>';
 								txt+='<p>TEST TEXT FIELD</p>';
 								txt+='</div>';

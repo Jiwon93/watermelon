@@ -57,54 +57,84 @@
 						<h4>상품 등록</h4>
 						<div class="container-fluid">
 							<div class="row m-4">
+								<div class="col mx-auto">
+									<label class="form-label" for="itemSeq">상품번호</label>
+									<input type="text" class="form-control" id="itemSeq" name="itemSeq" placeholder="자동생성" readonly>
+								</div>
 								<div class="col-6">
-									<label class="form-label" for="codeGroup_ccgSeq">코드그룹</label>
-									<select class="form-select" id="codeGroup_ccgSeq" name="codeGroup_ccgSeq">
-										<option>선택</option>
-										<c:forEach items="${ccgNameList}" var="ccgNameList" varStatus="status">
-										<option value="${ccgNameList.ccgSeq }" ><c:out value="${ccgNameList.ccgName }"/></option>
+									<label class="form-label" for="itTitle">제목</label>
+									<input type="text" class="form-control" id="itTitle" name="itTitle" value="<c:out value="${dto.itTitle }" />">
+								</div>
+							</div>
+							<div class="row m-4">
+								<div class="col mx-auto">
+									<label class="form-label" for="category1">상위 카테고리</label>
+									<select class="form-select" id="category1" name="category1">
+										<option>선택해주세요</option>
+										<c:forEach begin="96" end="105" items="${ccNameList }" var="ccNameList" varStatus="status">
+										<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+										</c:forEach>
+									</select>
+								</div>
+								<div class="col mx-auto">
+									<label class="form-label" for="category2">하위 카테고리</label>
+									<select class="form-select" id="category2" name="category2">
+										<option>선택해주세요</option>
+										<c:forEach begin="106" end="117" items="${ccNameList }" var="ccNameList" varStatus="status">
+										<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
 										</c:forEach>
 									</select>
 								</div>
 							</div>
 							<div class="row m-4">
 								<div class="col mx-auto">
-									<label class="form-label" for="ccSeq">코드</label>
-									<input type="text" class="form-control" id="ccSeq" name="ccSeq" placeholder="자동생성" readonly>
-								</div>
-								<div class="col mx-auto">
-									<label class="form-label" for="cfCodeAnother">코드 (Another)</label>
-									<input type="text" class="form-control" id="cfCodeAnother">
-								</div>
-							</div>
-							<div class="row m-4">
-								<div class="col mx-auto">
-									<label class="form-label" for="ccName">코드 이름 (한글)</label>
-									<input type="text" class="form-control" id="ccName" name="ccName" value="<c:out value="${dto.ccName }"/>">
-								</div>
-								<div class="col mx-auto">
-									<label class="form-label" for="ccNameEng">코드 이름 (영문)</label>
-									<input type="text" class="form-control" id="ccNameEng" name="ccNameEng" value="<c:out value="${dto.ccNameEng }" />">
-								</div>
-							</div>
-							<div class="row m-4">
-								<div class="col mx-auto">
-									<label class="form-label" for="ccUseNy">사용여부</label>
-									<select class="form-select" id="ccUseNy" name="ccUseNy">
-										<option value="" <c:if test="${empty dto.ccUseNy }">selected</c:if>>사용여부 선택</option>
-										<option value="1" <c:if test="${dto.ccUseNy eq 1 }">selected</c:if>>Y</option>
-										<option value="0" <c:if test="${dto.ccUseNy eq 0 }">selected</c:if>>N</option>
+									<label class="form-label" for="skillLevel">기술 수준</label>
+									<select class="form-select" id="skillLevel" name="skillLevel">
+										<option>선택해주세요</option>
+										<c:forEach begin="118" end="121" items="${ccNameList }" var="ccNameList" varStatus="status">
+										<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+										</c:forEach>
 									</select>
 								</div>
 								<div class="col mx-auto">
-									<label class="form-label" for="ccOrder">순서</label>
-									<input type="text" class="form-control" id="ccOrder" name="ccOrder" value="<c:out value="${dto.ccOrder }"/>">
+									<label class="form-label" for="teamSize">팀 규모</label>
+									<select class="form-select" id="teamSize" name="teamSize">
+										<option>선택해주세요</option>
+										<c:forEach begin="122" end="126" items="${ccNameList }" var="ccNameList" varStatus="status">
+										<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+										</c:forEach>
+									</select>
 								</div>
 							</div>
 							<div class="row m-4">
 								<div class="col mx-auto">
-									<label class="form-label" for="cfExplain">설명</label>
-									<textarea  class="form-control" id="cfExplain"></textarea>
+									<label class="form-label" for="residency">상주 여부</label>
+									<select class="form-select" id="residency" name="residency">
+										<option>선택해주세요</option>
+										<c:forEach begin="127" end="129" items="${ccNameList }" var="ccNameList" varStatus="status">
+										<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+										</c:forEach>
+									</select>
+								</div>
+								<div class="col mx-auto">
+									<label class="form-label" for="serviceCategory">서비스 카테고리</label>
+									<select class="form-select" id="serviceCategory" name="serviceCategory">
+										<option>선택해주세요</option>
+										<c:forEach begin="130" end="135" items="${ccNameList }" var="ccNameList" varStatus="status">
+										<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+										</c:forEach>
+									</select>
+								</div>
+							</div>
+							<div class="row m-4">
+								<div class="col mx-auto">
+									<label class="form-label" for="developLanguage">개발 언어</label>
+									<select class="form-select" id="developLanguage" name="developLanguage">
+										<option>선택해주세요</option>
+										<c:forEach begin="136" end="146" items="${ccNameList }" var="ccNameList" varStatus="status">
+										<option value="${ccNameList.ccSeq }"><c:out value="${ccNameList.ccName }"/></option>
+										</c:forEach>
+									</select>
 								</div>
 								<div class="col mx-auto">
 									<label class="form-label" for="ccDelNy">삭제여부</label>

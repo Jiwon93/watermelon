@@ -10,8 +10,10 @@
 }
 
 .mainTitle {
-	font-size: large;
+	font-size: medium;
 	text-align: left;
+	height: 60px;
+	margin-bottom: 0px;
 }
 
 .mainPay {

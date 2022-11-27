@@ -183,7 +183,7 @@
 		           			</div>
 		           			<div class="pt-2">
 		           				<p class="mainName mb-0"><c:out value="${productList.mmNickname }" /></p>
-		           				<a href="javascript:goView(<c:out value="${productList.itemSeq }" />)"><p class="mainTitle mb-0"><c:out value="${productList.itTitle }" /></p></a>
+		           				<p class="mainTitle"><a href="javascript:goView(<c:out value="${productList.itemSeq }" />)"><c:out value="${productList.itTitle }" /></a></p>
 		           				<p class="mainPay mb-0" id="itemPrice">
 		           					<i class="fa-solid fa-receipt">&nbsp;</i><fmt:formatNumber type="number" maxFractionDigits="3" value="${productList.itemPrice }" />원
 	           					</p>

@@ -48,6 +48,7 @@
     
     <!-- Contact Start -->
     <div class="container-fluid overflow-hidden" style="margin: 1rem 0;">
+       <div class="container">
            <div class="row">
            
 	           <!-- mypageList Start -->
@@ -90,6 +91,7 @@
 	               </div>
 	           </div>
            </div>
+       </div>
     </div>
     <!-- Contact End -->
     

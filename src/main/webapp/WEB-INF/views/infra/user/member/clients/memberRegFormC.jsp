@@ -18,8 +18,8 @@
     <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
     <!-- Navbar Start -->
     <nav class="container-fluid">
-        <div class="row" id="">
-	        <div class="col" style="text-align: center; margin: 4rem 0;">
+        <div class="row">
+	        <div class="col" style="text-align: center; margin: 3rem 0;">
 	            <div class="navbar-nav ms-auto">
 	                <a type="button" id="btnHome"><img alt="logo" src="/resources/images/logo.PNG" width="50px;" height="50px;"></a>
 	            </div>
@@ -32,7 +32,7 @@
     <div class="container-fluid bg-light overflow-hidden" style="margin: 1rem 0;">
         <div class="container contract">
            <div class="col-6 contact-text py-2 offset-3">
-               <div class="p-lg-5">
+               <div class="p-lg-3">
                    <div class="section-title text-center">
                        <h1 class="display-6 mb-4">회원가입</h1>
                    </div>

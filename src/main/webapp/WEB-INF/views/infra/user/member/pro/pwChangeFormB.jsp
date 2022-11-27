@@ -48,6 +48,7 @@
     
     <!-- Contact Start -->
     <div class="container-fluid overflow-hidden" style="margin: 1rem 0;">
+       <div class="container">
            <div class="row">
            
 	           <!-- mypageList Start -->
@@ -62,31 +63,35 @@
 	                   <div class="p-4 border border-2 border-light" style="height: 700px;">
 		                   <div class="row g-3">
 		                   	   <div class="col-8 offset-2">
-		                       	   <label class="form-label" for="passwordReg">현재 비밀번호</label>
+		                       	   <label class="form-label" for="mmModPwChk">현재 비밀번호</label>
 		                           <div class="input-group">
-		                               <input type="password" class="form-control" id="passwordReg" placeholder="현재 비밀번호를 입력해 주세요.">
+		                           	   <input type="hidden" id="mmModPwChkAllowedNy" name="mmModPwChkAllowedNy" value="0">
+		                               <input type="password" class="form-control" id="mmPw" placeholder="현재 비밀번호를 입력해 주세요.">
+		                               <div class="invalid-feedback" id="mmModPwChkFeedback"></div>
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
 		                       	   <label class="form-label" for="passwordReg">새로운 비밀번호</label>
 		                           <div class="input-group">
-		                               <input type="password" class="form-control" id="passwordReg" placeholder="새로운 비밀번호를 입력해 주세요.">
+		                               <input type="password" class="form-control" id="mmNewPw" name="mmPw" value="<c:out value="${item.mmPw }"/>" placeholder="새로운 비밀번호를 입력해 주세요." readonly>
 		                           </div>
 		                       </div>
 		                       <div class="col-8 offset-2">
 		                       	   <label class="form-label" for="passwordReg">비밀번호 확인</label>
 		                           <div class="input-group">
-		                               <input type="password" class="form-control" id="passwordReg" placeholder="새로운 비밀번호를 한번 더 입력해 주세요.">
+		                               <input type="password" class="form-control" id="mmNewPwChk" name="mmNewPwChk" placeholder="새로운 비밀번호를 한번 더 입력해 주세요." readonly>
+		                          	   <div class="invalid-feedback" id="mmNewPwChkFeedback"></div>
 		                           </div>
 		                       </div>
 							   <div class="col-sm-12 text-center vertical-align-bottom">
-							   	   <button type="button" class="btn btn-primary w-25" onclick="location.href='memberViewFormB.html'">변경완료</button>	
+							   	   <button class="btn btn-primary w-25" type="button" id="btnPwUpdt">변경완료</button>	
 							   </div>
 		                   </div>
 	                   </div>
 	               </div>
 	           </div>
            </div>
+       </div>
     </div>
     
     <!-- Footer Start -->
@@ -97,6 +102,18 @@
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 </form>
 	<%@ include file="../../common/basicJs.jsp" %>
+	 <!-- page jQuery -->
+    <script src="/resources/user/js/mod.js"></script>
+    
+    <script>
+    	var goUrlPwchange = "/member/pwChange";
+    	var form = $("form[name=form]");
+    	
+    	$("#btnPwUpdt").on("click", function(){
+    		form.attr("action", goUrlPwchange).submit();
+    	});
+    
+    </script>
 </body>
 
 </html>

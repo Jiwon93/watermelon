@@ -59,26 +59,28 @@
     
     <!-- Contact Start -->
     <div class="container-fluid overflow-hidden" style="margin: 1rem 0;">
-		<div class="row">
-
-		<!-- mypageList Start -->
-		<%@include file="../../common/mypageListB.jsp"%>
-		<!-- mypageList End -->
-
-			<div class="col-sm-9 p-2">
-    			<div class="p-lg-5">
-			        <div class="">
-			            <h4 class="mb-4">판매등록</h4>
-			        </div>
-        			<div class="saleRegF">
-        	   			<div class="saleRegBtn">
-         	   				<a class="" id="btnSaleRegForm" type="button">
-			         	   	   <i class="fa-solid fa-plus fa-3x"></i>
-			         	   	   <p>판매 등록하기</p>
-    	   		   			</a>
-   	   		   			</div>
-        			</div>
-    			</div>
+		<div class="container">
+			<div class="row">
+	
+			<!-- mypageList Start -->
+			<%@include file="../../common/mypageListB.jsp"%>
+			<!-- mypageList End -->
+	
+				<div class="col-sm-9 p-2">
+	    			<div class="p-lg-5">
+				        <div class="">
+				            <h4 class="mb-4">판매등록</h4>
+				        </div>
+	        			<div class="saleRegF">
+	        	   			<div class="saleRegBtn">
+	         	   				<a class="" id="btnSaleRegForm" type="button">
+				         	   	   <i class="fa-solid fa-plus fa-3x"></i>
+				         	   	   <p>판매 등록하기</p>
+	    	   		   			</a>
+	   	   		   			</div>
+	        			</div>
+	    			</div>
+				</div>
 			</div>
 		</div>
     </div>

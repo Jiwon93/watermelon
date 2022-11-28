@@ -92,7 +92,10 @@
 	       						5. 완료(유지보수 필요시 별도 계약 진행)<br>
 	       						→ 기획안이 정확하지 않을 시 일정이 추가될 수 있습니다.<br><br>
 	       						 -->
-	       						 <c:out value="${item.itServiceDetail}" />
+	       						 <label for="ifmmDesc" class="form-label">설명</label>
+					        	<%-- <textarea id="ifmmDesc" name="ifmmDesc" class="form-control" rows="4"><c:out value="${item.ifmmDesc }"/></textarea> --%>
+					        	<p><c:out value="${fn:replace(item.itServiceDetail, br, '<br/>')}" escapeXml = "false"/></p> 
+								<%-- <p><c:out value="${item.ifmmDesc}" /></p> --%>
 	       						<hr>
 	       					</article>
 	       				</div>

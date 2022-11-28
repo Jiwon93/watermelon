@@ -33,7 +33,7 @@
 					</nav>
 	        		<div class="row text-center">
 	        			<div class="col-12">
-	        				<img class="mainImage col-12" src="/resources/images/main.jpg">
+	        				<img class="mainImage col-12" src="<c:out value="${item.path }"/><c:out value="${item.uuidName }"/>">
 	       				</div>
 	       				<div class="col-12 mt-4">
 		        			<i class="fa-solid fa-star" style="color: #FFD400;"></i>

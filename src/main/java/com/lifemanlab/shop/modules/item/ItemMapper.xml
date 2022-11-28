@@ -43,7 +43,9 @@
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			a.*
+			,b.*
 		FROM item a
+		LEFT JOIN itUploaded b on a.itemSeq = b.pseq
 		WHERE 1=1
 			AND itemSeq = #{itemSeq}
 	</select>

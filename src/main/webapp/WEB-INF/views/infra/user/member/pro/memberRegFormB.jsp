@@ -356,9 +356,15 @@
 	   			monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
 	   			dayNames: ['일', '월', '화', '수', '목', '금', '토'],
 	   			dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-	   			showMonthAfterYear: true,
+	   			showOtherMonths: true, //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+			  	showMonthAfterYear: true, // 월- 년 순서가아닌 년도 - 월 순서
+			  	changeYear: true, //option값 년 선택 가능
+			  	changeMonth: true, //option값 월 선택 가능
+			  	yearRange:'c-99: c+99',
+			  	minDate : new Date('1900-01-01'),
+			  	maxDate : new Date ('today'),
 	   			yearSuffix: '년'
-				});
+   			});
 	  	} );
 		
 	</script>

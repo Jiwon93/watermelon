@@ -69,6 +69,7 @@
 							<tr>
 								<td>
 									<input class="form-control" type="text" style="width: 1000px;" id="itTitle" name="itTitle" value="<c:out value="${dto.itTitle }" />" placeholder="서비스를 잘 드러낼 수 있는 제목을 입력해주세요">
+									<span class="itemValidation itTitle">상품 제목을 입력해주세요.</span>
 								</td>
 							</tr>
 						</table>
@@ -432,7 +433,21 @@
     	
     	$("#btnReg").on("click", function(){
 			/* if (validationInst() == false) return false; */
-			form.attr("action", goUrlsaleRegInst).submit();
+			let itTitleCk = false;
+			let itTitle = $("input[name='itTitle']").val();
+			if(itTitle){
+				$(".itTitle").css('display','none');
+				itTitleCk = true;
+			} else {
+				$(".itTitle").css('display','block');
+				itTitleCk = false;
+			}
+			
+			if(itTitleCk){
+				form.attr("action", goUrlsaleRegInst).submit();
+			} else {
+				return false;
+			}
 		}); 
     	
     	upload = function(objName, seq, allowedMaxTotalFileNumber, allowedExtdiv, allowedEachFileSize, allowedTotalFileSize, uiType) {

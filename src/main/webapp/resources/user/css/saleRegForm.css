@@ -50,3 +50,11 @@ p {
 	font-weight: bold;
 	margin: 15px;
 }
+
+.itemValidation {
+	display: none;
+	padding-top: 10px;
+	text-align: left;
+	color: #e05757;
+	font-weight: 300;
+}

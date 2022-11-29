@@ -276,13 +276,10 @@
 			}
 		); */
 		
-	
-		
-		
 		var naverLogin = new naver.LoginWithNaverId(
 			{
-				clientId: "EUMcBKlc3puI33HLfscd",
-				callbackUrl: "http://15.164.96.39/member/loginForm",
+				clientId: "4ZU0bIEeA8jtmta7Q58X",
+				callbackUrl: "http://localhost:8084/member/loginForm",
 				isPopup: false,
 				callbackHandle: true
 				//loginButton: {color: "green", type: 1, height: 60} 
@@ -345,10 +342,6 @@
 				}
 			});
     	}
-   		
-		
-    	
-		
     	/* naver login test e */
     </script>
 </body>

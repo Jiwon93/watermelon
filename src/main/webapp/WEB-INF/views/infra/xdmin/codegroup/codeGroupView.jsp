@@ -35,7 +35,7 @@
 			justify-content: center;
 		}
 	</style>
-	
+	<link href="/resources/xdmin/css/styles.css" rel="stylesheet">
 	<link href="/resources/xdmin/css/list.css" rel="stylesheet">
 </head>
 <body>

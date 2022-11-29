@@ -267,19 +267,22 @@
 	 
 	/* naver login test s */
    		
+		//개발 단
    		/* var naverLogin = new naver.LoginWithNaverId(
-			{
-				clientId: "b8EhDTV3tvvAE_gRRBoJ",
-				callbackUrl: "http://localhost:8080/userLogin",
-				isPopup: false,
-				loginButton: {color: "green", type: 3, height: 70} 
-			}
-		); */
-		
-		var naverLogin = new naver.LoginWithNaverId(
 			{
 				clientId: "4ZU0bIEeA8jtmta7Q58X",
 				callbackUrl: "http://localhost:8084/member/loginForm",
+				isPopup: false,
+				callbackHandle: true
+				//loginButton: {color: "green", type: 3, height: 70} 
+			}
+		); */
+		
+		//배포 단
+		var naverLogin = new naver.LoginWithNaverId(
+			{
+				clientId: "EUMcBKlc3puI33HLfscd",
+				callbackUrl: "http://15.164.96.39/member/loginForm",
 				isPopup: false,
 				callbackHandle: true
 				//loginButton: {color: "green", type: 1, height: 60} 

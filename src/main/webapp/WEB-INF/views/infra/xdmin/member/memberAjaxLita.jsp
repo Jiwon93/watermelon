@@ -5,6 +5,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
+<jsp:useBean id="CodeServiceImpl" class="com.lifemanlab.shop.modules.code.CodeServiceImpl"/>
+
 <!-- totalAndRowNum s -->
 <%@include file="../common//totalAndRowNum.jsp"%>
 <!-- totalAndRowNumu e -->

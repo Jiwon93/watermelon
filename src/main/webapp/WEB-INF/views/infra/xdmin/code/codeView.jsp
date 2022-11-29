@@ -35,7 +35,7 @@
 		}
 		
 	</style>
-	
+	<link href="/resources/xdmin/css/styles.css" rel="stylesheet">
 	<link href="/resources/xdmin/css/list.css" rel="stylesheet">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
   	<link rel="stylesheet" href="/resources/demos/style.css">
@@ -230,6 +230,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script src="/resources/xdmin/js/sidebar.js"></script>
+	<script src="/resources/xdmin/js/list.js"></script>
 	<script>
 		var goUrlList = "/code/codeList";
 		var goUrlInst = "/code/codeInst";

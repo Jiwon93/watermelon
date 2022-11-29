@@ -25,6 +25,7 @@ public class ItemController {
 		
 		List<Item> list = service.selectList(vo);
 		model.addAttribute("list", list);
+		model.addAttribute("listUploaded", service.selectListUploaded(vo));
 		return "infra/xdmin/item/itemList";
 	}
 	

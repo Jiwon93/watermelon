@@ -8,7 +8,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>codeList</title>
+	<title>itemList</title>
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sidebars/">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	
@@ -40,7 +40,7 @@
 			justify-content: center;
 		}
 	</style>
-	
+	<link href="/resources/xdmin/css/styles.css" rel="stylesheet">
 	<link href="/resources/xdmin/css/list.css" rel="stylesheet">
 </head>
 <body>
@@ -153,7 +153,7 @@
 												<td><c:out value="${list.itemSeq }" /></td>
 												<td><a href="javascript:goView(<c:out value="${list.itemSeq }" />)" class="text-decoration-none"><c:out value="${list.mmNickname }" /></a></td>
 												<td><c:out value="${list.itTitle }" /></td>
-												<td><c:out value="${list.itemPrice }" /></td>
+												<td><fmt:formatNumber type="number" maxFractionDigits="3" value="${list.itemPrice }" />원</td>
 											</tr>
 										</c:forEach>
 									</c:otherwise>
@@ -211,6 +211,7 @@
 	</form>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	<script src="/resources/xdmin/js/sidebar.js"></script>
+	<script src="/resources/xdmin/js/list.js"></script>
 	<script>
 		var goUrlList = "/item/itemList";
 		/* 

@@ -35,7 +35,7 @@
 			justify-content: center;
 		}
 	</style>
-	
+	<link href="/resources/xdmin/css/styles.css" rel="stylesheet">
 	<link href="/resources/xdmin/css/list.css" rel="stylesheet">
 </head>
 <body>
@@ -54,7 +54,7 @@
 				
 				<div class="col-10">
 					<div class="row">
-						<h4>후기 관리</h4>
+						<h4>후기 등록</h4>
 						<div class="container-fluid">
 							<div class="row m-4">
 								<div class="col-6">

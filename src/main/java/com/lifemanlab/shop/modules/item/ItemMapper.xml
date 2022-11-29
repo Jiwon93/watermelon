@@ -32,7 +32,7 @@
 			AND b.mmRank = 20
 			ORDER BY a.itemSeq DESC
 			<!-- <include refid="Base.orderByLimitForMysql" /> -->
-		<include refid="Base.selectListUpperForMysql" />
+		<include refid="Base.selectListLowerForMysql" />
 	</select>
 	
 	<select id="selectOneCount" resultType="Integer">
@@ -52,7 +52,7 @@
 	
 	<!-- 상품리스트 -->
 	<select id="productList" resultMap="resultMapObj">
-		<!-- <include refid="Base.selectListUpperForMysql" /> -->
+		<include refid="Base.selectListUpperForMysql" />
 			SELECT
 				a.itemSeq
 				,a.itTitle
@@ -67,7 +67,7 @@
 			WHERE 1=1	
 			AND b.mmRank = 20
 			ORDER BY a.itemSeq DESC
-		<!-- <include refid="Base.selectListUpperForMysql" /> -->
+		<include refid="Base.selectListLowerForMysql" />
 	</select>
 	
 	<!-- 상품등록 -->

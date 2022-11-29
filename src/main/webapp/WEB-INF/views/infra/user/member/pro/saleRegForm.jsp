@@ -432,7 +432,6 @@
 		});
     	
     	$("#btnReg").on("click", function(){
-			/* if (validationInst() == false) return false; */
 			let itTitleCk = false;
 			let itTitle = $("input[name='itTitle']").val();
 			if(itTitle){

@@ -56,3 +56,11 @@
 .fa-circle-check:focus {
 	color: #AB7442;
 }
+
+.regValidation {
+	display: none;
+	padding-top: 10px;
+	text-align: center;
+	color: #e05757;
+	font-weight: 300;
+}

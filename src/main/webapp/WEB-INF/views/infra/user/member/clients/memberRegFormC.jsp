@@ -65,6 +65,7 @@
                        	   <label class="form-label" for="mmBod">생년월일</label>	
                            <div class="input-group">
                                <input type="text" class="form-control" id="datepicker" name="mmBod" value="<c:out value="${dto.mmBod }" />" placeholder="8글자로 입력해 주세요.(ex. YYYYMMDD)">
+                           	   <span class="regValidation mmBod">생년월일을 입력해주세요.</span>
                            </div>
                        </div>
                        <div class="col-8 offset-2">
@@ -195,7 +196,6 @@
 	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=17e90af3c57fa367793d1f57799dd4c9&libraries=services,clusterer,drawing"></script>
 	
 	<script src="/resources/user/js/reg.js"></script>
-	<script src="/resources/user/js/validationUser.js"></script>
 	
 	<script type="text/javascript">
 	
@@ -209,9 +209,35 @@
 		}); 
 	 
 		$("#btnReg").on("click", function(){
-			/* if (validationInst() == false) return false; */
-			form.attr("action", goUrlRegInst).submit();
+			let mmBodCk = false;
+			let mmBod = $("input[name='mmBod']").val();
+			if(mmBod){
+				$(".mmBod").css('display','none');
+				mmBodCk = true;
+			} else {
+				$(".mmBod").css('display','block');
+				mmBodCk = false;
+			}
+			
+			if(mmBodCk){
+				form.attr("action", goUrlRegInst).submit();
+			} else {
+				return false;
+			}
 		}); 
+		
+		/*
+		//validation
+	    validationInst = function() {
+			if(!EmailCheck('mmEmail',2,0,"이메일 형식에 맞춰서 입력해 주세요.")) return false;
+			if(!PwCheck('mmPw',2,0,"비밀번호는 8~16자로 입력해 주세요.")) return false;
+			if(!NameCheck('mmName',2,0,"한글로만 입력해 주세요.")) return false;
+			if(!NicknameCheck('mmNickname',2,0,"한글, 영어, 숫자로 입력해 주세요.")) return false;
+			if(!BodCheck('mmBod',2,0,"알맞게 입력해 주세요.")) return false;
+			if(!PhoneNumberCheck('mmpPhoneNumber',2,0,"숫자로만 입력해 주세요.")) return false;
+			if(validationUpdt() == false) return false;
+		}
+		*/
 		
 		//카카오 지도 API
 		//본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
@@ -266,16 +292,6 @@
 			$("#mmrfDetailAddress").val('');
 			/* $("#mmExtraAddress").val(''); */
 		});
-		
-		//validation
-	    validationInst = function() {
-			if(!EmailCheck('mmEmail',2,0,"이메일 형식에 맞춰서 입력해 주세요.")) return false;
-			if(!PwCheck('mmPw',2,0,"비밀번호는 8~16자로 입력해 주세요.")) return false;
-			if(!NameCheck('mmName',2,0,"한글로만 입력해 주세요.")) return false;
-			if(!NicknameCheck('mmNickname',2,0,"한글, 영어, 숫자로 입력해 주세요.")) return false;
-			if(!BodCheck('mmBod',2,0,"알맞게 입력해 주세요.")) return false;
-			if(!PhoneNumberCheck('mmpPhoneNumber',2,0,"숫자로만 입력해 주세요.")) return false;
-		}
 		
 	 	$jQ( function() {
 	   		$jQ("#datepicker").datepicker({

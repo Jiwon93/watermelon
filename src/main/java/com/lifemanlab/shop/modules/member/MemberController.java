@@ -414,8 +414,14 @@ public class MemberController extends BaseController {
 		service.memberDrop(dto);
 		return "redirect:/member/memberHome";
 	}
+	
+	//메인 홈
 	@RequestMapping(value = "memberHome")
-	public String memberHome() throws Exception {
+	public String memberHome(Model model) throws Exception {
+		
+		List<Member> ccNameList = service.ccNameList();
+		model.addAttribute("ccNameList", ccNameList);
+		
 		return "infra/user/member/memberHome";
 	}
 	

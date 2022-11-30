@@ -3,15 +3,19 @@ package com.lifemanlab.shop.modules.item;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 
 @Controller
 @RequestMapping(value = "/item/")
+@SessionAttributes({"dtoBk", "tid"}) //dto, tid 를 세션에 올림
 public class ItemController {
 	
 	@Autowired
@@ -141,4 +145,81 @@ public class ItemController {
 		model.addAttribute("saleItem", saleItem);
 		return "infra/user/member/pro/saleManage";
 	}
+	
+	/*
+	//카카오페이
+	@ModelAttribute("dtoBk")
+	public Item setEmptyBooking() {  //빈 dto를 만들어줘야 세션 오류 안남
+		return new Item();
+	}
+
+    //카카오페이
+	@ResponseBody
+	@RequestMapping(value="kakaopayReady")
+	public KakaopayReady payReady (@ModelAttribute("dtoBk") Item dto, Model model) throws Exception {
+		 
+		KakaopayReady kakaopayReady = service.payReady(dto);
+		model.addAttribute("tid", kakaopayReady.getTid());
+
+		return kakaopayReady;
+	}
+	
+	@RequestMapping(value="kakaopayApproval")
+	public String payCompleted(@RequestParam("pg_token") String pgToken, @ModelAttribute("tid") String tid,  @ModelAttribute("dtoBk") Item dto,  Model model, HttpSession httpSession,  Movie dto1) throws Exception {
+		
+		// 카카오 결제 요청하기
+		KakaoPayApproval kakaoPayApproval = service.payApprove(tid, pgToken, dto);
+		
+   //return된 객체를 map에 매핑
+		ObjectMapper objectMapper = new ObjectMapper();
+		Map<String, Object> map = objectMapper.convertValue(kakaoPayApproval, Map.class);
+		
+		for(String key : map.keySet()) {
+			String value = String.valueOf(map.get(key));
+			System.out.println("[key]: " + key + ", [value]: " + value);
+		}
+		
+		Map<String, Object> amount = new HashMap<String, Object>();
+		amount = (Map<String, Object>) map.get("amount");
+		
+		for (String key : amount.keySet()) {
+			String value = String.valueOf(amount.get(key));
+			System.out.println("[key]: " + key + ", [value]: " + value);
+		}
+
+		//결제 후 db에 insert
+		//dto 에 받아온 정보  set
+		dto.setItTitle(map.get("item_name").toString());
+		dto.setItemSeq(map.get("item_code").toString());
+		dto.setItemPrice(amount.get("total").toString());
+
+		dto.setMmSeq((String)httpSession.getAttribute("sessSeq"));
+		Item booking = (Item) httpSession.getAttribute("dtoBk");
+		//결제 정보 insert
+		service.insertBooking(dto);
+		dto.setTdbkSeq(dto.getTdbkSeq());
+		
+		for(int i = 0; i < booking.getTdbsSeatNums().length; i++) {
+			dto.setTdbsSeatNum(booking.getTdbsSeatNums()[i]);
+			service.insertBookingSeat(dto);
+		}
+		
+		Item result = service.selectListAfterPay(dto);
+		model.addAttribute("result", result);
+			
+		return "infra/booking/user/bookingResult";
+	}
+	
+	// 결제 취소시 실행 url 
+	@GetMapping("kakaopayCancel")
+	public String payCancel() {
+		return "redirect:/timetable/choiceMovie";
+	}
+    
+	// 결제 실패시 실행 url    	
+	@GetMapping("/kakaopayFail")
+	public String payFail() {
+		return "redirect:/timetable/choiceMovie"; 
+	}
+	*/
 }

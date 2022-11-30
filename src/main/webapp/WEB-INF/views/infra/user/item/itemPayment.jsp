@@ -297,6 +297,8 @@
     	var goUrlPurchaseHistory = "/member/purchaseHistory";
     	var goUrlItemMenu = "/item/itemMenu";
     	
+    	var form = $("form[name=formList]");
+    	
     	$("#btnHome").on("click", function(){
 	   		$(location).attr("href", goUrlHome);
 		});
@@ -360,6 +362,28 @@
     			}
     		});
     	});
+    	
+    	kakao = function(){
+    		
+    		$.ajax({
+    			async: true
+    			,cach: false
+    			,method: "post"  
+    			,url: "/booking/kakaopayReady"
+    			,data: {
+    					form : $("#formList").serialize()
+    					//input hidden 으로 선언한 dto 내용 전부 넘김
+    			}
+    			,success: function(response){
+    				location.href= response.next_redirect_pc_url
+    				//카카오에서 제공하는 url로 바로 이동
+    			}
+    			,error : function(){
+    				alert("ajax error..");
+    			}
+    		});
+    	}
+    	
     	
     </script>
     <script type="text/javascript">

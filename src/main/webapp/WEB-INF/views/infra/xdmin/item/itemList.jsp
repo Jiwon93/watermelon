@@ -214,14 +214,14 @@
 	<script src="/resources/xdmin/js/list.js"></script>
 	<script>
 		var goUrlList = "/item/itemList";
-		/* 
-		var goUrlForm = "/review/reviewForm";
-		var goUrlView = "/review/reviewView";
-		var goUrlInst = "/review/reviewInst";
-		var goUrlUpdt = "/review/reviewUpdt";
-		var goUrlUele = "/review/reviewUele";
-		var goUrlDele = "/review/reviewDele";
- 		*/
+		
+		var goUrlForm = "/item/reviewForm";
+		var goUrlView = "/item/reviewView";
+		var goUrlInst = "/item/reviewInst";
+		var goUrlUpdt = "/item/reviewUpdt";
+		var goUrlUele = "/item/reviewUele";
+		var goUrlDele = "/item/reviewDele";
+ 		
 		/*
  		var form = $("form[name=form]");
 

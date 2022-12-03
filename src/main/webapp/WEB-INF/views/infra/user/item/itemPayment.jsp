@@ -34,6 +34,7 @@
 <body>
 <form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
     <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
+    <input type="hidden" name="itemSeq" value="${vo.itemSeq }">
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
         <a href="#" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
@@ -58,7 +59,7 @@
 		           				<table>
 		           					<tr>
 		           						<td rowspan="4">
-		           							<img alt="" src="/resources/images/main.jpg" style="width: 250px; height: 170px;">
+		           							<img src="<c:out value="${item.path }"/><c:out value="${item.uuidName }"/>" style="width: 250px; height: 170px;">
 		       							</td>
 		           						<td class="px-5">
 			           						<h5 style="font-size: 1.1em;">00홈페이지</h5>
@@ -67,7 +68,7 @@
 		           					<tr>
 		           						<!-- <td></td> -->
 		           						<td class="px-5" style="width: 500px;">
-		           							<p>최신 테마 반응형 홈페이지를 제작해 드립니다.</p>
+		           							<p><c:out value="${item.itTitle }" /></p>
 		           						</td>
 		           					</tr>
 		           					<tr>

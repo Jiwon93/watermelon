@@ -58,7 +58,10 @@ public class ItemController {
 	}
 	
 	@RequestMapping(value = "itemPayment")
-	public String itemPayment() throws Exception {
+	public String itemPayment(@ModelAttribute("vo") ItemVo vo, Model model) throws Exception {
+		Item item = service.selectOne(vo);
+		model.addAttribute("item", item);
+		model.addAttribute("listUploaded", service.selectListUploaded(vo));
 		return "infra/user/item/itemPayment";
 	}
 	

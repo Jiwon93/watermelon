@@ -271,16 +271,10 @@
         </div>
     </div>
     <!-- Service End -->
-    <!-- Projects Start -->
-    <!-- Projects End -->
-
-    <!-- Testimonial Start -->
-    <!-- Testimonial End -->
 
     <!-- Footer Start -->
     <%@include file="../common/footer.jsp"%>
     <!-- Footer End -->
-
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>

@@ -647,12 +647,6 @@
         	</div>
 	    </div>
 	    <!-- Service End -->
-	    <!-- Projects Start -->
-	    <!-- Projects End -->
-	
-	    <!-- Testimonial Start -->
-	    <!-- Testimonial End -->
-	
 	
     <!-- Footer Start -->
     <%@include file="../common/footer.jsp"%>

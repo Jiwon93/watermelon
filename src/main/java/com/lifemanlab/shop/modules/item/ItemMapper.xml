@@ -253,4 +253,55 @@
 		GROUP BY b.mmSeq
 		<include refid="Base.selectListLowerForMysql" />
 	</select>
+	
+	<!-- 조회수 -->
+	<update id="boardViewCount">
+		UPDATE board
+		SET
+			viewCount = viewCount + 1
+		WHERE 1=1
+			AND bdSeq = #{bdSeq}	
+	</update>
+	
+	<!-- 좋아요 여부확인 -->
+	<select id="boardLiked" resultMap="resultMapObj"> 
+		SELECT 
+			infrMmSeq
+		FROM bdLike 
+		WHERE 1=1
+			AND bdSeq = #{bdSeq}
+			AND infrMmSeq = #{infrMmSeq}
+	</select>
+	
+	<!-- 좋아요 count -->
+	<select id="boardLikeCount" resultType="Integer"> 
+		SELECT 
+			COUNT(*) as likeCount 
+		FROM bdLike 
+		WHERE 1=1
+			AND bdSeq = #{bdSeq}
+	</select>
+	
+	<!-- 좋아요 추가 -->
+	<insert id="insertLike">
+		INSERT INTO bdLike (
+			bdSeq
+			,infrMmSeq
+		)
+		VALUES (
+			#{bdSeq}
+			,#{infrMmSeq}
+		)
+		<selectKey resultType="String" keyProperty="bdLikeSeq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	
+	<!-- 좋아요 취소 -->
+	<delete id="deleteLike">
+		DELETE FROM bdLike
+		WHERE 1=1
+			AND bdSeq = #{bdSeq}
+			AND infrMmSeq = #{infrMmSeq}
+	</delete>
 </mapper>

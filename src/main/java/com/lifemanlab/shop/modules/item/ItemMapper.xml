@@ -267,30 +267,30 @@
 	<select id="boardLiked" resultMap="resultMapObj"> 
 		SELECT 
 			infrMmSeq
-		FROM bdLike 
+		FROM itemLike 
 		WHERE 1=1
-			AND bdSeq = #{bdSeq}
-			AND infrMmSeq = #{infrMmSeq}
+			AND itemSeq = #{itemSeq}
+			AND mmSeq = #{sessSeq}
 	</select>
 	
 	<!-- 좋아요 count -->
 	<select id="boardLikeCount" resultType="Integer"> 
 		SELECT 
 			COUNT(*) as likeCount 
-		FROM bdLike 
+		FROM itemLike 
 		WHERE 1=1
-			AND bdSeq = #{bdSeq}
+			AND itemSeq = #{itemSeq}
 	</select>
 	
 	<!-- 좋아요 추가 -->
 	<insert id="insertLike">
-		INSERT INTO bdLike (
-			bdSeq
-			,infrMmSeq
+		INSERT INTO itemLike (
+			itemSeq
+			,mmSeq
 		)
 		VALUES (
-			#{bdSeq}
-			,#{infrMmSeq}
+			#{itemSeq}
+			,#{mmSeq}
 		)
 		<selectKey resultType="String" keyProperty="bdLikeSeq" order="AFTER">
 			SELECT last_insert_id()
@@ -299,9 +299,9 @@
 	
 	<!-- 좋아요 취소 -->
 	<delete id="deleteLike">
-		DELETE FROM bdLike
+		DELETE FROM itemLike
 		WHERE 1=1
-			AND bdSeq = #{bdSeq}
-			AND infrMmSeq = #{infrMmSeq}
+			AND itemSeq = #{itemSeq}
+			AND mmSeq = #{sessSeq}
 	</delete>
 </mapper>

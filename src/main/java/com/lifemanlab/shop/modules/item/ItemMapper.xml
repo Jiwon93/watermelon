@@ -256,17 +256,17 @@
 	
 	<!-- 조회수 -->
 	<update id="boardViewCount">
-		UPDATE board
+		UPDATE item
 		SET
 			viewCount = viewCount + 1
 		WHERE 1=1
-			AND bdSeq = #{bdSeq}	
+			AND itemSeq = #{itemSeq}	
 	</update>
 	
 	<!-- 좋아요 여부확인 -->
-	<select id="boardLiked" resultMap="resultMapObj"> 
+	<select id="itemLiked" resultMap="resultMapObj"> 
 		SELECT 
-			infrMmSeq
+			mmSeq
 		FROM itemLike 
 		WHERE 1=1
 			AND itemSeq = #{itemSeq}
@@ -274,7 +274,7 @@
 	</select>
 	
 	<!-- 좋아요 count -->
-	<select id="boardLikeCount" resultType="Integer"> 
+	<select id="itemLikeCount" resultType="Integer"> 
 		SELECT 
 			COUNT(*) as likeCount 
 		FROM itemLike 

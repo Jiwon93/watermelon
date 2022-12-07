@@ -66,4 +66,10 @@ public class ItemDao {
 	public int deleteUploaded(Item dto) { return sqlSession.insert("Base" + ".deleteUploaded", dto); }
 	
 	public List<Item> selectListUploaded(ItemVo vo){ return sqlSession.selectList(namespace + ".selectListUploaded", vo); }
+
+	//조회수
+	
+	//좋아요
+	public int insertLike(Item dto) { return sqlSession.insert(namespace + ".insertLike", dto); }
+	public int deleteLike(ItemVo vo) { return sqlSession.delete(namespace + ".deleteLike", vo); }
 }

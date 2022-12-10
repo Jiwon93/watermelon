@@ -21,7 +21,7 @@
     
     <!-- Fontawesome Stylesheet -->
     <script src="https://kit.fontawesome.com/059fbc3cf8.js" crossorigin="anonymous"></script>
-</head>
+</head>  
 <body>
 	<form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
 		<div class="container-fluid mt-5 pt-5">

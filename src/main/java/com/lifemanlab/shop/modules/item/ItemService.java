@@ -36,4 +36,8 @@ public interface ItemService {
 		
 	//판매등록상품
 	public List<Item> selectSaleManage(ItemVo vo) throws Exception;
+	
+	//좋아요
+	public int insertLike(Item dto) throws Exception;
+	public int deleteLike(ItemVo vo) throws Exception;
 }

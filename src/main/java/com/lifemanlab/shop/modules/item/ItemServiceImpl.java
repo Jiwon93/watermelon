@@ -201,6 +201,17 @@ public class ItemServiceImpl implements ItemService {
 		return dao.selectSaleManage(vo);
 	}
 
+	//좋아요
+	@Override
+	public int insertLike(Item dto) throws Exception {
+		return dao.insertLike(dto);
+	}
+
+	@Override
+	public int deleteLike(ItemVo vo) throws Exception {
+		return dao.deleteLike(vo);
+	}
+
 	
 	/*
 	//카카오페이

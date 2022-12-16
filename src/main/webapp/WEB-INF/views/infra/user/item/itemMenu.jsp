@@ -237,6 +237,64 @@
 	    	seq.val(keyValue);
 			form.attr("action", goUrlView).submit();
 		}
+    	
+    	function unlike(){
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				,url: "/board/boardUnLike"
+				,data : { "bdSeq" : $("#bdSeq").val(), "infrMmSeq" : $("#infrMmSeq").val() }
+				,success: function(response) {
+					if(response.rt == "success") {
+						var str = "";
+						$(".likeBtnDiv").empty();
+		   				str += '<a id="likeBtn" type="button" onclick="like();">';
+		   				str += '<i class="fa-regular fa-heart"></i> ' + response.likedCount;
+		   				str += '</a>';	   		
+		   				document.getElementById("likeBtnATag").innerHTML = str;
+					} else {
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+		};
+		
+		function like(){
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				,url: "/item/itemLike"
+				,data : { "itemSeq" : $("#itemSeq").val(), "mmSeq" : $("#mmSeq").val() }
+				,success: function(response) {
+					if(response.rt == "success") {
+						var str = "";
+						$(".likeBtnDiv").empty();
+		   				str += '<a id="likedBtn" name="likedBtn" type="button" onclick="unlike();">';
+		   				str += '<i class="fa-solid fa-heart" style="color: #E95721;"></i> ' + response.likedCount;
+		   				str += '</a>';   
+		   				document.getElementById("likeBtnATag").innerHTML = str;
+					} else{
+						
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+		}
+		
+		$("#likedBtn").on("click", function(){
+			unlike();
+		});
+		
+		
+		$("#likeBtn").on("click", function(){
+			like();
+		});
     </script>
 </body>
 

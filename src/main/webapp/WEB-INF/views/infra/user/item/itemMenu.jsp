@@ -182,7 +182,23 @@
 	           	   	   	   	    <img class="menuDD" src="<c:out value="${productList.path }"/><c:out value="${productList.uuidName }"/>">
 		           			</div>
 		           			<div class="pt-2">
-		           				<p class="mainName mb-0"><c:out value="${productList.mmNickname }" /></p>
+			           			<div>
+			           				<p class="mainName mb-0"><c:out value="${productList.mmNickname }" /></p>
+		           					<c:choose>
+										<c:when test="${mmSeq eq null }">
+										</c:when>
+										<c:otherwise>
+										<c:choose>
+										<c:when test="${like.mmSeq eq null }">
+										<div id="likeBtnATag" class="likeBtnDiv" name="likeBtnATag"><a id="likeBtn" type="button"><i class="fa-regular fa-heart"></i>  ${likeCount }</a></div>
+										</c:when>
+										<c:otherwise>
+										<div id="likeBtnATag" class="likeBtnDiv" name="likedBtnATag"><a id="likedBtn" type="button"><i class="fa-solid fa-heart" style="color: #E95721;"></i> ${likeCount }</a></div>
+										</c:otherwise>
+										</c:choose>
+										</c:otherwise>
+									</c:choose>
+		           				</div>
 		           				<p class="mainTitle"><a href="javascript:goView(<c:out value="${productList.itemSeq }" />)"><c:out value="${productList.itTitle }" /></a></p>
 		           				<p class="mainPay mb-0" id="itemPrice">
 		           					<i class="fa-solid fa-receipt">&nbsp;</i><fmt:formatNumber type="number" maxFractionDigits="3" value="${productList.itemPrice }" />원

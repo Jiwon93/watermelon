@@ -247,6 +247,31 @@
 		       						</tr>
 		       					</table>
 	       					</div>
+	       					<c:choose>
+								<c:when test="${infrMmSeq eq null }">
+								</c:when>
+								<c:otherwise>
+								<div class="commentBox">
+									<div class="commentHead">
+										<div class="">
+											<span><c:out value="${infrMmName }" />(<c:out value="${infrMmId }" />)</span>
+										</div>
+										<div>
+											<button class="writeBtn1" id="btnComment">등록</button>
+										</div>
+									</div>
+									<div class="writeBox">
+										<div id="writeDiv" class="writeDiv">
+											<textarea class="textBox" style="width: 680px; height: 90px; resize: none;" name="content" maxlength="200" placeholder="댓글을 입력하세요."><c:out value="${dto.content }" /></textarea>
+											<div class="textLengthWrap">
+											    <span class="textCount">0</span>
+											    <span class="textTotal">/200</span>
+											</div>
+										</div>	
+									</div>
+								</div>
+								</c:otherwise>
+							</c:choose>
 	       					<div class="col-12 text-start mt-3">
 	       						<p>
 	       							자료가 많이 부족했는데 대체 자료로 홈페이지 제작해주셔서 감사합니다.<br>

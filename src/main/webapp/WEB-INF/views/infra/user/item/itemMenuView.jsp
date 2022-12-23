@@ -248,13 +248,13 @@
 		       					</table>
 	       					</div>
 	       					<c:choose>
-								<c:when test="${infrMmSeq eq null }">
+								<c:when test="${mmSeq eq null }">
 								</c:when>
 								<c:otherwise>
 								<div class="commentBox">
 									<div class="commentHead">
 										<div class="">
-											<span><c:out value="${infrMmName }" />(<c:out value="${infrMmId }" />)</span>
+											<span><c:out value="${mmName }" />(<c:out value="${mmEmail }" />)</span>
 										</div>
 										<div>
 											<button class="writeBtn1" id="btnComment">등록</button>

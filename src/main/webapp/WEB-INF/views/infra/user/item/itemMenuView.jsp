@@ -735,6 +735,56 @@
 		    };
 		});
     	
+		//commentLita jsp
+		var page = 0;
+		
+		function setLita() {
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				/* ,dataType:"json" */
+				,url: goUrlAjaxLita
+				,data : $("#form").serialize()
+				/* ,data : {  } */
+				,success: function(response) {
+					$("#lita").empty();
+					$("#lita").append(response);
+					window.location.hash = '#page' + page;
+					page++;
+
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+		}
+		
+		$(window).bind('hashchange', function() { 
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				/* ,dataType:"json" */
+				,url: goUrlAjaxLita
+				,data : $("#form").serialize()
+				/* ,data : {  } */
+				,success: function(response) {
+					$("#lita").empty();
+					$("#lita").append(response);
+					window.location.hash = '#page' + page;
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+		});
+		
+		function setHash() {
+			if(location.hash == "" || location.hash == null){
+				alert("hash is empty");
+			}
+		}
     </script>
 </body>
 

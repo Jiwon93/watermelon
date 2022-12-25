@@ -106,6 +106,4 @@
 		setLita();
 	}
 	
-
-	
 </script>

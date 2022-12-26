@@ -282,39 +282,7 @@
 	       						<p>작업일:30일ㅣ주문금액:500만원</p>
 	       					</div>
 	       				</div>
-	       				<div class="row mt-3">
-	       					<div class="col">
-		       					<table>
-		       						<tr>
-		       							<td rowspan="2" style="font-size: 0.7em;"><i class="fa-solid fa-circle-user fa-3x"></i></td>
-		       							<td style="text-align: left; text-indent: 10px;"><span style="font-size: 0.7em; color: gray;">******p</span></td>
-		       						</tr>
-		       						<tr>
-		       							<!-- <td></td> -->
-		       							<td>
-		       								&nbsp;
-		       								<i class="fa-solid fa-star" style="font-size: 0.7em; color: #FFD400;"></i>
-						       				<i class="fa-solid fa-star" style="font-size: 0.7em; color: #FFD400;"></i>
-						       				<i class="fa-solid fa-star" style="font-size: 0.7em; color: #FFD400;"></i>
-						       				<i class="fa-solid fa-star" style="font-size: 0.7em; color: #FFD400;"></i>
-						       				<i class="fa-solid fa-star" style="font-size: 0.7em; color: #FFD400;"></i>
-						       				<span style="font-size: 0.7em; font-weight: bold;">5.0 ㅣ</span>
-						       				<span style="font-size: 0.7em; color: gray;">22.07.19 15:50</span>
-		       							</td>
-		       						</tr>
-		       					</table>
-	       					</div>
-	       					<div class="col-12 text-start mt-3">
-	       						<p>
-	       							자료가 많이 부족했는데 대체 자료로 홈페이지 제작해주셔서 감사합니다.<br>
-	       							빠른 작업물과 퀄리티 높은 작업이였던거 같습니다.
-	       						</p>
-	       					</div>
-	       					<div class="col-12 text-start border border-top-0 border-start-0 border-end-0 pb-3">
-	       						<p>작업일:30일ㅣ주문금액:500만원</p>
-	       					</div>
-	       				</div>
-	       				
+						<div id="lita"></div>	       				
 	       			</div>
 	        	</div>
 	        	<div class="col-4">

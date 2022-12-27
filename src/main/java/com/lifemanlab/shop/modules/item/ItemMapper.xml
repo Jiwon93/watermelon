@@ -254,15 +254,6 @@
 		<include refid="Base.selectListLowerForMysql" />
 	</select>
 	
-	<!-- 조회수 -->
-	<update id="boardViewCount">
-		UPDATE item
-		SET
-			viewCount = viewCount + 1
-		WHERE 1=1
-			AND itemSeq = #{itemSeq}	
-	</update>
-	
 	<!-- 좋아요 여부확인 -->
 	<select id="itemLiked" resultMap="resultMapObj"> 
 		SELECT 

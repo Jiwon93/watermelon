@@ -52,6 +52,10 @@ public class Item extends Base {
 	private String numberOfMod;
 	private String itemPrice;
 	
+	// 좋아요 
+	
+	// 댓글
+	
 	// 이미지 업로드
 	private MultipartFile[] uploadImg;
 	private Integer uploadImgType;	

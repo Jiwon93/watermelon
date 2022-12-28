@@ -295,4 +295,58 @@
 			AND itemSeq = #{itemSeq}
 			AND mmSeq = #{sessSeq}
 	</delete>
+	
+	<!-- 댓글 -->
+ 	<select id="selectCommentList" resultMap="resultMapObj">
+ 		<include refid="Base.selectListUpperForMysql" />
+ 			SELECT
+ 				a.cmSeq
+ 				,b.mmEmail
+ 				,b.mmName
+ 				,b.mmNickname
+ 				,a.content
+ 				,a.regDatetime
+			FROM itemComment a
+			JOIN member b on a.mmSeq = b.mmSeq 
+			JOIN board c on a.item_seq = c.itemSeq
+			WHERE 1=1
+				AND c.bdSeq = #{bdSeq}
+ 		<include refid="Base.selectListLowerForMysql" />
+ 	</select>
+ 	
+ 	<select id="selectCommentCount" resultType="Integer">
+		SELECT COUNT(*)
+		FROM itemComment a
+		JOIN member b on a.mmSeq = b.mmSeq
+		LEFT JOIN item c on a.item_seq = c.itemSeq
+		WHERE 1=1
+			AND a.item_seq = #{itemSeq} 
+	</select>
+ 	
+	<insert id="commentInst">
+		INSERT INTO itemComment (
+			content
+			,regDatetime
+			,mmSeq
+			,item_seq
+			,delNy
+		)
+		VALUES (
+			#{content}
+			,now()
+			,#{mmSeq}
+			,#{itemSeq}
+			,1
+		)
+		<selectKey resultType="String" keyProperty="cmSeq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	
+	<delete id="commentDele">
+		DELETE FROM itemComment
+		WHERE 1=1
+			AND cmSeq = #{cmSeq}
+			AND mmSeq = #{mmSeq}
+	</delete>
 </mapper>

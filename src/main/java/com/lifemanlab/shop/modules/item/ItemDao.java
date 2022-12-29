@@ -72,4 +72,7 @@ public class ItemDao {
 	//좋아요
 	public int insertLike(Item dto) { return sqlSession.insert(namespace + ".insertLike", dto); }
 	public int deleteLike(ItemVo vo) { return sqlSession.delete(namespace + ".deleteLike", vo); }
+
+	//댓글
+	
 }

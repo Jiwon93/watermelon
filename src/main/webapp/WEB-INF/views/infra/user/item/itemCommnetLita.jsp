@@ -98,7 +98,7 @@
 	
 	goView = function(keyValue) {
 		seq.val(keyValue);
-		form.attr("action", goUrlBoardView).submit();
+		form.attr("action", goUrlItemView).submit();
 	}
 	
 	goList = function(thisPage) {

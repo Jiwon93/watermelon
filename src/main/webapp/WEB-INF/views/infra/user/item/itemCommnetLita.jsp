@@ -78,11 +78,7 @@
 <script type="text/javascript">
 	
 	var seq = $("input:hidden[name=cmSeq]");
-	/*
-	$('#commentBtn_').on('click', function() {
-		$(".reCommentBox").show();
-	});
-	*/
+
 	var num = $("input:hidden[name=cmSeq]");
 	
 	goReComment = function reComment(keyValue) {

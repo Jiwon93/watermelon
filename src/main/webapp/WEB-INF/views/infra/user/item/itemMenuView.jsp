@@ -273,13 +273,10 @@
 								</c:otherwise>
 							</c:choose>
 	       					<div class="col-12 text-start mt-3">
-	       						<p>
-	       							자료가 많이 부족했는데 대체 자료로 홈페이지 제작해주셔서 감사합니다.<br>
-	       							빠른 작업물과 퀄리티 높은 작업이였던거 같습니다.
-	       						</p>
+	       						<p><c:out value="${ }" /></p>
 	       					</div>
 	       					<div class="col-12 text-start border border-top-0 border-start-0 border-end-0 pb-3">
-	       						<p>작업일:30일ㅣ주문금액:500만원</p>
+	       						<p>작업일:<c:out value="${ }" />일ㅣ주문금액:<c:out value="${itemPrice }" />원</p>
 	       					</div>
 	       				</div>
 						<div id="lita"></div>	       				

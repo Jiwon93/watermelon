@@ -68,8 +68,6 @@
 			AND mmSeq = #{mmSeq}
 	</select>
 	
-	
-	
 	<select id="ccNameList" resultMap="resultMapObj">
 		SELECT
 			a.*
@@ -77,14 +75,6 @@
 		WHERE 1=1
 	</select>
 	
-	<!-- 	
-	<select id="memberPhoneList" resultMap="resultMapObj">
-		SELECT
-			a.
-		FROM member_phone
-		WHERE 1=1
-	</select>
-	 -->
 	<insert id="insert">
 		INSERT INTO member (
 			mmName

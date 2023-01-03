@@ -36,22 +36,6 @@
 			ORDER BY a.ccgSeq DESC
 			<!-- <include refid="Base.orderByLimitForMysql" /> -->
 		<include refid="Base.selectListLowerForMysql" />
-			<!-- 
-			FROM codeGroup a
-			WHERE 1=1
-			AND ccgDelNy = 0
-			AND ccgName LIKE CONCAT('%',#{shValue},'%')
-			<if test="shDelNy != null and !shDelNy.equals('')">AND ccgDelNy = #{shDelNy}</if>
-			<choose>
-				<when test="shDelNy == 0">AND ccgDelNy = 0</when>
-				<when test="shDelNy == 1">AND ccgDelNy = 1</when>
-				<when test="shOption == 1">AND ccgSeq = #{shValue}</when>
-				<when test="shOption == 2">AND ccgName LIKE CONCAT('%',#{shValue},'%')</when>
-				<when test="shOptionDate == 1">AND ccgRegDatetime BETWEEN #{shDateStart} AND #{shDateEnd}</when>
-				<when test="shOptionDate == 2">AND ccgModDatetime BETWEEN #{shDateStart} AND #{shDateEnd}</when>
-				<otherwise></otherwise>
-			</choose>
-			 -->
 	</select>
 	
 	<select id="selectOneCount" resultType="Integer">

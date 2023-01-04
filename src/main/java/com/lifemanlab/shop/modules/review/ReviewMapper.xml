@@ -46,10 +46,10 @@
     
     <insert id="insert">
     	INSERT INTO review (
-    	
+    		reDelNy
     	)
     	VALUES (
-    	
+    		,0
     	)
     		<selectKey resultType="String" keyProperty="revSeq" order="AFTER">
 				SELECT last_insert_id()

@@ -37,8 +37,7 @@
         </div>
     </nav>
     <!-- Navbar End -->
-
-
+    
     <!-- Carousel Start -->
     <div class="container-fluid p-0 pb-5 mt-5">
         <div class="owl-carousel header-carousel position-relative">
@@ -163,6 +162,7 @@
         </div>
     </div>
     <!-- Service End -->
+    
     <!-- Projects Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -252,7 +252,6 @@
         </div>
     </div>
     <!-- Testimonial End -->
-
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer mt-5 pt-5">
@@ -362,7 +361,6 @@
         </div>
     </div>
     <!-- Footer End -->
-
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>

@@ -1,5 +1,4 @@
 	<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-	<%-- <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }"> --%>
 	<link href="/resources/user/css/nav.css" rel="stylesheet">
 	
 	<div class="container">

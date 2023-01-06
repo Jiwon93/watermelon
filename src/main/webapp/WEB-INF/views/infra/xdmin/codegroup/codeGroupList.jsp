@@ -68,14 +68,14 @@
 		<input type="hidden" name="checkboxSeqArray">
 		
 		<!-- *header.jsp s -->
-		<%@include file="../common/header.jsp"%>		<!-- #-> -->
+		<%@include file="../common/header.jsp"%>		
 		<!-- *header.jsp e -->
 		
 		<div class="container-fluid mt-5 ps-0">
 			<div class="row mt-4">
 				
 				<!-- *sidebar.jsp s -->
-				<%@include file="../common/sidebar.jsp"%>		<!-- #-> -->
+				<%@include file="../common/sidebar.jsp"%>		
 				<!-- *sidebar.jsp e -->
 				
 				<div class="col-10">

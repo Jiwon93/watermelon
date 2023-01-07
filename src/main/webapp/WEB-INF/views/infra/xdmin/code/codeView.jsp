@@ -45,17 +45,17 @@
 <body>
 	<form id="form" name="form" autocomplete="off" enctype="multipart/form-data">
 	<!-- *Vo.jsp s -->
-	<%@include file="../common/codeVo.jsp"%>		<!-- #-> -->
+	<%@include file="../common/codeVo.jsp"%>	
 	<!-- *Vo.jsp e -->
 		
 		<!-- *header.jsp s -->
-		<%@include file="../common/header.jsp"%>		<!-- #-> -->
+		<%@include file="../common/header.jsp"%>		
 		<!-- *header.jsp e -->
 		
 		<div class="container-fluid">
 			<div class="row mt-4">
 				<!-- *sidebar.jsp s -->
-				<%@include file="../common/sidebar.jsp"%>		<!-- #-> -->
+				<%@include file="../common/sidebar.jsp"%>	
 				<!-- *sidebar.jsp e -->
 				<div class="col-10">
 					<div class="row">
@@ -120,14 +120,6 @@
 										<option value="1" <c:if test="${item.ccDelNy eq 1 }">selected</c:if>>Y</option>
 										<option value="0" <c:if test="${item.ccDelNy eq 0 }">selected</c:if>>N</option>
 									</select> 
-									<%-- 
-									<input type="radio" id="ccgDelNy1" name="ccgDelNy" value="1" <c:if test="${dto.ccgDelNy eq 1 }">selected</c:if>>Y
-									<input type="radio" id="ccgDelNy0" name="ccgDelNy" value="0" <c:if test="${dto.ccgDelNy eq 0 }">selected</c:if>>N
-									 --%>
-									<!--  
-									<input type="radio" id="ccgDelNy1" name="ccgDelNy" value="1">Y
-									<input type="radio" id="ccgDelNy0" name="ccgDelNy" value="0">N
-									 -->
 								</div>
 							</div>
 							<div class="row m-4">

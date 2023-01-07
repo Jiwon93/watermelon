@@ -42,14 +42,14 @@
 	<form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
 		
 		<!-- *header.jsp s -->
-		<%@include file="../common/header.jsp"%>		<!-- #-> -->
+		<%@include file="../common/header.jsp"%>	
 		<!-- *header.jsp e -->
 		
 		<div class="container-fluid">
 			<div class="row mt-4">
 			
 				<!-- *sidebar.jsp s -->
-				<%@include file="../common/sidebar.jsp"%>		<!-- #-> -->
+				<%@include file="../common/sidebar.jsp"%>		
 				<!-- *sidebar.jsp e -->
 				
 				<div class="col-10">

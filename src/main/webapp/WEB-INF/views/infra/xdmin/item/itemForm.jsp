@@ -42,14 +42,14 @@
 	<form method="get" id="form" name="form" autocomplete="off" enctype="multipart/form-data">
 		
 		<!-- *header.jsp s -->
-		<%@include file="../common/header.jsp"%>		<!-- #-> -->
+		<%@include file="../common/header.jsp"%>	
 		<!-- *header.jsp e -->
 		
 		<div class="container-fluid">
 			<div class="row mt-4">
 			
 				<!-- *sidebar.jsp s -->
-				<%@include file="../common/sidebar.jsp"%>		<!-- #-> -->
+				<%@include file="../common/sidebar.jsp"%>		
 				<!-- *sidebar.jsp e -->
 				
 				<div class="col-10">
@@ -218,8 +218,8 @@
 							<div class="row m-4">
 								<div class="col-6 mx-auto">
 									<label class="form-label" for="clientPrepare">대표 이미지</label>
-									<c:set var="type" value="2"/>		<!-- #-> -->
-						        	<c:set var="name" value="uploadImg"/>		<!-- #-> -->
+									<c:set var="type" value="2"/>		
+						        	<c:set var="name" value="uploadImg"/>		
 						        	<input type="hidden" id="<c:out value="${name }"/>Type" name="<c:out value="${name }"/>Type" value="<c:out value="${type }"/>"/>
 						        	<input type="hidden" id="<c:out value="${name }"/>MaxNumber" name="<c:out value="${name }"/>MaxNumber" value="0"/>
 						        	<input type="hidden" id="<c:out value="${name }"/>DeleteSeq" name="<c:out value="${name }"/>DeleteSeq"/>
@@ -239,8 +239,8 @@
 								</div>
 								<div class="col-6 mx-auto">
 									<label class="form-label" for="clientPrepare">추가 이미지</label>
-									<c:set var="type" value="3"/>		<!-- #-> -->
-						        	<c:set var="name" value="uploadFile"/>		<!-- #-> -->
+									<c:set var="type" value="3"/>		<
+						        	<c:set var="name" value="uploadFile"/>		
 						        	<input type="hidden" id="<c:out value="${name }"/>Type" name="<c:out value="${name }"/>Type" value="<c:out value="${type }"/>"/>
 						        	<input type="hidden" id="<c:out value="${name }"/>MaxNumber" name="<c:out value="${name }"/>MaxNumber" value="0"/>
 						        	<input type="hidden" id="<c:out value="${name }"/>DeleteSeq" name="<c:out value="${name }"/>DeleteSeq"/>

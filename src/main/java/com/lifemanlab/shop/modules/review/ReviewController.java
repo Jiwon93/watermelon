@@ -34,4 +34,6 @@ public class ReviewController {
 		model.addAttribute("item", item);
 		return "infra/xdmin/review/reviewView";
 	}
+	
+	//insert, uelete, delete
 }

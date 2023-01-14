@@ -20,10 +20,6 @@ public final class Constants {
 	//암호화
 	public static final int SESSION_MINUTE = 30;
 	
-	//public static final String COOKIE_NAME_SEQ = ;
-	//public static final String COOKIE_DOMAIN = ;
-	//public static final String COOKIE_PATH = ;
-	//public static final String COOKIE_MAXAGE = ;
 	
 	public static final String URL_LOGINFORM = "/member/loginForm";
 	public static final String UPLOAD_PATH_PREFIX_EXTERNAL = "D://factory/ws_sts_4151/watermelon/src/main/webapp";

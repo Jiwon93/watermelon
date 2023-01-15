@@ -229,6 +229,7 @@
 		JOIN item b on  a.item_itemSeq = b.itemSeq
 		JOIN itemOption c on a.item_itemSeq = c.item_itemSeq
 		JOIN member d on a.member_mmSeq = d.mmSeq 
+		LEFT JOIN itUploaded e on a.member_mmSeq = e.regSeq
 		WHERE 1=1
 			AND a.member_mmSeq = #{sessSeq}
 		<include refid="Base.selectListLowerForMysql" />

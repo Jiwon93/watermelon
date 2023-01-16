@@ -255,7 +255,7 @@
 		<include refid="Base.selectListLowerForMysql" />
 	</select>
 	
-	<!-- 좋아요 여부확인 -->
+	<!-- 좋아요 -->
 	<select id="itemLiked" resultMap="resultMapObj"> 
 		SELECT 
 			mmSeq

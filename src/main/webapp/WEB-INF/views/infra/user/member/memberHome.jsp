@@ -52,7 +52,7 @@
 				<br><label class="text-primary" for="btnItemMenu"><b>개발/디자인</b></label>
 			</div>
 			<div class="col text-center">
-				<a href="#" id="homeLiving" type="button"><i class="fa-solid fa-house-chimney fa-4x"></i></a>
+				<a id="homeLiving" type="button"><i class="fa-solid fa-house-chimney fa-4x"></i></a>
 				<br><label class="text-primary" for="homeLiving"><b>홈/리빙</b></label>
 			</div>
 			<div class="col text-center">

@@ -56,7 +56,7 @@
 				<br><label class="text-primary" for="homeLiving"><b>홈/리빙</b></label>
 			</div>
 			<div class="col text-center">
-				<a href="#" id="lesson" type="button"><i class="fa-solid fa-music fa-4x"></i></a>
+				<a id="lesson" type="button"><i class="fa-solid fa-music fa-4x"></i></a>
 				<br><label class="text-primary" for="lesson"><b>레슨</b></label>
 			</div>
 			<div class="col text-center">

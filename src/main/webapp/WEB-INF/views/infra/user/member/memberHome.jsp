@@ -74,7 +74,7 @@
 				<br><label class="text-primary" for="beautyHealth"><b>미용/건강</b></label>
 			</div>
 			<div class="col text-center">
-				<a href="#" id="employ" type="button"><i class="fa-solid fa-pencil fa-4x"></i></a>
+				<a id="employ" type="button"><i class="fa-solid fa-pencil fa-4x"></i></a>
 				<br><label class="text-primary" for="employ"><b>취업/입시</b></label>
 			</div>
 			<div class="col text-center">

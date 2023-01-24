@@ -78,7 +78,7 @@
 				<br><label class="text-primary" for="employ"><b>취업/입시</b></label>
 			</div>
 			<div class="col text-center">
-				<a href="#" id="marketing" type="button"><i class="fa-solid fa-lightbulb fa-4x"></i></a>
+				<a id="marketing" type="button"><i class="fa-solid fa-lightbulb fa-4x"></i></a>
 				<br><label class="text-primary" for="marketing"><b>마케팅</b></label>
 			</div>
 			<div class="col text-center">

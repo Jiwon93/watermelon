@@ -82,7 +82,7 @@
 				<br><label class="text-primary" for="marketing"><b>마케팅</b></label>
 			</div>
 			<div class="col text-center">
-				<a href="#" id="event" type="button"><i class="fa-solid fa-puzzle-piece fa-4x"></i></a>
+				<a id="event" type="button"><i class="fa-solid fa-puzzle-piece fa-4x"></i></a>
 				<br><label class="text-primary" for="event"><b>이벤트</b></label>
 			</div>
 			<div class="col text-center">

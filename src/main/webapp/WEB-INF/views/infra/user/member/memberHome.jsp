@@ -86,7 +86,7 @@
 				<br><label class="text-primary" for="event"><b>이벤트</b></label>
 			</div>
 			<div class="col text-center">
-				<a href="#" id="taxLegalLabor" type="button"><i class="fa-solid fa-scale-balanced fa-4x"></i></a>
+				<a id="taxLegalLabor" type="button"><i class="fa-solid fa-scale-balanced fa-4x"></i></a>
 				<br><label class="text-primary" for="taxLegalLabor"><b>세무/법무/노무</b></label>
 			</div>
 		</div>

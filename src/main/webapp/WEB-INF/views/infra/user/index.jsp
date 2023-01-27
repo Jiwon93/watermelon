@@ -58,7 +58,7 @@
 	<div class="container py-5">
 		<div class="row ms-5 me-5">
 			<div class="col overflow-hidden text-center">
-				<a href="#" id="developDesign"><i class="fa-solid fa-computer fa-4x"></i></a>
+				<a id="developDesign"><i class="fa-solid fa-computer fa-4x"></i></a>
 				<br><label class="text-primary" for="developDesign"><b>개발/디자인</b></label>
 			</div>
 			<div class="col text-center">

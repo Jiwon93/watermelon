@@ -70,7 +70,7 @@
 				<br><label class="text-primary" for="lesson"><b>레슨</b></label>
 			</div>
 			<div class="col text-center">
-				<a href="#" id="translate"><i class="fa-solid fa-language fa-4x"></i></a>
+				<a id="translate"><i class="fa-solid fa-language fa-4x"></i></a>
 				<br><label class="text-primary" for="translate"><b>통역/번역</b></label>
 			</div>
 			<div class="col text-center">

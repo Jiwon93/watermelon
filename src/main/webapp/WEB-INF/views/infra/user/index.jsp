@@ -74,7 +74,7 @@
 				<br><label class="text-primary" for="translate"><b>통역/번역</b></label>
 			</div>
 			<div class="col text-center">
-				<a href="#" id="photoVideo"><i class="fa-solid fa-camera fa-4x"></i></a>
+				<a id="photoVideo"><i class="fa-solid fa-camera fa-4x"></i></a>
 				<br><label class="text-primary" for="photoVideo"><b>사진/영상</b></label>
 			</div>
 		</div>

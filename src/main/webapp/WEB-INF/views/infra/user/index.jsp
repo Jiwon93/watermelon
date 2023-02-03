@@ -80,7 +80,7 @@
 		</div>
 		<div class="row ms-5 me-5 mt-5">
 			<div class="col text-center">
-				<a href="#" id="beautyHealth"><i class="fa-solid fa-heart fa-4x"></i></a>
+				<a id="beautyHealth"><i class="fa-solid fa-heart fa-4x"></i></a>
 				<br><label class="text-primary" for="beautyHealth"><b>미용/건강</b></label>
 			</div>
 			<div class="col text-center">
